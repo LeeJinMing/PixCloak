@@ -1,12 +1,9 @@
-const CACHE_NAME = "pixcloak-v1";
+const CACHE_NAME = "pixcloak-v3";
+// Only pre-cache truly static assets; do not pre-cache app routes
 const ASSETS = [
-  "/",
-  "/compress",
-  "/redact",
-  "/tools",
-  "/templates",
-  "/guides",
   "/manifest.webmanifest",
+  "/favicon.svg",
+  "/og.png",
 ];
 
 self.addEventListener("install", (event) => {
@@ -37,16 +34,21 @@ self.addEventListener("fetch", (event) => {
   if (req.mode === "navigate") {
     return; // let the browser/network handle it
   }
-  event.respondWith(
-    caches.match(req).then((cached) =>
-      cached ||
+  // Always bypass SW caching for Next.js build assets to avoid stale UI
+  const url = new URL(req.url);
+  if (url.pathname.startsWith('/_next/')) {
+    return; // let the browser/network handle it
+  }
+  // Network-first for other GET requests with cache fallback
+  if (req.method === 'GET') {
+    event.respondWith(
       fetch(req)
         .then((res) => {
           const copy = res.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
           return res;
         })
-        .catch(() => cached)
-    )
-  );
+        .catch(() => caches.match(req))
+    );
+  }
 });
