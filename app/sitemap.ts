@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/redact`, lastModified: now },
     { url: `${base}/templates`, lastModified: now },
     { url: `${base}/tools`, lastModified: now },
+    { url: `${base}/press`, lastModified: now },
     { url: `${base}/guides`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },
     { url: `${base}/guides/redaction-checklist`, lastModified: now },
