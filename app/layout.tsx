@@ -79,6 +79,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/redact">Redact</Link>
               <Link href="/tools">Tools</Link>
               <Link href="/guides">Guides</Link>
+              <Link href="/press">Press</Link>
             </nav>
           </div>
         </header>
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/contact" className="pill">Feedback</Link>
             </nav>
             <div className="text-muted" style={{ fontSize: 12 }}>Local processing in your browser. Images are not uploaded to any server.</div>
           </div>
