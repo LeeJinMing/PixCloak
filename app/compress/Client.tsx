@@ -28,6 +28,7 @@ export default function CompressClient() {
   const [keepExt, setKeepExt] = useState<boolean>(false);
   const [dragOver, setDragOver] = useState<boolean>(false);
   const [successMsg, setSuccessMsg] = useState<string>("");
+  const [copyMsg, setCopyMsg] = useState<string>("");
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
   const searchParams = useSearchParams();
 
@@ -181,6 +182,29 @@ export default function CompressClient() {
     a.href = r.url;
     a.download = r.name;
     a.click();
+  }
+
+  async function copyFirstToClipboard() {
+    setCopyMsg("");
+    if (!('clipboard' in navigator)) {
+      setCopyMsg('Clipboard not available');
+      return;
+    }
+    if (!results.length) return;
+    try {
+      const res = await fetch(results[0].url);
+      const blob = await res.blob();
+      const CI: any = (window as any).ClipboardItem;
+      if (!CI || !(navigator as any).clipboard?.write) {
+        setCopyMsg('Clipboard not supported in this browser');
+        return;
+      }
+      const item = new CI({ [blob.type || format]: blob });
+      await (navigator as any).clipboard.write([item]);
+      setCopyMsg('Copied to clipboard');
+    } catch (e) {
+      setCopyMsg('Copy failed');
+    }
   }
 
   async function loadImageBitmapOrFallback(file: File): Promise<ImageBitmap | HTMLImageElement> {
@@ -403,10 +427,16 @@ export default function CompressClient() {
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <button className="button button-success" onClick={downloadFirst}>{results.length === 1 ? 'Download Compressed Image' : 'Download First Image'}</button>
             <button className="button button-dark" onClick={downloadZip}>Download ZIP</button>
+            <button className="button" onClick={copyFirstToClipboard} aria-label="Copy first image to clipboard">Copy to Clipboard</button>
           </div>
           {successMsg && (
             <div style={{ background: '#d1fae5', color: '#065f46', padding: 12, borderRadius: 'var(--radius)', marginTop: 12 }}>
               {successMsg}
+            </div>
+          )}
+          {copyMsg && (
+            <div style={{ background: '#eef2ff', color: '#3730a3', padding: 12, borderRadius: 'var(--radius)', marginTop: 8 }}>
+              {copyMsg}
             </div>
           )}
         </div>
