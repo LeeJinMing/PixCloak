@@ -135,14 +135,14 @@ export default function CompressClient() {
           if (current >= files.length) break;
           const f = files[current];
           try {
-            let out = await compressOne(f);
+            const out = await compressOne(f);
             outputs.push({ index: current, name: out.name, blob: out.blob });
-          } catch (_) {
+          } catch {
             // one retry on failure
             try {
-              let out = await compressOne(f);
+              const out = await compressOne(f);
               outputs.push({ index: current, name: out.name, blob: out.blob });
-            } catch (e2) {
+            } catch {
               // give up on this file but continue
               // create a tiny placeholder blob to keep order
               const placeholder = new Blob([""], { type: format });
@@ -204,15 +204,16 @@ export default function CompressClient() {
     try {
       const res = await fetch(results[0].url);
       const blob = await res.blob();
-      const CI: any = (window as any).ClipboardItem;
-      if (!CI || !(navigator as any).clipboard?.write) {
+      const CI = (window as unknown as { ClipboardItem?: new (data: Record<string, Blob>) => unknown }).ClipboardItem;
+      const clipboard = (navigator as unknown as { clipboard?: { write?: (items: unknown[]) => Promise<void> } }).clipboard;
+      if (!CI || !clipboard?.write) {
         setCopyMsg('Clipboard not supported in this browser');
         return;
       }
-      const item = new CI({ [blob.type || format]: blob });
-      await (navigator as any).clipboard.write([item]);
+      const item = new CI({ [blob.type || format]: blob }) as unknown as ClipboardItem;
+      await clipboard.write!([item as unknown as ClipboardItem]);
       setCopyMsg('Copied to clipboard');
-    } catch (e) {
+    } catch {
       setCopyMsg('Copy failed');
     }
   }
@@ -220,10 +221,10 @@ export default function CompressClient() {
   async function loadImageBitmapOrFallback(file: File): Promise<ImageBitmap | HTMLImageElement> {
     // Try ImageBitmap with EXIF orientation from image
     try {
-      // @ts-ignore - older TS DOM libs may not include this option
-      const bmp: ImageBitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
+      const opts: { imageOrientation?: 'from-image' } = { imageOrientation: 'from-image' };
+      const bmp: ImageBitmap = await createImageBitmap(file as unknown as Blob, opts as unknown as ImageBitmapOptions);
       return bmp;
-    } catch (_) {
+    } catch {
       // Fallback to HTMLImageElement
       return new Promise((resolve, reject) => {
         const url = URL.createObjectURL(file);
@@ -358,7 +359,7 @@ export default function CompressClient() {
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginTop: 12 }}>
           <label style={label}>Format
-            <select value={format} onChange={(e) => setFormat(e.target.value as any)} className="select" style={{ marginLeft: 8 }}>
+            <select value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} className="select" style={{ marginLeft: 8 }}>
               <option value="image/jpeg">JPEG</option>
               <option value="image/webp">WebP</option>
               <option value="image/png">PNG</option>
@@ -368,7 +369,7 @@ export default function CompressClient() {
             <span className="pill-ghost" title="PNG/WebP transparency will be flattened to white when exporting JPEG.">Transparency → white on JPEG</span>
           )}
           <label style={{ ...label, marginLeft: 12 }}>Resize
-            <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as any)} className="select" style={{ marginLeft: 8 }}>
+            <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} className="select" style={{ marginLeft: 8 }}>
               <option value="none">None</option>
               <option value="longest">Longest side</option>
               <option value="exact">Exact WxH</option>
