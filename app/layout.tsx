@@ -32,6 +32,39 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script
+          type="application/ld+json"
+          // Organization schema for brand entity
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'PixCloak',
+              url: siteUrl,
+              logo: `${siteUrl}/favicon.svg`,
+              sameAs: [
+                'https://github.com/LeeJinMing/PixCloak'
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          // WebSite schema with site search hint
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              url: siteUrl,
+              name: 'PixCloak',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: `${siteUrl}/guides?q={search_term_string}`,
+                'query-input': 'required name=search_term_string'
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {isProd && (
