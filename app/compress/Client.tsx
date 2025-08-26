@@ -194,6 +194,49 @@ export default function CompressClient() {
     a.click();
   }
 
+  async function copyBlobToClipboard(blob: Blob): Promise<boolean> {
+    const CI = (window as unknown as { ClipboardItem?: new (data: Record<string, Blob>) => ClipboardItem }).ClipboardItem;
+    const clipboard = (navigator as unknown as { clipboard?: { write?: (items: ClipboardItem[]) => Promise<void> } }).clipboard;
+    if (!CI || !clipboard?.write) return false;
+    try {
+      const item = new CI({ [blob.type || 'image/png']: blob });
+      await clipboard.write([item]);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  function dataUrlFromBlob(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const fr = new FileReader();
+      fr.onload = () => resolve(String(fr.result));
+      fr.onerror = reject;
+      fr.readAsDataURL(blob);
+    });
+  }
+
+  async function convertUrlToPngBlob(url: string): Promise<Blob | null> {
+    try {
+      const img = new Image();
+      const loaded: HTMLImageElement = await new Promise((resolve, reject) => {
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+      });
+      const canvas = document.createElement('canvas');
+      canvas.width = loaded.naturalWidth || loaded.width;
+      canvas.height = loaded.naturalHeight || loaded.height;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return null;
+      ctx.drawImage(loaded, 0, 0);
+      const png: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+      return png;
+    } catch {
+      return null;
+    }
+  }
+
   async function copyFirstToClipboard() {
     setCopyMsg("");
     if (!('clipboard' in navigator)) {
@@ -204,15 +247,26 @@ export default function CompressClient() {
     try {
       const res = await fetch(results[0].url);
       const blob = await res.blob();
-      const CI = (window as unknown as { ClipboardItem?: new (data: Record<string, Blob>) => unknown }).ClipboardItem;
-      const clipboard = (navigator as unknown as { clipboard?: { write?: (items: unknown[]) => Promise<void> } }).clipboard;
-      if (!CI || !clipboard?.write) {
-        setCopyMsg('Clipboard not supported in this browser');
+      // Try original blob first
+      if (await copyBlobToClipboard(blob)) {
+        setCopyMsg('Copied to clipboard');
         return;
       }
-      const item = new CI({ [blob.type || format]: blob }) as unknown as ClipboardItem;
-      await clipboard.write!([item as unknown as ClipboardItem]);
-      setCopyMsg('Copied to clipboard');
+      // Fallback: convert to PNG and try again
+      const png = await convertUrlToPngBlob(results[0].url);
+      if (png && (await copyBlobToClipboard(png))) {
+        setCopyMsg('Copied PNG to clipboard');
+        return;
+      }
+      // Last resort: copy Data URL as text
+      const dataUrl = await dataUrlFromBlob(blob);
+      const clip = (navigator as unknown as { clipboard?: { writeText?: (s: string) => Promise<void> } }).clipboard;
+      if (clip?.writeText) {
+        await clip.writeText(dataUrl);
+        setCopyMsg('Copied image as Data URL');
+        return;
+      }
+      setCopyMsg('Copy failed');
     } catch {
       setCopyMsg('Copy failed');
     }
