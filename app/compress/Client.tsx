@@ -28,6 +28,7 @@ export default function CompressClient() {
   const [keepExt, setKeepExt] = useState<boolean>(false);
   const [dragOver, setDragOver] = useState<boolean>(false);
   const [successMsg, setSuccessMsg] = useState<string>("");
+  const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -44,6 +45,15 @@ export default function CompressClient() {
     setResults([]);
     setPreviews(arr.map((f) => URL.createObjectURL(f)));
   }
+
+  useEffect(() => {
+    // Show transparency warning if exporting JPEG and any selected file likely supports alpha
+    if (format === 'image/jpeg' && files.some((f) => f.type === 'image/png' || f.type === 'image/webp')) {
+      setShowAlphaWarning(true);
+    } else {
+      setShowAlphaWarning(false);
+    }
+  }, [files, format]);
 
   async function compressOne(file: File): Promise<{ name: string; blob: Blob }> {
     // Load oriented bitmap (EXIF orientation respected); fallback to HTMLImageElement
@@ -64,6 +74,11 @@ export default function CompressClient() {
     canvas.height = outH;
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("Canvas not supported");
+    // For JPEG export, flatten transparent areas to white (avoid black/undefined background)
+    if (format === 'image/jpeg') {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, outW, outH);
+    }
     ctx.drawImage(bmp, 0, 0, outW, outH);
 
     async function encode(q: number): Promise<Blob> {
@@ -314,6 +329,9 @@ export default function CompressClient() {
               <option value="image/png">PNG</option>
             </select>
           </label>
+          {showAlphaWarning && (
+            <span className="pill-ghost" title="PNG/WebP transparency will be flattened to white when exporting JPEG.">Transparency → white on JPEG</span>
+          )}
           <label style={{ ...label, marginLeft: 12 }}>Resize
             <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as any)} className="select" style={{ marginLeft: 8 }}>
               <option value="none">None</option>
