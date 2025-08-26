@@ -19,3 +19,4 @@ PixCloak – 本地图片压缩与隐私脱敏（开源）
 - /press/plate-pixelate.webp
 - /press/plate-solid.webp
 - /press/plate-demo.gif
+- /press/compress-200kb.gif  (Upload → Target 200KB → Compress → Download)
