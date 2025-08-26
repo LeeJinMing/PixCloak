@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         )}
         {enableAnalytics && <Analytics />}
         <header style={{ borderBottom: '1px solid #eee' }}>
-          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0' }}>
+          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px' }}>
             <Link href="/" style={{ fontWeight: 700 }}>PixCloak</Link>
             <nav style={{ display: 'flex', gap: 16 }}>
               <Link href="/compress">Compress</Link>
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         <main className="container section">{children}</main>
         <footer style={{ borderTop: '1px solid #eee', marginTop: 24 }}>
-          <div className="container" style={{ padding: '16px 0', display: 'grid', gap: 8, justifyItems: 'center' }}>
+          <div className="container" style={{ padding: '16px 16px', display: 'grid', gap: 8, justifyItems: 'center' }}>
             <small>© {new Date().getFullYear()} PixCloak. All rights reserved.</small>
             <nav style={{ display: 'flex', gap: 16 }}>
               <Link href="/about">About</Link>
