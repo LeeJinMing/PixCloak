@@ -50,7 +50,7 @@ export default function GuidesPage() {
   ];
 
   function Item({ title, summary, content }: { title: string; summary: string; content: JSX.Element }) {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     return (
       <div>
         <button onClick={() => setOpen(v => !v)} aria-expanded={open}
