@@ -416,23 +416,21 @@ export default function CompressClient() {
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginTop: 12 }}>
-          <label style={label}>Format
-            <select value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} className="select" style={{ marginLeft: 8 }}>
+          <label htmlFor="format-select" style={label}>Format</label>
+          <select id="format-select" value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} className="select" style={{ marginLeft: 8 }}>
               <option value="image/jpeg">JPEG</option>
               <option value="image/webp">WebP</option>
               <option value="image/png">PNG</option>
-            </select>
-          </label>
+          </select>
           {showAlphaWarning && (
             <span className="pill-ghost" title="PNG/WebP transparency will be flattened to white when exporting JPEG.">Transparency → white on JPEG</span>
           )}
-          <label style={{ ...label, marginLeft: 12 }}>Resize
-            <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} className="select" style={{ marginLeft: 8 }}>
+          <label htmlFor="resize-select" style={{ ...label, marginLeft: 12 }}>Resize</label>
+          <select id="resize-select" value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} className="select" style={{ marginLeft: 8 }}>
               <option value="none">None</option>
               <option value="longest">Longest side</option>
               <option value="exact">Exact WxH</option>
-            </select>
-          </label>
+          </select>
           {resizeMode === 'longest' && (
             <input type="number" placeholder="1920" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
           )}

@@ -235,16 +235,16 @@ export default function RedactPage() {
           <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); setTimeout(() => draw(), 0); }} className="input" style={{ display: 'none' }} />
           <button className="button-soft" onClick={() => fileInputRef.current?.click()}>Choose images</button>
           <span className="text-muted" style={{ fontSize: 12 }}>{fileList.length ? `${fileList.length} file(s) selected` : 'No file chosen'}</span>
-          <select value={mode} onChange={(e) => setMode(e.target.value as ("solid" | "pixelate"))} className="select">
+          <label htmlFor="mode-select" style={{ marginRight: 6 }}>Mode</label>
+          <select id="mode-select" value={mode} onChange={(e) => setMode(e.target.value as ("solid" | "pixelate"))} className="select">
             <option value="solid">Solid block</option>
             <option value="pixelate">Strong pixelation</option>
           </select>
-          <label>Preset:
-            <select value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select" style={{ marginLeft: 6 }}>
+          <label htmlFor="preset-select">Preset:</label>
+          <select id="preset-select" value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select" style={{ marginLeft: 6 }}>
               <option value="">None</option>
               {allPresets().map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
-            </select>
-          </label>
+          </select>
           <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">Apply preset</button>
           <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
           <button onClick={triggerImport} className="button button-dark">Import JSON</button>
