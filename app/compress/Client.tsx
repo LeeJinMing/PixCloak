@@ -396,7 +396,11 @@ export default function CompressClient() {
               operatingSystem: 'Web',
               url: '/compress',
               description: 'Online JPEG & PNG image compressor. Local processing, target size (KB), batch ZIP download.',
-              offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' }
+              offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+              isAccessibleForFree: true,
+              softwareVersion: '1.0.0',
+              brand: { '@type': 'Brand', name: 'PixCloak' },
+              publisher: { '@type': 'Organization', name: 'PixCloak' }
             })
           }}
         />
