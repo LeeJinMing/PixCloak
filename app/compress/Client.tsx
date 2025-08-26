@@ -31,6 +31,16 @@ export default function CompressClient() {
   const [copyMsg, setCopyMsg] = useState<string>("");
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
   const searchParams = useSearchParams();
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Enter' && !busy && files.length) {
+        e.preventDefault();
+        compressAll();
+      }
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [busy, files.length]);
 
   useEffect(() => {
     const kb = searchParams.get("kb");
@@ -271,6 +281,7 @@ export default function CompressClient() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
+          aria-controls={`faq-panel-${q}`}
           style={{
             width: '100%',
             textAlign: 'left',
@@ -288,7 +299,7 @@ export default function CompressClient() {
           <span>{q}</span>
           <span style={{ fontSize: 18, lineHeight: 1 }}>{open ? '−' : '+'}</span>
         </button>
-        <div style={{ maxHeight: open ? 500 : 0, overflow: 'hidden', transition: 'max-height .25s ease' }}>
+        <div id={`faq-panel-${q}`} role="region" style={{ maxHeight: open ? 500 : 0, overflow: 'hidden', transition: 'max-height .25s ease' }}>
           {open && (
             <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, padding: 12, marginTop: 8, color: '#374151' }}>
               {a}
@@ -375,7 +386,7 @@ export default function CompressClient() {
           <label style={{ ...label, marginLeft: 12 }}>Target (KB)
             <input type="number" placeholder="200" value={targetKb} onChange={(e) => setTargetKb(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120, marginLeft: 8 }} />
           </label>
-          <button className="button" onClick={compressAll} disabled={!files.length || busy}>{busy ? 'Compressing…' : 'Compress'}</button>
+          <button className="button" onClick={compressAll} disabled={!files.length || busy} aria-keyshortcuts="Enter">{busy ? 'Compressing…' : 'Compress'}</button>
         </div>
         <div className="text-muted" style={{ fontSize: 12, marginTop: 8 }}>
           Images are auto‑rotated based on EXIF orientation. Metadata (EXIF/GPS) is removed on export.
