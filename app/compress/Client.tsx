@@ -6,6 +6,11 @@ import { useEffect, useRef, useState } from "react";
 type OutputFormat = "image/jpeg" | "image/webp" | "image/png";
 type ResizeMode = "none" | "longest" | "exact";
 
+const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16 };
+const label: React.CSSProperties = { fontSize: 13, color: "#6b7280" };
+const container: React.CSSProperties = { maxWidth: 960, margin: "0 auto", display: "grid", gap: 16 };
+const btn: React.CSSProperties = { background: "#2563eb", color: "#fff", border: 0, padding: "12px 16px", borderRadius: 8, cursor: "pointer", fontWeight: 600 };
+
 export default function CompressClient() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
@@ -154,127 +159,89 @@ export default function CompressClient() {
   }
 
   return (
-    <div style={{ display: 'grid', gap: 12 }}>
-      <h1>Image Compressor</h1>
-      <p>All processing happens locally in your browser. Images are not uploaded.</p>
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*"
-        multiple
-        onChange={(e) => {
-          if (e.target.files) handleFiles(e.target.files);
-        }}
-      />
-      <div
-        onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-        onDragLeave={() => setDragOver(false)}
-        onDrop={(e) => {
-          e.preventDefault();
-          setDragOver(false);
-          if (e.dataTransfer?.files?.length) {
-            handleFiles(e.dataTransfer.files);
-          }
-        }}
-        style={{
-          border: '2px dashed ' + (dragOver ? '#555' : '#ccc'),
-          padding: 24,
-          borderRadius: 8,
-          textAlign: 'center'
-        }}
-      >
-        Drag & drop images here
-      </div>
-      <label>
-        Quality: {quality.toFixed(2)}
-        <input
-          type="range"
-          min={0.1}
-          max={1}
-          step={0.01}
-          value={quality}
-          onChange={(e) => setQuality(parseFloat(e.target.value))}
-        />
-      </label>
-      <label>
-        Format:
-        <select value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} style={{ marginLeft: 6 }}>
-          <option value="image/jpeg">JPEG</option>
-          <option value="image/webp">WebP</option>
-          <option value="image/png">PNG</option>
-        </select>
-      </label>
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-        <label>
-          Resize:
-          <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} style={{ marginLeft: 6 }}>
-            <option value="none">None</option>
-            <option value="longest">Longest side</option>
-            <option value="exact">Exact WxH</option>
-          </select>
-        </label>
-        {resizeMode === 'longest' && (
-          <input type="number" placeholder="e.g. 1920" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 120 }} />
-        )}
-        {resizeMode === 'exact' && (
-          <>
-            <input type="number" placeholder="Width" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 100 }} />
-            <span>×</span>
-            <input type="number" placeholder="Height" value={resizeB} onChange={(e) => setResizeB(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 100 }} />
-          </>
-        )}
-      </div>
-      <label>
-        Target size (KB):
-        <input
-          type="number"
-          placeholder="e.g. 200"
-          value={targetKb}
-          onChange={(e) => {
-            const v = e.target.value;
-            setTargetKb(v === "" ? "" : Math.max(1, Math.floor(Number(v))));
-          }}
-          style={{ marginLeft: 8, width: 120 }}
-        />
-      </label>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        <button onClick={compressAll} disabled={!files.length || busy}>
-          {busy ? "Compressing…" : `Compress ${files.length || ""}`}
-        </button>
-        <button onClick={downloadZip} disabled={!results.length}>Download ZIP</button>
-      </div>
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-        <label>Prefix <input type="text" value={prefix} onChange={(e) => setPrefix(e.target.value)} style={{ width: 140 }} /></label>
-        <label>Suffix <input type="text" value={suffix} onChange={(e) => setSuffix(e.target.value)} style={{ width: 140 }} /></label>
-        <label style={{ display: 'flex', gap: 6, alignItems: 'center' }}><input type="checkbox" checked={keepExt} onChange={(e) => setKeepExt(e.target.checked)} />Keep original extension</label>
+    <div style={container}>
+      <div style={{ ...card, background: "#eff6ff", borderColor: "#bfdbfe" }}>
+        <h1 style={{ fontSize: 28, marginBottom: 8 }}>Online JPEG & PNG Image Compressor</h1>
+        <p style={{ color: "#1e3a8a" }}>Local processing · No upload · Target size · ZIP batch</p>
       </div>
 
-      <div style={{ display: 'grid', gap: 8, gridTemplateColumns: '1fr 1fr' }}>
-        <div>
-          <h3>Originals</h3>
+      <div style={{ ...card }}>
+        <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr 1fr' }}>
+          <div>
+            <div style={label}>1. Upload Your Images (JPEG/PNG)</div>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={(e) => { if (e.target.files) handleFiles(e.target.files); }}
+              style={{ width: '100%', padding: 10, border: '1px solid #e5e7eb', borderRadius: 8 }}
+            />
+          </div>
+          <div>
+            <div style={label}>2. Adjust Quality</div>
+            <input type="range" min={0.1} max={1} step={0.01} value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: '100%' }} />
+            <div style={{ fontSize: 12, color: '#6b7280' }}>Quality: {quality.toFixed(2)}</div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginTop: 12 }}>
+          <label style={label}>Format
+            <select value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} style={{ marginLeft: 8, padding: 8, borderRadius: 8, border: '1px solid #e5e7eb' }}>
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/webp">WebP</option>
+              <option value="image/png">PNG</option>
+            </select>
+          </label>
+          <label style={{ ...label, marginLeft: 12 }}>Resize
+            <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} style={{ marginLeft: 8, padding: 8, borderRadius: 8, border: '1px solid #e5e7eb' }}>
+              <option value="none">None</option>
+              <option value="longest">Longest side</option>
+              <option value="exact">Exact WxH</option>
+            </select>
+          </label>
+          {resizeMode === 'longest' && (
+            <input type="number" placeholder="1920" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 120, padding: 8, border: '1px solid #e5e7eb', borderRadius: 8 }} />
+          )}
+          {resizeMode === 'exact' && (
+            <>
+              <input type="number" placeholder="Width" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 120, padding: 8, border: '1px solid #e5e7eb', borderRadius: 8 }} />
+              <input type="number" placeholder="Height" value={resizeB} onChange={(e) => setResizeB(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 120, padding: 8, border: '1px solid #e5e7eb', borderRadius: 8 }} />
+            </>
+          )}
+          <label style={{ ...label, marginLeft: 12 }}>Target (KB)
+            <input type="number" placeholder="200" value={targetKb} onChange={(e) => setTargetKb(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} style={{ width: 120, marginLeft: 8, padding: 8, border: '1px solid #e5e7eb', borderRadius: 8 }} />
+          </label>
+          <button style={btn} onClick={compressAll} disabled={!files.length || busy}>{busy ? 'Compressing…' : `Compress ${files.length || ''}`}</button>
+          <button style={{ ...btn, background: '#111' }} onClick={downloadZip} disabled={!results.length}>Download ZIP</button>
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gap: 16, gridTemplateColumns: '1fr 1fr' }}>
+        <div style={card}>
+          <h3 style={{ marginBottom: 8 }}>Originals</h3>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {previews.length ? (
               previews.map((src, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={src} alt={`original-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee' }} />
+                <img key={i} src={src} alt={`original-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8 }} />
               ))
             ) : (
-              <div style={{ border: '1px dashed #ccc', padding: 24 }}>Select images…</div>
+              <div style={{ border: '1px dashed #ccc', padding: 24, borderRadius: 8, color: '#6b7280' }}>Upload an image to see preview</div>
             )}
           </div>
         </div>
-        <div>
-          <h3>Compressed</h3>
+        <div style={card}>
+          <h3 style={{ marginBottom: 8 }}>Compressed</h3>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {results.length ? (
               results.map((r, i) => (
                 <a key={i} href={r.url} download={r.name} style={{ display: 'inline-block' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={r.url} alt={`compressed-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee' }} />
+                  <img src={r.url} alt={`compressed-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8 }} />
                 </a>
               ))
             ) : (
-              <div style={{ border: '1px dashed #ccc', padding: 24 }}>—</div>
+              <div style={{ border: '1px dashed #ccc', padding: 24, borderRadius: 8, color: '#6b7280' }}>Compressed image will appear here</div>
             )}
           </div>
         </div>
