@@ -5,9 +5,7 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   async redirects() {
-    return [
-      { source: "/", destination: "/compress", permanent: true },
-    ];
+    return [{ source: "/", destination: "/compress", permanent: true }];
   },
 };
 

@@ -1,19 +1,21 @@
 export default function GuideTargetKB() {
   return (
-    <div style={{ display: 'grid', gap: 12 }}>
-      <h1>将图片压缩到指定体积（200KB/500KB）</h1>
-      <p>本指南介绍如何使用目标体积模式，将图片压缩到常见上传限制（200KB/500KB）。</p>
-      <ol>
-        <li>前往 <a href="/compress?kb=200">/compress?kb=200</a> 或 <a href="/compress?kb=500">/compress?kb=500</a></li>
-        <li>拖拽多张图片进入区域，点击 Compress。</li>
-        <li>下载 ZIP 打包的结果文件。</li>
-      </ol>
-      <h2>常见问题</h2>
-      <ul>
-        <li>目标体积不是精确值，前端采用二分法逼近，通常误差在数KB内。</li>
-        <li>若需更小体积，可降低质量或缩小分辨率（后续提供）。</li>
-      </ul>
-      <p>所有处理均在本地浏览器完成，不上传服务器。</p>
+    <div className="container" style={{ display: 'grid', gap: 12 }}>
+      <div className="card">
+        <h1>Compress Images to a Target Size (200KB/500KB)</h1>
+        <p>This guide shows how to use the Target (KB) mode to meet common upload limits like 200KB/500KB.</p>
+        <ol>
+          <li>Open <a href="/compress?kb=200">/compress?kb=200</a> or <a href="/compress?kb=500">/compress?kb=500</a></li>
+          <li>Drag multiple images into the area, then click Compress.</li>
+          <li>Download the results with ZIP.</li>
+        </ol>
+        <h2>Notes</h2>
+        <ul>
+          <li>The target size is an approximation. The frontend uses binary search and is usually within a few KB.</li>
+          <li>For even smaller sizes, lower quality or reduce resolution first.</li>
+        </ul>
+        <p>All processing happens locally in your browser; nothing is uploaded.</p>
+      </div>
     </div>
   );
 }

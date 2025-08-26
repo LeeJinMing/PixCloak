@@ -1,10 +1,6 @@
 const CACHE_NAME = "pixcloak-v3";
 // Only pre-cache truly static assets; do not pre-cache app routes
-const ASSETS = [
-  "/manifest.webmanifest",
-  "/favicon.svg",
-  "/og.png",
-];
+const ASSETS = ["/manifest.webmanifest", "/favicon.svg", "/og.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -36,11 +32,11 @@ self.addEventListener("fetch", (event) => {
   }
   // Always bypass SW caching for Next.js build assets to avoid stale UI
   const url = new URL(req.url);
-  if (url.pathname.startsWith('/_next/')) {
+  if (url.pathname.startsWith("/_next/")) {
     return; // let the browser/network handle it
   }
   // Network-first for other GET requests with cache fallback
-  if (req.method === 'GET') {
+  if (req.method === "GET") {
     event.respondWith(
       fetch(req)
         .then((res) => {
