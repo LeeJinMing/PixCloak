@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import JSZip from "jszip";
 
+type OutputFormat = "image/jpeg" | "image/webp" | "image/png";
+type ResizeMode = "none" | "longest" | "exact";
+
 export default function CompressPage() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
@@ -10,11 +13,11 @@ export default function CompressPage() {
   const [results, setResults] = useState<{ name: string; url: string; size: number }[]>([]);
   const [quality, setQuality] = useState<number>(0.8);
   const [targetKb, setTargetKb] = useState<number | "">("");
-  const [resizeMode, setResizeMode] = useState<"none" | "longest" | "exact">("none");
+  const [resizeMode, setResizeMode] = useState<ResizeMode>("none");
   const [resizeA, setResizeA] = useState<number | "">(""); // longest side or width
   const [resizeB, setResizeB] = useState<number | "">(""); // height (only for exact)
   const [busy, setBusy] = useState<boolean>(false);
-  const [format, setFormat] = useState<"image/jpeg" | "image/webp" | "image/png">("image/jpeg");
+  const [format, setFormat] = useState<OutputFormat>("image/jpeg");
   const [prefix, setPrefix] = useState<string>("");
   const [suffix, setSuffix] = useState<string>("-compressed");
   const [keepExt, setKeepExt] = useState<boolean>(false);
@@ -94,7 +97,6 @@ export default function CompressPage() {
     try {
       const outputs: { name: string; blob: Blob }[] = [];
       for (const f of files) {
-        // eslint-disable-next-line no-await-in-loop
         const out = await compressOne(f);
         outputs.push(out);
       }
@@ -135,11 +137,6 @@ export default function CompressPage() {
     });
   }
 
-  function renameToJpg(name: string) {
-    const dot = name.lastIndexOf('.');
-    const base = dot > 0 ? name.slice(0, dot) : name;
-    return `${base}.jpg`;
-  }
   function renameByFormat(name: string, mime: string) {
     const dot = name.lastIndexOf('.');
     const base = dot > 0 ? name.slice(0, dot) : name;
@@ -204,7 +201,7 @@ export default function CompressPage() {
       </label>
       <label>
         Format:
-        <select value={format} onChange={(e) => setFormat(e.target.value as any)} style={{ marginLeft: 6 }}>
+        <select value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} style={{ marginLeft: 6 }}>
           <option value="image/jpeg">JPEG</option>
           <option value="image/webp">WebP</option>
           <option value="image/png">PNG</option>
@@ -213,7 +210,7 @@ export default function CompressPage() {
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
         <label>
           Resize:
-          <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as any)} style={{ marginLeft: 6 }}>
+          <select value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} style={{ marginLeft: 6 }}>
             <option value="none">None</option>
             <option value="longest">Longest side</option>
             <option value="exact">Exact WxH</option>
@@ -261,6 +258,7 @@ export default function CompressPage() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {previews.length ? (
               previews.map((src, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img key={i} src={src} alt={`original-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee' }} />
               ))
             ) : (
@@ -274,6 +272,7 @@ export default function CompressPage() {
             {results.length ? (
               results.map((r, i) => (
                 <a key={i} href={r.url} download={r.name} style={{ display: 'inline-block' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={r.url} alt={`compressed-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee' }} />
                 </a>
               ))

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,12 +39,12 @@ export default function RootLayout({
           padding: '12px 16px',
           borderBottom: '1px solid #eee'
         }}>
-          <a href="/" style={{ fontWeight: 700 }}>PixCloak</a>
+          <Link href="/" style={{ fontWeight: 700 }}>PixCloak</Link>
           <nav style={{ display: 'flex', gap: 16 }}>
-            <a href="/compress">Compress</a>
-            <a href="/redact">Redact</a>
-            <a href="/tools">Tools</a>
-            <a href="/guides">Guides</a>
+            <Link href="/compress">Compress</Link>
+            <Link href="/redact">Redact</Link>
+            <Link href="/tools">Tools</Link>
+            <Link href="/guides">Guides</Link>
           </nav>
         </header>
         <main style={{ padding: '16px' }}>{children}</main>

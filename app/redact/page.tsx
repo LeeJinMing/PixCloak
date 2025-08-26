@@ -5,9 +5,9 @@ import JSZip from "jszip";
 type Box = { x: number; y: number; w: number; h: number };
 type RelBox = { x: number; y: number; w: number; h: number }; // 0..1 relative
 const PRESETS: { key: string; name: string; boxes: RelBox[] }[] = [
-  { key: 'wechat', name: '微信聊天（头像+昵称+时间）', boxes: [{ x: 0.02, y: 0.01, w: 0.16, h: 0.09 }, { x: 0.20, y: 0.02, w: 0.35, h: 0.06 }] },
-  { key: 'license-plate', name: '车牌（底部中央区域示例）', boxes: [{ x: 0.35, y: 0.75, w: 0.30, h: 0.12 }] },
-  { key: 'id-card', name: '证件号（示例区域）', boxes: [{ x: 0.20, y: 0.60, w: 0.60, h: 0.12 }] },
+  { key: 'wechat', name: '微信聊天（头像+昵称+时间）', boxes: [ { x:0.02,y:0.01,w:0.16,h:0.09}, {x:0.20,y:0.02,w:0.35,h:0.06} ] },
+  { key: 'license-plate', name: '车牌（底部中央区域示例）', boxes: [ { x:0.35,y:0.75,w:0.30,h:0.12} ] },
+  { key: 'id-card', name: '证件号（示例区域）', boxes: [ { x:0.20,y:0.60,w:0.60,h:0.12} ] },
 ];
 
 export default function RedactPage() {
@@ -28,7 +28,7 @@ export default function RedactPage() {
     setBoxes([]);
   }
   function handleFiles(list: FileList) {
-    const arr = Array.from(list).filter(f => f.type.startsWith('image/'))
+    const arr = Array.from(list).filter(f=> f.type.startsWith('image/'))
     setFileList(arr);
     if (arr[0]) handleFile(arr[0]);
   }
@@ -99,6 +99,7 @@ export default function RedactPage() {
           const tctx = tmp.getContext("2d");
           if (!tctx) continue;
           tctx.drawImage(canvas, b.x, b.y, b.w, b.h, 0, 0, tmpW, tmpH);
+          // upscale without smoothing
           ctx.imageSmoothingEnabled = false;
           ctx.drawImage(tmp, 0, 0, tmpW, tmpH, b.x, b.y, b.w, b.h);
         }
@@ -138,7 +139,6 @@ export default function RedactPage() {
     const zip = new JSZip();
     for (const f of fileList) {
       const img = await loadImage(URL.createObjectURL(f));
-      // scale boxes by relative coords based on the first image size if different
       const canvas = document.createElement('canvas');
       canvas.width = img.width; canvas.height = img.height;
       const ctx = canvas.getContext('2d');
@@ -159,11 +159,11 @@ export default function RedactPage() {
           const tctx = tmp.getContext('2d');
           if (!tctx) continue;
           tctx.drawImage(canvas, bx, by, bw, bh, 0, 0, tmpW, tmpH);
-          ctx.imageSmoothingEnabled = false;
+          (ctx as CanvasRenderingContext2D).imageSmoothingEnabled = false;
           ctx.drawImage(tmp, 0, 0, tmpW, tmpH, bx, by, bw, bh);
         }
       }
-      const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.92));
+      const blob: Blob | null = await new Promise((resolve)=> canvas.toBlob(resolve, 'image/jpeg', 0.92));
       if (!blob) continue;
       zip.file(renameOut(f.name), blob);
     }
@@ -227,13 +227,13 @@ export default function RedactPage() {
             setTimeout(() => draw(), 0);
           }}
         />
-        <select value={mode} onChange={(e) => setMode(e.target.value as any)}>
+        <select value={mode} onChange={(e) => setMode(e.target.value as ("solid"|"pixelate"))}>
           <option value="solid">Solid block</option>
           <option value="pixelate">Strong pixelation</option>
         </select>
         <label>
           Preset:
-          <select value={presetKey} onChange={(e) => setPresetKey(e.target.value)} style={{ marginLeft: 6 }}>
+          <select value={presetKey} onChange={(e)=> setPresetKey(e.target.value)} style={{ marginLeft: 6 }}>
             <option value="">None</option>
             {PRESETS.map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
           </select>
