@@ -1,5 +1,4 @@
 "use client";
-import JSZip from "jszip";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -30,6 +29,7 @@ export default function CompressClient() {
   const [successMsg, setSuccessMsg] = useState<string>("");
   const [copyMsg, setCopyMsg] = useState<string>("");
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
+  const [showFaq, setShowFaq] = useState<boolean>(false);
   const searchParams = useSearchParams();
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -49,6 +49,12 @@ export default function CompressClient() {
       setTargetKb(v);
     }
   }, [searchParams]);
+
+  // Defer non-critical FAQ to reduce initial JS
+  useEffect(() => {
+    const t = window.setTimeout(() => setShowFaq(true), 800);
+    return () => window.clearTimeout(t);
+  }, []);
 
   function handleFiles(list: FileList) {
     const arr = Array.from(list).filter((f) => f.type.startsWith("image/"));
@@ -170,6 +176,7 @@ export default function CompressClient() {
 
   async function downloadZip() {
     if (!results.length) return;
+    const { default: JSZip } = await import("jszip");
     const zip = new JSZip();
     for (const r of results) {
       const res = await fetch(r.url);
@@ -455,7 +462,7 @@ export default function CompressClient() {
             {previews.length ? (
               previews.map((src, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={src} alt={`original-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
+                <img key={i} src={src} alt={`original-${i}`} loading="lazy" style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
               ))
             ) : (
               <div style={{ color: '#6b7280' }}>Upload an image to see preview</div>
@@ -470,7 +477,7 @@ export default function CompressClient() {
                 <div key={i} style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}>
                   <a href={r.url} download={r.name} style={{ display: 'inline-block' }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={r.url} alt={`compressed-${i}`} style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
+                    <img src={r.url} alt={`compressed-${i}`} loading="lazy" style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
                   </a>
                   <div style={{ fontSize: 12, color: '#6b7280', marginTop: 6 }}>
                     Size: {formatBytes(r.size)} (Original: {formatBytes(files[i]?.size)}{savingPercent(files[i]?.size, r.size)})
@@ -505,15 +512,17 @@ export default function CompressClient() {
         </div>
       )}
 
-      <div className="card">
-        <h2 style={{ marginBottom: 8 }}>Frequently Asked Questions (FAQ)</h2>
-        <div style={{ display: 'grid', gap: 8 }}>
-          {faqItems.map((item, idx) => (
-            <FaqItem key={idx} q={item.q} a={item.a} />
-          ))}
+      {showFaq && (
+        <div className="card">
+          <h2 style={{ marginBottom: 8 }}>Frequently Asked Questions (FAQ)</h2>
+          <div style={{ display: 'grid', gap: 8 }}>
+            {faqItems.map((item, idx) => (
+              <FaqItem key={idx} q={item.q} a={item.a} />
+            ))}
+          </div>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }) }} />
         </div>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }) }} />
-      </div>
+      )}
     </div>
   );
 }
