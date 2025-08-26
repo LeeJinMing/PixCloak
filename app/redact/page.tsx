@@ -187,6 +187,34 @@ export default function RedactPage() {
     window.addEventListener('keydown', onKey); return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  const faqItems = [
+    { q: 'Will my images be uploaded?', a: 'No. All redaction runs locally in your browser. Nothing is uploaded to any server.' },
+    { q: 'Solid vs Pixelate – what\'s the difference?', a: 'Solid covers the area with a black block (irreversible). Pixelate creates strong mosaic blocks to hide details while preserving rough shapes.' },
+    { q: 'Are EXIF/GPS and metadata removed?', a: 'Yes. Exporting re-encodes the image and removes EXIF/GPS metadata by default.' },
+    { q: 'How do I import/export redaction presets?', a: 'Use Export JSON to save current boxes as relative coordinates. Use Import JSON to load and apply a preset on any image.' },
+    { q: 'Are there keyboard shortcuts?', a: 'Space toggles Solid/Pixelate. Delete/Backspace undo the last action.' },
+  ];
+
+  function FaqItem({ q, a }: { q: string; a: string }) {
+    const [open, setOpen] = useState(false);
+    return (
+      <div style={{ marginBottom: 8 }}>
+        <button onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls={`faq-panel-${q}`}
+          style={{ width: '100%', textAlign: 'left', background: '#f3f4f6', border: '1px solid #e5e7eb', borderRadius: 8, padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', fontWeight: 600 }}>
+          <span>{q}</span>
+          <span style={{ fontSize: 18, lineHeight: 1 }}>{open ? '−' : '+'}</span>
+        </button>
+        <div id={`faq-panel-${q}`} role="region" style={{ maxHeight: open ? 500 : 0, overflow: 'hidden', transition: 'max-height .25s ease' }}>
+          {open && (
+            <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, padding: 12, marginTop: 8, color: '#374151' }}>
+              {a}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
@@ -228,6 +256,16 @@ export default function RedactPage() {
       </div>
       <div className="card" style={{ maxWidth: '100%', overflow: 'auto' }}>
         <canvas ref={canvasRef} onMouseDown={onCanvasDown} onMouseMove={onCanvasMove} onMouseUp={onCanvasUp} style={{ cursor: 'crosshair', maxWidth: '100%' }} />
+      </div>
+
+      <div className="card">
+        <h2 style={{ marginBottom: 8 }}>Frequently Asked Questions (FAQ)</h2>
+        <div style={{ display: 'grid', gap: 8 }}>
+          {faqItems.map((item, idx) => (
+            <FaqItem key={idx} q={item.q} a={item.a} />
+          ))}
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }) }} />
       </div>
     </div>
   );
