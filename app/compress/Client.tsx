@@ -398,17 +398,14 @@ export default function CompressClient() {
       <div className="card">
         <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr 1fr' }}>
           <div>
-            <div style={label}>1. Upload Your Images (JPEG/PNG)</div>
-            <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); }} className="input" style={{ display: 'none' }} />
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <button className="button-soft" onClick={() => fileInputRef.current?.click()}>Choose images</button>
-              <span className="text-muted" style={{ fontSize: 12 }}>{files.length ? `${files.length} file(s) selected` : 'No file chosen'}</span>
-            </div>
+            <label htmlFor="file-input" style={label}>1. Upload Your Images (JPEG/PNG)</label>
+            <input id="file-input" ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); }} className="input" />
+            <div className="text-muted" style={{ fontSize: 12, marginTop: 6 }}>{files.length ? `${files.length} file(s) selected` : 'No file chosen'}</div>
           </div>
           <div>
-            <div style={label}>2. Adjust Quality</div>
-            <input type="range" min={0.1} max={1} step={0.01} value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: '100%' }} />
-            <div style={{ fontSize: 12, color: '#6b7280' }}>Quality: {quality.toFixed(2)}</div>
+            <label htmlFor="quality-range" style={label}>2. Adjust Quality</label>
+            <input id="quality-range" aria-valuemin={0.1} aria-valuemax={1} aria-valuenow={quality} type="range" min={0.1} max={1} step={0.01} value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: '100%' }} />
+            <div className="text-muted" style={{ fontSize: 12 }}>Quality: {quality.toFixed(2)}</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginTop: 12 }}>

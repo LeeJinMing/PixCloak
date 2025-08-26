@@ -130,7 +130,8 @@ a {
   outline-offset: 2px;
 }
 .text-muted {
-  color: #6b7280;
+  /* darker for better contrast (approx slate-600/700) */
+  color: #374151;
 }
 .section {
   margin-top: 16px;
