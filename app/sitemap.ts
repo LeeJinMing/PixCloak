@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },
     { url: `${base}/guides/redaction-checklist`, lastModified: now },
     { url: `${base}/guides/exif-gps-removal`, lastModified: now },
+    { url: `${base}/guides/convert-jpeg-to-webp`, lastModified: now },
+    { url: `${base}/guides/resize-longest-side`, lastModified: now },
+    { url: `${base}/guides/rename-rules`, lastModified: now },
+    { url: `${base}/guides/license-plate-redaction`, lastModified: now },
+    { url: `${base}/guides/screenshot-privacy-check`, lastModified: now },
     { url: `${base}/privacy`, lastModified: now },
     { url: `${base}/terms`, lastModified: now },
   ];

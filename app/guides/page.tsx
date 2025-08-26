@@ -21,6 +21,76 @@ export default function GuidesPage() {
       ),
     },
     {
+      href: '/guides/convert-jpeg-to-webp',
+      title: 'Convert JPEG to WebP',
+      summary: 'Use WebP to reduce size while keeping quality; ideal for web publishing.',
+      content: (
+        <div>
+          <ol style={{ paddingLeft: 18, margin: '6px 0' }}>
+            <li>Open /compress, set Format = WebP</li>
+            <li>Optionally set Target (KB); click Compress</li>
+          </ol>
+          <a className="pill" href="/guides/convert-jpeg-to-webp">Open full guide</a>
+        </div>
+      ),
+    },
+    {
+      href: '/guides/resize-longest-side',
+      title: 'Resize by longest side (1920px/1080px)',
+      summary: 'Downscale first for huge photos, then compress to target KB.',
+      content: (
+        <div>
+          <ol style={{ paddingLeft: 18, margin: '6px 0' }}>
+            <li>Choose Resize = Longest side, set value</li>
+            <li>Compress and download</li>
+          </ol>
+          <a className="pill" href="/guides/resize-longest-side">Open full guide</a>
+        </div>
+      ),
+    },
+    {
+      href: '/guides/rename-rules',
+      title: 'Batch rename rules',
+      summary: 'Prefix/suffix and keep extension for consistent exports.',
+      content: (
+        <div>
+          <ol style={{ paddingLeft: 18, margin: '6px 0' }}>
+            <li>Set prefix/suffix; keep extension if needed</li>
+            <li>ZIP download with renamed files</li>
+          </ol>
+          <a className="pill" href="/guides/rename-rules">Open full guide</a>
+        </div>
+      ),
+    },
+    {
+      href: '/guides/license-plate-redaction',
+      title: 'License plate redaction',
+      summary: 'Use built‑in preset or draw a box; export without EXIF/GPS.',
+      content: (
+        <div>
+          <ol style={{ paddingLeft: 18, margin: '6px 0' }}>
+            <li>Open /redact and select preset</li>
+            <li>Solid or Pixelate, then export</li>
+          </ol>
+          <a className="pill" href="/guides/license-plate-redaction">Open full guide</a>
+        </div>
+      ),
+    },
+    {
+      href: '/guides/screenshot-privacy-check',
+      title: 'Screenshot privacy check',
+      summary: 'Checklist before posting screenshots publicly.',
+      content: (
+        <div>
+          <ul style={{ paddingLeft: 18, margin: '6px 0' }}>
+            <li>Hide contacts/IDs/QR codes</li>
+            <li>Crop irrelevant UI</li>
+          </ul>
+          <a className="pill" href="/guides/screenshot-privacy-check">Open full guide</a>
+        </div>
+      ),
+    },
+    {
       href: '/guides/redaction-checklist',
       title: 'Privacy redaction checklist',
       summary: 'Mask faces, plates, contacts, IDs; remove EXIF/GPS; use irreversible methods.',
