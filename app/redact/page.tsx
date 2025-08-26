@@ -242,8 +242,8 @@ export default function RedactPage() {
           </select>
           <label htmlFor="preset-select">Preset:</label>
           <select id="preset-select" value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select" style={{ marginLeft: 6 }}>
-              <option value="">None</option>
-              {allPresets().map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
+            <option value="">None</option>
+            {allPresets().map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
           </select>
           <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">Apply preset</button>
           <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
