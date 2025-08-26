@@ -30,7 +30,6 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* SW register */}
-        {/* @ts-expect-error Server Component importing client child via dynamic below if needed */}
         <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});} ` }} />
         <header style={{
           display: 'flex',
