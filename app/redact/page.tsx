@@ -37,16 +37,24 @@ export default function RedactPage() {
   }
 
   function onCanvasDown(e: React.MouseEvent<HTMLCanvasElement>) {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setStart({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const canvas = e.currentTarget;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = (canvas.width || rect.width) / rect.width;
+    const scaleY = (canvas.height || rect.height) / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
+    setStart({ x, y });
     setDrawing(true);
   }
 
   function onCanvasMove(e: React.MouseEvent<HTMLCanvasElement>) {
     if (!drawing || !start) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const canvas = e.currentTarget;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = (canvas.width || rect.width) / rect.width;
+    const scaleY = (canvas.height || rect.height) / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     const w = x - start.x;
     const h = y - start.y;
     const temp: Box = { x: Math.min(start.x, x), y: Math.min(start.y, y), w: Math.abs(w), h: Math.abs(h) };
@@ -55,9 +63,12 @@ export default function RedactPage() {
 
   function onCanvasUp(e: React.MouseEvent<HTMLCanvasElement>) {
     if (!drawing || !start) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const canvas = e.currentTarget;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = (canvas.width || rect.width) / rect.width;
+    const scaleY = (canvas.height || rect.height) / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     const box: Box = { x: Math.min(start.x, x), y: Math.min(start.y, y), w: Math.abs(x - start.x), h: Math.abs(y - start.y) };
     setBoxes((prev) => { undoStack.current.push(prev); return [...prev, box]; });
     setDrawing(false); setStart(null);
