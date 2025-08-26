@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 
 export default function GuidesPage() {
   const items = [
@@ -49,7 +49,7 @@ export default function GuidesPage() {
     },
   ];
 
-  function Item({ title, summary, content }: { title: string; summary: string; content: JSX.Element }) {
+  function Item({ title, summary, content }: { title: string; summary: string; content: ReactNode }) {
     const [open, setOpen] = useState(false);
     return (
       <div>
