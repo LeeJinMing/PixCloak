@@ -17,6 +17,9 @@ export default function GuideExportNoMetadata() {
           <li>Optionally verify with an EXIF viewer</li>
         </ol>
         <p className="text-muted">All processing happens locally in your browser.</p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/press/plate-demo.gif" alt="metadata removal demo" loading="lazy" style={{ maxWidth: '100%', borderRadius: 8, border: '1px solid #eee' }} />
+        <p className="text-muted">Tip: Some viewers cache old metadata; reopen the exported file to confirm it shows &quot;no EXIF&quot;.</p>
       </div>
     </div>
   );

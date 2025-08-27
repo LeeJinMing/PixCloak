@@ -25,6 +25,8 @@ export default function GuidePlatformLimits() {
           <a className="pill" href="/compress?kb=500">500KB preset</a>
           <a className="pill-ghost" href="/guides/resize-longest-side">Resize 1920px</a>
         </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/press/compress-200kb.gif" alt="200KB workflow demo" loading="lazy" style={{ maxWidth: '100%', borderRadius: 8, border: '1px solid #eee', marginTop: 10 }} />
       </div>
     </div>
   );
