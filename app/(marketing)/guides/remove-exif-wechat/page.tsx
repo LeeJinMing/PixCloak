@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/remove-exif-wechat',
+    languages: {
+      zh: '/guides/remove-exif-wechat-zh',
+    },
+  },
+};
+
 export default function GuideRemoveExifWeChat() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/remove-exif-iphone',
+    languages: {
+      zh: '/guides/remove-exif-iphone-zh',
+    },
+  },
+};
+
 export default function GuideRemoveExifIphone() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

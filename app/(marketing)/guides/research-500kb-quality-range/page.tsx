@@ -16,6 +16,9 @@ export default function Research500KBRange() {
           <li>Low‑light/noise: q ≈ 0.45–0.70 (try 800KB if banding)</li>
           <li>Flat UI/gradients: switch to WebP lossless or increase target</li>
         </ul>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/press/compress-demo-3.webp" alt="demo-3" loading="lazy" style={{ maxWidth: '100%', borderRadius: 8, border: '1px solid #eee' }} />
+        <p className="text-muted">Example: 4.1MB → 500KB (Saved ~87.8%) at q≈0.62 after resizing to 1920px.</p>
         <p>Start here: <a href="/compress?kb=500">/compress?kb=500</a> and toggle WebP/JPEG; preview artifacts before publishing.</p>
         <p className="text-muted">All measurements are done locally in browser; no uploads.</p>
       </div>

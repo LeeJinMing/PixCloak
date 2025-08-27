@@ -52,6 +52,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides/pt-comprimir-para-500kb`, lastModified: now },
     { url: `${base}/guides/id-kompres-menjadi-1mb`, lastModified: now },
     { url: `${base}/guides/platform-image-limits-zh`, lastModified: now },
+    { url: `${base}/guides/remove-exif-iphone-zh`, lastModified: now },
+    { url: `${base}/guides/remove-exif-wechat-zh`, lastModified: now },
     { url: `${base}/privacy`, lastModified: now },
     { url: `${base}/terms`, lastModified: now },
   ];
