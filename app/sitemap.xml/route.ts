@@ -7,7 +7,6 @@ export async function GET(): Promise<Response> {
   const now = new Date().toISOString();
   // Keep this minimal: link to homepage and key sections; the full list is in app/sitemap.ts
   const urls: string[] = [
-    "/",
     "/compress",
     "/redact",
     "/templates",
