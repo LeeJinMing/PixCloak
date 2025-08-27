@@ -1,0 +1,33 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/platform-image-limits',
+    languages: {
+      'zh': '/guides/platform-image-limits-zh',
+    },
+  },
+};
+
+export default function GuidePlatformLimits() {
+  return (
+    <div className="container" style={{ display: 'grid', gap: 12 }}>
+      <div className="card">
+        <h1>Common platform image limits (size & dimensions)</h1>
+        <p className="text-muted">Updated periodically. Use quick presets below to prepare images fast.</p>
+        <ul>
+          <li>Avatars: often ≤ 200KB; 512–1024px square</li>
+          <li>Feed posts: often ≤ 500KB; longest side ≤ 1920px</li>
+          <li>Banners: wide aspect; test JPEG vs WebP for gradients/text</li>
+        </ul>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <a className="pill" href="/compress?kb=200">200KB preset</a>
+          <a className="pill" href="/compress?kb=500">500KB preset</a>
+          <a className="pill-ghost" href="/guides/resize-longest-side">Resize 1920px</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+

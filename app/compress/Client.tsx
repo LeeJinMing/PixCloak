@@ -385,6 +385,13 @@ export default function CompressClient() {
           <a href="/guides/compress-to-target-kb" className="pill">Target size guide</a>
           <span className="pill-ghost">ZIP batch</span>
         </div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
+          <a className="pill" href="/compress?kb=200">200KB</a>
+          <a className="pill" href="/compress?kb=500">500KB</a>
+          <a className="pill" href="/compress?kb=1024">1MB</a>
+          <a className="pill-ghost" href="/guides/resize-longest-side">1920px</a>
+          <a className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</a>
+        </div>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

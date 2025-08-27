@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PressPage() {
   const assets = [
     "/press/compress-200kb.gif",
@@ -17,7 +19,7 @@ export default function PressPage() {
         <h1>Press & Brand</h1>
         <p className="text-muted">Download assets and copy for posts. PixCloak is a privacy‑first image toolkit that runs locally (no upload).</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <a className="pill" href="/">Home</a>
+          <Link className="pill" href="/">Home</Link>
           <a className="pill" href="/compress">Compress</a>
           <a className="pill" href="/redact">Redact</a>
           <a className="pill" href="/guides">Guides</a>
@@ -38,6 +40,24 @@ export default function PressPage() {
       <div className="card">
         <h2 style={{ marginBottom: 8 }}>Copy</h2>
         <p>See <a href="/press/copy.txt">/press/copy.txt</a> for EN/ZH post templates.</p>
+      </div>
+
+      <div className="card">
+        <h2 style={{ marginBottom: 8 }}>Embed Button</h2>
+        <p className="text-muted">Add a small button to your blog/docs to help readers compress locally. No uploads.</p>
+        <pre><code>{`<a href="https://pixcloak.com/compress?kb=500&utm_source=embed" rel="noopener">Compress to 500KB (local)</a>`}</code></pre>
+        <pre><code>{`<script src="/embed/pixcloak-embed.js" async></script>
+<a data-pixcloak-embed data-kb="500">Compress to 500KB (local)</a>`}</code></pre>
+        <p className="text-muted">Options: <code>data-kb</code> 200/300/500/800/1024, <code>data-format</code> image/webp|image/jpeg, <code>data-resize</code> 1920.</p>
+        <a className="pill" href="/guides/embed-button">Read the full embed guide</a>
+      </div>
+
+      <div className="card">
+        <h2 style={{ marginBottom: 8 }}>Research</h2>
+        <ul>
+          <li><a href="/guides/research-jpeg-vs-webp">JPEG vs WebP on varied images</a></li>
+          <li><a href="/guides/research-500kb-quality-range">What quality fits 500KB?</a></li>
+        </ul>
       </div>
     </div>
   );
