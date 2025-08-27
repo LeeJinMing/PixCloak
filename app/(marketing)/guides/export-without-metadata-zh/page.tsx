@@ -1,3 +1,19 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/export-without-metadata-zh',
+    languages: {
+      'x-default': '/guides/export-without-metadata',
+      en: '/guides/export-without-metadata',
+      zh: '/guides/export-without-metadata-zh',
+      es: '/guides/es-exportar-sin-metadatos',
+      pt: '/guides/pt-exportar-sem-metadados',
+      id: '/guides/id-ekspor-tanpa-metadata',
+    },
+  },
+};
+
 export default function GuideExportNoMetadataZH() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

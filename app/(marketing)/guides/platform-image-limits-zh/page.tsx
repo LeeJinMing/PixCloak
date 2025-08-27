@@ -4,7 +4,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/guides/platform-image-limits-zh',
     languages: {
+      'x-default': '/guides/platform-image-limits',
       en: '/guides/platform-image-limits',
+      zh: '/guides/platform-image-limits-zh',
+      es: '/guides/es-limites-de-imagenes-plataformas',
+      pt: '/guides/pt-limites-de-imagens-plataformas',
+      id: '/guides/id-batas-gambar-platform',
     },
   },
 };

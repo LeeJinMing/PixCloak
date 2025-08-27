@@ -4,7 +4,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/guides/export-without-metadata',
     languages: {
+      'x-default': '/guides/export-without-metadata',
+      en: '/guides/export-without-metadata',
       zh: '/guides/export-without-metadata-zh',
+      es: '/guides/es-exportar-sin-metadatos',
+      pt: '/guides/pt-exportar-sem-metadados',
+      id: '/guides/id-ekspor-tanpa-metadata',
     },
   },
 };

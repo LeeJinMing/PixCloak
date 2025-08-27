@@ -1,3 +1,19 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/resize-longest-side-zh',
+    languages: {
+      'x-default': '/guides/resize-longest-side',
+      en: '/guides/resize-longest-side',
+      zh: '/guides/resize-longest-side-zh',
+      es: '/guides/es-redimensionar-lado-mas-largo',
+      pt: '/guides/pt-redimensionar-lado-mais-longo',
+      id: '/guides/id-ubah-ukuran-sisi-terpanjang',
+    },
+  },
+};
+
 export default function GuideResizeLongestZH() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

@@ -4,7 +4,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/guides/compress-to-target-kb',
     languages: {
+      'x-default': '/guides/compress-to-target-kb',
+      en: '/guides/compress-to-target-kb',
       zh: '/guides/compress-to-target-kb-zh',
+      es: '/guides/es-comprimir-a-kb-objetivo',
+      pt: '/guides/pt-comprimir-para-kb-alvo',
+      id: '/guides/id-kompres-ke-kb-target',
     },
   },
 };
