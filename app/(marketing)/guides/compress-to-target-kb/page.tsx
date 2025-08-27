@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/compress-to-target-kb',
+    languages: {
+      zh: '/guides/compress-to-target-kb-zh',
+    },
+  },
+};
+
 export default function GuideTargetKB() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/guides/resize-longest-side',
+    languages: {
+      zh: '/guides/resize-longest-side-zh',
+    },
+  },
+};
+
 export default function GuideResizeLongest() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

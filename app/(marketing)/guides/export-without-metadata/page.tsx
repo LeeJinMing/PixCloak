@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   alternates: {
     canonical: '/guides/export-without-metadata',
+    languages: {
+      zh: '/guides/export-without-metadata-zh',
+    },
   },
 };
 

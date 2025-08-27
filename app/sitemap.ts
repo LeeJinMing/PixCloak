@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides/exif-gps-removal`, lastModified: now },
     { url: `${base}/guides/convert-jpeg-to-webp`, lastModified: now },
     { url: `${base}/guides/resize-longest-side`, lastModified: now },
+    { url: `${base}/guides/compress-to-target-kb-zh`, lastModified: now },
+    { url: `${base}/guides/resize-longest-side-zh`, lastModified: now },
     { url: `${base}/guides/rename-rules`, lastModified: now },
     { url: `${base}/guides/license-plate-redaction`, lastModified: now },
     { url: `${base}/guides/screenshot-privacy-check`, lastModified: now },
@@ -54,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides/platform-image-limits-zh`, lastModified: now },
     { url: `${base}/guides/remove-exif-iphone-zh`, lastModified: now },
     { url: `${base}/guides/remove-exif-wechat-zh`, lastModified: now },
+    { url: `${base}/guides/export-without-metadata-zh`, lastModified: now },
     { url: `${base}/privacy`, lastModified: now },
     { url: `${base}/terms`, lastModified: now },
   ];
