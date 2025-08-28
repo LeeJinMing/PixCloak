@@ -41,7 +41,7 @@ export default function RedactClient() {
     // Ensure touch devices don't scroll while drawing
     e.preventDefault();
     const canvas = e.currentTarget;
-    try { canvas.setPointerCapture(e.pointerId); } catch (_) { }
+    try { canvas.setPointerCapture(e.pointerId); } catch { }
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
     const scaleY = (canvas.height || rect.height) / rect.height;
@@ -70,7 +70,7 @@ export default function RedactClient() {
     if (!drawing || !start) return;
     e.preventDefault();
     const canvas = e.currentTarget;
-    try { canvas.releasePointerCapture(e.pointerId); } catch (_) { }
+    try { canvas.releasePointerCapture(e.pointerId); } catch { }
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
     const scaleY = (canvas.height || rect.height) / rect.height;
@@ -200,7 +200,8 @@ export default function RedactClient() {
 
   const faqItems = [
     { q: 'Will my images be uploaded?', a: 'No. All redaction runs locally in your browser. Nothing is uploaded to any server.' },
-    { q: 'Solid vs Pixelate – what\'s the difference?', a: 'Solid covers the area with a black block (irreversible). Pixelate creates strong mosaic blocks to hide details while preserving rough shapes.' },
+    { q: 'Solid vs Pixelate – what\'s the difference?', a: 'Solid covers the area with a black block (irreversible). Pixelate creates mosaic blocks to hide details while preserving rough shapes.' },
+    { q: 'How strong is pixelation and how to adjust it?', a: 'Use Strength: Strong, Stronger, or Extreme. Extreme applies the strongest pixelation for best privacy. For critical areas (eyes, ID), apply multiple boxes or switch to Solid.' },
     { q: 'Are EXIF/GPS and metadata removed?', a: 'Yes. Exporting re-encodes the image and removes EXIF/GPS metadata by default.' },
     { q: 'How do I import/export redaction presets?', a: 'Use Export JSON to save current boxes as relative coordinates. Use Import JSON to load and apply a preset on any image.' },
     { q: 'Are there keyboard shortcuts?', a: 'Space toggles Solid/Pixelate. Delete/Backspace undo the last action.' },
@@ -254,7 +255,7 @@ export default function RedactClient() {
           {mode === 'pixelate' && (
             <>
               <label htmlFor="strength-select">Strength</label>
-              <select id="strength-select" value={pixelStrength} onChange={(e) => { setPixelStrength(e.target.value as any); setTimeout(() => draw(), 0); }} className="select" style={{ marginLeft: 6 }}>
+              <select id="strength-select" value={pixelStrength} onChange={(e) => { setPixelStrength(e.target.value as "strong" | "stronger" | "extreme"); setTimeout(() => draw(), 0); }} className="select" style={{ marginLeft: 6 }}>
                 <option value="strong">Strong</option>
                 <option value="stronger">Stronger</option>
                 <option value="extreme">Extreme</option>

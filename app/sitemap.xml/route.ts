@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+// import type { MetadataRoute } from "next";
 
 // Fallback route handler for /sitemap.xml to avoid build issues on some setups.
 // Prefer the metadata route in app/sitemap.ts; this mirrors its output.
