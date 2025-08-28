@@ -26,6 +26,14 @@ export default function RedactClient() {
   const [userPresets, setUserPresets] = useState<Preset[]>([]);
   const jsonInputRef = useRef<HTMLInputElement | null>(null);
 
+  function clearBoxes() {
+    undoStack.current = [];
+    setDrawing(false);
+    setStart(null);
+    setBoxes([]);
+    setTimeout(() => draw(), 0);
+  }
+
   async function handleFile(file: File) {
     const url = URL.createObjectURL(file);
     setImageUrl(url);
@@ -243,37 +251,52 @@ export default function RedactClient() {
           <span>Space = toggle solid/pixelate</span>
           <span>Delete = undo</span>
         </div>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); setTimeout(() => draw(), 0); }} className="input" style={{ display: 'none' }} />
-          <button className="button-soft" onClick={() => fileInputRef.current?.click()}>Choose images</button>
-          <span className="text-muted" style={{ fontSize: 12 }}>{fileList.length ? `${fileList.length} file(s) selected` : 'No file chosen'}</span>
-          <label htmlFor="mode-select" style={{ marginRight: 6 }}>Mode</label>
-          <select id="mode-select" value={mode} onChange={(e) => setMode(e.target.value as ("solid" | "pixelate"))} className="select">
-            <option value="solid">Solid block</option>
-            <option value="pixelate">Strong pixelation</option>
-          </select>
-          {mode === 'pixelate' && (
-            <>
-              <label htmlFor="strength-select">Strength</label>
-              <select id="strength-select" value={pixelStrength} onChange={(e) => { setPixelStrength(e.target.value as "strong" | "stronger" | "extreme"); setTimeout(() => draw(), 0); }} className="select" style={{ marginLeft: 6 }}>
-                <option value="strong">Strong</option>
-                <option value="stronger">Stronger</option>
-                <option value="extreme">Extreme</option>
-              </select>
-            </>
-          )}
-          <label htmlFor="preset-select">Preset:</label>
-          <select id="preset-select" value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select" style={{ marginLeft: 6 }}>
-            <option value="">None</option>
-            {allPresets().map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
-          </select>
-          <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">Apply preset</button>
-          <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
-          <button onClick={triggerImport} className="button button-dark">Import JSON</button>
-          <input ref={jsonInputRef} type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
-          <button onClick={() => { setBoxes([]); setTimeout(() => draw(), 0); }} className="button button-dark">Clear</button>
-          <button onClick={exportJpg} disabled={!imageUrl} className="button button-success">Export JPG</button>
-          <button onClick={exportZipBatch} disabled={!fileList.length} className="button button-dark">Export ZIP (batch)</button>
+        <div style={{ display: 'grid', gap: 10 }}>
+          {/* Row 1: Upload */}
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); setTimeout(() => draw(), 0); }} className="input" style={{ display: 'none' }} />
+            <button className="button-soft" onClick={() => fileInputRef.current?.click()}>Choose images</button>
+            <span className="text-muted" style={{ fontSize: 12 }}>{fileList.length ? `${fileList.length} file(s) selected` : 'No file chosen'}</span>
+          </div>
+
+          {/* Row 2: Mode + Strength */}
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <label htmlFor="mode-select">Mode</label>
+            <select id="mode-select" value={mode} onChange={(e) => { setMode(e.target.value as ("solid" | "pixelate")); setTimeout(() => draw(), 0); }} className="select">
+              <option value="solid">Solid block</option>
+              <option value="pixelate">Strong pixelation</option>
+            </select>
+            {mode === 'pixelate' && (
+              <>
+                <label htmlFor="strength-select">Strength</label>
+                <select id="strength-select" value={pixelStrength} onChange={(e) => { setPixelStrength(e.target.value as "strong" | "stronger" | "extreme"); setTimeout(() => draw(), 0); }} className="select">
+                  <option value="strong">Strong</option>
+                  <option value="stronger">Stronger</option>
+                  <option value="extreme">Extreme</option>
+                </select>
+              </>
+            )}
+          </div>
+
+          {/* Row 3: Preset */}
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <label htmlFor="preset-select">Preset</label>
+            <select id="preset-select" value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select">
+              <option value="">None</option>
+              {allPresets().map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
+            </select>
+            <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">Apply preset</button>
+            <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
+            <button onClick={triggerImport} className="button button-dark">Import JSON</button>
+            <input ref={jsonInputRef} type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
+          </div>
+
+          {/* Row 4: Actions */}
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <button onClick={clearBoxes} className="button button-dark" disabled={!boxes.length}>Clear</button>
+            <button onClick={exportJpg} disabled={!imageUrl} className="button button-success">Export JPG</button>
+            <button onClick={exportZipBatch} disabled={!fileList.length} className="button button-dark">Export ZIP (batch)</button>
+          </div>
         </div>
       </div>
       <div className="card" style={{ maxWidth: '100%', overflow: 'auto' }}>
