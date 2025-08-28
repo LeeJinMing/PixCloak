@@ -6,7 +6,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Do not include "/" because it permanently redirects to /compress (avoid GSC redirect reason)
     { url: `${base}/compress`, lastModified: now },
+    { url: `${base}/compress-es`, lastModified: now },
+    { url: `${base}/compress-pt`, lastModified: now },
+    { url: `${base}/compress-id`, lastModified: now },
     { url: `${base}/redact`, lastModified: now },
+    { url: `${base}/redact-es`, lastModified: now },
+    { url: `${base}/redact-pt`, lastModified: now },
+    { url: `${base}/redact-id`, lastModified: now },
     { url: `${base}/templates`, lastModified: now },
     { url: `${base}/tools`, lastModified: now },
     { url: `${base}/press`, lastModified: now },
