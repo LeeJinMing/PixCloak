@@ -31,6 +31,40 @@ export default function GuideTargetKB() {
           <li>For even smaller sizes, lower quality or reduce resolution first.</li>
         </ul>
         <p>All processing happens locally in your browser; nothing is uploaded.</p>
+        {/* Structured data: HowTo + Breadcrumb */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'HowTo',
+              name: 'Compress images to a target size (200KB/500KB)',
+              description: 'Use PixCloak target KB mode to meet common upload limits like 200KB/500KB. All processing is local in your browser.',
+              totalTime: 'PT1M',
+              supply: [{ '@type': 'HowToSupply', name: 'Images to compress' }],
+              tool: [{ '@type': 'HowToTool', name: 'PixCloak /compress' }],
+              step: [
+                { '@type': 'HowToStep', name: 'Open target preset', text: 'Open /compress?kb=200 or /compress?kb=500' },
+                { '@type': 'HowToStep', name: 'Add images', text: 'Drag images into the area' },
+                { '@type': 'HowToStep', name: 'Compress', text: 'Click Compress and wait for completion' },
+                { '@type': 'HowToStep', name: 'Download', text: 'Save single images or download ZIP' },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://pixcloak.com/guides' },
+                { '@type': 'ListItem', position: 2, name: 'Compress to target KB', item: 'https://pixcloak.com/guides/compress-to-target-kb' },
+              ],
+            }),
+          }}
+        />
       </div>
     </div>
   );

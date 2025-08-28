@@ -25,6 +25,38 @@ export default function GuideResizeLongest() {
           <li>Compress with desired quality or target size.</li>
         </ol>
         <p className="text-muted">Downscaling before compression saves size dramatically with minimal perceived loss.</p>
+        {/* Structured data: HowTo + Breadcrumb */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'HowTo',
+              name: 'Resize images by longest side (e.g., 1920px)',
+              description: 'Downscale images by setting the longest side to 1920px before compression to reduce size with minimal visual loss.',
+              totalTime: 'PT1M',
+              tool: [{ '@type': 'HowToTool', name: 'PixCloak /compress' }],
+              step: [
+                { '@type': 'HowToStep', name: 'Open tool', text: 'Open /compress' },
+                { '@type': 'HowToStep', name: 'Set resize', text: 'Choose Resize = Longest side and set 1920' },
+                { '@type': 'HowToStep', name: 'Compress', text: 'Pick format/quality or target KB and compress' },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://pixcloak.com/guides' },
+                { '@type': 'ListItem', position: 2, name: 'Resize longest side', item: 'https://pixcloak.com/guides/resize-longest-side' },
+              ],
+            }),
+          }}
+        />
       </div>
     </div>
   );

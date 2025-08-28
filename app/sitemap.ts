@@ -19,8 +19,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides/exif-gps-removal`, lastModified: now },
     { url: `${base}/guides/convert-jpeg-to-webp`, lastModified: now },
     { url: `${base}/guides/resize-longest-side`, lastModified: now },
-    { url: `${base}/guides/es-redimensionar-lado-mas-largo`, lastModified: now },
-    { url: `${base}/guides/pt-redimensionar-lado-mais-longo`, lastModified: now },
+    {
+      url: `${base}/guides/es-redimensionar-lado-mas-largo`,
+      lastModified: now,
+    },
+    {
+      url: `${base}/guides/pt-redimensionar-lado-mais-longo`,
+      lastModified: now,
+    },
     { url: `${base}/guides/id-ubah-ukuran-sisi-terpanjang`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb-zh`, lastModified: now },
     { url: `${base}/guides/resize-longest-side-zh`, lastModified: now },
@@ -46,8 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides/pt-exportar-sem-metadados`, lastModified: now },
     { url: `${base}/guides/id-ekspor-tanpa-metadata`, lastModified: now },
     { url: `${base}/guides/platform-image-limits`, lastModified: now },
-    { url: `${base}/guides/es-limites-de-imagenes-plataformas`, lastModified: now },
-    { url: `${base}/guides/pt-limites-de-imagens-plataformas`, lastModified: now },
+    {
+      url: `${base}/guides/es-limites-de-imagenes-plataformas`,
+      lastModified: now,
+    },
+    {
+      url: `${base}/guides/pt-limites-de-imagens-plataformas`,
+      lastModified: now,
+    },
     { url: `${base}/guides/id-batas-gambar-platform`, lastModified: now },
     { url: `${base}/guides/embed-button`, lastModified: now },
     { url: `${base}/guides/compress-to-300kb`, lastModified: now },
