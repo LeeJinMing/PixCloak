@@ -40,7 +40,7 @@ export default function RedactClient() {
     // Ensure touch devices don't scroll while drawing
     e.preventDefault();
     const canvas = e.currentTarget;
-    try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+    try { canvas.setPointerCapture(e.pointerId); } catch (_) { }
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
     const scaleY = (canvas.height || rect.height) / rect.height;
@@ -69,7 +69,7 @@ export default function RedactClient() {
     if (!drawing || !start) return;
     e.preventDefault();
     const canvas = e.currentTarget;
-    try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
+    try { canvas.releasePointerCapture(e.pointerId); } catch (_) { }
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
     const scaleY = (canvas.height || rect.height) / rect.height;
@@ -257,7 +257,7 @@ export default function RedactClient() {
           <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
           <button onClick={triggerImport} className="button button-dark">Import JSON</button>
           <input ref={jsonInputRef} type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
-          <button onClick={() => setBoxes([])} className="button button-dark">Clear</button>
+          <button onClick={() => { setBoxes([]); setTimeout(() => draw(), 0); }} className="button button-dark">Clear</button>
           <button onClick={exportJpg} disabled={!imageUrl} className="button button-success">Export JPG</button>
           <button onClick={exportZipBatch} disabled={!fileList.length} className="button button-dark">Export ZIP (batch)</button>
         </div>
