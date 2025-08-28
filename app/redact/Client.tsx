@@ -31,7 +31,7 @@ export default function RedactClient() {
     setDrawing(false);
     setStart(null);
     setBoxes([]);
-    setTimeout(() => draw(), 0);
+    setTimeout(() => draw(undefined, []), 0);
   }
 
   async function handleFile(file: File) {
@@ -94,14 +94,15 @@ export default function RedactClient() {
     setDrawing(false); setStart(null);
   }
 
-  function draw(preview?: Box) {
+  function draw(preview?: Box, sourceBoxes?: Box[]) {
     const canvas = canvasRef.current; if (!canvas || !imageUrl) return;
     const ctx = canvas.getContext("2d"); if (!ctx) return;
     const img = new Image();
     img.onload = () => {
       canvas.width = img.width; canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      const all = [...boxes, ...(preview ? [preview] : [])];
+      const base = sourceBoxes ?? boxes;
+      const all = [...base, ...(preview ? [preview] : [])];
       for (const b of all) {
         if (mode === "solid") {
           ctx.fillStyle = "#000"; ctx.fillRect(b.x, b.y, b.w, b.h);
@@ -126,7 +127,7 @@ export default function RedactClient() {
     const cw = canvasRef.current.width || 1; const ch = canvasRef.current.height || 1;
     const preset = allPresets().find(p => p.key === presetKey); if (!preset) return;
     const abs: Box[] = preset.boxes.map(r => ({ x: r.x * cw, y: r.y * ch, w: r.w * cw, h: r.h * ch }));
-    undoStack.current.push(boxes); setBoxes(abs); setTimeout(() => draw(), 0);
+    undoStack.current.push(boxes); setBoxes(abs); setTimeout(() => draw(undefined, abs), 0);
   }
 
   function exportPresetJson() {
