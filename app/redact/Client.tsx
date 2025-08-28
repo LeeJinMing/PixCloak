@@ -36,8 +36,11 @@ export default function RedactClient() {
     if (arr[0]) handleFile(arr[0]);
   }
 
-  function onCanvasDown(e: React.MouseEvent<HTMLCanvasElement>) {
+  function onPointerDown(e: React.PointerEvent<HTMLCanvasElement>) {
+    // Ensure touch devices don't scroll while drawing
+    e.preventDefault();
     const canvas = e.currentTarget;
+    try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
     const scaleY = (canvas.height || rect.height) / rect.height;
@@ -47,8 +50,9 @@ export default function RedactClient() {
     setDrawing(true);
   }
 
-  function onCanvasMove(e: React.MouseEvent<HTMLCanvasElement>) {
+  function onPointerMove(e: React.PointerEvent<HTMLCanvasElement>) {
     if (!drawing || !start) return;
+    e.preventDefault();
     const canvas = e.currentTarget;
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
@@ -61,9 +65,11 @@ export default function RedactClient() {
     draw(temp);
   }
 
-  function onCanvasUp(e: React.MouseEvent<HTMLCanvasElement>) {
+  function onPointerUp(e: React.PointerEvent<HTMLCanvasElement>) {
     if (!drawing || !start) return;
+    e.preventDefault();
     const canvas = e.currentTarget;
+    try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
     const rect = canvas.getBoundingClientRect();
     const scaleX = (canvas.width || rect.width) / rect.width;
     const scaleY = (canvas.height || rect.height) / rect.height;
@@ -71,6 +77,11 @@ export default function RedactClient() {
     const y = (e.clientY - rect.top) * scaleY;
     const box: Box = { x: Math.min(start.x, x), y: Math.min(start.y, y), w: Math.abs(x - start.x), h: Math.abs(y - start.y) };
     setBoxes((prev) => { undoStack.current.push(prev); return [...prev, box]; });
+    setDrawing(false); setStart(null);
+  }
+
+  function onPointerCancel() {
+    if (!drawing) return;
     setDrawing(false); setStart(null);
   }
 
@@ -252,7 +263,14 @@ export default function RedactClient() {
         </div>
       </div>
       <div className="card" style={{ maxWidth: '100%', overflow: 'auto' }}>
-        <canvas ref={canvasRef} onMouseDown={onCanvasDown} onMouseMove={onCanvasMove} onMouseUp={onCanvasUp} style={{ cursor: 'crosshair', maxWidth: '100%' }} />
+        <canvas
+          ref={canvasRef}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerCancel}
+          style={{ cursor: 'crosshair', maxWidth: '100%', touchAction: 'none' }}
+        />
       </div>
 
       <div className="card">
