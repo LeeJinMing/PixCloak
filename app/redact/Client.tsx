@@ -20,6 +20,7 @@ export default function RedactClient() {
   const [drawing, setDrawing] = useState<boolean>(false);
   const [start, setStart] = useState<{ x: number; y: number } | null>(null);
   const [mode, setMode] = useState<"solid" | "pixelate">("solid");
+  const [pixelStrength, setPixelStrength] = useState<"strong" | "stronger" | "extreme">("strong");
   const undoStack = useRef<Box[][]>([]);
   const [presetKey, setPresetKey] = useState<string>("");
   const [userPresets, setUserPresets] = useState<Preset[]>([]);
@@ -97,7 +98,8 @@ export default function RedactClient() {
         if (mode === "solid") {
           ctx.fillStyle = "#000"; ctx.fillRect(b.x, b.y, b.w, b.h);
         } else {
-          const scale = 0.07; const tmpW = Math.max(1, Math.floor(b.w * scale)); const tmpH = Math.max(1, Math.floor(b.h * scale));
+          const scale = pixelStrength === 'extreme' ? 0.03 : pixelStrength === 'stronger' ? 0.06 : 0.10;
+          const tmpW = Math.max(1, Math.floor(b.w * scale)); const tmpH = Math.max(1, Math.floor(b.h * scale));
           const tmp = document.createElement("canvas"); tmp.width = tmpW; tmp.height = tmpH;
           const tctx = tmp.getContext("2d"); if (!tctx) continue;
           tctx.drawImage(canvas, b.x, b.y, b.w, b.h, 0, 0, tmpW, tmpH);
@@ -171,7 +173,8 @@ export default function RedactClient() {
         const bx = r.x * canvas.width, by = r.y * canvas.height, bw = r.w * canvas.width, bh = r.h * canvas.height;
         if (mode === 'solid') { ctx.fillStyle = '#000'; ctx.fillRect(bx, by, bw, bh); }
         else {
-          const scale = 0.07; const tmpW = Math.max(1, Math.floor(bw * scale)); const tmpH = Math.max(1, Math.floor(bh * scale));
+          const scale = pixelStrength === 'extreme' ? 0.03 : pixelStrength === 'stronger' ? 0.06 : 0.10;
+          const tmpW = Math.max(1, Math.floor(bw * scale)); const tmpH = Math.max(1, Math.floor(bh * scale));
           const tmp = document.createElement('canvas'); tmp.width = tmpW; tmp.height = tmpH; const tctx = tmp.getContext('2d'); if (!tctx) continue;
           tctx.drawImage(canvas, bx, by, bw, bh, 0, 0, tmpW, tmpH); (ctx as CanvasRenderingContext2D).imageSmoothingEnabled = false; ctx.drawImage(tmp, 0, 0, tmpW, tmpH, bx, by, bw, bh);
         }
@@ -248,6 +251,16 @@ export default function RedactClient() {
             <option value="solid">Solid block</option>
             <option value="pixelate">Strong pixelation</option>
           </select>
+          {mode === 'pixelate' && (
+            <>
+              <label htmlFor="strength-select">Strength</label>
+              <select id="strength-select" value={pixelStrength} onChange={(e) => { setPixelStrength(e.target.value as any); setTimeout(() => draw(), 0); }} className="select" style={{ marginLeft: 6 }}>
+                <option value="strong">Strong</option>
+                <option value="stronger">Stronger</option>
+                <option value="extreme">Extreme</option>
+              </select>
+            </>
+          )}
           <label htmlFor="preset-select">Preset:</label>
           <select id="preset-select" value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select" style={{ marginLeft: 6 }}>
             <option value="">None</option>
