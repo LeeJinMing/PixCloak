@@ -15,6 +15,8 @@ export default function ToolsPage() {
     { href: '/tools/watermark', title: 'Text Watermark', desc: 'Overlay text watermark and export.' },
     { href: '/tools/lqip', title: 'LQIP Placeholder', desc: 'Tiny Base64 placeholder with blur.' },
     { href: '/tools/batch-rename', title: 'Batch Rename', desc: 'Rename with patterns and ZIP download.' },
+    { href: '/tools/svg-optimizer', title: 'SVG Optimizer', desc: 'Minify & clean SVG code locally.' },
+    { href: '/tools/text-placeholder', title: 'Text Placeholder', desc: 'Generate text-based placeholder images.' },
   ];
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
