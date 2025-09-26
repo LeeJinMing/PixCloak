@@ -4,9 +4,9 @@ import CompressClient from "./Client";
 import AdsenseUnit from "@/components/Adsense";
 
 export const metadata: Metadata = {
-  title: "Online JPEG & PNG Image Compressor – Target KB, Local (No Upload)",
+  title: "Online Image Compressor – Target KB, No Upload | PixCloak",
   description:
-    "Compress images to a target size (200KB/500KB/1MB), choose JPEG/WebP/PNG, resize to 1920, and batch download as ZIP. 100% local processing in your browser—no upload, privacy‑first.",
+    "Compress images to 200KB/500KB/1MB, choose JPEG/WebP/PNG, resize to 1920, and batch ZIP. 100% local processing—no upload, privacy‑first.",
   alternates: {
     canonical: "/",
     languages: {
@@ -23,7 +23,6 @@ export default function Page() {
   return (
     <Suspense fallback={null}>
       <div style={{ position: 'relative' }}>
-        <h1 style={{ position: 'absolute', left: -9999, top: -9999 }}>Online JPEG & PNG Image Compressor</h1>
         {/* Side rails - keep away from main controls */}
         <div className="ad-rail" style={{ left: 0 }}>
           <AdsenseUnit format="auto" />
