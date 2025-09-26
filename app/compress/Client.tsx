@@ -374,9 +374,9 @@ export default function CompressClient() {
           <span className="pill-ghost">ZIP batch</span>
         </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
-          <a className="pill" href="/compress?kb=200">200KB</a>
-          <a className="pill" href="/compress?kb=500">500KB</a>
-          <a className="pill" href="/compress?kb=1024">1MB</a>
+          <a className="pill" href="/?kb=200">200KB</a>
+          <a className="pill" href="/?kb=500">500KB</a>
+          <a className="pill" href="/?kb=1024">1MB</a>
           <a className="pill-ghost" href="/guides/resize-longest-side">1920px</a>
           <a className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</a>
         </div>
@@ -389,7 +389,7 @@ export default function CompressClient() {
               name: 'PixCloak Image Compressor',
               applicationCategory: 'UtilitiesApplication',
               operatingSystem: 'Web',
-              url: '/compress',
+              url: '/',
               description: 'Online JPEG & PNG image compressor. Local processing, target size (KB), batch ZIP download.',
               offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
               isAccessibleForFree: true,

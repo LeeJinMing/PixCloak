@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/languages",
     "/guides/privacy-compliance",
     "/guides/research-quality-size-curves",
+    "/guides/gsc-operations",
     ...scenarios.map((s) => `/guides/long-tail/${s.slug}`),
   ];
   return urls.map((u) => ({ url: `${base}${u}`, lastModified: now }));

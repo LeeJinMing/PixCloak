@@ -13,10 +13,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const p = await params;
   const s = scenarios.find((x) => x.slug === p.slug);
   if (!s) return {} as Metadata;
+  const path = `/guides/long-tail/${s.slug}`;
+  const languages: Record<string, string> = { 'x-default': path };
+  if (s.slug.endsWith('-zh') || s.slug.includes('-cn') || /[\u4e00-\u9fa5]/.test(s.title)) {
+    languages.zh = path;
+  } else if (s.slug.endsWith('-es')) {
+    languages.es = path;
+  } else if (s.slug.endsWith('-pt')) {
+    languages.pt = path;
+  } else if (s.slug.endsWith('-id')) {
+    languages.id = path;
+  } else {
+    languages.en = path;
+  }
   return {
     title: s.title,
     description: s.description,
-    alternates: { canonical: `/guides/long-tail/${s.slug}` },
+    alternates: { canonical: path, languages },
     openGraph: { title: s.title, description: s.description },
     twitter: { title: s.title, description: s.description },
   };
@@ -28,6 +41,20 @@ export default async function Page({ params }: PageProps) {
   if (!s) return notFound();
   return (
     <div className="container" style={{ display: 'grid', gap: 16 }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+              { '@type': 'ListItem', position: 2, name: 'Guides', item: '/guides' },
+              { '@type': 'ListItem', position: 3, name: s.title, item: `/guides/long-tail/${s.slug}` },
+            ],
+          })
+        }}
+      />
       <div className="card">
         <h1 style={{ marginBottom: 8 }}>{s.title}</h1>
         <p className="text-muted" style={{ marginBottom: 12 }}>{s.description}</p>

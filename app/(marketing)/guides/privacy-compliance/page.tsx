@@ -30,14 +30,50 @@ export default function Page() {
         </ul>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'HowTo', name: 'Privacy & Compliance for Images', step: [
-            { '@type': 'HowToStep', name: 'Identify sensitive fields' },
-            { '@type': 'HowToStep', name: 'Redact sensitive regions' },
-            { '@type': 'HowToStep', name: 'Remove EXIF/GPS metadata' },
-            { '@type': 'HowToStep', name: 'Compress to target KB' },
-            { '@type': 'HowToStep', name: 'Batch export as ZIP' },
-          ] }) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org', '@type': 'HowTo', name: 'Privacy & Compliance for Images', step: [
+                { '@type': 'HowToStep', name: 'Identify sensitive fields' },
+                { '@type': 'HowToStep', name: 'Redact sensitive regions' },
+                { '@type': 'HowToStep', name: 'Remove EXIF/GPS metadata' },
+                { '@type': 'HowToStep', name: 'Compress to target KB' },
+                { '@type': 'HowToStep', name: 'Batch export as ZIP' },
+              ]
+            })
+          }}
         />
+      </div>
+      <div className="card">
+        <h2 style={{ marginBottom: 8 }}>Industry playbooks</h2>
+        <div style={{ display: 'grid', gap: 8 }}>
+          <div>
+            <strong>HR/Recruiting</strong>
+            <ul style={{ paddingLeft: 18 }}>
+              <li>Avatars ≤ 200KB; screenshots ≤ 500KB</li>
+              <li>Redact contact info, ID numbers; export without EXIF/GPS</li>
+            </ul>
+            <a className="pill" href="/guides/long-tail/resume-200kb">Resume 200KB</a>
+            <a className="pill" href="/guides/long-tail/job-application-500kb">Job application 500KB</a>
+          </div>
+          <div>
+            <strong>Government/Legal</strong>
+            <ul style={{ paddingLeft: 18 }}>
+              <li>Common caps: 200–500KB; prefer 1920px then target KB</li>
+              <li>Use solid blocks for ID/MRZ; keep irreversible masking</li>
+            </ul>
+            <a className="pill" href="/guides/long-tail/gov-portal-200kb-cn">Gov portal 200KB (CN)</a>
+            <a className="pill" href="/guides/long-tail/passport-scan-redact">Passport redaction</a>
+          </div>
+          <div>
+            <strong>Publishing/Social</strong>
+            <ul style={{ paddingLeft: 18 }}>
+              <li>Use presets: 200/300/500/800KB depending on channel</li>
+              <li>Add high-contrast text; avoid sensitive UI in screenshots</li>
+            </ul>
+            <a className="pill" href="/guides/long-tail/youtube-thumbnail-200kb">YouTube 200KB</a>
+            <a className="pill" href="/guides/long-tail/instagram-story-1080x1920">Instagram Story</a>
+          </div>
+        </div>
       </div>
       <RelatedTasks />
     </div>
