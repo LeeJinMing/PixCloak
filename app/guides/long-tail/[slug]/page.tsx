@@ -3,15 +3,19 @@ import { notFound } from "next/navigation";
 import { scenarios } from "@/lib/seo-scenarios";
 import RelatedTasks from "@/components/RelatedTasks";
 
-type Params = { params: { slug: string } };
+type PageProps = {
+  params: { slug: string };
+  // Next.js 15 exposes searchParams as a Promise in types; include for compatibility
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
 
 export function generateStaticParams() {
   return scenarios.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = scenarios.find((x) => x.slug === params.slug);
-  if (!s) return {};
+  if (!s) return {} as Metadata;
   return {
     title: s.title,
     description: s.description,
@@ -21,7 +25,7 @@ export function generateMetadata({ params }: Params): Metadata {
   };
 }
 
-export default function Page({ params }: Params) {
+export default function Page({ params }: PageProps) {
   const s = scenarios.find((x) => x.slug === params.slug);
   if (!s) return notFound();
   return (
