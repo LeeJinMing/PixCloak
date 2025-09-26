@@ -11,6 +11,7 @@ export default function ToolsPage() {
     { href: '/tools/crop-templates', title: 'Crop Templates', desc: 'Quick crop to 1:1 / 4:3 / 16:9 / 2:3.' },
     { href: '/tools/srcset-generator', title: 'img srcset Generator', desc: 'Generate responsive srcset/sizes code.' },
     { href: '/tools/dataurl-alt', title: 'Data URL + Alt', desc: 'Base64 data URL converter with alt suggestions.' },
+    { href: '/tools/dpi-converter', title: 'DPI/PPI Converter', desc: 'Pixels ↔ print size by DPI/PPI.' },
   ];
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
