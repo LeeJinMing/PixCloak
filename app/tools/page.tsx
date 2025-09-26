@@ -8,6 +8,9 @@ export default function ToolsPage() {
     { href: '/tools/platform-checker', title: 'Platform Compliance', desc: 'Validate KB/dimensions per platform; get one‑click presets.' },
     { href: '/tools/og-card', title: 'OG/Twitter Card', desc: 'Generate 1200×630 images and meta tags.' },
     { href: '/tools/favicon-pack', title: 'Favicon Pack', desc: 'Generate favicons and manifest icons; download ZIP.' },
+    { href: '/tools/crop-templates', title: 'Crop Templates', desc: 'Quick crop to 1:1 / 4:3 / 16:9 / 2:3.' },
+    { href: '/tools/srcset-generator', title: 'img srcset Generator', desc: 'Generate responsive srcset/sizes code.' },
+    { href: '/tools/dataurl-alt', title: 'Data URL + Alt', desc: 'Base64 data URL converter with alt suggestions.' },
   ];
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
@@ -40,7 +43,7 @@ export default function ToolsPage() {
           </div>
         </details>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: cards.map((c, idx) => ({ '@type': 'ListItem', position: idx + 1, url: c.href, name: c.title })) }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: [...core, ...more].map((c, idx) => ({ '@type': 'ListItem', position: idx + 1, url: c.href, name: c.title })) }) }} />
     </div>
   );
 }
