@@ -27,11 +27,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const enableAnalytics = process.env.NEXT_PUBLIC_ANALYTICS !== "false";
+  const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  const enableAds = process.env.NEXT_PUBLIC_ADSENSE === "true" && isProd && !!adsClient;
   return (
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {enableAds && (
+          <>
+            <meta name="google-adsense-account" content={adsClient} />
+            <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`} crossOrigin="anonymous" />
+          </>
+        )}
         <script
           type="application/ld+json"
           // Organization schema for brand entity
@@ -66,7 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`} data-ads={enableAds ? 'on' : 'off'}>
         {isProd && (
           <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});} ` }} />
         )}

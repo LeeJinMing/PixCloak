@@ -137,6 +137,25 @@ a {
   margin-top: 16px;
 }
 
+/* Ads containers: non-intrusive placements */
+.ad-bottom {
+  margin-top: 16px;
+}
+.ad-sides {
+  position: sticky;
+  top: 80px;
+}
+.ad-rail {
+  position: fixed;
+  top: 120px;
+  width: 160px;
+}
+@media (max-width: 1100px) {
+  .ad-rail {
+    display: none;
+  }
+}
+
 /* Pills */
 .pill {
   display: inline-block;
