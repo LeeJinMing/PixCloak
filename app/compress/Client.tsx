@@ -1,5 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type OutputFormat = "image/jpeg" | "image/webp" | "image/png";
@@ -368,17 +369,17 @@ export default function CompressClient() {
           Compress images in your browser with no upload. Set a target size (KB), choose JPEG/WebP/PNG, and batch download as ZIP.
         </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <a href="/privacy" className="pill" rel="noopener">Privacy‑first</a>
+          <Link href="/privacy" className="pill">Privacy‑first</Link>
           <span className="pill-ghost">No upload</span>
-          <a href="/guides/compress-to-target-kb" className="pill">Target size guide</a>
+          <Link href="/guides/compress-to-target-kb" className="pill">Target size guide</Link>
           <span className="pill-ghost">ZIP batch</span>
         </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
-          <a className="pill" href="/?kb=200" rel="noopener">200KB</a>
-          <a className="pill" href="/?kb=500" rel="noopener">500KB</a>
-          <a className="pill" href="/?kb=1024" rel="noopener">1MB</a>
-          <a className="pill-ghost" href="/guides/resize-longest-side">1920px</a>
-          <a className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</a>
+          <Link className="pill" href="/?kb=200">200KB</Link>
+          <Link className="pill" href="/?kb=500">500KB</Link>
+          <Link className="pill" href="/?kb=1024">1MB</Link>
+          <Link className="pill-ghost" href="/guides/resize-longest-side">1920px</Link>
+          <Link className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</Link>
         </div>
         <script
           type="application/ld+json"
