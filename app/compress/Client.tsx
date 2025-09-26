@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type OutputFormat = "image/jpeg" | "image/webp" | "image/png";
 type ResizeMode = "none" | "longest" | "exact";
@@ -28,16 +28,7 @@ export default function CompressClient() {
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
   const [showFaq, setShowFaq] = useState<boolean>(false);
   const searchParams = useSearchParams();
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Enter' && !busy && files.length) {
-        e.preventDefault();
-        compressAll();
-      }
-    }
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [busy, files.length, compressAll]);
+
 
   useEffect(() => {
     const kb = searchParams.get("kb");
@@ -124,7 +115,7 @@ export default function CompressClient() {
     return { name: renameByFormat(file.name, format), blob: b };
   }
 
-  async function compressAll() {
+  const compressAll = useCallback(async function compressAll() {
     if (!files.length) return;
     setBusy(true);
     setProgressCount(0);
@@ -169,7 +160,7 @@ export default function CompressClient() {
     } finally {
       setBusy(false);
     }
-  }
+  }, [files, format, keepExt, prefix, suffix, quality, resizeA, resizeB, resizeMode, targetKb]);
 
   async function downloadZip() {
     if (!results.length) return;

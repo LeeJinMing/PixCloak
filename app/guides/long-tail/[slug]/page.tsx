@@ -3,18 +3,13 @@ import { notFound } from "next/navigation";
 import { scenarios } from "@/lib/seo-scenarios";
 import RelatedTasks from "@/components/RelatedTasks";
 
-type PageProps = {
-  params: { slug: string };
-  // Next.js 15 exposes searchParams as a Promise in types; include for compatibility
-  searchParams?: Promise<Record<string, string | string[] | undefined>>;
-};
-
 export function generateStaticParams() {
   return scenarios.map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const s = scenarios.find((x) => x.slug === params.slug);
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const p = await Promise.resolve(params);
+  const s = scenarios.find((x) => x.slug === p?.slug);
   if (!s) return {} as Metadata;
   return {
     title: s.title,
@@ -25,8 +20,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const s = scenarios.find((x) => x.slug === params.slug);
+export default async function Page({ params }: any) {
+  const p = await Promise.resolve(params);
+  const s = scenarios.find((x) => x.slug === p?.slug);
   if (!s) return notFound();
   return (
     <div className="container" style={{ display: 'grid', gap: 16 }}>
