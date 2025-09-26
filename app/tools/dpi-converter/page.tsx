@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/dpi-converter" },
 };
 
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

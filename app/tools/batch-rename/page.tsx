@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/batch-rename" },
 };
 
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

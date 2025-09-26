@@ -15,8 +15,8 @@ const RATIOS: Ratio[] = [
   { label: '2:3', w: 2, h: 3 },
 ];
 
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

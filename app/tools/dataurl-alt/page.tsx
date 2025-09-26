@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     "Convert images to data URLs (Base64) locally and get alt text suggestions. 100% client‑side.",
   alternates: { canonical: "/tools/dataurl-alt" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 
