@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://pixcloak.com/sitemap.xml
+Sitemap: https://pixcloak.com/guides/sitemap.xml
