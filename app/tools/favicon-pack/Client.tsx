@@ -12,15 +12,15 @@ async function drawIcon(src: HTMLImageElement, size: number): Promise<Blob> {
   return b;
 }
 
-export default function Client(){
+export default function Client() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
 
-  async function onPick(e: React.ChangeEvent<HTMLInputElement>){
+  async function onPick(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0]; if (!f) return; setPreview(URL.createObjectURL(f));
   }
 
-  async function onGenerate(){
+  async function onGenerate() {
     const f = inputRef.current?.files?.[0]; if (!f) return;
     const img = new Image(); img.src = URL.createObjectURL(f); await img.decode();
     const sizes = [16, 32, 48, 64, 128, 192, 256, 512];

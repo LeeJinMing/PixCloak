@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     "Check if an image contains EXIF/GPS metadata and remove it locally in your browser (no upload). Download a clean copy.",
   alternates: { canonical: "/tools/exif-checker" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

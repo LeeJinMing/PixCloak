@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Generate favicons and manifest icons from a source image and download as ZIP.",
   alternates: { canonical: "/tools/favicon-pack" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

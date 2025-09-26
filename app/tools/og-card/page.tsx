@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Generate OG/Twitter card images (1200×630) in the browser and download PNG/JPG.",
   alternates: { canonical: "/tools/og-card" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 
