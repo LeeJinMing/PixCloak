@@ -21,6 +21,8 @@ export default function ToolsPage() {
     { href: '/tools/aspect-pad', title: 'Aspect Ratio Padder', desc: 'Pad to target aspect ratio with background.' },
     { href: '/tools/remove-bg-lite', title: 'Remove BG (Lite)', desc: 'Background removal by color tolerance.' },
     { href: '/tools/webp-converter', title: 'Batch WebP Converter', desc: 'Convert images to WebP and ZIP.' },
+    { href: '/tools/image-diff', title: 'Image Diff', desc: 'A/B slider compare and pixel diff export.' },
+    { href: '/tools/sprite-sheet', title: 'Sprite Sheet', desc: 'Combine images into sheet + JSON mapping.' },
   ];
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

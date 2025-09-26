@@ -31,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/aspect-pad`, lastModified: now },
     { url: `${base}/tools/remove-bg-lite`, lastModified: now },
     { url: `${base}/tools/webp-converter`, lastModified: now },
+    { url: `${base}/tools/image-diff`, lastModified: now },
+    { url: `${base}/tools/sprite-sheet`, lastModified: now },
     { url: `${base}/press`, lastModified: now },
     { url: `${base}/guides`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },
