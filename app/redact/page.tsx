@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import RedactClient from "./Client";
-import dynamic from "next/dynamic";
-
-const AdsenseUnit = dynamic(() => import("@/components/Adsense"), { ssr: false });
+import AdsenseUnit from "@/components/Adsense";
 
 export const metadata: Metadata = {
   alternates: {
