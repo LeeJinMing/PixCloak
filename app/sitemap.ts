@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/srcset-generator`, lastModified: now },
     { url: `${base}/tools/dataurl-alt`, lastModified: now },
     { url: `${base}/tools/dpi-converter`, lastModified: now },
+    { url: `${base}/tools/watermark`, lastModified: now },
     { url: `${base}/press`, lastModified: now },
     { url: `${base}/guides`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },
