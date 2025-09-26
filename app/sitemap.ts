@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/platform-checker`, lastModified: now },
     { url: `${base}/tools/og-card`, lastModified: now },
     { url: `${base}/tools/favicon-pack`, lastModified: now },
+    { url: `${base}/tools/crop-templates`, lastModified: now },
+    { url: `${base}/tools/srcset-generator`, lastModified: now },
     { url: `${base}/press`, lastModified: now },
     { url: `${base}/guides`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },
