@@ -29,6 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/text-placeholder`, lastModified: now },
     { url: `${base}/tools/trim-transparent`, lastModified: now },
     { url: `${base}/tools/aspect-pad`, lastModified: now },
+    { url: `${base}/tools/remove-bg-lite`, lastModified: now },
+    { url: `${base}/tools/webp-converter`, lastModified: now },
     { url: `${base}/press`, lastModified: now },
     { url: `${base}/guides`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },

@@ -19,6 +19,8 @@ export default function ToolsPage() {
     { href: '/tools/text-placeholder', title: 'Text Placeholder', desc: 'Generate text-based placeholder images.' },
     { href: '/tools/trim-transparent', title: 'Trim Transparent', desc: 'Auto-trim transparent edges of PNGs.' },
     { href: '/tools/aspect-pad', title: 'Aspect Ratio Padder', desc: 'Pad to target aspect ratio with background.' },
+    { href: '/tools/remove-bg-lite', title: 'Remove BG (Lite)', desc: 'Background removal by color tolerance.' },
+    { href: '/tools/webp-converter', title: 'Batch WebP Converter', desc: 'Convert images to WebP and ZIP.' },
   ];
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
