@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Comprimir imágenes a 200KB – Guía rápida',
+  description: 'Reduce tus imágenes a 200KB en el navegador, sin subir archivos. Ajusta calidad, redimensiona y descarga ZIP.',
   alternates: {
     canonical: '/guides/es-comprimir-a-200kb',
     languages: {
