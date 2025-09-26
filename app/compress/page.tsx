@@ -5,7 +5,7 @@ import AdsenseUnit from "@/components/Adsense";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/compress",
+    canonical: "/",
     languages: {
       "x-default": "/compress",
       en: "/compress",

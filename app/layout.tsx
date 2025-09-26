@@ -83,7 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px' }}>
             <Link href="/compress" style={{ fontWeight: 700 }}>PixCloak</Link>
             <nav style={{ display: 'flex', gap: 16 }}>
-              <Link href="/compress">Compress</Link>
+              <Link href="/">Compress</Link>
               <Link href="/redact">Redact</Link>
               <Link href="/tools">Tools</Link>
               <Link href="/guides">Guides</Link>

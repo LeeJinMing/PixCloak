@@ -5,7 +5,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: `${base}/`, lastModified: now },
-    { url: `${base}/compress`, lastModified: now },
     { url: `${base}/compress-es`, lastModified: now },
     { url: `${base}/compress-pt`, lastModified: now },
     { url: `${base}/compress-id`, lastModified: now },
