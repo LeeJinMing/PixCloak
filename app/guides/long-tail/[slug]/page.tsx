@@ -3,15 +3,14 @@ import { notFound } from "next/navigation";
 import { scenarios } from "@/lib/seo-scenarios";
 import RelatedTasks from "@/components/RelatedTasks";
 
-type MaybePromise<T> = T | Promise<T>;
-type PageProps = { params: MaybePromise<{ slug: string }> };
+type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return scenarios.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const p = await Promise.resolve(params);
+  const p = await params;
   const s = scenarios.find((x) => x.slug === p.slug);
   if (!s) return {} as Metadata;
   return {
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Page({ params }: PageProps) {
-  const p = await Promise.resolve(params);
+  const p = await params;
   const s = scenarios.find((x) => x.slug === p.slug);
   if (!s) return notFound();
   return (
