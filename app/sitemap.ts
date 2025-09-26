@@ -27,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/batch-rename`, lastModified: now },
     { url: `${base}/tools/svg-optimizer`, lastModified: now },
     { url: `${base}/tools/text-placeholder`, lastModified: now },
+    { url: `${base}/tools/trim-transparent`, lastModified: now },
+    { url: `${base}/tools/aspect-pad`, lastModified: now },
     { url: `${base}/press`, lastModified: now },
     { url: `${base}/guides`, lastModified: now },
     { url: `${base}/guides/compress-to-target-kb`, lastModified: now },
