@@ -1,6 +1,10 @@
-export async function submitIndexNow(
-  urls: string[]
-): Promise<{ ok: boolean; status: number; body?: any }> {
+type IndexNowResult = {
+  ok: boolean;
+  status: number;
+  body?: string | { error: string };
+};
+
+export async function submitIndexNow(urls: string[]): Promise<IndexNowResult> {
   const host = (process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com")
     .replace(/\/$/, "")
     .replace(/^https?:\/\//, "");
