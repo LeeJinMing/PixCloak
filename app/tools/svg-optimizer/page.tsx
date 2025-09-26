@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Paste SVG to minify and clean attributes/styles locally. Export optimized SVG.",
   alternates: { canonical: "/tools/svg-optimizer" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

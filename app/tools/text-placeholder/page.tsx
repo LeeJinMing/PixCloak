@@ -15,8 +15,8 @@ const PRESETS: Preset[] = [
   { label: 'Wide 1920×1080', w: 1920, h: 1080 },
 ];
 
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

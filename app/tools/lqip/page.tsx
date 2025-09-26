@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Generate low‑quality image placeholders (LQIP) as tiny Base64 data URLs locally.",
   alternates: { canonical: "/tools/lqip" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

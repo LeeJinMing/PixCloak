@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Add a text watermark to images locally and download. Adjustable opacity/size/position.",
   alternates: { canonical: "/tools/watermark" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 function Preview({ url, draw, size, text, pos, opacity, font }: { url: string; draw: (c: HTMLCanvasElement, img: CanvasImageSource, w: number, h: number) => void; size: number; text: string; pos: Pos; opacity: number; font: string; }) {

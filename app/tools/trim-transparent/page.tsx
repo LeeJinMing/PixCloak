@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Automatically trim fully transparent borders from PNGs locally and export.",
   alternates: { canonical: "/tools/trim-transparent" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 
