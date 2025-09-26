@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  async redirects() {
-    return [{ source: "/", destination: "/compress", permanent: true }];
-  },
+  // Removed root redirect to allow indexable homepage
 };
 
 export default nextConfig;

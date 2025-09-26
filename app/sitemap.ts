@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixcloak.com";
   const now = new Date();
   return [
-    // Do not include "/" because it permanently redirects to /compress (avoid GSC redirect reason)
+    { url: `${base}/`, lastModified: now },
     { url: `${base}/compress`, lastModified: now },
     { url: `${base}/compress-es`, lastModified: now },
     { url: `${base}/compress-pt`, lastModified: now },
