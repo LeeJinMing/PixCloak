@@ -37,6 +37,14 @@
     var resize = el.getAttribute("data-resize"); // e.g., 1920
     var utm = el.getAttribute("data-utm-source") || undefined;
     var text = el.getAttribute("data-text");
+    var lang = (el.getAttribute("data-lang") || "en").toLowerCase();
+    var i18n = {
+      en: "Compress image",
+      zh: "压缩图片",
+      es: "Comprimir imagen",
+      pt: "Comprimir imagem",
+      id: "Kompres gambar",
+    };
     var url = buildUrl({ kb: kb, format: fmt, resize: resize, utm: utm });
     el.setAttribute("href", url);
     el.setAttribute("rel", "noopener noreferrer nofollow");
@@ -44,8 +52,10 @@
       el.textContent = text
         ? text
         : kb
-        ? "Compress to " + kb + "KB (local)"
-        : "Open in PixCloak (local)";
+        ? lang === "zh"
+          ? "压缩到 " + kb + "KB（本地）"
+          : "Compress to " + kb + "KB (local)"
+        : i18n[lang] || i18n.en;
     }
     styleAsButton(el);
     el.setAttribute("data-pixcloak-embed-ready", "1");

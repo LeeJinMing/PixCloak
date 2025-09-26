@@ -8,8 +8,17 @@ export default function GuideEmbedButton() {
         <pre><code>{`<a href="https://pixcloak.com/compress?kb=500&utm_source=embed" rel="noopener">Compress to 500KB (local)</a>`}</code></pre>
         <h2>Script-enhanced button</h2>
         <pre><code>{`<script src="https://pixcloak.com/embed/pixcloak-embed.js" async></script>
-<a data-pixcloak-embed data-kb="500" data-text="Compress to 500KB (local)">Open in PixCloak</a>`}</code></pre>
-        <p className="text-muted">Options: <code>data-kb</code> (e.g., 200/500/1024), <code>data-format</code> (image/webp|image/jpeg), <code>data-resize</code> (e.g., 1920), <code>data-utm-source</code> (default: embed), <code>data-text</code>.</p>
+<a
+  data-pixcloak-embed
+  data-kb="500"
+  data-lang="en"
+  data-utm-source="embed-demo"
+  data-bg="#0ea5e9"
+  data-color="#fff"
+  data-radius="10px"
+  data-pad="10px 14px"
+>Compress to 500KB (local)</a>`}</code></pre>
+        <p className="text-muted">Options: <code>data-kb</code> (e.g., 200/500/1024), <code>data-format</code> (image/webp|image/jpeg), <code>data-resize</code> (e.g., 1920), <code>data-utm-source</code> (default: embed), <code>data-lang</code> (en|zh|es|pt|id), <code>data-bg</code>, <code>data-color</code>, <code>data-radius</code>, <code>data-pad</code>, <code>data-weight</code>, <code>data-text</code>.</p>
         <p className="text-muted">If you lazy‑load HTML, call <code>pixcloakEmbedInit()</code> after inserting elements.</p>
       </div>
     </div>
