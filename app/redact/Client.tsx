@@ -158,7 +158,7 @@ export default function RedactClient() {
       setUserPresets((prev) => [...prev, preset]);
       setPresetKey(key);
       setTimeout(() => applyPreset(), 0);
-    } catch (_) {
+    } catch {
     } finally {
       if (jsonInputRef.current) jsonInputRef.current.value = '';
     }

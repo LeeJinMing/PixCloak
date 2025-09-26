@@ -6,8 +6,6 @@ type OutputFormat = "image/jpeg" | "image/webp" | "image/png";
 type ResizeMode = "none" | "longest" | "exact";
 
 const label: React.CSSProperties = { fontSize: 13, color: "#6b7280" };
-const container: React.CSSProperties = { maxWidth: 960, margin: "0 auto", display: "grid", gap: 16 };
-const btn: React.CSSProperties = { background: "#2563eb", color: "#fff", border: 0, padding: "12px 16px", borderRadius: 8, cursor: "pointer", fontWeight: 600 };
 
 export default function CompressClient() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -22,10 +20,9 @@ export default function CompressClient() {
   const [busy, setBusy] = useState<boolean>(false);
   const [progressCount, setProgressCount] = useState<number>(0);
   const [format, setFormat] = useState<OutputFormat>("image/jpeg");
-  const [prefix, setPrefix] = useState<string>("");
-  const [suffix, setSuffix] = useState<string>("-compressed");
-  const [keepExt, setKeepExt] = useState<boolean>(false);
-  const [dragOver, setDragOver] = useState<boolean>(false);
+  const [prefix] = useState<string>("");
+  const [suffix] = useState<string>("-compressed");
+  const [keepExt] = useState<boolean>(false);
   const [successMsg, setSuccessMsg] = useState<string>("");
   const [copyMsg, setCopyMsg] = useState<string>("");
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
@@ -40,7 +37,7 @@ export default function CompressClient() {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [busy, files.length]);
+  }, [busy, files.length, compressAll]);
 
   useEffect(() => {
     const kb = searchParams.get("kb");
