@@ -55,6 +55,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/id-kompres-menjadi-1mb",
     "/guides/platform-image-limits-zh",
     "/guides/languages",
+    "/guides/privacy-compliance",
+    "/guides/research-quality-size-curves",
     ...scenarios.map((s) => `/guides/long-tail/${s.slug}`),
   ];
   return urls.map((u) => ({ url: `${base}${u}`, lastModified: now }));
