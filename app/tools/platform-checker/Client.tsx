@@ -11,7 +11,7 @@ const RULES: Rule[] = [
   { name: "YouTube Thumbnail", maxKB: 200, maxW: 1280, maxH: 720, notes: "1280×720 ≤ 200KB", ctas: [{ label: "200KB", href: "/?kb=200" }] },
 ];
 
-export default function Client(){
+export default function Client() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [ruleIndex, setRuleIndex] = useState(0);
   const rule = useMemo(() => RULES[ruleIndex], [ruleIndex]);
@@ -19,7 +19,7 @@ export default function Client(){
   const [w, setW] = useState<number | null>(null);
   const [h, setH] = useState<number | null>(null);
 
-  async function onPick(e: React.ChangeEvent<HTMLInputElement>){
+  async function onPick(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0]; if (!f) return;
     setKb(Math.round(f.size / 1024));
     const bmp = await createImageBitmap(f);

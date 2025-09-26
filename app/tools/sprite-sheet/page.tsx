@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Combine multiple images into a sprite sheet with JSON mapping and download ZIP.",
   alternates: { canonical: "/tools/sprite-sheet" },
 };
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 

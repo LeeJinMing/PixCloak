@@ -11,8 +11,8 @@ function dist2(r1: number, g1: number, b1: number, r2: number, g2: number, b2: n
   const dr = r1 - r2, dg = g1 - g2, db = b1 - b2; return dr * dr + dg * dg + db * db;
 }
 
-export default function Page(){
-  return <Client/>;
+export default function Page() {
+  return <Client />;
 }
 
 
