@@ -3,13 +3,16 @@ import { notFound } from "next/navigation";
 import { scenarios } from "@/lib/seo-scenarios";
 import RelatedTasks from "@/components/RelatedTasks";
 
+type MaybePromise<T> = T | Promise<T>;
+type PageProps = { params: MaybePromise<{ slug: string }> };
+
 export function generateStaticParams() {
   return scenarios.map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const p = await Promise.resolve(params);
-  const s = scenarios.find((x) => x.slug === p?.slug);
+  const s = scenarios.find((x) => x.slug === p.slug);
   if (!s) return {} as Metadata;
   return {
     title: s.title,
@@ -20,9 +23,9 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: any) {
+export default async function Page({ params }: PageProps) {
   const p = await Promise.resolve(params);
-  const s = scenarios.find((x) => x.slug === p?.slug);
+  const s = scenarios.find((x) => x.slug === p.slug);
   if (!s) return notFound();
   return (
     <div className="container" style={{ display: 'grid', gap: 16 }}>

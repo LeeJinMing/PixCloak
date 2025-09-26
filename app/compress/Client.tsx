@@ -160,7 +160,7 @@ export default function CompressClient() {
     } finally {
       setBusy(false);
     }
-  }, [files, format, keepExt, prefix, suffix, quality, resizeA, resizeB, resizeMode, targetKb]);
+  }, [files, format, keepExt, prefix, suffix, quality, resizeA, resizeB, resizeMode, targetKb, buildName, compressOne]);
 
   async function downloadZip() {
     if (!results.length) return;
