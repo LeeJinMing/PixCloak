@@ -13,6 +13,8 @@ export default function ToolsPage() {
     { href: '/tools/dataurl-alt', title: 'Data URL + Alt', desc: 'Base64 data URL converter with alt suggestions.' },
     { href: '/tools/dpi-converter', title: 'DPI/PPI Converter', desc: 'Pixels ↔ print size by DPI/PPI.' },
     { href: '/tools/watermark', title: 'Text Watermark', desc: 'Overlay text watermark and export.' },
+    { href: '/tools/lqip', title: 'LQIP Placeholder', desc: 'Tiny Base64 placeholder with blur.' },
+    { href: '/tools/batch-rename', title: 'Batch Rename', desc: 'Rename with patterns and ZIP download.' },
   ];
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

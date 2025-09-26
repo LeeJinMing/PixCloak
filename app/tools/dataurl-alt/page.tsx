@@ -101,12 +101,12 @@ export default function Page() {
           {format === 'image/jpeg' && (
             <label>
               Quality
-              <input className="input" type="number" min={0.1} max={1} step={0.01} value={quality} onChange={(e)=>setQuality(parseFloat(e.target.value)||0.92)} style={{ width: 96, marginLeft: 8 }} />
+              <input className="input" type="number" min={0.1} max={1} step={0.01} value={quality} onChange={(e) => setQuality(parseFloat(e.target.value) || 0.92)} style={{ width: 96, marginLeft: 8 }} />
             </label>
           )}
           <button className="button" onClick={convert} disabled={!file || busy}>{busy ? 'Processing…' : 'Convert'}</button>
         </div>
-        {dims && <div className="text-muted" style={{ marginTop: 8 }}>Source: {dims.w}×{dims.h} • {(file?.size ? (file.size/1024).toFixed(1) : '-') } KB</div>}
+        {dims && <div className="text-muted" style={{ marginTop: 8 }}>Source: {dims.w}×{dims.h} • {(file?.size ? (file.size / 1024).toFixed(1) : '-')} KB</div>}
       </div>
 
       {dataUrl && (
