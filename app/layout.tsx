@@ -14,6 +14,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "PixCloak", template: "%s · PixCloak" },
   description: "Privacy & Performance: Compress and Redact images in your browser",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "x-default": "/",
+      en: "/",
+      "en-US": "/",
+      "en-GB": "/",
+    },
+  },
   openGraph: {
     type: "website",
     url: siteUrl,

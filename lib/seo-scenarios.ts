@@ -10,27 +10,35 @@ export const scenarios: Scenario[] = [
   {
     slug: "webp-converter-batch",
     title: "Batch convert images to WebP and ZIP",
-    description: "Convert multiple images to WebP in-browser and download as a ZIP.",
+    description:
+      "Convert multiple images to WebP in-browser and download as a ZIP.",
     presets: [
       { label: "WebP Converter", href: "/tools/webp-converter" },
-      { label: "500KB", href: "/?kb=500" }
+      { label: "500KB", href: "/?kb=500" },
     ],
     faq: [
-      { q: "Will quality drop?", a: "Use quality 0.8–0.95 for photos; preview results before exporting." },
-      { q: "PNG or WebP?", a: "UI/screens → PNG; photos → WebP/JPEG." }
-    ]
+      {
+        q: "Will quality drop?",
+        a: "Use quality 0.8–0.95 for photos; preview results before exporting.",
+      },
+      { q: "PNG or WebP?", a: "UI/screens → PNG; photos → WebP/JPEG." },
+    ],
   },
   {
     slug: "remove-bg-lite-color",
     title: "Quick background removal by color similarity",
-    description: "Pick a color and remove similar background locally; export PNG.",
+    description:
+      "Pick a color and remove similar background locally; export PNG.",
     presets: [
       { label: "Remove BG (Lite)", href: "/tools/remove-bg-lite" },
-      { label: "EXIF/GPS Removal", href: "/tools/exif-checker" }
+      { label: "EXIF/GPS Removal", href: "/tools/exif-checker" },
     ],
     faq: [
-      { q: "Hair edges?", a: "Increase tolerance gently; for precise cutouts use a full editor when needed." }
-    ]
+      {
+        q: "Hair edges?",
+        a: "Increase tolerance gently; for precise cutouts use a full editor when needed.",
+      },
+    ],
   },
   {
     slug: "sprite-sheet-generator",
@@ -38,35 +46,43 @@ export const scenarios: Scenario[] = [
     description: "Build a compact sprite.png with mapping JSON for web apps.",
     presets: [
       { label: "Sprite Sheet", href: "/tools/sprite-sheet" },
-      { label: "srcset Generator", href: "/tools/srcset-generator" }
+      { label: "srcset Generator", href: "/tools/srcset-generator" },
     ],
     faq: [
-      { q: "How many columns?", a: "Try 4–8; keep gap small to save space." }
-    ]
+      { q: "How many columns?", a: "Try 4–8; keep gap small to save space." },
+    ],
   },
   {
     slug: "lqip-placeholders",
     title: "Generate LQIP placeholders (Base64)",
-    description: "Create tiny blurred placeholders to improve perceived performance.",
+    description:
+      "Create tiny blurred placeholders to improve perceived performance.",
     presets: [
       { label: "LQIP Generator", href: "/tools/lqip" },
-      { label: "srcset Generator", href: "/tools/srcset-generator" }
+      { label: "srcset Generator", href: "/tools/srcset-generator" },
     ],
     faq: [
-      { q: "Width?", a: "Use 16–32px; keep JPEG quality ~0.5 to minimize size." }
-    ]
+      {
+        q: "Width?",
+        a: "Use 16–32px; keep JPEG quality ~0.5 to minimize size.",
+      },
+    ],
   },
   {
     slug: "text-watermark-batch",
     title: "Add text watermark and export",
-    description: "Overlay text watermark locally with adjustable opacity/position.",
+    description:
+      "Overlay text watermark locally with adjustable opacity/position.",
     presets: [
       { label: "Text Watermark", href: "/tools/watermark" },
-      { label: "Remove EXIF/GPS", href: "/tools/exif-checker" }
+      { label: "Remove EXIF/GPS", href: "/tools/exif-checker" },
     ],
     faq: [
-      { q: "Best placement?", a: "Bottom‑right with subtle opacity; keep contrast readable." }
-    ]
+      {
+        q: "Best placement?",
+        a: "Bottom‑right with subtle opacity; keep contrast readable.",
+      },
+    ],
   },
   {
     slug: "crop-and-pad-ratios",
@@ -74,11 +90,14 @@ export const scenarios: Scenario[] = [
     description: "Quickly crop 1:1/4:3/16:9 or pad to fit exact ratios.",
     presets: [
       { label: "Crop Templates", href: "/tools/crop-templates" },
-      { label: "Aspect Padder", href: "/tools/aspect-pad" }
+      { label: "Aspect Padder", href: "/tools/aspect-pad" },
     ],
     faq: [
-      { q: "When to pad?", a: "Pad when you must keep full content without cropping." }
-    ]
+      {
+        q: "When to pad?",
+        a: "Pad when you must keep full content without cropping.",
+      },
+    ],
   },
   {
     slug: "resume-200kb",

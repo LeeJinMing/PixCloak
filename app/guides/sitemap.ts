@@ -6,6 +6,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const urls = [
     "/guides",
+    "/guides/blur-face-in-photo",
+    "/guides/black-out-text-in-image",
+    "/guides/blur-number-plate-online",
+    "/guides/compress-image-to-100kb",
+    "/guides/redact-screenshot-mac",
+    "/guides/remove-gps-data-from-photos",
+    "/guides/convert-jpg-to-webp-online",
     "/guides/compress-to-target-kb",
     "/guides/es-comprimir-a-kb-objetivo",
     "/guides/pt-comprimir-para-kb-alvo",
