@@ -48,9 +48,9 @@ export default async function Page({ params }: PageProps) {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
-              { '@type': 'ListItem', position: 2, name: 'Guides', item: '/guides' },
-              { '@type': 'ListItem', position: 3, name: s.title, item: `/guides/long-tail/${s.slug}` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${(process.env.NEXT_PUBLIC_SITE_URL || 'https://pixcloak.com').replace(/\/$/, '')}/` },
+              { '@type': 'ListItem', position: 2, name: 'Guides', item: `${(process.env.NEXT_PUBLIC_SITE_URL || 'https://pixcloak.com').replace(/\/$/, '')}/guides` },
+              { '@type': 'ListItem', position: 3, name: s.title, item: `${(process.env.NEXT_PUBLIC_SITE_URL || 'https://pixcloak.com').replace(/\/$/, '')}/guides/long-tail/${s.slug}` },
             ],
           })
         }}

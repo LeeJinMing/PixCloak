@@ -1,6 +1,7 @@
 import RelatedTasks from "@/components/RelatedTasks";
 
 export default function MarketingGuidesLayout({ children }: { children: React.ReactNode }) {
+  const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com").replace(/\/$/, "");
   return (
     <>
       <script
@@ -10,8 +11,8 @@ export default function MarketingGuidesLayout({ children }: { children: React.Re
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
-              { '@type': 'ListItem', position: 2, name: 'Guides', item: '/guides' },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${base}/` },
+              { '@type': 'ListItem', position: 2, name: 'Guides', item: `${base}/guides` },
             ],
           })
         }}
