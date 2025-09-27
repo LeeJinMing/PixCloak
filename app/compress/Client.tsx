@@ -518,7 +518,6 @@ export default function CompressClient() {
               <FaqItem key={idx} q={item.q} a={item.a} />
             ))}
           </div>
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }) }} />
         </div>
       )}
     </div>
