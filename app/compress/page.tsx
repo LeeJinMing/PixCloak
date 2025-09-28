@@ -20,6 +20,10 @@ export const metadata: Metadata = {
       id: "/compress-id",
     },
   },
+  // Disable Google Auto ads on this tool page; we render manual side rails & bottom units only
+  other: {
+    'google-adsense-page-ads': 'disable'
+  }
 };
 
 export default function Page() {
