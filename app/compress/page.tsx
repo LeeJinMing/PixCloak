@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline, no uploads needed. Convert JPEG, PNG, WebP instantly. Perfect for web, email, and social media.",
   alternates: {
-    canonical: "/",
+    canonical: "/compress",
     languages: {
       "x-default": "/compress",
       en: "/compress",
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
-    description: "Compress images to exact sizes without losing quality. Works offline, no uploads. Perfect for web, email, and social media.",
-    url: "/",
+    description: "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline, no uploads needed.",
+    url: "/compress",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB",
-    description: "Compress images to exact sizes without losing quality. Works offline, no uploads needed.",
+    title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
+    description: "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline.",
   },
   // Disable Google Auto ads on this tool page; we render manual side rails & bottom units only
   other: {
