@@ -1,0 +1,225 @@
+# Cursor 项目协作与实施规则 (.cursorrules)
+
+## 目标与范围
+- 项目域名：pixcloak.com。
+- 产品策略：
+  - 首页主工具：图片压缩（本地处理）。
+  - 第二主工具：图片隐私脱敏（本地处理，AI仅做建议型识别，后期加入）。
+  - 辅助：批量处理、模板库、程序化 SEO /guides。
+- 原则：最小可行、隐私优先、前端本地、干净体验、可扩展品牌。
+
+## 代码与目录
+- 前端框架：Next.js（App Router）+ TypeScript。
+- 目录规范：
+  - `app/`：路由与页面；`app/(marketing)` 放 About/Privacy/Terms；`app/(tools)` 放工具页。
+  - `components/`：通用组件；`features/`：业务块（compress、redact、batch、templates）。
+  - `lib/`：工具与核心逻辑；`public/`：静态资源。
+  - `styles/`：样式；`types/`：类型定义。
+- 命名：语义化、英文全小写、短横线分词（文件/路由）。
+
+## 工程规范
+- TypeScript 严格模式；ESLint + Prettier；组件使用函数式。
+- 不引入重型状态库，优先局部状态与轻量 Context。
+- 性能：Web Worker/OffscreenCanvas 处理大图；懒加载与并发限制；Core Web Vitals 合格。
+- 隐私：默认本地处理，不上传；明示隐私声明；第三方脚本最小化。
+  - AdSense 投放（全站开启，但受严格开关与位置限制）：
+    - 仅在生产环境且 `NEXT_PUBLIC_ADSENSE="true"` 与 `NEXT_PUBLIC_ADSENSE_CLIENT` 均设置时加载脚本；其余环境不加载。
+    - 工具页（`/compress`、`/redact`、`/batch`、`/templates`）仅允许在“底部”与“页面左右侧边（不遮挡操作区）”渲染广告；不得影响主要交互区域。
+    - 其他页面（含 `app/(marketing)`）不做位置限制，但仍应遵守不干扰内容阅读与核心动作的体验原则。
+    - 若将来策略变更，需同步更新本文件并在 PR 中标注“更新.cursorrules”。
+
+## UI/UX
+- 极简、单屏完成主要任务；键盘快捷键（如空格应用遮罩、Delete删除）。
+- 移动优先；深浅色模式支持；清晰的空态与错误提示。
+
+## 功能里程碑（MVP）
+- /compress：
+  - 拖拽/选择图片、质量滑杆、预览对比、下载；批量与ZIP导出（基础版）。
+- /redact：
+  - 手动框选遮盖（实色/强像素化）、EXIF/GPS 清除、导出；AI识别后续迭代。
+- /templates 与 /batch：占位与最小路由，逐步充实。
+- /guides：信息增益型页面骨架（FAQ/更新时间/引用）。
+
+## SEO 与合规
+
+### SEO 核心原则
+- **用户搜索习惯优先**：使用欧美用户实际搜索的词汇，避免过度技术化表达。
+- **内容深度优先**：Guides页面最低800词，包含Why/How/When/Tips章节。
+- **结构化数据完整**：所有页面必须有Schema.org标记(SoftwareApplication/FAQPage/Article/HowTo/BreadcrumbList)。
+- **Metadata完整性**：每个页面必须包含完整的title/description/canonical/OG/Twitter标签。
+
+### Metadata 规范
+
+#### Title 标签
+- **长度**: 55-60字符（含品牌）
+- **格式**: `[主关键词] [修饰词/USP] | PixCloak`
+- **必含元素**: 主关键词(靠前) + 1-2个差异化词(Free/No Upload/Offline) + 品牌词
+- **示例**: `Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload`
+- **避免**: 过短(<50字符)、堆砌关键词、纯技术术语
+
+#### Description 标签
+- **长度**: 150-160字符
+- **格式**: [核心价值]. [如何实现/步骤]. [适用场景]. [USP].
+- **必含元素**: 主关键词 + 场景词(for web/email/social) + 行动号召 + USP
+- **示例**: `Compress images to exact sizes (100KB, 200KB, 500KB) without losing quality. Works offline, no uploads needed. Convert JPEG, PNG, WebP instantly. Perfect for web, email, and social media.`
+- **避免**: 过短(<140字符)、无场景词、无行动号召
+
+#### Canonical 标签
+- **必须**: 每个页面明确设置 `alternates.canonical`
+- **多语言**: 正确配置 `languages` 对象，包含 x-default/en/es/pt/id/zh
+- **规则**: 英文版为默认canonical，其他语言版本用hreflang互指
+
+### 关键词使用规范
+
+#### 优先使用的表达（符合欧美搜索习惯）
+- ✅ **动词**: compress, reduce, make smaller, convert, blur, hide, remove
+- ✅ **修饰词**: free, simple, fast, easy, no upload, no app, offline, private
+- ✅ **场景词**: for web, for email, for social media, for resume, for website
+- ✅ **具体数字**: to 100KB, to 200KB, in 3 steps, 2 minutes
+
+#### 避免使用的表达（过度技术化）
+- ❌ **避免**: optimize (用compress), diminish (用reduce), anonymize (用blur/hide)
+- ❌ **避免**: leverage, utilize, revolutionary, cutting-edge, powerful
+- ❌ **慎用**: metadata (改为EXIF data), geolocation (改为GPS), obfuscate
+
+### 内容结构规范
+
+#### Guides 页面必备章节（最少800词）
+```markdown
+# [H1: 问题型标题 - 包含主关键词]
+
+## Why [做这件事]? (150-200词)
+- 用户场景与痛点
+- 真实问题描述
+- GDPR/隐私背景(如适用)
+
+## How to [操作]: Step-by-step (300-400词)
+1. 详细步骤(可含截图占位)
+2. 关键设置说明
+3. 常见选项解释
+
+## Tips & Best Practices (200-250词)
+- 最佳实践5-8条
+- 避免的常见错误
+- 专业建议
+
+## When to [使用场景] (150-200词)
+- 适用场景清单
+- 不适用场景说明
+- 替代方案
+
+## FAQ (5-8个问题，含JSON-LD)
+[使用FaqJsonLd组件]
+
+## Related guides
+[内链到3-5个相关页面]
+```
+
+#### Hub 页面（Pillar Content, 2500-3500词）
+- 包含目录(Table of Contents)
+- 每个子主题300-500词
+- 至少15个FAQ
+- 链接到所有相关spoke页面
+- 包含数据/图表(如适用)
+
+### 结构化数据规范
+
+#### 所有页面必须包含
+1. **根layout**: Organization + WebSite schema
+2. **工具页**: SoftwareApplication + FAQPage
+3. **Guides**: Article + HowTo/FAQPage + BreadcrumbList
+4. **索引页**: ItemList
+
+#### Schema示例模板
+```typescript
+// 工具页
+<SoftwareAppJsonLd name="..." url="..." description="..." />
+<FaqJsonLd items={[...]} />
+
+// Guides页面
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[title]",
+  "datePublished": "2025-10-01",
+  "dateModified": "2025-10-01",
+  "author": { "@type": "Organization", "name": "PixCloak" }
+}
+</script>
+```
+
+### 技术SEO检查清单
+
+#### 新页面创建时必查
+- [ ] Title是否55-60字符?
+- [ ] Description是否150-160字符?
+- [ ] 是否有完整metadata(canonical/OG/Twitter)?
+- [ ] H1标签是否唯一且包含主关键词?
+- [ ] 是否有至少1个结构化数据?
+- [ ] 内链是否指向3+相关页面?
+- [ ] 图片是否有描述性alt属性?
+- [ ] 内容是否至少800词(Guides)?
+
+#### Sitemap规范
+- 主站点地图: `/app/sitemap.ts` (包含核心页面)
+- Guides站点地图: `/app/guides/sitemap.ts` (包含所有guides+长尾页)
+- 使用静态`lastModified`日期，避免每次构建都变
+- 设置合理的`changeFrequency`和`priority`
+
+### 内链策略
+
+#### Hub-Spoke 模型
+- **Hub页面**: 综合指南(如"Complete Image Compression Guide")
+- **Spoke页面**: 具体主题(如"Compress to 200KB")
+- **规则**: Spoke页面必须链回Hub，Hub页面链接所有Spoke
+
+#### Related Links 规范
+- 每个guides页面底部至少3-5个相关链接
+- 使用描述性锚文本(避免"click here")
+- 优先链接同主题的其他guides
+- 次要链接到工具页(带预设参数，如`?kb=200`)
+
+### 禁止内容
+- ❌ 禁止"去水印/remove watermark"类内容（版权风险）
+- ❌ 禁止"下载YouTube/download video"类内容（AdSense风险）
+- ❌ 禁止"bypass upload limit/hack"类内容（违规）
+- ❌ 禁止成人内容关键词
+
+### 合规要求
+- About/Privacy/Terms/Contact 页面齐全且及时更新
+- 隐私政策明确说明"本地处理，不上传"
+- GDPR/CCPA相关声明(如用到analytics/ads)
+- 引用数据时标注来源(如research页面)
+
+### 监控与迭代
+- **周度**: 检查GSC "已抓取-未索引"页面，分析原因
+- **月度**: 审查CTR<2%的页面，优化Title/Description
+- **季度**: 扩充Top 20流量页面的内容深度
+- **持续**: 收集GSC真实搜索词，发现新长尾词机会
+
+### SEO 文档参考
+项目包含完整SEO审查文档(位于根目录):
+- `SEO-AUDIT-REPORT.md`: 详细问题分析与竞品对照
+- `SEO-ACTION-PLAN.md`: 分周实施计划与模板
+- `KEYWORDS-LIBRARY.md`: 1000+关键词库与用户表达习惯
+- `SEO-EXECUTIVE-SUMMARY.md`: 3分钟执行摘要
+
+编写SEO相关内容时，必须参考以上文档中的关键词库和用户表达习惯对照表。
+
+## 提交规范
+- 分支：feature/*、fix/*；PR 描述包含动机与影响；小步提交。
+- Commit 风格：`feat: `、`fix: `、`refactor: `、`chore: `、`docs: `。
+
+## 内容更新规则
+- 当结构或规则变更时，必须同步更新本文件，并在 PR 中标注“更新.cursorrules”。
+
+更新记录：
+- 2025-09-26：新增 AdSense 例外说明（仅营销分组，生产与 env 开关双重限制）。
+- 2025-09-26（2）：调整为全站可投放；工具页仅底部与侧边，生产+env 双重开关。
+- 2025-10-03：全面扩充SEO规范章节，基于完整SEO审查报告，新增Metadata规范、关键词使用规范、内容结构规范、技术SEO检查清单等详细指导。
+
+## 开源与商业（Open Core）
+- 开源协议：AGPL-3.0-only（核心功能）。
+- 商业模块：批量上限提升、模板库、合规报告、CLI/API、团队/白标（独立商业授权）。
+- 文档：仓库包含 LICENSE、COMMERCIAL.md、README、CONTRIBUTING、CODE_OF_CONDUCT、SECURITY、.github/FUNDING.yml。
