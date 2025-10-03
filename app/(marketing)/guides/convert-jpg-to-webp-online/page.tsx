@@ -2,9 +2,26 @@ import type { Metadata } from "next";
 import { FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Convert JPG to WebP Online (Local) | PixCloak",
-  description: "Convert JPEG to WebP locally in your browser—no uploads, smaller size.",
-  alternates: { canonical: "/guides/convert-jpg-to-webp-online" },
+  title: "Convert JPG to WebP Online (Free, Smaller File Size) | PixCloak",
+  description: "Convert JPEG to WebP and reduce file size by 30-50%. Free online tool works in browser—no uploads, no limits. Batch convert multiple images. Perfect for faster websites.",
+  alternates: {
+    canonical: "/guides/convert-jpg-to-webp-online",
+    languages: {
+      'x-default': "/guides/convert-jpg-to-webp-online",
+      en: "/guides/convert-jpg-to-webp-online",
+    }
+  },
+  openGraph: {
+    title: "Convert JPG to WebP Online (Free, Smaller File Size)",
+    description: "Convert JPEG to WebP and reduce file size by 30-50%. Free online tool works in browser—no uploads, no limits.",
+    url: "/guides/convert-jpg-to-webp-online",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Convert JPG to WebP Online",
+    description: "Reduce file size by 30-50%. Free tool, works in browser. No uploads.",
+  },
 };
 
 export default function GuideConvertJpgToWebp() {

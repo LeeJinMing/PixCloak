@@ -5,9 +5,9 @@ import AdsenseUnit from "@/components/Adsense";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Redact Images (Blur/Pixelate/Censor) – Local, No Upload | PixCloak",
+  title: "Free Photo Redaction Tool: Blur Faces & Remove EXIF | PixCloak",
   description:
-    "Redact photos locally: blur faces, pixelate license plates, black out text, and remove EXIF/GPS. 100% in‑browser, privacy‑first.",
+    "Redact sensitive info in photos—blur faces, hide license plates, black out text. Remove EXIF/GPS metadata automatically. 100% local processing, no uploads. GDPR-friendly privacy protection.",
   alternates: {
     canonical: "/redact",
     languages: {
@@ -19,6 +19,17 @@ export const metadata: Metadata = {
       pt: "/redact-pt",
       id: "/redact-id",
     },
+  },
+  openGraph: {
+    title: "Free Photo Redaction Tool: Blur Faces & Remove EXIF",
+    description: "Blur faces, hide license plates, remove EXIF/GPS. 100% local processing, no uploads.",
+    url: "/redact",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Photo Redaction Tool: Blur Faces & Remove EXIF",
+    description: "Redact sensitive info in photos. 100% local, no uploads. GDPR-friendly.",
   },
 };
 

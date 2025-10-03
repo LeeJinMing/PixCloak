@@ -5,9 +5,9 @@ import AdsenseUnit from "@/components/Adsense";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Online Image Compressor – Reduce File Size to KB | PixCloak",
+  title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
   description:
-    "Compress images to 100KB/200KB/500KB/1MB, choose JPEG/WebP/PNG, resize to 1920, and batch ZIP. 100% local processing—no upload, privacy‑first.",
+    "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline, no uploads needed. Convert JPEG, PNG, WebP instantly. Perfect for web, email, and social media.",
   alternates: {
     canonical: "/",
     languages: {
@@ -19,6 +19,17 @@ export const metadata: Metadata = {
       pt: "/compress-pt",
       id: "/compress-id",
     },
+  },
+  openGraph: {
+    title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
+    description: "Compress images to exact sizes without losing quality. Works offline, no uploads. Perfect for web, email, and social media.",
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB",
+    description: "Compress images to exact sizes without losing quality. Works offline, no uploads needed.",
   },
   // Disable Google Auto ads on this tool page; we render manual side rails & bottom units only
   other: {
