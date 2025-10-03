@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
+  title: "Resize Images by Longest Side to 1920px (Free, Best for Web) | PixCloak",
+  description: "Reduce image dimensions to 1920px longest side for websites, blogs, and social media. Maintains aspect ratio. Works for photos from iPhone, DSLR, any camera. No upload needed.",
   alternates: {
     canonical: '/guides/resize-longest-side',
     languages: {
@@ -11,6 +14,17 @@ export const metadata: Metadata = {
       pt: '/guides/pt-redimensionar-lado-mais-longo',
       id: '/guides/id-ubah-ukuran-sisi-terpanjang',
     },
+  },
+  openGraph: {
+    title: "Resize Images by Longest Side to 1920px (Free, Best for Web)",
+    description: "Reduce image dimensions to 1920px for websites, blogs, social media. Maintains aspect ratio. No upload needed.",
+    url: "/guides/resize-longest-side",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resize Images to 1920px Longest Side",
+    description: "Perfect for web. Maintains aspect ratio. Free tool, no upload.",
   },
 };
 
@@ -25,6 +39,15 @@ export default function GuideResizeLongest() {
           <li>Compress with desired quality or target size.</li>
         </ol>
         <p className="text-muted">Downscaling before compression saves size dramatically with minimal perceived loss.</p>
+      </div>
+      <FaqJsonLd
+        items={[
+          { question: "Why resize to 1920px before compressing?", answer: "Most screens are 1920px wide or less. Larger dimensions just waste file size. Resizing to 1920px before compression reduces file size by 50-70% with no visible quality loss on screens." },
+          { question: "What does 'longest side' mean?", answer: "For landscape photos (wider than tall), the longest side is width. For portrait photos (taller than wide), it's height. Resizing by longest side maintains aspect ratio automatically." },
+          { question: "Will 1920px work for print?", answer: "No. For print, use 300 DPI and keep original dimensions. 1920px is optimized for digital/web use only." },
+        ]}
+      />
+      <div className="card">
         {/* Structured data: HowTo + Breadcrumb */}
         <script
           type="application/ld+json"
