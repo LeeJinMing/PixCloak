@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Comprimir imagens para 500KB (alta qualidade) | PixCloak',
+  description: 'Reduza para 500KB para blogs, e‑mail e formulários. Redimensione para 1920px e use WebP/JPEG. Processamento local no navegador; download em ZIP.',
   alternates: {
     canonical: '/guides/pt-comprimir-para-500kb',
     languages: {

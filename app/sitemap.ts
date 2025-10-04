@@ -402,7 +402,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${base}/guides/pt-exportar-sem-metadatos`,
+      url: `${base}/guides/pt-exportar-sem-metadados`,
       lastModified: toolsUpdated,
       changeFrequency: "monthly" as const,
       priority: 0.7,

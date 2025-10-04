@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Google Search Console operations (PixCloak)",
-  description: "Checklist to submit sitemaps, request indexing, and diagnose exclusions.",
+  title: "Google Search Console Operations | PixCloak",
+  description: "Practical checklist: submit sitemaps, inspect URLs, handle duplicates, fix soft 404/redirects, and improve CTR. Keep canonical, content, and internal links consistent.",
   alternates: { canonical: "/guides/gsc-operations" },
 };
 

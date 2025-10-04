@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: '平台常见图片限制（体积与尺寸）| PixCloak',
+  description: '头像常见 200KB、帖子常见 500KB、建议最长边 1920px。提供快速预设与本地导出，移除 EXIF/GPS，适合表单/社交/博客等场景。',
   alternates: {
     canonical: '/guides/platform-image-limits-zh',
     languages: {

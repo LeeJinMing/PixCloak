@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Embed “Compress to KB” Button (Link or Script) | PixCloak',
+  description: 'Add a simple link or script‑enhanced button to open PixCloak with presets (KB, format, resize). Local processing—no uploads. Includes customizable styles and data attributes.',
+  alternates: { canonical: '/guides/embed-button' },
+};
+
 export default function GuideEmbedButton() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

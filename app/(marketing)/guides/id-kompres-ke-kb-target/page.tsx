@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Kompres ke target KB (200KB/500KB) | PixCloak',
+  description: 'Capai 200KB/500KB tanpa unggah. Pakai Target (KB), ubah ukuran sisi terpanjang 1920px bila perlu, lalu ekspor WebP/JPEG atau ZIP. Pemrosesan lokal di browser.',
+  alternates: { canonical: '/guides/id-kompres-ke-kb-target', languages: { id: '/guides/id-kompres-ke-kb-target', en: '/guides/compress-to-target-kb' } },
+};
+
 export default function IDCompressTargetKB() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

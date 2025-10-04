@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "EXIF/GPS Metadata Checker – Remove EXIF locally | PixCloak",
   description:
     "Check if an image contains EXIF/GPS metadata and remove it locally in your browser (no upload). Download a clean copy.",
-  alternates: { canonical: "/tools/exif-checker" },
+  alternates: { canonical: "/tools/exif-checker", languages: { "x-default": "/tools/exif-checker" } },
 };
 export default function Page() {
   return <Client />;

@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Avoid Compression Artifacts (WebP/JPEG) | PixCloak',
+  description: 'Reduce banding and halos: downscale first, pick realistic target KB, switch WebP↔JPEG when needed. Preview and export locally with no uploads.',
+  alternates: { canonical: '/guides/avoid-artifacts-webp-jpeg' },
+};
+
 export default function GuideAvoidArtifacts() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

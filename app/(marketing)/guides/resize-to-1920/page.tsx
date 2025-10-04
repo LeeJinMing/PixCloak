@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Resize Longest Side to 1920px (Best for Web) | PixCloak',
+  description: 'Downscale images to 1920px longest side, then compress to 200–800KB for fast web delivery. Keeps aspect ratio. Convert locally—no uploads needed.',
+  alternates: { canonical: '/guides/resize-to-1920' },
+};
+
 export default function GuideResize1920() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

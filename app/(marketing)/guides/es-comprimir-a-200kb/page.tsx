@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Comprimir imágenes a 200KB – Guía rápida',
-  description: 'Reduce tus imágenes a 200KB en el navegador, sin subir archivos. Ajusta calidad, redimensiona y descarga ZIP.',
+  title: 'Comprimir imágenes a 200KB (Gratis, sin subir) | PixCloak',
+  description: 'Comprime a 200KB sin subir archivos: ajusta calidad, redimensiona a 1920px si es necesario y descarga JPEG/WebP o ZIP. Funciona en navegador, gratis y offline.',
   alternates: {
     canonical: '/guides/es-comprimir-a-200kb',
     languages: {

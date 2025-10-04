@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Research: 500KB Quality Range (1920px workflow) | PixCloak',
+  description: 'Method and findings for landing near 500KB across varied content: resize to 1920px, binary‑search quality, and compare artifacts. Practical guidance for photos/UI/low‑light.',
+  alternates: { canonical: '/guides/research-500kb-quality-range' },
+};
+
 export default function Research500KBRange() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact | PixCloak',
+  description: 'Questions or feedback about PixCloak? Email support@pixcloak.com with your scenario and example files (no private data). We typically respond within 1–2 business days.',
+  alternates: { canonical: '/contact' },
+};
+
 export default function ContactPage() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

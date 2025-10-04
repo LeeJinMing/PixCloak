@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Guides Languages Index | PixCloak',
+  description:
+    'Browse image guides in Spanish, Portuguese, Indonesian, and Chinese. Learn how to compress to target KB, resize for web, convert JPG/WebP, and remove EXIF—free, offline.',
+  alternates: { canonical: '/guides/languages' },
+};
+
 export default function GuidesLanguages() {
   const links = [
     { href: '/guides/es-comprimir-a-200kb', label: 'ES: Comprimir a 200KB' },

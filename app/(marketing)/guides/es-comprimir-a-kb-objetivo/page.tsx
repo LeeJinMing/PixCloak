@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Comprimir a tamaño objetivo (200KB/500KB) | PixCloak',
+  description: 'Logra 200KB/500KB sin subir archivos. Usa Target (KB), redimensiona a 1920px si es necesario y exporta WebP/JPEG o ZIP. Procesamiento local en el navegador.',
+  alternates: { canonical: '/guides/es-comprimir-a-kb-objetivo', languages: { es: '/guides/es-comprimir-a-kb-objetivo', en: '/guides/compress-to-target-kb' } },
+};
+
 export default function ESCompressTargetKB() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

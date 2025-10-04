@@ -1,4 +1,11 @@
 import { TEMPLATES } from "@/lib/templates";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Templates: One‑Click Presets | PixCloak',
+  description: 'Start faster with one‑click presets: 200KB/500KB, 1920px resize, WebP/JPEG formats, and privacy‑safe exports. Everything runs locally in your browser.',
+  alternates: { canonical: '/templates' },
+};
 
 export default function TemplatesPage() {
   return (

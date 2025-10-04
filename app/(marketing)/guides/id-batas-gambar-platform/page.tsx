@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Batas gambar per platform (KB & dimensi) | PixCloak',
+  description: 'Avatar 200KB, postingan 500KB, sisi terpanjang 1920px. Preset cepat dan ekspor lokal tanpa unggah. Cocok untuk sosial, blog, dan formulir.',
+  alternates: { canonical: '/guides/id-batas-gambar-platform', languages: { id: '/guides/id-batas-gambar-platform', en: '/guides/platform-image-limits' } },
+};
+
 export default function IDPlatformLimits() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

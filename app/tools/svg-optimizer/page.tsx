@@ -3,7 +3,7 @@ import Client from "./Client";
 
 export const metadata: Metadata = {
   title: "SVG Optimizer – Minify & clean | PixCloak",
-  description: "Paste SVG to minify and clean attributes/styles locally. Export optimized SVG.",
+  description: "Paste SVG code to minify and clean attributes/styles locally. Remove bloat safely and export an optimized SVG. Private, offline—no uploads.",
   alternates: { canonical: "/tools/svg-optimizer" },
 };
 export default function Page() {

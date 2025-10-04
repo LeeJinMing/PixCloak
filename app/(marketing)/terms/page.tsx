@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | PixCloak',
+  description: 'Read the service terms for PixCloak. Lawful use, intellectual property, no uploads by default, disclaimers, limitations, and contact information.',
+  alternates: { canonical: '/terms', languages: { 'x-default': '/terms' } },
+};
+
 export default function TermsPage() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

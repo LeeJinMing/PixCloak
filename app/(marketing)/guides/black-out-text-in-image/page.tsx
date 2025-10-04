@@ -3,7 +3,7 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
   title: "Black Out Text in Images (Censor/Redact) | PixCloak",
-  description: "Censor sensitive text in screenshots by blacking out or pixelating—local processing.",
+  description: "Black out or pixelate sensitive text in screenshots and photos, then export without EXIF/GPS. Works entirely in your browser—no uploads. Ideal for docs, tickets, and support shares.",
   alternates: { canonical: "/guides/black-out-text-in-image" },
 };
 

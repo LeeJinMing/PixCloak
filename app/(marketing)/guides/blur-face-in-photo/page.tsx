@@ -29,34 +29,34 @@ export default function GuideBlurFace() {
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>How to Blur Faces in Photos</h1>
-        
+
         <h2>Why Blur Faces in Photos?</h2>
         <p>
-          Privacy regulations like GDPR (Europe), CCPA (California), and PIPEDA (Canada) require explicit consent before 
-          sharing identifiable photos publicly. Blurring faces protects individuals' privacy rights and prevents legal issues 
+          Privacy regulations like GDPR (Europe), CCPA (California), and PIPEDA (Canada) require explicit consent before
+          sharing identifiable photos publicly. Blurring faces protects individuals' privacy rights and prevents legal issues
           when posting to social media, blogs, forums, or news sites.
         </p>
         <p>
-          Beyond legal compliance, face blurring prevents doxxing, stalking, and identity theft. Children's faces should 
-          always be blurred when sharing school events, playground photos, or family gatherings online. Street photography, 
+          Beyond legal compliance, face blurring prevents doxxing, stalking, and identity theft. Children's faces should
+          always be blurred when sharing school events, playground photos, or family gatherings online. Street photography,
           protest documentation, accident reports, and workplace training materials all require face anonymization before publication.
         </p>
         <p>
-          Many platforms (Facebook, Instagram) don't blur faces automatically. Reddit, forums, and marketplace listings 
-          (selling items with people in background) require manual blurring. Even if people consented to the original photo, 
+          Many platforms (Facebook, Instagram) don&#39;t blur faces automatically. Reddit, forums, and marketplace listings
+          (selling items with people in background) require manual blurring. Even if people consented to the original photo,
           public sharing changes the context—blurring is ethical best practice.
         </p>
 
         <h2>How to Blur Faces: Step-by-Step</h2>
         <ol>
           <li>
-            <strong>Open the redaction tool</strong>: Visit <a href="/redact">/redact</a> in any browser. 
-            Works on iPhone Safari, Android Chrome, desktop browsers—no app installation required. Everything runs locally; 
+            <strong>Open the redaction tool</strong>: Visit <a href="/redact">/redact</a> in any browser.
+            Works on iPhone Safari, Android Chrome, desktop browsers—no app installation required. Everything runs locally;
             photos never leave your device.
           </li>
           <li>
-            <strong>Upload your photo</strong>: Drag and drop the image, or click "Choose Files" to select from your device. 
-            Multiple photos can be processed in batches. File size limits apply only to browser memory, not server uploads—we don't upload anything.
+            <strong>Upload your photo</strong>: Drag and drop the image, or click &quot;Choose Files&quot; to select from your device.
+            Multiple photos can be processed in batches. File size limits apply only to browser memory, not server uploads—we don&#39;t upload anything.
           </li>
           <li>
             <strong>Select redaction method</strong>: Three options available:
@@ -67,20 +67,20 @@ export default function GuideBlurFace() {
             </ul>
           </li>
           <li>
-            <strong>Draw redaction boxes</strong>: Click and drag to create a rectangle over each face. Pro tip: make boxes 
-            10-20% larger than the face to prevent partial exposure at edges. Cover entire head including hair if hair is distinctive 
+            <strong>Draw redaction boxes</strong>: Click and drag to create a rectangle over each face. Pro tip: make boxes
+            10-20% larger than the face to prevent partial exposure at edges. Cover entire head including hair if hair is distinctive
             (unusual color, style).
           </li>
           <li>
-            <strong>Use presets for speed</strong>: The tool includes "Face" preset with recommended blur strength. Adjust intensity 
+            <strong>Use presets for speed</strong>: The tool includes &quot;Face&quot; preset with recommended blur strength. Adjust intensity
             slider if needed—higher values = stronger anonymization but may look unnatural.
           </li>
           <li>
-            <strong>Review carefully</strong>: Zoom in to check edges. Ensure no partial face features visible (chin, forehead edges). 
+            <strong>Review carefully</strong>: Zoom in to check edges. Ensure no partial face features visible (chin, forehead edges).
             Check reflections in windows, mirrors, sunglasses—faces can appear in unexpected places.
           </li>
           <li>
-            <strong>Export</strong>: Click "Download". Exported images have EXIF/GPS automatically stripped for additional privacy. 
+            <strong>Export</strong>: Click &quot;Download&quot;. Exported images have EXIF/GPS automatically stripped for additional privacy.
             Choose JPEG for smallest file size or PNG if image contains text/graphics needing sharpness.
           </li>
           <li>
@@ -92,13 +92,13 @@ export default function GuideBlurFace() {
         <ul>
           <li><strong>Use pixelate, not soft blur</strong>: Security researchers have demonstrated blur reversal using AI. Pixelation with 20px+ blocks is much safer.</li>
           <li><strong>Make boxes generously sized</strong>: Better to blur extra background than leave part of a face visible. Hairlines and chins can be identifying.</li>
-          <li><strong>Don't forget reflections</strong>: Check car windows, storefront glass, phone screens in photos. Faces often reflect in unexpected surfaces.</li>
+          <li><strong>Don&#39;t forget reflections</strong>: Check car windows, storefront glass, phone screens in photos. Faces often reflect in unexpected surfaces.</li>
           <li><strong>Check sunglasses and glasses</strong>: Reflections in eyewear can reveal what the person is looking at—sometimes revealing other faces or private information.</li>
           <li><strong>Consider distinctive features</strong>: Unusual tattoos, scars, birthmarks can be identifying even with face blurred. Blur these too if privacy is critical.</li>
-          <li><strong>Blur children's faces always</strong>: Even if they're your own kids. Once online, photos can be copied and misused. Err on side of overprotection.</li>
-          <li><strong>Ask permission anyway</strong>: Blurring doesn't replace consent. If possible, ask people before sharing their photo, even blurred.</li>
+          <li><strong>Blur children&#39;s faces always</strong>: Even if they&#39;re your own kids. Once online, photos can be copied and misused. Err on side of overprotection.</li>
+          <li><strong>Ask permission anyway</strong>: Blurring doesn&#39;t replace consent. If possible, ask people before sharing their photo, even blurred.</li>
           <li><strong>Test reversibility</strong>: After blurring, ask someone unfamiliar with the subjects if they can identify anyone. If yes, increase blur strength.</li>
-          <li><strong>Keep original unblurred copy privately</strong>: In case you need it later for legal purposes or different context. Store securely, don't share publicly.</li>
+          <li><strong>Keep original unblurred copy privately</strong>: In case you need it later for legal purposes or different context. Store securely, don&#39;t share publicly.</li>
         </ul>
 
         <h2>When to Blur Faces</h2>
@@ -142,37 +142,37 @@ export default function GuideBlurFace() {
 
       <FaqJsonLd
         items={[
-          { 
-            question: "How to blur faces in photos for free?", 
-            answer: "Use our browser-based redaction tool at pixcloak.com/redact. No app download or account needed. Upload photo, draw boxes over faces, choose pixelate or blur, then export. Works on iPhone, Android, desktop—all processing is local, no uploads." 
+          {
+            question: "How to blur faces in photos for free?",
+            answer: "Use our browser-based redaction tool at pixcloak.com/redact. No app download or account needed. Upload photo, draw boxes over faces, choose pixelate or blur, then export. Works on iPhone, Android, desktop—all processing is local, no uploads."
           },
-          { 
-            question: "Should I use blur or pixelate for faces?", 
-            answer: "Use pixelate (20-50px mosaic) for best privacy. Soft blur can sometimes be reversed using AI tools. Pixelation is nearly impossible to reverse. For GDPR compliance or sensitive photos, use solid blocks (100% irreversible)." 
+          {
+            question: "Should I use blur or pixelate for faces?",
+            answer: "Use pixelate (20-50px mosaic) for best privacy. Soft blur can sometimes be reversed using AI tools. Pixelation is nearly impossible to reverse. For GDPR compliance or sensitive photos, use solid blocks (100% irreversible)."
           },
-          { 
-            question: "Is it legal to post photos of people without blurring?", 
-            answer: "Depends on jurisdiction. EU/UK (GDPR) requires consent for identifiable faces in public photos. US has fewer restrictions but varies by state. Canada (PIPEDA) also requires consent. Always blur children's faces regardless of location." 
+          {
+            question: "Is it legal to post photos of people without blurring?",
+            answer: "Depends on jurisdiction. EU/UK (GDPR) requires consent for identifiable faces in public photos. US has fewer restrictions but varies by state. Canada (PIPEDA) also requires consent. Always blur children&#39;s faces regardless of location."
           },
-          { 
-            question: "Can blurred faces be un-blurred?", 
-            answer: "Soft gaussian blur can sometimes be partially reversed using advanced AI deblurring. Pixelation (mosaic) and solid blocks cannot be reversed—information is permanently destroyed. Use pixelate or solid for strong privacy." 
+          {
+            question: "Can blurred faces be un-blurred?",
+            answer: "Soft gaussian blur can sometimes be partially reversed using advanced AI deblurring. Pixelation (mosaic) and solid blocks cannot be reversed—information is permanently destroyed. Use pixelate or solid for strong privacy."
           },
-          { 
-            question: "Do I need to blur faces in my own photos?", 
-            answer: "Yes, if other people are identifiable and you're sharing publicly. Having someone in your photo doesn't grant automatic rights to publish their face online. GDPR applies even to personal photos shared on social media." 
+          {
+            question: "Do I need to blur faces in my own photos?",
+            answer: "Yes, if other people are identifiable and you&#39;re sharing publicly. Having someone in your photo doesn&#39;t grant automatic rights to publish their face online. GDPR applies even to personal photos shared on social media."
           },
-          { 
-            question: "How do I blur faces on iPhone without an app?", 
-            answer: "Use our web tool in Safari browser: visit pixcloak.com/redact, upload photo from camera roll, blur faces, download blurred version. No app installation needed. Works in iPhone Safari, Chrome, any mobile browser." 
+          {
+            question: "How do I blur faces on iPhone without an app?",
+            answer: "Use our web tool in Safari browser: visit pixcloak.com/redact, upload photo from camera roll, blur faces, download blurred version. No app installation needed. Works in iPhone Safari, Chrome, any mobile browser."
           },
-          { 
-            question: "What parts of the face should I blur?", 
-            answer: "Blur the entire face from hairline to chin, ear to ear. Include distinctive features like unusual hair, glasses, visible tattoos on neck/head. Check for face reflections in windows, mirrors, sunglasses in the photo." 
+          {
+            question: "What parts of the face should I blur?",
+            answer: "Blur the entire face from hairline to chin, ear to ear. Include distinctive features like unusual hair, glasses, visible tattoos on neck/head. Check for face reflections in windows, mirrors, sunglasses in the photo."
           },
-          { 
-            question: "Does blurring faces remove EXIF and GPS data?", 
-            answer: "Our tool automatically strips EXIF/GPS metadata when you export blurred images. This protects location privacy in addition to face privacy. Most other blur tools don't remove metadata—ours does by default." 
+          {
+            question: "Does blurring faces remove EXIF and GPS data?",
+            answer: "Our tool automatically strips EXIF/GPS metadata when you export blurred images. This protects location privacy in addition to face privacy. Most other blur tools don't remove metadata—ours does by default."
           },
         ]}
       />

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: s.title,
     description: s.description,
     alternates: { canonical: path, languages },
-    openGraph: { title: s.title, description: s.description },
+    openGraph: { title: s.title, description: s.description, url: `${(process.env.NEXT_PUBLIC_SITE_URL || 'https://pixcloak.com').replace(/\/$/, '')}${path}` },
     twitter: { title: s.title, description: s.description },
   };
 }

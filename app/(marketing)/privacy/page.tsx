@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | PixCloak',
+  description: 'We design PixCloak with privacy‑first principles. All image processing happens locally in your browser—no uploads, minimal storage, and clear disclosures.',
+  alternates: { canonical: '/privacy', languages: { 'x-default': '/privacy' } },
+};
+
 export default function PrivacyPage() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

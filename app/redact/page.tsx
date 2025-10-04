@@ -43,6 +43,7 @@ export default function Page() {
         <div className="ad-rail" style={{ right: 0 }}>
           <AdsenseUnit format="auto" />
         </div>
+        <h1 style={{ margin: '8px 0' }}>Free Photo Redaction – Blur Faces, Hide Plates, Remove EXIF</h1>
         <RedactClient />
         <div className="ad-bottom">
           <AdsenseUnit format="auto" />

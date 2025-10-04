@@ -29,53 +29,53 @@ export default function GuideConvertJpgToWebp() {
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Convert JPG to WebP Online</h1>
-        
+
         <h2>Why Convert JPEG to WebP?</h2>
         <p>
-          WebP produces 30-50% smaller file sizes than JPEG at equivalent visual quality. For websites, this means faster page loads, 
-          lower bandwidth costs, and better Core Web Vitals scores—all of which improve Google search rankings. A typical 500KB JPEG 
+          WebP produces 30-50% smaller file sizes than JPEG at equivalent visual quality. For websites, this means faster page loads,
+          lower bandwidth costs, and better Core Web Vitals scores—all of which improve Google search rankings. A typical 500KB JPEG
           becomes 200-250KB as WebP with no visible quality loss.
         </p>
         <p>
-          Google developed WebP specifically for web performance. Modern browsers (Chrome, Firefox, Edge, Safari 14+) support WebP 
+          Google developed WebP specifically for web performance. Modern browsers (Chrome, Firefox, Edge, Safari 14+) support WebP
           natively, covering 95%+ of global users. For the remaining 5%, you can provide JPEG fallbacks using HTML `&lt;picture&gt;` tag.
         </p>
         <p>
-          Beyond size reduction, WebP supports both lossy and lossless compression, plus transparency (alpha channel) like PNG but with 
+          Beyond size reduction, WebP supports both lossy and lossless compression, plus transparency (alpha channel) like PNG but with
           better compression. This makes WebP versatile for photos, graphics, logos, and images with transparency—all in one format.
         </p>
 
         <h2>How to Convert JPEG to WebP: Step-by-Step</h2>
         <ol>
           <li>
-            <strong>Open the conversion tool</strong>: Visit <a href="/compress">/compress</a> in any browser. 
+            <strong>Open the conversion tool</strong>: Visit <a href="/compress">/compress</a> in any browser.
             Works on desktop, mobile, tablet—no app download or account required. All processing happens locally in your browser.
           </li>
           <li>
-            <strong>Upload JPEG images</strong>: Drag and drop JPEG/JPG files, or click "Choose Files" to select from your device. 
+            <strong>Upload JPEG images</strong>: Drag and drop JPEG/JPG files, or click "Choose Files" to select from your device.
             You can convert multiple images simultaneously (batch conversion). Files stay on your device—never uploaded to servers.
           </li>
           <li>
-            <strong>Select WebP format</strong>: In the Format dropdown, choose "WebP". This tells the tool to output WebP instead of JPEG or PNG.
+            <strong>Select WebP format</strong>: In the Format dropdown, choose &quot;WebP&quot;. This tells the tool to output WebP instead of JPEG or PNG.
           </li>
           <li>
-            <strong>Set quality (optional)</strong>: Quality slider defaults to 85%, which balances size and quality. 
+            <strong>Set quality (optional)</strong>: Quality slider defaults to 85%, which balances size and quality.
             For web use, 75-85% is ideal. For print-quality images, use 90-95%. Lower values = smaller files but visible artifacts.
           </li>
           <li>
-            <strong>Target file size (optional)</strong>: Enter target KB if you need exact file sizes (e.g., 200KB for uploads). 
+            <strong>Target file size (optional)</strong>: Enter target KB if you need exact file sizes (e.g., 200KB for uploads).
             The tool automatically adjusts quality to hit the target. This is useful for forms with strict size limits.
           </li>
           <li>
-            <strong>Resize if needed</strong>: For large photos (4000x3000px+), resize longest side to 1920-2560px first. 
+            <strong>Resize if needed</strong>: For large photos (4000x3000px+), resize longest side to 1920-2560px first.
             This maximizes quality at a given file size. Most screens don't exceed 1920px width anyway.
           </li>
           <li>
-            <strong>Preview and compare</strong>: Toggle between original JPEG and WebP preview. Check "Saved %" indicator to see 
-            file size reduction. If quality isn't acceptable, increase quality slider or resize dimensions.
+            <strong>Preview and compare</strong>: Toggle between original JPEG and WebP preview. Check &quot;Saved %&quot; indicator to see
+            file size reduction. If quality isn&#39;t acceptable, increase quality slider or resize dimensions.
           </li>
           <li>
-            <strong>Download</strong>: Click "Download" for single files or "Download ZIP" for batch conversions. 
+            <strong>Download</strong>: Click "Download" for single files or "Download ZIP" for batch conversions.
             WebP files work in all modern browsers and image editors (Photoshop 23.2+, GIMP, XnView).
           </li>
         </ol>
@@ -129,7 +129,7 @@ export default function GuideConvertJpgToWebp() {
         </ul>
         <p><strong>HTML fallback example:</strong></p>
         <pre style={{ background: '#f5f5f5', padding: '12px', borderRadius: '4px', overflow: 'auto' }}>
-{`<picture>
+          {`<picture>
   <source srcset="image.webp" type="image/webp">
   <img src="image.jpg" alt="Description">
 </picture>`}
@@ -150,37 +150,37 @@ export default function GuideConvertJpgToWebp() {
 
       <FaqJsonLd
         items={[
-          { 
-            question: "How to convert JPG to WebP online for free?", 
-            answer: "Use our browser-based tool at pixcloak.com/compress. Upload JPEG images, select WebP format, adjust quality (75-85% recommended), then download. No app download or uploads to servers—everything runs locally in your browser." 
+          {
+            question: "How to convert JPG to WebP online for free?",
+            answer: "Use our browser-based tool at pixcloak.com/compress. Upload JPEG images, select WebP format, adjust quality (75-85% recommended), then download. No app download or uploads to servers—everything runs locally in your browser."
           },
-          { 
-            question: "Is WebP better than JPEG?", 
-            answer: "For file size, yes. WebP produces 30-50% smaller files at equivalent quality. For compatibility, JPEG is more universal—works in all software and browsers. For web use, WebP is superior. For print or email, JPEG is safer." 
+          {
+            question: "Is WebP better than JPEG?",
+            answer: "For file size, yes. WebP produces 30-50% smaller files at equivalent quality. For compatibility, JPEG is more universal—works in all software and browsers. For web use, WebP is superior. For print or email, JPEG is safer."
           },
-          { 
-            question: "Do all browsers support WebP?", 
-            answer: "95%+ of browsers support WebP (Chrome, Firefox, Edge, Safari 14+). For older browsers, use HTML <picture> tag to provide JPEG fallback. Modern websites should use WebP with fallback for best performance and compatibility." 
+          {
+            question: "Do all browsers support WebP?",
+            answer: "95%+ of browsers support WebP (Chrome, Firefox, Edge, Safari 14+). For older browsers, use HTML &lt;picture&gt; tag to provide JPEG fallback. Modern websites should use WebP with fallback for best performance and compatibility."
           },
-          { 
-            question: "Will converting to WebP reduce image quality?", 
-            answer: "At quality 85%, WebP is visually identical to original JPEG but 40-50% smaller. Below 75% quality, artifacts may appear. Use 85% for web, 90-95% for critical images like product photos or portfolios." 
+          {
+            question: "Will converting to WebP reduce image quality?",
+            answer: "At quality 85%, WebP is visually identical to original JPEG but 40-50% smaller. Below 75% quality, artifacts may appear. Use 85% for web, 90-95% for critical images like product photos or portfolios."
           },
-          { 
-            question: "Can I convert multiple JPEGs to WebP at once?", 
-            answer: "Yes. Our tool supports batch conversion. Upload multiple JPEG files simultaneously, all convert to WebP in parallel. Download as ZIP file for convenience. No file count limits." 
+          {
+            question: "Can I convert multiple JPEGs to WebP at once?",
+            answer: "Yes. Our tool supports batch conversion. Upload multiple JPEG files simultaneously, all convert to WebP in parallel. Download as ZIP file for convenience. No file count limits."
           },
-          { 
-            question: "Does WebP support transparency like PNG?", 
-            answer: "Yes. WebP supports alpha channel (transparency) like PNG but with 20-30% better compression. Ideal for logos, graphics, and images with transparent backgrounds. WebP is more versatile than JPEG or PNG." 
+          {
+            question: "Does WebP support transparency like PNG?",
+            answer: "Yes. WebP supports alpha channel (transparency) like PNG but with 20-30% better compression. Ideal for logos, graphics, and images with transparent backgrounds. WebP is more versatile than JPEG or PNG."
           },
-          { 
-            question: "Will Google rank my site higher if I use WebP?", 
-            answer: "Indirectly, yes. WebP improves page load speed and Core Web Vitals (LCP metric). Google uses page speed as ranking factor. Faster pages rank higher, get more traffic. WebP is one of easiest wins for performance SEO." 
+          {
+            question: "Will Google rank my site higher if I use WebP?",
+            answer: "Indirectly, yes. WebP improves page load speed and Core Web Vitals (LCP metric). Google uses page speed as ranking factor. Faster pages rank higher, get more traffic. WebP is one of easiest wins for performance SEO."
           },
-          { 
-            question: "Can I convert WebP back to JPEG?", 
-            answer: "Yes, but you can't restore original quality. WebP compression is lossy—information is permanently lost. If you might need JPEG later, keep original JPEG files separately before converting to WebP." 
+          {
+            question: "Can I convert WebP back to JPEG?",
+            answer: "Yes, but you can&#39;t restore original quality. WebP compression is lossy—information is permanently lost. If you might need JPEG later, keep original JPEG files separately before converting to WebP."
           },
         ]}
       />

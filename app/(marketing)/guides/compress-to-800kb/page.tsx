@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Compress Images to 800KB (High‑Quality) | PixCloak',
+  description: 'Target 800KB for higher‑quality posts and submissions. Use WebP for smaller size or JPEG for compatibility; resize longest side if needed. Export locally—no uploads.',
+  alternates: { canonical: '/guides/compress-to-800kb' },
+};
+
 export default function GuideCompress800KB() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

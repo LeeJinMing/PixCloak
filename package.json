@@ -10,7 +10,9 @@
     "lint": "eslint",
     "submit:indexnow": "node ./scripts/submit-indexnow.mjs",
     "submit-indexnow": "npm run submit:indexnow",
-    "submit:indexnow:ps": "pwsh -File ./scripts/submit-indexnow.ps1"
+    "submit:indexnow:ps": "pwsh -File ./scripts/submit-indexnow.ps1",
+    "submit:indexnow:all": "node ./scripts/submit-indexnow-all.mjs",
+    "seo:audit": "node ./scripts/seo-audit.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

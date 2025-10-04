@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'JPEG vs WebP for LinkedIn: Feed vs Banners | PixCloak',
+  description: 'Use WebP for feed images and JPEG for banners with gradients. Resize longest side to 1920px; start near 500KB. Convert locally and preview—no uploads required.',
+  alternates: { canonical: '/guides/jpeg-vs-webp-for-linkedin' },
+};
+
 export default function GuideJpegWebpLinkedIn() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

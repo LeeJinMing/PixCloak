@@ -3,8 +3,8 @@ import Client from "./Client";
 
 export const metadata: Metadata = {
   title: "Responsive img srcset Generator | PixCloak",
-  description: "Generate img srcset/sizes code for responsive images and recommended KB per breakpoint.",
-  alternates: { canonical: "/tools/srcset-generator" },
+  description: "Generate responsive img srcset/sizes markup and suggested KB per breakpoint. Copy optimized HTML locally—no uploads. Improve LCP and save bandwidth.",
+  alternates: { canonical: "/tools/srcset-generator", languages: { "x-default": "/tools/srcset-generator" } },
 };
 
 export default function Page() {

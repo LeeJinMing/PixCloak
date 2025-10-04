@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Prepare Images for Forms (200KB/500KB Presets) | PixCloak',
+  description: 'Meet form limits fast: 200KB avatars, 500KB attachments. Use ready presets, resize to 1920px for phone photos, and export locally—no uploads needed.',
+  alternates: { canonical: '/guides/prepare-images-for-forms' },
+};
+
 export default function GuideForms() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

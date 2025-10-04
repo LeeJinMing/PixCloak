@@ -3,7 +3,7 @@ import Client from "./Client";
 
 export const metadata: Metadata = {
   title: "Sprite Sheet Generator | PixCloak",
-  description: "Combine multiple images into a sprite sheet with JSON mapping and download ZIP.",
+  description: "Combine images into a sprite sheet with JSON mapping and download as ZIP. Configure grid, spacing, and order. All processing is local—no uploads.",
   alternates: { canonical: "/tools/sprite-sheet" },
 };
 export default function Page() {

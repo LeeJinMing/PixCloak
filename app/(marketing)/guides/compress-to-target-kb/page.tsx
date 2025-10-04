@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Compress Images to Target KB (200KB/500KB) | PixCloak',
+  description: 'Hit strict 200KB/500KB limits without uploads. Use Target (KB), resize to 1920px if needed, choose WebP/JPEG, and download ZIP. Works offline in your browser.',
   alternates: {
     canonical: '/guides/compress-to-target-kb',
     languages: {

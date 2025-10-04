@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Platform Image Limits (KB & Dimensions) | PixCloak',
+  description: 'Common caps for avatars and posts: 200KB avatars, 500KB posts, 1920px longest side. Use quick presets to prepare images locally—no uploads, fast exports.',
   alternates: {
     canonical: '/guides/platform-image-limits',
     languages: {

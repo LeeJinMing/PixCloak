@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Research: JPEG vs WebP at Target KBs | PixCloak',
+  description: 'Compare JPEG and WebP at 200/300/500/800KB on varied images. Findings on size/quality trade‑offs, artifacts, and when to pick each format. All processing local.',
+  alternates: { canonical: '/guides/research-jpeg-vs-webp' },
+};
+
 export default function ResearchJpegVsWebp() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

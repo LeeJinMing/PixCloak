@@ -3,7 +3,7 @@ import Client from "./Client";
 
 export const metadata: Metadata = {
   title: "Aspect Ratio Padder | PixCloak",
-  description: "Pad an image to target aspect ratio with background color locally.",
+  description: "Pad images to a target aspect ratio by adding background color or blur padding. Preview and export locally—no uploads. Ideal for social crops and thumbnails.",
   alternates: { canonical: "/tools/aspect-pad" },
 };
 

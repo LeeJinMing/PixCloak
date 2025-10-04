@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Screenshot Privacy Checklist (Before Sharing) | PixCloak',
+  description: 'Hide contacts, IDs, order numbers, and QR codes; crop sensitive UI; export without EXIF/GPS. A quick checklist to prevent privacy leaks when posting screenshots.',
+  alternates: { canonical: '/guides/screenshot-privacy-check' },
+};
+
 export default function GuideScreenshotPrivacy() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

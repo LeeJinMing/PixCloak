@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: '无元数据导出：去除 EXIF/GPS（本地处理）| PixCloak',
+  description: '在浏览器内本地去除 EXIF/GPS：打开 /compress 或 /redact，导出为 JPEG/WebP/PNG 即可清除元数据。支持批量与 ZIP，隐私优先、无需上传。',
   alternates: {
     canonical: '/guides/export-without-metadata-zh',
     languages: {

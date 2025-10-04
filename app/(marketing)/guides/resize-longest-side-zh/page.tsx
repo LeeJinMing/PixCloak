@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: '按最长边缩放到 1920px（网页最佳实践） | PixCloak',
+  description: '将图片最长边缩放到 1920px，再压缩到 200–800KB，兼顾清晰与加载速度。保持宽高比，适合网站/博客/社交。全程本地处理，无需上传。',
   alternates: {
     canonical: '/guides/resize-longest-side-zh',
     languages: {

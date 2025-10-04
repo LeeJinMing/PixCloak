@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Batch Image Compressor: Download ZIP (Free, No Upload) | PixCloak',
+  description: 'Compress multiple images in your browser, set target KB, format, and 1920px resize, then download all as a single ZIP. Works offline, no uploads.',
+  alternates: { canonical: '/guides/zip-batch-download' },
+};
+
 export default function GuideZipBatch() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

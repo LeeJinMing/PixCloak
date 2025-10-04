@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tools: Privacy‑First Image Utilities (Local, No Upload) | PixCloak",
+  description:
+    "Privacy‑first image utilities: EXIF/GPS checker, favicon pack, srcset generator, trim transparent, sprite sheet, WebP converter, and more. All run locally—no uploads.",
+  alternates: { canonical: "/tools", languages: { "x-default": "/tools" } },
+};
+
 export default function ToolsPage() {
   // Only list auxiliary tools here. Main tools are accessible via nav and homepage.
   const tools = [

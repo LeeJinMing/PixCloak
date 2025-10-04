@@ -3,7 +3,7 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
   title: "Remove GPS Data from Photos (Strip EXIF) | PixCloak",
-  description: "Remove EXIF GPS coordinates locally when exporting images—privacy first.",
+  description: "Strip GPS coordinates from photos by exporting locally—no uploads. Protect your address and privacy. Verify with the EXIF Checker tool (0 GPS fields after export).",
   alternates: { canonical: "/guides/remove-gps-data-from-photos" },
 };
 

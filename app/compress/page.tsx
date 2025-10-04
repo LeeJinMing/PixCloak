@@ -48,6 +48,7 @@ export default function Page() {
         <div className="ad-rail" style={{ right: 0 }}>
           <AdsenseUnit format="auto" />
         </div>
+        <h1 style={{ margin: '8px 0' }}>Free Image Compressor – Reduce JPG/PNG to 100KB–1MB (No Upload)</h1>
         <CompressClient />
         {/* Bottom ad below main content */}
         <div className="ad-bottom">

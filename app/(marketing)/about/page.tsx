@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About PixCloak: Privacy‑First Image Toolkit',
+  description: 'PixCloak: privacy‑first image toolkit. Compress to exact KB, redact faces/plates, remove EXIF/GPS, batch ZIP—everything runs locally in your browser, no uploads.',
+  alternates: { canonical: '/about', languages: { 'x-default': '/about' } },
+};
+
 export default function AboutPage() {
   const year = new Date().getFullYear();
   return (

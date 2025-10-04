@@ -1,0 +1,2354 @@
+{
+  "site": "https://pixcloak.com",
+  "results": [
+    {
+      "url": "https://pixcloak.com/",
+      "title": "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
+      "desc": "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline, no uploads needed. Convert JPEG, PNG, WebP instantly. Perfect for web, email, and social media.",
+      "canonical": "https://pixcloak.com/compress",
+      "hreflangCount": 7,
+      "h1Count": 0,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_192",
+        "NO_H1"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/compress-es",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/compress-pt",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/compress-id",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/redact",
+      "title": "Free Photo Redaction Tool: Blur Faces &amp; Remove EXIF | PixCloak · PixCloak",
+      "desc": "Redact sensitive info in photos—blur faces, hide license plates, black out text. Remove EXIF/GPS metadata automatically. 100% local processing, no uploads. GDPR-friendly privacy protection.",
+      "canonical": "https://pixcloak.com/redact",
+      "hreflangCount": 7,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_77",
+        "DESC_LEN_189"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/redact-es",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/redact-pt",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/redact-id",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/templates",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools",
+      "title": "Tools | PixCloak · PixCloak",
+      "desc": "Privacy‑first image utilities. All tools work locally in your browser.",
+      "canonical": "https://pixcloak.com/tools",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_27",
+        "DESC_LEN_70",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/exif-checker",
+      "title": "EXIF/GPS Metadata Checker – Remove EXIF locally | PixCloak",
+      "desc": "Check if an image contains EXIF/GPS metadata and remove it locally in your browser (no upload). Download a clean copy.",
+      "canonical": "https://pixcloak.com/tools/exif-checker",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_118",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/platform-checker",
+      "title": "Platform Compliance Checker – KB &amp; Dimensions | PixCloak",
+      "desc": "Validate image KB and dimensions for common platforms (forms/social). Get one‑click presets like 200KB/500KB and 1920px.",
+      "canonical": "https://pixcloak.com/tools/platform-checker",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_120",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/og-card",
+      "title": "OG/Twitter Card Generator – 1200×630 | PixCloak",
+      "desc": "Generate OG/Twitter card images (1200×630) in the browser and download PNG/JPG.",
+      "canonical": "https://pixcloak.com/tools/og-card",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_47",
+        "DESC_LEN_79",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/favicon-pack",
+      "title": "Favicon Pack Generator | PixCloak",
+      "desc": "Generate favicons and manifest icons from a source image and download as ZIP.",
+      "canonical": "https://pixcloak.com/tools/favicon-pack",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_77",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/crop-templates",
+      "title": "Crop Templates – 1:1 / 4:3 / 16:9 | PixCloak",
+      "desc": "Crop images to common aspect ratios and export locally.",
+      "canonical": "https://pixcloak.com/tools/crop-templates",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_44",
+        "DESC_LEN_55",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/srcset-generator",
+      "title": "Responsive img srcset Generator | PixCloak",
+      "desc": "Generate img srcset/sizes code for responsive images and recommended KB per breakpoint.",
+      "canonical": "https://pixcloak.com/tools/srcset-generator",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_42",
+        "DESC_LEN_87",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/dataurl-alt",
+      "title": "Data URL Converter &amp; Alt Suggestions | PixCloak",
+      "desc": "Convert images to data URLs (Base64) locally and get alt text suggestions. 100% client‑side.",
+      "canonical": "https://pixcloak.com/tools/dataurl-alt",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_92",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/dpi-converter",
+      "title": "DPI/PPI Converter – Print size vs pixels | PixCloak",
+      "desc": "Convert between pixels and print size using DPI/PPI. Plan export sizes for print and screens.",
+      "canonical": "https://pixcloak.com/tools/dpi-converter",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_93",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/watermark",
+      "title": "Text Watermark – Batch overlay &amp; export | PixCloak",
+      "desc": "Add a text watermark to images locally and download. Adjustable opacity/size/position.",
+      "canonical": "https://pixcloak.com/tools/watermark",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_86",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/lqip",
+      "title": "LQIP Placeholder Generator | PixCloak",
+      "desc": "Generate low‑quality image placeholders (LQIP) as tiny Base64 data URLs locally.",
+      "canonical": "https://pixcloak.com/tools/lqip",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_37",
+        "DESC_LEN_80",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/batch-rename",
+      "title": "Batch Rename &amp; ZIP | PixCloak",
+      "desc": "Batch rename images locally with patterns and download as ZIP (no upload).",
+      "canonical": "https://pixcloak.com/tools/batch-rename",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_74",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/svg-optimizer",
+      "title": "SVG Optimizer – Minify &amp; clean | PixCloak",
+      "desc": "Paste SVG to minify and clean attributes/styles locally. Export optimized SVG.",
+      "canonical": "https://pixcloak.com/tools/svg-optimizer",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_45",
+        "DESC_LEN_78",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/text-placeholder",
+      "title": "Text Placeholder – Social/Thumbnail presets | PixCloak",
+      "desc": "Generate placeholder images with text for social/thumbnail sizes and download.",
+      "canonical": "https://pixcloak.com/tools/text-placeholder",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_78",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/trim-transparent",
+      "title": "Trim Transparent Edges | PixCloak",
+      "desc": "Automatically trim fully transparent borders from PNGs locally and export.",
+      "canonical": "https://pixcloak.com/tools/trim-transparent",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_74",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/aspect-pad",
+      "title": "Aspect Ratio Padder | PixCloak",
+      "desc": "Pad an image to target aspect ratio with background color locally.",
+      "canonical": "https://pixcloak.com/tools/aspect-pad",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_30",
+        "DESC_LEN_66",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/remove-bg-lite",
+      "title": "Remove BG (Lite) – Color similarity | PixCloak",
+      "desc": "Quick background removal by color similarity (tolerance). 100% local.",
+      "canonical": "https://pixcloak.com/tools/remove-bg-lite",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_46",
+        "DESC_LEN_69",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/webp-converter",
+      "title": "Batch WebP Converter + ZIP | PixCloak",
+      "desc": "Convert multiple images to WebP in browser and download as ZIP.",
+      "canonical": "https://pixcloak.com/tools/webp-converter",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_37",
+        "DESC_LEN_63",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/image-diff",
+      "title": "Image Diff – A/B slider &amp; pixel diff | PixCloak",
+      "desc": "Compare two images with a slider and export pixel-difference as PNG.",
+      "canonical": "https://pixcloak.com/tools/image-diff",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_68",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/tools/sprite-sheet",
+      "title": "Sprite Sheet Generator | PixCloak",
+      "desc": "Combine multiple images into a sprite sheet with JSON mapping and download ZIP.",
+      "canonical": "https://pixcloak.com/tools/sprite-sheet",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_79",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/press",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/about",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/privacy",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/terms",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 2,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-target-kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/compress-to-target-kb",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 5,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/es-comprimir-a-kb-objetivo",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/pt-comprimir-para-kb-alvo",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/id-kompres-ke-kb-target",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/redaction-checklist",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/exif-gps-removal",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/convert-jpeg-to-webp",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/resize-longest-side",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/resize-longest-side",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 5,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/es-redimensionar-lado-mas-largo",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/pt-redimensionar-lado-mais-longo",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/id-ubah-ukuran-sisi-terpanjang",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-target-kb-zh",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/compress-to-target-kb-zh",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/resize-longest-side-zh",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/resize-longest-side-zh",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/rename-rules",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/license-plate-redaction",
+      "title": "How to Blur License Plates in Photos (Legal &amp; Easy) | PixCloak · PixCloak",
+      "desc": "Hide license plates in photos to protect privacy and comply with laws. Use solid blocks or pixelation—no reversible blur. Works for selling cars, accident reports, social sharing.",
+      "canonical": "https://pixcloak.com/guides/license-plate-redaction",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_77",
+        "DESC_LEN_179"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/screenshot-privacy-check",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/zip-batch-download",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/jpeg-vs-webp-size-quality",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/mobile-upload-limits",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/social-platform-kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/anonymized-sharing",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-200kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/compress-to-200kb",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-500kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/compress-to-500kb",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-1mb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/compress-to-1mb",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/remove-exif-iphone",
+      "title": "Remove EXIF Data from iPhone Photos (No App, 2 Min) | PixCloak · PixCloak",
+      "desc": "Strip location (GPS) and metadata from iPhone photos before sharing. Prevents stalking and privacy leaks. Works in browser—no app install. Export cleans EXIF automatically.",
+      "canonical": "https://pixcloak.com/guides/remove-exif-iphone",
+      "hreflangCount": 3,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_73",
+        "DESC_LEN_172"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/remove-exif-wechat",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/remove-exif-wechat",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/avatar-200kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/post-500kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/jpeg-vs-webp-for-twitter",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/jpeg-vs-webp-for-linkedin",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/export-without-metadata",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/export-without-metadata",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/es-exportar-sin-metadatos",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/pt-exportar-sem-metadatos",
+      "issues": [
+        "FETCH_FAIL:Error: Fetch https://pixcloak.com/guides/pt-exportar-sem-metadatos 404"
+      ],
+      "warnings": []
+    },
+    {
+      "url": "https://pixcloak.com/guides/id-ekspor-tanpa-metadata",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/platform-image-limits",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/platform-image-limits",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/es-limites-de-imagenes-plataformas",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/pt-limites-de-imagens-plataformas",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/id-batas-gambar-platform",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/embed-button",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-300kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-to-800kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/resize-to-1920",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/prepare-images-for-portfolio",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/prepare-images-for-job-application",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/prepare-images-for-forms",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/avoid-artifacts-webp-jpeg",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/research-jpeg-vs-webp",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/research-500kb-quality-range",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/es-comprimir-a-200kb",
+      "title": "Comprimir imágenes a 200KB – Guía rápida · PixCloak",
+      "desc": "Reduce tus imágenes a 200KB en el navegador, sin subir archivos. Ajusta calidad, redimensiona y descarga ZIP.",
+      "canonical": "https://pixcloak.com/guides/es-comprimir-a-200kb",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_109"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/pt-comprimir-para-500kb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/pt-comprimir-para-500kb",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/id-kompres-menjadi-1mb",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/id-kompres-menjadi-1mb",
+      "hreflangCount": 1,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/platform-image-limits-zh",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/platform-image-limits-zh",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/remove-exif-iphone-zh",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/remove-exif-wechat-zh",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/export-without-metadata-zh",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com/guides/export-without-metadata-zh",
+      "hreflangCount": 6,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/compress-image-to-100kb",
+      "title": "How to Compress Images to 100KB (Free, No Quality Loss) · PixCloak",
+      "desc": "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download. Supports JPEG, PNG, WebP.",
+      "canonical": "https://pixcloak.com/guides/compress-image-to-100kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_66"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/convert-jpg-to-webp-online",
+      "title": "Convert JPG to WebP Online (Free, Smaller File Size) | PixCloak · PixCloak",
+      "desc": "Convert JPEG to WebP and reduce file size by 30-50%. Free online tool works in browser—no uploads, no limits. Batch convert multiple images. Perfect for faster websites.",
+      "canonical": "https://pixcloak.com/guides/convert-jpg-to-webp-online",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_74"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/blur-face-in-photo",
+      "title": "How to Blur Faces in Photos (Free, No App Needed) | PixCloak · PixCloak",
+      "desc": "Protect privacy by blurring faces in photos before sharing. Works on iPhone, Android, and desktop—no app download. Choose blur, pixelate, or solid block. EXIF removed automatically.",
+      "canonical": "https://pixcloak.com/guides/blur-face-in-photo",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_71",
+        "DESC_LEN_181"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/blur-number-plate-online",
+      "title": "Blur Number Plates in Photos (UK) | PixCloak · PixCloak",
+      "desc": "Pixelate or blur number plates locally in your browser—no uploads.",
+      "canonical": "https://pixcloak.com/guides/blur-number-plate-online",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_66",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/black-out-text-in-image",
+      "title": "Black Out Text in Images (Censor/Redact) | PixCloak · PixCloak",
+      "desc": "Censor sensitive text in screenshots by blacking out or pixelating—local processing.",
+      "canonical": "https://pixcloak.com/guides/black-out-text-in-image",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_84",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/redact-screenshot-mac",
+      "title": "Redact a Screenshot on Mac (Blur/Pixelate) | PixCloak · PixCloak",
+      "desc": "Censor sensitive parts of a macOS screenshot locally—blur or pixelate.",
+      "canonical": "https://pixcloak.com/guides/redact-screenshot-mac",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_70",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/remove-gps-data-from-photos",
+      "title": "Remove GPS Data from Photos (Strip EXIF) | PixCloak · PixCloak",
+      "desc": "Remove EXIF GPS coordinates locally when exporting images—privacy first.",
+      "canonical": "https://pixcloak.com/guides/remove-gps-data-from-photos",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_72",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/privacy-compliance",
+      "title": "Privacy &amp; Compliance for Images (Local Processing) · PixCloak",
+      "desc": "Practical checklist to handle images with privacy-first workflow: redact sensitive info, remove EXIF/GPS, and export locally.",
+      "canonical": "https://pixcloak.com/guides/privacy-compliance",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_125",
+        "NO_HREFLANG",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/gsc-operations",
+      "title": "Google Search Console operations (PixCloak) · PixCloak",
+      "desc": "Checklist to submit sitemaps, request indexing, and diagnose exclusions.",
+      "canonical": "https://pixcloak.com/guides/gsc-operations",
+      "hreflangCount": 0,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_72",
+        "NO_HREFLANG"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/research-quality-size-curves",
+      "title": "Research: Quality vs Size Curves (JPEG/WebP) · PixCloak",
+      "desc": "Methodology to generate quality-size curves at target KBs and resolutions.",
+      "canonical": "https://pixcloak.com/guides/research-quality-size-curves",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_74"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/pt-exportar-sem-metadados",
+      "title": "PixCloak",
+      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
+      "canonical": "https://pixcloak.com",
+      "hreflangCount": 4,
+      "h1Count": 1,
+      "ldjsonCount": 3,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_8",
+        "DESC_LEN_69"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/webp-converter-batch",
+      "title": "Batch convert images to WebP and ZIP · PixCloak",
+      "desc": "Convert multiple images to WebP in-browser and download as a ZIP.",
+      "canonical": "https://pixcloak.com/guides/long-tail/webp-converter-batch",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_47",
+        "DESC_LEN_65",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/remove-bg-lite-color",
+      "title": "Quick background removal by color similarity · PixCloak",
+      "desc": "Pick a color and remove similar background locally; export PNG.",
+      "canonical": "https://pixcloak.com/guides/long-tail/remove-bg-lite-color",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_63",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/sprite-sheet-generator",
+      "title": "Combine icons into a sprite sheet (PNG + JSON mapping) · PixCloak",
+      "desc": "Build a compact sprite.png with mapping JSON for web apps.",
+      "canonical": "https://pixcloak.com/guides/long-tail/sprite-sheet-generator",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_58",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/lqip-placeholders",
+      "title": "Generate LQIP placeholders (Base64) · PixCloak",
+      "desc": "Create tiny blurred placeholders to improve perceived performance.",
+      "canonical": "https://pixcloak.com/guides/long-tail/lqip-placeholders",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_46",
+        "DESC_LEN_66",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/text-watermark-batch",
+      "title": "Add text watermark and export · PixCloak",
+      "desc": "Overlay text watermark locally with adjustable opacity/position.",
+      "canonical": "https://pixcloak.com/guides/long-tail/text-watermark-batch",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_40",
+        "DESC_LEN_64",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/crop-and-pad-ratios",
+      "title": "Crop or pad to popular aspect ratios · PixCloak",
+      "desc": "Quickly crop 1:1/4:3/16:9 or pad to fit exact ratios.",
+      "canonical": "https://pixcloak.com/guides/long-tail/crop-and-pad-ratios",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_47",
+        "DESC_LEN_53",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/resume-200kb",
+      "title": "Compress resume images to 200KB (HR ATS) · PixCloak",
+      "desc": "Guidance to prepare resume images under 200KB for applicant tracking systems.",
+      "canonical": "https://pixcloak.com/guides/long-tail/resume-200kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_77",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/gov-portal-500kb",
+      "title": "Prepare images for government portals (≤500KB) · PixCloak",
+      "desc": "Step-by-step to meet ≤500KB constraints commonly found on public portals.",
+      "canonical": "https://pixcloak.com/guides/long-tail/gov-portal-500kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_73",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/wechat-screenshot-exif",
+      "title": "Share WeChat screenshots safely (no EXIF/GPS) · PixCloak",
+      "desc": "Remove metadata and redact sensitive info before sharing.",
+      "canonical": "https://pixcloak.com/guides/long-tail/wechat-screenshot-exif",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_57",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/visa-photo-300kb",
+      "title": "Compress visa application photos to 300KB · PixCloak",
+      "desc": "Meet common visa portal size limits while keeping clarity.",
+      "canonical": "https://pixcloak.com/guides/long-tail/visa-photo-300kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_58",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/linkedin-banner-1584x396",
+      "title": "Resize LinkedIn banner to 1584×396 · PixCloak",
+      "desc": "Exact size for LinkedIn cover with minimal artifacts.",
+      "canonical": "https://pixcloak.com/guides/long-tail/linkedin-banner-1584x396",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_45",
+        "DESC_LEN_53",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/university-application-1mb",
+      "title": "Prepare images for university applications (≤1MB) · PixCloak",
+      "desc": "Compress transcripts/portfolio screenshots under 1MB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/university-application-1mb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_53",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/job-application-500kb",
+      "title": "Compress job application images to 500KB · PixCloak",
+      "desc": "HR systems often require ≤500KB per image.",
+      "canonical": "https://pixcloak.com/guides/long-tail/job-application-500kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_42",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/passport-scan-redact",
+      "title": "Redact passport scans before sharing · PixCloak",
+      "desc": "Mask ID numbers and MRZ, remove EXIF/GPS, then export.",
+      "canonical": "https://pixcloak.com/guides/long-tail/passport-scan-redact",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_47",
+        "DESC_LEN_54",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/email-attachment-10mb",
+      "title": "Prepare images for 10MB email attachments · PixCloak",
+      "desc": "Compress and ZIP multiple images to fit 10MB limits.",
+      "canonical": "https://pixcloak.com/guides/long-tail/email-attachment-10mb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_52",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/website-hero-1920px",
+      "title": "Optimize website hero images (1920px) · PixCloak",
+      "desc": "Resize to 1920px then encode at high quality WebP/JPEG.",
+      "canonical": "https://pixcloak.com/guides/long-tail/website-hero-1920px",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_48",
+        "DESC_LEN_55",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/github-readme-images",
+      "title": "Optimize images for GitHub README · PixCloak",
+      "desc": "Reduce size for repository pages to load fast.",
+      "canonical": "https://pixcloak.com/guides/long-tail/github-readme-images",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_44",
+        "DESC_LEN_46",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/id-card-privacy-redaction",
+      "title": "ID card privacy redaction best practices · PixCloak",
+      "desc": "Mask sensitive areas and export without metadata.",
+      "canonical": "https://pixcloak.com/guides/long-tail/id-card-privacy-redaction",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_49",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/wechat-moments-200kb",
+      "title": "WeChat Moments: compress images to 200KB · PixCloak",
+      "desc": "Hit 200KB quickly for smooth sharing in Moments.",
+      "canonical": "https://pixcloak.com/guides/long-tail/wechat-moments-200kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_48",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/gov-portal-200kb-cn",
+      "title": "政务/企事业门户：200KB 图片规范 · PixCloak",
+      "desc": "常见上限 200KB，建议先缩放再设目标体积。",
+      "canonical": "https://pixcloak.com/guides/long-tail/gov-portal-200kb-cn",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_30",
+        "DESC_LEN_23",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/portfolio-800kb",
+      "title": "Portfolio: 800KB high‑quality exports · PixCloak",
+      "desc": "Keep detail while staying performant for web portfolios.",
+      "canonical": "https://pixcloak.com/guides/long-tail/portfolio-800kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_48",
+        "DESC_LEN_56",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/twitter-post-200kb",
+      "title": "Twitter/X posts: compress images to 200KB · PixCloak",
+      "desc": "Keep feeds fast with 200KB target and 1920px longest side.",
+      "canonical": "https://pixcloak.com/guides/long-tail/twitter-post-200kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_58",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/linkedin-avatar-400kb",
+      "title": "LinkedIn avatar: under 400KB · PixCloak",
+      "desc": "Square resize and compress for profile pictures.",
+      "canonical": "https://pixcloak.com/guides/long-tail/linkedin-avatar-400kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_39",
+        "DESC_LEN_48",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/forms-attachments-500kb",
+      "title": "Online forms: 500KB attachments · PixCloak",
+      "desc": "Meet common upload caps for applications and support tickets.",
+      "canonical": "https://pixcloak.com/guides/long-tail/forms-attachments-500kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_42",
+        "DESC_LEN_61",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/ecommerce-product-800kb",
+      "title": "E‑commerce product shots ≤ 800KB · PixCloak",
+      "desc": "Retain detail while keeping fast LCP.",
+      "canonical": "https://pixcloak.com/guides/long-tail/ecommerce-product-800kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_43",
+        "DESC_LEN_37",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/presentation-slides-1920",
+      "title": "Presentation slides: export 1920px images · PixCloak",
+      "desc": "Downscale and compress to avoid oversized decks.",
+      "canonical": "https://pixcloak.com/guides/long-tail/presentation-slides-1920",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_48",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/blog-hero-1200px",
+      "title": "Blog hero: 1200×630 social image · PixCloak",
+      "desc": "Prepare OG images with compact size.",
+      "canonical": "https://pixcloak.com/guides/long-tail/blog-hero-1200px",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_43",
+        "DESC_LEN_36",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/email-inline-150kb",
+      "title": "Email inline images ≤ 150KB · PixCloak",
+      "desc": "Keep emails lightweight with small inline images.",
+      "canonical": "https://pixcloak.com/guides/long-tail/email-inline-150kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_38",
+        "DESC_LEN_49",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920",
+      "title": "Instagram Stories: 1080×1920 recommended · PixCloak",
+      "desc": "Resize to 1080×1920 then compress to 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "DESC_LEN_47",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920-es",
+      "title": "ES: Historias 1080×1920 (300–500KB) · PixCloak",
+      "desc": "Redimensiona a 1080×1920 y comprime a 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_46",
+        "DESC_LEN_48",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920-pt",
+      "title": "PT: Stories 1080×1920 (300–500KB) · PixCloak",
+      "desc": "Redimensione para 1080×1920 e comprima para 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_44",
+        "DESC_LEN_54",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920-id",
+      "title": "ID: Story 1080×1920 (300–500KB) · PixCloak",
+      "desc": "Ubah ukuran ke 1080×1920 lalu kompres 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/instagram-story-1080x1920-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_42",
+        "DESC_LEN_48",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312",
+      "title": "Facebook cover: 820×312 · PixCloak",
+      "desc": "Export exact size and keep ~300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_34",
+        "DESC_LEN_38",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312-es",
+      "title": "ES: Portada 820×312 (300–500KB) · PixCloak",
+      "desc": "Exporta tamaño exacto y ~300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_42",
+        "DESC_LEN_35",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312-pt",
+      "title": "PT: Capa 820×312 (300–500KB) · PixCloak",
+      "desc": "Exporte no tamanho exato e ~300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_39",
+        "DESC_LEN_38",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312-id",
+      "title": "ID: Sampul 820×312 (300–500KB) · PixCloak",
+      "desc": "Ekspor ukuran tepat ~300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/facebook-cover-820x312-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_41",
+        "DESC_LEN_31",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb",
+      "title": "YouTube thumbnails ≤ 200KB · PixCloak",
+      "desc": "Prepare 1280×720 thumbnails under 200KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_37",
+        "DESC_LEN_40",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb-es",
+      "title": "ES: Miniatura YouTube ≤ 200KB · PixCloak",
+      "desc": "Prepara 1280×720 bajo 200KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_40",
+        "DESC_LEN_28",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb-pt",
+      "title": "PT: Miniatura YouTube ≤ 200KB · PixCloak",
+      "desc": "Prepare 1280×720 abaixo de 200KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_40",
+        "DESC_LEN_33",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb-id",
+      "title": "ID: Thumbnail YouTube ≤ 200KB · PixCloak",
+      "desc": "Siapkan 1280×720 di bawah 200KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/youtube-thumbnail-200kb-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_40",
+        "DESC_LEN_32",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb",
+      "title": "TikTok avatar ≤ 200KB · PixCloak",
+      "desc": "Square resize 512–1024px, then compress.",
+      "canonical": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_32",
+        "DESC_LEN_40",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb-es",
+      "title": "ES: Avatar TikTok ≤ 200KB · PixCloak",
+      "desc": "Cuadrado 512–1024px, luego comprime.",
+      "canonical": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_36",
+        "DESC_LEN_36",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb-pt",
+      "title": "PT: Avatar TikTok ≤ 200KB · PixCloak",
+      "desc": "Quadrado 512–1024px, depois comprima.",
+      "canonical": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_36",
+        "DESC_LEN_37",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb-id",
+      "title": "ID: Avatar TikTok ≤ 200KB · PixCloak",
+      "desc": "Persegi 512–1024px, lalu kompres.",
+      "canonical": "https://pixcloak.com/guides/long-tail/tiktok-avatar-200kb-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_36",
+        "DESC_LEN_33",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628",
+      "title": "WordPress featured image 1200×628 · PixCloak",
+      "desc": "Social-friendly featured image around 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_44",
+        "DESC_LEN_48",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628-es",
+      "title": "ES: Imagen destacada 1200×628 · PixCloak",
+      "desc": "Social‑friendly alrededor de 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_40",
+        "DESC_LEN_39",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628-pt",
+      "title": "PT: Imagem destacada 1200×628 · PixCloak",
+      "desc": "Amigável para redes sociais ~300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_40",
+        "DESC_LEN_39",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628-id",
+      "title": "ID: Gambar unggulan 1200×628 · PixCloak",
+      "desc": "Ramah sosial ~300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/wordpress-featured-1200x628-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_39",
+        "DESC_LEN_24",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/notion-cover-1500px",
+      "title": "Notion cover images ~1500px · PixCloak",
+      "desc": "Resize longest side to ~1500–1920px, 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/notion-cover-1500px",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_38",
+        "DESC_LEN_47",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/notion-cover-1500px-es",
+      "title": "ES: Portada Notion ~1500px · PixCloak",
+      "desc": "Redimensiona a ~1500–1920px, 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/notion-cover-1500px-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_37",
+        "DESC_LEN_39",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/notion-cover-1500px-pt",
+      "title": "PT: Capa Notion ~1500px · PixCloak",
+      "desc": "Redimensione para ~1500–1920px, 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/notion-cover-1500px-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_34",
+        "DESC_LEN_42",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/notion-cover-1500px-id",
+      "title": "ID: Sampul Notion ~1500px · PixCloak",
+      "desc": "Ubah ukuran ~1500–1920px, 300–500KB.",
+      "canonical": "https://pixcloak.com/guides/long-tail/notion-cover-1500px-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_36",
+        "DESC_LEN_36",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/slack-upload-200kb",
+      "title": "Slack uploads ≤ 200KB · PixCloak",
+      "desc": "Compress screenshots for fast previews.",
+      "canonical": "https://pixcloak.com/guides/long-tail/slack-upload-200kb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_32",
+        "DESC_LEN_39",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/slack-upload-200kb-es",
+      "title": "ES: Subidas Slack ≤ 200KB · PixCloak",
+      "desc": "Comprime capturas para vistas previas rápidas.",
+      "canonical": "https://pixcloak.com/guides/long-tail/slack-upload-200kb-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_36",
+        "DESC_LEN_46",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/slack-upload-200kb-pt",
+      "title": "PT: Uploads Slack ≤ 200KB · PixCloak",
+      "desc": "Comprimir capturas para previews rápidas.",
+      "canonical": "https://pixcloak.com/guides/long-tail/slack-upload-200kb-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_36",
+        "DESC_LEN_41",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/slack-upload-200kb-id",
+      "title": "ID: Upload Slack ≤ 200KB · PixCloak",
+      "desc": "Kompres tangkapan layar untuk pratinjau cepat.",
+      "canonical": "https://pixcloak.com/guides/long-tail/slack-upload-200kb-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_35",
+        "DESC_LEN_46",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb",
+      "title": "Jira attachments within 10MB · PixCloak",
+      "desc": "Batch compress and ZIP to meet project upload caps.",
+      "canonical": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_39",
+        "DESC_LEN_51",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb-es",
+      "title": "ES: Adjuntos Jira ≤ 10MB · PixCloak",
+      "desc": "Comprime y ZIP para límites de proyecto.",
+      "canonical": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_35",
+        "DESC_LEN_40",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb-pt",
+      "title": "PT: Anexos Jira ≤ 10MB · PixCloak",
+      "desc": "Comprimir e ZIP para limites do projeto.",
+      "canonical": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_40",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb-id",
+      "title": "ID: Lampiran Jira ≤ 10MB · PixCloak",
+      "desc": "Kompres dan ZIP untuk batas proyek.",
+      "canonical": "https://pixcloak.com/guides/long-tail/jira-attachments-10mb-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_35",
+        "DESC_LEN_35",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/google-forms-2mb",
+      "title": "Google Forms uploads ≤ 2MB · PixCloak",
+      "desc": "Resize to 1920px then target 2MB for clarity.",
+      "canonical": "https://pixcloak.com/guides/long-tail/google-forms-2mb",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_37",
+        "DESC_LEN_45",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/google-forms-2mb-es",
+      "title": "ES: Google Forms ≤ 2MB · PixCloak",
+      "desc": "1920px y 2MB para claridad.",
+      "canonical": "https://pixcloak.com/guides/long-tail/google-forms-2mb-es",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_27",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/google-forms-2mb-pt",
+      "title": "PT: Google Forms ≤ 2MB · PixCloak",
+      "desc": "1920px e 2MB para clareza.",
+      "canonical": "https://pixcloak.com/guides/long-tail/google-forms-2mb-pt",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_26",
+        "OG_INCOMPLETE"
+      ]
+    },
+    {
+      "url": "https://pixcloak.com/guides/long-tail/google-forms-2mb-id",
+      "title": "ID: Google Forms ≤ 2MB · PixCloak",
+      "desc": "1920px dan 2MB untuk kejernihan.",
+      "canonical": "https://pixcloak.com/guides/long-tail/google-forms-2mb-id",
+      "hreflangCount": 2,
+      "h1Count": 1,
+      "ldjsonCount": 4,
+      "issues": [],
+      "warnings": [
+        "TITLE_LEN_33",
+        "DESC_LEN_32",
+        "OG_INCOMPLETE"
+      ]
+    }
+  ]
+}

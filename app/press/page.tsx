@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Press & Brand Assets | PixCloak',
+  description: 'Download brand assets, demo images, and copy. PixCloak is a privacy‑first image toolkit that runs locally—compress, redact, and export without uploads.',
+  alternates: { canonical: '/press', languages: { 'x-default': '/press' } },
+};
 
 export default function PressPage() {
   const assets = [

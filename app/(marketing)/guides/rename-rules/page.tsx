@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Batch Rename Rules (Prefix/Suffix, Keep Extension) | PixCloak',
+  description: 'Rename exported files consistently with prefix/suffix and keep original extension when needed. Batch compress and download ZIP locally—no uploads.',
+  alternates: { canonical: '/guides/rename-rules' },
+};
+
 export default function GuideRenameRules() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
