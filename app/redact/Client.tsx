@@ -239,7 +239,7 @@ export default function RedactClient() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Image Redaction (Local)</h1>
+        <h2>Image Redaction (Local)</h2>
         <p>Draw boxes to mask sensitive regions. Processing is local and irreversible (solid/pixelate). EXIF/GPS will be removed on export.</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 6 }}>
           <a href="/privacy" className="pill">Privacy‑first</a>
