@@ -4,8 +4,8 @@ export const metadata: Metadata = {
   title: 'Sensor foto (blur/EXIF) | PixCloak',
   description: 'Blur wajah, plat nomor, dan teks; hapus EXIF/GPS saat ekspor. 100% lokal, tanpa unggah.',
   alternates: {
-    canonical: '/redact-id',
-    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id' }
+    canonical: '/redact',
+    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id', zh: '/redact' }
   }
 };
 

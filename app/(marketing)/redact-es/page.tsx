@@ -4,8 +4,8 @@ export const metadata: Metadata = {
   title: 'Ocultar en fotos (difuminar/EXIF) | PixCloak',
   description: 'Difumina caras, matrículas y texto; elimina EXIF/GPS al exportar. 100% local, sin subir archivos.',
   alternates: {
-    canonical: '/redact-es',
-    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id' }
+    canonical: '/redact',
+    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id', zh: '/redact' }
   }
 };
 

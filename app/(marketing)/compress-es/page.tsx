@@ -4,8 +4,8 @@ export const metadata: Metadata = {
   title: 'Comprimir imágenes a 200KB/500KB (sin subir) | PixCloak',
   description: 'Comprime a 200KB/500KB en tu navegador. Convierte WebP/JPEG y redimensiona a 1920px. Todo local, sin subidas.',
   alternates: {
-    canonical: '/compress-es',
-    languages: { 'x-default': '/compress', en: '/compress', es: '/compress-es', pt: '/compress-pt', id: '/compress-id' }
+    canonical: '/compress',
+    languages: { 'x-default': '/compress', en: '/compress', es: '/compress-es', pt: '/compress-pt', id: '/compress-id', zh: '/compress' }
   }
 };
 

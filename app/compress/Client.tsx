@@ -364,7 +364,7 @@ export default function CompressClient() {
   return (
     <div className="container" style={{ display: 'grid', gap: 16 }}>
       <div className="card" style={{ background: "#eff6ff", borderColor: "#bfdbfe" }}>
-        <h1 style={{ fontSize: 28, marginBottom: 8 }}>Online JPEG & PNG Image Compressor</h1>
+        <h2 style={{ fontSize: 28, marginBottom: 8 }}>Online JPEG & PNG Image Compressor</h2>
         <p className="text-muted" style={{ marginBottom: 10 }}>
           Compress images in your browser with no upload. Set a target size (KB), choose JPEG/WebP/PNG, and batch download as ZIP.
         </p>

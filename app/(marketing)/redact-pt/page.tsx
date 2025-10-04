@@ -4,8 +4,8 @@ export const metadata: Metadata = {
   title: 'Ocultar em fotos (borrão/EXIF) | PixCloak',
   description: 'Borre rostos, placas e texto; remova EXIF/GPS na exportação. 100% local, sem upload.',
   alternates: {
-    canonical: '/redact-pt',
-    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id' }
+    canonical: '/redact',
+    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id', zh: '/redact' }
   }
 };
 

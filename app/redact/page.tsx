@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       es: "/redact-es",
       pt: "/redact-pt",
       id: "/redact-id",
+      zh: "/redact",
     },
   },
   openGraph: {
