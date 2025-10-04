@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Client from "./Client";
 
 export const metadata: Metadata = {
-  title: "Remove BG (Lite) – Color similarity | PixCloak",
-  description: "Quick background removal by color similarity (tolerance). 100% local.",
-  alternates: { canonical: "/tools/remove-bg-lite" },
+  title: "Remove BG (Lite) – Color Similarity | PixCloak",
+  description: "Quick background removal by color similarity (tolerance). 100% local—no uploads.",
+  alternates: { canonical: "/tools/remove-bg-lite", languages: { "x-default": "/tools/remove-bg-lite", en: "/tools/remove-bg-lite" } },
 };
 
 function dist2(r1: number, g1: number, b1: number, r2: number, g2: number, b2: number) {

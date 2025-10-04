@@ -5,9 +5,9 @@ import AdsenseUnit from "@/components/Adsense";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Free Photo Redaction Tool: Blur Faces & Remove EXIF | PixCloak",
+  title: "Free Photo Redaction: Blur Faces, Hide Plates | PixCloak",
   description:
-    "Redact sensitive info in photos—blur faces, hide license plates, black out text. Remove EXIF/GPS metadata automatically. 100% local processing, no uploads. GDPR-friendly privacy protection.",
+    "Blur faces, hide license plates, and black out text. Remove EXIF/GPS automatically. 100% local—no uploads. Simple, fast, and privacy‑friendly.",
   alternates: {
     canonical: "/redact",
     languages: {

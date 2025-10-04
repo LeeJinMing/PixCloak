@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tools: Privacy‑First Image Utilities (Local, No Upload) | PixCloak",
+  title: "Image Tools – Local, No Upload | PixCloak",
   description:
-    "Privacy‑first image utilities: EXIF/GPS checker, favicon pack, srcset generator, trim transparent, sprite sheet, WebP converter, and more. All run locally—no uploads.",
-  alternates: { canonical: "/tools", languages: { "x-default": "/tools" } },
+    "EXIF/GPS checker, favicon pack, srcset generator, trim transparent, sprite sheet, WebP converter, and more. Fast, private, and local—no uploads.",
+  alternates: { canonical: "/tools", languages: { "x-default": "/tools", en: "/tools" } },
 };
 
 export default function ToolsPage() {

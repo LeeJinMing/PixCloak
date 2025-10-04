@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sensor foto (blur/EXIF) | PixCloak',
+  description: 'Blur wajah, plat nomor, dan teks; hapus EXIF/GPS saat ekspor. 100% lokal, tanpa unggah.',
+  alternates: {
+    canonical: '/redact-id',
+    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id' }
+  }
+};
+
 export default function RedactID() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>

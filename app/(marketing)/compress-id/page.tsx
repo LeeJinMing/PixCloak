@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kompres Gambar ke 200KB/500KB (Offline, Tanpa Unggah) | PixCloak',
-  description: 'Kompres gambar ke 200KB/500KB langsung di browser. Pilih WebP/JPEG, atur ukuran terpanjang 1920px, unduh satuan atau ZIP. Proses lokal, tanpa unggah.',
-  alternates: { canonical: '/compress-id' },
+  title: 'Kompres 200KB/500KB (tanpa unggah) | PixCloak',
+  description: 'Kompres 200KB/500KB di browser. Konversi WebP/JPEG dan ubah ukuran 1920px. Semua lokal, tanpa unggah.',
+  alternates: {
+    canonical: '/compress-id',
+    languages: { 'x-default': '/compress', en: '/compress', es: '/compress-es', pt: '/compress-pt', id: '/compress-id' }
+  }
 };
 
 export default function CompressID() {
