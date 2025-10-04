@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Remove EXIF Data from iPhone Photos (No App, 2 Min) | PixCloak",
-  description: "Strip location (GPS) and metadata from iPhone photos before sharing. Prevents stalking and privacy leaks. Works in browser—no app install. Export cleans EXIF automatically.",
+  title: "Remove EXIF from iPhone Photos — No App Needed | PixCloak",
+  description: "Remove EXIF and GPS from iPhone photos before sharing. Works in your browser, no app needed. Export cleans metadata automatically—fast and stay private.",
   alternates: {
     canonical: '/guides/remove-exif-iphone',
     languages: {
@@ -13,15 +13,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Remove EXIF Data from iPhone Photos (No App, 2 Min)",
-    description: "Strip location (GPS) and metadata from iPhone photos before sharing. Prevents stalking and privacy leaks.",
+    title: "Remove EXIF from iPhone Photos — No App Needed",
+    description: "Remove EXIF and GPS from iPhone photos before sharing. Works in your browser, no app needed.",
     url: "/guides/remove-exif-iphone",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remove EXIF Data from iPhone Photos",
-    description: "Strip GPS location before sharing. Works in browser, no app needed.",
+    title: "Remove EXIF from iPhone Photos",
+    description: "Remove GPS location before sharing. Works in browser, no app needed.",
   },
 };
 
