@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Resize Images by Longest Side to 1920px (Free, Best for Web) | PixCloak",
-  description: "Reduce image dimensions to 1920px longest side for websites, blogs, and social media. Maintains aspect ratio. Works for photos from iPhone, DSLR, any camera. No upload needed.",
+  title: "Resize Images to 1920px (Longest Side) | PixCloak",
+  description: "Resize images to 1920px longest side for web, email, and social media. Keeps aspect ratio. Works in your browser, no upload. Follow these 3 quick steps.",
   alternates: {
     canonical: '/guides/resize-longest-side',
     languages: {
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Resize Images by Longest Side to 1920px (Free, Best for Web)",
-    description: "Reduce image dimensions to 1920px for websites, blogs, social media. Maintains aspect ratio. No upload needed.",
+    title: "Resize Images to 1920px (Longest Side)",
+    description: "Resize images to 1920px for web and social. Keeps aspect ratio. No upload.",
     url: "/guides/resize-longest-side",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resize Images to 1920px Longest Side",
-    description: "Perfect for web. Maintains aspect ratio. Free tool, no upload.",
+    title: "Resize Images to 1920px (Longest Side)",
+    description: "Perfect for web. Keeps aspect ratio. Free tool, no upload.",
   },
 };
 
