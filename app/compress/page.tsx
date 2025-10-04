@@ -40,8 +40,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Suspense fallback={null}>
-      <div style={{ position: 'relative' }}>
+    <>
+      <h1 style={{ margin: '8px 0' }}>Free Image Compressor – Reduce JPG/PNG to 100KB–1MB (No Upload)</h1>
+      <Suspense fallback={null}>
+        <div style={{ position: 'relative' }}>
         {/* Side rails - keep away from main controls */}
         <div className="ad-rail" style={{ left: 0 }}>
           <AdsenseUnit format="auto" />
@@ -49,7 +51,6 @@ export default function Page() {
         <div className="ad-rail" style={{ right: 0 }}>
           <AdsenseUnit format="auto" />
         </div>
-        <h1 style={{ margin: '8px 0' }}>Free Image Compressor – Reduce JPG/PNG to 100KB–1MB (No Upload)</h1>
         <CompressClient />
         {/* Bottom ad below main content */}
         <div className="ad-bottom">
@@ -77,8 +78,9 @@ export default function Page() {
             { question: "Do you support WebP and PNG?", answer: "Yes. You can export JPEG, WebP, and PNG based on your needs." },
           ]}
         />
-      </div>
-    </Suspense>
+        </div>
+      </Suspense>
+    </>
   );
 }
 

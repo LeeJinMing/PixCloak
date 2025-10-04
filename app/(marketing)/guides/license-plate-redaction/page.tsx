@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Blur License Plates in Photos (Legal & Easy) | PixCloak",
-  description: "Hide license plates in photos to protect privacy and comply with laws. Use solid blocks or pixelation—no reversible blur. Works for selling cars, accident reports, social sharing.",
+  title: "Blur License Plates in Photos — Legal & Easy | PixCloak",
+  description: "Hide license plates to protect privacy. Use solid blocks or strong pixelation (not reversible). Ideal for selling cars, accident reports, and social sharing.",
   alternates: {
     canonical: "/guides/license-plate-redaction",
     languages: {
@@ -12,15 +12,15 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "How to Blur License Plates in Photos (Legal & Easy)",
-    description: "Hide license plates to protect privacy. Use solid blocks or pixelation. Works for selling cars, accident reports, social sharing.",
+    title: "Blur License Plates in Photos — Legal & Easy",
+    description: "Hide plates to protect privacy. Use solid blocks or pixelation. For car sales, reports, social.",
     url: "/guides/license-plate-redaction",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Blur License Plates in Photos",
-    description: "Protect privacy. Use solid blocks or pixelation. Legal and easy.",
+    title: "Blur License Plates in Photos",
+    description: "Protect privacy with solid blocks or pixelation. Legal and easy.",
   },
 };
 
