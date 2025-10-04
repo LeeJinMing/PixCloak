@@ -7,7 +7,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 export const metadata: Metadata = {
   title: "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
   description:
-    "Compress images to exact sizes like 100KB, 200KB, or 500KB without quality loss. Works offline—no uploads. Convert JPEG, PNG, and WebP fast for web, email, and social.",
+    "Compress images to 100KB–500KB without quality loss. Works offline—no uploads. Convert JPEG/PNG/WebP fast for web, email, and social media in seconds.",
   alternates: {
     canonical: "/compress",
     languages: {
