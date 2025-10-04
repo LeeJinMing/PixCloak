@@ -4,7 +4,7 @@ import GuidesClient from "./Client";
 export const metadata: Metadata = {
   title: "Image Guides: Compress, Convert, Remove EXIF | PixCloak",
   description:
-    "Practical image guides: compress to exact sizes (100KB–1MB), convert JPG/WebP, resize for web, and remove EXIF/GPS. Step‑by‑step instructions, free, offline, no uploads.",
+    "Step-by-step image guides: compress to 100KB–1MB, convert JPG/WebP, resize for web, remove EXIF/GPS. Free, offline, no uploads—learn fast today. For web & email.",
   alternates: { canonical: "/guides", languages: { "x-default": "/guides" } },
 };
 
