@@ -1190,17 +1190,14 @@
     },
     {
       "url": "https://pixcloak.com/guides/blur-face-in-photo",
-      "title": "How to Blur Faces in Photos (Free, No App Needed) | PixCloak · PixCloak",
-      "desc": "Protect privacy by blurring faces in photos before sharing. Works on iPhone, Android, and desktop—no app download. Choose blur, pixelate, or solid block. EXIF removed automatically.",
+      "title": "Blur Faces in Photos (Free, No App) | PixCloak · PixCloak",
+      "desc": "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS.",
       "canonical": "https://pixcloak.com/guides/blur-face-in-photo",
       "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
-      "warnings": [
-        "TITLE_LEN_71",
-        "DESC_LEN_181"
-      ]
+      "warnings": []
     },
     {
       "url": "https://pixcloak.com/guides/blur-number-plate-online",

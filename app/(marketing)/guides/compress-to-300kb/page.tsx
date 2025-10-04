@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Compress Images to 300KB (WebP/JPEG) | PixCloak',
   description: 'Hit 300KB quickly: choose WebP for smaller files (or JPEG for compatibility), resize longest side to 1920px, and export locally. Great balance for posts and forms.',
-  alternates: { canonical: '/guides/compress-to-300kb' },
+  alternates: { canonical: '/guides/compress-to-300kb', languages: { 'x-default': '/guides/compress-to-300kb', en: '/guides/compress-to-300kb' } },
 };
 
 export default function GuideCompress300KB() {
