@@ -33,11 +33,11 @@ export default function GuideBlurFace() {
         <h2>Why Blur Faces in Photos?</h2>
         <p>
           Privacy regulations like GDPR (Europe), CCPA (California), and PIPEDA (Canada) require explicit consent before
-          sharing identifiable photos publicly. Blurring faces protects individuals' privacy rights and prevents legal issues
+          sharing identifiable photos publicly. Blurring faces protects individuals&#39; privacy rights and prevents legal issues
           when posting to social media, blogs, forums, or news sites.
         </p>
         <p>
-          Beyond legal compliance, face blurring prevents doxxing, stalking, and identity theft. Children's faces should
+          Beyond legal compliance, face blurring prevents doxxing, stalking, and identity theft. Children&#39;s faces should
           always be blurred when sharing school events, playground photos, or family gatherings online. Street photography,
           protest documentation, accident reports, and workplace training materials all require face anonymization before publication.
         </p>
@@ -84,7 +84,7 @@ export default function GuideBlurFace() {
             Choose JPEG for smallest file size or PNG if image contains text/graphics needing sharpness.
           </li>
           <li>
-            <strong>Batch processing</strong>: For multiple images, process all, then "Download ZIP" to get all blurred photos in one file.
+            <strong>Batch processing</strong>: For multiple images, process all, then &quot;Download ZIP&quot; to get all blurred photos in one file.
           </li>
         </ol>
 
@@ -125,7 +125,7 @@ export default function GuideBlurFace() {
         <ul>
           <li>EU/UK law: Identifiable faces in public photos require consent or legitimate interest. Blur if unsure.</li>
           <li>Exceptions: Journalism, artistic expression, public interest can override—but consult legal advice.</li>
-          <li>Children under 13: Parent/guardian consent required. Always blur children's faces in public posts to be safe.</li>
+          <li>Children under 13: Parent/guardian consent required. Always blur children&#39;s faces in public posts to be safe.</li>
         </ul>
       </div>
 

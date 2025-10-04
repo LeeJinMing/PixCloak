@@ -80,10 +80,10 @@ export default function GuideCompress100KB() {
           <li><strong>Use WebP when possible</strong>: WebP achieves 30-40% smaller file sizes than JPEG. For 100KB targets, this means noticeably better quality.</li>
           <li><strong>Crop tight</strong>: Remove unnecessary background, sky, or empty space. A well-cropped 100KB image looks better than a wide-angle 100KB shot.</li>
           <li><strong>Avoid heavy compression on faces</strong>: If the image includes faces (passport photos, profile pictures), prioritize face area by cropping closer. Compression artifacts on faces are more noticeable.</li>
-          <li><strong>Test on actual form</strong>: Some systems claim "100KB limit" but actually accept 100.5KB or even 110KB. Test with your compressed file—if rejected, aim for 95KB to be safe.</li>
-          <li><strong>Don&#39;t over-sharpen</strong>: Heavily compressed images + sharpening = visible artifacts. Use natural photos without post-processing filters.</li>
+          <li><strong>Test on actual form</strong>: Some systems claim &quot;100KB limit&quot; but actually accept 100.5KB or even 110KB. Test with your compressed file—if rejected, aim for 95KB to be safe.</li>
+          <li><strong>Don&#39;t over-sharpen</strong>: Heavily compressed images + sharpening = visible artifacts. Use natural photos without post‑processing filters.</li>
           <li><strong>Batch process smartly</strong>: If compressing multiple images to 100KB, verify each one individually. Different photos may need different resize dimensions to maintain quality.</li>
-          <li><strong>Keep originals</strong>: Always keep original high-resolution photos. Compression is lossy—you can't restore quality later.</li>
+          <li><strong>Keep originals</strong>: Always keep original high-resolution photos. Compression is lossy—you can&#39;t restore quality later.</li>
         </ul>
 
         <h2>When to Use 100KB Compression</h2>

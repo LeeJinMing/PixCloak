@@ -52,7 +52,7 @@ export default function GuideConvertJpgToWebp() {
             Works on desktop, mobile, tablet—no app download or account required. All processing happens locally in your browser.
           </li>
           <li>
-            <strong>Upload JPEG images</strong>: Drag and drop JPEG/JPG files, or click "Choose Files" to select from your device.
+            <strong>Upload JPEG images</strong>: Drag and drop JPEG/JPG files, or click &quot;Choose Files&quot; to select from your device.
             You can convert multiple images simultaneously (batch conversion). Files stay on your device—never uploaded to servers.
           </li>
           <li>
@@ -68,14 +68,14 @@ export default function GuideConvertJpgToWebp() {
           </li>
           <li>
             <strong>Resize if needed</strong>: For large photos (4000x3000px+), resize longest side to 1920-2560px first.
-            This maximizes quality at a given file size. Most screens don't exceed 1920px width anyway.
+            This maximizes quality at a given file size. Most screens don&#39;t exceed 1920px width anyway.
           </li>
           <li>
             <strong>Preview and compare</strong>: Toggle between original JPEG and WebP preview. Check &quot;Saved %&quot; indicator to see
             file size reduction. If quality isn&#39;t acceptable, increase quality slider or resize dimensions.
           </li>
           <li>
-            <strong>Download</strong>: Click "Download" for single files or "Download ZIP" for batch conversions.
+            <strong>Download</strong>: Click &quot;Download&quot; for single files or &quot;Download ZIP&quot; for batch conversions.
             WebP files work in all modern browsers and image editors (Photoshop 23.2+, GIMP, XnView).
           </li>
         </ol>
@@ -87,7 +87,7 @@ export default function GuideConvertJpgToWebp() {
           <li><strong>Test on actual devices</strong>: WebP quality perception varies by screen. Test on mobile, tablet, desktop to ensure acceptable quality across devices.</li>
           <li><strong>Convert before uploading to CMS</strong>: Convert locally, then upload WebP to WordPress, Shopify, Wix. This gives you control vs. relying on platform compression.</li>
           <li><strong>Batch convert for entire websites</strong>: Convert all site images at once using batch tool. Download as ZIP, extract, then mass-upload to web server.</li>
-          <li><strong>Keep JPEG originals</strong>: Store original high-quality JPEGs separately. WebP conversion is lossy—you can't restore original quality later.</li>
+          <li><strong>Keep JPEG originals</strong>: Store original high-quality JPEGs separately. WebP conversion is lossy—you can&#39;t restore original quality later.</li>
           <li><strong>Use lossless WebP for graphics</strong>: Screenshots, diagrams, UI elements benefit from lossless WebP. Smaller than PNG with no quality loss.</li>
           <li><strong>Check file size after conversion</strong>: Occasionally, complex images may not compress well as WebP. If WebP is larger than JPEG, stick with JPEG.</li>
           <li><strong>Update image URLs in code</strong>: After converting, update HTML/CSS image references from `.jpg` to `.webp`. Use find-and-replace for efficiency.</li>
@@ -105,10 +105,10 @@ export default function GuideConvertJpgToWebp() {
         </ul>
         <p><strong>Keep using JPEG for:</strong></p>
         <ul>
-          <li>Printing: Many print services don't accept WebP. Use JPEG or TIFF for print.</li>
-          <li>Email attachments to general audiences: Outlook 2019 and older don't preview WebP (downloads as file).</li>
+          <li>Printing: Many print services don&#39;t accept WebP. Use JPEG or TIFF for print.</li>
+          <li>Email attachments to general audiences: Outlook 2019 and older don&#39;t preview WebP (downloads as file).</li>
           <li>Older software compatibility: Legacy image editors, design tools may not support WebP.</li>
-          <li>When no size constraint: If bandwidth isn't an issue and compatibility is priority, JPEG is safer.</li>
+          <li>When no size constraint: If bandwidth isn&#39;t an issue and compatibility is priority, JPEG is safer.</li>
         </ul>
         <p><strong>WebP vs PNG:</strong></p>
         <ul>
