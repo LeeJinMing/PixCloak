@@ -1,115 +1,108 @@
 {
-  "site": "https://pixcloak.com",
+  "site": "http://localhost:4000",
   "results": [
     {
       "url": "https://pixcloak.com/",
       "title": "Free Image Compressor: Reduce JPG/PNG to 100KB-1MB | No Upload",
-      "desc": "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline, no uploads needed. Convert JPEG, PNG, WebP instantly. Perfect for web, email, and social media.",
+      "desc": "Compress images to exact sizes like 100KB, 200KB, or 500KB without quality loss. Works offline—no uploads. Convert JPEG, PNG, and WebP fast for web, email, and social.",
       "canonical": "https://pixcloak.com/compress",
       "hreflangCount": 7,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
-      "warnings": [
-        "DESC_LEN_192"
-      ]
+      "warnings": []
     },
     {
       "url": "https://pixcloak.com/compress-es",
-      "title": "PixCloak",
-      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
-      "canonical": "https://pixcloak.com",
-      "hreflangCount": 4,
+      "title": "Comprimir imágenes a 200KB/500KB (sin subir) | PixCloak · PixCloak",
+      "desc": "Comprime a 200KB/500KB en tu navegador. Convierte WebP/JPEG y redimensiona a 1920px. Todo local, sin subidas.",
+      "canonical": "https://pixcloak.com/compress-es",
+      "hreflangCount": 5,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_8",
-        "DESC_LEN_69"
+        "TITLE_LEN_66",
+        "DESC_LEN_109"
       ]
     },
     {
       "url": "https://pixcloak.com/compress-pt",
-      "title": "PixCloak",
-      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
-      "canonical": "https://pixcloak.com",
-      "hreflangCount": 4,
+      "title": "Comprimir para 200KB/500KB (sem upload) | PixCloak · PixCloak",
+      "desc": "Comprime para 200KB/500KB no navegador. Converta WebP/JPEG e redimensione para 1920px. Tudo local, sem uploads.",
+      "canonical": "https://pixcloak.com/compress-pt",
+      "hreflangCount": 5,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_8",
-        "DESC_LEN_69"
+        "DESC_LEN_111"
       ]
     },
     {
       "url": "https://pixcloak.com/compress-id",
-      "title": "Kompres Gambar ke 200KB/500KB (Offline, Tanpa Unggah) | PixCloak · PixCloak",
-      "desc": "Kompres gambar ke 200KB/500KB langsung di browser. Pilih WebP/JPEG, atur ukuran terpanjang 1920px, unduh satuan atau ZIP. Proses lokal, tanpa unggah.",
+      "title": "Kompres 200KB/500KB (tanpa unggah) | PixCloak · PixCloak",
+      "desc": "Kompres 200KB/500KB di browser. Konversi WebP/JPEG dan ubah ukuran 1920px. Semua lokal, tanpa unggah.",
       "canonical": "https://pixcloak.com/compress-id",
-      "hreflangCount": 0,
+      "hreflangCount": 5,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_75",
-        "NO_HREFLANG"
+        "DESC_LEN_101"
       ]
     },
     {
       "url": "https://pixcloak.com/redact",
-      "title": "Free Photo Redaction Tool: Blur Faces &amp; Remove EXIF | PixCloak · PixCloak",
-      "desc": "Redact sensitive info in photos—blur faces, hide license plates, black out text. Remove EXIF/GPS metadata automatically. 100% local processing, no uploads. GDPR-friendly privacy protection.",
+      "title": "Free Photo Redaction: Blur Faces, Hide Plates | PixCloak · PixCloak",
+      "desc": "Blur faces, hide license plates, and black out text. Remove EXIF/GPS automatically. 100% local—no uploads. Simple, fast, and privacy‑friendly.",
       "canonical": "https://pixcloak.com/redact",
       "hreflangCount": 7,
       "h1Count": 2,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_77",
-        "DESC_LEN_189"
+        "TITLE_LEN_67"
       ]
     },
     {
       "url": "https://pixcloak.com/redact-es",
-      "title": "PixCloak",
-      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
-      "canonical": "https://pixcloak.com",
-      "hreflangCount": 4,
+      "title": "Ocultar en fotos (difuminar/EXIF) | PixCloak · PixCloak",
+      "desc": "Difumina caras, matrículas y texto; elimina EXIF/GPS al exportar. 100% local, sin subir archivos.",
+      "canonical": "https://pixcloak.com/redact-es",
+      "hreflangCount": 5,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_8",
-        "DESC_LEN_69"
+        "DESC_LEN_97"
       ]
     },
     {
       "url": "https://pixcloak.com/redact-pt",
-      "title": "PixCloak",
-      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
-      "canonical": "https://pixcloak.com",
-      "hreflangCount": 4,
+      "title": "Ocultar em fotos (borrão/EXIF) | PixCloak · PixCloak",
+      "desc": "Borre rostos, placas e texto; remova EXIF/GPS na exportação. 100% local, sem upload.",
+      "canonical": "https://pixcloak.com/redact-pt",
+      "hreflangCount": 5,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_8",
-        "DESC_LEN_69"
+        "DESC_LEN_84"
       ]
     },
     {
       "url": "https://pixcloak.com/redact-id",
-      "title": "PixCloak",
-      "desc": "Privacy &amp; Performance: Compress and Redact images in your browser",
-      "canonical": "https://pixcloak.com",
-      "hreflangCount": 4,
+      "title": "Sensor foto (blur/EXIF) | PixCloak · PixCloak",
+      "desc": "Blur wajah, plat nomor, dan teks; hapus EXIF/GPS saat ekspor. 100% lokal, tanpa unggah.",
+      "canonical": "https://pixcloak.com/redact-id",
+      "hreflangCount": 5,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_8",
-        "DESC_LEN_69"
+        "TITLE_LEN_45",
+        "DESC_LEN_87"
       ]
     },
     {
@@ -117,26 +110,22 @@
       "title": "Templates: One‑Click Presets | PixCloak · PixCloak",
       "desc": "Start faster with one‑click presets: 200KB/500KB, 1920px resize, WebP/JPEG formats, and privacy‑safe exports. Everything runs locally in your browser.",
       "canonical": "https://pixcloak.com/templates",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 2,
       "issues": [],
-      "warnings": [
-        "NO_HREFLANG"
-      ]
+      "warnings": []
     },
     {
       "url": "https://pixcloak.com/tools",
-      "title": "Tools: Privacy‑First Image Utilities (Local, No Upload) | PixCloak · PixCloak",
-      "desc": "Privacy‑first image utilities: EXIF/GPS checker, favicon pack, srcset generator, trim transparent, sprite sheet, WebP converter, and more. All run locally—no uploads.",
+      "title": "Image Tools – Local, No Upload | PixCloak · PixCloak",
+      "desc": "EXIF/GPS checker, favicon pack, srcset generator, trim transparent, sprite sheet, WebP converter, and more. Fast, private, and local—no uploads.",
       "canonical": "https://pixcloak.com/tools",
-      "hreflangCount": 1,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
-      "warnings": [
-        "TITLE_LEN_77"
-      ]
+      "warnings": []
     },
     {
       "url": "https://pixcloak.com/tools/exif-checker",
@@ -277,17 +266,16 @@
     },
     {
       "url": "https://pixcloak.com/tools/svg-optimizer",
-      "title": "SVG Optimizer – Minify &amp; clean | PixCloak",
-      "desc": "Paste SVG code to minify and clean attributes/styles locally. Remove bloat safely and export an optimized SVG. Private, offline—no uploads.",
+      "title": "SVG Optimizer – Minify &amp; Clean | PixCloak",
+      "desc": "Minify and clean SVG code locally. Remove bloat safely and export an optimized SVG—private and offline, no uploads.",
       "canonical": "https://pixcloak.com/tools/svg-optimizer",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
         "TITLE_LEN_45",
-        "DESC_LEN_139",
-        "NO_HREFLANG"
+        "DESC_LEN_115"
       ]
     },
     {
@@ -308,42 +296,40 @@
       "title": "Trim Transparent Edges | PixCloak",
       "desc": "Automatically trim fully transparent borders from PNGs and export a clean result. Fast, local processing—no uploads. Great for sprites, icons, and UI assets.",
       "canonical": "https://pixcloak.com/tools/trim-transparent",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_33",
-        "NO_HREFLANG"
+        "TITLE_LEN_33"
       ]
     },
     {
       "url": "https://pixcloak.com/tools/aspect-pad",
       "title": "Aspect Ratio Padder | PixCloak",
-      "desc": "Pad images to a target aspect ratio by adding background color or blur padding. Preview and export locally—no uploads. Ideal for social crops and thumbnails.",
+      "desc": "Pad images to a target aspect ratio with color or blur padding. Preview and export locally—no uploads.",
       "canonical": "https://pixcloak.com/tools/aspect-pad",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
         "TITLE_LEN_30",
-        "NO_HREFLANG"
+        "DESC_LEN_102"
       ]
     },
     {
       "url": "https://pixcloak.com/tools/remove-bg-lite",
-      "title": "Remove BG (Lite) – Color similarity | PixCloak",
-      "desc": "Quick background removal by color similarity (tolerance). 100% local.",
+      "title": "Remove BG (Lite) – Color Similarity | PixCloak",
+      "desc": "Quick background removal by color similarity (tolerance). 100% local—no uploads.",
       "canonical": "https://pixcloak.com/tools/remove-bg-lite",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
         "TITLE_LEN_46",
-        "DESC_LEN_69",
-        "NO_HREFLANG"
+        "DESC_LEN_80"
       ]
     },
     {
@@ -351,13 +337,12 @@
       "title": "Batch WebP Converter + ZIP | PixCloak",
       "desc": "Convert multiple images to WebP in your browser, choose quality and optional resize, then download everything as a single ZIP. Private, offline processing—no uploads.",
       "canonical": "https://pixcloak.com/tools/webp-converter",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_37",
-        "NO_HREFLANG"
+        "TITLE_LEN_37"
       ]
     },
     {
@@ -376,13 +361,12 @@
       "title": "Sprite Sheet Generator | PixCloak",
       "desc": "Combine images into a sprite sheet with JSON mapping and download as ZIP. Configure grid, spacing, and order. All processing is local—no uploads.",
       "canonical": "https://pixcloak.com/tools/sprite-sheet",
-      "hreflangCount": 0,
+      "hreflangCount": 2,
       "h1Count": 1,
       "ldjsonCount": 4,
       "issues": [],
       "warnings": [
-        "TITLE_LEN_33",
-        "NO_HREFLANG"
+        "TITLE_LEN_33"
       ]
     },
     {

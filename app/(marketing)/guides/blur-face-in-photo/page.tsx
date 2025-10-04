@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Blur Faces in Photos (Free, No App Needed) | PixCloak",
-  description: "Protect privacy by blurring faces in photos before sharing. Works on iPhone, Android, and desktop—no app download. Choose blur, pixelate, or solid block. EXIF removed automatically.",
+  title: "Blur Faces in Photos (Free, No App) | PixCloak",
+  description: "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS.",
   alternates: {
     canonical: "/guides/blur-face-in-photo",
     languages: {
