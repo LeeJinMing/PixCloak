@@ -1,3 +1,21 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ekspor tanpa metadata (hapus EXIF/GPS) | PixCloak',
+  description: 'Hapus EXIF & GPS saat ekspor JPEG/WebP/PNG langsung di browser. 100% lokal, tanpa unggah. Cocok untuk berbagi aman di web/email/formulir.',
+  alternates: {
+    canonical: '/guides/id-ekspor-tanpa-metadata',
+    languages: {
+      'x-default': '/guides/export-without-metadata',
+      en: '/guides/export-without-metadata',
+      id: '/guides/id-ekspor-tanpa-metadata',
+      zh: '/guides/export-without-metadata-zh',
+      es: '/guides/es-exportar-sin-metadatos',
+      pt: '/guides/pt-exportar-sem-metadados',
+    },
+  },
+};
+
 export default function IDExportNoMetadata() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
