@@ -78,10 +78,10 @@ function Preview({ url, draw, size, text, pos, opacity, font }: { url: string; d
     img.src = url;
     img.decode().then(() => {
       if (cancelled) return;
-      setImgW(img.naturalWidth || (img as any).width);
-      setImgH(img.naturalHeight || (img as any).height);
+      setImgW(img.naturalWidth);
+      setImgH(img.naturalHeight);
       setReady(true);
-    }).catch(() => {});
+    }).catch(() => { });
     return () => { cancelled = true; };
   }, [url]);
   return (
@@ -102,7 +102,7 @@ function Render({ draw, canvasRef, url, imgW, imgH, size, text, pos, opacity, fo
     img.decode().then(() => {
       if (cancelled) return;
       if (canvasRef.current) { draw(canvasRef.current, img, imgW, imgH); }
-    }).catch(() => {});
+    }).catch(() => { });
     return () => { cancelled = true; };
   }, [draw, canvasRef, url, imgW, imgH, size, text, pos, opacity, font]);
   return null;
