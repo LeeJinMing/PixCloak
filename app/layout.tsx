@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "PixCloak", template: "%s · PixCloak" },
+  title: { default: "PixCloak", template: "%s | PixCloak" },
   description: "Privacy & Performance: Compress and Redact images in your browser",
   alternates: {
     canonical: "/",
@@ -88,10 +88,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});} ` }} />
         )}
         {enableAnalytics && <Analytics />}
-        <header style={{ borderBottom: '1px solid #eee' }}>
+        <header role="banner" style={{ borderBottom: '1px solid #eee' }}>
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px' }}>
             <Link href="/" style={{ fontWeight: 700 }}>PixCloak</Link>
-            <nav style={{ display: 'flex', gap: 16 }}>
+            <nav role="navigation" aria-label="Primary" style={{ display: 'flex', gap: 16 }}>
               <Link href="/redact">Redact</Link>
               <Link href="/tools">Tools</Link>
               <Link href="/guides">Guides</Link>
@@ -100,11 +100,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </nav>
           </div>
         </header>
-        <main className="container section">{children}</main>
-        <footer style={{ borderTop: '1px solid #eee', marginTop: 24 }}>
+        <main role="main" className="container section">{children}</main>
+        <footer role="contentinfo" style={{ borderTop: '1px solid #eee', marginTop: 24 }}>
           <div className="container" style={{ padding: '16px 16px', display: 'grid', gap: 8, justifyItems: 'center' }}>
             <small>© {new Date().getFullYear()} PixCloak. All rights reserved.</small>
-            <nav style={{ display: 'flex', gap: 16 }}>
+            <nav role="navigation" aria-label="Footer" style={{ display: 'flex', gap: 16 }}>
               <Link href="/about">About</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>

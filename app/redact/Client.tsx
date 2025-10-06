@@ -255,9 +255,23 @@ export default function RedactClient() {
         <div style={{ display: 'grid', gap: 10 }}>
           {/* Row 1: Upload */}
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-            <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); setTimeout(() => draw(), 0); }} className="input" style={{ display: 'none' }} />
-            <button className="button-soft" onClick={() => fileInputRef.current?.click()}>Choose images</button>
-            <span className="text-muted" style={{ fontSize: 12 }}>{fileList.length ? `${fileList.length} file(s) selected` : 'No file chosen'}</span>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              id="redact-file-input"
+              aria-label="Choose images to redact"
+              onChange={(e) => { if (e.target.files) handleFiles(e.target.files); setTimeout(() => draw(), 0); }}
+              className="input"
+              style={{ display: 'none' }}
+            />
+            <button className="button-soft" onClick={() => fileInputRef.current?.click()} aria-controls="redact-file-input">
+              Choose images
+            </button>
+            <span className="text-muted" style={{ fontSize: 12 }} aria-live="polite">
+              {fileList.length ? `${fileList.length} file(s) selected` : 'No file chosen'}
+            </span>
           </div>
 
           {/* Row 2: Mode + Strength */}
@@ -289,7 +303,7 @@ export default function RedactClient() {
             <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">Apply preset</button>
             <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
             <button onClick={triggerImport} className="button button-dark">Import JSON</button>
-            <input ref={jsonInputRef} type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
+            <input ref={jsonInputRef} id="redact-preset-import" aria-label="Import redaction preset JSON" type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
           </div>
 
           {/* Row 4: Actions */}
@@ -303,6 +317,8 @@ export default function RedactClient() {
       <div className="card" style={{ maxWidth: '100%', overflow: 'auto' }}>
         <canvas
           ref={canvasRef}
+          role="img"
+          aria-label="Redaction canvas preview"
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}

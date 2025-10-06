@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -39,9 +40,19 @@ export default function PressPage() {
         <h2 style={{ marginBottom: 8 }}>Assets</h2>
         <ul>
           {assets.map((a) => (
-            <li key={a}><a href={a}>{a}</a></li>
+            <li key={a}>
+              <a href={a}>{a}</a>
+            </li>
           ))}
         </ul>
+        <div style={{ display: 'grid', gap: 8, gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+          {/* Render previews with next/image to enable AVIF/WebP negotiation */}
+          {assets.filter(a => a.endsWith('.webp')).slice(0, 3).map((a) => (
+            <div key={a} style={{ position: 'relative', width: '100%', aspectRatio: '4 / 3' }}>
+              <Image src={a} alt={a.replace('/press/', '').replace(/[-_]/g, ' ')} fill sizes="(max-width: 600px) 100vw, 200px" />
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="card">
