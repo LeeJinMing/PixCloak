@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Pos = 'tl' | 'tr' | 'bl' | 'br' | 'center';
 
@@ -10,7 +10,7 @@ export default function Client() {
   const [opacity, setOpacity] = useState(0.3);
   const [size, setSize] = useState(48);
   const [pos, setPos] = useState<Pos>('br');
-  const [font, setFont] = useState('600 48px system-ui, Segoe UI, Arial');
+  const [font] = useState('600 48px system-ui, Segoe UI, Arial');
 
   async function onPick(e: React.ChangeEvent<HTMLInputElement>) { const f = e.target.files?.[0]; if (!f) return; setPreviewUrl(URL.createObjectURL(f)); }
 
@@ -71,9 +71,21 @@ function Preview({ url, draw, size, text, pos, opacity, font }: { url: string; d
   const [imgH, setImgH] = useState<number | null>(null);
   const [ready, setReady] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  // Decode image and compute intrinsic size without using <img> element
+  useEffect(() => {
+    let cancelled = false;
+    const img = new Image();
+    img.src = url;
+    img.decode().then(() => {
+      if (cancelled) return;
+      setImgW(img.naturalWidth || (img as any).width);
+      setImgH(img.naturalHeight || (img as any).height);
+      setReady(true);
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [url]);
   return (
     <div style={{ display: 'grid', gap: 8 }}>
-      <img src={url} alt="preview" onLoad={(e) => { const el = e.currentTarget as HTMLImageElement; setImgW(el.naturalWidth); setImgH(el.naturalHeight); setReady(true); }} style={{ maxWidth: '100%', display: 'none' }} />
       <canvas ref={canvasRef} style={{ maxWidth: '100%' }} />
       {ready && imgW && imgH && (
         <Render draw={draw} canvasRef={canvasRef} url={url} imgW={imgW} imgH={imgH} size={size} text={text} pos={pos} opacity={opacity} font={font} />
@@ -83,8 +95,16 @@ function Preview({ url, draw, size, text, pos, opacity, font }: { url: string; d
 }
 
 function Render({ draw, canvasRef, url, imgW, imgH, size, text, pos, opacity, font }: { draw: (c: HTMLCanvasElement, img: CanvasImageSource, w: number, h: number) => void; canvasRef: React.MutableRefObject<HTMLCanvasElement | null>; url: string; imgW: number; imgH: number; size: number; text: string; pos: Pos; opacity: number; font: string; }) {
-  const [ran, setRan] = useState(false);
-  if (!ran) { setRan(true); const img = new Image(); img.src = url; img.decode().then(() => { if (canvasRef.current) { draw(canvasRef.current, img, imgW, imgH); } }); }
+  useEffect(() => {
+    let cancelled = false;
+    const img = new Image();
+    img.src = url;
+    img.decode().then(() => {
+      if (cancelled) return;
+      if (canvasRef.current) { draw(canvasRef.current, img, imgW, imgH); }
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [draw, canvasRef, url, imgW, imgH, size, text, pos, opacity, font]);
   return null;
 }
 
