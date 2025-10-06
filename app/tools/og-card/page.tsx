@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Client from "./Client";
 
 export const metadata: Metadata = {
-  title: "OG/Twitter Card Generator – 1200×630 | PixCloak",
-  description: "Create OG/Twitter card images at 1200×630, preview instantly, and export PNG/JPG. Everything runs locally in your browser—no uploads or external services.",
+  title: "OG/Twitter Card 1200×630 (Free, No Upload) | PixCloak",
+  description: "Create 1200×630 OG/Twitter images in your browser—no uploads. Preview instantly and export PNG/JPG fast. Perfect for blogs, docs, and social sharing.",
   alternates: { canonical: "/tools/og-card", languages: { "x-default": "/tools/og-card" } },
 };
 export default function Page() {

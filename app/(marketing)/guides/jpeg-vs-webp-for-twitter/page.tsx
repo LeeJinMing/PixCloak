@@ -3,7 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'JPEG vs WebP for X/Twitter: Best Settings | PixCloak',
   description: 'Choose WebP for smaller files or JPEG for compatibility. Keep width ≤1920px and target ~500KB for fast loads. Convert and preview locally—no uploads needed.',
-  alternates: { canonical: '/guides/jpeg-vs-webp-for-twitter' },
+  alternates: {
+    canonical: '/guides/jpeg-vs-webp-for-twitter',
+    languages: { 'x-default': '/guides/jpeg-vs-webp-for-twitter', en: '/guides/jpeg-vs-webp-for-twitter' }
+  },
 };
 
 export default function GuideJpegWebpTwitter() {
