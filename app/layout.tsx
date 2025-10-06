@@ -13,7 +13,6 @@ const isProd = process.env.NODE_ENV === "production";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "PixCloak", template: "%s | PixCloak" },
-  description: "Privacy & Performance: Compress and Redact images in your browser",
   alternates: {
     canonical: "/",
     languages: {
