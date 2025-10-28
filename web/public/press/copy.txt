@@ -1,0 +1,22 @@
+[EN]
+PixCloak – Local Image Compression & Redaction (Open-source)
+One-liner: Compress and redact images locally in your browser – no upload, no tracking. Works offline (PWA).
+Highlights: Target KB, Resize Longest/Exact, JPEG/WebP/PNG, Batch ZIP, Rename, Solid/Pixelate Redaction, EXIF/GPS removal.
+Links: https://pixcloak.com/compress | /redact | /guides | GitHub: https://github.com/LeeJinMing/PixCloak
+
+[ZH]
+PixCloak – 本地图片压缩与隐私脱敏（开源）
+一句话：浏览器本地压缩/脱敏，不上传、不跟踪，支持离线（PWA）。
+亮点：目标KB、最长边/指定尺寸、JPEG/WebP/PNG、批量ZIP、重命名、实色/像素化、去除EXIF/GPS。
+链接：https://pixcloak.com/compress / /redact / /guides | GitHub: https://github.com/LeeJinMing/PixCloak
+
+[Assets]
+- /press/compress-demo-1.webp
+- /press/compress-demo-2.webp
+- /press/compress-demo-3.webp
+- /press/plate-ui.webp
+- /press/plate-upload.webp
+- /press/plate-pixelate.webp
+- /press/plate-solid.webp
+- /press/plate-demo.gif
+- /press/compress-200kb.gif  (Upload → Target 200KB → Compress → Download)

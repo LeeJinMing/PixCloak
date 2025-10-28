@@ -1,0 +1,42 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": false,
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "vercel-build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "submit:indexnow": "node ./scripts/submit-indexnow.mjs",
+    "submit-indexnow": "npm run submit:indexnow",
+    "submit:indexnow:ps": "pwsh -File ./scripts/submit-indexnow.ps1",
+    "submit:indexnow:all": "node ./scripts/submit-indexnow-all.mjs",
+    "submit:indexnow:incremental": "node ./scripts/submit-indexnow-incremental.mjs",
+    "submit:indexnow:engines": "SUBMIT_ALL_ENGINES=true node ./scripts/submit-indexnow-all.mjs",
+    "postdeploy": "node ./scripts/post-deploy-indexnow.mjs",
+    "seo:audit": "node ./scripts/seo-audit.mjs",
+    "seo:check": "node ./scripts/check-seo-metadata.mjs",
+    "seo:fix": "node ./scripts/fix-seo-metadata.mjs",
+    "seo:add-breadcrumbs": "node ./scripts/add-breadcrumbs-to-guides.mjs",
+    "seo:verify": "node ./scripts/verify-seo-fixes.mjs",
+    "og:convert": "node ./scripts/convert-og-svg.mjs"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "jszip": "^3.10.1",
+    "next": "15.5.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.0",
+    "typescript": "^5"
+  }
+}

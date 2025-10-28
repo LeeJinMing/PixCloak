@@ -1,0 +1,183 @@
+/* Design tokens */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --radius: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --gap: 16px;
+  --primary: #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Utilities */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.card h2 {
+  font-size: 20px;
+}
+.card h3 {
+  font-size: 18px;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  background: #fff;
+}
+.select {
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  background: #fff;
+}
+.button {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease;
+}
+.button:hover {
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+.button-dark {
+  background: #111;
+  color: #fff;
+}
+.button-success {
+  background: #16a34a;
+  color: #fff;
+}
+.button-outline {
+  background: #fff;
+  color: #111;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.button-outline:hover {
+  background: #f3f4f6;
+}
+.button-soft {
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.button-soft:hover {
+  background: rgba(37, 99, 235, 0.18);
+}
+.button:focus-visible,
+.button-outline:focus-visible,
+.button-soft:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+.text-muted {
+  /* darker for better contrast (approx slate-600/700) */
+  color: #374151;
+}
+.section {
+  margin-top: 16px;
+}
+
+/* Ads containers: non-intrusive placements */
+.ad-bottom {
+  margin-top: 16px;
+}
+.ad-sides {
+  position: sticky;
+  top: 80px;
+}
+.ad-rail {
+  position: fixed;
+  top: 120px;
+  width: 160px;
+}
+@media (max-width: 1100px) {
+  .ad-rail {
+    display: none;
+  }
+}
+
+/* Pills */
+.pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  background: rgba(37, 99, 235, 0.06);
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+}
+.pill:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+.pill-ghost {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  background: #f5f6f8;
+  color: #475569;
+  border: 1px solid #e5e7eb;
+}
+.pill-ghost:hover {
+  background: #eef0f3;
+}

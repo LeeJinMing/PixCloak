@@ -1,0 +1,36 @@
+
+> web@0.1.0 seo:check
+> node ./scripts/check-seo-metadata.mjs
+
+馃攳 寮€濮嬫壒閲忔鏌ユ墍鏈夐〉闈㈢殑 SEO metadata...
+
+馃搫 鎵惧埌 113 涓〉闈㈡枃浠?
+馃搳 SEO 妫€鏌ョ粨鏋?
+
+馃敶 鏍囬閲嶅闂:
+  鉁?娌℃湁鍙戠幇鏍囬閲嶅闂
+
+鈿狅笍  Meta Description 杩囬暱 (>160瀛楃):
+  鉁?娌℃湁闂
+
+鈿狅笍  Meta Description 杩囩煭 (<120瀛楃):
+  (marketing)\guides\how-to-resize-images-for-instagram\page.tsx: 26 瀛楃
+鈿狅笍  鏍囬杩囬暱 (>60瀛楃):
+  (marketing)\guides\jpeg-vs-webp-size-quality\page.tsx: 61 瀛楃
+    鏍囬: "JPEG vs WebP: Which is Smaller and Better Quality? | PixCloak"
+  (marketing)\guides\privacy-compliance\page.tsx: 61 瀛楃
+    鏍囬: "Privacy & Compliance for Images (Local, No Upload) | PixCloak"
+  (marketing)\guides\pt-limites-de-imagens-plataformas\page.tsx: 61 瀛楃
+    鏍囬: "Limites de imagens por plataforma (KB e dimens玫es) | PixCloak"
+  (marketing)\guides\rename-rules\page.tsx: 61 瀛楃
+    鏍囬: "Batch Rename Rules (Prefix/Suffix, Keep Extension) | PixCloak"
+  tools\png-jpg-converter\page.tsx: 61 瀛楃
+    鏍囬: "Free PNG to JPG & JPG to PNG Converter (No Upload) | PixCloak"
+鈿狅笍  鏍囬杩囩煭 (<30瀛楃):
+  鉁?娌℃湁闂
+
+
+馃搳 鎬荤粨:
+  妫€鏌ラ〉闈? 113
+  鍙戠幇闂: 6 涓?
+馃挕 寤鸿: 淇杩欎簺闂浠ユ彁鍗?SEO 琛ㄧ幇
