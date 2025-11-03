@@ -4,7 +4,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import CategoryCard from './CategoryCard';
 
 export const metadata: Metadata = {
-  title: "Image Compression Before & After Gallery | Visual Quality Comparison | PixCloak",
+  title: "Image Compression Gallery: Before & After | PixCloak",
   description: "See real before and after examples of image compression. Compare quality, file sizes, and compression ratios across different tools and settings.",
   alternates: { canonical: "/gallery" },
 };

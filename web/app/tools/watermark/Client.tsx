@@ -38,7 +38,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Text Watermark</h1>
+        <h2>Text Watermark</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
           <input className="input" value={text} onChange={(e) => setText(e.target.value)} placeholder="Watermark text" />

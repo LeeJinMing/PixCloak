@@ -56,6 +56,19 @@ const nextConfig: NextConfig = {
         destination: "https://va.vercel-scripts.com/v1/script.debug.js",
         permanent: false,
       },
+      // Repair reported 400-499 pages to valid equivalents (SEO-friendly 301)
+      { source: "/tools/png-to-jpg", destination: "/tools/png-jpg-converter", permanent: true },
+      { source: "/tools/crop-image", destination: "/tools/resize-image", permanent: true },
+
+      { source: "/guides/compress-to-100kb", destination: "/guides/compress-image-to-100kb", permanent: true },
+      { source: "/guides/jpeg-vs-webp-for-websites", destination: "/guides/jpeg-vs-webp-size-quality", permanent: true },
+
+      { source: "/guides/long-tail/job-application-500kb", destination: "/guides/prepare-images-for-job-application", permanent: true },
+      { source: "/guides/long-tail/resume-200kb", destination: "/guides/compress-to-200kb", permanent: true },
+      { source: "/guides/long-tail/gov-portal-200kb-cn", destination: "/guides/compress-to-target-kb-zh", permanent: true },
+      { source: "/guides/long-tail/youtube-thumbnail-200kb", destination: "/guides/compress-to-200kb", permanent: true },
+      { source: "/guides/long-tail/passport-scan-redact", destination: "/guides/redaction-checklist", permanent: true },
+      { source: "/guides/long-tail/instagram-story-1080x1920", destination: "/guides/how-to-resize-images-for-instagram", permanent: true },
     ];
   },
   turbopack: {

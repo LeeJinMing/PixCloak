@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "JPEG vs WebP: Which is Smaller and Better Quality? | PixCloak",
+  title: "JPEG vs WebP: Smaller Files, Same Quality? | PixCloak",
   description: "Compare JPEG and WebP file sizes and quality. WebP is 30-50% smaller at same quality. See when to use each format for websites, social media, and email.",
   alternates: {
     canonical: '/guides/jpeg-vs-webp-size-quality',

@@ -35,7 +35,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Favicon Pack Generator</h1>
+        <h2>Favicon Pack Generator</h2>
         <p className="text-muted">Upload a square image, generate multiple favicon/manifest icons and download ZIP.</p>
         <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
         <button className="button" onClick={onGenerate} disabled={!preview}>Generate ZIP</button>

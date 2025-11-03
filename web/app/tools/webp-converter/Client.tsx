@@ -30,7 +30,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Batch WebP Converter</h1>
+        <h2>Batch WebP Converter</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" multiple onChange={onPick} className="input" />
           <label>Quality<input className="input" type="number" min={0.1} max={1} step={0.01} value={quality} onChange={(e) => setQuality(parseFloat(e.target.value) || 0.92)} style={{ width: 96, marginLeft: 8 }} /></label>

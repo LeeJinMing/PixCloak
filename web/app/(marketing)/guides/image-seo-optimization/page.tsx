@@ -3,7 +3,7 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image SEO Optimization Guide | Alt Text, File Names & Search Visibility | PixCloak",
+  title: "Image SEO: Alt Text, File Names, Visibility | PixCloak",
   description: "Complete guide to image SEO optimization. Learn how to optimize alt text, file names, captions, and image metadata for better search engine visibility.",
   alternates: { canonical: "/guides/image-seo-optimization" },
 };

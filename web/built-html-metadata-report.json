@@ -1,0 +1,3205 @@
+{
+  "results": {
+    "total": 123,
+    "success": 122,
+    "failed": 1,
+    "titles": {
+      "Free Image Tools: Compress &amp; Redact (No Upload) | PixCloak": [
+        "/"
+      ],
+      "About PixCloak: Privacy‑First Image Toolkit | PixCloak": [
+        "/about"
+      ],
+      "Batch Processing (Coming Soon) | PixCloak | PixCloak": [
+        "/batch"
+      ],
+      "Image Compression Benchmark &amp; Quality Comparison | PixCloak | PixCloak": [
+        "/benchmark"
+      ],
+      "PixCloak Case Studies: Real Business Impact &amp; ROI Analysis | Verified Results | PixCloak": [
+        "/case-studies"
+      ],
+      "PixCloak Changelog &amp; Updates | Latest Features &amp; Improvements | PixCloak": [
+        "/changelog"
+      ],
+      "Free Image Compressor: Reduce JPG/PNG to 100KB | PixCloak | PixCloak": [
+        "/compress"
+      ],
+      "Comprimir imágenes a 200KB/500KB (sin subir) | PixCloak | PixCloak": [
+        "/compress-es"
+      ],
+      "Kompres 200KB/500KB (tanpa unggah) | PixCloak | PixCloak": [
+        "/compress-id"
+      ],
+      "Comprimir para 200KB/500KB (sem upload) | PixCloak | PixCloak": [
+        "/compress-pt"
+      ],
+      "Contact Us: Questions &amp; Support | PixCloak | PixCloak": [
+        "/contact"
+      ],
+      "Image Compression Before &amp; After Gallery | Visual Quality Comparison | PixCloak | PixCloak": [
+        "/gallery"
+      ],
+      "Image Guides: Compress, Convert, Remove EXIF | PixCloak | PixCloak": [
+        "/guides"
+      ],
+      "How to Share Photos Anonymously (Remove All... | PixCloak | PixCloak": [
+        "/guides/anonymized-sharing"
+      ],
+      "Create Profile Picture at 200KB (LinkedIn, Job... | PixCloak | PixCloak": [
+        "/guides/avatar-200kb"
+      ],
+      "Avoid Compression Artifacts (WebP/JPEG) | PixCloak | PixCloak": [
+        "/guides/avoid-artifacts-webp-jpeg"
+      ],
+      "Black Out Text in Images (Censor/Redact) | PixCloak | PixCloak": [
+        "/guides/black-out-text-in-image"
+      ],
+      "Blur Faces in Photos (Free, No App) | PixCloak | PixCloak": [
+        "/guides/blur-face-in-photo"
+      ],
+      "Blur Number Plates in Photos (UK) | PixCloak | PixCloak": [
+        "/guides/blur-number-plate-online"
+      ],
+      "Complete Image Compression Guide (2025):... | PixCloak | PixCloak": [
+        "/guides/complete-image-compression-guide"
+      ],
+      "How to Compress Images to 100KB (Free, No Quality Loss) | PixCloak": [
+        "/guides/compress-image-to-100kb"
+      ],
+      "Compress Images to 1MB (Free, Maximum Quality) | PixCloak | PixCloak": [
+        "/guides/compress-to-1mb"
+      ],
+      "Compress Images to 200KB (Free, No Quality Loss) | PixCloak | PixCloak": [
+        "/guides/compress-to-200kb"
+      ],
+      "Compress Images to 300KB (WebP/JPEG) | PixCloak | PixCloak": [
+        "/guides/compress-to-300kb"
+      ],
+      "Compress Images to 500KB (Free, High Quality) | PixCloak | PixCloak": [
+        "/guides/compress-to-500kb"
+      ],
+      "Compress Images to 800KB (High‑Quality) | PixCloak | PixCloak": [
+        "/guides/compress-to-800kb"
+      ],
+      "Compress Images to Target KB (200KB/500KB) | PixCloak | PixCloak": [
+        "/guides/compress-to-target-kb"
+      ],
+      "按目标体积压缩到200KB/500KB（本地，无上传） | PixCloak | PixCloak": [
+        "/guides/compress-to-target-kb-zh"
+      ],
+      "Convert JPEG to WebP (Free, 30-50% Smaller) | PixCloak | PixCloak": [
+        "/guides/convert-jpeg-to-webp"
+      ],
+      "Convert JPG to WebP Online (Free, Smaller File... | PixCloak | PixCloak": [
+        "/guides/convert-jpg-to-webp-online"
+      ],
+      "Embed “Compress to KB” Button (Link or Script) | PixCloak | PixCloak": [
+        "/guides/embed-button"
+      ],
+      "Comprimir imágenes a 200KB (Gratis, sin subir) | PixCloak | PixCloak": [
+        "/guides/es-comprimir-a-200kb"
+      ],
+      "Comprimir a tamaño objetivo (200KB/500KB) | PixCloak | PixCloak": [
+        "/guides/es-comprimir-a-kb-objetivo"
+      ],
+      "Exportar imágenes sin metadatos (eliminar... | PixCloak | PixCloak": [
+        "/guides/es-exportar-sin-metadatos"
+      ],
+      "Límites de imágenes por plataforma (KB y... | PixCloak | PixCloak": [
+        "/guides/es-limites-de-imagenes-plataformas"
+      ],
+      "Redimensionar por el lado más largo a 1920px | PixCloak | PixCloak": [
+        "/guides/es-redimensionar-lado-mas-largo"
+      ],
+      "Remove GPS &amp; EXIF Data from Photos (Free, 2... | PixCloak | PixCloak": [
+        "/guides/exif-gps-removal"
+      ],
+      "Export Images Without Metadata (Remove EXIF/GPS) | PixCloak | PixCloak": [
+        "/guides/export-without-metadata"
+      ],
+      "无元数据导出：去除 EXIF/GPS（本地处理）| PixCloak | PixCloak": [
+        "/guides/export-without-metadata-zh"
+      ],
+      "Google Search Console Operations | PixCloak | PixCloak": [
+        "/guides/gsc-operations"
+      ],
+      "How to Compress Images Without Losing Quality... | PixCloak | PixCloak": [
+        "/guides/how-to-compress-image-without-losing-quality"
+      ],
+      "How to Compress Images on iPhone (Free, No App) | PixCloak | PixCloak": [
+        "/guides/how-to-compress-on-iphone"
+      ],
+      "How to Reduce Image File Size (Free, 2 Minutes) | PixCloak | PixCloak": [
+        "/guides/how-to-reduce-image-file-size"
+      ],
+      "How to Resize Images for Instagram: Feed,... | PixCloak | PixCloak": [
+        "/guides/how-to-resize-images-for-instagram"
+      ],
+      "Batas gambar per platform (KB &amp; dimensi) | PixCloak | PixCloak": [
+        "/guides/id-batas-gambar-platform"
+      ],
+      "Ekspor tanpa metadata (hapus EXIF/GPS) | PixCloak | PixCloak": [
+        "/guides/id-ekspor-tanpa-metadata"
+      ],
+      "Kompres ke target KB (200KB/500KB) | PixCloak | PixCloak": [
+        "/guides/id-kompres-ke-kb-target"
+      ],
+      "Kompres gambar menjadi 1MB (kualitas tinggi) | PixCloak | PixCloak": [
+        "/guides/id-kompres-menjadi-1mb"
+      ],
+      "Ubah ukuran sisi terpanjang ke 1920px | PixCloak | PixCloak": [
+        "/guides/id-ubah-ukuran-sisi-terpanjang"
+      ],
+      "Image SEO Optimization Guide | Alt Text, File Names &amp; Search Visibility | PixCloak | PixCloak": [
+        "/guides/image-seo-optimization"
+      ],
+      "JPEG vs WebP for LinkedIn: Feed vs Banners | PixCloak | PixCloak": [
+        "/guides/jpeg-vs-webp-for-linkedin"
+      ],
+      "JPEG vs WebP for X/Twitter: Best Settings | PixCloak | PixCloak": [
+        "/guides/jpeg-vs-webp-for-twitter"
+      ],
+      "JPEG vs WebP: Which is Smaller and Better Quality? | PixCloak | PixCloak": [
+        "/guides/jpeg-vs-webp-size-quality"
+      ],
+      "Blur License Plates in Photos — Legal &amp; Easy | PixCloak | PixCloak": [
+        "/guides/license-plate-redaction"
+      ],
+      "Image Upload Limits for iPhone &amp; Android... | PixCloak | PixCloak": [
+        "/guides/mobile-upload-limits"
+      ],
+      "Platform Image Limits (KB &amp; Dimensions) | PixCloak | PixCloak": [
+        "/guides/platform-image-limits"
+      ],
+      "平台常见图片限制（200KB/500KB 规范） | PixCloak | PixCloak": [
+        "/guides/platform-image-limits-zh"
+      ],
+      "PNG vs JPG: When to Use Each Format (Complete... | PixCloak | PixCloak": [
+        "/guides/png-vs-jpg-when-to-use-each"
+      ],
+      "Prepare Images for Social Posts at 500KB... | PixCloak | PixCloak": [
+        "/guides/post-500kb"
+      ],
+      "Prepare Images for Forms (200KB/500KB Presets) | PixCloak | PixCloak": [
+        "/guides/prepare-images-for-forms"
+      ],
+      "Prepare Images for Job Applications (200KB/500KB) | PixCloak | PixCloak": [
+        "/guides/prepare-images-for-job-application"
+      ],
+      "Prepare Portfolio Images (1920px, 800KB–1MB) | PixCloak | PixCloak": [
+        "/guides/prepare-images-for-portfolio"
+      ],
+      "Privacy &amp; Compliance for Images (Local, No Upload) | PixCloak | PixCloak": [
+        "/guides/privacy-compliance"
+      ],
+      "Comprimir imagens para 500KB (alta qualidade) | PixCloak | PixCloak": [
+        "/guides/pt-comprimir-para-500kb"
+      ],
+      "Comprimir para KB alvo (200KB/500KB) | PixCloak | PixCloak": [
+        "/guides/pt-comprimir-para-kb-alvo"
+      ],
+      "Exportar sem metadados (remover EXIF/GPS) | PixCloak | PixCloak": [
+        "/guides/pt-exportar-sem-metadados"
+      ],
+      "Limites de imagens por plataforma (KB e dimensões) | PixCloak | PixCloak": [
+        "/guides/pt-limites-de-imagens-plataformas"
+      ],
+      "Redimensionar pelo lado mais longo (1920px) | PixCloak | PixCloak": [
+        "/guides/pt-redimensionar-lado-mais-longo"
+      ],
+      "Redact a Screenshot on Mac (Blur/Pixelate) | PixCloak | PixCloak": [
+        "/guides/redact-screenshot-mac"
+      ],
+      "Photo Privacy Checklist Before Sharing Online | PixCloak | PixCloak": [
+        "/guides/redaction-checklist"
+      ],
+      "Remove EXIF from iPhone Photos — No App Needed | PixCloak | PixCloak": [
+        "/guides/remove-exif-iphone"
+      ],
+      "iPhone 照片去除 EXIF/GPS（本地处理）| PixCloak | PixCloak": [
+        "/guides/remove-exif-iphone-zh"
+      ],
+      "Remove EXIF from WeChat images (local) | PixCloak | PixCloak": [
+        "/guides/remove-exif-wechat"
+      ],
+      "微信图片去除 EXIF 元数据（本地处理）| PixCloak | PixCloak": [
+        "/guides/remove-exif-wechat-zh"
+      ],
+      "Remove GPS Data from Photos (Strip EXIF) | PixCloak | PixCloak": [
+        "/guides/remove-gps-data-from-photos"
+      ],
+      "Batch Rename Rules (Prefix/Suffix, Keep Extension) | PixCloak | PixCloak": [
+        "/guides/rename-rules"
+      ],
+      "Research: 500KB Quality Range (1920px workflow) | PixCloak | PixCloak": [
+        "/guides/research-500kb-quality-range"
+      ],
+      "Research: JPEG vs WebP at Target KBs | PixCloak | PixCloak": [
+        "/guides/research-jpeg-vs-webp"
+      ],
+      "Research: Quality vs Size Curves (JPEG/WebP) | PixCloak": [
+        "/guides/research-quality-size-curves"
+      ],
+      "Resize Images to 1920px (Longest Side) | PixCloak | PixCloak": [
+        "/guides/resize-longest-side"
+      ],
+      "按最长边缩放到 1920px（网页最佳实践） | PixCloak | PixCloak": [
+        "/guides/resize-longest-side-zh"
+      ],
+      "Resize Longest Side to 1920px (Best for Web) | PixCloak | PixCloak": [
+        "/guides/resize-to-1920"
+      ],
+      "Screenshot Privacy Checklist (Before Sharing) | PixCloak | PixCloak": [
+        "/guides/screenshot-privacy-check"
+      ],
+      "Social Media Image Size Limits (LinkedIn,... | PixCloak | PixCloak": [
+        "/guides/social-platform-kb"
+      ],
+      "TinyPNG Alternative: Free Image Compressor (No... | PixCloak | PixCloak": [
+        "/guides/tinypng-alternative-free-no-upload"
+      ],
+      "Batch Image Compressor: Download ZIP (Free, No... | PixCloak | PixCloak": [
+        "/guides/zip-batch-download"
+      ],
+      "Press &amp; Brand Assets | PixCloak | PixCloak": [
+        "/press"
+      ],
+      "Privacy Policy: Your Data Stays Local | PixCloak | PixCloak": [
+        "/privacy"
+      ],
+      "Free Photo Redaction: Blur Faces, Hide Plates | PixCloak | PixCloak": [
+        "/redact"
+      ],
+      "Ocultar en fotos (difuminar/EXIF) | PixCloak | PixCloak": [
+        "/redact-es"
+      ],
+      "Sensor foto (blur/EXIF) | PixCloak | PixCloak": [
+        "/redact-id"
+      ],
+      "Ocultar em fotos (borrão/EXIF) | PixCloak | PixCloak": [
+        "/redact-pt"
+      ],
+      "PixCloak Algorithm Research &amp; Technical Documentation | Open Source | PixCloak": [
+        "/research"
+      ],
+      "PixCloak Benchmarking Methodology | Performance Testing Guide | PixCloak": [
+        "/research/docs/benchmarking-methodology"
+      ],
+      "PixCloak Compression Algorithm Implementation | Technical Documentation | PixCloak": [
+        "/research/docs/compression-algorithm"
+      ],
+      "PixCloak Privacy-First Architecture Guide | Technical Documentation | PixCloak": [
+        "/research/docs/privacy-architecture"
+      ],
+      "Image Size Requirements by Platform &amp; Use Case | PixCloak | PixCloak": [
+        "/scenarios"
+      ],
+      "Free Image Size Templates &amp; Platform Guidelines | PixCloak | PixCloak": [
+        "/templates"
+      ],
+      "Terms of Service: Free Image Tools | PixCloak | PixCloak": [
+        "/terms"
+      ],
+      "PixCloak Real-World Test Cases &amp; User Stories | Verified Results | PixCloak": [
+        "/testimonials"
+      ],
+      "Free Image Tools: Resize, Convert, Compress... | PixCloak | PixCloak": [
+        "/tools"
+      ],
+      "Aspect Ratio Padder (Color/Blur) | PixCloak": [
+        "/tools/aspect-pad"
+      ],
+      "Batch Rename Images (ZIP, No Upload) | PixCloak": [
+        "/tools/batch-rename"
+      ],
+      "Free Image Cropper: 1:1, 4:3, 16:9 Templates | PixCloak": [
+        "/tools/crop-templates"
+      ],
+      "Data URL Converter &amp; Alt Suggestions | PixCloak": [
+        "/tools/dataurl-alt"
+      ],
+      "DPI/PPI Converter – Print size vs pixels | PixCloak": [
+        "/tools/dpi-converter"
+      ],
+      "EXIF/GPS Metadata Checker – Remove EXIF locally | PixCloak": [
+        "/tools/exif-checker"
+      ],
+      "Free Favicon Generator: All Sizes + Manifest... | PixCloak": [
+        "/tools/favicon-pack"
+      ],
+      "Image Diff – A/B slider &amp; pixel diff | PixCloak": [
+        "/tools/image-diff"
+      ],
+      "LQIP Generator: Tiny Base64 Placeholders | PixCloak": [
+        "/tools/lqip"
+      ],
+      "OG/Twitter Card 1200×630 (Free, No Upload) | PixCloak": [
+        "/tools/og-card"
+      ],
+      "Platform Compliance Checker – KB &amp; Dimensions | PixCloak": [
+        "/tools/platform-checker"
+      ],
+      "PNG to JPG &amp; JPG to PNG Converter (No Upload) | PixCloak": [
+        "/tools/png-jpg-converter"
+      ],
+      "Free Background Remover: Remove BG (No Upload) | PixCloak": [
+        "/tools/remove-bg-lite"
+      ],
+      "Free Image Resizer: Resize to Exact Dimensions... | PixCloak": [
+        "/tools/resize-image"
+      ],
+      "Sprite Sheet Generator | PixCloak": [
+        "/tools/sprite-sheet"
+      ],
+      "Responsive img srcset Generator | PixCloak": [
+        "/tools/srcset-generator"
+      ],
+      "SVG Optimizer – Minify &amp; Clean | PixCloak": [
+        "/tools/svg-optimizer"
+      ],
+      "Text Placeholder – Social/Thumbnail presets | PixCloak": [
+        "/tools/text-placeholder"
+      ],
+      "Trim Transparent Edges (PNG) | PixCloak": [
+        "/tools/trim-transparent"
+      ],
+      "Free Watermark Tool: Add Text to Images (No... | PixCloak": [
+        "/tools/watermark"
+      ],
+      "Free WebP Converter: JPG/PNG to WebP (No Upload) | PixCloak": [
+        "/tools/webp-converter"
+      ]
+    },
+    "descriptions": {
+      "Compress and redact images locally in your browser. No upload. Fast JPEG/PNG/WebP compression to exact KB, privacy‑first tools, and step‑by‑step guides.": [
+        "/"
+      ],
+      "PixCloak: privacy‑first image toolkit. Compress to exact KB, redact faces/plates, remove EXIF/GPS, batch ZIP—everything runs locally in your browser, no...": [
+        "/about"
+      ],
+      "Queue multiple images, apply presets (target KB, resize, format), and export as a ZIP. Planned feature in membership plan. Local processing, no uploads.": [
+        "/batch"
+      ],
+      "Compare image compression quality across different tools and settings. Download our benchmark dataset with SSIM/PSNR metrics, file size comparisons, and visual quality analysis.": [
+        "/benchmark"
+      ],
+      "Detailed case studies showing how businesses use PixCloak to improve website performance, reduce costs, and enhance user experience. Verified ROI and impact metrics.": [
+        "/case-studies"
+      ],
+      "Track all PixCloak updates, new features, and improvements. Subscribe to our RSS feed for instant notifications of new tools and enhancements.": [
+        "/changelog"
+      ],
+      "Compress images to 100KB–500KB without quality loss. Works offline—no uploads. Convert JPEG/PNG/WebP fast for web, email, and social media in seconds.": [
+        "/compress"
+      ],
+      "Comprime a 200KB/500KB en tu navegador. Convierte WebP/JPEG y redimensiona a 1920px. Todo local, sin subidas. Works locally in your browser, no uploads.": [
+        "/compress-es"
+      ],
+      "Kompres 200KB/500KB di browser. Konversi WebP/JPEG dan ubah ukuran 1920px. Semua lokal, tanpa unggah. Works locally in your browser, no uploads.": [
+        "/compress-id"
+      ],
+      "Comprima para 200KB/500KB no navegador, sem uploads. Converta WebP/JPEG, redimensione para 1920px. Remove EXIF/GPS automaticamente. 100% local e privado.": [
+        "/compress-pt"
+      ],
+      "Questions or feedback about PixCloak? Email support@pixcloak.com with your scenario and an example file (no private data). We reply within 1–2 business days.": [
+        "/contact"
+      ],
+      "See real before and after examples of image compression. Compare quality, file sizes, and compression ratios across different tools and settings.": [
+        "/gallery"
+      ],
+      "Compress to 100KB-1MB, convert JPG/WebP, resize to 1920px, remove EXIF/GPS. Works offline in your browser—no uploads. For web, email, social media, and forms.": [
+        "/guides"
+      ],
+      "Complete guide: blur faces, hide license plates, black out addresses, remove EXIF/GPS. Share safely on social media, forums, marketplace.": [
+        "/guides/anonymized-sharing"
+      ],
+      "Compress profile photos to exactly 200KB for LinkedIn, job applications, government portals. Maintains quality. Works on any device—no app download.": [
+        "/guides/avatar-200kb"
+      ],
+      "Reduce banding and halos: downscale first, pick realistic target KB, switch WebP↔JPEG when needed. Preview and export locally with no uploads.": [
+        "/guides/avoid-artifacts-webp-jpeg"
+      ],
+      "Black out or pixelate sensitive text in screenshots and photos, then export without EXIF/GPS. Works entirely in your browser—no uploads.": [
+        "/guides/black-out-text-in-image"
+      ],
+      "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS.": [
+        "/guides/blur-face-in-photo"
+      ],
+      "Pixelate or censor number plates (UK) with local processing—no uploads. Prefer pixelation for stronger privacy. Export JPG/WebP with EXIF/GPS removed.": [
+        "/guides/blur-number-plate-online"
+      ],
+      "The complete guide to image compression: learn how to compress JPEG, PNG, WebP to exact sizes (100KB-1MB). Covers formats, quality settings, batch...": [
+        "/guides/complete-image-compression-guide"
+      ],
+      "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download. Supports JPEG, PNG, WebP.": [
+        "/guides/compress-image-to-100kb"
+      ],
+      "Reduce image file size to 1MB for portfolios, university applications, and high-quality submissions. Preserves excellent detail.": [
+        "/guides/compress-to-1mb"
+      ],
+      "Reduce image file size to exactly 200KB for avatars, forms, and uploads. Works for JPEG, PNG, WebP—no app download. Perfect for LinkedIn and job applications.": [
+        "/guides/compress-to-200kb"
+      ],
+      "Compress to 300KB for posts and forms. Choose WebP or JPEG, resize to 1920px if needed. Balances quality and size. Works offline, no uploads, under 1 minute.": [
+        "/guides/compress-to-300kb"
+      ],
+      "Reduce image file size to 500KB for websites, email attachments, and online forms. Maintains excellent quality for photos. No upload, no app download needed.": [
+        "/guides/compress-to-500kb"
+      ],
+      "Target 800KB for higher‑quality posts and submissions. Use WebP for smaller size or JPEG for compatibility; resize longest side if needed.": [
+        "/guides/compress-to-800kb"
+      ],
+      "Hit strict 200KB/500KB limits. Set exact size, resize to 1920px, choose WebP/JPEG. Batch process and download ZIP. Works offline, no uploads.": [
+        "/guides/compress-to-target-kb"
+      ],
+      "在浏览器中将图片压缩到精确目标体积（200KB/500KB）。先按最长边缩放至1920px，再用目标KB预设快速达到要求。处理全程本地，适合网页、邮件与表单。 Works locally in your browser, no uploads.": [
+        "/guides/compress-to-target-kb-zh"
+      ],
+      "Change JPEG to WebP format and reduce file size by 30-50% with same quality. Free online converter works in browser—no upload, no limits.": [
+        "/guides/convert-jpeg-to-webp"
+      ],
+      "Convert JPEG to WebP and reduce file size by 30-50%. Free online tool works in browser—no uploads, no limits. Batch convert multiple images.": [
+        "/guides/convert-jpg-to-webp-online"
+      ],
+      "Add a simple link or script‑enhanced button to open PixCloak with presets (KB, format, resize). Local processing—no uploads. Includes customizable styles...": [
+        "/guides/embed-button"
+      ],
+      "Comprime a 200KB sin subir archivos: ajusta calidad, redimensiona a 1920px si es necesario y descarga JPEG/WebP o ZIP. Funciona en navegador, gratis y offline.": [
+        "/guides/es-comprimir-a-200kb"
+      ],
+      "Logra 200KB/500KB sin subir archivos. Usa Target (KB), redimensiona a 1920px si es necesario y exporta WebP/JPEG o ZIP. Procesamiento local en el navegador.": [
+        "/guides/es-comprimir-a-kb-objetivo"
+      ],
+      "Elimina EXIF/GPS en el navegador: abre /compress o /redact y exporta como JPEG/WebP/PNG para limpiar metadatos. Procesamiento local, sin subidas.": [
+        "/guides/es-exportar-sin-metadatos"
+      ],
+      "Avatares 200KB, publicaciones 500KB, lado más largo 1920px. Presets rápidos y exportación local sin subidas. Útil para redes sociales, blogs y formularios.": [
+        "/guides/es-limites-de-imagenes-plataformas"
+      ],
+      "Reduce dimensiones a 1920px por el lado más largo y luego comprime a 200–800KB. Mantiene proporción y mejora velocidad de carga. Proceso local, sin subidas.": [
+        "/guides/es-redimensionar-lado-mas-largo"
+      ],
+      "Strip location, camera info, and metadata from photos before sharing. Protects your privacy—prevents stalking and address leaks.": [
+        "/guides/exif-gps-removal"
+      ],
+      "Remove EXIF/GPS in your browser: open /compress or /redact and export as JPEG/WebP/PNG to clear metadata. 100% local processing, optional batch + ZIP.": [
+        "/guides/export-without-metadata"
+      ],
+      "本地去除iPhone/Android照片EXIF/GPS元数据，保护位置隐私防止泄露家庭住址。导出JPEG/WebP/PNG格式自动清除隐私信息。支持批量处理与ZIP打包下载，100%浏览器本地执行无上传。适合微信朋友圈、微博、小红书、闲鱼等社交平台分享。": [
+        "/guides/export-without-metadata-zh"
+      ],
+      "Practical checklist: submit sitemaps, inspect URLs, handle duplicates, fix soft 404/redirects, and improve CTR. Keep canonical, content, and internal...": [
+        "/guides/gsc-operations"
+      ],
+      "Compress images without losing quality: resize to 1920px first, use JPEG 80% or WebP 75%, hit target KB. Works for photos, websites, email.": [
+        "/guides/how-to-compress-image-without-losing-quality"
+      ],
+      "Compress images on iPhone without app: open Safari, visit compressor, select photos, compress to target KB, download. Works in browser, no installation.": [
+        "/guides/how-to-compress-on-iphone"
+      ],
+      "Reduce image file size in 3 steps: resize to 1920px, compress to target KB, remove EXIF. Free tool, no uploads. Works for JPEG, PNG, WebP.": [
+        "/guides/how-to-reduce-image-file-size"
+      ],
+      "Resize images to Instagram&#x27;s exact sizes—1080x1080 (feed), 1080x1350 (portrait), 1080x1920 (Stories/Reels). Works offline in your browser, no uploads. Free tool with quality guide and batch processing support.": [
+        "/guides/how-to-resize-images-for-instagram"
+      ],
+      "Avatar 200KB, postingan 500KB, sisi terpanjang 1920px. Preset cepat dan ekspor lokal tanpa unggah. Cocok untuk sosial, blog, dan formulir.": [
+        "/guides/id-batas-gambar-platform"
+      ],
+      "Hapus EXIF &amp; GPS saat ekspor JPEG/WebP/PNG langsung di browser. 100% lokal, tanpa unggah. Cocok untuk berbagi aman di web/email/formulir.": [
+        "/guides/id-ekspor-tanpa-metadata"
+      ],
+      "Capai 200KB/500KB tanpa unggah. Pakai Target (KB), ubah ukuran sisi terpanjang 1920px bila perlu, lalu ekspor WebP/JPEG atau ZIP. Pemrosesan lokal di browser.": [
+        "/guides/id-kompres-ke-kb-target"
+      ],
+      "Kompres ke 1MB untuk portofolio berkualitas. Pilih WebP/JPEG, ubah ukuran ke 1920px. Proses lokal tanpa upload. Hapus EXIF/GPS. Batch ZIP untuk banyak file.": [
+        "/guides/id-kompres-menjadi-1mb"
+      ],
+      "Turunkan dimensi ke 1920px sisi terpanjang lalu kompres ke 200–800KB. Tetap menjaga rasio aspek dan mempercepat pemuatan. Proses lokal di browser, tanpa unggah.": [
+        "/guides/id-ubah-ukuran-sisi-terpanjang"
+      ],
+      "Complete guide to image SEO optimization. Learn how to optimize alt text, file names, captions, and image metadata for better search engine visibility.": [
+        "/guides/image-seo-optimization"
+      ],
+      "Use WebP for feed images and JPEG for banners with gradients. Resize longest side to 1920px; start near 500KB. Convert locally and preview—no uploads required.": [
+        "/guides/jpeg-vs-webp-for-linkedin"
+      ],
+      "Choose WebP for smaller files or JPEG for compatibility. Keep width ≤1920px and target ~500KB for fast loads. Convert and preview locally—no uploads needed.": [
+        "/guides/jpeg-vs-webp-for-twitter"
+      ],
+      "Compare JPEG and WebP file sizes and quality. WebP is 30-50% smaller at same quality. See when to use each format for websites, social media, and email.": [
+        "/guides/jpeg-vs-webp-size-quality"
+      ],
+      "Hide license plates to protect privacy. Use solid blocks or strong pixelation (not reversible). Ideal for selling cars, accident reports, and social sharing.": [
+        "/guides/license-plate-redaction"
+      ],
+      "Comprehensive list of mobile upload limits for forms, job applications, government portals. Reduce images to 200KB, 500KB, or 1MB for iPhone/Android.": [
+        "/guides/mobile-upload-limits"
+      ],
+      "Common caps for avatars and posts: 200KB avatars, 500KB posts, 1920px longest side. Use quick presets to prepare images locally—no uploads, fast exports.": [
+        "/guides/platform-image-limits"
+      ],
+      "平台常见图片限制：头像上限200KB、帖子上限500KB、最长边建议1920px。快速预设本地压缩调整尺寸，自动移除EXIF/GPS元数据，无需上传文件。适合微信公众号、小红书、知乎、简书、豆瓣、V2EX等平台，支持批量处理ZIP打包，隐私优先100%本地处理，完全免费无需注册登录。": [
+        "/guides/platform-image-limits-zh"
+      ],
+      "PNG for graphics/logos/text (lossless, transparency). JPG for photos (smaller files). Compare file sizes, quality, use cases. Free converter tool included.": [
+        "/guides/png-vs-jpg-when-to-use-each"
+      ],
+      "Compress photos to 500KB for social media posts, forums, blog uploads. Maintains high quality. Works for Facebook, Reddit, Medium.": [
+        "/guides/post-500kb"
+      ],
+      "Meet form limits fast: 200KB avatars, 500KB attachments. Use ready presets, resize to 1920px for phone photos, and export locally—no uploads needed.": [
+        "/guides/prepare-images-for-forms"
+      ],
+      "Pass HR portal limits quickly: 200KB profile, 500KB attachments. Resize ≤1920px, remove EXIF/GPS on export, and download locally without uploads.": [
+        "/guides/prepare-images-for-job-application"
+      ],
+      "Resize longest side to 1920px and compress to 800KB–1MB for high‑quality portfolios. Use WebP/JPEG, preview, and export locally without uploads.": [
+        "/guides/prepare-images-for-portfolio"
+      ],
+      "Practical checklist to share images safely: redact faces/plates/IDs, black out sensitive text, remove EXIF/GPS. Local processing, no uploads.": [
+        "/guides/privacy-compliance"
+      ],
+      "Comprima para 500KB—ideal para blogs, e-mail, formulários. Redimensione para 1920px, escolha WebP/JPEG. Local no navegador, sem uploads. Baixe em ZIP.": [
+        "/guides/pt-comprimir-para-500kb"
+      ],
+      "Atinga limites de 200KB/500KB sem upload. Use Target (KB), redimensione para 1920px e exporte WebP/JPEG. Processamento local no navegador; download em ZIP.": [
+        "/guides/pt-comprimir-para-kb-alvo"
+      ],
+      "Remova EXIF/GPS de fotos, protegendo localização. Exporte em JPEG/WebP/PNG para limpar metadados automaticamente. 100% local, sem uploads. Suporta lote e ZIP.": [
+        "/guides/pt-exportar-sem-metadados"
+      ],
+      "Avatares 200KB, publicações 500KB, lado mais longo 1920px. Presets rápidos e exportação local sem upload. Útil para redes sociais, blogs e formulários.": [
+        "/guides/pt-limites-de-imagens-plataformas"
+      ],
+      "Reduza imagens para 1920px no lado mais longo e depois comprima para 200–800KB. Mantém proporção e melhora a velocidade. Processo local, sem upload.": [
+        "/guides/pt-redimensionar-lado-mais-longo"
+      ],
+      "Censor sensitive parts of macOS screenshots by blurring or pixelating areas, then export without EXIF/GPS. Runs locally in your browser—no uploads or apps...": [
+        "/guides/redact-screenshot-mac"
+      ],
+      "Essential checklist: blur faces, hide license plates, remove EXIF/GPS, black out text. Prevent doxxing and identity theft. Use irreversible redaction...": [
+        "/guides/redaction-checklist"
+      ],
+      "Remove EXIF/GPS from iPhone photos before sharing. Protects privacy and home address. Works in browser, no app needed. Export cleans metadata in seconds.": [
+        "/guides/remove-exif-iphone"
+      ],
+      "在浏览器内本地去除 iPhone 照片的 EXIF/GPS：打开 /compress 或 /redact，导出为 JPEG/WebP/PNG 即可清除元数据。支持验证与批量 ZIP。 Works locally in your browser, no uploads.": [
+        "/guides/remove-exif-iphone-zh"
+      ],
+      "Strip EXIF/GPS from WeChat images by exporting locally as JPEG/WebP—no uploads. Use original files when possible to avoid platform recompression.": [
+        "/guides/remove-exif-wechat"
+      ],
+      "在浏览器内本地去除微信图片的 EXIF/GPS：打开 /compress，导入并导出为 JPEG/WebP，导出时会自动清除元数据。尽量使用原始文件以避免二压。 Works locally in your browser, no uploads.": [
+        "/guides/remove-exif-wechat-zh"
+      ],
+      "Strip GPS coordinates from photos by exporting locally—no uploads. Protect your address and privacy. Verify with the EXIF Checker tool (0 GPS fields after...": [
+        "/guides/remove-gps-data-from-photos"
+      ],
+      "Batch rename with prefix/suffix, keep extensions. Compress and download as ZIP with consistent naming. For organizing uploads and versioning. Works locally.": [
+        "/guides/rename-rules"
+      ],
+      "Method and findings for landing near 500KB across varied content: resize to 1920px, binary‑search quality, and compare artifacts.": [
+        "/guides/research-500kb-quality-range"
+      ],
+      "Compare JPEG and WebP at 200/300/500/800KB on varied images. Findings on size/quality trade‑offs, artifacts, and when to pick each format. All processing local.": [
+        "/guides/research-jpeg-vs-webp"
+      ],
+      "Methodology to generate quality-size curves at target KBs and resolutions. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.": [
+        "/guides/research-quality-size-curves"
+      ],
+      "Resize to 1920px longest side before compression. Reduces file size 50-70% with no quality loss. Keeps aspect ratio. Works offline—no uploads.": [
+        "/guides/resize-longest-side"
+      ],
+      "将图片最长边缩放到 1920px，再压缩到 200–800KB，兼顾清晰与加载速度。保持宽高比，适合网站/博客/社交。全程本地处理，无需上传。 Process images offline in your browser. 100% free, no uploads, privacy guaranteed.": [
+        "/guides/resize-longest-side-zh"
+      ],
+      "Downscale to 1920px before compressing to 200-800KB for fast web delivery. Reduces file size while keeping aspect ratio. Works locally, no uploads needed.": [
+        "/guides/resize-to-1920"
+      ],
+      "Hide contacts, IDs, order numbers, and QR codes; crop sensitive UI; export without EXIF/GPS. A quick checklist to prevent privacy leaks when posting...": [
+        "/guides/screenshot-privacy-check"
+      ],
+      "Exact image size requirements for LinkedIn (8MB), Twitter (5MB), Instagram (30MB), Facebook (10MB). Compress to exact KB targets.": [
+        "/guides/social-platform-kb"
+      ],
+      "Looking for a TinyPNG alternative that works offline? Compress images to exact KB targets (100KB-1MB) with no uploads. Free unlimited compression, batch...": [
+        "/guides/tinypng-alternative-free-no-upload"
+      ],
+      "Compress multiple images in your browser, set target KB, format, and 1920px resize, then download all as a single ZIP. Works offline, no uploads.": [
+        "/guides/zip-batch-download"
+      ],
+      "Download brand assets, demo images, and copy. PixCloak is a privacy‑first image toolkit that runs locally—compress, redact, and export without uploads.": [
+        "/press"
+      ],
+      "We design PixCloak with privacy‑first principles. All image processing happens locally in your browser—no uploads, minimal storage, and clear disclosures.": [
+        "/privacy"
+      ],
+      "Blur faces, hide license plates, and black out text. Remove EXIF/GPS automatically. 100% local—no uploads. Simple, fast, and privacy‑friendly.": [
+        "/redact"
+      ],
+      "Difumina caras, matrículas y texto; elimina EXIF/GPS al exportar. 100% local, sin subir archivos. Works locally in your browser, no uploads.": [
+        "/redact-es"
+      ],
+      "Sensor foto: blur wajah, plat nomor, teks. Hapus EXIF/GPS otomatis. 100% lokal, tanpa upload. Gambar kotak untuk menutupi area sensitif. Cepat dan privat.": [
+        "/redact-id"
+      ],
+      "Borre rostos, placas e texto; remova EXIF/GPS na exportação. 100% local, sem upload. Works locally in your browser, no uploads.": [
+        "/redact-pt"
+      ],
+      "Open source algorithm research, compression techniques, and technical documentation. Learn how PixCloak&#x27;s image processing works with full transparency.": [
+        "/research"
+      ],
+      "Comprehensive methodology for benchmarking image compression performance, including test setup, metrics definition, and statistical analysis.": [
+        "/research/docs/benchmarking-methodology"
+      ],
+      "Detailed technical documentation of PixCloak&#x27;s image compression algorithms, including WebP implementation, quality control, and performance metrics.": [
+        "/research/docs/compression-algorithm"
+      ],
+      "Comprehensive guide to PixCloak&#x27;s privacy-first architecture, data flow, security measures, and privacy guarantees.": [
+        "/research/docs/privacy-architecture"
+      ],
+      "Find exact image size requirements for LinkedIn, Instagram, job applications, government forms, and social media. Get instant presets and download optimized images.": [
+        "/scenarios"
+      ],
+      "Download free image size templates for social media, job applications, and web platforms. Get instant presets, cheat sheets, and design guidelines.": [
+        "/templates"
+      ],
+      "Read the service terms for PixCloak. Lawful use, intellectual property, no uploads by default, disclaimers, limitations, and contact information.": [
+        "/terms"
+      ],
+      "Real user stories, test cases, and verified results from PixCloak&#x27;s image compression tools. See how users solve actual problems with our privacy-first platform.": [
+        "/testimonials"
+      ],
+      "20+ free image tools—resize, convert PNG/JPG, crop, watermark, compress, remove background. Works offline, no uploads. For web, social media, photography.": [
+        "/tools"
+      ],
+      "Pad images to a target aspect ratio using color or blur padding. Preview and export locally—no uploads. Great for banners and social crops.": [
+        "/tools/aspect-pad"
+      ],
+      "Rename images in batch with prefix/suffix and numbering, then download everything as a ZIP. Works locally—no uploads. Keep exports tidy for web and docs.": [
+        "/tools/batch-rename"
+      ],
+      "Crop images to exact aspect ratios (1:1 square, 4:3, 16:9) for Instagram, Facebook, LinkedIn. Works offline—no uploads. Batch process and download ZIP.": [
+        "/tools/crop-templates"
+      ],
+      "Convert images to Base64 data URLs and generate helpful alt text suggestions for accessibility. 100% client‑side processing—no uploads, copy and use instantly.": [
+        "/tools/dataurl-alt"
+      ],
+      "Convert between pixels and physical print size using DPI/PPI. Plan exports for print and screens accurately. Runs locally in your browser—no uploads.": [
+        "/tools/dpi-converter"
+      ],
+      "Check if an image contains EXIF/GPS metadata and remove it locally in your browser. No upload, privacy first. Download a clean copy.": [
+        "/tools/exif-checker"
+      ],
+      "Generate favicons in all sizes (16x16 to 512x512) instantly. Includes manifest.json and HTML code. Works locally—no uploads. For websites, PWAs, iOS, Android.": [
+        "/tools/favicon-pack"
+      ],
+      "Compare two images side‑by‑side with an A/B slider, highlight pixel differences, and export the diff as PNG. Runs locally in your browser—no uploads required.": [
+        "/tools/image-diff"
+      ],
+      "Create LQIP placeholders as tiny Base64 for faster page loads. Preview and copy locally—no uploads. Perfect for skeleton screens and perceived performance.": [
+        "/tools/lqip"
+      ],
+      "Create 1200×630 OG/Twitter images in your browser—no uploads. Preview instantly and export PNG/JPG fast. Perfect for blogs, docs, and social sharing.": [
+        "/tools/og-card"
+      ],
+      "Validate image KB and dimensions for common platforms (forms/social). Get one‑click presets like 200KB/500KB and 1920px.": [
+        "/tools/platform-checker"
+      ],
+      "Convert PNG to JPG or JPG to PNG in browser. Adjust quality, choose background color. Batch convert 100+ images. Works locally—no uploads. Free, unlimited.": [
+        "/tools/png-jpg-converter"
+      ],
+      "Remove background from images by color. Adjust tolerance for solid backgrounds (white, green, gray). 100% local—no uploads. Free, unlimited.": [
+        "/tools/remove-bg-lite"
+      ],
+      "Resize images to exact dimensions (1920px, 1080px) or percentages. Batch resize 100+ images. Works locally—no uploads. For web, Instagram, email.": [
+        "/tools/resize-image"
+      ],
+      "Combine images into a sprite sheet with JSON mapping and download as ZIP. Configure grid, spacing, and order. All processing is local—no uploads.": [
+        "/tools/sprite-sheet"
+      ],
+      "Generate responsive img srcset/sizes markup and suggested KB per breakpoint. Copy optimized HTML locally to improve LCP and save bandwidth—no uploads.": [
+        "/tools/srcset-generator"
+      ],
+      "Minify and clean SVG code locally. Remove bloat safely and export an optimized SVG—private and offline, no uploads. Works locally in your browser, no uploads.": [
+        "/tools/svg-optimizer"
+      ],
+      "Generate text‑based placeholder images for social and thumbnails with size presets. Customize colors/text and export locally—no uploads.": [
+        "/tools/text-placeholder"
+      ],
+      "Auto-trim fully transparent borders from PNGs and export a clean result. Fast, local processing—no uploads. Ideal for sprites, icons, and UI assets.": [
+        "/tools/trim-transparent"
+      ],
+      "Add text watermarks to images—customize position, opacity, font, color. Batch process and download ZIP. Works offline, no uploads. Protect copyright, free.": [
+        "/tools/watermark"
+      ],
+      "Convert images to WebP format—25-35% smaller than JPG. Works offline, no uploads. Batch convert and download ZIP. For faster websites, better SEO, free.": [
+        "/tools/webp-converter"
+      ]
+    },
+    "allMetadata": [
+      {
+        "route": "/",
+        "url": "http://localhost:3000/",
+        "title": "Free Image Tools: Compress &amp; Redact (No Upload) | PixCloak",
+        "description": "Compress and redact images locally in your browser. No upload. Fast JPEG/PNG/WebP compression to exact KB, privacy‑first tools, and step‑by‑step guides."
+      },
+      {
+        "route": "/about",
+        "url": "http://localhost:3000/about",
+        "title": "About PixCloak: Privacy‑First Image Toolkit | PixCloak",
+        "description": "PixCloak: privacy‑first image toolkit. Compress to exact KB, redact faces/plates, remove EXIF/GPS, batch ZIP—everything runs locally in your browser, no..."
+      },
+      {
+        "route": "/batch",
+        "url": "http://localhost:3000/batch",
+        "title": "Batch Processing (Coming Soon) | PixCloak | PixCloak",
+        "description": "Queue multiple images, apply presets (target KB, resize, format), and export as a ZIP. Planned feature in membership plan. Local processing, no uploads."
+      },
+      {
+        "route": "/benchmark",
+        "url": "http://localhost:3000/benchmark",
+        "title": "Image Compression Benchmark &amp; Quality Comparison | PixCloak | PixCloak",
+        "description": "Compare image compression quality across different tools and settings. Download our benchmark dataset with SSIM/PSNR metrics, file size comparisons, and visual quality analysis."
+      },
+      {
+        "route": "/case-studies",
+        "url": "http://localhost:3000/case-studies",
+        "title": "PixCloak Case Studies: Real Business Impact &amp; ROI Analysis | Verified Results | PixCloak",
+        "description": "Detailed case studies showing how businesses use PixCloak to improve website performance, reduce costs, and enhance user experience. Verified ROI and impact metrics."
+      },
+      {
+        "route": "/changelog",
+        "url": "http://localhost:3000/changelog",
+        "title": "PixCloak Changelog &amp; Updates | Latest Features &amp; Improvements | PixCloak",
+        "description": "Track all PixCloak updates, new features, and improvements. Subscribe to our RSS feed for instant notifications of new tools and enhancements."
+      },
+      {
+        "route": "/compress",
+        "url": "http://localhost:3000/compress",
+        "title": "Free Image Compressor: Reduce JPG/PNG to 100KB | PixCloak | PixCloak",
+        "description": "Compress images to 100KB–500KB without quality loss. Works offline—no uploads. Convert JPEG/PNG/WebP fast for web, email, and social media in seconds."
+      },
+      {
+        "route": "/compress-es",
+        "url": "http://localhost:3000/compress-es",
+        "title": "Comprimir imágenes a 200KB/500KB (sin subir) | PixCloak | PixCloak",
+        "description": "Comprime a 200KB/500KB en tu navegador. Convierte WebP/JPEG y redimensiona a 1920px. Todo local, sin subidas. Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/compress-id",
+        "url": "http://localhost:3000/compress-id",
+        "title": "Kompres 200KB/500KB (tanpa unggah) | PixCloak | PixCloak",
+        "description": "Kompres 200KB/500KB di browser. Konversi WebP/JPEG dan ubah ukuran 1920px. Semua lokal, tanpa unggah. Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/compress-pt",
+        "url": "http://localhost:3000/compress-pt",
+        "title": "Comprimir para 200KB/500KB (sem upload) | PixCloak | PixCloak",
+        "description": "Comprima para 200KB/500KB no navegador, sem uploads. Converta WebP/JPEG, redimensione para 1920px. Remove EXIF/GPS automaticamente. 100% local e privado."
+      },
+      {
+        "route": "/contact",
+        "url": "http://localhost:3000/contact",
+        "title": "Contact Us: Questions &amp; Support | PixCloak | PixCloak",
+        "description": "Questions or feedback about PixCloak? Email support@pixcloak.com with your scenario and an example file (no private data). We reply within 1–2 business days."
+      },
+      {
+        "route": "/gallery",
+        "url": "http://localhost:3000/gallery",
+        "title": "Image Compression Before &amp; After Gallery | Visual Quality Comparison | PixCloak | PixCloak",
+        "description": "See real before and after examples of image compression. Compare quality, file sizes, and compression ratios across different tools and settings."
+      },
+      {
+        "route": "/guides",
+        "url": "http://localhost:3000/guides",
+        "title": "Image Guides: Compress, Convert, Remove EXIF | PixCloak | PixCloak",
+        "description": "Compress to 100KB-1MB, convert JPG/WebP, resize to 1920px, remove EXIF/GPS. Works offline in your browser—no uploads. For web, email, social media, and forms."
+      },
+      {
+        "route": "/guides/anonymized-sharing",
+        "url": "http://localhost:3000/guides/anonymized-sharing",
+        "title": "How to Share Photos Anonymously (Remove All... | PixCloak | PixCloak",
+        "description": "Complete guide: blur faces, hide license plates, black out addresses, remove EXIF/GPS. Share safely on social media, forums, marketplace."
+      },
+      {
+        "route": "/guides/avatar-200kb",
+        "url": "http://localhost:3000/guides/avatar-200kb",
+        "title": "Create Profile Picture at 200KB (LinkedIn, Job... | PixCloak | PixCloak",
+        "description": "Compress profile photos to exactly 200KB for LinkedIn, job applications, government portals. Maintains quality. Works on any device—no app download."
+      },
+      {
+        "route": "/guides/avoid-artifacts-webp-jpeg",
+        "url": "http://localhost:3000/guides/avoid-artifacts-webp-jpeg",
+        "title": "Avoid Compression Artifacts (WebP/JPEG) | PixCloak | PixCloak",
+        "description": "Reduce banding and halos: downscale first, pick realistic target KB, switch WebP↔JPEG when needed. Preview and export locally with no uploads."
+      },
+      {
+        "route": "/guides/black-out-text-in-image",
+        "url": "http://localhost:3000/guides/black-out-text-in-image",
+        "title": "Black Out Text in Images (Censor/Redact) | PixCloak | PixCloak",
+        "description": "Black out or pixelate sensitive text in screenshots and photos, then export without EXIF/GPS. Works entirely in your browser—no uploads."
+      },
+      {
+        "route": "/guides/blur-face-in-photo",
+        "url": "http://localhost:3000/guides/blur-face-in-photo",
+        "title": "Blur Faces in Photos (Free, No App) | PixCloak | PixCloak",
+        "description": "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS."
+      },
+      {
+        "route": "/guides/blur-number-plate-online",
+        "url": "http://localhost:3000/guides/blur-number-plate-online",
+        "title": "Blur Number Plates in Photos (UK) | PixCloak | PixCloak",
+        "description": "Pixelate or censor number plates (UK) with local processing—no uploads. Prefer pixelation for stronger privacy. Export JPG/WebP with EXIF/GPS removed."
+      },
+      {
+        "route": "/guides/complete-image-compression-guide",
+        "url": "http://localhost:3000/guides/complete-image-compression-guide",
+        "title": "Complete Image Compression Guide (2025):... | PixCloak | PixCloak",
+        "description": "The complete guide to image compression: learn how to compress JPEG, PNG, WebP to exact sizes (100KB-1MB). Covers formats, quality settings, batch..."
+      },
+      {
+        "route": "/guides/compress-image-to-100kb",
+        "url": "http://localhost:3000/guides/compress-image-to-100kb",
+        "title": "How to Compress Images to 100KB (Free, No Quality Loss) | PixCloak",
+        "description": "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download. Supports JPEG, PNG, WebP."
+      },
+      {
+        "route": "/guides/compress-to-1mb",
+        "url": "http://localhost:3000/guides/compress-to-1mb",
+        "title": "Compress Images to 1MB (Free, Maximum Quality) | PixCloak | PixCloak",
+        "description": "Reduce image file size to 1MB for portfolios, university applications, and high-quality submissions. Preserves excellent detail."
+      },
+      {
+        "route": "/guides/compress-to-200kb",
+        "url": "http://localhost:3000/guides/compress-to-200kb",
+        "title": "Compress Images to 200KB (Free, No Quality Loss) | PixCloak | PixCloak",
+        "description": "Reduce image file size to exactly 200KB for avatars, forms, and uploads. Works for JPEG, PNG, WebP—no app download. Perfect for LinkedIn and job applications."
+      },
+      {
+        "route": "/guides/compress-to-300kb",
+        "url": "http://localhost:3000/guides/compress-to-300kb",
+        "title": "Compress Images to 300KB (WebP/JPEG) | PixCloak | PixCloak",
+        "description": "Compress to 300KB for posts and forms. Choose WebP or JPEG, resize to 1920px if needed. Balances quality and size. Works offline, no uploads, under 1 minute."
+      },
+      {
+        "route": "/guides/compress-to-500kb",
+        "url": "http://localhost:3000/guides/compress-to-500kb",
+        "title": "Compress Images to 500KB (Free, High Quality) | PixCloak | PixCloak",
+        "description": "Reduce image file size to 500KB for websites, email attachments, and online forms. Maintains excellent quality for photos. No upload, no app download needed."
+      },
+      {
+        "route": "/guides/compress-to-800kb",
+        "url": "http://localhost:3000/guides/compress-to-800kb",
+        "title": "Compress Images to 800KB (High‑Quality) | PixCloak | PixCloak",
+        "description": "Target 800KB for higher‑quality posts and submissions. Use WebP for smaller size or JPEG for compatibility; resize longest side if needed."
+      },
+      {
+        "route": "/guides/compress-to-target-kb",
+        "url": "http://localhost:3000/guides/compress-to-target-kb",
+        "title": "Compress Images to Target KB (200KB/500KB) | PixCloak | PixCloak",
+        "description": "Hit strict 200KB/500KB limits. Set exact size, resize to 1920px, choose WebP/JPEG. Batch process and download ZIP. Works offline, no uploads."
+      },
+      {
+        "route": "/guides/compress-to-target-kb-zh",
+        "url": "http://localhost:3000/guides/compress-to-target-kb-zh",
+        "title": "按目标体积压缩到200KB/500KB（本地，无上传） | PixCloak | PixCloak",
+        "description": "在浏览器中将图片压缩到精确目标体积（200KB/500KB）。先按最长边缩放至1920px，再用目标KB预设快速达到要求。处理全程本地，适合网页、邮件与表单。 Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/guides/convert-jpeg-to-webp",
+        "url": "http://localhost:3000/guides/convert-jpeg-to-webp",
+        "title": "Convert JPEG to WebP (Free, 30-50% Smaller) | PixCloak | PixCloak",
+        "description": "Change JPEG to WebP format and reduce file size by 30-50% with same quality. Free online converter works in browser—no upload, no limits."
+      },
+      {
+        "route": "/guides/convert-jpg-to-webp-online",
+        "url": "http://localhost:3000/guides/convert-jpg-to-webp-online",
+        "title": "Convert JPG to WebP Online (Free, Smaller File... | PixCloak | PixCloak",
+        "description": "Convert JPEG to WebP and reduce file size by 30-50%. Free online tool works in browser—no uploads, no limits. Batch convert multiple images."
+      },
+      {
+        "route": "/guides/embed-button",
+        "url": "http://localhost:3000/guides/embed-button",
+        "title": "Embed “Compress to KB” Button (Link or Script) | PixCloak | PixCloak",
+        "description": "Add a simple link or script‑enhanced button to open PixCloak with presets (KB, format, resize). Local processing—no uploads. Includes customizable styles..."
+      },
+      {
+        "route": "/guides/es-comprimir-a-200kb",
+        "url": "http://localhost:3000/guides/es-comprimir-a-200kb",
+        "title": "Comprimir imágenes a 200KB (Gratis, sin subir) | PixCloak | PixCloak",
+        "description": "Comprime a 200KB sin subir archivos: ajusta calidad, redimensiona a 1920px si es necesario y descarga JPEG/WebP o ZIP. Funciona en navegador, gratis y offline."
+      },
+      {
+        "route": "/guides/es-comprimir-a-kb-objetivo",
+        "url": "http://localhost:3000/guides/es-comprimir-a-kb-objetivo",
+        "title": "Comprimir a tamaño objetivo (200KB/500KB) | PixCloak | PixCloak",
+        "description": "Logra 200KB/500KB sin subir archivos. Usa Target (KB), redimensiona a 1920px si es necesario y exporta WebP/JPEG o ZIP. Procesamiento local en el navegador."
+      },
+      {
+        "route": "/guides/es-exportar-sin-metadatos",
+        "url": "http://localhost:3000/guides/es-exportar-sin-metadatos",
+        "title": "Exportar imágenes sin metadatos (eliminar... | PixCloak | PixCloak",
+        "description": "Elimina EXIF/GPS en el navegador: abre /compress o /redact y exporta como JPEG/WebP/PNG para limpiar metadatos. Procesamiento local, sin subidas."
+      },
+      {
+        "route": "/guides/es-limites-de-imagenes-plataformas",
+        "url": "http://localhost:3000/guides/es-limites-de-imagenes-plataformas",
+        "title": "Límites de imágenes por plataforma (KB y... | PixCloak | PixCloak",
+        "description": "Avatares 200KB, publicaciones 500KB, lado más largo 1920px. Presets rápidos y exportación local sin subidas. Útil para redes sociales, blogs y formularios."
+      },
+      {
+        "route": "/guides/es-redimensionar-lado-mas-largo",
+        "url": "http://localhost:3000/guides/es-redimensionar-lado-mas-largo",
+        "title": "Redimensionar por el lado más largo a 1920px | PixCloak | PixCloak",
+        "description": "Reduce dimensiones a 1920px por el lado más largo y luego comprime a 200–800KB. Mantiene proporción y mejora velocidad de carga. Proceso local, sin subidas."
+      },
+      {
+        "route": "/guides/exif-gps-removal",
+        "url": "http://localhost:3000/guides/exif-gps-removal",
+        "title": "Remove GPS &amp; EXIF Data from Photos (Free, 2... | PixCloak | PixCloak",
+        "description": "Strip location, camera info, and metadata from photos before sharing. Protects your privacy—prevents stalking and address leaks."
+      },
+      {
+        "route": "/guides/export-without-metadata",
+        "url": "http://localhost:3000/guides/export-without-metadata",
+        "title": "Export Images Without Metadata (Remove EXIF/GPS) | PixCloak | PixCloak",
+        "description": "Remove EXIF/GPS in your browser: open /compress or /redact and export as JPEG/WebP/PNG to clear metadata. 100% local processing, optional batch + ZIP."
+      },
+      {
+        "route": "/guides/export-without-metadata-zh",
+        "url": "http://localhost:3000/guides/export-without-metadata-zh",
+        "title": "无元数据导出：去除 EXIF/GPS（本地处理）| PixCloak | PixCloak",
+        "description": "本地去除iPhone/Android照片EXIF/GPS元数据，保护位置隐私防止泄露家庭住址。导出JPEG/WebP/PNG格式自动清除隐私信息。支持批量处理与ZIP打包下载，100%浏览器本地执行无上传。适合微信朋友圈、微博、小红书、闲鱼等社交平台分享。"
+      },
+      {
+        "route": "/guides/gsc-operations",
+        "url": "http://localhost:3000/guides/gsc-operations",
+        "title": "Google Search Console Operations | PixCloak | PixCloak",
+        "description": "Practical checklist: submit sitemaps, inspect URLs, handle duplicates, fix soft 404/redirects, and improve CTR. Keep canonical, content, and internal..."
+      },
+      {
+        "route": "/guides/how-to-compress-image-without-losing-quality",
+        "url": "http://localhost:3000/guides/how-to-compress-image-without-losing-quality",
+        "title": "How to Compress Images Without Losing Quality... | PixCloak | PixCloak",
+        "description": "Compress images without losing quality: resize to 1920px first, use JPEG 80% or WebP 75%, hit target KB. Works for photos, websites, email."
+      },
+      {
+        "route": "/guides/how-to-compress-on-iphone",
+        "url": "http://localhost:3000/guides/how-to-compress-on-iphone",
+        "title": "How to Compress Images on iPhone (Free, No App) | PixCloak | PixCloak",
+        "description": "Compress images on iPhone without app: open Safari, visit compressor, select photos, compress to target KB, download. Works in browser, no installation."
+      },
+      {
+        "route": "/guides/how-to-reduce-image-file-size",
+        "url": "http://localhost:3000/guides/how-to-reduce-image-file-size",
+        "title": "How to Reduce Image File Size (Free, 2 Minutes) | PixCloak | PixCloak",
+        "description": "Reduce image file size in 3 steps: resize to 1920px, compress to target KB, remove EXIF. Free tool, no uploads. Works for JPEG, PNG, WebP."
+      },
+      {
+        "route": "/guides/how-to-resize-images-for-instagram",
+        "url": "http://localhost:3000/guides/how-to-resize-images-for-instagram",
+        "title": "How to Resize Images for Instagram: Feed,... | PixCloak | PixCloak",
+        "description": "Resize images to Instagram&#x27;s exact sizes—1080x1080 (feed), 1080x1350 (portrait), 1080x1920 (Stories/Reels). Works offline in your browser, no uploads. Free tool with quality guide and batch processing support."
+      },
+      {
+        "route": "/guides/id-batas-gambar-platform",
+        "url": "http://localhost:3000/guides/id-batas-gambar-platform",
+        "title": "Batas gambar per platform (KB &amp; dimensi) | PixCloak | PixCloak",
+        "description": "Avatar 200KB, postingan 500KB, sisi terpanjang 1920px. Preset cepat dan ekspor lokal tanpa unggah. Cocok untuk sosial, blog, dan formulir."
+      },
+      {
+        "route": "/guides/id-ekspor-tanpa-metadata",
+        "url": "http://localhost:3000/guides/id-ekspor-tanpa-metadata",
+        "title": "Ekspor tanpa metadata (hapus EXIF/GPS) | PixCloak | PixCloak",
+        "description": "Hapus EXIF &amp; GPS saat ekspor JPEG/WebP/PNG langsung di browser. 100% lokal, tanpa unggah. Cocok untuk berbagi aman di web/email/formulir."
+      },
+      {
+        "route": "/guides/id-kompres-ke-kb-target",
+        "url": "http://localhost:3000/guides/id-kompres-ke-kb-target",
+        "title": "Kompres ke target KB (200KB/500KB) | PixCloak | PixCloak",
+        "description": "Capai 200KB/500KB tanpa unggah. Pakai Target (KB), ubah ukuran sisi terpanjang 1920px bila perlu, lalu ekspor WebP/JPEG atau ZIP. Pemrosesan lokal di browser."
+      },
+      {
+        "route": "/guides/id-kompres-menjadi-1mb",
+        "url": "http://localhost:3000/guides/id-kompres-menjadi-1mb",
+        "title": "Kompres gambar menjadi 1MB (kualitas tinggi) | PixCloak | PixCloak",
+        "description": "Kompres ke 1MB untuk portofolio berkualitas. Pilih WebP/JPEG, ubah ukuran ke 1920px. Proses lokal tanpa upload. Hapus EXIF/GPS. Batch ZIP untuk banyak file."
+      },
+      {
+        "route": "/guides/id-ubah-ukuran-sisi-terpanjang",
+        "url": "http://localhost:3000/guides/id-ubah-ukuran-sisi-terpanjang",
+        "title": "Ubah ukuran sisi terpanjang ke 1920px | PixCloak | PixCloak",
+        "description": "Turunkan dimensi ke 1920px sisi terpanjang lalu kompres ke 200–800KB. Tetap menjaga rasio aspek dan mempercepat pemuatan. Proses lokal di browser, tanpa unggah."
+      },
+      {
+        "route": "/guides/image-seo-optimization",
+        "url": "http://localhost:3000/guides/image-seo-optimization",
+        "title": "Image SEO Optimization Guide | Alt Text, File Names &amp; Search Visibility | PixCloak | PixCloak",
+        "description": "Complete guide to image SEO optimization. Learn how to optimize alt text, file names, captions, and image metadata for better search engine visibility."
+      },
+      {
+        "route": "/guides/jpeg-vs-webp-for-linkedin",
+        "url": "http://localhost:3000/guides/jpeg-vs-webp-for-linkedin",
+        "title": "JPEG vs WebP for LinkedIn: Feed vs Banners | PixCloak | PixCloak",
+        "description": "Use WebP for feed images and JPEG for banners with gradients. Resize longest side to 1920px; start near 500KB. Convert locally and preview—no uploads required."
+      },
+      {
+        "route": "/guides/jpeg-vs-webp-for-twitter",
+        "url": "http://localhost:3000/guides/jpeg-vs-webp-for-twitter",
+        "title": "JPEG vs WebP for X/Twitter: Best Settings | PixCloak | PixCloak",
+        "description": "Choose WebP for smaller files or JPEG for compatibility. Keep width ≤1920px and target ~500KB for fast loads. Convert and preview locally—no uploads needed."
+      },
+      {
+        "route": "/guides/jpeg-vs-webp-size-quality",
+        "url": "http://localhost:3000/guides/jpeg-vs-webp-size-quality",
+        "title": "JPEG vs WebP: Which is Smaller and Better Quality? | PixCloak | PixCloak",
+        "description": "Compare JPEG and WebP file sizes and quality. WebP is 30-50% smaller at same quality. See when to use each format for websites, social media, and email."
+      },
+      {
+        "route": "/guides/license-plate-redaction",
+        "url": "http://localhost:3000/guides/license-plate-redaction",
+        "title": "Blur License Plates in Photos — Legal &amp; Easy | PixCloak | PixCloak",
+        "description": "Hide license plates to protect privacy. Use solid blocks or strong pixelation (not reversible). Ideal for selling cars, accident reports, and social sharing."
+      },
+      {
+        "route": "/guides/mobile-upload-limits",
+        "url": "http://localhost:3000/guides/mobile-upload-limits",
+        "title": "Image Upload Limits for iPhone &amp; Android... | PixCloak | PixCloak",
+        "description": "Comprehensive list of mobile upload limits for forms, job applications, government portals. Reduce images to 200KB, 500KB, or 1MB for iPhone/Android."
+      },
+      {
+        "route": "/guides/platform-image-limits",
+        "url": "http://localhost:3000/guides/platform-image-limits",
+        "title": "Platform Image Limits (KB &amp; Dimensions) | PixCloak | PixCloak",
+        "description": "Common caps for avatars and posts: 200KB avatars, 500KB posts, 1920px longest side. Use quick presets to prepare images locally—no uploads, fast exports."
+      },
+      {
+        "route": "/guides/platform-image-limits-zh",
+        "url": "http://localhost:3000/guides/platform-image-limits-zh",
+        "title": "平台常见图片限制（200KB/500KB 规范） | PixCloak | PixCloak",
+        "description": "平台常见图片限制：头像上限200KB、帖子上限500KB、最长边建议1920px。快速预设本地压缩调整尺寸，自动移除EXIF/GPS元数据，无需上传文件。适合微信公众号、小红书、知乎、简书、豆瓣、V2EX等平台，支持批量处理ZIP打包，隐私优先100%本地处理，完全免费无需注册登录。"
+      },
+      {
+        "route": "/guides/png-vs-jpg-when-to-use-each",
+        "url": "http://localhost:3000/guides/png-vs-jpg-when-to-use-each",
+        "title": "PNG vs JPG: When to Use Each Format (Complete... | PixCloak | PixCloak",
+        "description": "PNG for graphics/logos/text (lossless, transparency). JPG for photos (smaller files). Compare file sizes, quality, use cases. Free converter tool included."
+      },
+      {
+        "route": "/guides/post-500kb",
+        "url": "http://localhost:3000/guides/post-500kb",
+        "title": "Prepare Images for Social Posts at 500KB... | PixCloak | PixCloak",
+        "description": "Compress photos to 500KB for social media posts, forums, blog uploads. Maintains high quality. Works for Facebook, Reddit, Medium."
+      },
+      {
+        "route": "/guides/prepare-images-for-forms",
+        "url": "http://localhost:3000/guides/prepare-images-for-forms",
+        "title": "Prepare Images for Forms (200KB/500KB Presets) | PixCloak | PixCloak",
+        "description": "Meet form limits fast: 200KB avatars, 500KB attachments. Use ready presets, resize to 1920px for phone photos, and export locally—no uploads needed."
+      },
+      {
+        "route": "/guides/prepare-images-for-job-application",
+        "url": "http://localhost:3000/guides/prepare-images-for-job-application",
+        "title": "Prepare Images for Job Applications (200KB/500KB) | PixCloak | PixCloak",
+        "description": "Pass HR portal limits quickly: 200KB profile, 500KB attachments. Resize ≤1920px, remove EXIF/GPS on export, and download locally without uploads."
+      },
+      {
+        "route": "/guides/prepare-images-for-portfolio",
+        "url": "http://localhost:3000/guides/prepare-images-for-portfolio",
+        "title": "Prepare Portfolio Images (1920px, 800KB–1MB) | PixCloak | PixCloak",
+        "description": "Resize longest side to 1920px and compress to 800KB–1MB for high‑quality portfolios. Use WebP/JPEG, preview, and export locally without uploads."
+      },
+      {
+        "route": "/guides/privacy-compliance",
+        "url": "http://localhost:3000/guides/privacy-compliance",
+        "title": "Privacy &amp; Compliance for Images (Local, No Upload) | PixCloak | PixCloak",
+        "description": "Practical checklist to share images safely: redact faces/plates/IDs, black out sensitive text, remove EXIF/GPS. Local processing, no uploads."
+      },
+      {
+        "route": "/guides/pt-comprimir-para-500kb",
+        "url": "http://localhost:3000/guides/pt-comprimir-para-500kb",
+        "title": "Comprimir imagens para 500KB (alta qualidade) | PixCloak | PixCloak",
+        "description": "Comprima para 500KB—ideal para blogs, e-mail, formulários. Redimensione para 1920px, escolha WebP/JPEG. Local no navegador, sem uploads. Baixe em ZIP."
+      },
+      {
+        "route": "/guides/pt-comprimir-para-kb-alvo",
+        "url": "http://localhost:3000/guides/pt-comprimir-para-kb-alvo",
+        "title": "Comprimir para KB alvo (200KB/500KB) | PixCloak | PixCloak",
+        "description": "Atinga limites de 200KB/500KB sem upload. Use Target (KB), redimensione para 1920px e exporte WebP/JPEG. Processamento local no navegador; download em ZIP."
+      },
+      {
+        "route": "/guides/pt-exportar-sem-metadados",
+        "url": "http://localhost:3000/guides/pt-exportar-sem-metadados",
+        "title": "Exportar sem metadados (remover EXIF/GPS) | PixCloak | PixCloak",
+        "description": "Remova EXIF/GPS de fotos, protegendo localização. Exporte em JPEG/WebP/PNG para limpar metadados automaticamente. 100% local, sem uploads. Suporta lote e ZIP."
+      },
+      {
+        "route": "/guides/pt-limites-de-imagens-plataformas",
+        "url": "http://localhost:3000/guides/pt-limites-de-imagens-plataformas",
+        "title": "Limites de imagens por plataforma (KB e dimensões) | PixCloak | PixCloak",
+        "description": "Avatares 200KB, publicações 500KB, lado mais longo 1920px. Presets rápidos e exportação local sem upload. Útil para redes sociais, blogs e formulários."
+      },
+      {
+        "route": "/guides/pt-redimensionar-lado-mais-longo",
+        "url": "http://localhost:3000/guides/pt-redimensionar-lado-mais-longo",
+        "title": "Redimensionar pelo lado mais longo (1920px) | PixCloak | PixCloak",
+        "description": "Reduza imagens para 1920px no lado mais longo e depois comprima para 200–800KB. Mantém proporção e melhora a velocidade. Processo local, sem upload."
+      },
+      {
+        "route": "/guides/redact-screenshot-mac",
+        "url": "http://localhost:3000/guides/redact-screenshot-mac",
+        "title": "Redact a Screenshot on Mac (Blur/Pixelate) | PixCloak | PixCloak",
+        "description": "Censor sensitive parts of macOS screenshots by blurring or pixelating areas, then export without EXIF/GPS. Runs locally in your browser—no uploads or apps..."
+      },
+      {
+        "route": "/guides/redaction-checklist",
+        "url": "http://localhost:3000/guides/redaction-checklist",
+        "title": "Photo Privacy Checklist Before Sharing Online | PixCloak | PixCloak",
+        "description": "Essential checklist: blur faces, hide license plates, remove EXIF/GPS, black out text. Prevent doxxing and identity theft. Use irreversible redaction..."
+      },
+      {
+        "route": "/guides/remove-exif-iphone",
+        "url": "http://localhost:3000/guides/remove-exif-iphone",
+        "title": "Remove EXIF from iPhone Photos — No App Needed | PixCloak | PixCloak",
+        "description": "Remove EXIF/GPS from iPhone photos before sharing. Protects privacy and home address. Works in browser, no app needed. Export cleans metadata in seconds."
+      },
+      {
+        "route": "/guides/remove-exif-iphone-zh",
+        "url": "http://localhost:3000/guides/remove-exif-iphone-zh",
+        "title": "iPhone 照片去除 EXIF/GPS（本地处理）| PixCloak | PixCloak",
+        "description": "在浏览器内本地去除 iPhone 照片的 EXIF/GPS：打开 /compress 或 /redact，导出为 JPEG/WebP/PNG 即可清除元数据。支持验证与批量 ZIP。 Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/guides/remove-exif-wechat",
+        "url": "http://localhost:3000/guides/remove-exif-wechat",
+        "title": "Remove EXIF from WeChat images (local) | PixCloak | PixCloak",
+        "description": "Strip EXIF/GPS from WeChat images by exporting locally as JPEG/WebP—no uploads. Use original files when possible to avoid platform recompression."
+      },
+      {
+        "route": "/guides/remove-exif-wechat-zh",
+        "url": "http://localhost:3000/guides/remove-exif-wechat-zh",
+        "title": "微信图片去除 EXIF 元数据（本地处理）| PixCloak | PixCloak",
+        "description": "在浏览器内本地去除微信图片的 EXIF/GPS：打开 /compress，导入并导出为 JPEG/WebP，导出时会自动清除元数据。尽量使用原始文件以避免二压。 Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/guides/remove-gps-data-from-photos",
+        "url": "http://localhost:3000/guides/remove-gps-data-from-photos",
+        "title": "Remove GPS Data from Photos (Strip EXIF) | PixCloak | PixCloak",
+        "description": "Strip GPS coordinates from photos by exporting locally—no uploads. Protect your address and privacy. Verify with the EXIF Checker tool (0 GPS fields after..."
+      },
+      {
+        "route": "/guides/rename-rules",
+        "url": "http://localhost:3000/guides/rename-rules",
+        "title": "Batch Rename Rules (Prefix/Suffix, Keep Extension) | PixCloak | PixCloak",
+        "description": "Batch rename with prefix/suffix, keep extensions. Compress and download as ZIP with consistent naming. For organizing uploads and versioning. Works locally."
+      },
+      {
+        "route": "/guides/research-500kb-quality-range",
+        "url": "http://localhost:3000/guides/research-500kb-quality-range",
+        "title": "Research: 500KB Quality Range (1920px workflow) | PixCloak | PixCloak",
+        "description": "Method and findings for landing near 500KB across varied content: resize to 1920px, binary‑search quality, and compare artifacts."
+      },
+      {
+        "route": "/guides/research-jpeg-vs-webp",
+        "url": "http://localhost:3000/guides/research-jpeg-vs-webp",
+        "title": "Research: JPEG vs WebP at Target KBs | PixCloak | PixCloak",
+        "description": "Compare JPEG and WebP at 200/300/500/800KB on varied images. Findings on size/quality trade‑offs, artifacts, and when to pick each format. All processing local."
+      },
+      {
+        "route": "/guides/research-quality-size-curves",
+        "url": "http://localhost:3000/guides/research-quality-size-curves",
+        "title": "Research: Quality vs Size Curves (JPEG/WebP) | PixCloak",
+        "description": "Methodology to generate quality-size curves at target KBs and resolutions. Process images offline in your browser. 100% free, no uploads, privacy guaranteed."
+      },
+      {
+        "route": "/guides/resize-longest-side",
+        "url": "http://localhost:3000/guides/resize-longest-side",
+        "title": "Resize Images to 1920px (Longest Side) | PixCloak | PixCloak",
+        "description": "Resize to 1920px longest side before compression. Reduces file size 50-70% with no quality loss. Keeps aspect ratio. Works offline—no uploads."
+      },
+      {
+        "route": "/guides/resize-longest-side-zh",
+        "url": "http://localhost:3000/guides/resize-longest-side-zh",
+        "title": "按最长边缩放到 1920px（网页最佳实践） | PixCloak | PixCloak",
+        "description": "将图片最长边缩放到 1920px，再压缩到 200–800KB，兼顾清晰与加载速度。保持宽高比，适合网站/博客/社交。全程本地处理，无需上传。 Process images offline in your browser. 100% free, no uploads, privacy guaranteed."
+      },
+      {
+        "route": "/guides/resize-to-1920",
+        "url": "http://localhost:3000/guides/resize-to-1920",
+        "title": "Resize Longest Side to 1920px (Best for Web) | PixCloak | PixCloak",
+        "description": "Downscale to 1920px before compressing to 200-800KB for fast web delivery. Reduces file size while keeping aspect ratio. Works locally, no uploads needed."
+      },
+      {
+        "route": "/guides/screenshot-privacy-check",
+        "url": "http://localhost:3000/guides/screenshot-privacy-check",
+        "title": "Screenshot Privacy Checklist (Before Sharing) | PixCloak | PixCloak",
+        "description": "Hide contacts, IDs, order numbers, and QR codes; crop sensitive UI; export without EXIF/GPS. A quick checklist to prevent privacy leaks when posting..."
+      },
+      {
+        "route": "/guides/social-platform-kb",
+        "url": "http://localhost:3000/guides/social-platform-kb",
+        "title": "Social Media Image Size Limits (LinkedIn,... | PixCloak | PixCloak",
+        "description": "Exact image size requirements for LinkedIn (8MB), Twitter (5MB), Instagram (30MB), Facebook (10MB). Compress to exact KB targets."
+      },
+      {
+        "route": "/guides/tinypng-alternative-free-no-upload",
+        "url": "http://localhost:3000/guides/tinypng-alternative-free-no-upload",
+        "title": "TinyPNG Alternative: Free Image Compressor (No... | PixCloak | PixCloak",
+        "description": "Looking for a TinyPNG alternative that works offline? Compress images to exact KB targets (100KB-1MB) with no uploads. Free unlimited compression, batch..."
+      },
+      {
+        "route": "/guides/zip-batch-download",
+        "url": "http://localhost:3000/guides/zip-batch-download",
+        "title": "Batch Image Compressor: Download ZIP (Free, No... | PixCloak | PixCloak",
+        "description": "Compress multiple images in your browser, set target KB, format, and 1920px resize, then download all as a single ZIP. Works offline, no uploads."
+      },
+      {
+        "route": "/press",
+        "url": "http://localhost:3000/press",
+        "title": "Press &amp; Brand Assets | PixCloak | PixCloak",
+        "description": "Download brand assets, demo images, and copy. PixCloak is a privacy‑first image toolkit that runs locally—compress, redact, and export without uploads."
+      },
+      {
+        "route": "/privacy",
+        "url": "http://localhost:3000/privacy",
+        "title": "Privacy Policy: Your Data Stays Local | PixCloak | PixCloak",
+        "description": "We design PixCloak with privacy‑first principles. All image processing happens locally in your browser—no uploads, minimal storage, and clear disclosures."
+      },
+      {
+        "route": "/redact",
+        "url": "http://localhost:3000/redact",
+        "title": "Free Photo Redaction: Blur Faces, Hide Plates | PixCloak | PixCloak",
+        "description": "Blur faces, hide license plates, and black out text. Remove EXIF/GPS automatically. 100% local—no uploads. Simple, fast, and privacy‑friendly."
+      },
+      {
+        "route": "/redact-es",
+        "url": "http://localhost:3000/redact-es",
+        "title": "Ocultar en fotos (difuminar/EXIF) | PixCloak | PixCloak",
+        "description": "Difumina caras, matrículas y texto; elimina EXIF/GPS al exportar. 100% local, sin subir archivos. Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/redact-id",
+        "url": "http://localhost:3000/redact-id",
+        "title": "Sensor foto (blur/EXIF) | PixCloak | PixCloak",
+        "description": "Sensor foto: blur wajah, plat nomor, teks. Hapus EXIF/GPS otomatis. 100% lokal, tanpa upload. Gambar kotak untuk menutupi area sensitif. Cepat dan privat."
+      },
+      {
+        "route": "/redact-pt",
+        "url": "http://localhost:3000/redact-pt",
+        "title": "Ocultar em fotos (borrão/EXIF) | PixCloak | PixCloak",
+        "description": "Borre rostos, placas e texto; remova EXIF/GPS na exportação. 100% local, sem upload. Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/research",
+        "url": "http://localhost:3000/research",
+        "title": "PixCloak Algorithm Research &amp; Technical Documentation | Open Source | PixCloak",
+        "description": "Open source algorithm research, compression techniques, and technical documentation. Learn how PixCloak&#x27;s image processing works with full transparency."
+      },
+      {
+        "route": "/research/docs/benchmarking-methodology",
+        "url": "http://localhost:3000/research/docs/benchmarking-methodology",
+        "title": "PixCloak Benchmarking Methodology | Performance Testing Guide | PixCloak",
+        "description": "Comprehensive methodology for benchmarking image compression performance, including test setup, metrics definition, and statistical analysis."
+      },
+      {
+        "route": "/research/docs/compression-algorithm",
+        "url": "http://localhost:3000/research/docs/compression-algorithm",
+        "title": "PixCloak Compression Algorithm Implementation | Technical Documentation | PixCloak",
+        "description": "Detailed technical documentation of PixCloak&#x27;s image compression algorithms, including WebP implementation, quality control, and performance metrics."
+      },
+      {
+        "route": "/research/docs/privacy-architecture",
+        "url": "http://localhost:3000/research/docs/privacy-architecture",
+        "title": "PixCloak Privacy-First Architecture Guide | Technical Documentation | PixCloak",
+        "description": "Comprehensive guide to PixCloak&#x27;s privacy-first architecture, data flow, security measures, and privacy guarantees."
+      },
+      {
+        "route": "/scenarios",
+        "url": "http://localhost:3000/scenarios",
+        "title": "Image Size Requirements by Platform &amp; Use Case | PixCloak | PixCloak",
+        "description": "Find exact image size requirements for LinkedIn, Instagram, job applications, government forms, and social media. Get instant presets and download optimized images."
+      },
+      {
+        "route": "/templates",
+        "url": "http://localhost:3000/templates",
+        "title": "Free Image Size Templates &amp; Platform Guidelines | PixCloak | PixCloak",
+        "description": "Download free image size templates for social media, job applications, and web platforms. Get instant presets, cheat sheets, and design guidelines."
+      },
+      {
+        "route": "/terms",
+        "url": "http://localhost:3000/terms",
+        "title": "Terms of Service: Free Image Tools | PixCloak | PixCloak",
+        "description": "Read the service terms for PixCloak. Lawful use, intellectual property, no uploads by default, disclaimers, limitations, and contact information."
+      },
+      {
+        "route": "/testimonials",
+        "url": "http://localhost:3000/testimonials",
+        "title": "PixCloak Real-World Test Cases &amp; User Stories | Verified Results | PixCloak",
+        "description": "Real user stories, test cases, and verified results from PixCloak&#x27;s image compression tools. See how users solve actual problems with our privacy-first platform."
+      },
+      {
+        "route": "/tools",
+        "url": "http://localhost:3000/tools",
+        "title": "Free Image Tools: Resize, Convert, Compress... | PixCloak | PixCloak",
+        "description": "20+ free image tools—resize, convert PNG/JPG, crop, watermark, compress, remove background. Works offline, no uploads. For web, social media, photography."
+      },
+      {
+        "route": "/tools/aspect-pad",
+        "url": "http://localhost:3000/tools/aspect-pad",
+        "title": "Aspect Ratio Padder (Color/Blur) | PixCloak",
+        "description": "Pad images to a target aspect ratio using color or blur padding. Preview and export locally—no uploads. Great for banners and social crops."
+      },
+      {
+        "route": "/tools/batch-rename",
+        "url": "http://localhost:3000/tools/batch-rename",
+        "title": "Batch Rename Images (ZIP, No Upload) | PixCloak",
+        "description": "Rename images in batch with prefix/suffix and numbering, then download everything as a ZIP. Works locally—no uploads. Keep exports tidy for web and docs."
+      },
+      {
+        "route": "/tools/crop-templates",
+        "url": "http://localhost:3000/tools/crop-templates",
+        "title": "Free Image Cropper: 1:1, 4:3, 16:9 Templates | PixCloak",
+        "description": "Crop images to exact aspect ratios (1:1 square, 4:3, 16:9) for Instagram, Facebook, LinkedIn. Works offline—no uploads. Batch process and download ZIP."
+      },
+      {
+        "route": "/tools/dataurl-alt",
+        "url": "http://localhost:3000/tools/dataurl-alt",
+        "title": "Data URL Converter &amp; Alt Suggestions | PixCloak",
+        "description": "Convert images to Base64 data URLs and generate helpful alt text suggestions for accessibility. 100% client‑side processing—no uploads, copy and use instantly."
+      },
+      {
+        "route": "/tools/dpi-converter",
+        "url": "http://localhost:3000/tools/dpi-converter",
+        "title": "DPI/PPI Converter – Print size vs pixels | PixCloak",
+        "description": "Convert between pixels and physical print size using DPI/PPI. Plan exports for print and screens accurately. Runs locally in your browser—no uploads."
+      },
+      {
+        "route": "/tools/exif-checker",
+        "url": "http://localhost:3000/tools/exif-checker",
+        "title": "EXIF/GPS Metadata Checker – Remove EXIF locally | PixCloak",
+        "description": "Check if an image contains EXIF/GPS metadata and remove it locally in your browser. No upload, privacy first. Download a clean copy."
+      },
+      {
+        "route": "/tools/favicon-pack",
+        "url": "http://localhost:3000/tools/favicon-pack",
+        "title": "Free Favicon Generator: All Sizes + Manifest... | PixCloak",
+        "description": "Generate favicons in all sizes (16x16 to 512x512) instantly. Includes manifest.json and HTML code. Works locally—no uploads. For websites, PWAs, iOS, Android."
+      },
+      {
+        "route": "/tools/image-diff",
+        "url": "http://localhost:3000/tools/image-diff",
+        "title": "Image Diff – A/B slider &amp; pixel diff | PixCloak",
+        "description": "Compare two images side‑by‑side with an A/B slider, highlight pixel differences, and export the diff as PNG. Runs locally in your browser—no uploads required."
+      },
+      {
+        "route": "/tools/lqip",
+        "url": "http://localhost:3000/tools/lqip",
+        "title": "LQIP Generator: Tiny Base64 Placeholders | PixCloak",
+        "description": "Create LQIP placeholders as tiny Base64 for faster page loads. Preview and copy locally—no uploads. Perfect for skeleton screens and perceived performance."
+      },
+      {
+        "route": "/tools/og-card",
+        "url": "http://localhost:3000/tools/og-card",
+        "title": "OG/Twitter Card 1200×630 (Free, No Upload) | PixCloak",
+        "description": "Create 1200×630 OG/Twitter images in your browser—no uploads. Preview instantly and export PNG/JPG fast. Perfect for blogs, docs, and social sharing."
+      },
+      {
+        "route": "/tools/platform-checker",
+        "url": "http://localhost:3000/tools/platform-checker",
+        "title": "Platform Compliance Checker – KB &amp; Dimensions | PixCloak",
+        "description": "Validate image KB and dimensions for common platforms (forms/social). Get one‑click presets like 200KB/500KB and 1920px."
+      },
+      {
+        "route": "/tools/png-jpg-converter",
+        "url": "http://localhost:3000/tools/png-jpg-converter",
+        "title": "PNG to JPG &amp; JPG to PNG Converter (No Upload) | PixCloak",
+        "description": "Convert PNG to JPG or JPG to PNG in browser. Adjust quality, choose background color. Batch convert 100+ images. Works locally—no uploads. Free, unlimited."
+      },
+      {
+        "route": "/tools/remove-bg-lite",
+        "url": "http://localhost:3000/tools/remove-bg-lite",
+        "title": "Free Background Remover: Remove BG (No Upload) | PixCloak",
+        "description": "Remove background from images by color. Adjust tolerance for solid backgrounds (white, green, gray). 100% local—no uploads. Free, unlimited."
+      },
+      {
+        "route": "/tools/resize-image",
+        "url": "http://localhost:3000/tools/resize-image",
+        "title": "Free Image Resizer: Resize to Exact Dimensions... | PixCloak",
+        "description": "Resize images to exact dimensions (1920px, 1080px) or percentages. Batch resize 100+ images. Works locally—no uploads. For web, Instagram, email."
+      },
+      {
+        "route": "/tools/sprite-sheet",
+        "url": "http://localhost:3000/tools/sprite-sheet",
+        "title": "Sprite Sheet Generator | PixCloak",
+        "description": "Combine images into a sprite sheet with JSON mapping and download as ZIP. Configure grid, spacing, and order. All processing is local—no uploads."
+      },
+      {
+        "route": "/tools/srcset-generator",
+        "url": "http://localhost:3000/tools/srcset-generator",
+        "title": "Responsive img srcset Generator | PixCloak",
+        "description": "Generate responsive img srcset/sizes markup and suggested KB per breakpoint. Copy optimized HTML locally to improve LCP and save bandwidth—no uploads."
+      },
+      {
+        "route": "/tools/svg-optimizer",
+        "url": "http://localhost:3000/tools/svg-optimizer",
+        "title": "SVG Optimizer – Minify &amp; Clean | PixCloak",
+        "description": "Minify and clean SVG code locally. Remove bloat safely and export an optimized SVG—private and offline, no uploads. Works locally in your browser, no uploads."
+      },
+      {
+        "route": "/tools/text-placeholder",
+        "url": "http://localhost:3000/tools/text-placeholder",
+        "title": "Text Placeholder – Social/Thumbnail presets | PixCloak",
+        "description": "Generate text‑based placeholder images for social and thumbnails with size presets. Customize colors/text and export locally—no uploads."
+      },
+      {
+        "route": "/tools/trim-transparent",
+        "url": "http://localhost:3000/tools/trim-transparent",
+        "title": "Trim Transparent Edges (PNG) | PixCloak",
+        "description": "Auto-trim fully transparent borders from PNGs and export a clean result. Fast, local processing—no uploads. Ideal for sprites, icons, and UI assets."
+      },
+      {
+        "route": "/tools/watermark",
+        "url": "http://localhost:3000/tools/watermark",
+        "title": "Free Watermark Tool: Add Text to Images (No... | PixCloak",
+        "description": "Add text watermarks to images—customize position, opacity, font, color. Batch process and download ZIP. Works offline, no uploads. Protect copyright, free."
+      },
+      {
+        "route": "/tools/webp-converter",
+        "url": "http://localhost:3000/tools/webp-converter",
+        "title": "Free WebP Converter: JPG/PNG to WebP (No Upload) | PixCloak",
+        "description": "Convert images to WebP format—25-35% smaller than JPG. Works offline, no uploads. Batch convert and download ZIP. For faster websites, better SEO, free."
+      }
+    ],
+    "errors": [
+      {
+        "route": "/guides/long-tail/[slug]",
+        "error": "HTTP 404 for /guides/long-tail/[slug]"
+      }
+    ]
+  },
+  "report": {
+    "summary": {
+      "totalPages": 123,
+      "success": 122,
+      "failed": 1,
+      "uniqueTitles": 122,
+      "uniqueDescriptions": 122
+    },
+    "titleDuplicity": {
+      "Free Image Tools: Compress &amp; Redact (No Upload) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/"
+        ]
+      },
+      "About PixCloak: Privacy‑First Image Toolkit | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/about"
+        ]
+      },
+      "Batch Processing (Coming Soon) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/batch"
+        ]
+      },
+      "Image Compression Benchmark &amp; Quality Comparison | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/benchmark"
+        ]
+      },
+      "PixCloak Case Studies: Real Business Impact &amp; ROI Analysis | Verified Results | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/case-studies"
+        ]
+      },
+      "PixCloak Changelog &amp; Updates | Latest Features &amp; Improvements | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/changelog"
+        ]
+      },
+      "Free Image Compressor: Reduce JPG/PNG to 100KB | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress"
+        ]
+      },
+      "Comprimir imágenes a 200KB/500KB (sin subir) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress-es"
+        ]
+      },
+      "Kompres 200KB/500KB (tanpa unggah) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress-id"
+        ]
+      },
+      "Comprimir para 200KB/500KB (sem upload) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress-pt"
+        ]
+      },
+      "Contact Us: Questions &amp; Support | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/contact"
+        ]
+      },
+      "Image Compression Before &amp; After Gallery | Visual Quality Comparison | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/gallery"
+        ]
+      },
+      "Image Guides: Compress, Convert, Remove EXIF | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides"
+        ]
+      },
+      "How to Share Photos Anonymously (Remove All... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/anonymized-sharing"
+        ]
+      },
+      "Create Profile Picture at 200KB (LinkedIn, Job... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/avatar-200kb"
+        ]
+      },
+      "Avoid Compression Artifacts (WebP/JPEG) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/avoid-artifacts-webp-jpeg"
+        ]
+      },
+      "Black Out Text in Images (Censor/Redact) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/black-out-text-in-image"
+        ]
+      },
+      "Blur Faces in Photos (Free, No App) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/blur-face-in-photo"
+        ]
+      },
+      "Blur Number Plates in Photos (UK) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/blur-number-plate-online"
+        ]
+      },
+      "Complete Image Compression Guide (2025):... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/complete-image-compression-guide"
+        ]
+      },
+      "How to Compress Images to 100KB (Free, No Quality Loss) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-image-to-100kb"
+        ]
+      },
+      "Compress Images to 1MB (Free, Maximum Quality) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-1mb"
+        ]
+      },
+      "Compress Images to 200KB (Free, No Quality Loss) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-200kb"
+        ]
+      },
+      "Compress Images to 300KB (WebP/JPEG) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-300kb"
+        ]
+      },
+      "Compress Images to 500KB (Free, High Quality) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-500kb"
+        ]
+      },
+      "Compress Images to 800KB (High‑Quality) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-800kb"
+        ]
+      },
+      "Compress Images to Target KB (200KB/500KB) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-target-kb"
+        ]
+      },
+      "按目标体积压缩到200KB/500KB（本地，无上传） | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-target-kb-zh"
+        ]
+      },
+      "Convert JPEG to WebP (Free, 30-50% Smaller) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/convert-jpeg-to-webp"
+        ]
+      },
+      "Convert JPG to WebP Online (Free, Smaller File... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/convert-jpg-to-webp-online"
+        ]
+      },
+      "Embed “Compress to KB” Button (Link or Script) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/embed-button"
+        ]
+      },
+      "Comprimir imágenes a 200KB (Gratis, sin subir) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-comprimir-a-200kb"
+        ]
+      },
+      "Comprimir a tamaño objetivo (200KB/500KB) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-comprimir-a-kb-objetivo"
+        ]
+      },
+      "Exportar imágenes sin metadatos (eliminar... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-exportar-sin-metadatos"
+        ]
+      },
+      "Límites de imágenes por plataforma (KB y... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-limites-de-imagenes-plataformas"
+        ]
+      },
+      "Redimensionar por el lado más largo a 1920px | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-redimensionar-lado-mas-largo"
+        ]
+      },
+      "Remove GPS &amp; EXIF Data from Photos (Free, 2... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/exif-gps-removal"
+        ]
+      },
+      "Export Images Without Metadata (Remove EXIF/GPS) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/export-without-metadata"
+        ]
+      },
+      "无元数据导出：去除 EXIF/GPS（本地处理）| PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/export-without-metadata-zh"
+        ]
+      },
+      "Google Search Console Operations | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/gsc-operations"
+        ]
+      },
+      "How to Compress Images Without Losing Quality... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-compress-image-without-losing-quality"
+        ]
+      },
+      "How to Compress Images on iPhone (Free, No App) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-compress-on-iphone"
+        ]
+      },
+      "How to Reduce Image File Size (Free, 2 Minutes) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-reduce-image-file-size"
+        ]
+      },
+      "How to Resize Images for Instagram: Feed,... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-resize-images-for-instagram"
+        ]
+      },
+      "Batas gambar per platform (KB &amp; dimensi) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-batas-gambar-platform"
+        ]
+      },
+      "Ekspor tanpa metadata (hapus EXIF/GPS) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-ekspor-tanpa-metadata"
+        ]
+      },
+      "Kompres ke target KB (200KB/500KB) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-kompres-ke-kb-target"
+        ]
+      },
+      "Kompres gambar menjadi 1MB (kualitas tinggi) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-kompres-menjadi-1mb"
+        ]
+      },
+      "Ubah ukuran sisi terpanjang ke 1920px | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-ubah-ukuran-sisi-terpanjang"
+        ]
+      },
+      "Image SEO Optimization Guide | Alt Text, File Names &amp; Search Visibility | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/image-seo-optimization"
+        ]
+      },
+      "JPEG vs WebP for LinkedIn: Feed vs Banners | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/jpeg-vs-webp-for-linkedin"
+        ]
+      },
+      "JPEG vs WebP for X/Twitter: Best Settings | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/jpeg-vs-webp-for-twitter"
+        ]
+      },
+      "JPEG vs WebP: Which is Smaller and Better Quality? | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/jpeg-vs-webp-size-quality"
+        ]
+      },
+      "Blur License Plates in Photos — Legal &amp; Easy | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/license-plate-redaction"
+        ]
+      },
+      "Image Upload Limits for iPhone &amp; Android... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/mobile-upload-limits"
+        ]
+      },
+      "Platform Image Limits (KB &amp; Dimensions) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/platform-image-limits"
+        ]
+      },
+      "平台常见图片限制（200KB/500KB 规范） | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/platform-image-limits-zh"
+        ]
+      },
+      "PNG vs JPG: When to Use Each Format (Complete... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/png-vs-jpg-when-to-use-each"
+        ]
+      },
+      "Prepare Images for Social Posts at 500KB... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/post-500kb"
+        ]
+      },
+      "Prepare Images for Forms (200KB/500KB Presets) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/prepare-images-for-forms"
+        ]
+      },
+      "Prepare Images for Job Applications (200KB/500KB) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/prepare-images-for-job-application"
+        ]
+      },
+      "Prepare Portfolio Images (1920px, 800KB–1MB) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/prepare-images-for-portfolio"
+        ]
+      },
+      "Privacy &amp; Compliance for Images (Local, No Upload) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/privacy-compliance"
+        ]
+      },
+      "Comprimir imagens para 500KB (alta qualidade) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-comprimir-para-500kb"
+        ]
+      },
+      "Comprimir para KB alvo (200KB/500KB) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-comprimir-para-kb-alvo"
+        ]
+      },
+      "Exportar sem metadados (remover EXIF/GPS) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-exportar-sem-metadados"
+        ]
+      },
+      "Limites de imagens por plataforma (KB e dimensões) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-limites-de-imagens-plataformas"
+        ]
+      },
+      "Redimensionar pelo lado mais longo (1920px) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-redimensionar-lado-mais-longo"
+        ]
+      },
+      "Redact a Screenshot on Mac (Blur/Pixelate) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/redact-screenshot-mac"
+        ]
+      },
+      "Photo Privacy Checklist Before Sharing Online | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/redaction-checklist"
+        ]
+      },
+      "Remove EXIF from iPhone Photos — No App Needed | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-iphone"
+        ]
+      },
+      "iPhone 照片去除 EXIF/GPS（本地处理）| PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-iphone-zh"
+        ]
+      },
+      "Remove EXIF from WeChat images (local) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-wechat"
+        ]
+      },
+      "微信图片去除 EXIF 元数据（本地处理）| PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-wechat-zh"
+        ]
+      },
+      "Remove GPS Data from Photos (Strip EXIF) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-gps-data-from-photos"
+        ]
+      },
+      "Batch Rename Rules (Prefix/Suffix, Keep Extension) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/rename-rules"
+        ]
+      },
+      "Research: 500KB Quality Range (1920px workflow) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/research-500kb-quality-range"
+        ]
+      },
+      "Research: JPEG vs WebP at Target KBs | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/research-jpeg-vs-webp"
+        ]
+      },
+      "Research: Quality vs Size Curves (JPEG/WebP) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/research-quality-size-curves"
+        ]
+      },
+      "Resize Images to 1920px (Longest Side) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/resize-longest-side"
+        ]
+      },
+      "按最长边缩放到 1920px（网页最佳实践） | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/resize-longest-side-zh"
+        ]
+      },
+      "Resize Longest Side to 1920px (Best for Web) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/resize-to-1920"
+        ]
+      },
+      "Screenshot Privacy Checklist (Before Sharing) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/screenshot-privacy-check"
+        ]
+      },
+      "Social Media Image Size Limits (LinkedIn,... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/social-platform-kb"
+        ]
+      },
+      "TinyPNG Alternative: Free Image Compressor (No... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/tinypng-alternative-free-no-upload"
+        ]
+      },
+      "Batch Image Compressor: Download ZIP (Free, No... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/zip-batch-download"
+        ]
+      },
+      "Press &amp; Brand Assets | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/press"
+        ]
+      },
+      "Privacy Policy: Your Data Stays Local | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/privacy"
+        ]
+      },
+      "Free Photo Redaction: Blur Faces, Hide Plates | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact"
+        ]
+      },
+      "Ocultar en fotos (difuminar/EXIF) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact-es"
+        ]
+      },
+      "Sensor foto (blur/EXIF) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact-id"
+        ]
+      },
+      "Ocultar em fotos (borrão/EXIF) | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact-pt"
+        ]
+      },
+      "PixCloak Algorithm Research &amp; Technical Documentation | Open Source | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research"
+        ]
+      },
+      "PixCloak Benchmarking Methodology | Performance Testing Guide | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research/docs/benchmarking-methodology"
+        ]
+      },
+      "PixCloak Compression Algorithm Implementation | Technical Documentation | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research/docs/compression-algorithm"
+        ]
+      },
+      "PixCloak Privacy-First Architecture Guide | Technical Documentation | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research/docs/privacy-architecture"
+        ]
+      },
+      "Image Size Requirements by Platform &amp; Use Case | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/scenarios"
+        ]
+      },
+      "Free Image Size Templates &amp; Platform Guidelines | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/templates"
+        ]
+      },
+      "Terms of Service: Free Image Tools | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/terms"
+        ]
+      },
+      "PixCloak Real-World Test Cases &amp; User Stories | Verified Results | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/testimonials"
+        ]
+      },
+      "Free Image Tools: Resize, Convert, Compress... | PixCloak | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools"
+        ]
+      },
+      "Aspect Ratio Padder (Color/Blur) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/aspect-pad"
+        ]
+      },
+      "Batch Rename Images (ZIP, No Upload) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/batch-rename"
+        ]
+      },
+      "Free Image Cropper: 1:1, 4:3, 16:9 Templates | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/crop-templates"
+        ]
+      },
+      "Data URL Converter &amp; Alt Suggestions | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/dataurl-alt"
+        ]
+      },
+      "DPI/PPI Converter – Print size vs pixels | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/dpi-converter"
+        ]
+      },
+      "EXIF/GPS Metadata Checker – Remove EXIF locally | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/exif-checker"
+        ]
+      },
+      "Free Favicon Generator: All Sizes + Manifest... | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/favicon-pack"
+        ]
+      },
+      "Image Diff – A/B slider &amp; pixel diff | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/image-diff"
+        ]
+      },
+      "LQIP Generator: Tiny Base64 Placeholders | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/lqip"
+        ]
+      },
+      "OG/Twitter Card 1200×630 (Free, No Upload) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/og-card"
+        ]
+      },
+      "Platform Compliance Checker – KB &amp; Dimensions | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/platform-checker"
+        ]
+      },
+      "PNG to JPG &amp; JPG to PNG Converter (No Upload) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/png-jpg-converter"
+        ]
+      },
+      "Free Background Remover: Remove BG (No Upload) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/remove-bg-lite"
+        ]
+      },
+      "Free Image Resizer: Resize to Exact Dimensions... | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/resize-image"
+        ]
+      },
+      "Sprite Sheet Generator | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/sprite-sheet"
+        ]
+      },
+      "Responsive img srcset Generator | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/srcset-generator"
+        ]
+      },
+      "SVG Optimizer – Minify &amp; Clean | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/svg-optimizer"
+        ]
+      },
+      "Text Placeholder – Social/Thumbnail presets | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/text-placeholder"
+        ]
+      },
+      "Trim Transparent Edges (PNG) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/trim-transparent"
+        ]
+      },
+      "Free Watermark Tool: Add Text to Images (No... | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/watermark"
+        ]
+      },
+      "Free WebP Converter: JPG/PNG to WebP (No Upload) | PixCloak": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/webp-converter"
+        ]
+      }
+    },
+    "descriptionDuplicity": {
+      "Compress and redact images locally in your browser. No upload. Fast JPEG/PNG/WebP compression to exact KB, privacy‑first tools, and step‑by‑step guides.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/"
+        ]
+      },
+      "PixCloak: privacy‑first image toolkit. Compress to exact KB, redact faces/plates, remove EXIF/GPS, batch ZIP—everything runs locally in your browser, no...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/about"
+        ]
+      },
+      "Queue multiple images, apply presets (target KB, resize, format), and export as a ZIP. Planned feature in membership plan. Local processing, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/batch"
+        ]
+      },
+      "Compare image compression quality across different tools and settings. Download our benchmark dataset with SSIM/PSNR metrics, file size comparisons, and visual quality analysis.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/benchmark"
+        ]
+      },
+      "Detailed case studies showing how businesses use PixCloak to improve website performance, reduce costs, and enhance user experience. Verified ROI and impact metrics.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/case-studies"
+        ]
+      },
+      "Track all PixCloak updates, new features, and improvements. Subscribe to our RSS feed for instant notifications of new tools and enhancements.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/changelog"
+        ]
+      },
+      "Compress images to 100KB–500KB without quality loss. Works offline—no uploads. Convert JPEG/PNG/WebP fast for web, email, and social media in seconds.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress"
+        ]
+      },
+      "Comprime a 200KB/500KB en tu navegador. Convierte WebP/JPEG y redimensiona a 1920px. Todo local, sin subidas. Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress-es"
+        ]
+      },
+      "Kompres 200KB/500KB di browser. Konversi WebP/JPEG dan ubah ukuran 1920px. Semua lokal, tanpa unggah. Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress-id"
+        ]
+      },
+      "Comprima para 200KB/500KB no navegador, sem uploads. Converta WebP/JPEG, redimensione para 1920px. Remove EXIF/GPS automaticamente. 100% local e privado.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/compress-pt"
+        ]
+      },
+      "Questions or feedback about PixCloak? Email support@pixcloak.com with your scenario and an example file (no private data). We reply within 1–2 business days.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/contact"
+        ]
+      },
+      "See real before and after examples of image compression. Compare quality, file sizes, and compression ratios across different tools and settings.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/gallery"
+        ]
+      },
+      "Compress to 100KB-1MB, convert JPG/WebP, resize to 1920px, remove EXIF/GPS. Works offline in your browser—no uploads. For web, email, social media, and forms.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides"
+        ]
+      },
+      "Complete guide: blur faces, hide license plates, black out addresses, remove EXIF/GPS. Share safely on social media, forums, marketplace.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/anonymized-sharing"
+        ]
+      },
+      "Compress profile photos to exactly 200KB for LinkedIn, job applications, government portals. Maintains quality. Works on any device—no app download.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/avatar-200kb"
+        ]
+      },
+      "Reduce banding and halos: downscale first, pick realistic target KB, switch WebP↔JPEG when needed. Preview and export locally with no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/avoid-artifacts-webp-jpeg"
+        ]
+      },
+      "Black out or pixelate sensitive text in screenshots and photos, then export without EXIF/GPS. Works entirely in your browser—no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/black-out-text-in-image"
+        ]
+      },
+      "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/blur-face-in-photo"
+        ]
+      },
+      "Pixelate or censor number plates (UK) with local processing—no uploads. Prefer pixelation for stronger privacy. Export JPG/WebP with EXIF/GPS removed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/blur-number-plate-online"
+        ]
+      },
+      "The complete guide to image compression: learn how to compress JPEG, PNG, WebP to exact sizes (100KB-1MB). Covers formats, quality settings, batch...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/complete-image-compression-guide"
+        ]
+      },
+      "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download. Supports JPEG, PNG, WebP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-image-to-100kb"
+        ]
+      },
+      "Reduce image file size to 1MB for portfolios, university applications, and high-quality submissions. Preserves excellent detail.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-1mb"
+        ]
+      },
+      "Reduce image file size to exactly 200KB for avatars, forms, and uploads. Works for JPEG, PNG, WebP—no app download. Perfect for LinkedIn and job applications.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-200kb"
+        ]
+      },
+      "Compress to 300KB for posts and forms. Choose WebP or JPEG, resize to 1920px if needed. Balances quality and size. Works offline, no uploads, under 1 minute.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-300kb"
+        ]
+      },
+      "Reduce image file size to 500KB for websites, email attachments, and online forms. Maintains excellent quality for photos. No upload, no app download needed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-500kb"
+        ]
+      },
+      "Target 800KB for higher‑quality posts and submissions. Use WebP for smaller size or JPEG for compatibility; resize longest side if needed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-800kb"
+        ]
+      },
+      "Hit strict 200KB/500KB limits. Set exact size, resize to 1920px, choose WebP/JPEG. Batch process and download ZIP. Works offline, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-target-kb"
+        ]
+      },
+      "在浏览器中将图片压缩到精确目标体积（200KB/500KB）。先按最长边缩放至1920px，再用目标KB预设快速达到要求。处理全程本地，适合网页、邮件与表单。 Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/compress-to-target-kb-zh"
+        ]
+      },
+      "Change JPEG to WebP format and reduce file size by 30-50% with same quality. Free online converter works in browser—no upload, no limits.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/convert-jpeg-to-webp"
+        ]
+      },
+      "Convert JPEG to WebP and reduce file size by 30-50%. Free online tool works in browser—no uploads, no limits. Batch convert multiple images.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/convert-jpg-to-webp-online"
+        ]
+      },
+      "Add a simple link or script‑enhanced button to open PixCloak with presets (KB, format, resize). Local processing—no uploads. Includes customizable styles...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/embed-button"
+        ]
+      },
+      "Comprime a 200KB sin subir archivos: ajusta calidad, redimensiona a 1920px si es necesario y descarga JPEG/WebP o ZIP. Funciona en navegador, gratis y offline.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-comprimir-a-200kb"
+        ]
+      },
+      "Logra 200KB/500KB sin subir archivos. Usa Target (KB), redimensiona a 1920px si es necesario y exporta WebP/JPEG o ZIP. Procesamiento local en el navegador.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-comprimir-a-kb-objetivo"
+        ]
+      },
+      "Elimina EXIF/GPS en el navegador: abre /compress o /redact y exporta como JPEG/WebP/PNG para limpiar metadatos. Procesamiento local, sin subidas.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-exportar-sin-metadatos"
+        ]
+      },
+      "Avatares 200KB, publicaciones 500KB, lado más largo 1920px. Presets rápidos y exportación local sin subidas. Útil para redes sociales, blogs y formularios.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-limites-de-imagenes-plataformas"
+        ]
+      },
+      "Reduce dimensiones a 1920px por el lado más largo y luego comprime a 200–800KB. Mantiene proporción y mejora velocidad de carga. Proceso local, sin subidas.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/es-redimensionar-lado-mas-largo"
+        ]
+      },
+      "Strip location, camera info, and metadata from photos before sharing. Protects your privacy—prevents stalking and address leaks.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/exif-gps-removal"
+        ]
+      },
+      "Remove EXIF/GPS in your browser: open /compress or /redact and export as JPEG/WebP/PNG to clear metadata. 100% local processing, optional batch + ZIP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/export-without-metadata"
+        ]
+      },
+      "本地去除iPhone/Android照片EXIF/GPS元数据，保护位置隐私防止泄露家庭住址。导出JPEG/WebP/PNG格式自动清除隐私信息。支持批量处理与ZIP打包下载，100%浏览器本地执行无上传。适合微信朋友圈、微博、小红书、闲鱼等社交平台分享。": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/export-without-metadata-zh"
+        ]
+      },
+      "Practical checklist: submit sitemaps, inspect URLs, handle duplicates, fix soft 404/redirects, and improve CTR. Keep canonical, content, and internal...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/gsc-operations"
+        ]
+      },
+      "Compress images without losing quality: resize to 1920px first, use JPEG 80% or WebP 75%, hit target KB. Works for photos, websites, email.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-compress-image-without-losing-quality"
+        ]
+      },
+      "Compress images on iPhone without app: open Safari, visit compressor, select photos, compress to target KB, download. Works in browser, no installation.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-compress-on-iphone"
+        ]
+      },
+      "Reduce image file size in 3 steps: resize to 1920px, compress to target KB, remove EXIF. Free tool, no uploads. Works for JPEG, PNG, WebP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-reduce-image-file-size"
+        ]
+      },
+      "Resize images to Instagram&#x27;s exact sizes—1080x1080 (feed), 1080x1350 (portrait), 1080x1920 (Stories/Reels). Works offline in your browser, no uploads. Free tool with quality guide and batch processing support.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/how-to-resize-images-for-instagram"
+        ]
+      },
+      "Avatar 200KB, postingan 500KB, sisi terpanjang 1920px. Preset cepat dan ekspor lokal tanpa unggah. Cocok untuk sosial, blog, dan formulir.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-batas-gambar-platform"
+        ]
+      },
+      "Hapus EXIF &amp; GPS saat ekspor JPEG/WebP/PNG langsung di browser. 100% lokal, tanpa unggah. Cocok untuk berbagi aman di web/email/formulir.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-ekspor-tanpa-metadata"
+        ]
+      },
+      "Capai 200KB/500KB tanpa unggah. Pakai Target (KB), ubah ukuran sisi terpanjang 1920px bila perlu, lalu ekspor WebP/JPEG atau ZIP. Pemrosesan lokal di browser.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-kompres-ke-kb-target"
+        ]
+      },
+      "Kompres ke 1MB untuk portofolio berkualitas. Pilih WebP/JPEG, ubah ukuran ke 1920px. Proses lokal tanpa upload. Hapus EXIF/GPS. Batch ZIP untuk banyak file.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-kompres-menjadi-1mb"
+        ]
+      },
+      "Turunkan dimensi ke 1920px sisi terpanjang lalu kompres ke 200–800KB. Tetap menjaga rasio aspek dan mempercepat pemuatan. Proses lokal di browser, tanpa unggah.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/id-ubah-ukuran-sisi-terpanjang"
+        ]
+      },
+      "Complete guide to image SEO optimization. Learn how to optimize alt text, file names, captions, and image metadata for better search engine visibility.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/image-seo-optimization"
+        ]
+      },
+      "Use WebP for feed images and JPEG for banners with gradients. Resize longest side to 1920px; start near 500KB. Convert locally and preview—no uploads required.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/jpeg-vs-webp-for-linkedin"
+        ]
+      },
+      "Choose WebP for smaller files or JPEG for compatibility. Keep width ≤1920px and target ~500KB for fast loads. Convert and preview locally—no uploads needed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/jpeg-vs-webp-for-twitter"
+        ]
+      },
+      "Compare JPEG and WebP file sizes and quality. WebP is 30-50% smaller at same quality. See when to use each format for websites, social media, and email.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/jpeg-vs-webp-size-quality"
+        ]
+      },
+      "Hide license plates to protect privacy. Use solid blocks or strong pixelation (not reversible). Ideal for selling cars, accident reports, and social sharing.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/license-plate-redaction"
+        ]
+      },
+      "Comprehensive list of mobile upload limits for forms, job applications, government portals. Reduce images to 200KB, 500KB, or 1MB for iPhone/Android.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/mobile-upload-limits"
+        ]
+      },
+      "Common caps for avatars and posts: 200KB avatars, 500KB posts, 1920px longest side. Use quick presets to prepare images locally—no uploads, fast exports.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/platform-image-limits"
+        ]
+      },
+      "平台常见图片限制：头像上限200KB、帖子上限500KB、最长边建议1920px。快速预设本地压缩调整尺寸，自动移除EXIF/GPS元数据，无需上传文件。适合微信公众号、小红书、知乎、简书、豆瓣、V2EX等平台，支持批量处理ZIP打包，隐私优先100%本地处理，完全免费无需注册登录。": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/platform-image-limits-zh"
+        ]
+      },
+      "PNG for graphics/logos/text (lossless, transparency). JPG for photos (smaller files). Compare file sizes, quality, use cases. Free converter tool included.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/png-vs-jpg-when-to-use-each"
+        ]
+      },
+      "Compress photos to 500KB for social media posts, forums, blog uploads. Maintains high quality. Works for Facebook, Reddit, Medium.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/post-500kb"
+        ]
+      },
+      "Meet form limits fast: 200KB avatars, 500KB attachments. Use ready presets, resize to 1920px for phone photos, and export locally—no uploads needed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/prepare-images-for-forms"
+        ]
+      },
+      "Pass HR portal limits quickly: 200KB profile, 500KB attachments. Resize ≤1920px, remove EXIF/GPS on export, and download locally without uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/prepare-images-for-job-application"
+        ]
+      },
+      "Resize longest side to 1920px and compress to 800KB–1MB for high‑quality portfolios. Use WebP/JPEG, preview, and export locally without uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/prepare-images-for-portfolio"
+        ]
+      },
+      "Practical checklist to share images safely: redact faces/plates/IDs, black out sensitive text, remove EXIF/GPS. Local processing, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/privacy-compliance"
+        ]
+      },
+      "Comprima para 500KB—ideal para blogs, e-mail, formulários. Redimensione para 1920px, escolha WebP/JPEG. Local no navegador, sem uploads. Baixe em ZIP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-comprimir-para-500kb"
+        ]
+      },
+      "Atinga limites de 200KB/500KB sem upload. Use Target (KB), redimensione para 1920px e exporte WebP/JPEG. Processamento local no navegador; download em ZIP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-comprimir-para-kb-alvo"
+        ]
+      },
+      "Remova EXIF/GPS de fotos, protegendo localização. Exporte em JPEG/WebP/PNG para limpar metadados automaticamente. 100% local, sem uploads. Suporta lote e ZIP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-exportar-sem-metadados"
+        ]
+      },
+      "Avatares 200KB, publicações 500KB, lado mais longo 1920px. Presets rápidos e exportação local sem upload. Útil para redes sociais, blogs e formulários.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-limites-de-imagens-plataformas"
+        ]
+      },
+      "Reduza imagens para 1920px no lado mais longo e depois comprima para 200–800KB. Mantém proporção e melhora a velocidade. Processo local, sem upload.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/pt-redimensionar-lado-mais-longo"
+        ]
+      },
+      "Censor sensitive parts of macOS screenshots by blurring or pixelating areas, then export without EXIF/GPS. Runs locally in your browser—no uploads or apps...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/redact-screenshot-mac"
+        ]
+      },
+      "Essential checklist: blur faces, hide license plates, remove EXIF/GPS, black out text. Prevent doxxing and identity theft. Use irreversible redaction...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/redaction-checklist"
+        ]
+      },
+      "Remove EXIF/GPS from iPhone photos before sharing. Protects privacy and home address. Works in browser, no app needed. Export cleans metadata in seconds.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-iphone"
+        ]
+      },
+      "在浏览器内本地去除 iPhone 照片的 EXIF/GPS：打开 /compress 或 /redact，导出为 JPEG/WebP/PNG 即可清除元数据。支持验证与批量 ZIP。 Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-iphone-zh"
+        ]
+      },
+      "Strip EXIF/GPS from WeChat images by exporting locally as JPEG/WebP—no uploads. Use original files when possible to avoid platform recompression.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-wechat"
+        ]
+      },
+      "在浏览器内本地去除微信图片的 EXIF/GPS：打开 /compress，导入并导出为 JPEG/WebP，导出时会自动清除元数据。尽量使用原始文件以避免二压。 Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-exif-wechat-zh"
+        ]
+      },
+      "Strip GPS coordinates from photos by exporting locally—no uploads. Protect your address and privacy. Verify with the EXIF Checker tool (0 GPS fields after...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/remove-gps-data-from-photos"
+        ]
+      },
+      "Batch rename with prefix/suffix, keep extensions. Compress and download as ZIP with consistent naming. For organizing uploads and versioning. Works locally.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/rename-rules"
+        ]
+      },
+      "Method and findings for landing near 500KB across varied content: resize to 1920px, binary‑search quality, and compare artifacts.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/research-500kb-quality-range"
+        ]
+      },
+      "Compare JPEG and WebP at 200/300/500/800KB on varied images. Findings on size/quality trade‑offs, artifacts, and when to pick each format. All processing local.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/research-jpeg-vs-webp"
+        ]
+      },
+      "Methodology to generate quality-size curves at target KBs and resolutions. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/research-quality-size-curves"
+        ]
+      },
+      "Resize to 1920px longest side before compression. Reduces file size 50-70% with no quality loss. Keeps aspect ratio. Works offline—no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/resize-longest-side"
+        ]
+      },
+      "将图片最长边缩放到 1920px，再压缩到 200–800KB，兼顾清晰与加载速度。保持宽高比，适合网站/博客/社交。全程本地处理，无需上传。 Process images offline in your browser. 100% free, no uploads, privacy guaranteed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/resize-longest-side-zh"
+        ]
+      },
+      "Downscale to 1920px before compressing to 200-800KB for fast web delivery. Reduces file size while keeping aspect ratio. Works locally, no uploads needed.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/resize-to-1920"
+        ]
+      },
+      "Hide contacts, IDs, order numbers, and QR codes; crop sensitive UI; export without EXIF/GPS. A quick checklist to prevent privacy leaks when posting...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/screenshot-privacy-check"
+        ]
+      },
+      "Exact image size requirements for LinkedIn (8MB), Twitter (5MB), Instagram (30MB), Facebook (10MB). Compress to exact KB targets.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/social-platform-kb"
+        ]
+      },
+      "Looking for a TinyPNG alternative that works offline? Compress images to exact KB targets (100KB-1MB) with no uploads. Free unlimited compression, batch...": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/tinypng-alternative-free-no-upload"
+        ]
+      },
+      "Compress multiple images in your browser, set target KB, format, and 1920px resize, then download all as a single ZIP. Works offline, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/guides/zip-batch-download"
+        ]
+      },
+      "Download brand assets, demo images, and copy. PixCloak is a privacy‑first image toolkit that runs locally—compress, redact, and export without uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/press"
+        ]
+      },
+      "We design PixCloak with privacy‑first principles. All image processing happens locally in your browser—no uploads, minimal storage, and clear disclosures.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/privacy"
+        ]
+      },
+      "Blur faces, hide license plates, and black out text. Remove EXIF/GPS automatically. 100% local—no uploads. Simple, fast, and privacy‑friendly.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact"
+        ]
+      },
+      "Difumina caras, matrículas y texto; elimina EXIF/GPS al exportar. 100% local, sin subir archivos. Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact-es"
+        ]
+      },
+      "Sensor foto: blur wajah, plat nomor, teks. Hapus EXIF/GPS otomatis. 100% lokal, tanpa upload. Gambar kotak untuk menutupi area sensitif. Cepat dan privat.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact-id"
+        ]
+      },
+      "Borre rostos, placas e texto; remova EXIF/GPS na exportação. 100% local, sem upload. Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/redact-pt"
+        ]
+      },
+      "Open source algorithm research, compression techniques, and technical documentation. Learn how PixCloak&#x27;s image processing works with full transparency.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research"
+        ]
+      },
+      "Comprehensive methodology for benchmarking image compression performance, including test setup, metrics definition, and statistical analysis.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research/docs/benchmarking-methodology"
+        ]
+      },
+      "Detailed technical documentation of PixCloak&#x27;s image compression algorithms, including WebP implementation, quality control, and performance metrics.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research/docs/compression-algorithm"
+        ]
+      },
+      "Comprehensive guide to PixCloak&#x27;s privacy-first architecture, data flow, security measures, and privacy guarantees.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/research/docs/privacy-architecture"
+        ]
+      },
+      "Find exact image size requirements for LinkedIn, Instagram, job applications, government forms, and social media. Get instant presets and download optimized images.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/scenarios"
+        ]
+      },
+      "Download free image size templates for social media, job applications, and web platforms. Get instant presets, cheat sheets, and design guidelines.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/templates"
+        ]
+      },
+      "Read the service terms for PixCloak. Lawful use, intellectual property, no uploads by default, disclaimers, limitations, and contact information.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/terms"
+        ]
+      },
+      "Real user stories, test cases, and verified results from PixCloak&#x27;s image compression tools. See how users solve actual problems with our privacy-first platform.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/testimonials"
+        ]
+      },
+      "20+ free image tools—resize, convert PNG/JPG, crop, watermark, compress, remove background. Works offline, no uploads. For web, social media, photography.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools"
+        ]
+      },
+      "Pad images to a target aspect ratio using color or blur padding. Preview and export locally—no uploads. Great for banners and social crops.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/aspect-pad"
+        ]
+      },
+      "Rename images in batch with prefix/suffix and numbering, then download everything as a ZIP. Works locally—no uploads. Keep exports tidy for web and docs.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/batch-rename"
+        ]
+      },
+      "Crop images to exact aspect ratios (1:1 square, 4:3, 16:9) for Instagram, Facebook, LinkedIn. Works offline—no uploads. Batch process and download ZIP.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/crop-templates"
+        ]
+      },
+      "Convert images to Base64 data URLs and generate helpful alt text suggestions for accessibility. 100% client‑side processing—no uploads, copy and use instantly.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/dataurl-alt"
+        ]
+      },
+      "Convert between pixels and physical print size using DPI/PPI. Plan exports for print and screens accurately. Runs locally in your browser—no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/dpi-converter"
+        ]
+      },
+      "Check if an image contains EXIF/GPS metadata and remove it locally in your browser. No upload, privacy first. Download a clean copy.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/exif-checker"
+        ]
+      },
+      "Generate favicons in all sizes (16x16 to 512x512) instantly. Includes manifest.json and HTML code. Works locally—no uploads. For websites, PWAs, iOS, Android.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/favicon-pack"
+        ]
+      },
+      "Compare two images side‑by‑side with an A/B slider, highlight pixel differences, and export the diff as PNG. Runs locally in your browser—no uploads required.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/image-diff"
+        ]
+      },
+      "Create LQIP placeholders as tiny Base64 for faster page loads. Preview and copy locally—no uploads. Perfect for skeleton screens and perceived performance.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/lqip"
+        ]
+      },
+      "Create 1200×630 OG/Twitter images in your browser—no uploads. Preview instantly and export PNG/JPG fast. Perfect for blogs, docs, and social sharing.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/og-card"
+        ]
+      },
+      "Validate image KB and dimensions for common platforms (forms/social). Get one‑click presets like 200KB/500KB and 1920px.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/platform-checker"
+        ]
+      },
+      "Convert PNG to JPG or JPG to PNG in browser. Adjust quality, choose background color. Batch convert 100+ images. Works locally—no uploads. Free, unlimited.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/png-jpg-converter"
+        ]
+      },
+      "Remove background from images by color. Adjust tolerance for solid backgrounds (white, green, gray). 100% local—no uploads. Free, unlimited.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/remove-bg-lite"
+        ]
+      },
+      "Resize images to exact dimensions (1920px, 1080px) or percentages. Batch resize 100+ images. Works locally—no uploads. For web, Instagram, email.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/resize-image"
+        ]
+      },
+      "Combine images into a sprite sheet with JSON mapping and download as ZIP. Configure grid, spacing, and order. All processing is local—no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/sprite-sheet"
+        ]
+      },
+      "Generate responsive img srcset/sizes markup and suggested KB per breakpoint. Copy optimized HTML locally to improve LCP and save bandwidth—no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/srcset-generator"
+        ]
+      },
+      "Minify and clean SVG code locally. Remove bloat safely and export an optimized SVG—private and offline, no uploads. Works locally in your browser, no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/svg-optimizer"
+        ]
+      },
+      "Generate text‑based placeholder images for social and thumbnails with size presets. Customize colors/text and export locally—no uploads.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/text-placeholder"
+        ]
+      },
+      "Auto-trim fully transparent borders from PNGs and export a clean result. Fast, local processing—no uploads. Ideal for sprites, icons, and UI assets.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/trim-transparent"
+        ]
+      },
+      "Add text watermarks to images—customize position, opacity, font, color. Batch process and download ZIP. Works offline, no uploads. Protect copyright, free.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/watermark"
+        ]
+      },
+      "Convert images to WebP format—25-35% smaller than JPG. Works offline, no uploads. Batch convert and download ZIP. For faster websites, better SEO, free.": {
+        "count": 1,
+        "percentage": 0.81,
+        "routes": [
+          "/tools/webp-converter"
+        ]
+      }
+    },
+    "issues": []
+  }
+}

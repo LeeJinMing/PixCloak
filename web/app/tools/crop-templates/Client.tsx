@@ -35,7 +35,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Crop Templates</h1>
+        <h2>Crop Templates</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
           <label>Ratio

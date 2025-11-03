@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Create Profile Picture at 200KB (LinkedIn, Job... | PixCloak",
+  title: "Create 200KB Profile Picture (LinkedIn/Jobs) | PixCloak",
   description: "Compress profile photos to exactly 200KB for LinkedIn, job applications, government portals. Maintains quality. Works on any device—no app download.",
   alternates: {
     canonical: '/guides/avatar-200kb',

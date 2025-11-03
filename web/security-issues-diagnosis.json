@@ -1,0 +1,307 @@
+{
+  "siteUrl": "https://pixcloak.com",
+  "domain": "pixcloak.com",
+  "timestamp": "2025-10-31T18:52:21.829Z",
+  "issues": {
+    "dns": {
+      "issue": "DNS分析: nslookup命令失败",
+      "status": "resolved",
+      "details": {
+        "A": "������:  UnKnown\r\nAddress:  192.168.0.1\r\n\r\n����:    pixcloak.com\r\nAddress:  216.198.79.1\r\n\r\n"
+      },
+      "errors": []
+    },
+    "tls13": {
+      "issue": "SSL/TLS协议: TLSv1.3不支持",
+      "status": "resolved",
+      "tls13Supported": true,
+      "currentProtocol": "TLSv1.3",
+      "details": {
+        "certificate": {
+          "issuer": "R13",
+          "validFrom": "Oct 28 14:04:29 2025 GMT",
+          "validTo": "Jan 26 14:04:28 2026 GMT"
+        }
+      }
+    },
+    "pages": {
+      "issue": "安全: 84个页面有严重发现",
+      "status": "completed",
+      "totalPages": 123,
+      "checkedPages": 20,
+      "pagesWithIssues": [
+        {
+          "route": "/",
+          "url": "https://pixcloak.com/",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 25 个内联脚本",
+              "count": 25
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/about",
+          "url": "https://pixcloak.com/about",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 23 个内联脚本",
+              "count": 23
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/batch",
+          "url": "https://pixcloak.com/batch",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 19 个内联脚本",
+              "count": 19
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/benchmark",
+          "url": "https://pixcloak.com/benchmark",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 44 个内联脚本",
+              "count": 44
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/case-studies",
+          "url": "https://pixcloak.com/case-studies",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 41 个内联脚本",
+              "count": 41
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/changelog",
+          "url": "https://pixcloak.com/changelog",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 36 个内联脚本",
+              "count": 36
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/compress",
+          "url": "https://pixcloak.com/compress",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 22 个内联脚本",
+              "count": 22
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/compress-es",
+          "url": "https://pixcloak.com/compress-es",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 23 个内联脚本",
+              "count": 23
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/compress-id",
+          "url": "https://pixcloak.com/compress-id",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 23 个内联脚本",
+              "count": 23
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/compress-pt",
+          "url": "https://pixcloak.com/compress-pt",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 23 个内联脚本",
+              "count": 23
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/contact",
+          "url": "https://pixcloak.com/contact",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 23 个内联脚本",
+              "count": 23
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/gallery",
+          "url": "https://pixcloak.com/gallery",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 40 个内联脚本",
+              "count": 40
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides",
+          "url": "https://pixcloak.com/guides",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 29 个内联脚本",
+              "count": 29
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/anonymized-sharing",
+          "url": "https://pixcloak.com/guides/anonymized-sharing",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 29 个内联脚本",
+              "count": 29
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/avatar-200kb",
+          "url": "https://pixcloak.com/guides/avatar-200kb",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 29 个内联脚本",
+              "count": 29
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/avoid-artifacts-webp-jpeg",
+          "url": "https://pixcloak.com/guides/avoid-artifacts-webp-jpeg",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 27 个内联脚本",
+              "count": 27
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/black-out-text-in-image",
+          "url": "https://pixcloak.com/guides/black-out-text-in-image",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 29 个内联脚本",
+              "count": 29
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/blur-face-in-photo",
+          "url": "https://pixcloak.com/guides/blur-face-in-photo",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 38 个内联脚本",
+              "count": 38
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/blur-number-plate-online",
+          "url": "https://pixcloak.com/guides/blur-number-plate-online",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 29 个内联脚本",
+              "count": 29
+            }
+          ],
+          "issueCount": 1
+        },
+        {
+          "route": "/guides/complete-image-compression-guide",
+          "url": "https://pixcloak.com/guides/complete-image-compression-guide",
+          "issues": [
+            {
+              "type": "inline_script",
+              "severity": "warning",
+              "message": "发现 52 个内联脚本",
+              "count": 52
+            }
+          ],
+          "issueCount": 1
+        }
+      ],
+      "commonIssues": {
+        "inline_script": {
+          "count": 20,
+          "severity": "warning"
+        }
+      }
+    }
+  },
+  "summary": {
+    "totalIssues": 1,
+    "confirmedIssues": 1,
+    "resolvedIssues": 2
+  }
+}

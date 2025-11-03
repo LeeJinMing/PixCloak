@@ -4,7 +4,7 @@ import RelatedTasks from "@/components/RelatedTasks";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy & Compliance for Images (Local, No Upload) | PixCloak",
+  title: "Image Privacy & Compliance (No Upload) | PixCloak",
   description: "Practical checklist to share images safely: redact faces/plates/IDs, black out sensitive text, remove EXIF/GPS. Local processing, no uploads.",
   alternates: { canonical: "/guides/privacy-compliance" },
   openGraph: { title: "Privacy & Compliance for Images", description: "Redact + remove EXIF/GPS locally. No upload.", url: "/guides/privacy-compliance" },
