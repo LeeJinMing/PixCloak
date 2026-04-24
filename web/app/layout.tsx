@@ -90,7 +90,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header role="banner" style={{ borderBottom: '1px solid #eee' }}>
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px' }}>
             <Link href="/" style={{ fontWeight: 700 }}>PixCloak</Link>
-            <nav role="navigation" aria-label="Primary" style={{ display: 'flex', gap: 16 }}>
+            <nav role="navigation" aria-label="Primary" style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'flex-end' }}>
+              <Link href="/compress">Compress</Link>
               <Link href="/redact">Redact</Link>
               <Link href="/tools">Tools</Link>
               <Link href="/guides">Guides</Link>
