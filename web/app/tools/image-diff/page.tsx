@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Diff – A/B slider & pixel diff | PixCloak",
-  description: "Compare two images side‑by‑side with an A/B slider, highlight pixel differences, and export the diff as PNG. Runs locally in your browser—no uploads required.",
+  title: "Image Diff Tool—A/B Slider & Pixel Difference Map | PixCloak",
+  description:
+    "Compare two screenshots or renders: drag slider, highlight changed pixels, export a diff PNG. Visual QA and compression tests. Local only—no upload.",
   alternates: { canonical: "/tools/image-diff", languages: { "x-default": "/tools/image-diff" } },
+  openGraph: {
+    title: "Image comparison & diff",
+    description: "Slider and heatmap for before/after images.",
+    url: "/tools/image-diff",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Image diff",
+    description: "Pixel-level compare in the browser.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "Image diff", url: "/tools/image-diff" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="Image Diff Tool"
         url="/tools/image-diff"

@@ -18,6 +18,7 @@ export default function GuideRemoveExifIphoneZH() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>iPhone 照片去除 EXIF/GPS 元数据</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>打开 <a href="/compress">/compress</a> 或 <a href="/redact">/redact</a></li>
           <li>导出为 JPEG/WebP（重新编码会去除 EXIF/GPS）</li>

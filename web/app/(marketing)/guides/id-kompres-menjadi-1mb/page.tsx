@@ -23,6 +23,7 @@ export default function IdKompres1MB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Kompres gambar hingga 1MB</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Buka <a href="/compress?kb=1024">/compress?kb=1024</a></li>
             <li>Pilih format dan atur ukuran (mis. sisi terpanjang 1920px)</li>

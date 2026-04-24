@@ -23,6 +23,7 @@ export default function PtComprimir500KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Comprimir imagens para 500KB</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Abra <a href="/compress?kb=500">/compress?kb=500</a></li>
             <li>Defina o lado mais longo para 1920px se necessário</li>

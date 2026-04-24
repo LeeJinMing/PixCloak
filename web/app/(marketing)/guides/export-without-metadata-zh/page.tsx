@@ -28,6 +28,7 @@ export default function GuideExportNoMetadataZH() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>无元数据导出（去除 EXIF/GPS）</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>打开 <a href="/compress">/compress</a> 或 <a href="/redact">/redact</a></li>
             <li>导出为 JPEG/WebP/PNG（重新编码将去除 EXIF/GPS）</li>

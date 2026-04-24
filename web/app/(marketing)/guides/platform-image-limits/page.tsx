@@ -28,6 +28,10 @@ export default function GuidePlatformLimits() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Common platform image limits (size & dimensions)</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Many avatars cap near 200KB and posts near 500KB with longest side ~1920px—use presets below to land inside typical limits.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 8 }}>Last reviewed: April 2026.</p>
         <p className="text-muted">Updated periodically. Use quick presets below to prepare images fast.</p>
         <ul>
           <li>Avatars: often ≤ 200KB; 512–1024px square</li>

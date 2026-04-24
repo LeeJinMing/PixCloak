@@ -18,6 +18,7 @@ export default function IDPlatformLimits() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Batas umum gambar di platform (ukuran & dimensi)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Avatar: ≤ 200KB; 512–1024px persegi</li>
           <li>Postingan: ≤ 500KB; sisi terpanjang ≤ 1920px</li>

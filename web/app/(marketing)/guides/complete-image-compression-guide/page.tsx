@@ -3,8 +3,9 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Complete Image Compression Guide (2025):... | PixCloak",
-  description: "The complete guide to image compression: learn how to compress JPEG, PNG, WebP to exact sizes (100KB-1MB). Covers formats, quality settings, batch...",
+  title: "Complete Image Compression Guide (2026):... | PixCloak",
+  description:
+    "One guide for web and social: JPEG vs PNG vs WebP, quality vs KB, resize-then-compress, batch ZIP. Links to a free local compressor—no upload.",
   alternates: {
     canonical: '/guides/complete-image-compression-guide',
     languages: {
@@ -13,14 +14,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Complete Image Compression Guide (2025): Reduce File Size Without Losing Quality",
+    title: "Complete Image Compression Guide (2026): Reduce File Size Without Losing Quality",
     description: "Learn how to compress images to 100KB, 200KB, 500KB, 1MB. Master JPEG, PNG, WebP formats, quality settings, batch processing.",
     url: "/guides/complete-image-compression-guide",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Complete Image Compression Guide (2025)",
+    title: "Complete Image Compression Guide (2026)",
     description: "Compress images without losing quality. JPEG, PNG, WebP. Free tools & step-by-step guide.",
   },
 };
@@ -36,6 +37,11 @@ export default function CompleteImageCompressionGuide() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Complete Image Compression Guide: Reduce File Size Without Losing Quality</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> For websites and social, use <strong>lossy</strong> JPEG or WebP, resize large originals first (e.g. longest side 1920px), then compress to your <strong>target KB</strong>.
+            That order saves far more bytes than tweaking quality alone on a 4000px-wide file.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 0 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Summary</h2>
           <p>

@@ -18,6 +18,10 @@ export default function GuideAvoidArtifacts() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>How to avoid artifacts (WebP/JPEG)</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Resize before you squeeze KB, bump target size on gradients, swap WebP↔JPEG if you see banding—always preview at 100%.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ul>
             <li>Downscale first; then target KB</li>
             <li>Avoid over‑compressed gradients/text; try higher KB</li>

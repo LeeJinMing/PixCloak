@@ -18,6 +18,7 @@ export default function IDResizeLongest() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Ubah ukuran berdasarkan sisi terpanjang (mis. 1920px)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Buka <a href="/compress">/compress</a></li>
           <li>Pilih Resize = Longest side dan isi nilai (1920)</li>

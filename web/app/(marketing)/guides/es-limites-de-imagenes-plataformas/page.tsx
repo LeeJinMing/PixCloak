@@ -18,6 +18,7 @@ export default function ESPlatformLimits() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Límites comunes de imágenes en plataformas (tamaño y dimensiones)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Avatares: ≤ 200KB; 512–1024px cuadrado</li>
           <li>Publicaciones: ≤ 500KB; lado más largo ≤ 1920px</li>

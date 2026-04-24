@@ -36,7 +36,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Sprite Sheet Generator</h1>
+        <h2 style={{ marginTop: 0 }}>Build sprite</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" multiple onChange={onPick} className="input" />
           <label>Gap<input className="input" type="number" min={0} max={32} step={1} value={gap} onChange={(e) => setGap(parseInt(e.target.value) || 0)} style={{ width: 96, marginLeft: 8 }} /></label>
@@ -52,7 +52,6 @@ export default function Client() {
           </div>
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Sprite Sheet Generator', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/sprite-sheet' }) }} />
     </div>
   );
 }

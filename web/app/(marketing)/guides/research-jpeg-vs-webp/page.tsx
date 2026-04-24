@@ -18,6 +18,7 @@ export default function ResearchJpegVsWebp() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Research: JPEG vs WebP on varied images</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <p className="text-muted">Method summary: compress 10 public CC0 images (portrait, sunset, UI, text, low‑light, landscape, product, food, architecture, document) at the same target sizes (200KB/300KB/500KB/800KB). Compare file size, runtime, and perceived artifacts.</p>
         <h2>Findings</h2>
         <ul>

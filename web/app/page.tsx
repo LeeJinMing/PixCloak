@@ -7,6 +7,9 @@ export default function Home() {
       <p className="text-muted" style={{ marginBottom: 12 }}>
         Compress and redact images entirely in your browser. No upload, privacy‑first, fast and simple.
       </p>
+      <p className="text-muted" style={{ fontSize: 14, marginTop: -4, marginBottom: 12 }}>
+        Last reviewed: April 2026.
+      </p>
       <div style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
         <a href="/compress" className="card" style={{ padding: 16, display: 'block' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>Image Compressor</div>
@@ -24,6 +27,10 @@ export default function Home() {
           <div style={{ fontWeight: 700, marginBottom: 6 }}>Guides & FAQs</div>
           <div className="text-muted">Step‑by‑step guides for common image tasks.</div>
         </a>
+        <a href="/research" className="card" style={{ padding: 16, display: 'block' }}>
+          <div style={{ fontWeight: 700, marginBottom: 6 }}>Research & docs</div>
+          <div className="text-muted">How compression and privacy architecture work (EEAT).</div>
+        </a>
       </div>
       <div className="card" style={{ marginTop: 16 }}>
         <h2 style={{ marginBottom: 8 }}>Popular quick links</h2>
@@ -34,6 +41,10 @@ export default function Home() {
           <a className="pill" href="/guides/export-without-metadata">Remove EXIF/GPS</a>
           <a className="pill" href="/guides/blur-face-in-photo">Blur faces</a>
           <a className="pill" href="/guides/license-plate-redaction">Hide plates</a>
+          <a className="pill" href="/guides/tinypng-alternative-free-no-upload">TinyPNG alternative</a>
+          <a className="pill" href="/guides/complete-image-compression-guide">Compression guide</a>
+          <a className="pill" href="/about">About / trust</a>
+          <a className="pill" href="/research">Algorithm & privacy docs</a>
         </div>
       </div>
 
@@ -64,7 +75,8 @@ export default function Home() {
               { '@type': 'ListItem', position: 1, name: 'Image Compressor', url: '/compress' },
               { '@type': 'ListItem', position: 2, name: 'Image Redactor', url: '/redact' },
               { '@type': 'ListItem', position: 3, name: 'Image Tools', url: '/tools' },
-              { '@type': 'ListItem', position: 4, name: 'Guides', url: '/guides/complete-image-compression-guide' }
+              { '@type': 'ListItem', position: 4, name: 'Guides', url: '/guides/complete-image-compression-guide' },
+              { '@type': 'ListItem', position: 5, name: 'Research & technical docs', url: '/research' }
             ]
           })
         }}
@@ -88,9 +100,9 @@ export default function Home() {
 }
 
 export const metadata: Metadata = {
-  title: "Free Image Tools: Compress & Redact (No Upload) | PixCloak",
+  title: "PixCloak—Compress & Redact Images Locally (No Upload)",
   description:
-    "Compress and redact images locally in your browser. No upload. Fast JPEG/PNG/WebP compression to exact KB, privacy‑first tools, and step‑by‑step guides.",
+    "Free browser tools: compress JPG/PNG/WebP to exact KB (TinyPNG-style, local-only), redact faces & license plates, strip EXIF. 20+ utilities—nothing uploaded.",
   alternates: {
     canonical: "/",
     languages: {
@@ -102,14 +114,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Free Image Tools: Compress & Redact (No Upload) | PixCloak",
-    description: "Compress and redact images locally. No upload. Explore fast, private tools and guides.",
+    title: "PixCloak—local image compress & redact",
+    description: "Exact-KB compression and privacy redaction in your browser.",
     url: "/",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image Tools: Compress & Redact (No Upload) | PixCloak",
-    description: "Compress and redact images locally. No upload.",
+    title: "PixCloak—compress & redact locally",
+    description: "No-upload image tools for KB targets and privacy.",
   },
 };

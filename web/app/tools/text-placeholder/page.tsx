@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Text Placeholder – Social/Thumbnail presets | PixCloak",
-  description: "Generate text‑based placeholder images for social and thumbnails with size presets. Customize colors/text and export locally—no uploads.",
+  title: "Text Placeholder Image Generator—YouTube, IG, OG Sizes | PixCloak",
+  description:
+    "Create simple labeled placeholder PNGs/JPGs for mockups: YouTube 1280×720, Instagram 1080×1080, Twitter 1200×675, and custom. Local export—no upload.",
   alternates: { canonical: "/tools/text-placeholder", languages: { "x-default": "/tools/text-placeholder" } },
+  openGraph: {
+    title: "Text placeholder images",
+    description: "Preset canvas sizes for social mockups.",
+    url: "/tools/text-placeholder",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Placeholder generator",
+    description: "Branded text cards for layouts.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "Text placeholder", url: "/tools/text-placeholder" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="Text Placeholder Generator"
         url="/tools/text-placeholder"

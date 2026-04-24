@@ -19,6 +19,10 @@ export default function GuideBlackOutText() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Black Out Text in Images</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Use an opaque bar or pixelation over the full line of text, extend past the glyphs, export a new file—avoid light blur on secrets.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/redact">/redact</a>.</li>
             <li>Draw a region over the text; choose Solid (black) or Pixelate.</li>

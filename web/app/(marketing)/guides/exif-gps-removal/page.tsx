@@ -36,6 +36,10 @@ export default function GuideExifGpsRemoval() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>How to Remove EXIF/GPS from Images</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Re‑encode or export through a tool that strips metadata—GPS and camera EXIF drop out when the file is rewritten; keep a private master if you still need originals.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <p>Re‑encoding on export removes most EXIF/GPS metadata. Our tools clear them by default.</p>
         <ol>
           <li>Open <a href="/redact">/redact</a> or <a href="/compress">/compress</a></li>

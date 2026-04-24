@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "How to Compress Images Without Losing Quality (2025 Guide)",
+    title: "How to Compress Images Without Losing Quality (2026 Guide)",
     description: "Step-by-step guide: resize first, choose right format (JPEG/WebP), compress to target size. Free tool, no uploads needed.",
     url: "/guides/how-to-compress-image-without-losing-quality",
     type: "article",
@@ -35,7 +35,8 @@ export default function HowToCompressWithoutLosingQuality() {
       ]} />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>How to Compress Images Without Losing Quality (2025 Guide)</h1>
+          <h1>How to Compress Images Without Losing Quality (2026 Guide)</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Answer (30 Seconds)</h2>
           <ol>

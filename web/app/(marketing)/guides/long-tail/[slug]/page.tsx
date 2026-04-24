@@ -1,136 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FaqJsonLd } from '@/components/SeoJsonLd';
-import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
-import AnswerCard from '@/components/AnswerCard';
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { FaqJsonLd } from "@/components/SeoJsonLd";
+import {
+  LONG_TAIL_GUIDE_MAP,
+  LONG_TAIL_GROUPS,
+  LONG_TAIL_SLUGS,
+  type LongTailAction,
+  type LongTailGuide,
+} from "@/lib/longTailGuides";
 
-// 长尾关键词数据
-const LONG_TAIL_DATA = {
-  // 文件大小类
-  'compress-to-200kb-for-linkedin': {
-    title: "Compress Images to 200KB for LinkedIn | PixCloak",
-    description: "Compress images to exactly 200KB for LinkedIn profile pictures and posts. Free online tool with no uploads required.",
-    h1: "How to Compress Images to 200KB for LinkedIn",
-    intro: "Learn how to compress images to exactly 200KB for LinkedIn using our free online tool. Optimized for professional networking.",
-    faqQuestion: "How to compress images to 200KB for LinkedIn?",
-    faqAnswer: "Use our compression tool with target size set to 200KB. LinkedIn recommends this size for optimal loading and professional appearance.",
-    steps: [
-      "Open our compression tool with LinkedIn preset",
-      "Upload your profile picture or post image",
-      "Set target size to 200KB",
-      "Choose WebP format for best compression",
-      "Download and upload to LinkedIn"
-    ],
-    tips: [
-      "Use WebP format for 25% smaller files than JPEG",
-      "Resize to 400x400px for profile pictures",
-      "Remove EXIF data to save additional space",
-      "Test on mobile devices for best results"
-    ],
-    relatedTools: [
-      { name: "LinkedIn Profile Compressor", url: "/compress?kb=200&size=400x400&format=webp", description: "Pre-configured for LinkedIn profile pictures" },
-      { name: "Professional Photo Tool", url: "/tools/platform-checker", description: "Check LinkedIn requirements" }
-    ],
-    faqItems: [
-      { question: "What's the best format for LinkedIn images?", answer: "WebP format provides the best compression for LinkedIn, followed by JPEG. PNG is only needed for images with transparency." },
-      { question: "Why 200KB for LinkedIn?", answer: "200KB ensures fast loading on mobile devices and maintains professional quality for LinkedIn's network." },
-      { question: "Can I compress multiple LinkedIn images at once?", answer: "Yes, use our batch processing feature to compress multiple images to 200KB simultaneously." }
-    ]
-  },
-
-  'compress-to-500kb-for-instagram': {
-    title: "Compress Images to 500KB for Instagram | PixCloak",
-    description: "Compress images to exactly 500KB for Instagram posts and stories. Free online tool optimized for social media.",
-    h1: "How to Compress Images to 500KB for Instagram",
-    intro: "Learn how to compress images to exactly 500KB for Instagram using our free online tool. Perfect for posts and stories.",
-    faqQuestion: "How to compress images to 500KB for Instagram?",
-    faqAnswer: "Use our compression tool with target size set to 500KB. Instagram recommends this size for optimal quality and loading speed.",
-    steps: [
-      "Open our compression tool with Instagram preset",
-      "Upload your post or story image",
-      "Set target size to 500KB",
-      "Choose WebP format for best compression",
-      "Download and upload to Instagram"
-    ],
-    tips: [
-      "Use WebP format for 30% smaller files than JPEG",
-      "Resize to 1080x1080px for square posts",
-      "Remove EXIF data to save additional space",
-      "Test on mobile devices for best results"
-    ],
-    relatedTools: [
-      { name: "Instagram Post Compressor", url: "/compress?kb=500&size=1080x1080&format=webp", description: "Pre-configured for Instagram posts" },
-      { name: "Social Media Optimizer", url: "/tools/platform-checker", description: "Check Instagram requirements" }
-    ],
-    faqItems: [
-      { question: "What's the best format for Instagram images?", answer: "WebP format provides the best compression for Instagram, followed by JPEG. Instagram supports both formats." },
-      { question: "Why 500KB for Instagram?", answer: "500KB ensures high quality while maintaining fast loading on mobile devices, which is crucial for Instagram's mobile-first platform." },
-      { question: "Can I compress Instagram stories to 500KB?", answer: "Yes, our tool works for both Instagram posts and stories. Stories can be compressed to 500KB for optimal quality." }
-    ]
-  },
-
-  'resize-to-1080x1080-for-instagram': {
-    title: "Resize Images to 1080x1080 for Instagram | PixCloak",
-    description: "Resize images to exactly 1080x1080 pixels for Instagram posts. Free online tool with aspect ratio preservation.",
-    h1: "How to Resize Images to 1080x1080 for Instagram",
-    intro: "Learn how to resize images to exactly 1080x1080 pixels for Instagram using our free online tool. Perfect square format for posts.",
-    faqQuestion: "How to resize images to 1080x1080 for Instagram?",
-    faqAnswer: "Use our resize tool with dimensions set to 1080x1080. Instagram's square format ensures consistent display across all devices.",
-    steps: [
-      "Open our resize tool with Instagram preset",
-      "Upload your image",
-      "Set dimensions to 1080x1080",
-      "Choose output format (WebP recommended)",
-      "Download and upload to Instagram"
-    ],
-    tips: [
-      "Use WebP format for smaller file sizes",
-      "Maintain aspect ratio for best results",
-      "Consider cropping for exact square format",
-      "Test on mobile devices"
-    ],
-    relatedTools: [
-      { name: "Instagram Square Resizer", url: "/compress?size=1080x1080&format=webp", description: "Pre-configured for Instagram square posts" },
-      { name: "Aspect Ratio Tool", url: "/tools/aspect-pad", description: "Add padding to maintain aspect ratios" }
-    ],
-    faqItems: [
-      { question: "Why 1080x1080 for Instagram?", answer: "1080x1080 is Instagram's standard square format, ensuring optimal display across all devices and maintaining image quality." },
-      { question: "How do I maintain aspect ratio when resizing to 1080x1080?", answer: "Our tool automatically maintains aspect ratio. If your image isn't square, you can choose to crop or add padding." },
-      { question: "What format should I use for 1080x1080 Instagram images?", answer: "WebP is recommended for best compression, JPEG for compatibility, and PNG for images with transparency." }
-    ]
-  },
-
-  'compress-to-100kb-for-email': {
-    title: "Compress Images to 100KB for Email | PixCloak",
-    description: "Compress images to exactly 100KB for email attachments and signatures. Free online tool optimized for email delivery.",
-    h1: "How to Compress Images to 100KB for Email",
-    intro: "Learn how to compress images to exactly 100KB for email using our free online tool. Ensures fast delivery and compatibility.",
-    faqQuestion: "How to compress images to 100KB for email?",
-    faqAnswer: "Use our compression tool with target size set to 100KB. This size ensures fast email delivery while maintaining acceptable quality.",
-    steps: [
-      "Open our compression tool with email preset",
-      "Upload your image",
-      "Set target size to 100KB",
-      "Choose JPEG format for compatibility",
-      "Download and attach to email"
-    ],
-    tips: [
-      "Use JPEG format for maximum compatibility",
-      "Resize to appropriate dimensions first",
-      "Remove EXIF data to save space",
-      "Test email delivery speed"
-    ],
-    relatedTools: [
-      { name: "Email Attachment Compressor", url: "/compress?kb=100&format=jpg", description: "Pre-configured for email attachments" },
-      { name: "Email Signature Tool", url: "/tools/text-placeholder", description: "Create email signature images" }
-    ],
-    faqItems: [
-      { question: "Why 100KB for email images?", answer: "100KB ensures fast email delivery while maintaining acceptable image quality. Larger files can cause delivery delays." },
-      { question: "What format is best for email images?", answer: "JPEG is the most compatible format for email attachments, supported by all email clients." },
-      { question: "Can I compress multiple images for email?", answer: "Yes, use our batch processing feature to compress multiple images to 100KB for email attachments." }
-    ]
-  }
-};
+const PUBLISHED_AT = "2025-10-03";
+const MODIFIED_AT = "2026-01-19";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com";
 
 interface PageProps {
   params: Promise<{
@@ -139,158 +22,777 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(LONG_TAIL_DATA).map((slug) => ({
-    slug,
-  }));
+  return LONG_TAIL_SLUGS.map((slug) => ({ slug }));
+}
+
+function getTargetLabel(guide: LongTailGuide) {
+  if (guide.action === "compress") return guide.targetSize ?? "a smaller file size";
+  if (guide.action === "resize") return guide.targetDimensions ?? "the right dimensions";
+  if (guide.action === "convert") return "WebP output";
+  if (guide.action === "redact") return "irreversible redactions";
+  if (guide.action === "exif") return "metadata-free exports";
+  if (guide.action === "watermark") return "consistent text watermarks";
+  if (guide.action === "remove-bg") return "clean background cutouts";
+  if (guide.action === "sprite") return "optimized sprite sheets";
+  if (guide.action === "lqip") return "lightweight placeholders";
+  return "exact aspect ratios";
+}
+
+function getActionSentence(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  const purpose = guide.purpose ? ` for ${guide.purpose}` : "";
+  switch (guide.action) {
+    case "compress":
+      return `compress ${guide.keyword} to ${target}${purpose}`;
+    case "resize":
+      return `resize ${guide.keyword} to ${target}${purpose}`;
+    case "convert":
+      return `convert ${guide.keyword} to ${target}${purpose}`;
+    case "redact":
+      return `redact sensitive areas in ${guide.keyword}${purpose}`;
+    case "exif":
+      return `remove EXIF data from ${guide.keyword}${purpose}`;
+    case "watermark":
+      return `add text watermarks to ${guide.keyword}${purpose}`;
+    case "remove-bg":
+      return `remove backgrounds from ${guide.keyword}${purpose}`;
+    case "sprite":
+      return `build sprite sheets from ${guide.keyword}${purpose}`;
+    case "lqip":
+      return `generate LQIP placeholders for ${guide.keyword}${purpose}`;
+    case "pad":
+    default:
+      return `crop and pad ${guide.keyword} to exact ratios${purpose}`;
+  }
+}
+
+function getActionTitle(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  switch (guide.action) {
+    case "compress":
+      return `Compress ${guide.keyword} to ${target}`;
+    case "resize":
+      return `Resize ${guide.keyword} to ${target}`;
+    case "convert":
+      return `Convert ${guide.keyword} to ${target}`;
+    case "redact":
+      return `Redact ${guide.keyword} Safely`;
+    case "exif":
+      return `Remove EXIF from ${guide.keyword}`;
+    case "watermark":
+      return `Batch Text Watermark for ${guide.keyword}`;
+    case "remove-bg":
+      return `Remove Backgrounds from ${guide.keyword}`;
+    case "sprite":
+      return `Sprite Sheet Generator for ${guide.keyword}`;
+    case "lqip":
+      return `LQIP Placeholders for ${guide.keyword}`;
+    case "pad":
+    default:
+      return `Crop and Pad ${guide.keyword} to Exact Ratios`;
+  }
+}
+
+function toSentenceCase(value: string) {
+  if (!value) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function buildTitle(guide: LongTailGuide) {
+  const core = getActionTitle(guide);
+  const usp =
+    guide.action === "compress" || guide.action === "resize"
+      ? "(Free, No Upload)"
+      : "(Offline, No Upload)";
+  return `${core} ${usp} | PixCloak`;
+}
+
+function buildDescription(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  return `Step-by-step guide to ${getActionSentence(guide)}. Hit ${target} with clean quality. Works offline in your browser—no uploads.`;
+}
+
+function getToolLabel(action: LongTailAction) {
+  switch (action) {
+    case "compress":
+      return "Image Compressor";
+    case "resize":
+      return "Resize Tool";
+    case "convert":
+      return "WebP Converter";
+    case "redact":
+      return "Redactor";
+    case "exif":
+      return "EXIF Remover";
+    case "watermark":
+      return "Watermark Tool";
+    case "remove-bg":
+      return "Background Remover";
+    case "sprite":
+      return "Sprite Sheet Tool";
+    case "lqip":
+      return "LQIP Generator";
+    case "pad":
+    default:
+      return "Aspect Ratio Tool";
+  }
+}
+
+function getRelatedLinks(action: LongTailAction) {
+  const related: Record<LongTailAction, { name: string; url: string }[]> = {
+    compress: [
+      { name: "Compress to 200KB", url: "/guides/compress-to-200kb" },
+      { name: "Compress to 500KB", url: "/guides/compress-to-500kb" },
+      { name: "Custom KB targets", url: "/guides/compress-to-target-kb" },
+      { name: "Resize to 1920px first", url: "/guides/resize-to-1920" },
+      { name: "Quality vs Size", url: "/guides/how-to-compress-image-without-losing-quality" },
+    ],
+    resize: [
+      { name: "Resize to 1920px", url: "/guides/resize-to-1920" },
+      { name: "Resize longest side", url: "/guides/resize-longest-side" },
+      { name: "Platform image limits", url: "/guides/platform-image-limits" },
+      { name: "Compress to target KB", url: "/guides/compress-to-target-kb" },
+      { name: "Image SEO optimization", url: "/guides/image-seo-optimization" },
+    ],
+    redact: [
+      { name: "Redaction checklist", url: "/guides/redaction-checklist" },
+      { name: "Privacy compliance", url: "/guides/privacy-compliance" },
+      { name: "Remove EXIF/GPS", url: "/guides/exif-gps-removal" },
+    ],
+    exif: [
+      { name: "Remove EXIF from iPhone", url: "/guides/remove-exif-iphone" },
+      { name: "Remove EXIF from WeChat", url: "/guides/remove-exif-wechat" },
+      { name: "EXIF/GPS removal", url: "/guides/exif-gps-removal" },
+    ],
+    convert: [
+      { name: "JPEG to WebP", url: "/guides/convert-jpeg-to-webp" },
+      { name: "PNG vs JPG", url: "/guides/png-vs-jpg-when-to-use-each" },
+      { name: "JPEG vs WebP", url: "/guides/jpeg-vs-webp-size-quality" },
+    ],
+    watermark: [
+      { name: "Image SEO optimization", url: "/guides/image-seo-optimization" },
+      { name: "Platform image limits", url: "/guides/platform-image-limits" },
+      { name: "Compress to 500KB", url: "/guides/compress-to-500kb" },
+    ],
+    "remove-bg": [
+      { name: "Prepare images for portfolio", url: "/guides/prepare-images-for-portfolio" },
+      { name: "Prepare images for forms", url: "/guides/prepare-images-for-forms" },
+      { name: "Compress to 800KB", url: "/guides/compress-to-800kb" },
+    ],
+    sprite: [
+      { name: "Image SEO optimization", url: "/guides/image-seo-optimization" },
+      { name: "Convert JPEG to WebP", url: "/guides/convert-jpeg-to-webp" },
+      { name: "Resize longest side", url: "/guides/resize-longest-side" },
+    ],
+    lqip: [
+      { name: "Image SEO optimization", url: "/guides/image-seo-optimization" },
+      { name: "JPEG vs WebP", url: "/guides/jpeg-vs-webp-size-quality" },
+      { name: "Compress to target KB", url: "/guides/compress-to-target-kb" },
+    ],
+    pad: [
+      { name: "Resize longest side", url: "/guides/resize-longest-side" },
+      { name: "Platform image limits", url: "/guides/platform-image-limits" },
+      { name: "Resize to 1920px", url: "/guides/resize-to-1920" },
+    ],
+  };
+  return related[action] ?? related.compress;
+}
+
+function getSteps(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  switch (guide.action) {
+    case "compress":
+      return [
+        {
+          title: "Open the compressor",
+          body: `Launch PixCloak and open the Image Compressor. Starting with the right tool ensures the encoder targets ${target} without guessing or over-compressing.`,
+        },
+        {
+          title: "Upload your files",
+          body: "Drag and drop images or select them from your device. Processing runs locally, so you can work with sensitive files without uploads or accounts.",
+        },
+        {
+          title: `Set the target size (${target})`,
+          body: "Enter the target size and choose a format. WebP usually yields the smallest files, while JPEG is the safest for older platforms.",
+        },
+        {
+          title: "Preview and adjust quality",
+          body: "Compare the original and compressed results. If the image looks soft, resize to a smaller dimension first and re-run compression.",
+        },
+        {
+          title: "Download and verify",
+          body: "Export the final file and confirm the size in your file details. Keeping the size consistent reduces upload errors and rework.",
+        },
+        {
+          title: "Batch when needed",
+          body: "For multiple assets, use batch export to keep the same settings across the set. Consistency matters for teams and multi-image uploads.",
+        },
+      ];
+    case "resize":
+      return [
+        {
+          title: "Open the resize tool",
+          body: `Use PixCloak Resize Tool to target ${target}. This keeps dimensions consistent across platforms and prevents automatic cropping.`,
+        },
+        {
+          title: "Enter exact dimensions",
+          body: "Input the width and height or lock the aspect ratio for one-side resizing. Use padding if you must keep the full image visible.",
+        },
+        {
+          title: "Choose fit strategy",
+          body: "Pick crop for edge-to-edge layouts or pad with a neutral background for a safe-fit layout. This avoids cutting off important content.",
+        },
+        {
+          title: "Select output format",
+          body: "Export as WebP for web speed, JPEG for compatibility, or PNG if you need transparent backgrounds or sharp UI text.",
+        },
+        {
+          title: "Preview at 100%",
+          body: "Check text, logos, and edges before exporting. Small blur can be fixed by slightly increasing output size or sharpening.",
+        },
+        {
+          title: "Compress after resizing",
+          body: "If file size is still high, compress after resizing to avoid double artifacts. This keeps clarity while meeting file limits.",
+        },
+      ];
+    case "convert":
+      return [
+        {
+          title: "Open the converter",
+          body: "Use the WebP Converter in PixCloak. It handles single images or batches and keeps output consistent across a folder.",
+        },
+        {
+          title: "Upload images",
+          body: "Drag in JPG or PNG files. WebP supports both photos and transparency, which makes it a strong default for the web.",
+        },
+        {
+          title: "Set quality",
+          body: "Choose a quality level that balances size and clarity. A mid-range value typically preserves detail while keeping files small.",
+        },
+        {
+          title: "Export and verify",
+          body: "Download the WebP outputs and spot-check them in your browser. If you see banding, increase quality slightly.",
+        },
+        {
+          title: "Keep a fallback",
+          body: "If your platform does not support WebP, keep a JPEG fallback. This avoids upload errors and broken previews.",
+        },
+      ];
+    case "redact":
+      return [
+        {
+          title: "Open the redactor",
+          body: "Use PixCloak Redactor to mark sensitive regions. Local processing ensures ID numbers and signatures never leave your device.",
+        },
+        {
+          title: "Select sensitive areas",
+          body: "Draw boxes over IDs, faces, MRZ lines, or contact details. Leave a small margin to avoid partial visibility after export.",
+        },
+        {
+          title: "Choose irreversible masking",
+          body: "Solid blocks are safest for compliance. Pixelation can still reveal information if the block is too small or repeated.",
+        },
+        {
+          title: "Preview at zoom",
+          body: "Zoom in to ensure the sensitive text is fully covered. Re-check edges where the background is high-contrast.",
+        },
+        {
+          title: "Export and strip metadata",
+          body: "Export as a new file and remove EXIF/GPS metadata. This prevents hidden data leaks that remain even after redaction.",
+        },
+      ];
+    case "exif":
+      return [
+        {
+          title: "Re-encode the image",
+          body: "Use PixCloak to re-export the image. The export pipeline strips EXIF and GPS metadata automatically.",
+        },
+        {
+          title: "Verify metadata removal",
+          body: "Check the file using the EXIF checker. Confirm that GPS coordinates and device data are gone before sharing.",
+        },
+        {
+          title: "Save a clean copy",
+          body: "Keep the cleaned version in a separate folder. This avoids re-sharing the original by mistake.",
+        },
+        {
+          title: "Share the metadata-free file",
+          body: "Upload or send the cleaned export. The file will look identical but will not carry hidden location data.",
+        },
+      ];
+    case "watermark":
+      return [
+        {
+          title: "Open the watermark tool",
+          body: "Use PixCloak Watermark to add a consistent text mark. This protects ownership and discourages unauthorized reuse.",
+        },
+        {
+          title: "Set text, size, and opacity",
+          body: "Pick a legible font, keep opacity around 20-35%, and choose a corner or center position depending on content density.",
+        },
+        {
+          title: "Apply to a batch",
+          body: "Add multiple images to apply a uniform watermark. Consistent placement looks professional and avoids accidental overlaps.",
+        },
+        {
+          title: "Export and review",
+          body: "Check readability on light and dark regions. If the watermark disappears, increase contrast or add a subtle shadow.",
+        },
+      ];
+    case "remove-bg":
+      return [
+        {
+          title: "Open background removal",
+          body: "Use PixCloak background removal for quick cutouts. It works best on high-contrast edges and clean product shots.",
+        },
+        {
+          title: "Upload the image",
+          body: "Choose images with clear subject separation. This improves edge accuracy and reduces the need for manual cleanup.",
+        },
+        {
+          title: "Refine the output",
+          body: "Check edges for halos or missing details. If needed, add a soft edge or adjust background color to match the target layout.",
+        },
+        {
+          title: "Export in the right format",
+          body: "Use PNG for transparency or WebP if supported. Then compress to keep file size reasonable for web use.",
+        },
+      ];
+    case "sprite":
+      return [
+        {
+          title: "Collect consistent assets",
+          body: "Prepare icons at consistent sizes and padding. Uniform assets generate cleaner sprites and predictable CSS positions.",
+        },
+        {
+          title: "Generate the sprite sheet",
+          body: "Use PixCloak Sprite Sheet tool to arrange icons in a grid. Adjust spacing to prevent bleeding in CSS background positioning.",
+        },
+        {
+          title: "Export sprite and metadata",
+          body: "Download the sprite sheet and map coordinates. Keep the mapping file with your front-end assets for easy integration.",
+        },
+        {
+          title: "Test in the UI",
+          body: "Apply the sprite in your CSS and verify hover states. A quick test avoids rendering glitches later in production.",
+        },
+      ];
+    case "lqip":
+      return [
+        {
+          title: "Open the LQIP tool",
+          body: "Use PixCloak LQIP Generator to create tiny blurred placeholders. This improves perceived performance and CLS stability.",
+        },
+        {
+          title: "Choose tiny dimensions",
+          body: "Set a very small width, such as 20-40px. The placeholder should load instantly while keeping a recognizable shape.",
+        },
+        {
+          title: "Export base64 or image",
+          body: "Use base64 for inline HTML or a tiny image file. Both reduce layout shift and keep initial paint fast.",
+        },
+        {
+          title: "Swap on load",
+          body: "Replace the placeholder once the full image loads. This technique keeps the page feeling responsive.",
+        },
+      ];
+    case "pad":
+    default:
+      return [
+        {
+          title: "Open the aspect tool",
+          body: "Use PixCloak Aspect Pad to fit images into exact ratios without losing content.",
+        },
+        {
+          title: "Choose target ratio",
+          body: "Set the target ratio or dimensions. Use padding for safe-fit layouts or crop for edge-to-edge designs.",
+        },
+        {
+          title: "Select background style",
+          body: "Pick a neutral background or brand color to keep the frame consistent across a set.",
+        },
+        {
+          title: "Export and review",
+          body: "Check that key elements stay inside the safe area. Adjust padding if logos or text are too close to edges.",
+        },
+      ];
+  }
+}
+
+function getTips(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  switch (guide.action) {
+    case "compress":
+      return [
+        `Resize before compressing. Reducing dimensions often halves file size, giving you more quality headroom at ${target}.`,
+        "Choose WebP when possible. It delivers smaller files at similar quality, but keep JPEG for legacy uploads.",
+        "Avoid re-saving multiple times. Each compression pass adds artifacts and reduces clarity, especially in gradients.",
+        "Keep text readable. Increase output size slightly if small text looks soft after compression.",
+        "Strip EXIF data when sharing. Metadata can leak device and location details even when the image looks safe.",
+        "Test on the target device. Mobile screens reveal artifacts that desktop monitors can hide.",
+        "Keep originals archived. If you need a different size later, start from the original instead of the compressed file.",
+      ];
+    case "resize":
+      return [
+        `Lock aspect ratio whenever possible. It prevents stretched faces and preserves composition.`,
+        "Use padding instead of cropping when you must keep all content visible, such as logos or documents.",
+        "Avoid upscaling. Enlarging small images creates blur that no compressor can fix.",
+        "Export in WebP or JPEG depending on platform support. PNG is best for text-heavy graphics.",
+        "Resize once, then compress. Multiple resize passes accumulate blur and soften edges.",
+        "Preview at 100% zoom. Small artifacts are easier to spot before upload.",
+        "Standardize naming. Consistent filenames make batch workflows easier to manage.",
+      ];
+    case "convert":
+      return [
+        "Start with high-quality originals. Converting from a heavily compressed JPEG will carry artifacts into WebP.",
+        "Use transparent PNG sources when you need alpha channels in WebP output.",
+        "Set quality in the 75-85 range for photos; lower values can cause banding in gradients.",
+        "Keep a JPEG fallback for platforms without WebP support.",
+        "Batch convert to keep sizes consistent across a library.",
+        "Avoid embedding metadata you do not need; remove EXIF before export.",
+      ];
+    case "redact":
+      return [
+        "Prefer solid blocks for irreversible masking; pixelation can be reversed if blocks are too small.",
+        "Zoom in before exporting. Small gaps at edges can reveal sensitive text.",
+        "Redact surrounding context such as addresses, barcodes, or QR codes that imply identity.",
+        "Export to a new file name so the original stays intact and unshared.",
+        "Remove EXIF data to prevent hidden location leaks.",
+      ];
+    case "exif":
+      return [
+        "Re-export instead of editing metadata. Re-encoding is the safest way to strip EXIF across devices.",
+        "Verify with an EXIF checker before sharing to confirm GPS data is removed.",
+        "Avoid sharing originals. Store a clean version for public use.",
+        "Combine with redaction for truly sensitive documents.",
+        "Keep file size in check after re-export to avoid upload failures.",
+      ];
+    case "watermark":
+      return [
+        "Keep opacity between 20-35% so content stays visible while marks remain noticeable.",
+        "Use a contrasting color or subtle shadow for readability on mixed backgrounds.",
+        "Apply consistent placement to maintain brand cohesion across a set.",
+        "Avoid covering key product details or faces; use corners or edges instead.",
+        "Export a clean master copy without watermarks for internal use.",
+      ];
+    case "remove-bg":
+      return [
+        "Use high-contrast images for better edge detection.",
+        "Refine edges around hair or soft fabrics if the background is noisy.",
+        "Export with transparency when placing on different backgrounds.",
+        "Compress after background removal to keep file size manageable.",
+        "Test on light and dark backgrounds to spot halos.",
+      ];
+    case "sprite":
+      return [
+        "Normalize icon sizes before generating the sprite sheet.",
+        "Add consistent padding to prevent background bleeding in CSS.",
+        "Keep a mapping file with coordinates for easier front-end integration.",
+        "Export in WebP or PNG depending on transparency needs.",
+        "Run a quick UI test to confirm hover states and alignment.",
+      ];
+    case "lqip":
+      return [
+        "Keep placeholder width tiny (20-40px). Smaller is faster and still readable.",
+        "Use a blurred or low-quality preview to avoid sudden shifts on load.",
+        "Inline base64 if you want zero extra requests on initial render.",
+        "Avoid color banding by using a slightly higher quality for gradients.",
+        "Replace placeholders on load to keep CLS stable.",
+      ];
+    case "pad":
+    default:
+      return [
+        "Use padding when content must stay fully visible.",
+        "Pick neutral background colors for universal compatibility.",
+        "Keep text within the safe area to avoid platform cropping.",
+        "Export in WebP or PNG depending on transparency needs.",
+        "Resize once to avoid soft edges.",
+      ];
+  }
+}
+
+function getUseCases(guide: LongTailGuide) {
+  const platform = guide.platform ?? "your platform";
+  const target = getTargetLabel(guide);
+  return [
+    `Uploading to ${platform} with strict size or dimension checks.`,
+    `Keeping assets consistent across teams with a standard target like ${target}.`,
+    "Improving mobile performance and reducing bounce rates.",
+    "Preparing assets for email, forms, or ATS portals that reject oversized files.",
+    "Sharing sensitive images without leaking hidden metadata.",
+  ];
+}
+
+function getFaqItems(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  return [
+    {
+      question: `How do I ${getActionSentence(guide)}?`,
+      answer:
+        "Open the PixCloak tool, upload your file, apply the target settings, and export. The workflow is fully local, so images never leave your device.",
+    },
+    {
+      question: `Why is ${target} important for ${guide.keyword}?`,
+      answer:
+        "Consistent targets prevent upload failures and keep page performance fast. You control quality instead of letting platforms auto-compress your files.",
+    },
+    {
+      question: "Does PixCloak upload my files?",
+      answer:
+        "No. All processing happens locally in your browser. Nothing is uploaded or stored on a server.",
+    },
+    {
+      question: "What format should I use?",
+      answer:
+        "WebP is best for web use, JPEG is the safest for legacy platforms, and PNG is ideal for transparency or text-heavy graphics.",
+    },
+    {
+      question: "How do I keep quality high?",
+      answer:
+        "Resize first, then compress once. Avoid multiple export cycles and preview at 100% to catch blur before uploading.",
+    },
+    {
+      question: "Can I process a batch?",
+      answer:
+        "Yes. PixCloak supports batch workflows for compression, resizing, conversion, and watermarking. Keep settings consistent for predictable results.",
+    },
+  ];
+}
+
+function buildAlternates(guide: LongTailGuide) {
+  const group = LONG_TAIL_GROUPS[guide.group] ?? [guide];
+  const base = group.find((item) => item.locale === "en") ?? group[0];
+  const languages: Record<string, string> = {
+    "x-default": `/guides/long-tail/${base.slug}`,
+    en: `/guides/long-tail/${base.slug}`,
+  };
+  for (const item of group) {
+    if (item.locale !== "en") {
+      languages[item.locale] = `/guides/long-tail/${item.slug}`;
+    }
+  }
+  return {
+    canonical: `/guides/long-tail/${guide.slug}`,
+    languages,
+  };
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const data = LONG_TAIL_DATA[slug as keyof typeof LONG_TAIL_DATA];
-
-  if (!data) {
+  const guide = LONG_TAIL_GUIDE_MAP.get(slug);
+  if (!guide) {
     return {
       title: "Page Not Found | PixCloak",
       description: "The requested page could not be found.",
     };
   }
 
+  const title = buildTitle(guide);
+  const description = buildDescription(guide);
+  const alternates = buildAlternates(guide);
+
   return {
-    title: data.title,
-    description: data.description,
-    alternates: {
-      canonical: `/guides/long-tail/${slug}`,
-      languages: { "x-default": `/guides/long-tail/${slug}` }
-    },
+    title,
+    description,
+    alternates,
     openGraph: {
-      title: data.title,
-      description: data.description,
+      title: title.replace(" | PixCloak", ""),
+      description,
       url: `/guides/long-tail/${slug}`,
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: data.title,
-      description: data.description,
+      title: title.replace(" | PixCloak", ""),
+      description,
     },
   };
 }
 
-export default async function LongTailPage({ params }: PageProps) {
+export default async function LongTailGuidePage({ params }: PageProps) {
   const { slug } = await params;
-  const data = LONG_TAIL_DATA[slug as keyof typeof LONG_TAIL_DATA];
+  const guide = LONG_TAIL_GUIDE_MAP.get(slug);
 
-  if (!data) {
+  if (!guide) {
     notFound();
   }
 
+  const description = buildDescription(guide);
+  const actionTitle = getActionTitle(guide);
+  const actionSentence = getActionSentence(guide);
+  const h1 = `How to ${toSentenceCase(actionSentence)}`;
+  const target = getTargetLabel(guide);
+  const toolLabel = getToolLabel(guide.action);
+  const steps = getSteps(guide);
+  const tips = getTips(guide);
+  const useCases = getUseCases(guide);
+  const faqItems = getFaqItems(guide);
+  const relatedLinks = getRelatedLinks(guide.action);
+  const pageUrl = `${SITE_URL}/guides/long-tail/${slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: h1,
+    description,
+    datePublished: PUBLISHED_AT,
+    dateModified: MODIFIED_AT,
+    author: { "@type": "Organization", name: "PixCloak" },
+    publisher: {
+      "@type": "Organization",
+      name: "PixCloak",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+    },
+    mainEntityOfPage: pageUrl,
+    image: `${SITE_URL}/og.png`,
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: h1,
+    description,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.body,
+    })),
+  };
+
   return (
     <>
-      <BreadcrumbJsonLd items={[
-        { name: 'Home', url: '/' },
-        { name: 'Guides', url: '/guides/complete-image-compression-guide' },
-        { name: 'Long Tail Guides', url: '/guides/long-tail' },
-        { name: data.title.split(' | ')[0], url: `/guides/long-tail/${slug}` }
-      ]} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Guides", url: "/guides" },
+          { name: actionTitle, url: `/guides/long-tail/${slug}` },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
 
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
-        {/* Featured Snippet Answer Card */}
-        <AnswerCard
-          question={data.faqQuestion}
-          answer={data.faqAnswer}
-          steps={data.steps}
-          tips={data.tips}
-          relatedTools={data.relatedTools}
-        />
+      <div className="container" style={{ display: "grid", gap: 16 }}>
+        <div className="card">
+          <h1>{h1}</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
+          <p className="text-muted">
+            If you need to {actionSentence}, this guide gives you a repeatable
+            workflow with PixCloak. Everything runs locally in your browser, so
+            files never leave your device and you keep full control of sensitive
+            assets. We focus on hitting {target} while preserving clarity, clean
+            edges, and reliable upload results.
+          </p>
+          <p className="text-muted">
+            You will also learn how to verify outputs before upload, which
+            formats work best, and how to avoid common mistakes that trigger
+            platform re-compression. The steps are short, but the reasoning
+            matters: predictable outputs reduce rework and keep every upload
+            consistent.
+          </p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 12 }}>
+            <Link className="pill" href={guide.toolPath}>
+              Open {toolLabel}
+            </Link>
+            <Link className="pill" href="/compress">
+              Free Image Compressor
+            </Link>
+            <span className="pill-ghost">Offline processing</span>
+            <span className="pill-ghost">No uploads</span>
+          </div>
+        </div>
 
         <div className="card">
-          <h1>{data.h1}</h1>
-          <p className="text-muted">
-            {data.intro}
+          <h2>Why {actionTitle}?</h2>
+          <p>
+            Platforms enforce size and dimension limits to keep pages fast and
+            layouts consistent. When files are too large, uploads can fail, and
+            platforms often re-compress images with settings you cannot control.
+            Hitting {target} yourself means you decide the trade-offs between
+            quality and size, which keeps visuals professional and predictable.
+          </p>
+          <p>
+            Smaller, well-sized assets also improve Core Web Vitals and mobile
+            performance. A standard target helps teams avoid mixed quality and
+            inconsistent results across campaigns. When every asset is prepared
+            the same way, reviews are faster and re-uploads are rare.
           </p>
         </div>
 
         <div className="card">
-          <h2>Step-by-Step Guide</h2>
-          <ol>
-            {data.steps.map((step, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: step }} />
+          <h2>How to {actionSentence}: Step-by-step</h2>
+          <ol style={{ paddingLeft: 18 }}>
+            {steps.map((step) => (
+              <li key={step.title} style={{ marginBottom: 10 }}>
+                <strong>{step.title}:</strong> {step.body}
+              </li>
             ))}
           </ol>
         </div>
 
         <div className="card">
-          <h2>Pro Tips</h2>
-          <ul>
-            {data.tips.map((tip, index) => (
-              <li key={index}>{tip}</li>
+          <h2>Tips &amp; Best Practices</h2>
+          <ul style={{ paddingLeft: 18 }}>
+            {tips.map((tip) => (
+              <li key={tip}>{tip}</li>
             ))}
           </ul>
         </div>
 
         <div className="card">
-          <h2>Related Tools</h2>
-          <div style={{ display: 'grid', gap: 12 }}>
-            {data.relatedTools.map((tool, index) => (
-              <a
-                key={index}
-                href={tool.url}
-                style={{
-                  display: 'block',
-                  padding: '16px',
-                  backgroundColor: '#f9fafb',
-                  borderRadius: '8px',
-                  textDecoration: 'none',
-                  color: '#374151',
-                  border: '1px solid #e5e7eb'
-                }}
-              >
-                <h3 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>{tool.name}</h3>
-                <p style={{ margin: 0, fontSize: '14px', color: '#6b7280' }}>{tool.description}</p>
-              </a>
+          <h2>When to use this workflow</h2>
+          <p>
+            Use this process when you need reliable uploads, consistent visuals,
+            or faster load times. It is especially useful for assets that appear
+            repeatedly across pages or campaigns, where small quality drift
+            becomes obvious.
+          </p>
+          <p>
+            If you need print-ready assets or archival quality, keep a master
+            copy and only apply these steps to the version you plan to publish.
+            Avoid upscaling low-resolution files, because resizing cannot
+            recreate missing detail.
+          </p>
+          <ul style={{ paddingLeft: 18 }}>
+            {useCases.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="card">
+          <h2>FAQ</h2>
+          <div style={{ display: "grid", gap: 12 }}>
+            {faqItems.map((item) => (
+              <div key={item.question}>
+                <h3 style={{ marginBottom: 6 }}>{item.question}</h3>
+                <p className="text-muted" style={{ margin: 0 }}>
+                  {item.answer}
+                </p>
+              </div>
             ))}
           </div>
         </div>
 
         <div className="card">
-          <h2>Why This Matters</h2>
-          <p>
-            Optimizing images for specific platforms and use cases ensures:
-          </p>
-          <ul>
-            <li><strong>Fast Loading:</strong> Smaller file sizes load faster on all devices</li>
-            <li><strong>Better Quality:</strong> Proper compression maintains visual quality</li>
-            <li><strong>Platform Compliance:</strong> Meets specific platform requirements</li>
-            <li><strong>User Experience:</strong> Improves overall browsing experience</li>
-          </ul>
-        </div>
-
-        <div className="card">
-          <h2>Best Practices</h2>
-          <div style={{ display: 'grid', gap: 12 }}>
-            <div style={{ padding: '12px', backgroundColor: '#f0f9ff', borderRadius: '6px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#1e40af' }}>Format Selection</h3>
-              <p style={{ margin: 0, fontSize: '14px', color: '#374151' }}>
-                Choose the right format: WebP for best compression, JPEG for compatibility, PNG for transparency.
-              </p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: '#f0fdf4', borderRadius: '6px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#065f46' }}>Size Optimization</h3>
-              <p style={{ margin: 0, fontSize: '14px', color: '#374151' }}>
-                Target specific file sizes based on platform requirements and use case needs.
-              </p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: '#fef3c7', borderRadius: '6px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#92400e' }}>Quality Balance</h3>
-              <p style={{ margin: 0, fontSize: '14px', color: '#374151' }}>
-                Find the perfect balance between file size and visual quality for your specific needs.
-              </p>
-            </div>
+          <h2>Related guides</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {relatedLinks.map((link) => (
+              <Link key={link.url} href={link.url} className="pill">
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
 
-      <FaqJsonLd items={data.faqItems} />
+      <FaqJsonLd items={faqItems} />
     </>
   );
 }

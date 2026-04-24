@@ -4,8 +4,9 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Background Remover: Remove BG (No Upload) | PixCloak",
-  description: "Remove background from images by color. Adjust tolerance for solid backgrounds (white, green, gray). 100% local—no uploads. Free, unlimited.",
+  title: "Remove Solid Background Free—White/Green Screen, No Upload | PixCloak",
+  description:
+    "Color-based background remover: click the backdrop, tune tolerance, export transparent PNG. Best for product shots and green screen—not AI hair edges. 100% local, unlimited.",
   alternates: {
     canonical: "/tools/remove-bg-lite",
     languages: { "x-default": "/tools/remove-bg-lite", en: "/tools/remove-bg-lite" },

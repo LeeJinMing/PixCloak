@@ -1,30 +1,68 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
-import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "LQIP Generator: Tiny Base64 Placeholders | PixCloak",
-  description: "Create LQIP placeholders as tiny Base64 for faster page loads. Preview and copy locally—no uploads. Perfect for skeleton screens and perceived performance.",
+  title: "LQIP Generator—Tiny Blur Placeholders (Base64) | PixCloak",
+  description:
+    "Create low-quality image placeholders (LQIP) as small Base64 data URLs for lazy loading and faster perceived load. Runs locally—no upload.",
   alternates: { canonical: "/tools/lqip", languages: { "x-default": "/tools/lqip" } },
+  openGraph: {
+    title: "LQIP / blur-up placeholder generator",
+    description: "Generate tiny Base64 previews for responsive images.",
+    url: "/tools/lqip",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LQIP generator",
+    description: "Base64 blur placeholders in the browser.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "LQIP", url: "/tools/lqip" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="LQIP Generator"
         url="/tools/lqip"
-        description="Generate Low Quality Image Placeholders (LQIP) as tiny Base64 strings for faster page loading and better perceived performance."
+        description="Generate lightweight blurred placeholders encoded as data URLs for progressive image loading."
       />
-      <FaqJsonLd items={[
-        { question: "What is LQIP?", answer: "Low Quality Image Placeholder - a tiny, blurred version of an image used as a placeholder while the full image loads, improving perceived performance." },
-        { question: "How small are LQIP files?", answer: "Typically 1-3KB as Base64 strings, compared to full images that can be 100KB-1MB. They load instantly and provide visual context." },
-        { question: "How do I use LQIP in my website?", answer: "Embed the Base64 string directly in your HTML as a data URL, or use it as a background-image in CSS while the main image loads." },
-        { question: "What's the difference between LQIP and blur-up?", answer: "LQIP shows a blurred version of the actual image, while blur-up uses a solid color placeholder. LQIP provides better visual context." }
-      ]} />
+      <FaqJsonLd
+        items={[
+          {
+            question: "What is LQIP?",
+            answer: "Low Quality Image Placeholder—a very small preview, often blurred, shown while the full image loads.",
+          },
+          {
+            question: "How big are the data URLs?",
+            answer: "Typically a few kilobytes, much smaller than the final image, so they can be inlined in HTML or CSS.",
+          },
+          {
+            question: "Are images uploaded?",
+            answer: "No. The source image is processed only inside your browser.",
+          },
+        ]}
+      />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h1>LQIP Placeholder Generator (Blur-Up, No Upload)</h1>
+          <p className="text-muted" style={{ marginBottom: 0 }}>
+            Improve perceived performance: embed a tiny preview while <code>srcset</code> or lazy loading fetches the real asset. Works with{" "}
+            <Link href="/tools/srcset-generator">srcset markup</Link> workflows.
+          </p>
+        </div>
+      </div>
       <Client />
     </>
   );
 }
-
-

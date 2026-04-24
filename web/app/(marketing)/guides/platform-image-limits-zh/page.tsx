@@ -29,6 +29,7 @@ export default function GuidePlatformLimitsZH() {
         <div className="card">
           <h1>常见平台的图片体积与尺寸限制</h1>
           <p className="text-muted">根据公开资料与经验整理，供快速准备图片时参考（持续更新）。</p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ul>
             <li>头像：常见上限 200KB；建议 512–1024px 正方形</li>
             <li>动态/帖子：常见上限 500KB；建议最长边 ≤ 1920px</li>

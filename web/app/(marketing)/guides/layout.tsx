@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import RelatedTasks from "@/components/RelatedTasks";
+
+export const metadata: Metadata = {
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+};
 
 export default function MarketingGuidesLayout({ children }: { children: React.ReactNode }) {
   const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com").replace(/\/$/, "");

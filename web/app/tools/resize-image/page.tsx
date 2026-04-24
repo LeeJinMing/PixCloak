@@ -4,8 +4,9 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Image Resizer: Resize to Exact Dimensions... | PixCloak",
-  description: "Resize images to exact dimensions (1920px, 1080px) or percentages. Batch resize 100+ images. Works locally—no uploads. For web, Instagram, email.",
+  title: "Resize Images to 1920px, 1080×1080, Custom PX—Batch | PixCloak",
+  description:
+    "Resize JPG/PNG/WebP to exact width/height or longest edge. Presets for web (1920px) and social (e.g. 1080 square). Batch + ZIP. Local processing—no upload.",
   alternates: {
     canonical: "/tools/resize-image",
     languages: {

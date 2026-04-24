@@ -35,7 +35,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Aspect Ratio Padder</h1>
+        <h2 style={{ marginTop: 0 }}>Pad to ratio</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
           <label>
@@ -63,7 +63,6 @@ export default function Client() {
           )}
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Aspect Ratio Padder', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/aspect-pad' }) }} />
     </div>
   );
 }

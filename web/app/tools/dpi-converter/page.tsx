@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "DPI/PPI Converter – Print size vs pixels | PixCloak",
-  description: "Convert between pixels and physical print size using DPI/PPI. Plan exports for print and screens accurately. Runs locally in your browser—no uploads.",
+  title: "DPI Calculator—Pixels to Inches/cm for Print (300 DPI) | PixCloak",
+  description:
+    "Convert image pixels to print size at 150, 300, or custom DPI/PPI. Plan posters, flyers, and photo prints. Local calculator—no upload.",
   alternates: { canonical: "/tools/dpi-converter", languages: { "x-default": "/tools/dpi-converter" } },
+  openGraph: {
+    title: "DPI / print size calculator",
+    description: "Pixels ↔ inches for print workflows.",
+    url: "/tools/dpi-converter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DPI converter",
+    description: "Print dimensions from pixel size.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "DPI converter", url: "/tools/dpi-converter" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="DPI/PPI Converter"
         url="/tools/dpi-converter"

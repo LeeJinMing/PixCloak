@@ -18,6 +18,10 @@ export default function GuideRenameRules() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Batch Rename Rules (prefix/suffix, keep extension)</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Set prefix/suffix in <a href="/compress">/compress</a>, run batch, download ZIP—filenames update while extensions stay consistent if you enable that option.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress">/compress</a></li>
             <li>Set prefix/suffix; enable “keep original extension” if needed.</li>

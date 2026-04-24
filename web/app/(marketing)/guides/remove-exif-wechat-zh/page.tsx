@@ -18,6 +18,7 @@ export default function GuideRemoveExifWeChatZH() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>微信图片去除 EXIF 元数据</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>打开 <a href="/compress">/compress</a></li>
           <li>拖拽导入并导出为 JPEG/WebP</li>

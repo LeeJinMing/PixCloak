@@ -35,6 +35,7 @@ export default function GuidePngVsJpg() {
             Use <strong>PNG for graphics/logos/text</strong> (lossless quality, supports transparency). Need to convert? Use our
             <a href="/tools/png-jpg-converter"> free converter tool</a>—works offline, no uploads.
           </p>
+          <p className="text-muted" style={{ fontSize: 14, marginTop: 8, marginBottom: 0 }}>Last reviewed: April 2026.</p>
 
           <h2>PNG vs JPG: Complete Comparison</h2>
 

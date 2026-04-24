@@ -36,6 +36,10 @@ export default function GuideCompress1MB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Compress images to 1MB</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Open <a href="/compress?kb=1024">/compress?kb=1024</a>, adjust format/resize, compress—good for portfolios and high caps.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress?kb=1024">/compress?kb=1024</a></li>
             <li>Set Format and Resize if needed, then Compress</li>

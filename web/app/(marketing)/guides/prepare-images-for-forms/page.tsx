@@ -18,6 +18,10 @@ export default function GuideForms() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Prepare images for web forms</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Most forms want ~200KB avatars and ~500KB attachments—use those presets, shrink phone shots to ~1920px first, then compress.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Typical limits: 200KB (avatar), 500KB (attachments)</li>
           <li>Use presets: <a href="/compress?kb=200">200KB</a> / <a href="/compress?kb=500">500KB</a></li>

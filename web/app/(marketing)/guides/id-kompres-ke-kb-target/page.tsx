@@ -18,6 +18,7 @@ export default function IDCompressTargetKB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Kompres gambar ke ukuran target (200KB/500KB)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Buka <a href="/compress?kb=200">/compress?kb=200</a> atau <a href="/compress?kb=500">/compress?kb=500</a></li>
           <li>Seret banyak gambar lalu klik Compress.</li>

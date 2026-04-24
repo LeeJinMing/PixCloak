@@ -22,6 +22,13 @@ export default function Page() {
       <div className="container" style={{ display: 'grid', gap: 16 }}>
         <div className="card">
           <h1 style={{ marginBottom: 8 }}>Privacy & Compliance for Images</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Before publishing or emailing photos, <strong>mask sensitive regions</strong> (faces, plates, IDs), then <strong>export without EXIF/GPS</strong>.
+            Doing both in a <strong>local browser tool</strong> avoids sending raw pixels to a server.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>
+            Last reviewed: April 2026. This page is operational guidance, not legal advice.
+          </p>
           <p className="text-muted" style={{ marginBottom: 12 }}>
             This checklist helps teams prepare images for compliant sharing: redact sensitive regions, remove metadata, and keep processing local.
           </p>
@@ -60,8 +67,8 @@ export default function Page() {
                 <li>Avatars ≤ 200KB; screenshots ≤ 500KB</li>
                 <li>Redact contact info, ID numbers; export without EXIF/GPS</li>
               </ul>
-              <Link className="pill" href="/guides/long-tail/resume-200kb">Resume 200KB</Link>
-              <Link className="pill" href="/guides/long-tail/job-application-500kb">Job application 500KB</Link>
+              <Link className="pill" href="/guides/compress-to-200kb">Resume 200KB</Link>
+              <Link className="pill" href="/guides/prepare-images-for-job-application">Job application 500KB</Link>
             </div>
             <div>
               <strong>Government/Legal</strong>
@@ -69,8 +76,8 @@ export default function Page() {
                 <li>Common caps: 200–500KB; prefer 1920px then target KB</li>
                 <li>Use solid blocks for ID/MRZ; keep irreversible masking</li>
               </ul>
-              <Link className="pill" href="/guides/long-tail/gov-portal-200kb-cn">Gov portal 200KB (CN)</Link>
-              <Link className="pill" href="/guides/long-tail/passport-scan-redact">Passport redaction</Link>
+              <Link className="pill" href="/guides/compress-to-target-kb-zh">Gov portal 200KB (CN)</Link>
+              <Link className="pill" href="/guides/redaction-checklist">Passport redaction</Link>
             </div>
             <div>
               <strong>Publishing/Social</strong>
@@ -78,8 +85,8 @@ export default function Page() {
                 <li>Use presets: 200/300/500/800KB depending on channel</li>
                 <li>Add high-contrast text; avoid sensitive UI in screenshots</li>
               </ul>
-              <Link className="pill" href="/guides/long-tail/youtube-thumbnail-200kb">YouTube 200KB</Link>
-              <Link className="pill" href="/guides/long-tail/instagram-story-1080x1920">Instagram Story</Link>
+              <Link className="pill" href="/guides/compress-to-200kb">YouTube 200KB</Link>
+              <Link className="pill" href="/guides/how-to-resize-images-for-instagram">Instagram Story</Link>
             </div>
           </div>
         </div>

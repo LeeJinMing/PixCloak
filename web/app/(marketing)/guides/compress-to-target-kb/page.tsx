@@ -28,6 +28,10 @@ export default function GuideTargetKB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Compress Images to a Target Size (200KB/500KB)</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Use <a href="/compress">/compress</a> with Target (KB); it searches quality settings to land near your cap.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <p>This guide shows how to use the Target (KB) mode to meet common upload limits like 200KB/500KB.</p>
           <ol>
             <li>Open <a href="/compress?kb=200">/compress?kb=200</a> or <a href="/compress?kb=500">/compress?kb=500</a></li>

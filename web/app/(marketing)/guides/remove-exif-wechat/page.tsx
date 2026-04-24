@@ -24,6 +24,10 @@ export default function GuideRemoveExifWeChat() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Remove EXIF from WeChat images</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Strip metadata locally (export JPEG/WebP from our tool) before you send—don’t assume WeChat removes GPS or device EXIF.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/compress">/compress</a></li>
           <li>Drop images and export as JPEG/WebP</li>

@@ -41,6 +41,10 @@ export default function GuideRemoveExifIphone() {
 
         <div className="card">
           <h1>Remove EXIF/GPS from iPhone photos</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Run the photo through <a href="/compress">/compress</a> or <a href="/redact">/redact</a> and export JPEG/WebP—re‑encoding clears typical EXIF/GPS on the copy you share.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress">/compress</a> or <a href="/redact">/redact</a></li>
             <li>Export as JPEG/WebP — EXIF/GPS is removed by re‑encoding</li>

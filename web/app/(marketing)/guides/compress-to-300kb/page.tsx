@@ -18,6 +18,10 @@ export default function GuideCompress300KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Compress images to 300KB</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Open <a href="/compress?kb=300">/compress?kb=300</a>, pick WebP or JPEG, resize long side to 1920px if the source is huge, then export.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress?kb=300">/compress?kb=300</a></li>
             <li>Set Format = WebP (try JPEG if needed)</li>

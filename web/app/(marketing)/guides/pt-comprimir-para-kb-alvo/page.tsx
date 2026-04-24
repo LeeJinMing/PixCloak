@@ -18,6 +18,7 @@ export default function PTCompressTargetKB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Comprimir imagens para um tamanho alvo (200KB/500KB)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Abrir <a href="/compress?kb=200">/compress?kb=200</a> ou <a href="/compress?kb=500">/compress?kb=500</a></li>
           <li>Arraste várias imagens e clique em Compress.</li>

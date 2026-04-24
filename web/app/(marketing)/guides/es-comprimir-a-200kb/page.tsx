@@ -23,6 +23,7 @@ export default function EsComprimir200KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Comprimir imágenes a 200KB</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Abra <a href="/compress?kb=200">/compress?kb=200</a></li>
           <li>Arrastre sus fotos y haga clic en Compress</li>

@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Platform Compliance Checker – KB & Dimensions | PixCloak",
-  description: "Validate image KB and dimensions for common platforms (forms/social). Get one‑click presets like 200KB/500KB and 1920px.",
+  title: "Image Size Checker—KB & Pixel Limits for Social & Forms | PixCloak",
+  description:
+    "Check width, height, and file size against common limits (LinkedIn, Instagram, job forms, gov uploads). Local-only—no upload. Jump to 200KB/500KB presets.",
   alternates: { canonical: "/tools/platform-checker", languages: { "x-default": "/tools/platform-checker" } },
+  openGraph: {
+    title: "Platform image limit checker",
+    description: "Validate KB and dimensions before you upload.",
+    url: "/tools/platform-checker",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Image compliance checker",
+    description: "KB and dimension checks in browser.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "Platform checker", url: "/tools/platform-checker" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="Platform Compliance Checker"
         url="/tools/platform-checker"

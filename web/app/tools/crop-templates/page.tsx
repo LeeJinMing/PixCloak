@@ -4,8 +4,9 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Image Cropper: 1:1, 4:3, 16:9 Templates | PixCloak",
-  description: "Crop images to exact aspect ratios (1:1 square, 4:3, 16:9) for Instagram, Facebook, LinkedIn. Works offline—no uploads. Batch process and download ZIP.",
+  title: "Crop to 1080×1080, 1:1, 4:5, 16:9—Instagram & Social | PixCloak",
+  description:
+    "Free aspect-ratio cropper: Instagram square 1080×1080, portrait 4:5, stories 9:16, Facebook/LinkedIn cover ratios. Batch crop, ZIP download. Offline in browser—no upload.",
   alternates: {
     canonical: "/tools/crop-templates",
     languages: { "x-default": "/tools/crop-templates", en: "/tools/crop-templates" },

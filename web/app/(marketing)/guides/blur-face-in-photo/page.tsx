@@ -36,6 +36,10 @@ export default function GuideBlurFace() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>How to Blur Faces in Photos</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Cover the whole face with strong pixelation, solid block, or heavy blur plus margin so thumbnails can’t leak edges.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Why Blur Faces in Photos?</h2>
           <p>

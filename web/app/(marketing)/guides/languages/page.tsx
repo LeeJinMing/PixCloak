@@ -44,6 +44,7 @@ export default function LanguagesGuideIndex() {
           <p className="text-muted">
             Explore PixCloak guides in your preferred language. All tools run locally in your browser—no uploads, privacy‑first.
           </p>
+          <p className="text-muted" style={{ fontSize: 14, marginTop: 8, marginBottom: 0 }}>Last reviewed: April 2026.</p>
         </div>
 
         <div className="card">

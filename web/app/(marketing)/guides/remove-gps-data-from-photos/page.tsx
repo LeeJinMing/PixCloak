@@ -19,6 +19,10 @@ export default function GuideRemoveGps() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Remove GPS Data from Photos</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> GPS lives in EXIF; exporting or re‑encoding without metadata removes location from the copy you share—verify with an EXIF viewer if unsure.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/redact">/redact</a> or <a href="/compress">/compress</a>.</li>
           <li>Export the processed image; exports are stripped of EXIF/GPS metadata.</li>

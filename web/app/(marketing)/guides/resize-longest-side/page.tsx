@@ -40,6 +40,10 @@ export default function GuideResizeLongest() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Resize by Longest Side (e.g., 1920px for web)</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> In <a href="/compress">/compress</a>, set resize to longest side (e.g. 1920), then compress—keeps aspect ratio and makes KB targets much easier.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/compress">/compress</a></li>
           <li>Choose Resize = Longest side, set value (e.g., 1920).</li>

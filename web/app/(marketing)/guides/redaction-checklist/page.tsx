@@ -36,6 +36,10 @@ export default function GuideRedactionChecklist() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Pre‑publish Privacy Checklist (Images)</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Before posting, mask faces/plates/secrets, remove EXIF/GPS, and use irreversible redaction—then do a quick zoom check on the export.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Mask faces, license plates, phone numbers, emails, addresses, QR codes?</li>
           <li>Remove EXIF/GPS?</li>

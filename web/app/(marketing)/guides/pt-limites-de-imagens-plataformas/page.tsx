@@ -18,6 +18,7 @@ export default function PTPlatformLimits() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Limites comuns de imagens em plataformas (tamanho e dimensões)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Avatares: ≤ 200KB; 512–1024px quadrado</li>
           <li>Publicações: ≤ 500KB; lado mais longo ≤ 1920px</li>

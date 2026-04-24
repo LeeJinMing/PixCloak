@@ -28,6 +28,7 @@ export default function GuideResizeLongestZH() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>按最长边缩放（建议 1920px）</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>打开 <a href="/compress">/compress</a></li>
           <li>选择 Resize = Longest side，输入 1920</li>

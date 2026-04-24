@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
+import { LONG_TAIL_SLUGS } from "@/lib/longTailGuides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = (
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixcloak.com"
   ).replace(/\/$/, "");
-  const guidesUpdated = new Date("2025-10-03");
+  const guidesUpdated = new Date("2026-04-24");
 
   const urls: MetadataRoute.Sitemap = [];
 
@@ -44,14 +45,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ignore scan errors; keep minimal sitemap
   }
 
-  // include known long-tail static params
-  const longTailSlugs = [
-    "compress-to-200kb-for-linkedin",
-    "compress-to-500kb-for-instagram",
-    "resize-to-1080x1080-for-instagram",
-    "compress-to-100kb-for-email",
-  ];
-  for (const slug of longTailSlugs) {
+  urls.push({
+    url: `${base}/guides/long-tail`,
+    lastModified: guidesUpdated,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  });
+
+  for (const slug of LONG_TAIL_SLUGS) {
     urls.push({
       url: `${base}/guides/long-tail/${slug}`,
       lastModified: guidesUpdated,

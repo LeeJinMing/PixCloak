@@ -18,6 +18,7 @@ export default function PTExportNoMetadata() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Exportar imagens sem metadados</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Use <a href="/compress">/compress</a> ou <a href="/redact">/redact</a></li>
             <li>Exporte em JPEG/WebP/PNG — a re‑codificação remove EXIF/GPS</li>

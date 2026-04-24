@@ -28,6 +28,7 @@ export default function IDExportNoMetadata() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Ekspor gambar tanpa metadata</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Gunakan <a href="/compress">/compress</a> atau <a href="/redact">/redact</a></li>
           <li>Ekspor sebagai JPEG/WebP/PNG — re‑encoding menghapus EXIF/GPS</li>

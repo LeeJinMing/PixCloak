@@ -19,6 +19,10 @@ export default function GuideBlurNumberPlate() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Blur Number Plates in Photos (UK)</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Use pixelate or a solid cover with margin on the plate, then export and check at full size—soft blur alone is often too weak.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/redact">/redact</a>.</li>
             <li>Mark the plate area; choose Pixelate for stronger privacy.</li>

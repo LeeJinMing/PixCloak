@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "OG/Twitter Card 1200×630 (Free, No Upload) | PixCloak",
-  description: "Create 1200×630 OG/Twitter images in your browser—no uploads. Preview instantly and export PNG/JPG fast. Perfect for blogs, docs, and social sharing.",
+  title: "OG Image Generator 1200×630—Facebook, X, LinkedIn Preview | PixCloak",
+  description:
+    "Build Open Graph and Twitter/X card art at 1200×630 in the browser. Export PNG/JPG for og:image and twitter:image. No upload—preview and download locally.",
   alternates: { canonical: "/tools/og-card", languages: { "x-default": "/tools/og-card" } },
+  openGraph: {
+    title: "1200×630 social preview maker",
+    description: "Create share images for link previews locally.",
+    url: "/tools/og-card",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OG card generator",
+    description: "Local 1200×630 images for social previews.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "OG card", url: "/tools/og-card" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="OG/Twitter Card Generator"
         url="/tools/og-card"

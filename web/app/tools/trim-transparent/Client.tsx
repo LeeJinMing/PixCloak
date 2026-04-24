@@ -26,7 +26,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Trim Transparent Edges</h1>
+        <h2 style={{ marginTop: 0 }}>Trim tool</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/png,image/webp" onChange={onPick} className="input" />
           <label>Alpha threshold<input className="input" type="number" min={0} max={1} step={0.01} value={alpha} onChange={(e) => setAlpha(parseFloat(e.target.value) || 0)} style={{ width: 96, marginLeft: 8 }} /></label>

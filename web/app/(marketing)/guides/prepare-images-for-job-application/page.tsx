@@ -18,6 +18,10 @@ export default function GuideJobApplication() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Prepare images for job application portals</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Expect ~200KB headshots and ~500KB attachments—resize to ≤1920px, then use <a href="/compress?kb=200">200KB</a> / <a href="/compress?kb=500">500KB</a> presets; exports strip EXIF by default.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Common caps: 200KB avatars, 500KB attachments</li>
           <li>Resize to ≤ 1920px; then target size</li>

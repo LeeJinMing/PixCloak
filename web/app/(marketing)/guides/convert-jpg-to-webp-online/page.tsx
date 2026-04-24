@@ -36,6 +36,10 @@ export default function GuideConvertJpgToWebp() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Convert JPG to WebP Online</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Open <a href="/compress">/compress</a>, set format to WebP (optionally a KB target), export—same flow as this guide’s steps below.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
         <h2>Why Convert JPEG to WebP?</h2>
         <p>

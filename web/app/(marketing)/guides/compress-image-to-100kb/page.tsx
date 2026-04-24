@@ -36,6 +36,10 @@ export default function GuideCompress100KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>How to Compress Images to 100KB</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Open <a href="/compress?kb=100">/compress?kb=100</a>, shrink dimensions first (roughly ≤1080px long side for photos), set WebP or JPEG, export—verify size in downloads.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Why Compress Images to 100KB?</h2>
           <p>

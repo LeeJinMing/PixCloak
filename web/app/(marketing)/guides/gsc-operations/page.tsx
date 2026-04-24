@@ -18,6 +18,10 @@ export default function Page() {
       <div className="container" style={{ display: 'grid', gap: 16 }}>
       <div className="card">
         <h1>GSC operations</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Submit <code>sitemap.xml</code>, inspect new URLs, fix duplicates/canonicals, then tune titles for low‑CTR queries in the performance report.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol style={{ paddingLeft: 18 }}>
           <li>Submit sitemap: <code>https://pixcloak.com/sitemap.xml</code>. Ensure it references <code>/guides/sitemap.xml</code>.</li>
           <li>URL inspection: request indexing for <code>/</code> 与新上线的指南/长尾页。</li>

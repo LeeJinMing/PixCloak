@@ -18,6 +18,7 @@ export default function Research500KBRange() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Research: What quality fits 500KB?</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <p className="text-muted">Method summary: downscale to 1920px longest side, then run binary search to hit ~500KB across varied content types. Record final quality (q) and visible artifacts.</p>
         <h2>Practical guidance</h2>
         <ul>

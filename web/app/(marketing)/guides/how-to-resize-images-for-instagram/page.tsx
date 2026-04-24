@@ -28,14 +28,15 @@ export default function GuideResizeInstagram() {
 
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>How to Resize Images for Instagram: Feed, Stories, Reels (2025)</h1>
+          <h1>How to Resize Images for Instagram: Feed, Stories, Reels (2026)</h1>
 
           <p style={{ background: '#f0f9ff', padding: '16px', borderRadius: '8px', borderLeft: '4px solid #3b82f6' }}>
             <strong>Quick Answer:</strong> Instagram feed posts: 1080×1080 (square) or 1080×1350 (portrait). Instagram Stories/Reels: 1080×1920 (vertical).
             Use our <a href="/tools/resize-image">free resize tool</a> to adjust images to exact dimensions—works offline, no uploads, takes 30 seconds.
           </p>
+          <p className="text-muted" style={{ fontSize: 14, marginTop: 8, marginBottom: 0 }}>Last reviewed: April 2026.</p>
 
-          <h2>Instagram Image Size Requirements (2025)</h2>
+          <h2>Instagram Image Size Requirements (2026)</h2>
 
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginTop: '12px' }}>
             <thead>

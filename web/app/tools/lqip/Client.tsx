@@ -28,7 +28,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>LQIP Placeholder Generator</h1>
+        <h2 style={{ marginTop: 0 }}>Generate placeholder</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
           <label>Width<input className="input" type="number" min={8} max={64} step={1} value={width} onChange={(e) => setWidth(parseInt(e.target.value) || 24)} style={{ width: 96, marginLeft: 8 }} /></label>
@@ -57,7 +57,6 @@ export default function Client() {
           )}
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'LQIP Placeholder Generator', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/lqip' }) }} />
     </div>
   );
 }

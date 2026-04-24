@@ -36,6 +36,10 @@ export default function GuideSocialKB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Common KB Targets for Social/Forms</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Many uploads behave like 200KB avatars and 500KB posts—start there in <a href="/compress">/compress</a>, keep width ≤1920px, raise KB if you see artifacts.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Profile/upload forms often require 200KB/500KB</li>
           <li>Start with 200KB for avatars, 500KB for posts</li>

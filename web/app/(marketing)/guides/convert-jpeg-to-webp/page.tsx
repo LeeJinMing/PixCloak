@@ -36,6 +36,10 @@ export default function GuideJpegToWebp() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Convert JPEG to WebP (smaller size, keeps quality)</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> In <a href="/compress">/compress</a>, set format WebP, optionally set a KB target, compress, then download—usually smaller than JPEG at the same look.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/compress">/compress</a></li>
           <li>Set Format to <strong>WebP</strong>. Optionally set Target (KB).</li>

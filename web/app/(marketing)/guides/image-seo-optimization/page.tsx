@@ -20,6 +20,10 @@ export default function ImageSEOOptimizationPage() {
       <div className="container" style={{ display: 'grid', gap: 16 }}>
         <div className="card">
           <h1>Complete Image SEO Optimization Guide</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Write human‑first alt text, use readable filenames, serve appropriately sized files, and strip sensitive EXIF before publishing.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <p className="text-muted">
             Learn how to optimize your images for search engines and improve your website's visibility.
             This comprehensive guide covers alt text, file names, captions, and technical optimization.

@@ -40,6 +40,7 @@ export default function GuideCompress200KB() {
 
       <div className="card">
           <h1>How to Compress Images to 200KB (Free, 2 Minutes)</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Answer</h2>
           <p>

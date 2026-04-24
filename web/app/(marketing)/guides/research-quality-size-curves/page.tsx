@@ -43,6 +43,7 @@ export default function Page() {
     <div className="container" style={{ display: 'grid', gap: 16 }}>
       <div className="card">
         <h1>Research: Quality vs Size Curves</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <p className="text-muted">Reproducible method to benchmark JPEG/WebP at 1920px longest side and target KBs.</p>
         <ol style={{ paddingLeft: 18 }}>
           <li>Choose a CC0 dataset covering photos, UI, and screenshots.</li>

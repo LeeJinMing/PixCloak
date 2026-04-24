@@ -36,6 +36,10 @@ export default function GuideJpegVsWebp() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>JPEG vs WebP: Size and Quality</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> At similar visible quality, WebP usually beats JPEG on bytes—use WebP for the web when allowed; keep JPEG where you need maximum compatibility.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>WebP usually achieves smaller size at the same visual quality</li>
           <li>JPEG is broadly compatible and good for photos</li>

@@ -19,6 +19,10 @@ export default function GuideRedactScreenshotMac() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Redact a Screenshot on Mac</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Drop the screenshot into <a href="/redact">/redact</a>, mask sensitive UI with solid or pixelate, export—processing stays local.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Take a screenshot, then open <a href="/redact">/redact</a>.</li>
           <li>Draw regions over sensitive content; choose Solid, Blur, or Pixelate.</li>

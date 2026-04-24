@@ -18,6 +18,10 @@ export default function GuideResize1920() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Resize longest side to 1920px</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> In <a href="/compress">/compress</a>, resize longest side = 1920, then aim for 200–800KB depending on use—downscaling first improves quality per byte.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress">/compress</a></li>
             <li>Set Resize = Longest side, value = 1920</li>

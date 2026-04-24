@@ -36,6 +36,10 @@ export default function GuidePlateRedaction() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Redact License Plates in Photos</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Plates stay readable under mild blur—use solid or strong pixelation with margin, then verify the exported image.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/redact">/redact</a></li>
           <li>Select Preset = “License Plate” (or draw a box manually).</li>

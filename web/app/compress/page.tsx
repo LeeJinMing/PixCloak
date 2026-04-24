@@ -2,12 +2,13 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import CompressClient from "./Client";
 import AdsenseUnit from "@/components/Adsense";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Free Image Compressor: Reduce JPG/PNG to 100KB | PixCloak",
+  title: "Compress Images to 100KB/200KB/500KB—TinyPNG Alternative | PixCloak",
   description:
-    "Compress images to 100KB–500KB without quality loss. Works offline—no uploads. Convert JPEG/PNG/WebP fast for web, email, and social media in seconds.",
+    "Hit exact file sizes (100KB, 200KB, 500KB, 1MB) from JPG/PNG/WebP. Compress pictures without losing visible quality—local in your browser, no upload. Free, unlimited.",
   alternates: {
     canonical: "/compress",
     languages: {
@@ -22,15 +23,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Free Image Compressor: Reduce JPG/PNG to 100KB | PixCloak",
-    description: "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline, no uploads needed.",
+    title: "Image compressor to target KB (no upload)",
+    description: "Shrink photos for web, forms, and social. Exact KB targets, runs locally.",
     url: "/compress",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image Compressor: Reduce JPG/PNG to 100KB | PixCloak",
-    description: "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. Works offline.",
+    title: "Compress to exact KB locally",
+    description: "TinyPNG-style limits without uploading your files.",
   },
   // Disable Google Auto ads on this tool page; we render manual side rails & bottom units only
   other: {
@@ -41,7 +42,20 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1 style={{ margin: '8px 0' }}>Free Image Compressor – Reduce JPG/PNG to 100KB (No Upload)</h1>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Compress", url: "/compress" },
+        ]}
+      />
+      <h1 style={{ margin: '8px 0' }}>
+        Image Compressor to Exact KB—100KB, 200KB, 500KB (No Upload)
+      </h1>
+      <p className="text-muted" style={{ maxWidth: 720, marginBottom: 12 }}>
+        Dial in a target size for forms, job portals, and social limits. Processing stays in your browser—useful when you want a{" "}
+        <strong>TinyPNG-style</strong> smaller file without sending photos to a third party. WebP and JPEG export; metadata stripped on
+        export.
+      </p>
       <Suspense fallback={null}>
         <div style={{ position: 'relative' }}>
           {/* Side rails - keep away from main controls */}
@@ -63,17 +77,21 @@ export default function Page() {
               <a href="/guides/compress-to-200kb" className="pill">Compress to 200 KB</a>
               <a href="/guides/convert-jpg-to-webp-online" className="pill">Convert JPG to WebP</a>
               <a href="/guides/resize-longest-side" className="pill">Resize longest side</a>
+              <a href="/guides/tinypng-alternative-free-no-upload" className="pill">TinyPNG alternative (guide)</a>
+              <a href="/guides/complete-image-compression-guide" className="pill">Full compression guide</a>
             </div>
           </div>
           <SoftwareAppJsonLd
             name="PixCloak Compress"
             url="/compress"
-            description="Compress images locally to a target KB, convert to WebP/JPEG/PNG, and export without uploads."
+            description="Compress images locally to exact KB targets; export JPEG, WebP, or PNG without uploads. Strips metadata on export."
             image="/og.png"
           />
           <FaqJsonLd
             items={[
               { question: "Can I compress to 100 KB or 200 KB?", answer: "Yes. Use target KB presets or adjust quality until the preview meets the desired size." },
+              { question: "How do I compress pictures without losing quality?", answer: "Pick a slightly higher target KB or lower compression until the preview looks good. Heavy size cuts always trade bits for bytes; this tool lets you preview before exporting." },
+              { question: "Is this a TinyPNG alternative?", answer: "Similar goal—smaller images—but files are processed only in your browser. There is no per-day upload quota because nothing is uploaded." },
               { question: "Is the compression done locally?", answer: "Yes. All processing happens in‑browser; nothing is uploaded to any server." },
               { question: "Do you support WebP and PNG?", answer: "Yes. You can export JPEG, WebP, and PNG based on your needs." },
             ]}

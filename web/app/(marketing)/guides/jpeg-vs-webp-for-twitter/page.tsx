@@ -21,6 +21,10 @@ export default function GuideJpegWebpTwitter() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>JPEG vs WebP for X/Twitter</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> WebP is smaller; platforms may re-encode—A/B in <a href="/compress?kb=500">/compress?kb=500</a>, stay ≤1920px wide, fall back to JPEG if artifacts show.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>WebP is smaller but may be re‑encoded by the platform</li>
           <li>Try WebP first; fall back to high‑quality JPEG if artifacts</li>

@@ -36,6 +36,7 @@ export default function HowToReduceImageFileSize() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>How to Reduce Image File Size (Free, 2 Minutes)</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Answer</h2>
           <p><strong>3 steps to reduce image file size by 50-90%:</strong></p>

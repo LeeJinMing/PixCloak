@@ -21,6 +21,10 @@ export default function GuideJpegWebpLinkedIn() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>JPEG vs WebP for LinkedIn</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Try WebP for feed shots; use JPEG if gradients look rough—1920px long side and ~500KB is a practical starting point in <a href="/compress?kb=500">/compress?kb=500</a>.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Prefer WebP for feed images; JPEG for banners with gradients</li>
           <li>Use 1920px longest side; start from 500KB</li>

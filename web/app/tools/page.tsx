@@ -3,8 +3,9 @@ import { FaqJsonLd, SoftwareAppJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Image Tools: Resize, Convert, Compress... | PixCloak",
-  description: "20+ free image tools—resize, convert PNG/JPG, crop, watermark, compress, remove background. Works offline, no uploads. For web, social media, photography.",
+  title: "Free Online Image Tools—Resize, WebP, Crop, EXIF (No Upload) | PixCloak",
+  description:
+    "20+ browser-based tools: compress to KB, PNG/JPG/WebP, resize, crop for Instagram, redact faces/plates, EXIF strip, sprites, favicons. Runs locally—privacy-first.",
   alternates: {
     canonical: "/tools",
     languages: { "x-default": "/tools", en: "/tools" }
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
     description: "20+ free image tools. Works offline, no uploads. For web and social media.",
     url: "/tools",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PixCloak image tools",
+    description: "Resize, convert, compress, redact—locally in your browser.",
   },
 };
 

@@ -18,6 +18,10 @@ export default function GuideCompress800KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Compress images to 800KB</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Use <a href="/compress?kb=800">/compress?kb=800</a>—WebP for smaller bytes, JPEG when you need broad compatibility; downscale first if the original is very large.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/compress?kb=800">/compress?kb=800</a></li>
           <li>Use WebP for smaller size; JPEG for compatibility</li>

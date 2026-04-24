@@ -18,6 +18,10 @@ export default function GuideEmbedButton() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Embed a “Compress to KB” button</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Link to <code>https://pixcloak.com/compress?kb=…</code> or use the embed script with <code>data-kb</code>—opens the compressor with presets; still local processing.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <p className="text-muted">Add a small link or script to your blog/docs. Everything opens PixCloak (local processing, no uploads).</p>
         <h2>Link-only (safest)</h2>
         <pre><code>{`<a href="https://pixcloak.com/compress?kb=500&utm_source=embed" rel="noopener">Compress to 500KB (local)</a>`}</code></pre>

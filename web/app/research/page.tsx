@@ -143,6 +143,9 @@ export default function ResearchPage() {
             Open source research, algorithms, and technical documentation.
             Learn how PixCloak works with complete transparency and reproducibility.
           </p>
+          <p className="text-muted" style={{ fontSize: 14, marginTop: 8, marginBottom: 0 }}>
+            Last reviewed: April 2026.
+          </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 16 }}>
             <a

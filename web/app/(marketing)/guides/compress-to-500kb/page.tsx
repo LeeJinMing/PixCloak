@@ -36,6 +36,7 @@ export default function GuideCompress500KB() {
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
           <h1>How to Compress Images to 500KB (High Quality, Free)</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Answer</h2>
           <p>

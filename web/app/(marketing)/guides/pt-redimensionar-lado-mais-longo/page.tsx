@@ -18,6 +18,7 @@ export default function PTResizeLongest() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Redimensionar pelo lado mais longo (ex.: 1920px)</h1>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Abrir <a href="/compress">/compress</a></li>
           <li>Escolher Resize = Longest side e definir valor (1920)</li>

@@ -36,6 +36,10 @@ export default function GuideAnonymizedSharing() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Share Images Anonymously and Safely</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Redact faces, plates, and text in <a href="/redact">/redact</a>, export a new file—metadata is cleared on export so the shared copy carries less identifying data.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ul>
             <li>Redact faces/plates/IDs/emails/QR codes with solid/pixelate</li>
             <li>Export removes EXIF/GPS metadata by default</li>

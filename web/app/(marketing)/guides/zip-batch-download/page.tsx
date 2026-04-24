@@ -21,6 +21,10 @@ export default function GuideZipBatch() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Batch Compress and Download as ZIP</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> In <a href="/compress">/compress</a>, drop many files, set format/KB/resize once, compress, then <strong>Download ZIP</strong>.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress">/compress</a></li>
             <li>Drag multiple images into the upload area</li>

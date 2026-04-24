@@ -36,6 +36,10 @@ export default function GuideAvatar200KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Create 200KB avatars</h1>
+          <p style={{ marginBottom: 8 }}>
+            <strong>Short answer:</strong> Open <a href="/compress?kb=200">/compress?kb=200</a>, crop or resize to ~512–1024px square, export WebP or JPEG for profile forms.
+          </p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Open <a href="/compress?kb=200">/compress?kb=200</a></li>
             <li>Resize to 512–1024px square, then Compress</li>

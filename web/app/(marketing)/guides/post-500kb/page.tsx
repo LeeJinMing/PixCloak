@@ -36,6 +36,10 @@ export default function GuidePost500KB() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Prepare 500KB images for posts</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Use <a href="/compress?kb=500">/compress?kb=500</a>, keep longest side ≤1920px, batch ZIP if you have many files.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ol>
           <li>Open <a href="/compress?kb=500">/compress?kb=500</a></li>
           <li>Set longest side ≤ 1920px, then Compress</li>

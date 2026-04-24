@@ -18,6 +18,10 @@ export default function GuidePortfolio() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Prepare images for portfolio websites</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Resize long side to 1920px, then target ~800KB–1MB in <a href="/compress">/compress</a>—WebP where you control the stack, JPEG for maximum compatibility.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Resize longest side to 1920px</li>
           <li>Start from 800KB–1MB for fewer artifacts</li>

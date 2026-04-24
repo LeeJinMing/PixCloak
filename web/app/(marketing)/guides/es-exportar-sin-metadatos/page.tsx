@@ -21,6 +21,7 @@ export default function ESExportNoMetadata() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h1>Exportar imágenes sin metadatos</h1>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
           <ol>
             <li>Usa <a href="/compress">/compress</a> o <a href="/redact">/redact</a></li>
             <li>Exporta como JPEG/WebP/PNG — la re‑codificación elimina EXIF/GPS</li>

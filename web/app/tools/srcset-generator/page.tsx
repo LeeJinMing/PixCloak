@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Responsive img srcset Generator | PixCloak",
-  description: "Generate responsive img srcset/sizes markup and suggested KB per breakpoint. Copy optimized HTML locally to improve LCP and save bandwidth—no uploads.",
+  title: "Responsive srcset & sizes Generator for <img> | PixCloak",
+  description:
+    "Build img srcset and sizes attributes with width hints and rough KB targets for mobile/tablet/desktop. Paste into HTML—improve LCP. All local, no upload.",
   alternates: { canonical: "/tools/srcset-generator", languages: { "x-default": "/tools/srcset-generator" } },
+  openGraph: {
+    title: "srcset / sizes markup helper",
+    description: "Responsive image HTML for performance.",
+    url: "/tools/srcset-generator",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "srcset generator",
+    description: "Copy-paste responsive img tags.",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" },
+          { name: "srcset generator", url: "/tools/srcset-generator" },
+        ]}
+      />
       <SoftwareAppJsonLd
         name="Responsive img srcset Generator"
         url="/tools/srcset-generator"

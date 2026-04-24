@@ -19,7 +19,7 @@ export default function Page() {
       <FaqJsonLd items={[
         { question: "What is a data URL?", answer: "A data URL embeds image data directly in HTML/CSS using Base64 encoding, eliminating the need for separate image files and HTTP requests." },
         { question: "When should I use data URLs?", answer: "For small images (under 10KB), icons, logos, or when you need to embed images in CSS/HTML without external files. Not recommended for large images." },
-        { question: "How does alt text generation work?", answer: "AI-powered analysis of image content generates descriptive alt text suggestions that improve accessibility for screen readers and SEO." },
+        { question: "How does alt text suggestion work?", answer: "Short descriptions are suggested from the filename and image dimensions—edit them for accuracy before publishing. No server-side vision API is used." },
         { question: "What image formats are supported?", answer: "Supports PNG, JPG, WebP, GIF, and other common formats. Outputs Base64-encoded data URLs ready for HTML/CSS use." }
       ]} />
       <Client />

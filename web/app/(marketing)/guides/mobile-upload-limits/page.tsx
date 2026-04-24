@@ -36,6 +36,10 @@ export default function GuideMobileLimits() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Mobile Upload Limits: Prepare Images Fast</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Phone photos often blow past 2–5MB form caps—resize longest side, then use <a href="/compress">/compress</a> with a KB preset (200/500) before you upload.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Common limits: 2–5MB or 200–500KB in some forms</li>
           <li>Use Target (KB) to hit exact limits: try 200KB/500KB presets</li>

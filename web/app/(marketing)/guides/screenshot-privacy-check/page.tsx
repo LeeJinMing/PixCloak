@@ -21,6 +21,10 @@ export default function GuideScreenshotPrivacy() {
       <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
         <h1>Screenshot Privacy Check (before sharing)</h1>
+        <p style={{ marginBottom: 8 }}>
+          <strong>Short answer:</strong> Scrub IDs, order numbers, QR codes, and stray UI; crop if needed; export a clean file from <a href="/redact">/redact</a> and zoom-check before posting.
+        </p>
+        <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
         <ul>
           <li>Hide contacts, email/phone, addresses, order numbers, QR codes.</li>
           <li>Consider cropping irrelevant UI that might reveal identity.</li>
