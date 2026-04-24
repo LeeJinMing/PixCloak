@@ -224,6 +224,120 @@ a {
   max-width: none;
   margin-bottom: 12px;
 }
+
+/* Tool guide pages: long SEO sections, code samples, comparison tables */
+.tool-code-block,
+pre.tool-code-block {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 14px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.tool-code-block code,
+pre.tool-code-block code {
+  font-family: inherit;
+  font-size: inherit;
+}
+.tool-prose {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.tool-prose > * + * {
+  margin-top: 0.75em;
+}
+.tool-prose h2 {
+  font-size: 20px;
+  margin: 1.25em 0 0.5em;
+}
+.tool-prose h2:first-child {
+  margin-top: 0;
+}
+.tool-prose h3 {
+  font-size: 17px;
+  margin: 1em 0 0.4em;
+}
+.tool-prose ul,
+.tool-prose ol {
+  margin: 0.5em 0;
+  padding-left: 1.35em;
+}
+.tool-prose li + li {
+  margin-top: 0.35em;
+}
+.tool-prose table.tool-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 12px;
+}
+.tool-prose table.tool-table th,
+.tool-prose table.tool-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.tool-prose table.tool-table thead tr {
+  background: #f5f5f5;
+}
+.tool-prose table.tool-table thead th {
+  border-bottom: 2px solid #ddd;
+}
+.tool-guide-stack {
+  display: grid;
+  gap: 12px;
+}
+.tool-details {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.tool-details + .tool-details {
+  margin-top: 0;
+}
+.tool-details-summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 16px;
+  list-style: none;
+  user-select: none;
+}
+.tool-details-summary::-webkit-details-marker {
+  display: none;
+}
+.tool-details-summary::before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  margin-right: 0.35em;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+  opacity: 0.65;
+}
+.tool-details[open] .tool-details-summary::before {
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+.tool-details-summary:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: -2px;
+}
+.tool-details-body {
+  padding: 0 16px 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
 .home-section-label {
   font-size: 12px;
   font-weight: 700;

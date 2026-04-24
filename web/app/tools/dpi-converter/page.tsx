@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -43,6 +44,16 @@ export default function Page() {
         { question: "What about screen displays?", answer: "Screens typically use 72-96 PPI. Modern retina displays use higher PPI (150-300), but CSS pixels remain consistent for web design." }
       ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/resize-image" className="pill">Resize</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/guides/resize-to-1920" className="pill">1920px guide</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

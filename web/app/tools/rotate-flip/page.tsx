@@ -42,7 +42,7 @@ export default function RotateFlipPage() {
       />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>Rotate &amp; Flip Images Online (No Upload)</h1>
+          <h1 className="page-hero-title">Rotate &amp; Flip Images Online (No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Straighten photos that were shot sideways, mirror for layouts, or fix orientation before{' '}
             <Link href="/compress">compressing</Link> or <Link href="/tools/resize-image">resizing</Link>. Same transforms apply to
@@ -70,13 +70,9 @@ export default function RotateFlipPage() {
             <strong>Runs locally.</strong> No account, no watermarks.
           </p>
         </div>
-      </div>
 
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
         <Client />
-      </div>
 
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h2>When to rotate or flip</h2>
           <ul>

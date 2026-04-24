@@ -42,18 +42,14 @@ export default function PdfToImagePage() {
       />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>PDF to Image—Pages as PNG (No Upload)</h1>
+          <h1 className="page-hero-title">PDF to Image—Pages as PNG (No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Need thumbnails or images from a deck? Each page becomes a PNG. For smaller file sizes afterward, use{' '}
             <Link href="/compress">image compression</Link> or <Link href="/tools/webp-converter">WebP conversion</Link> on the
             exported images.
           </p>
         </div>
-      </div>
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
         <Client />
-      </div>
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h2>Related tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>

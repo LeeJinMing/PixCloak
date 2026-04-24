@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -43,6 +44,16 @@ export default function Page() {
         { question: "Can I export the comparison results?", answer: "Yes. Export the difference map as PNG, showing exactly which pixels changed between the two images." }
       ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/tools/webp-converter" className="pill">WebP</Link>
+            <Link href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

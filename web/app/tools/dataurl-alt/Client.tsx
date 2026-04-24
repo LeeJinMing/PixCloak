@@ -37,7 +37,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Data URL Converter & Alt Suggestions</h1>
+        <h1 className="page-hero-title">Data URL Converter & Alt Suggestions</h1>
         <p className="text-muted">Convert locally to data URL/Base64; re‑encoding strips EXIF. Suggest descriptive alt texts.</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />

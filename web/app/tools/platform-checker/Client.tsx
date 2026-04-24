@@ -68,7 +68,6 @@ export default function Client() {
           {rule.ctas?.map((c, i) => <Link key={i} href={c.href} className="pill">{c.label}</Link>)}
         </div>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Platform Compliance Checker', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/platform-checker' }) }} />
     </div>
   );
 }

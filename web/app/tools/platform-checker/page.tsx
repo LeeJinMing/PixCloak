@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -36,15 +37,36 @@ export default function Page() {
         url="/tools/platform-checker"
         description="Validate images against platform requirements for file size and dimensions. Get instant feedback and optimization suggestions."
       />
-      <FaqJsonLd items={[
-        { question: "What platforms are supported?", answer: "Checks compliance for LinkedIn, Facebook, Instagram, Twitter, job applications, government forms, and other common platforms with specific requirements." },
-        { question: "What does the checker validate?", answer: "File size limits (KB), maximum dimensions, aspect ratios, and format requirements. Provides instant feedback on compliance status." },
-        { question: "How do I fix non-compliant images?", answer: "Use the suggested presets (200KB, 500KB, 1920px) or follow the optimization recommendations to resize and compress your images." },
-        { question: "Are the requirements up to date?", answer: "Yes, platform requirements are regularly updated based on current platform policies and best practices for optimal upload success." }
-      ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/tools/resize-image" className="pill">Resize</Link>
+            <Link href="/tools/exif-checker" className="pill">EXIF checker</Link>
+            <Link href="/guides/resize-to-1920" className="pill">1920px guide</Link>
+          </div>
+        </div>
+      </div>
+      <FaqJsonLd items={[
+        {
+          question: "What presets are included?",
+          answer: "WeChat Moments–style 200KB, general job/forms 500KB, web hero with 1920px width and 800KB, and YouTube thumbnail 1280×720 with 200KB. Each preset is a practical target with short notes—not an exhaustive list of every site.",
+        },
+        {
+          question: "What does the checker validate?",
+          answer: "For the preset you pick, it compares the file size in KB and, when defined, maximum width and height in pixels against your image. You get pass/fail and quick links to compress or resize.",
+        },
+        {
+          question: "How do I fix a failing image?",
+          answer: "Use the pills under the result to open compress or resize flows, or follow the CTAs on the rule (e.g. 200KB, 500KB).",
+        },
+        {
+          question: "Are these limits official or guaranteed?",
+          answer: "No. They are common heuristics and notes for real-world uploads. Requirements change by product and region—always confirm on the destination uploader.",
+        },
+      ]} />
     </>
   );
 }
-
-

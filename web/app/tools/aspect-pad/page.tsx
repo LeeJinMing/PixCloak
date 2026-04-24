@@ -58,7 +58,7 @@ export default function Page() {
       />
       <div className="container" style={{ display: "grid", gap: 12 }}>
         <div className="card">
-          <h1>Aspect Ratio Padder—Letterbox &amp; Pillarbox (No Upload)</h1>
+          <h1 className="page-hero-title">Aspect Ratio Padder—Letterbox &amp; Pillarbox (No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             When you need exact ratios (feed square, story 9:16, YouTube 16:9) but do not want to crop, pad with color or a blurred
             extension of the image. Complements <Link href="/tools/crop-templates">crop templates</Link> when cropping is acceptable.
@@ -66,6 +66,16 @@ export default function Page() {
         </div>
       </div>
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/crop-templates" className="pill">Crop</Link>
+            <Link href="/tools/resize-image" className="pill">Resize</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

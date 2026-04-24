@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
@@ -11,6 +13,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "/" },
+        { name: "Tools", url: "/tools" },
+        { name: "Data URL converter", url: "/tools/dataurl-alt" },
+      ]} />
       <SoftwareAppJsonLd
         name="Data URL Converter & Alt Text Generator"
         url="/tools/dataurl-alt"
@@ -23,8 +30,18 @@ export default function Page() {
         { question: "What image formats are supported?", answer: "Supports PNG, JPG, WebP, GIF, and other common formats. Outputs Base64-encoded data URLs ready for HTML/CSS use." }
       ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/lqip" className="pill">LQIP placeholder</Link>
+            <Link href="/tools/srcset-generator" className="pill">srcset generator</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/tools/webp-converter" className="pill">WebP</Link>
+            <Link href="/tools/svg-optimizer" className="pill">SVG optimizer</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
-
-

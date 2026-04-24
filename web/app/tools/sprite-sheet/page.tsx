@@ -58,7 +58,7 @@ export default function Page() {
       />
       <div className="container" style={{ display: "grid", gap: 12 }}>
         <div className="card">
-          <h1>Sprite Sheet Generator (PNG + JSON, No Upload)</h1>
+          <h1 className="page-hero-title">Sprite Sheet Generator (PNG + JSON, No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Reduce requests for icon sets and game tiles.             Export a ZIP with the atlas and mapping. See also{" "}
             <Link href="/guides/long-tail/sprite-sheet-generator">sprite sheet guide</Link>.
@@ -66,6 +66,16 @@ export default function Page() {
         </div>
       </div>
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/trim-transparent" className="pill">Trim transparent</Link>
+            <Link href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

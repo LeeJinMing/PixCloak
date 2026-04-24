@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -43,6 +44,17 @@ export default function Page() {
         { question: "How do I use the generated image?", answer: "Download the image and add it to your website's meta tags using og:image and twitter:image properties in your HTML head section." }
       ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/text-placeholder" className="pill">Text placeholder</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/tools/resize-image" className="pill">Resize</Link>
+            <Link href="/tools/favicon-pack" className="pill">Favicon pack</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

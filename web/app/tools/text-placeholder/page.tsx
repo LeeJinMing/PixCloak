@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -43,6 +44,16 @@ export default function Page() {
         { question: "What formats can I export?", answer: "Export as PNG or JPG. PNG preserves transparency, while JPG offers smaller file sizes for solid backgrounds." }
       ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/og-card" className="pill">OG card</Link>
+            <Link href="/tools/crop-templates" className="pill">Crop</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

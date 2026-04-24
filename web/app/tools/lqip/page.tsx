@@ -55,7 +55,7 @@ export default function Page() {
       />
       <div className="container" style={{ display: "grid", gap: 12 }}>
         <div className="card">
-          <h1>LQIP Placeholder Generator (Blur-Up, No Upload)</h1>
+          <h1 className="page-hero-title">LQIP Placeholder Generator (Blur-Up, No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Improve perceived performance: embed a tiny preview while <code>srcset</code> or lazy loading fetches the real asset. Works with{" "}
             <Link href="/tools/srcset-generator">srcset markup</Link> workflows.
@@ -63,6 +63,16 @@ export default function Page() {
         </div>
       </div>
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/srcset-generator" className="pill">srcset generator</Link>
+            <Link href="/tools/dataurl-alt" className="pill">Data URL</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

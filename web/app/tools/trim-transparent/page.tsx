@@ -58,7 +58,7 @@ export default function Page() {
       />
       <div className="container" style={{ display: "grid", gap: 12 }}>
         <div className="card">
-          <h1>Trim Transparent PNG &amp; Alpha Edges (No Upload)</h1>
+          <h1 className="page-hero-title">Trim Transparent PNG &amp; Alpha Edges (No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Remove empty transparent margins so assets pack tighter and file sizes drop. Pairs well with{" "}
             <Link href="/tools/remove-bg-lite">background removal</Link> and sprite workflows.
@@ -66,6 +66,16 @@ export default function Page() {
         </div>
       </div>
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/remove-bg-lite" className="pill">Remove background</Link>
+            <Link href="/tools/sprite-sheet" className="pill">Sprite sheet</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

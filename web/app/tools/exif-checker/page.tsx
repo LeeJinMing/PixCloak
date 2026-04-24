@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
@@ -39,6 +40,18 @@ export default function Page() {
         url="/tools/exif-checker"
         description="Detect EXIF and GPS in JPEG images and export stripped copies using local canvas re-encode—no server upload."
       />
+      <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/redact" className="pill">Photo redaction</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/guides/exif-gps-removal" className="pill">EXIF guide</Link>
+            <Link href="/tools/platform-checker" className="pill">Platform checker</Link>
+          </div>
+        </div>
+      </div>
       <FaqJsonLd
         items={[
           {
@@ -55,7 +68,6 @@ export default function Page() {
           },
         ]}
       />
-      <Client />
     </>
   );
 }

@@ -87,7 +87,7 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>EXIF/GPS Metadata Checker</h1>
+        <h1 className="page-hero-title">EXIF/GPS Metadata Checker</h1>
         <p className="text-muted">Check if your image contains EXIF/GPS; remove metadata locally and download a clean copy.</p>
         <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
         {result && (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
@@ -52,6 +53,16 @@ export default function Page() {
         ]}
       />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/favicon-pack" className="pill">Favicon pack</Link>
+            <Link href="/tools/dataurl-alt" className="pill">Data URL</Link>
+            <Link href="/tools/sprite-sheet" className="pill">Sprite sheet</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

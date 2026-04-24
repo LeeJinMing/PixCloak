@@ -42,18 +42,14 @@ export default function HeicConverterPage() {
       />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>HEIC to JPG &amp; HEIC to WebP (No Upload)</h1>
+          <h1 className="page-hero-title">HEIC to JPG &amp; HEIC to WebP (No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Many forms and sites still want JPEG. Export HEIC from your iPhone or Mac, pick JPEG or WebP, then download—optionally as a ZIP for
             multiple photos. After conversion you can{' '}
             <Link href="/compress">compress to a target KB</Link> or <Link href="/tools/webp-converter">tune WebP</Link> from other sources.
           </p>
         </div>
-      </div>
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
         <Client />
-      </div>
-      <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
           <h2>Related tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>

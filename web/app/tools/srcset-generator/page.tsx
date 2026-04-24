@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -43,6 +44,17 @@ export default function Page() {
         { question: "Do I need multiple image files?", answer: "Yes. Create different sized versions of your image (e.g., 400px, 800px, 1200px) and upload them to your server with the generated srcset markup." }
       ]} />
       <Client />
+      <div className="container" style={{ display: "grid", gap: 12 }}>
+        <div className="card">
+          <h2>Related tools</h2>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/tools/lqip" className="pill">LQIP</Link>
+            <Link href="/tools/webp-converter" className="pill">WebP</Link>
+            <Link href="/compress" className="pill">Compress</Link>
+            <Link href="/tools/resize-image" className="pill">Resize</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

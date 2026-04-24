@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
+import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
   title: "Free Favicon Generator: All Sizes + Manifest... | PixCloak",
@@ -35,7 +36,7 @@ export default function Page() {
 
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>Free Favicon Generator: All Sizes + Manifest (No Upload)</h1>
+          <h1 className="page-hero-title">Free Favicon Generator: All Sizes + Manifest (No Upload)</h1>
 
           <h2>Quick Start</h2>
           <ol>
@@ -49,203 +50,195 @@ export default function Page() {
 
         <Client />
 
-        <div className="card">
-          <h2>What is a Favicon?</h2>
-          <p>
-            <strong>Favicons are tiny icons displayed in browser tabs, bookmarks, and home screens.</strong> The name comes from "favorite icon"
-            - originally shown in browser bookmarks. Modern websites need multiple sizes for different platforms and devices.
-          </p>
+        <div className="tool-guide-stack">
+          <ToolGuideSection title="What is a Favicon?">
+            <p>
+              <strong>Favicons are tiny icons displayed in browser tabs, bookmarks, and home screens.</strong> The name comes from &quot;favorite icon&quot;
+              - originally shown in browser bookmarks. Modern websites need multiple sizes for different platforms and devices.
+            </p>
 
-          <h3>Where Favicons Appear</h3>
-          <ul>
-            <li><strong>Browser tabs:</strong> 16x16 or 32x32 icon left of page title</li>
-            <li><strong>Bookmarks bar:</strong> 32x32 icon in bookmark list</li>
-            <li><strong>iOS home screen:</strong> 180x180 icon when user adds to home</li>
-            <li><strong>Android home screen:</strong> 192x192 or 512x512 icon for PWA</li>
-            <li><strong>Windows taskbar:</strong> 32x32 icon when site is pinned</li>
-            <li><strong>Google search results:</strong> 192x192 icon next to site name (mobile)</li>
-          </ul>
-        </div>
+            <h3>Where Favicons Appear</h3>
+            <ul>
+              <li><strong>Browser tabs:</strong> 16x16 or 32x32 icon left of page title</li>
+              <li><strong>Bookmarks bar:</strong> 32x32 icon in bookmark list</li>
+              <li><strong>iOS home screen:</strong> 180x180 icon when user adds to home</li>
+              <li><strong>Android home screen:</strong> 192x192 or 512x512 icon for PWA</li>
+              <li><strong>Windows taskbar:</strong> 32x32 icon when site is pinned</li>
+              <li><strong>Google search results:</strong> 192x192 icon next to site name (mobile)</li>
+            </ul>
+          </ToolGuideSection>
 
-        <div className="card">
-          <h2>Why You Need Multiple Favicon Sizes</h2>
-          <p><strong>Different devices and platforms require different sizes:</strong></p>
+          <ToolGuideSection title="Why You Need Multiple Favicon Sizes">
+            <p><strong>Different devices and platforms require different sizes:</strong></p>
 
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginTop: '12px' }}>
-            <thead>
-              <tr style={{ background: '#f5f5f5' }}>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Size</th>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Used For</th>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Platform</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>16x16</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Browser tabs (standard size)</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>All browsers</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>32x32</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Bookmarks, Windows taskbar</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Chrome, Firefox, Windows</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>180x180</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>iOS home screen (when saved)</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>iPhone, iPad Safari</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>192x192</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Android home screen, Google search</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Android Chrome</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>512x512</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>PWA splash screens, app icons</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Progressive Web Apps</td>
-              </tr>
-            </tbody>
-          </table>
+            <table className="tool-table">
+              <thead>
+                <tr>
+                  <th>Size</th>
+                  <th>Used For</th>
+                  <th>Platform</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>16x16</td>
+                  <td>Browser tabs (standard size)</td>
+                  <td>All browsers</td>
+                </tr>
+                <tr>
+                  <td>32x32</td>
+                  <td>Bookmarks, Windows taskbar</td>
+                  <td>Chrome, Firefox, Windows</td>
+                </tr>
+                <tr>
+                  <td>180x180</td>
+                  <td>iOS home screen (when saved)</td>
+                  <td>iPhone, iPad Safari</td>
+                </tr>
+                <tr>
+                  <td>192x192</td>
+                  <td>Android home screen, Google search</td>
+                  <td>Android Chrome</td>
+                </tr>
+                <tr>
+                  <td>512x512</td>
+                  <td>PWA splash screens, app icons</td>
+                  <td>Progressive Web Apps</td>
+                </tr>
+              </tbody>
+            </table>
 
-          <p style={{ marginTop: '12px' }}><strong>Without multiple sizes:</strong> Browsers scale one size to fit—results in blurry or pixelated icons.
-            Providing exact sizes ensures sharp display on all devices.</p>
-        </div>
+            <p><strong>Without multiple sizes:</strong> Browsers scale one size to fit—results in blurry or pixelated icons.
+              Providing exact sizes ensures sharp display on all devices.</p>
+          </ToolGuideSection>
 
-        <div className="card">
-          <h2>What's Included in ZIP Download</h2>
+          <ToolGuideSection title="What&apos;s Included in ZIP Download">
+            <h3>Image Files</h3>
+            <ul>
+              <li><strong>favicon.ico:</strong> Multi-resolution (16x16, 32x32, 48x48) for legacy browser support</li>
+              <li><strong>apple-touch-icon.png:</strong> 180x180 for iOS Safari (iPhone, iPad)</li>
+              <li><strong>android-chrome-192x192.png:</strong> For Android home screens and PWA</li>
+              <li><strong>android-chrome-512x512.png:</strong> High-res for Android splash screens</li>
+              <li><strong>favicon-16x16.png:</strong> Browser tabs (modern browsers)</li>
+              <li><strong>favicon-32x32.png:</strong> Bookmarks and taskbar</li>
+            </ul>
 
-          <h3>Image Files</h3>
-          <ul>
-            <li><strong>favicon.ico:</strong> Multi-resolution (16x16, 32x32, 48x48) for legacy browser support</li>
-            <li><strong>apple-touch-icon.png:</strong> 180x180 for iOS Safari (iPhone, iPad)</li>
-            <li><strong>android-chrome-192x192.png:</strong> For Android home screens and PWA</li>
-            <li><strong>android-chrome-512x512.png:</strong> High-res for Android splash screens</li>
-            <li><strong>favicon-16x16.png:</strong> Browser tabs (modern browsers)</li>
-            <li><strong>favicon-32x32.png:</strong> Bookmarks and taskbar</li>
-          </ul>
+            <h3>Configuration Files</h3>
+            <ul>
+              <li><strong>manifest.json:</strong> PWA configuration (name, icons, theme colors)</li>
+              <li><strong>HTML-code.txt:</strong> Ready-to-paste &lt;head&gt; tags</li>
+            </ul>
 
-          <h3>Configuration Files</h3>
-          <ul>
-            <li><strong>manifest.json:</strong> PWA configuration (name, icons, theme colors)</li>
-            <li><strong>HTML-code.txt:</strong> Ready-to-paste &lt;head&gt; tags</li>
-          </ul>
-
-          <h3>HTML Code Snippet</h3>
-          <pre style={{ background: '#f5f5f5', padding: '12px', borderRadius: '4px', overflow: 'auto', fontSize: '13px' }}>{`<link rel="icon" type="image/x-icon" href="/favicon.ico">
+            <h3>HTML Code Snippet</h3>
+            <pre className="tool-code-block">{`<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">`}</pre>
-        </div>
+          </ToolGuideSection>
 
-        <div className="card">
-          <h2>How to Install Favicons</h2>
+          <ToolGuideSection title="How to Install Favicons">
+            <h3>For Static HTML Websites</h3>
+            <ol>
+              <li><strong>Unzip files</strong> to root directory (same folder as index.html)</li>
+              <li><strong>Copy HTML snippet</strong> from HTML-code.txt</li>
+              <li><strong>Paste into &lt;head&gt;</strong> section of every HTML page (before &lt;/head&gt;)</li>
+              <li><strong>Upload files to server</strong> along with HTML pages</li>
+            </ol>
 
-          <h3>For Static HTML Websites</h3>
-          <ol>
-            <li><strong>Unzip files</strong> to root directory (same folder as index.html)</li>
-            <li><strong>Copy HTML snippet</strong> from HTML-code.txt</li>
-            <li><strong>Paste into &lt;head&gt;</strong> section of every HTML page (before &lt;/head&gt;)</li>
-            <li><strong>Upload files to server</strong> along with HTML pages</li>
-          </ol>
-
-          <h3>For Next.js</h3>
-          <ol>
-            <li><strong>Place files in /public folder</strong> (favicon.ico, manifest.json, all PNGs)</li>
-            <li><strong>Add metadata to layout.tsx</strong>:
-              <pre style={{ background: '#f5f5f5', padding: '8px', borderRadius: '4px', marginTop: '8px', fontSize: '13px' }}>{`export const metadata = {
+            <h3>For Next.js</h3>
+            <ol>
+              <li><strong>Place files in /public folder</strong> (favicon.ico, manifest.json, all PNGs)</li>
+              <li><strong>Add metadata to layout.tsx</strong>:
+                <pre className="tool-code-block" style={{ marginTop: 8 }}>{`export const metadata = {
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
 }`}</pre>
-            </li>
-            <li><strong>Next.js auto-detects</strong> favicon.ico and manifest.json in /public</li>
-          </ol>
+              </li>
+              <li><strong>Next.js auto-detects</strong> favicon.ico and manifest.json in /public</li>
+            </ol>
 
-          <h3>For WordPress</h3>
-          <ol>
-            <li><strong>Upload via admin:</strong> Appearance → Customize → Site Identity → Site Icon</li>
-            <li><strong>Or use FTP:</strong> Upload all files to /wp-content/themes/your-theme/ folder</li>
-            <li><strong>Or use plugin:</strong> "Favicon by RealFaviconGenerator" handles all sizes automatically</li>
-          </ol>
+            <h3>For WordPress</h3>
+            <ol>
+              <li><strong>Upload via admin:</strong> Appearance → Customize → Site Identity → Site Icon</li>
+              <li><strong>Or use FTP:</strong> Upload all files to /wp-content/themes/your-theme/ folder</li>
+              <li><strong>Or use plugin:</strong> &quot;Favicon by RealFaviconGenerator&quot; handles all sizes automatically</li>
+            </ol>
 
-          <h3>For React (Create React App)</h3>
-          <ol>
-            <li><strong>Replace files in /public folder:</strong> Delete existing favicon.ico, add new files</li>
-            <li><strong>Update index.html</strong> &lt;head&gt; with new &lt;link&gt; tags</li>
-            <li><strong>Restart dev server</strong> to see changes (Ctrl+C, then npm start)</li>
-          </ol>
-        </div>
+            <h3>For React (Create React App)</h3>
+            <ol>
+              <li><strong>Replace files in /public folder:</strong> Delete existing favicon.ico, add new files</li>
+              <li><strong>Update index.html</strong> &lt;head&gt; with new &lt;link&gt; tags</li>
+              <li><strong>Restart dev server</strong> to see changes (Ctrl+C, then npm start)</li>
+            </ol>
+          </ToolGuideSection>
 
-        <div className="card">
-          <h2>Best Practices for Favicon Design</h2>
+          <ToolGuideSection title="Best Practices for Favicon Design">
+            <h3>1. Start with High Resolution</h3>
+            <p>
+              <strong>Upload 512x512 or larger source image.</strong> Tool scales down to smaller sizes. Starting small (e.g., 64x64)
+              and scaling up creates blurry results. Always scale down, never up.
+            </p>
 
-          <h3>1. Start with High Resolution</h3>
-          <p>
-            <strong>Upload 512x512 or larger source image.</strong> Tool scales down to smaller sizes. Starting small (e.g., 64x64)
-            and scaling up creates blurry results. Always scale down, never up.
-          </p>
+            <h3>2. Use Square Aspect Ratio (1:1)</h3>
+            <p>
+              <strong>Favicons must be square.</strong> Rectangular logos get cropped. If your logo is wide, add padding to make it
+              square before generating. Use <a href="/tools/aspect-pad">Aspect Ratio Padder</a> to add padding automatically.
+            </p>
 
-          <h3>2. Use Square Aspect Ratio (1:1)</h3>
-          <p>
-            <strong>Favicons must be square.</strong> Rectangular logos get cropped. If your logo is wide, add padding to make it
-            square before generating. Use <a href="/tools/aspect-pad">Aspect Ratio Padder</a> to add padding automatically.
-          </p>
+            <h3>3. Keep Design Simple</h3>
+            <p><strong>Avoid tiny text and complex details.</strong> At 16x16 pixels, text becomes unreadable. Use:</p>
+            <ul>
+              <li>Simple logo mark (icon only, not full logo with text)</li>
+              <li>Single letter or monogram</li>
+              <li>Bold, recognizable shape</li>
+              <li>High contrast (dark on light or light on dark)</li>
+            </ul>
+            <p><strong>Bad examples:</strong> Full company name text, intricate patterns, thin lines, multiple colors that blur together at small size.</p>
+            <p><strong>Good examples:</strong> Apple&apos;s apple, Twitter&apos;s bird, single letter in bold font, simple geometric shape.</p>
 
-          <h3>3. Keep Design Simple</h3>
-          <p><strong>Avoid tiny text and complex details.</strong> At 16x16 pixels, text becomes unreadable. Use:</p>
-          <ul>
-            <li>Simple logo mark (icon only, not full logo with text)</li>
-            <li>Single letter or monogram</li>
-            <li>Bold, recognizable shape</li>
-            <li>High contrast (dark on light or light on dark)</li>
-          </ul>
-          <p><strong>Bad examples:</strong> Full company name text, intricate patterns, thin lines, multiple colors that blur together at small size.</p>
-          <p><strong>Good examples:</strong> Apple's apple, Twitter's bird, single letter in bold font, simple geometric shape.</p>
+            <h3>4. Test on Dark and Light Backgrounds</h3>
+            <p>
+              <strong>Some browsers use dark mode.</strong> If your favicon is dark (e.g., black logo), it disappears on dark tabs. Solutions:
+            </p>
+            <ul>
+              <li>Add light-colored border or outline</li>
+              <li>Use transparent background with balanced colors</li>
+              <li>Provide separate dark mode favicon (advanced—requires media query)</li>
+            </ul>
 
-          <h3>4. Test on Dark and Light Backgrounds</h3>
-          <p>
-            <strong>Some browsers use dark mode.</strong> If your favicon is dark (e.g., black logo), it disappears on dark tabs. Solutions:
-          </p>
-          <ul>
-            <li>Add light-colored border or outline</li>
-            <li>Use transparent background with balanced colors</li>
-            <li>Provide separate dark mode favicon (advanced—requires media query)</li>
-          </ul>
+            <h3>5. Use PNG or SVG Source</h3>
+            <p>
+              <strong>PNG (transparent) or SVG (vector) work best.</strong> JPG adds white backgrounds to transparent areas. If using JPG,
+              ensure background matches website theme color.
+            </p>
+          </ToolGuideSection>
 
-          <h3>5. Use PNG or SVG Source</h3>
-          <p>
-            <strong>PNG (transparent) or SVG (vector) work best.</strong> JPG adds white backgrounds to transparent areas. If using JPG,
-            ensure background matches website theme color.
-          </p>
-        </div>
+          <ToolGuideSection title="Troubleshooting">
+            <h3>Favicon Not Showing After Upload</h3>
+            <p><strong>Cause:</strong> Browser cache is showing old favicon.</p>
+            <p><strong>Fix:</strong></p>
+            <ul>
+              <li>Hard refresh page: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)</li>
+              <li>Clear browser cache: Settings → Privacy → Clear browsing data</li>
+              <li>Try different browser to confirm new favicon is correct</li>
+              <li>Wait 24 hours—browsers cache favicons aggressively</li>
+            </ul>
 
-        <div className="card">
-          <h2>Troubleshooting</h2>
+            <h3>Favicon Looks Blurry on Retina Displays</h3>
+            <p><strong>Cause:</strong> Only providing 16x16 size. Retina displays need 32x32 or larger.</p>
+            <p><strong>Fix:</strong> Ensure HTML includes both 16x16 and 32x32 &lt;link&gt; tags. Modern browsers automatically select appropriate size for display density.</p>
 
-          <h3>Favicon Not Showing After Upload</h3>
-          <p><strong>Cause:</strong> Browser cache is showing old favicon.</p>
-          <p><strong>Fix:</strong></p>
-          <ul>
-            <li>Hard refresh page: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)</li>
-            <li>Clear browser cache: Settings → Privacy → Clear browsing data</li>
-            <li>Try different browser to confirm new favicon is correct</li>
-            <li>Wait 24 hours—browsers cache favicons aggressively</li>
-          </ul>
+            <h3>iOS Home Screen Icon Looks Wrong</h3>
+            <p><strong>Cause:</strong> Missing apple-touch-icon.png or using wrong size.</p>
+            <p><strong>Fix:</strong> Upload apple-touch-icon.png (180x180) to root directory. Ensure &lt;link rel=&quot;apple-touch-icon&quot;&gt; is in &lt;head&gt;.</p>
 
-          <h3>Favicon Looks Blurry on Retina Displays</h3>
-          <p><strong>Cause:</strong> Only providing 16x16 size. Retina displays need 32x32 or larger.</p>
-          <p><strong>Fix:</strong> Ensure HTML includes both 16x16 and 32x32 &lt;link&gt; tags. Modern browsers automatically select appropriate size for display density.</p>
-
-          <h3>iOS Home Screen Icon Looks Wrong</h3>
-          <p><strong>Cause:</strong> Missing apple-touch-icon.png or using wrong size.</p>
-          <p><strong>Fix:</strong> Upload apple-touch-icon.png (180x180) to root directory. Ensure &lt;link rel="apple-touch-icon"&gt; is in &lt;head&gt;.</p>
-
-          <h3>PWA Icon Not Showing</h3>
-          <p><strong>Cause:</strong> manifest.json not linked or icons path incorrect in manifest.</p>
-          <p><strong>Fix:</strong> Verify manifest.json is in root directory, linked in &lt;head&gt;, and "icons" array contains correct paths (e.g., "/android-chrome-192x192.png").</p>
+            <h3>PWA Icon Not Showing</h3>
+            <p><strong>Cause:</strong> manifest.json not linked or icons path incorrect in manifest.</p>
+            <p><strong>Fix:</strong> Verify manifest.json is in root directory, linked in &lt;head&gt;, and &quot;icons&quot; array contains correct paths (e.g., &quot;/android-chrome-192x192.png&quot;).</p>
+          </ToolGuideSection>
         </div>
 
         <div className="card">

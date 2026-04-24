@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
+import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
   title: "Crop to 1080×1080, 1:1, 4:5, 16:9—Instagram & Social | PixCloak",
@@ -36,7 +37,7 @@ export default function Page() {
 
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>Free Image Cropper: Crop to 1:1, 4:3, 16:9 (No Upload)</h1>
+          <h1 className="page-hero-title">Free Image Cropper: Crop to 1:1, 4:3, 16:9 (No Upload)</h1>
 
           <h2>Quick Start</h2>
           <ol>
@@ -50,235 +51,226 @@ export default function Page() {
 
         <Client />
 
-        <div className="card">
-          <h2>Why Crop Images?</h2>
-          <p>
-            <strong>Social media platforms require specific aspect ratios for optimal display.</strong> Posting images with wrong ratios
-            results in automatic cropping by the platform—often cutting off faces, text, or important elements. Pre-cropping to exact
-            dimensions gives you full control over what viewers see.
-          </p>
+        <div className="tool-guide-stack">
+          <ToolGuideSection title="Why Crop Images?">
+            <p>
+              <strong>Social media platforms require specific aspect ratios for optimal display.</strong> Posting images with wrong ratios
+              results in automatic cropping by the platform—often cutting off faces, text, or important elements. Pre-cropping to exact
+              dimensions gives you full control over what viewers see.
+            </p>
 
-          <h3>What Happens Without Cropping</h3>
-          <ul>
-            <li><strong>Instagram feed:</strong> Vertical images get sides cropped; horizontal images get top/bottom cut off</li>
-            <li><strong>Facebook timeline:</strong> Wrong aspect ratio images display smaller or get auto-cropped awkwardly</li>
-            <li><strong>LinkedIn posts:</strong> Images exceeding 1.91:1 ratio get cropped, hiding top/bottom portions</li>
-            <li><strong>Twitter/X:</strong> Images taller than 2:1 get preview cropped—users must click to see full image</li>
-            <li><strong>Website banners:</strong> Uncropped images stretch or distort to fit container</li>
-          </ul>
-        </div>
+            <h3>What Happens Without Cropping</h3>
+            <ul>
+              <li><strong>Instagram feed:</strong> Vertical images get sides cropped; horizontal images get top/bottom cut off</li>
+              <li><strong>Facebook timeline:</strong> Wrong aspect ratio images display smaller or get auto-cropped awkwardly</li>
+              <li><strong>LinkedIn posts:</strong> Images exceeding 1.91:1 ratio get cropped, hiding top/bottom portions</li>
+              <li><strong>Twitter/X:</strong> Images taller than 2:1 get preview cropped—users must click to see full image</li>
+              <li><strong>Website banners:</strong> Uncropped images stretch or distort to fit container</li>
+            </ul>
+          </ToolGuideSection>
 
-        <div className="card">
-          <h2>Common Aspect Ratios for Social Media</h2>
+          <ToolGuideSection title="Common Aspect Ratios for Social Media">
+            <table className="tool-table">
+              <thead>
+                <tr>
+                  <th>Platform</th>
+                  <th>Post Type</th>
+                  <th>Aspect Ratio</th>
+                  <th>Pixel Size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Feed post (square)</td>
+                  <td>1:1</td>
+                  <td>1080x1080</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Feed post (portrait)</td>
+                  <td>4:5</td>
+                  <td>1080x1350</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Stories / Reels</td>
+                  <td>9:16</td>
+                  <td>1080x1920</td>
+                </tr>
+                <tr>
+                  <td>Facebook</td>
+                  <td>Timeline post</td>
+                  <td>1.91:1</td>
+                  <td>1200x628</td>
+                </tr>
+                <tr>
+                  <td>Facebook</td>
+                  <td>Stories</td>
+                  <td>9:16</td>
+                  <td>1080x1920</td>
+                </tr>
+                <tr>
+                  <td>LinkedIn</td>
+                  <td>Feed post</td>
+                  <td>1.91:1</td>
+                  <td>1200x627</td>
+                </tr>
+                <tr>
+                  <td>Twitter/X</td>
+                  <td>Timeline post</td>
+                  <td>16:9</td>
+                  <td>1200x675</td>
+                </tr>
+                <tr>
+                  <td>YouTube</td>
+                  <td>Thumbnail</td>
+                  <td>16:9</td>
+                  <td>1280x720</td>
+                </tr>
+                <tr>
+                  <td>Pinterest</td>
+                  <td>Pin (portrait)</td>
+                  <td>2:3</td>
+                  <td>1000x1500</td>
+                </tr>
+              </tbody>
+            </table>
+          </ToolGuideSection>
 
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginTop: '12px' }}>
-            <thead>
-              <tr style={{ background: '#f5f5f5' }}>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Platform</th>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Post Type</th>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Aspect Ratio</th>
-                <th style={{ padding: '8px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Pixel Size</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Instagram</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Feed post (square)</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1:1</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1080x1080</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Instagram</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Feed post (portrait)</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>4:5</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1080x1350</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Instagram</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Stories / Reels</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>9:16</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1080x1920</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Facebook</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Timeline post</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1.91:1</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1200x628</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Facebook</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Stories</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>9:16</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1080x1920</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>LinkedIn</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Feed post</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1.91:1</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1200x627</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Twitter/X</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Timeline post</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>16:9</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1200x675</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>YouTube</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Thumbnail</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>16:9</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1280x720</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Pinterest</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>Pin (portrait)</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>2:3</td>
-                <td style={{ padding: '8px', borderBottom: '1px solid #eee' }}>1000x1500</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+          <ToolGuideSection title="Understanding Aspect Ratios">
+            <h3>What is Aspect Ratio?</h3>
+            <p>
+              <strong>Aspect ratio is the proportional relationship between width and height.</strong> Written as width:height (e.g., 16:9).
+              A 1600×900 image and a 1920×1080 image both have 16:9 aspect ratio—same proportions, different pixel counts.
+            </p>
 
-        <div className="card">
-          <h2>Understanding Aspect Ratios</h2>
+            <h3>Common Aspect Ratios Explained</h3>
+            <ul>
+              <li>
+                <strong>1:1 (Square):</strong> Width = Height. Best for Instagram feed, profile pictures, avatars. Universal—looks
+                good everywhere. Neutral composition with no directional bias.
+              </li>
+              <li>
+                <strong>4:3 (Standard):</strong> Classic TV and computer monitor ratio. Slightly wider than tall. Good for product
+                photos, presentations, general web content. Balanced and familiar.
+              </li>
+              <li>
+                <strong>16:9 (Widescreen):</strong> HD video standard. YouTube thumbnails, website banners, Twitter images.
+                Panoramic feel—great for landscapes, group shots, cinematic content.
+              </li>
+              <li>
+                <strong>4:5 (Portrait):</strong> Instagram&apos;s portrait format. Taller than wide. Takes more vertical space in feed,
+                increasing visibility. Best for single-subject photos (person, product).
+              </li>
+              <li>
+                <strong>9:16 (Vertical):</strong> Mobile video format (TikTok, Instagram Stories/Reels). Full-screen on phones.
+                Ideal for short-form video thumbnails and vertical graphics.
+              </li>
+              <li>
+                <strong>2:3 (Classic Portrait):</strong> Pinterest standard. Traditional photo ratio. Works well for fashion,
+                recipes, infographics, and content meant for saving/bookmarking.
+              </li>
+            </ul>
+          </ToolGuideSection>
 
-          <h3>What is Aspect Ratio?</h3>
-          <p>
-            <strong>Aspect ratio is the proportional relationship between width and height.</strong> Written as width:height (e.g., 16:9).
-            A 1600×900 image and a 1920×1080 image both have 16:9 aspect ratio—same proportions, different pixel counts.
-          </p>
+          <ToolGuideSection title="How to Crop Images Effectively">
+            <h3>Step-by-Step Cropping Process</h3>
+            <ol>
+              <li>
+                <strong>Choose aspect ratio first:</strong> Know where you&apos;re posting before cropping. Check platform requirements.
+                Don&apos;t crop blindly and hope it fits later.
+              </li>
+              <li>
+                <strong>Preview on mobile:</strong> 80% of social media views happen on phones. What looks good on desktop may cut off
+                faces on mobile. Always check mobile preview.
+              </li>
+              <li>
+                <strong>Leave breathing room:</strong> Don&apos;t crop tight to edges. Leave 5-10% margin around important elements.
+                Prevents accidental cropping if platform algorithm adjusts display.
+              </li>
+              <li>
+                <strong>Center important elements:</strong> Faces, text, logos should be in center third of image. Edges are most
+                likely to get cut off by platform adjustments.
+              </li>
+              <li>
+                <strong>Test different crops:</strong> Try multiple versions with different focal points. A/B test to see which
+                performs better (higher engagement, clicks).
+              </li>
+            </ol>
 
-          <h3>Common Aspect Ratios Explained</h3>
-          <ul>
-            <li>
-              <strong>1:1 (Square):</strong> Width = Height. Best for Instagram feed, profile pictures, avatars. Universal—looks
-              good everywhere. Neutral composition with no directional bias.
-            </li>
-            <li>
-              <strong>4:3 (Standard):</strong> Classic TV and computer monitor ratio. Slightly wider than tall. Good for product
-              photos, presentations, general web content. Balanced and familiar.
-            </li>
-            <li>
-              <strong>16:9 (Widescreen):</strong> HD video standard. YouTube thumbnails, website banners, Twitter images.
-              Panoramic feel—great for landscapes, group shots, cinematic content.
-            </li>
-            <li>
-              <strong>4:5 (Portrait):</strong> Instagram's portrait format. Taller than wide. Takes more vertical space in feed,
-              increasing visibility. Best for single-subject photos (person, product).
-            </li>
-            <li>
-              <strong>9:16 (Vertical):</strong> Mobile video format (TikTok, Instagram Stories/Reels). Full-screen on phones.
-              Ideal for short-form video thumbnails and vertical graphics.
-            </li>
-            <li>
-              <strong>2:3 (Classic Portrait):</strong> Pinterest standard. Traditional photo ratio. Works well for fashion,
-              recipes, infographics, and content meant for saving/bookmarking.
-            </li>
-          </ul>
-        </div>
+            <h3>Visual Composition Tips</h3>
+            <ul>
+              <li><strong>Rule of thirds:</strong> Place subject at intersection of imaginary 3×3 grid (not dead center)</li>
+              <li><strong>Headroom:</strong> Leave space above people&apos;s heads—don&apos;t crop at hairline</li>
+              <li><strong>Text safety:</strong> Keep text away from edges—minimum 10% margin from all sides</li>
+              <li><strong>Horizon line:</strong> For landscapes, place horizon at top or bottom third (not middle)</li>
+            </ul>
+          </ToolGuideSection>
 
-        <div className="card">
-          <h2>How to Crop Images Effectively</h2>
+          <ToolGuideSection title="Common Cropping Mistakes">
+            <h3>1. Cropping After Resizing</h3>
+            <p>
+              <strong>Wrong order:</strong> Resize → Crop results in quality loss.<br />
+              <strong>Correct order:</strong> Crop → Resize preserves maximum quality.
+            </p>
+            <p>
+              When you resize then crop, you&apos;re processing pixels twice. First resize compresses entire image, then crop discards
+              some pixels—wasting processing and losing quality. Crop first to keep only what you need, then resize for optimal results.
+            </p>
 
-          <h3>Step-by-Step Cropping Process</h3>
-          <ol>
-            <li>
-              <strong>Choose aspect ratio first:</strong> Know where you're posting before cropping. Check platform requirements.
-              Don't crop blindly and hope it fits later.
-            </li>
-            <li>
-              <strong>Preview on mobile:</strong> 80% of social media views happen on phones. What looks good on desktop may cut off
-              faces on mobile. Always check mobile preview.
-            </li>
-            <li>
-              <strong>Leave breathing room:</strong> Don't crop tight to edges. Leave 5-10% margin around important elements.
-              Prevents accidental cropping if platform algorithm adjusts display.
-            </li>
-            <li>
-              <strong>Center important elements:</strong> Faces, text, logos should be in center third of image. Edges are most
-              likely to get cut off by platform adjustments.
-            </li>
-            <li>
-              <strong>Test different crops:</strong> Try multiple versions with different focal points. A/B test to see which
-              performs better (higher engagement, clicks).
-            </li>
-          </ol>
+            <h3>2. Using Wrong Aspect Ratio</h3>
+            <p>
+              <strong>Consequence:</strong> Platform auto-crops your image unpredictably—faces, text, logos get cut off.
+            </p>
+            <p>
+              <strong>Fix:</strong> Always verify platform requirements before cropping. Each platform has preferred ratios. A single
+              image may need multiple crops for different platforms (1:1 for Instagram, 16:9 for Twitter, 2:3 for Pinterest).
+            </p>
 
-          <h3>Visual Composition Tips</h3>
-          <ul>
-            <li><strong>Rule of thirds:</strong> Place subject at intersection of imaginary 3×3 grid (not dead center)</li>
-            <li><strong>Headroom:</strong> Leave space above people's heads—don't crop at hairline</li>
-            <li><strong>Text safety:</strong> Keep text away from edges—minimum 10% margin from all sides</li>
-            <li><strong>Horizon line:</strong> For landscapes, place horizon at top or bottom third (not middle)</li>
-          </ul>
-        </div>
+            <h3>3. Cropping Too Tight</h3>
+            <p>
+              <strong>Problem:</strong> No margin around subject—looks cramped, unprofessional.
+            </p>
+            <p>
+              <strong>Fix:</strong> Leave 10-15% negative space around main subject. Gives image breathing room and prevents
+              accidental detail loss if viewer&apos;s device has different screen aspect ratio.
+            </p>
 
-        <div className="card">
-          <h2>Common Cropping Mistakes</h2>
+            <h3>4. Cutting Off Faces</h3>
+            <p>
+              <strong>Problem:</strong> Cropping through forehead or chin in profile/group shots.
+            </p>
+            <p>
+              <strong>Fix:</strong> Include full head (hairline to chin) plus 20% space above. If multiple people, ensure all faces
+              are 100% visible—even if that means zooming out and showing more background.
+            </p>
+          </ToolGuideSection>
 
-          <h3>1. Cropping After Resizing</h3>
-          <p>
-            <strong>Wrong order:</strong> Resize → Crop results in quality loss.<br />
-            <strong>Correct order:</strong> Crop → Resize preserves maximum quality.
-          </p>
-          <p>
-            When you resize then crop, you're processing pixels twice. First resize compresses entire image, then crop discards
-            some pixels—wasting processing and losing quality. Crop first to keep only what you need, then resize for optimal results.
-          </p>
+          <ToolGuideSection title="Workflow Best Practices">
+            <h3>For Multiple Platform Posting</h3>
+            <ol>
+              <li><strong>Start with highest resolution original</strong> (4K or camera RAW if available)</li>
+              <li><strong>Crop to largest format first</strong> (e.g., 16:9 widescreen)</li>
+              <li><strong>Create additional crops</strong> from same high-res original (1:1, 4:5, etc.)</li>
+              <li><strong>Compress after cropping</strong> using <a href="/compress">Image Compressor</a></li>
+              <li><strong>Name files by platform</strong> (e.g., post-instagram.jpg, post-linkedin.jpg)</li>
+            </ol>
 
-          <h3>2. Using Wrong Aspect Ratio</h3>
-          <p>
-            <strong>Consequence:</strong> Platform auto-crops your image unpredictably—faces, text, logos get cut off.
-          </p>
-          <p>
-            <strong>Fix:</strong> Always verify platform requirements before cropping. Each platform has preferred ratios. A single
-            image may need multiple crops for different platforms (1:1 for Instagram, 16:9 for Twitter, 2:3 for Pinterest).
-          </p>
+            <h3>Batch Processing Multiple Images</h3>
+            <p>
+              <strong>For consistent branding across posts:</strong> Use same aspect ratio and crop position for all images in a series.
+              Upload multiple images, apply same crop template, download as ZIP. Maintains visual consistency in feed/gallery view.
+            </p>
 
-          <h3>3. Cropping Too Tight</h3>
-          <p>
-            <strong>Problem:</strong> No margin around subject—looks cramped, unprofessional.
-          </p>
-          <p>
-            <strong>Fix:</strong> Leave 10-15% negative space around main subject. Gives image "breathing room" and prevents
-            accidental detail loss if viewer's device has different screen aspect ratio.
-          </p>
-
-          <h3>4. Cutting Off Faces</h3>
-          <p>
-            <strong>Problem:</strong> Cropping through forehead or chin in profile/group shots.
-          </p>
-          <p>
-            <strong>Fix:</strong> Include full head (hairline to chin) plus 20% space above. If multiple people, ensure all faces
-            are 100% visible—even if that means zooming out and showing more background.
-          </p>
-        </div>
-
-        <div className="card">
-          <h2>Workflow Best Practices</h2>
-
-          <h3>For Multiple Platform Posting</h3>
-          <ol>
-            <li><strong>Start with highest resolution original</strong> (4K or camera RAW if available)</li>
-            <li><strong>Crop to largest format first</strong> (e.g., 16:9 widescreen)</li>
-            <li><strong>Create additional crops</strong> from same high-res original (1:1, 4:5, etc.)</li>
-            <li><strong>Compress after cropping</strong> using <a href="/compress">Image Compressor</a></li>
-            <li><strong>Name files by platform</strong> (e.g., post-instagram.jpg, post-linkedin.jpg)</li>
-          </ol>
-
-          <h3>Batch Processing Multiple Images</h3>
-          <p>
-            <strong>For consistent branding across posts:</strong> Use same aspect ratio and crop position for all images in a series.
-            Upload multiple images, apply same crop template, download as ZIP. Maintains visual consistency in feed/gallery view.
-          </p>
-
-          <h3>Quality Preservation</h3>
-          <ul>
-            <li><strong>Always crop before compressing</strong>—not after</li>
-            <li><strong>Keep original files</strong> as backup for future re-crops</li>
-            <li><strong>Use PNG for images with text</strong> (avoids JPEG compression artifacts around letters)</li>
-            <li><strong>Use JPG for photos</strong> (smaller file size, sufficient quality)</li>
-          </ul>
+            <h3>Quality Preservation</h3>
+            <ul>
+              <li><strong>Always crop before compressing</strong>—not after</li>
+              <li><strong>Keep original files</strong> as backup for future re-crops</li>
+              <li><strong>Use PNG for images with text</strong> (avoids JPEG compression artifacts around letters)</li>
+              <li><strong>Use JPG for photos</strong> (smaller file size, sufficient quality)</li>
+            </ul>
+          </ToolGuideSection>
         </div>
 
         <div className="card">
