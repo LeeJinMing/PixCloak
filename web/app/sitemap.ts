@@ -85,6 +85,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${base}/tools/rotate-flip`,
+      lastModified: toolsUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
+    {
+      url: `${base}/tools/heic-converter`,
+      lastModified: toolsUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
+    {
+      url: `${base}/tools/pdf-to-image`,
+      lastModified: toolsUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.72,
+    },
+    {
       url: `${base}/tools/exif-checker`,
       lastModified: toolsUpdated,
       changeFrequency: "monthly" as const,

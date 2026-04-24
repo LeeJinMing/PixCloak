@@ -35,12 +35,14 @@ export default function ToolsPage() {
 
   const toolsByCategory = {
     'Format & Conversion': [
+      { href: '/tools/heic-converter', title: 'HEIC to JPG / WebP', desc: 'Convert iPhone HEIC/HEIF to JPEG or WebP. Batch + ZIP.' },
       { href: '/tools/png-jpg-converter', title: 'PNG ↔ JPG Converter', desc: 'Convert between PNG and JPG with quality control.' },
       { href: '/tools/webp-converter', title: 'WebP Converter', desc: 'Convert to WebP—25-35% smaller than JPG. Batch + ZIP.' },
       { href: '/tools/dataurl-alt', title: 'Data URL Converter', desc: 'Convert images to Base64 data URLs with alt suggestions.' },
     ],
     'Resize & Crop': [
       { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to preset or custom dimensions. Contain/Cover/Stretch modes.' },
+      { href: '/tools/rotate-flip', title: 'Rotate & Flip', desc: 'Rotate 90°/180°, mirror horizontally or vertically. Batch + ZIP.' },
       { href: '/tools/crop-templates', title: 'Crop Image', desc: 'Crop to exact aspect ratios (1:1, 4:3, 16:9, 4:5, 9:16, 2:3).' },
       { href: '/tools/aspect-pad', title: 'Aspect Ratio Padder', desc: 'Add padding to achieve target aspect ratio without cropping.' },
       { href: '/tools/trim-transparent', title: 'Trim Transparent', desc: 'Auto-trim transparent edges from PNG images.' },
@@ -64,6 +66,7 @@ export default function ToolsPage() {
       { href: '/tools/image-diff', title: 'Image Diff', desc: 'A/B slider comparison and pixel difference visualization.' },
     ],
     'Utilities': [
+      { href: '/tools/pdf-to-image', title: 'PDF to Image', desc: 'Rasterize PDF pages to PNG. Max pages cap, ZIP download.' },
       { href: '/tools/platform-checker', title: 'Platform Compliance', desc: 'Check if images meet platform KB/dimension requirements.' },
       { href: '/tools/dpi-converter', title: 'DPI/PPI Converter', desc: 'Calculate print size from pixels using DPI/PPI.' },
       { href: '/tools/batch-rename', title: 'Batch Rename', desc: 'Rename multiple images with patterns. Download as ZIP.' },

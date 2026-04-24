@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
   title: "Free WebP Converter: JPG/PNG to WebP (No Upload) | PixCloak",
-  description: "Convert images to WebP format—25-35% smaller than JPG. Works offline, no uploads. Batch convert and download ZIP. For faster websites, better SEO, free.",
+  description:
+    "Convert JPG/PNG to WebP—25-35% smaller than JPEG. Batch + ZIP, no upload, runs locally. For sites, social, and Core Web Vitals.",
   alternates: {
     canonical: "/tools/webp-converter",
     languages: { "x-default": "/tools/webp-converter", en: "/tools/webp-converter" },
@@ -45,6 +47,11 @@ export default function Page() {
             <li><strong>Download WebP files</strong> (individual or ZIP for batch)</li>
           </ol>
           <p><strong>Works locally. No uploads. Free, unlimited.</strong></p>
+          <p className="text-muted" style={{ marginBottom: 0 }}>
+            Need WebP from iPhone photos? Start with <Link href="/tools/heic-converter">HEIC → JPG/WebP</Link>. Shrink further on{" "}
+            <Link href="/compress">compress to target KB</Link>, or pair with <Link href="/tools/resize-image">resize</Link> and{" "}
+            <Link href="/tools/png-jpg-converter">PNG ↔ JPG</Link> when platforms want JPEG.
+          </p>
         </div>
 
         <Client />
@@ -234,6 +241,7 @@ export default function Page() {
           <h2>Related Tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <a href="/compress" className="pill">Compress Images</a>
+            <a href="/tools/heic-converter" className="pill">HEIC to JPG / WebP</a>
             <a href="/tools/png-jpg-converter" className="pill">PNG/JPG Converter</a>
             <a href="/tools/resize-image" className="pill">Resize Images</a>
             <a href="/tools/crop-templates" className="pill">Crop Images</a>

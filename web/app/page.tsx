@@ -46,6 +46,9 @@ export default function Home() {
           <a className="pill" href="/tools/resize-image">Resize image</a>
           <a className="pill" href="/tools/png-jpg-converter">PNG ↔ JPG</a>
           <a className="pill" href="/tools/webp-converter">WebP converter</a>
+          <a className="pill" href="/tools/rotate-flip">Rotate &amp; flip</a>
+          <a className="pill" href="/tools/heic-converter">HEIC to JPG</a>
+          <a className="pill" href="/tools/pdf-to-image">PDF to image</a>
           <a className="pill" href="/about">About / trust</a>
           <a className="pill" href="/research">Algorithm & privacy docs</a>
         </div>

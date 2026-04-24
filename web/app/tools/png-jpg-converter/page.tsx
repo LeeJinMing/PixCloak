@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
   title: "PNG to JPG & JPG to PNG Converter (No Upload) | PixCloak",
-  description: "Convert PNG to JPG or JPG to PNG in browser. Adjust quality, choose background color. Batch convert 100+ images. Works locally—no uploads. Free, unlimited.",
+  description:
+    "PNG to JPG and JPG to PNG in your browser—quality slider, background for transparency, batch + ZIP. No upload. Free, unlimited.",
   alternates: {
     canonical: "/tools/png-jpg-converter",
     languages: {
@@ -53,6 +55,10 @@ export default function PngJpgConverterPage() {
             <li><strong>Download</strong> converted images (single or ZIP for batch)</li>
           </ol>
           <p><strong>Works locally in browser. No uploads. Free, unlimited.</strong></p>
+          <p className="text-muted" style={{ marginBottom: 0 }}>
+            Apple <Link href="/tools/heic-converter">HEIC/HEIF</Link> is a separate step—decode there, then use PNG/JPG tools here. For smaller
+            web files after conversion, use <Link href="/tools/webp-converter">WebP</Link> or <Link href="/compress">target-KB compress</Link>.
+          </p>
         </div>
 
         <Client />
@@ -264,6 +270,7 @@ export default function PngJpgConverterPage() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <a href="/compress" className="pill">Compress Images</a>
             <a href="/tools/resize-image" className="pill">Resize Images</a>
+            <a href="/tools/heic-converter" className="pill">HEIC to JPG / WebP</a>
             <a href="/tools/webp-converter" className="pill">Convert to WebP</a>
             <a href="/tools/remove-bg-lite" className="pill">Remove Background</a>
             <a href="/guides/compress-to-500kb" className="pill">Compress to 500KB</a>

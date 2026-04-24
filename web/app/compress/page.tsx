@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import CompressClient from "./Client";
 import AdsenseUnit from "@/components/Adsense";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
@@ -8,7 +9,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 export const metadata: Metadata = {
   title: "Compress Images to 100KB/200KB/500KB—TinyPNG Alternative | PixCloak",
   description:
-    "Hit exact file sizes (100KB, 200KB, 500KB, 1MB) from JPG/PNG/WebP. Compress pictures without losing visible quality—local in your browser, no upload. Free, unlimited.",
+    "Hit exact file sizes (100KB, 200KB, 500KB, 1MB) from JPG/PNG/WebP. Batch ZIP, no upload—TinyPNG-style limits in your browser. Free, unlimited.",
   alternates: {
     canonical: "/compress",
     languages: {
@@ -54,7 +55,9 @@ export default function Page() {
       <p className="text-muted" style={{ maxWidth: 720, marginBottom: 12 }}>
         Dial in a target size for forms, job portals, and social limits. Processing stays in your browser—useful when you want a{" "}
         <strong>TinyPNG-style</strong> smaller file without sending photos to a third party. WebP and JPEG export; metadata stripped on
-        export.
+        export. From iPhone HEIC or PDF pages, convert first with{" "}
+        <Link href="/tools/heic-converter">HEIC to JPG/WebP</Link> or <Link href="/tools/pdf-to-image">PDF to image</Link>, then shrink
+        here; fix orientation with <Link href="/tools/rotate-flip">rotate &amp; flip</Link> before compressing if needed.
       </p>
       <Suspense fallback={null}>
         <div style={{ position: 'relative' }}>
@@ -74,8 +77,12 @@ export default function Page() {
             <h2 style={{ marginBottom: 8 }}>Related tools</h2>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
               <a href="/tools/resize-image" className="pill">Resize image</a>
+              <a href="/tools/rotate-flip" className="pill">Rotate &amp; flip</a>
               <a href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</a>
               <a href="/tools/webp-converter" className="pill">WebP converter</a>
+              <a href="/tools/heic-converter" className="pill">HEIC to JPG / WebP</a>
+              <a href="/tools/rotate-flip" className="pill">Rotate &amp; flip</a>
+              <a href="/tools/pdf-to-image" className="pill">PDF to image</a>
               <a href="/tools" className="pill">All tools</a>
             </div>
             <h2 style={{ marginBottom: 8 }}>Related guides</h2>
