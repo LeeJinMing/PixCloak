@@ -187,9 +187,19 @@ a {
   font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   line-height: 1.25;
   margin: 8px 0 12px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid var(--primary);
+  padding-bottom: 0;
+  border-bottom: none;
   max-width: 42rem;
+}
+/* Line below full wrapped title (border-bottom on multi-line h1 can sit wrong between lines). */
+.home-hero-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 10px;
+  background: var(--primary);
+  border-radius: 1px;
+  max-width: 100%;
 }
 .home-section-label {
   font-size: 12px;
