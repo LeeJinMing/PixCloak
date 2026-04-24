@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
       },
       // Repair reported 400-499 pages to valid equivalents (SEO-friendly 301)
       { source: "/tools/png-to-jpg", destination: "/tools/png-jpg-converter", permanent: true },
-      { source: "/tools/crop-image", destination: "/tools/resize-image", permanent: true },
+      { source: "/tools/crop-image", destination: "/tools/crop-templates", permanent: true },
 
       { source: "/guides/compress-to-100kb", destination: "/guides/compress-image-to-100kb", permanent: true },
       { source: "/guides/jpeg-vs-webp-for-websites", destination: "/guides/jpeg-vs-webp-size-quality", permanent: true },

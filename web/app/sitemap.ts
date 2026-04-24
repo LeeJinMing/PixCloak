@@ -73,6 +73,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${base}/tools/resize-image`,
+      lastModified: toolsUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
+    {
+      url: `${base}/tools/png-jpg-converter`,
+      lastModified: toolsUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
+    {
       url: `${base}/tools/exif-checker`,
       lastModified: toolsUpdated,
       changeFrequency: "monthly" as const,

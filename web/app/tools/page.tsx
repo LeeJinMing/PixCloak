@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 
 export default function ToolsPage() {
   const featuredTools = [
-    { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to 1920px, 1080px, 800px or custom. 3 fit modes. Batch + ZIP.', searches: '395k/mo' },
-    { href: '/tools/png-jpg-converter', title: 'PNG ↔ JPG Converter', desc: 'Convert between PNG and JPG. Adjust quality, choose background color.', searches: '544k/mo' },
-    { href: '/tools/remove-bg-lite', title: 'Remove Background', desc: 'Remove backgrounds by color. 100% local, no uploads. Free unlimited.', searches: '336k/mo' },
-    { href: '/compress', title: 'Image Compressor', desc: 'Compress to exact KB (100KB, 200KB, 500KB). Convert to WebP or JPEG.', searches: '1.2M/mo' },
-    { href: '/tools/crop-templates', title: 'Crop Image', desc: 'Crop to 1:1, 4:3, 16:9 for Instagram, Facebook, LinkedIn. Batch support.', searches: '80k/mo' },
-    { href: '/tools/favicon-pack', title: 'Favicon Generator', desc: 'Generate all favicon sizes + manifest.json. For web, iOS, Android, PWA.', searches: '58k/mo' },
+    { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to 1920px, 1080px, 800px or custom. 3 fit modes. Batch + ZIP.', highlight: 'Batch + ZIP · no upload' },
+    { href: '/tools/png-jpg-converter', title: 'PNG ↔ JPG Converter', desc: 'Convert between PNG and JPG. Adjust quality, choose background color.', highlight: 'Batch convert · no upload' },
+    { href: '/tools/remove-bg-lite', title: 'Remove Background', desc: 'Remove backgrounds by color. 100% local, no uploads. Free unlimited.', highlight: 'Runs locally' },
+    { href: '/compress', title: 'Image Compressor', desc: 'Compress to exact KB (100KB, 200KB, 500KB). Convert to WebP or JPEG.', highlight: 'Exact KB targets' },
+    { href: '/tools/crop-templates', title: 'Crop Image', desc: 'Crop to 1:1, 4:3, 16:9 for Instagram, Facebook, LinkedIn. Batch support.', highlight: 'Social presets' },
+    { href: '/tools/favicon-pack', title: 'Favicon Generator', desc: 'Generate all favicon sizes + manifest.json. For web, iOS, Android, PWA.', highlight: 'Full favicon set' },
   ];
 
   const toolsByCategory = {
@@ -97,7 +97,7 @@ export default function ToolsPage() {
         <div className="card">
           <h2>Featured Tools (Most Popular)</h2>
           <p style={{ fontSize: '14px', marginBottom: '16px' }}>
-            Our most-used tools for everyday image tasks. Millions of monthly searches, trusted by web developers, designers, and content creators.
+            High-intent picks for resize, format change, and size cuts. All run in your browser—no upload, no account.
           </p>
           <div style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
             {featuredTools.map((tool, i) => (
@@ -105,7 +105,7 @@ export default function ToolsPage() {
             <div style={{ display: 'grid', gap: 6 }}>
                   <div style={{ fontWeight: 700, fontSize: '16px' }}>{tool.title}</div>
                   <div className="text-muted" style={{ fontSize: '14px', lineHeight: '1.5' }}>{tool.desc}</div>
-                  <div style={{ fontSize: '12px', color: '#22c55e', fontWeight: 600 }}>{tool.searches} searches</div>
+                  <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600 }}>{tool.highlight}</div>
                 </div>
               </a>
             ))}

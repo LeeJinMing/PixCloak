@@ -71,6 +71,13 @@ export default function Page() {
             <AdsenseUnit format="auto" />
           </div>
           <div className="card" style={{ marginTop: 16 }}>
+            <h2 style={{ marginBottom: 8 }}>Related tools</h2>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+              <a href="/tools/resize-image" className="pill">Resize image</a>
+              <a href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</a>
+              <a href="/tools/webp-converter" className="pill">WebP converter</a>
+              <a href="/tools" className="pill">All tools</a>
+            </div>
             <h2 style={{ marginBottom: 8 }}>Related guides</h2>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               <a href="/guides/compress-image-to-100kb" className="pill">Compress to 100 KB</a>

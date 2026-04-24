@@ -140,7 +140,7 @@ const generateBenchmarkData = () => {
 };
 
 // 生成CSV格式的指标数据
-const generateMetricsCSV = (benchmarkData: any[]) => {
+const generateMetricsCSV = (benchmarkData) => {
   const headers = [
     "Category",
     "Sample Name",
@@ -180,7 +180,7 @@ const generateMetricsCSV = (benchmarkData: any[]) => {
 };
 
 // 生成JSON格式的详细数据
-const generateDetailedJSON = (benchmarkData: any[]) => {
+const generateDetailedJSON = (benchmarkData) => {
   return {
     metadata: {
       generatedAt: new Date().toISOString(),

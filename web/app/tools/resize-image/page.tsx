@@ -311,8 +311,9 @@ export default function ResizeImagePage() {
           <h2>Related Tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <a href="/compress" className="pill">Compress Images</a>
-            <a href="/tools/crop-image" className="pill">Crop to Aspect Ratio</a>
-            <a href="/tools/png-to-jpg" className="pill">PNG to JPG</a>
+            <a href="/tools/crop-templates" className="pill">Crop to Aspect Ratio</a>
+            <a href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</a>
+            <a href="/tools/webp-converter" className="pill">WebP Converter</a>
             <a href="/guides/resize-to-1920" className="pill">Resize to 1920px Guide</a>
             <a href="/guides/compress-to-500kb" className="pill">Compress to 500KB</a>
           </div>

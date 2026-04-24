@@ -127,7 +127,7 @@ const LONG_TAIL_TEMPLATES = {
 };
 
 // 生成页面内容
-function generatePageContent(template: string, params: Record<string, any>) {
+function generatePageContent(template, params) {
   const baseUrl = "https://pixcloak.com";
 
   return `import type { Metadata } from "next";
@@ -189,7 +189,7 @@ export default function ${params.componentName}() {
           </p>
           <ul>
             ${params.benefits
-              .map((benefit: string) => `<li>${benefit}</li>`)
+              .map((benefit) => `<li>${benefit}</li>`)
               .join("")}
           </ul>
         </div>
@@ -197,14 +197,14 @@ export default function ${params.componentName}() {
         <div className="card">
           <h2>Step-by-Step Guide</h2>
           <ol>
-            ${params.steps.map((step: string) => `<li>${step}</li>`).join("")}
+            ${params.steps.map((step) => `<li>${step}</li>`).join("")}
           </ol>
         </div>
 
         <div className="card">
           <h2>Pro Tips</h2>
           <ul>
-            ${params.tips.map((tip: string) => `<li>${tip}</li>`).join("")}
+            ${params.tips.map((tip) => `<li>${tip}</li>`).join("")}
           </ul>
         </div>
 
@@ -213,7 +213,7 @@ export default function ${params.componentName}() {
           <div style={{ display: 'grid', gap: 12 }}>
             ${params.relatedTools
               .map(
-                (tool: any) => `
+                (tool) => `
               <a href="${tool.url}" style={{ 
                 display: 'block',
                 padding: '16px',
