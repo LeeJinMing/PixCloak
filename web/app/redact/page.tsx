@@ -51,10 +51,10 @@ export default function Page() {
         <div className="ad-rail" style={{ right: 0 }}>
           <AdsenseUnit format="auto" />
         </div>
-        <h1 style={{ margin: '8px 0' }}>
+        <h1 className="page-hero-title">
           Redact Image Online—Blur Faces, License Plates & Text (No Upload)
         </h1>
-        <p className="text-muted" style={{ maxWidth: 720, marginBottom: 12 }}>
+        <p className="text-muted page-hero-lede">
           Use blur or pixelation for faces and number plates, solid blocks for IDs and text. Redaction is stronger than a simple blur for
           compliance-style masking; everything stays on your device. EXIF/GPS is removed on export—good before sharing or publishing.
         </p>
@@ -63,6 +63,13 @@ export default function Page() {
           <AdsenseUnit format="auto" />
         </div>
         <div className="card" style={{ marginTop: 16 }}>
+          <h2 style={{ marginBottom: 8 }}>Related tools</h2>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+            <a href="/compress" className="pill">Compress</a>
+            <a href="/tools/exif-checker" className="pill">EXIF checker</a>
+            <a href="/tools/rotate-flip" className="pill">Rotate &amp; flip</a>
+            <a href="/tools" className="pill">All tools</a>
+          </div>
           <h2 style={{ marginBottom: 8 }}>Related guides</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <a href="/guides/blur-face-in-photo" className="pill">Blur faces in photos</a>

@@ -201,6 +201,29 @@ a {
   border-radius: 1px;
   max-width: 100%;
 }
+
+/* Tool/hub pages: same underline treatment as home hero */
+.page-hero-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  line-height: 1.25;
+  margin: 0 0 12px;
+  padding-bottom: 0;
+  border-bottom: none;
+  max-width: 48rem;
+}
+.page-hero-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 10px;
+  background: var(--primary);
+  border-radius: 1px;
+  max-width: 100%;
+}
+.page-hero-lede {
+  max-width: 48rem;
+  margin-bottom: 12px;
+}
 .home-section-label {
   font-size: 12px;
   font-weight: 700;

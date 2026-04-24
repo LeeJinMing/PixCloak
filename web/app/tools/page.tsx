@@ -86,10 +86,10 @@ export default function ToolsPage() {
         description="20+ free image tools—resize, convert, compress, crop, watermark. 100% local processing, no uploads."
       />
 
-    <div className="container" style={{ display: 'grid', gap: 12 }}>
+    <div style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-          <h1>Free Image Tools: Resize, Convert, Compress (No Upload)</h1>
-          <p style={{ fontSize: '16px', lineHeight: '1.6' }}>
+          <h1 className="page-hero-title">Free Image Tools: Resize, Convert, Compress (No Upload)</h1>
+          <p style={{ fontSize: '16px', lineHeight: '1.6', maxWidth: '48rem' }}>
             <strong>20+ professional image tools, all free and working locally in your browser.</strong> No uploads, no account required,
             no file size limits. Process images for websites, social media, photography, and design—everything happens on your device.
             Your images never leave your computer.

@@ -49,10 +49,10 @@ export default function Page() {
           { name: "Compress", url: "/compress" },
         ]}
       />
-      <h1 style={{ margin: '8px 0' }}>
+      <h1 className="page-hero-title">
         Image Compressor to Exact KB—100KB, 200KB, 500KB (No Upload)
       </h1>
-      <p className="text-muted" style={{ maxWidth: 720, marginBottom: 12 }}>
+      <p className="text-muted page-hero-lede">
         Dial in a target size for forms, job portals, and social limits. Processing stays in your browser—useful when you want a{" "}
         <strong>TinyPNG-style</strong> smaller file without sending photos to a third party. WebP and JPEG export; metadata stripped on
         export. From iPhone HEIC or PDF pages, convert first with{" "}
@@ -81,7 +81,6 @@ export default function Page() {
               <a href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</a>
               <a href="/tools/webp-converter" className="pill">WebP converter</a>
               <a href="/tools/heic-converter" className="pill">HEIC to JPG / WebP</a>
-              <a href="/tools/rotate-flip" className="pill">Rotate &amp; flip</a>
               <a href="/tools/pdf-to-image" className="pill">PDF to image</a>
               <a href="/tools" className="pill">All tools</a>
             </div>

@@ -114,10 +114,10 @@ export default function GuidesPage() {
         { name: 'Guides', url: '/guides' }
       ]} />
 
-      <div className="container" style={{ display: 'grid', gap: 16 }}>
+      <div style={{ display: 'grid', gap: 16 }}>
         <div className="card">
-          <h1>Image Processing Guides</h1>
-          <p className="text-muted">
+          <h1 className="page-hero-title">Image Processing Guides</h1>
+          <p className="text-muted" style={{ maxWidth: '48rem' }}>
             Master image compression, conversion, and optimization with our comprehensive guides.
             All tools work offline in your browser—no uploads required.
           </p>
@@ -171,13 +171,13 @@ export default function GuidesPage() {
           <p>New to image optimization? Start with these essential guides:</p>
           <div style={{ display: 'grid', gap: 12, marginTop: 16 }}>
             <Link href="/guides/complete-image-compression-guide" className="pill">
-              📚 Complete Compression Guide
+              Complete compression guide
             </Link>
             <Link href="/guides/how-to-compress-image-without-losing-quality" className="pill">
-              🎯 Quality vs Size Balance
+              Quality vs size balance
             </Link>
             <Link href="/guides/platform-image-limits" className="pill">
-              📱 Platform Requirements
+              Platform requirements
             </Link>
           </div>
         </div>
