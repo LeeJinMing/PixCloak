@@ -117,7 +117,7 @@ export default function GuidesPage() {
       <div style={{ display: 'grid', gap: 16 }}>
         <div className="card">
           <h1 className="page-hero-title">Image Processing Guides</h1>
-          <p className="text-muted" style={{ maxWidth: '48rem' }}>
+          <p className="text-muted">
             Master image compression, conversion, and optimization with our comprehensive guides.
             All tools work offline in your browser—no uploads required.
           </p>

@@ -189,7 +189,7 @@ a {
   margin: 8px 0 12px;
   padding-bottom: 0;
   border-bottom: none;
-  max-width: 42rem;
+  max-width: none;
 }
 /* Line below full wrapped title (border-bottom on multi-line h1 can sit wrong between lines). */
 .home-hero-title::after {
@@ -209,7 +209,7 @@ a {
   margin: 0 0 12px;
   padding-bottom: 0;
   border-bottom: none;
-  max-width: 48rem;
+  max-width: none;
 }
 .page-hero-title::after {
   content: "";
@@ -221,7 +221,7 @@ a {
   max-width: 100%;
 }
 .page-hero-lede {
-  max-width: 48rem;
+  max-width: none;
   margin-bottom: 12px;
 }
 .home-section-label {
