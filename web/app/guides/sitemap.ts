@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { LONG_TAIL_SLUGS } from "@/lib/longTailGuides";
 
+/** Sole sitemap for /guides and /guides/* (see robots.ts + root app/sitemap.ts). */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = (
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixcloak.com"
