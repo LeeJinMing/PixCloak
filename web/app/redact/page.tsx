@@ -36,13 +36,29 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Suspense fallback={null}>
+    <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
           { name: "Redact", url: "/redact" },
         ]}
       />
+      <SoftwareAppJsonLd
+        name="PixCloak Redact"
+        url="/redact"
+        description="Redact images locally: blur or pixelate faces and license plates, black out text, strip EXIF/GPS. No server upload."
+        image="/og.png"
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Does this upload my images?", answer: "No. Everything runs locally in your browser; files never leave your device." },
+          { question: "Can I blur faces and license plates online for free?", answer: "Yes. Draw blur or pixelate regions over faces, plates (number plates), or other sensitive areas, then export. No account and no upload." },
+          { question: "Redact vs blur license plate—which should I use?", answer: "Blur or heavy pixelation hides detail for casual viewers; solid black boxes are stronger when you need obvious irreversible masking. This tool supports both styles." },
+          { question: "Is this an image redaction tool for compliance?", answer: "It helps you mask sensitive regions locally before sharing. You remain responsible for your process and legal requirements; the tool keeps files on-device for privacy." },
+          { question: "How do I remove EXIF/GPS?", answer: "Export from the tool; exports are stripped of metadata including EXIF and GPS coordinates." },
+        ]}
+      />
+      <Suspense fallback={null}>
       <div style={{ position: 'relative' }}>
         <div className="ad-rail" style={{ left: 0 }}>
           <AdsenseUnit format="auto" />
@@ -78,23 +94,9 @@ export default function Page() {
             <a href="/guides/remove-gps-data-from-photos" className="pill">Remove GPS/EXIF</a>
           </div>
         </div>
-        <SoftwareAppJsonLd
-          name="PixCloak Redact"
-          url="/redact"
-          description="Redact images locally: blur or pixelate faces and license plates, black out text, strip EXIF/GPS. No server upload."
-          image="/og.png"
-        />
-        <FaqJsonLd
-          items={[
-            { question: "Does this upload my images?", answer: "No. Everything runs locally in your browser; files never leave your device." },
-            { question: "Can I blur faces and license plates online for free?", answer: "Yes. Draw blur or pixelate regions over faces, plates (number plates), or other sensitive areas, then export. No account and no upload." },
-            { question: "Redact vs blur license plate—which should I use?", answer: "Blur or heavy pixelation hides detail for casual viewers; solid black boxes are stronger when you need obvious irreversible masking. This tool supports both styles." },
-            { question: "Is this an image redaction tool for compliance?", answer: "It helps you mask sensitive regions locally before sharing. You remain responsible for your process and legal requirements; the tool keeps files on-device for privacy." },
-            { question: "How do I remove EXIF/GPS?", answer: "Export from the tool; exports are stripped of metadata including EXIF and GPS coordinates." },
-          ]}
-        />
       </div>
-    </Suspense>
+      </Suspense>
+    </>
   );
 }
 
