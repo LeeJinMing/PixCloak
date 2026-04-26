@@ -3,7 +3,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Changelog & Updates | Latest Features & Improvements",
+  title: "PixCloak Changelog & Updates | Latest Features &",
   description: "Track all PixCloak updates, new features, and improvements. Subscribe to our RSS feed for instant notifications of new tools and enhancements.",
   alternates: {
     canonical: "/changelog",

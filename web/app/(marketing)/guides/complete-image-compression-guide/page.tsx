@@ -3,9 +3,8 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Complete Image Compression Guide (2026):... | PixCloak",
-  description:
-    "One guide for web and social: JPEG vs PNG vs WebP, quality vs KB, resize-then-compress, batch ZIP. Links to a free local compressor—no upload.",
+  title: "Complete Image Compression Guide (2026):...",
+  description: "One guide for web and social: JPEG vs PNG vs WebP, quality vs KB, resize-then-compress, batch ZIP. Links to a free local compressor—no upload.",
   alternates: {
     canonical: '/guides/complete-image-compression-guide',
     languages: {
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Complete Image Compression Guide (2026)",
-    description: "Compress images without losing quality. JPEG, PNG, WebP. Free tools & step-by-step guide.",
+    description: "Compress images without losing quality. JPEG, PNG, WebP. Free tools & step-by-step guide. Works locally in your browser, no uploads.",
   },
 };
 

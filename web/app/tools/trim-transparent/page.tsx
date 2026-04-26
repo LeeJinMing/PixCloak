@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Trim Transparent PNG Edges—Crop Empty Borders | PixCloak",
-  description:
-    "Auto-remove fully transparent margins from PNG and WebP with alpha. Smaller files, tighter sprites. Trim PNG transparent padding locally—no upload.",
+  title: "Trim Transparent PNG Edges—Crop Empty Borders",
+  description: "Auto-remove fully transparent margins from PNG and WebP with alpha. Smaller files, tighter sprites. Trim PNG transparent padding locally—no upload.",
   alternates: {
     canonical: "/tools/trim-transparent",
     languages: { "x-default": "/tools/trim-transparent", en: "/tools/trim-transparent" },
   },
   openGraph: {
     title: "Trim transparent PNG borders",
-    description: "Crop away empty alpha around icons and screenshots.",
+    description: "Crop away empty alpha around icons and screenshots. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/trim-transparent",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Trim transparent edges",
-    description: "Local PNG/WebP crop to content bounds.",
+    description: "Local PNG/WebP crop to content bounds. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

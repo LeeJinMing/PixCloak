@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy: Your Data Stays Local | PixCloak',
+  title: 'Privacy Policy: Your Data Stays Local',
   description: 'We design PixCloak with privacy‑first principles. All image processing happens locally in your browser—no uploads, minimal storage, and clear disclosures.',
   alternates: { canonical: '/privacy', languages: { 'x-default': '/privacy' } },
 };

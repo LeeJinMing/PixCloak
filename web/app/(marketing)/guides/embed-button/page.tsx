@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Embed “Compress to KB” Button (Link or Script) | PixCloak',
+  title: 'Embed “Compress to KB” Button (Link or Script)',
   description: 'Add a simple link or script‑enhanced button to open PixCloak with presets (KB, format, resize). Local processing—no uploads. Includes customizable styles...',
   alternates: { canonical: '/guides/embed-button', languages: { 'x-default': '/guides/embed-button', en: '/guides/embed-button' } },
 };

@@ -5,7 +5,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Free Watermark Tool: Add Text to Images (No... | PixCloak",
+  title: "Free Watermark Tool: Add Text to Images (No...",
   description: "Add text watermarks to images—customize position, opacity, font, color. Batch process and download ZIP. Works offline, no uploads. Protect copyright, free.",
   alternates: {
     canonical: "/tools/watermark",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free Watermark Tool: Add Text to Images",
-    description: "Add custom text watermarks. Batch process, download ZIP. Free, no uploads.",
+    description: "Add custom text watermarks. Batch process, download ZIP. Free, no uploads. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/watermark",
     type: "website",
   },

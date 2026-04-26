@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Social Media Image Size Limits (LinkedIn,... | PixCloak",
+  title: "Social Media Image Size Limits (LinkedIn,...",
   description: "Exact image size requirements for LinkedIn (8MB), Twitter (5MB), Instagram (30MB), Facebook (10MB). Compress to exact KB targets.",
   alternates: {
     canonical: '/guides/social-platform-kb',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Social Media Image Size Limits (LinkedIn, Twitter, Instagram)",
-    description: "Exact image size requirements for all social platforms. Compress to exact KB targets.",
+    description: "Exact image size requirements for all social platforms. Compress to exact KB targets. Works locally in your browser, no uploads.",
     url: "/guides/social-platform-kb",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Social Media Image Size Limits",
-    description: "LinkedIn, Twitter, Instagram limits. Compress to exact sizes.",
+    description: "LinkedIn, Twitter, Instagram limits. Compress to exact sizes. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

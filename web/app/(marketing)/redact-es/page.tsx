@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Ocultar en fotos (difuminar/EXIF) | PixCloak',
+  title: 'Ocultar en fotos (difuminar/EXIF)',
   description: 'Difumina caras, matrículas y texto; elimina EXIF/GPS al exportar. 100% local, sin subir archivos. Works locally in your browser, no uploads.',
   alternates: {
     canonical: '/redact-es',

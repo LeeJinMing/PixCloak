@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Compress Images Without Losing Quality... | PixCloak",
+  title: "How to Compress Images Without Losing Quality...",
   description: "Compress images without losing quality: resize to 1920px first, use JPEG 80% or WebP 75%, hit target KB. Works for photos, websites, email.",
   alternates: {
     canonical: '/guides/how-to-compress-image-without-losing-quality',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How to Compress Images Without Losing Quality",
-    description: "Resize to 1920px → JPEG 80% → Target KB. Free tool, no uploads. Takes 2 minutes.",
+    description: "Resize to 1920px → JPEG 80% → Target KB. Free tool, no uploads. Takes 2 minutes. Works locally in your browser, no uploads.",
   },
 };
 

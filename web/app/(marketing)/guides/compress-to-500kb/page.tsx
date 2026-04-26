@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Compress Images to 500KB (Free, High Quality) | PixCloak",
+  title: "Compress Images to 500KB (Free, High Quality)",
   description: "Reduce image file size to 500KB for websites, email attachments, and online forms. Maintains excellent quality for photos. No upload, no app download needed.",
   alternates: {
     canonical: '/guides/compress-to-500kb',
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Compress Images to 500KB (Free, High Quality)",
-    description: "Reduce image file size to 500KB for websites, email attachments, and online forms. Maintains excellent quality.",
+    description: "Reduce image file size to 500KB for websites, email attachments, and online forms. Maintains excellent quality. Works locally in your browser, no uploads.",
     url: "/guides/compress-to-500kb",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Compress Images to 500KB",
-    description: "High quality at 500KB. Perfect for websites and email. Free tool.",
+    description: "High quality at 500KB. Perfect for websites and email. Free tool. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 export default function GuideCompress500KB() {

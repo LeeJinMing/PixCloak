@@ -5,9 +5,8 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Resize Images to 1920px, 1080×1080, Custom PX—Batch | PixCloak",
-  description:
-    "Resize JPG/PNG/WebP to exact width/height or longest edge. Presets for web (1920px) and social (e.g. 1080 square). Batch + ZIP. Local processing—no upload.",
+  title: "Resize Images to 1920px, 1080×1080, Custom",
+  description: "Resize JPG/PNG/WebP to exact width/height or longest edge. Presets for web (1920px) and social (e.g. 1080 square). Batch + ZIP. Local processing—no upload.",
   alternates: {
     canonical: "/tools/resize-image",
     languages: {
@@ -17,14 +16,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free Image Resizer: Resize to Exact Dimensions (No Upload)",
-    description: "Resize to 1920px, 1080px, or custom dimensions. Batch processing. Works locally. Free, unlimited.",
+    description: "Resize to 1920px, 1080px, or custom dimensions. Batch processing. Works locally. Free, unlimited. Works locally in your browser, no uploads.",
     url: "/tools/resize-image",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Free Image Resizer: Resize to Exact Dimensions",
-    description: "Resize images locally in browser. No uploads. Batch processing. Free.",
+    description: "Resize images locally in browser. No uploads. Batch processing. Free. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

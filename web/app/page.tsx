@@ -303,9 +303,8 @@ export default function Home() {
 }
 
 export const metadata: Metadata = {
-  title: "PixCloak—Compress & Redact Images Locally (No Upload)",
-  description:
-    "Free browser tools: compress JPG/PNG/WebP to exact KB (TinyPNG-style, local-only), redact faces & license plates, strip EXIF. HEIC, PDF, rotate & flip, 20+ utilities—nothing uploaded.",
+  title: "PixCloak—Compress & Redact Images Locally (No",
+  description: "Free browser tools: compress JPG/PNG/WebP to exact KB (TinyPNG-style, local-only), redact faces & license plates, strip EXIF. HEIC, PDF, rotate & flip,...",
   alternates: {
     canonical: "/",
     languages: {
@@ -318,13 +317,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "PixCloak—local image compress & redact",
-    description: "Exact-KB compression and privacy redaction in your browser.",
+    description: "Exact-KB compression and privacy redaction in your browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "PixCloak—compress & redact locally",
-    description: "No-upload image tools for KB targets and privacy.",
+    description: "No-upload image tools for KB targets and privacy. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };

@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "PNG vs JPG: When to Use Each Format (Complete... | PixCloak",
+  title: "PNG vs JPG: When to Use Each Format (Complete...",
   description: "PNG for graphics/logos/text (lossless, transparency). JPG for photos (smaller files). Compare file sizes, quality, use cases. Free converter tool included.",
   alternates: {
     canonical: "/guides/png-vs-jpg-when-to-use-each",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "PNG vs JPG: When to Use Each Format (Complete Guide)",
-    description: "Learn when to use PNG vs JPG. Includes file size comparison and free converter.",
+    description: "Learn when to use PNG vs JPG. Includes file size comparison and free converter. Works locally in your browser, no uploads.",
     url: "/guides/png-vs-jpg-when-to-use-each",
     type: "article",
   },

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us: Questions & Support | PixCloak',
+  title: 'Contact Us: Questions & Support',
   description: 'Questions or feedback about PixCloak? Email support@pixcloak.com with your scenario and an example file (no private data). We reply within 1–2 business days.',
   alternates: { canonical: '/contact' },
 };

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Redimensionar por el lado más largo a 1920px | PixCloak',
+  title: 'Redimensionar por el lado más largo a 1920px',
   description: 'Reduce dimensiones a 1920px por el lado más largo y luego comprime a 200–800KB. Mantiene proporción y mejora velocidad de carga. Proceso local, sin subidas.',
   alternates: { canonical: '/guides/es-redimensionar-lado-mas-largo', languages: { es: '/guides/es-redimensionar-lado-mas-largo', en: '/guides/resize-longest-side' } },
 };

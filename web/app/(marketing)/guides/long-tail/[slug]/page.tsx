@@ -583,7 +583,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!guide) {
     return {
       title: "Page Not Found | PixCloak",
-      description: "The requested page could not be found.",
+      description: "The requested page could not be found. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     };
   }
 

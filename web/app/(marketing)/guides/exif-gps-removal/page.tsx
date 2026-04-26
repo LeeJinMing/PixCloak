@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Remove GPS & EXIF Data from Photos (Free, 2... | PixCloak",
+  title: "Remove GPS & EXIF Data from Photos (Free, 2...",
   description: "Strip location, camera info, and metadata from photos before sharing. Protects your privacy—prevents stalking and address leaks.",
   alternates: {
     canonical: '/guides/exif-gps-removal',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Remove GPS & EXIF Data from Photos (Free, 2 Minutes)",
-    description: "Strip location, camera info, and metadata from photos. Protects privacy—prevents stalking and address leaks.",
+    description: "Strip location, camera info, and metadata from photos. Protects privacy—prevents stalking and address leaks. Works locally in your browser, no uploads.",
     url: "/guides/exif-gps-removal",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Remove GPS & EXIF Data from Photos",
-    description: "Protect privacy. Strip location data. Works in browser, no upload.",
+    description: "Protect privacy. Strip location data. Works in browser, no upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

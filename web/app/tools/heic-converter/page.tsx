@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: 'HEIC to JPG & HEIC to WebP (No Upload) | PixCloak',
-  description:
-    'Convert iPhone HEIC/HEIF to JPEG or WebP in your browser. Adjustable quality, batch ZIP. Nothing uploaded—decoder runs locally after you start conversion.',
+  title: 'HEIC to JPG & HEIC to WebP (No Upload)',
+  description: 'Convert iPhone HEIC/HEIF to JPEG or WebP in your browser. Adjustable quality, batch ZIP. Nothing uploaded—decoder runs locally after you start conversion.',
   alternates: {
     canonical: '/tools/heic-converter',
     languages: { 'x-default': '/tools/heic-converter', en: '/tools/heic-converter' },
   },
   openGraph: {
     title: 'HEIC to JPG / WebP locally',
-    description: 'iPhone photos to JPEG or WebP. Batch, private.',
+    description: 'iPhone photos to JPEG or WebP. Batch, private. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
     url: '/tools/heic-converter',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'HEIC converter',
-    description: 'Local HEIC to JPG or WebP.',
+    description: 'Local HEIC to JPG or WebP. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
   },
 };
 

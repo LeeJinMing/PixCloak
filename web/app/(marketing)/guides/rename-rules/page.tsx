@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Batch Rename Rules (Prefix/Suffix, Keep Extension) | PixCloak',
+  title: 'Batch Rename Rules (Prefix/Suffix, Keep Extension)',
   description: 'Batch rename with prefix/suffix, keep extensions. Compress and download as ZIP with consistent naming. For organizing uploads and versioning. Works locally.',
   alternates: { canonical: '/guides/rename-rules', languages: { 'x-default': '/guides/rename-rules', en: '/guides/rename-rules' } },
 };

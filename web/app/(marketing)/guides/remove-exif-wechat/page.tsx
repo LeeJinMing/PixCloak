@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Remove EXIF from WeChat images (local) | PixCloak',
+  title: 'Remove EXIF from WeChat images (local)',
   description: 'Strip EXIF/GPS from WeChat images by exporting locally as JPEG/WebP—no uploads. Use original files when possible to avoid platform recompression.',
   alternates: {
     canonical: '/guides/remove-exif-wechat',

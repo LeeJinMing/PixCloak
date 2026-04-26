@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'JPEG vs WebP for LinkedIn: Feed vs Banners | PixCloak',
+  title: 'JPEG vs WebP for LinkedIn: Feed vs Banners',
   description: 'Use WebP for feed images and JPEG for banners with gradients. Resize longest side to 1920px; start near 500KB. Convert locally and preview—no uploads required.',
   alternates: {
     canonical: '/guides/jpeg-vs-webp-for-linkedin',

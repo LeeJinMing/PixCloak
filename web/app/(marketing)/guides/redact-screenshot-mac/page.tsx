@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Redact a Screenshot on Mac (Blur/Pixelate) | PixCloak",
+  title: "Redact a Screenshot on Mac (Blur/Pixelate)",
   description: "Censor sensitive parts of macOS screenshots by blurring or pixelating areas, then export without EXIF/GPS. Runs locally in your browser—no uploads or apps...",
   alternates: { canonical: "/guides/redact-screenshot-mac" },
 };

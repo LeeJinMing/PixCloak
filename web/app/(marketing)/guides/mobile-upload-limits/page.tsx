@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Upload Limits for iPhone & Android... | PixCloak",
+  title: "Image Upload Limits for iPhone & Android...",
   description: "Comprehensive list of mobile upload limits for forms, job applications, government portals. Reduce images to 200KB, 500KB, or 1MB for iPhone/Android.",
   alternates: {
     canonical: '/guides/mobile-upload-limits',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Image Upload Limits for iPhone & Android (200KB-5MB Guide)",
-    description: "Reduce images to 200KB, 500KB, or 1MB for mobile uploads. Works on iPhone, Android. No app download.",
+    description: "Reduce images to 200KB, 500KB, or 1MB for mobile uploads. Works on iPhone, Android. No app download. Works locally in your browser, no uploads.",
     url: "/guides/mobile-upload-limits",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mobile Upload Limits Guide",
-    description: "Hit exact KB targets. Works on iPhone, Android. Free tool.",
+    description: "Hit exact KB targets. Works on iPhone, Android. Free tool. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

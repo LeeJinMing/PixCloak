@@ -18,21 +18,19 @@ const LOCALE_LABEL: Record<LongTailLocale, string> = {
 };
 
 export const metadata: Metadata = {
-  title: "Long-tail image guides (platforms & use cases) | PixCloak",
-  description:
-    "Task-specific guides: compress to target KB, resize for social and forms, redact sensitive areas, strip EXIF, watermarks, sprites. Runs locally in your browser—no uploads.",
+  title: "Long-tail image guides (platforms & use cases)",
+  description: "Task-specific guides: compress to target KB, resize for social and forms, redact sensitive areas, strip EXIF, watermarks, sprites.",
   alternates: { canonical: "/guides/long-tail" },
   openGraph: {
     title: "Long-tail image guides",
-    description:
-      "Browse PixCloak guides by platform and file-size target. Privacy-first, offline-capable.",
+    description: "Browse PixCloak guides by platform and file-size target. Privacy-first, offline-capable. Works locally in your browser, no uploads.",
     url: "/guides/long-tail",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Long-tail image guides",
-    description: "Compress, resize, redact, and clean metadata for real-world upload limits.",
+    description: "Compress, resize, redact, and clean metadata for real-world upload limits. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

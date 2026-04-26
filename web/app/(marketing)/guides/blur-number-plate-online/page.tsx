@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Blur Number Plates in Photos (UK) | PixCloak",
+  title: "Blur Number Plates in Photos (UK)",
   description: "Pixelate or censor number plates (UK) with local processing—no uploads. Prefer pixelation for stronger privacy. Export JPG/WebP with EXIF/GPS removed.",
   alternates: { canonical: "/guides/blur-number-plate-online" },
 };

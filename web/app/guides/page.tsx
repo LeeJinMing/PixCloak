@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Guides: Compress, Convert, Remove EXIF | PixCloak",
+  title: "Image Guides: Compress, Convert, Remove EXIF",
   description: "Compress to 100KB-1MB, convert JPG/WebP, resize to 1920px, remove EXIF/GPS. Works offline in your browser—no uploads. For web, email, social media, and forms.",
   alternates: { canonical: "/guides" },
 };
@@ -11,48 +11,48 @@ export const metadata: Metadata = {
 const guideCategories = [
   {
     title: "Compression Guides",
-    description: "Learn how to compress images to specific file sizes",
+    description: "Learn how to compress images to specific file sizes Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     guides: [
-      { title: "Complete Image Compression Guide", url: "/guides/complete-image-compression-guide", description: "Master image compression with our comprehensive guide" },
-      { title: "Compress to 200KB", url: "/guides/compress-to-200kb", description: "Perfect for LinkedIn profiles and social media" },
-      { title: "Compress to 500KB", url: "/guides/compress-to-500kb", description: "Ideal for Instagram posts and web content" },
-      { title: "Compress to 1MB", url: "/guides/compress-to-1mb", description: "High quality for portfolios and presentations" },
+      { title: "Complete Image Compression Guide", url: "/guides/complete-image-compression-guide", description: "Master image compression with our comprehensive guide Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Compress to 200KB", url: "/guides/compress-to-200kb", description: "Perfect for LinkedIn profiles and social media Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Compress to 500KB", url: "/guides/compress-to-500kb", description: "Ideal for Instagram posts and web content Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Compress to 1MB", url: "/guides/compress-to-1mb", description: "High quality for portfolios and presentations Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
     ]
   },
   {
     title: "Format Conversion",
-    description: "Convert between different image formats",
+    description: "Convert between different image formats Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     guides: [
-      { title: "JPEG vs WebP", url: "/guides/jpeg-vs-webp-size-quality", description: "Choose the right format for your needs" },
-      { title: "Convert JPEG to WebP", url: "/guides/convert-jpeg-to-webp", description: "Reduce file size with modern formats" },
-      { title: "PNG vs JPG", url: "/guides/png-vs-jpg-when-to-use-each", description: "When to use PNG vs JPEG" },
+      { title: "JPEG vs WebP", url: "/guides/jpeg-vs-webp-size-quality", description: "Choose the right format for your needs Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Convert JPEG to WebP", url: "/guides/convert-jpeg-to-webp", description: "Reduce file size with modern formats Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "PNG vs JPG", url: "/guides/png-vs-jpg-when-to-use-each", description: "When to use PNG vs JPEG Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
     ]
   },
   {
     title: "Privacy & Security",
-    description: "Remove metadata and protect your privacy",
+    description: "Remove metadata and protect your privacy Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     guides: [
-      { title: "Remove EXIF Data", url: "/guides/exif-gps-removal", description: "Strip location and camera data from photos" },
-      { title: "Remove EXIF from iPhone", url: "/guides/remove-exif-iphone", description: "iPhone-specific EXIF removal guide" },
-      { title: "Privacy Compliance", url: "/guides/privacy-compliance", description: "GDPR and privacy best practices" },
+      { title: "Remove EXIF Data", url: "/guides/exif-gps-removal", description: "Strip location and camera data from photos Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Remove EXIF from iPhone", url: "/guides/remove-exif-iphone", description: "iPhone-specific EXIF removal guide Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Privacy Compliance", url: "/guides/privacy-compliance", description: "GDPR and privacy best practices Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
     ]
   },
   {
     title: "Platform Optimization",
-    description: "Optimize images for specific platforms",
+    description: "Optimize images for specific platforms Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     guides: [
-      { title: "Instagram Image Sizes", url: "/guides/how-to-resize-images-for-instagram", description: "Perfect dimensions for Instagram posts" },
-      { title: "LinkedIn Profile Photos", url: "/guides/compress-to-200kb", description: "Professional headshots for LinkedIn" },
-      { title: "Platform Image Limits", url: "/guides/platform-image-limits", description: "File size limits across platforms" },
+      { title: "Instagram Image Sizes", url: "/guides/how-to-resize-images-for-instagram", description: "Perfect dimensions for Instagram posts Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "LinkedIn Profile Photos", url: "/guides/compress-to-200kb", description: "Professional headshots for LinkedIn Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Platform Image Limits", url: "/guides/platform-image-limits", description: "File size limits across platforms Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
     ]
   },
   {
     title: "Advanced Techniques",
-    description: "Professional image optimization techniques",
+    description: "Professional image optimization techniques Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     guides: [
-      { title: "Batch Processing", url: "/guides/zip-batch-download", description: "Process multiple images at once" },
-      { title: "Image SEO", url: "/guides/image-seo-optimization", description: "Optimize images for search engines" },
-      { title: "Quality vs Size", url: "/guides/how-to-compress-image-without-losing-quality", description: "Balance quality and file size" },
+      { title: "Batch Processing", url: "/guides/zip-batch-download", description: "Process multiple images at once Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Image SEO", url: "/guides/image-seo-optimization", description: "Optimize images for search engines Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+      { title: "Quality vs Size", url: "/guides/how-to-compress-image-without-losing-quality", description: "Balance quality and file size Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
     ]
   }
 ];

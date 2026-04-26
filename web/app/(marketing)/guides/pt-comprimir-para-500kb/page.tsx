@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Comprimir imagens para 500KB (alta qualidade) | PixCloak',
+  title: 'Comprimir imagens para 500KB (alta qualidade)',
   description: 'Comprima para 500KB—ideal para blogs, e-mail, formulários. Redimensione para 1920px, escolha WebP/JPEG. Local no navegador, sem uploads. Baixe em ZIP.',
   alternates: {
     canonical: '/guides/pt-comprimir-para-500kb',

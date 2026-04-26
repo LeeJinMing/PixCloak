@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Create 200KB Profile Picture (LinkedIn/Jobs) | PixCloak",
+  title: "Create 200KB Profile Picture (LinkedIn/Jobs)",
   description: "Compress profile photos to exactly 200KB for LinkedIn, job applications, government portals. Maintains quality. Works on any device—no app download.",
   alternates: {
     canonical: '/guides/avatar-200kb',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Create Profile Picture at 200KB (LinkedIn, Job Sites)",
-    description: "Compress profile photos to exactly 200KB. Maintains quality. Works on any device.",
+    description: "Compress profile photos to exactly 200KB. Maintains quality. Works on any device. Works locally in your browser, no uploads.",
     url: "/guides/avatar-200kb",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Create 200KB Profile Picture",
-    description: "Perfect for LinkedIn, job sites. Free tool, no app download.",
+    description: "Perfect for LinkedIn, job sites. Free tool, no app download. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -4,12 +4,11 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'About PixCloak: Privacy‑First Image Toolkit',
-  description:
-    'Who we are: a browser-based image toolkit—compress to exact KB, redact, strip EXIF. AGPL core, no image uploads, links to research and privacy policy.',
+  description: 'Who we are: a browser-based image toolkit—compress to exact KB, redact, strip EXIF. AGPL core, no image uploads, links to research and privacy policy.',
   alternates: { canonical: '/about', languages: { 'x-default': '/about' } },
   openGraph: {
     title: 'About PixCloak',
-    description: 'Privacy-first, local image tools and guides.',
+    description: 'Privacy-first, local image tools and guides. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
     url: '/about',
     type: 'website',
   },

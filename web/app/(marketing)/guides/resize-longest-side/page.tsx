@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Resize Images to 1920px (Longest Side) | PixCloak",
+  title: "Resize Images to 1920px (Longest Side)",
   description: "Resize to 1920px longest side before compression. Reduces file size 50-70% with no quality loss. Keeps aspect ratio. Works offline—no uploads.",
   alternates: {
     canonical: '/guides/resize-longest-side',
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Resize Images to 1920px (Longest Side)",
-    description: "Resize images to 1920px for web and social. Keeps aspect ratio. No upload.",
+    description: "Resize images to 1920px for web and social. Keeps aspect ratio. No upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/guides/resize-longest-side",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Resize Images to 1920px (Longest Side)",
-    description: "Perfect for web. Keeps aspect ratio. Free tool, no upload.",
+    description: "Perfect for web. Keeps aspect ratio. Free tool, no upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 
@@ -67,7 +67,7 @@ export default function GuideResizeLongest() {
               '@context': 'https://schema.org',
               '@type': 'HowTo',
               name: 'Resize images by longest side (e.g., 1920px)',
-              description: 'Downscale images by setting the longest side to 1920px before compression to reduce size with minimal visual loss.',
+              description: 'Downscale images by setting the longest side to 1920px before compression to reduce size with minimal visual loss. Works locally in your browser, no uploads.',
               totalTime: 'PT1M',
               tool: [{ '@type': 'HowToTool', name: 'PixCloak /compress' }],
               step: [

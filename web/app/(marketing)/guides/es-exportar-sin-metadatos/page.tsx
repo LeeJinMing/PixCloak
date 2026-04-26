@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Exportar imágenes sin metadatos (eliminar... | PixCloak',
+  title: 'Exportar imágenes sin metadatos (eliminar...',
   description: 'Elimina EXIF/GPS en el navegador: abre /compress o /redact y exporta como JPEG/WebP/PNG para limpiar metadatos. Procesamiento local, sin subidas.',
   alternates: {
     canonical: '/guides/es-exportar-sin-metadatos',

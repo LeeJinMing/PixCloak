@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Privacy-First Architecture Guide | Technical Documentation",
-  description: "Comprehensive guide to PixCloak's privacy-first architecture, data flow, security measures, and privacy guarantees.",
+  title: "PixCloak Privacy-First Architecture Guide |",
+  description: "Comprehensive guide to PixCloak's privacy-first architecture, data flow, security measures, and privacy guarantees. Works locally in your browser, no uploads.",
   alternates: { canonical: "/research/docs/privacy-architecture" },
 };
 

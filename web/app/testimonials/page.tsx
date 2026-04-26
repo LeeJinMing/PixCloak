@@ -3,8 +3,8 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Real-World Test Cases & User Stories | Verified Results",
-  description: "Real user stories, test cases, and verified results from PixCloak's image compression tools. See how users solve actual problems with our privacy-first platform.",
+  title: "PixCloak Real-World Test Cases & User Stories |",
+  description: "Real user stories, test cases, and verified results from PixCloak's image compression tools. See how users solve actual problems with our privacy-first...",
   alternates: { canonical: "/testimonials" },
 };
 
@@ -104,7 +104,7 @@ const userStories = [
 const testCases = [
   {
     category: "Professional Use Cases",
-    description: "Real-world scenarios from professionals who rely on PixCloak for their work.",
+    description: "Real-world scenarios from professionals who rely on PixCloak for their work. Process images offline, privacy guaranteed.",
     cases: [
       {
         title: "LinkedIn Profile Optimization",
@@ -146,7 +146,7 @@ const testCases = [
   },
   {
     category: "E-commerce & Business",
-    description: "Business applications where image optimization directly impacts revenue and performance.",
+    description: "Business applications where image optimization directly impacts revenue and performance. Works locally in your browser, no uploads.",
     cases: [
       {
         title: "Product Catalog Optimization",
@@ -188,7 +188,7 @@ const testCases = [
   },
   {
     category: "Personal & Creative",
-    description: "Personal use cases where users need reliable image compression for various purposes.",
+    description: "Personal use cases where users need reliable image compression for various purposes. Works locally in your browser, no uploads.",
     cases: [
       {
         title: "Resume Photo Attachment",
@@ -233,7 +233,7 @@ const testCases = [
 const verificationMethods = [
   {
     method: "User Verification",
-    description: "All testimonials are verified through direct contact with users.",
+    description: "All testimonials are verified through direct contact with users. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     process: [
       "Contact user via email/phone",
       "Verify story details and results",
@@ -244,7 +244,7 @@ const verificationMethods = [
   },
   {
     method: "Technical Verification",
-    description: "Technical claims are verified through independent testing.",
+    description: "Technical claims are verified through independent testing. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     process: [
       "Reproduce user scenarios",
       "Measure performance metrics",
@@ -255,7 +255,7 @@ const verificationMethods = [
   },
   {
     method: "Third-Party Validation",
-    description: "Results are validated by independent third parties.",
+    description: "Results are validated by independent third parties. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     process: [
       "Submit to independent testers",
       "Provide test data and methodology",

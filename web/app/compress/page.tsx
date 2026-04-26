@@ -7,9 +7,8 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Compress Images to 100KB/200KB/500KB—TinyPNG Alternative | PixCloak",
-  description:
-    "Hit exact file sizes (100KB, 200KB, 500KB, 1MB) from JPG/PNG/WebP. Batch ZIP, no upload—TinyPNG-style limits in your browser. Free, unlimited.",
+  title: "Compress Images to 100KB/200KB/500KB—TinyPNG",
+  description: "Hit exact file sizes (100KB, 200KB, 500KB, 1MB) from JPG/PNG/WebP. Batch ZIP, no upload—TinyPNG-style limits in your browser. Free, unlimited.",
   alternates: {
     canonical: "/compress",
     languages: {
@@ -25,14 +24,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Image compressor to target KB (no upload)",
-    description: "Shrink photos for web, forms, and social. Exact KB targets, runs locally.",
+    description: "Shrink photos for web, forms, and social. Exact KB targets, runs locally. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/compress",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Compress to exact KB locally",
-    description: "TinyPNG-style limits without uploading your files.",
+    description: "TinyPNG-style limits without uploading your files. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
   // Disable Google Auto ads on this tool page; we render manual side rails & bottom units only
   other: {

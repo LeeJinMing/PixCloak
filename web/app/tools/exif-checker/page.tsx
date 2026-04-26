@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "EXIF & GPS Checker—Remove Metadata Locally | PixCloak",
-  description:
-    "Check JPEGs for EXIF and GPS location, then download a clean copy with metadata stripped. Runs in your browser—no upload. Useful before sharing (WeChat, iPhone, social).",
+  title: "EXIF & GPS Checker—Remove Metadata Locally",
+  description: "Check JPEGs for EXIF and GPS location, then download a clean copy with metadata stripped. Runs in your browser—no upload. Useful before sharing (WeChat,...",
   alternates: {
     canonical: "/tools/exif-checker",
     languages: { "x-default": "/tools/exif-checker" },
   },
   openGraph: {
     title: "EXIF/GPS checker—strip metadata locally",
-    description: "See if photos contain camera or location data; export without EXIF in one click.",
+    description: "See if photos contain camera or location data; export without EXIF in one click. Works locally in your browser, no uploads.",
     url: "/tools/exif-checker",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "EXIF & GPS checker (no upload)",
-    description: "Detect and remove photo metadata in your browser.",
+    description: "Detect and remove photo metadata in your browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

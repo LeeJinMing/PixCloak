@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'iPhone 照片去除 EXIF/GPS（本地处理）| PixCloak',
+  title: 'iPhone 照片去除 EXIF/GPS（本地处理，无上传，保护隐私）',
   description: '在浏览器内本地去除 iPhone 照片的 EXIF/GPS：打开 /compress 或 /redact，导出为 JPEG/WebP/PNG 即可清除元数据。支持验证与批量 ZIP。 Works locally in your browser, no uploads.',
   alternates: { canonical: '/guides/remove-exif-iphone-zh', languages: { zh: '/guides/remove-exif-iphone-zh', en: '/guides/remove-exif-iphone' } },
 };

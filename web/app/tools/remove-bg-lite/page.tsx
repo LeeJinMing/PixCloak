@@ -5,16 +5,15 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Remove Solid Background Free—White/Green Screen, No Upload | PixCloak",
-  description:
-    "Color-based background remover: click the backdrop, tune tolerance, export transparent PNG. Best for product shots and green screen—not AI hair edges. 100% local, unlimited.",
+  title: "Remove Solid Background Free—White/Green Screen,",
+  description: "Color-based background remover: click the backdrop, tune tolerance, export transparent PNG. Best for product shots and green screen—not AI hair edges.",
   alternates: {
     canonical: "/tools/remove-bg-lite",
     languages: { "x-default": "/tools/remove-bg-lite", en: "/tools/remove-bg-lite" },
   },
   openGraph: {
     title: "Free Background Remover: Remove BG (No Upload)",
-    description: "Remove background by color. Works locally. No uploads. Free, unlimited.",
+    description: "Remove background by color. Works locally. No uploads. Free, unlimited. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/remove-bg-lite",
     type: "website",
   },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Benchmarking Methodology | Performance Testing Guide",
+  title: "PixCloak Benchmarking Methodology | Performance",
   description: "Comprehensive methodology for benchmarking image compression performance, including test setup, metrics definition, and statistical analysis.",
   alternates: { canonical: "/research/docs/benchmarking-methodology" },
 };

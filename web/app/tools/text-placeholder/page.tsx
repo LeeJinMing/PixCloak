@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Text Placeholder Image Generator—YouTube, IG, OG Sizes | PixCloak",
-  description:
-    "Create simple labeled placeholder PNGs/JPGs for mockups: YouTube 1280×720, Instagram 1080×1080, Twitter 1200×675, and custom. Local export—no upload.",
+  title: "Text Placeholder Image Generator—YouTube, IG, OG",
+  description: "Create simple labeled placeholder PNGs/JPGs for mockups: YouTube 1280×720, Instagram 1080×1080, Twitter 1200×675, and custom. Local export—no upload.",
   alternates: { canonical: "/tools/text-placeholder", languages: { "x-default": "/tools/text-placeholder" } },
   openGraph: {
     title: "Text placeholder images",
-    description: "Preset canvas sizes for social mockups.",
+    description: "Preset canvas sizes for social mockups. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/text-placeholder",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Placeholder generator",
-    description: "Branded text cards for layouts.",
+    description: "Branded text cards for layouts. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

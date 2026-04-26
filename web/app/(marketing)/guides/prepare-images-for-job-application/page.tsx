@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Prepare Images for Job Applications (200KB/500KB) | PixCloak',
+  title: 'Prepare Images for Job Applications (200KB/500KB)',
   description: 'Pass HR portal limits quickly: 200KB profile, 500KB attachments. Resize ≤1920px, remove EXIF/GPS on export, and download locally without uploads.',
   alternates: { canonical: '/guides/prepare-images-for-job-application' },
 };

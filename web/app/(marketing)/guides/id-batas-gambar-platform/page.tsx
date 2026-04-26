@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Batas gambar per platform (KB & dimensi) | PixCloak',
+  title: 'Batas gambar per platform (KB & dimensi)',
   description: 'Avatar 200KB, postingan 500KB, sisi terpanjang 1920px. Preset cepat dan ekspor lokal tanpa unggah. Cocok untuk sosial, blog, dan formulir.',
   alternates: { canonical: '/guides/id-batas-gambar-platform', languages: { id: '/guides/id-batas-gambar-platform', en: '/guides/platform-image-limits' } },
 };

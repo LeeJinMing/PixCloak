@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: 'PDF to Image Online—Export Pages as PNG (No Upload) | PixCloak',
-  description:
-    'Turn PDF pages into PNG images in your browser. Set max pages and scale, download a ZIP. Runs locally—nothing uploaded. For slides, scans, and quick previews.',
+  title: 'PDF to Image Online—Export Pages as PNG (No',
+  description: 'Turn PDF pages into PNG images in your browser. Set max pages and scale, download a ZIP. Runs locally—nothing uploaded. For slides, scans, and quick previews.',
   alternates: {
     canonical: '/tools/pdf-to-image',
     languages: { 'x-default': '/tools/pdf-to-image', en: '/tools/pdf-to-image' },
   },
   openGraph: {
     title: 'PDF pages to PNG locally',
-    description: 'Rasterize up to 50 pages per run. ZIP download.',
+    description: 'Rasterize up to 50 pages per run. ZIP download. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
     url: '/tools/pdf-to-image',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PDF to image',
-    description: 'PNG per page in the browser.',
+    description: 'PNG per page in the browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
   },
 };
 

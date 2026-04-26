@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Ocultar em fotos (borrão/EXIF) | PixCloak',
+  title: 'Ocultar em fotos (borrão/EXIF)',
   description: 'Borre rostos, placas e texto; remova EXIF/GPS na exportação. 100% local, sem upload. Works locally in your browser, no uploads.',
   alternates: {
     canonical: '/redact-pt',

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Platform Image Limits (KB & Dimensions) | PixCloak',
+  title: 'Platform Image Limits (KB & Dimensions)',
   description: 'Common caps for avatars and posts: 200KB avatars, 500KB posts, 1920px longest side. Use quick presets to prepare images locally—no uploads, fast exports.',
   alternates: {
     canonical: '/guides/platform-image-limits',

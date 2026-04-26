@@ -3,8 +3,8 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Compression Benchmark & Quality Comparison | PixCloak",
-  description: "Compare image compression quality across different tools and settings. Download our benchmark dataset with SSIM/PSNR metrics, file size comparisons, and visual quality analysis.",
+  title: "Image Compression Benchmark & Quality Comparison",
+  description: "Compare image compression quality across different tools and settings. Download our benchmark dataset with SSIM/PSNR metrics, file size comparisons, and...",
   alternates: { canonical: "/benchmark", languages: { "x-default": "/benchmark" } },
 };
 
@@ -113,15 +113,15 @@ const benchmarkData = [
 
 const methodology = {
   tools: [
-    { name: "PixCloak", description: "Our local browser-based compressor with WebP and JPEG support" },
-    { name: "TinyPNG", description: "Popular online PNG/JPEG compressor using smart lossy compression" },
-    { name: "Squoosh", description: "Google's WebP compressor with various quality settings" }
+    { name: "PixCloak", description: "Our local browser-based compressor with WebP and JPEG support Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+    { name: "TinyPNG", description: "Popular online PNG/JPEG compressor using smart lossy compression Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+    { name: "Squoosh", description: "Google's WebP compressor with various quality settings Process images offline in your browser. 100% free, no uploads, privacy guaranteed." }
   ],
   metrics: [
-    { name: "SSIM", description: "Structural Similarity Index - measures perceptual quality (0-1, higher is better)" },
-    { name: "PSNR", description: "Peak Signal-to-Noise Ratio - measures image fidelity (higher is better)" },
-    { name: "File Size", description: "Compressed file size in KB" },
-    { name: "Quality", description: "Compression quality setting used (where applicable)" }
+    { name: "SSIM", description: "Structural Similarity Index - measures perceptual quality (0-1, higher is better) Works locally in your browser, no uploads." },
+    { name: "PSNR", description: "Peak Signal-to-Noise Ratio - measures image fidelity (higher is better) Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+    { name: "File Size", description: "Compressed file size in KB Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
+    { name: "Quality", description: "Compression quality setting used (where applicable) Process images offline in your browser. 100% free, no uploads, privacy guaranteed." }
   ],
   testConditions: [
     "All tests performed on the same hardware (Intel i7, 16GB RAM)",

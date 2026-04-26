@@ -3,7 +3,7 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Blur Faces in Photos (Free, No App) | PixCloak",
+  title: "Blur Faces in Photos (Free, No App)",
   description: "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS.",
   alternates: {
     canonical: "/guides/blur-face-in-photo",
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "How to Blur Faces in Photos (Free, No App Needed)",
-    description: "Protect privacy by blurring faces in photos before sharing. Works on iPhone, Android, and desktop—no app download.",
+    description: "Protect privacy by blurring faces in photos before sharing. Works on iPhone, Android, and desktop—no app download. Works locally in your browser, no uploads.",
     url: "/guides/blur-face-in-photo",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Blur Faces in Photos",
-    description: "Protect privacy. Works on iPhone, Android, desktop. No app download needed.",
+    description: "Protect privacy. Works on iPhone, Android, desktop. No app download needed. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "OG Image Generator 1200×630—Facebook, X, LinkedIn Preview | PixCloak",
-  description:
-    "Build Open Graph and Twitter/X card art at 1200×630 in the browser. Export PNG/JPG for og:image and twitter:image. No upload—preview and download locally.",
+  title: "OG Image Generator 1200×630—Facebook, X, LinkedIn",
+  description: "Build Open Graph and Twitter/X card art at 1200×630 in the browser. Export PNG/JPG for og:image and twitter:image. No upload—preview and download locally.",
   alternates: { canonical: "/tools/og-card", languages: { "x-default": "/tools/og-card" } },
   openGraph: {
     title: "1200×630 social preview maker",
-    description: "Create share images for link previews locally.",
+    description: "Create share images for link previews locally. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/og-card",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "OG card generator",
-    description: "Local 1200×630 images for social previews.",
+    description: "Local 1200×630 images for social previews. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

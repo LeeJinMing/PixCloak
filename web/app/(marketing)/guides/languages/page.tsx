@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Language Guides: EN/ES/PT/ID/ZH Overview | PixCloak",
+  title: "Language Guides: EN/ES/PT/ID/ZH Overview",
   description: "Browse PixCloak guides in multiple languages (English, Español, Português, Bahasa Indonesia, 简体中文). Quick links to size targets, resizing, and EXIF removal.",
   alternates: {
     canonical: "/guides/languages",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Language Guides: EN/ES/PT/ID/ZH Overview",
-    description: "Find guides by language: English, Español, Português, Bahasa Indonesia, 简体中文.",
+    description: "Find guides by language: English, Español, Português, Bahasa Indonesia, 简体中文. Works locally in your browser, no uploads.",
     url: "/guides/languages",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Language Guides Overview",
-    description: "Quick access to multilingual guides for compression, resizing, and privacy.",
+    description: "Quick access to multilingual guides for compression, resizing, and privacy. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

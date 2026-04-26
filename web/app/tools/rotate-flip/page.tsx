@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Rotate & Flip Images Online—90°, 180°, Mirror (No Upload) | PixCloak',
-  description:
-    'Rotate JPG/PNG/WebP 90° or 180°, flip horizontally or vertically. Batch + ZIP. Fixes wrong EXIF orientation for uploads. 100% local in your browser—no upload.',
+  title: 'Rotate & Flip Images Online—90°, 180°, Mirror (No',
+  description: 'Rotate JPG/PNG/WebP 90° or 180°, flip horizontally or vertically. Batch + ZIP. Fixes wrong EXIF orientation for uploads. 100% local in your browser—no upload.',
   alternates: {
     canonical: '/tools/rotate-flip',
     languages: { 'x-default': '/tools/rotate-flip', en: '/tools/rotate-flip' },
   },
   openGraph: {
     title: 'Rotate & flip images locally',
-    description: 'Quarter turns, mirror, batch ZIP. No server upload.',
+    description: 'Quarter turns, mirror, batch ZIP. No server upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
     url: '/tools/rotate-flip',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rotate & flip images',
-    description: 'Browser-only. Batch download.',
+    description: 'Browser-only. Batch download. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
   },
 };
 

@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Compress Images to 1MB (Free, Maximum Quality) | PixCloak",
+  title: "Compress Images to 1MB (Free, Maximum Quality)",
   description: "Reduce image file size to 1MB for portfolios, university applications, and high-quality submissions. Preserves excellent detail.",
   alternates: {
     canonical: '/guides/compress-to-1mb',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Compress Images to 1MB",
-    description: "Maximum quality at 1MB. Perfect for portfolios and submissions.",
+    description: "Maximum quality at 1MB. Perfect for portfolios and submissions. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 export default function GuideCompress1MB() {

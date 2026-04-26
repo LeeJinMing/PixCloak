@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Resize Longest Side to 1920px (Best for Web) | PixCloak',
+  title: 'Resize Longest Side to 1920px (Best for Web)',
   description: 'Downscale to 1920px before compressing to 200-800KB for fast web delivery. Reduces file size while keeping aspect ratio. Works locally, no uploads needed.',
   alternates: { canonical: '/guides/resize-to-1920', languages: { 'x-default': '/guides/resize-to-1920', en: '/guides/resize-to-1920' } },
 };

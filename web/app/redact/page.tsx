@@ -6,9 +6,8 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Redact Image Online Free: Blur Face & License Plate | PixCloak",
-  description:
-    "Redact photos in your browser: blur faces, blur license plates, black out text, pixelate sensitive areas. Export without EXIF/GPS. Nothing uploaded—private by default.",
+  title: "Redact Image Online Free: Blur Face & License",
+  description: "Redact photos in your browser: blur faces, blur license plates, black out text, pixelate sensitive areas. Export without EXIF/GPS.",
   alternates: {
     canonical: "/redact",
     languages: {
@@ -24,14 +23,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Image redaction online (free, no upload)",
-    description: "Blur faces and plates, censor text, strip EXIF. Runs locally in your browser.",
+    description: "Blur faces and plates, censor text, strip EXIF. Runs locally in your browser. Works locally in your browser, no uploads.",
     url: "/redact",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Redact image online—blur face & license plate",
-    description: "Local redaction tool: blur, pixelate, black bars. No upload.",
+    description: "Local redaction tool: blur, pixelate, black bars. No upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

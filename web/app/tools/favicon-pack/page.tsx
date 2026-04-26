@@ -5,7 +5,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Free Favicon Generator: All Sizes + Manifest... | PixCloak",
+  title: "Free Favicon Generator: All Sizes + Manifest...",
   description: "Generate favicons in all sizes (16x16 to 512x512) instantly. Includes manifest.json and HTML code. Works locally—no uploads. For websites, PWAs, iOS, Android.",
   alternates: {
     canonical: "/tools/favicon-pack",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free Favicon Generator: All Sizes + Manifest",
-    description: "Generate favicons for all devices. Download ZIP with manifest.json. Free, no uploads.",
+    description: "Generate favicons for all devices. Download ZIP with manifest.json. Free, no uploads. Works locally in your browser, no uploads.",
     url: "/tools/favicon-pack",
     type: "website",
   },

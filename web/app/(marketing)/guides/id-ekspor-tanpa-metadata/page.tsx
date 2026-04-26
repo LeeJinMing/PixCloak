@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Ekspor tanpa metadata (hapus EXIF/GPS) | PixCloak',
+  title: 'Ekspor tanpa metadata (hapus EXIF/GPS)',
   description: 'Hapus EXIF & GPS saat ekspor JPEG/WebP/PNG langsung di browser. 100% lokal, tanpa unggah. Cocok untuk berbagi aman di web/email/formulir.',
   alternates: {
     canonical: '/guides/id-ekspor-tanpa-metadata',

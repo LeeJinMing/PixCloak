@@ -3,8 +3,8 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Case Studies: Real Business Impact & ROI Analysis | Verified Results",
-  description: "Detailed case studies showing how businesses use PixCloak to improve website performance, reduce costs, and enhance user experience. Verified ROI and impact metrics.",
+  title: "PixCloak Case Studies: Real Business Impact & ROI",
+  description: "Detailed case studies showing how businesses use PixCloak to improve website performance, reduce costs, and enhance user experience.",
   alternates: { canonical: "/case-studies" },
 };
 

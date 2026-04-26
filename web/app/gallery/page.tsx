@@ -4,7 +4,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import CategoryCard from './CategoryCard';
 
 export const metadata: Metadata = {
-  title: "Image Compression Gallery: Before & After | PixCloak",
+  title: "Image Compression Gallery: Before & After",
   description: "See real before and after examples of image compression. Compare quality, file sizes, and compression ratios across different tools and settings.",
   alternates: { canonical: "/gallery" },
 };
@@ -20,7 +20,7 @@ const compressionExamples = [
     quality: "Excellent",
     format: "JPEG → WebP",
     useCase: "LinkedIn Profile Photo",
-    description: "Professional headshot optimized for LinkedIn's 200KB limit while maintaining crisp quality for networking.",
+    description: "Professional headshot optimized for LinkedIn's 200KB limit while maintaining crisp quality for networking. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/portrait-professional-before.jpg",
     afterImage: "/gallery/portrait-professional-after.webp",
     tools: ["PixCloak WebP", "TinyPNG", "Squoosh"],
@@ -40,7 +40,7 @@ const compressionExamples = [
     quality: "High",
     format: "JPEG → WebP",
     useCase: "Online Store",
-    description: "Product photo optimized for e-commerce with excellent quality retention and fast loading.",
+    description: "Product photo optimized for e-commerce with excellent quality retention and fast loading. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/product-ecommerce-before.jpg",
     afterImage: "/gallery/product-ecommerce-after.webp",
     tools: ["PixCloak WebP", "TinyPNG", "ImageOptim"],
@@ -60,7 +60,7 @@ const compressionExamples = [
     quality: "High",
     format: "JPEG → WebP",
     useCase: "Instagram Feed",
-    description: "Instagram post optimized for social media with perfect square dimensions and fast loading.",
+    description: "Instagram post optimized for social media with perfect square dimensions and fast loading. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/social-instagram-before.jpg",
     afterImage: "/gallery/social-instagram-after.webp",
     tools: ["PixCloak WebP", "Squoosh", "TinyPNG"],
@@ -80,7 +80,7 @@ const compressionExamples = [
     quality: "High",
     format: "JPEG → WebP",
     useCase: "Restaurant Menu",
-    description: "Food photo optimized for restaurant websites with vibrant colors and appetizing appearance.",
+    description: "Food photo optimized for restaurant websites with vibrant colors and appetizing appearance. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/food-photography-before.jpg",
     afterImage: "/gallery/food-photography-after.webp",
     tools: ["PixCloak WebP", "TinyPNG", "ImageOptim"],
@@ -100,7 +100,7 @@ const compressionExamples = [
     quality: "High",
     format: "PNG → WebP",
     useCase: "Documentation",
-    description: "UI screenshot optimized for documentation with sharp text and clear interface elements.",
+    description: "UI screenshot optimized for documentation with sharp text and clear interface elements. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/technical-screenshot-before.png",
     afterImage: "/gallery/technical-screenshot-after.webp",
     tools: ["PixCloak WebP", "Squoosh", "TinyPNG"],
@@ -120,7 +120,7 @@ const compressionExamples = [
     quality: "High",
     format: "JPEG → WebP",
     useCase: "Website Hero",
-    description: "Landscape photo optimized for website hero sections with stunning detail and fast loading.",
+    description: "Landscape photo optimized for website hero sections with stunning detail and fast loading. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/landscape-photo-before.jpg",
     afterImage: "/gallery/landscape-photo-after.webp",
     tools: ["PixCloak WebP", "TinyPNG", "Squoosh"],
@@ -140,7 +140,7 @@ const compressionExamples = [
     quality: "Excellent",
     format: "JPEG → WebP",
     useCase: "Fashion E-commerce",
-    description: "Fashion model photo optimized for e-commerce with perfect skin tones and fabric details.",
+    description: "Fashion model photo optimized for e-commerce with perfect skin tones and fabric details. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/fashion-model-before.jpg",
     afterImage: "/gallery/fashion-model-after.webp",
     tools: ["PixCloak WebP", "TinyPNG", "ImageOptim"],
@@ -160,7 +160,7 @@ const compressionExamples = [
     quality: "High",
     format: "PNG → WebP",
     useCase: "Business Reports",
-    description: "Chart and graph optimized for business reports with crisp lines and readable text.",
+    description: "Chart and graph optimized for business reports with crisp lines and readable text. Works locally in your browser, no uploads.",
     beforeImage: "/gallery/chart-graph-before.png",
     afterImage: "/gallery/chart-graph-after.webp",
     tools: ["PixCloak WebP", "Squoosh", "TinyPNG"],
@@ -218,31 +218,31 @@ const toolComparisons = [
 const categories = [
   {
     name: "Portrait Photos",
-    description: "Professional headshots, LinkedIn photos, and personal portraits",
+    description: "Professional headshots, LinkedIn photos, and personal portraits Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     count: 2,
     icon: "👤"
   },
   {
     name: "Product Images",
-    description: "E-commerce products, food photography, and commercial images",
+    description: "E-commerce products, food photography, and commercial images Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     count: 3,
     icon: "🛍️"
   },
   {
     name: "Social Media",
-    description: "Instagram posts, Facebook covers, and social media content",
+    description: "Instagram posts, Facebook covers, and social media content Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     count: 1,
     icon: "📱"
   },
   {
     name: "Technical Images",
-    description: "Screenshots, charts, graphs, and UI mockups",
+    description: "Screenshots, charts, graphs, and UI mockups Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     count: 2,
     icon: "🖥️"
   },
   {
     name: "Nature Photos",
-    description: "Landscapes, wildlife, and outdoor photography",
+    description: "Landscapes, wildlife, and outdoor photography Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     count: 1,
     icon: "🌄"
   }

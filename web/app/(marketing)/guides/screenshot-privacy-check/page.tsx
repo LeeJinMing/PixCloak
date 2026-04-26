@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Screenshot Privacy Checklist (Before Sharing) | PixCloak',
+  title: 'Screenshot Privacy Checklist (Before Sharing)',
   description: 'Hide contacts, IDs, order numbers, and QR codes; crop sensitive UI; export without EXIF/GPS. A quick checklist to prevent privacy leaks when posting...',
   alternates: {
     canonical: '/guides/screenshot-privacy-check',

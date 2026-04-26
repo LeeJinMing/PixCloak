@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import AnswerCard, { CommonAnswerCards } from '@/components/AnswerCard';
 
 export const metadata: Metadata = {
-  title: "Remove EXIF from iPhone Photos — No App Needed | PixCloak",
+  title: "Remove EXIF from iPhone Photos — No App Needed",
   description: "Remove EXIF/GPS from iPhone photos before sharing. Protects privacy and home address. Works in browser, no app needed. Export cleans metadata in seconds.",
   alternates: {
     canonical: '/guides/remove-exif-iphone',
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Remove EXIF from iPhone Photos — No App Needed",
-    description: "Remove EXIF and GPS from iPhone photos before sharing. Works in your browser, no app needed.",
+    description: "Remove EXIF and GPS from iPhone photos before sharing. Works in your browser, no app needed. Works locally in your browser, no uploads.",
     url: "/guides/remove-exif-iphone",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Remove EXIF from iPhone Photos",
-    description: "Remove GPS location before sharing. Works in browser, no app needed.",
+    description: "Remove GPS location before sharing. Works in browser, no app needed. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

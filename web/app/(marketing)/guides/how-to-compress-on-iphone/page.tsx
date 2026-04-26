@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Compress Images on iPhone (Free, No App) | PixCloak",
+  title: "How to Compress Images on iPhone (Free, No App)",
   description: "Compress images on iPhone without app: open Safari, visit compressor, select photos, compress to target KB, download. Works in browser, no installation.",
   alternates: {
     canonical: '/guides/how-to-compress-on-iphone',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "How to Compress Images on iPhone (Free, No App)",
-    description: "Compress iPhone photos in Safari browser. No app download. Free, unlimited. Works offline after first load.",
+    description: "Compress iPhone photos in Safari browser. No app download. Free, unlimited. Works offline after first load. Works locally in your browser, no uploads.",
     url: "/guides/how-to-compress-on-iphone",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Compress Images on iPhone",
-    description: "No app needed. Works in Safari. Free, unlimited compression.",
+    description: "No app needed. Works in Safari. Free, unlimited compression. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

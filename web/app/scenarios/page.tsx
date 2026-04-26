@@ -3,8 +3,8 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Size Requirements by Platform & Use Case | PixCloak",
-  description: "Find exact image size requirements for LinkedIn, Instagram, job applications, government forms, and social media. Get instant presets and download optimized images.",
+  title: "Image Size Requirements by Platform & Use Case",
+  description: "Find exact image size requirements for LinkedIn, Instagram, job applications, government forms, and social media. Get instant presets and download...",
   alternates: { canonical: "/scenarios", languages: { "x-default": "/scenarios" } },
 };
 
@@ -17,7 +17,7 @@ const scenarios = [
         size: "400x400px",
         kb: "200KB",
         format: "JPG/PNG",
-        description: "Professional headshot for LinkedIn profiles",
+        description: "Professional headshot for LinkedIn profiles Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=200&size=400&format=jpg",
         useCase: "LinkedIn profile, professional networking"
       },
@@ -26,7 +26,7 @@ const scenarios = [
         size: "300x300px",
         kb: "150KB",
         format: "JPG",
-        description: "Professional photo for resume/CV",
+        description: "Professional photo for resume/CV Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=150&size=300&format=jpg",
         useCase: "Job applications, CV, professional documents"
       },
@@ -35,7 +35,7 @@ const scenarios = [
         size: "600x600px",
         kb: "500KB",
         format: "JPG",
-        description: "Official ID photo for government forms",
+        description: "Official ID photo for government forms Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=500&size=600&format=jpg",
         useCase: "Passport, driver's license, government forms"
       }
@@ -49,7 +49,7 @@ const scenarios = [
         size: "1080x1080px",
         kb: "500KB",
         format: "JPG/WebP",
-        description: "Square posts for Instagram feed",
+        description: "Square posts for Instagram feed Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=500&size=1080&format=webp",
         useCase: "Instagram posts, social media content"
       },
@@ -58,7 +58,7 @@ const scenarios = [
         size: "1080x1920px",
         kb: "800KB",
         format: "JPG/WebP",
-        description: "Vertical stories for Instagram",
+        description: "Vertical stories for Instagram Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=800&size=1080x1920&format=webp",
         useCase: "Instagram stories, vertical content"
       },
@@ -67,7 +67,7 @@ const scenarios = [
         size: "1200x630px",
         kb: "500KB",
         format: "JPG/WebP",
-        description: "Facebook timeline posts",
+        description: "Facebook timeline posts Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=500&size=1200x630&format=webp",
         useCase: "Facebook posts, social sharing"
       },
@@ -76,7 +76,7 @@ const scenarios = [
         size: "1200x675px",
         kb: "400KB",
         format: "JPG/WebP",
-        description: "Twitter/X timeline posts",
+        description: "Twitter/X timeline posts Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=400&size=1200x675&format=webp",
         useCase: "Twitter posts, microblogging"
       }
@@ -90,7 +90,7 @@ const scenarios = [
         size: "1920x1080px",
         kb: "800KB",
         format: "WebP/JPG",
-        description: "Large banner images for websites",
+        description: "Large banner images for websites Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=800&size=1920x1080&format=webp",
         useCase: "Website banners, hero sections"
       },
@@ -99,7 +99,7 @@ const scenarios = [
         size: "800x600px",
         kb: "200KB",
         format: "JPG",
-        description: "Images for email attachments",
+        description: "Images for email attachments Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=200&size=800x600&format=jpg",
         useCase: "Email attachments, newsletters"
       },
@@ -108,7 +108,7 @@ const scenarios = [
         size: "1200x800px",
         kb: "300KB",
         format: "WebP/JPG",
-        description: "Featured images for blog posts",
+        description: "Featured images for blog posts Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=300&size=1200x800&format=webp",
         useCase: "Blog posts, articles, content marketing"
       }
@@ -122,7 +122,7 @@ const scenarios = [
         size: "1000x1000px",
         kb: "400KB",
         format: "JPG/WebP",
-        description: "Product images for e-commerce",
+        description: "Product images for e-commerce Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=400&size=1000x1000&format=webp",
         useCase: "E-commerce, product catalogs"
       },
@@ -131,7 +131,7 @@ const scenarios = [
         size: "300x300px",
         kb: "100KB",
         format: "JPG/WebP",
-        description: "Small thumbnails for galleries",
+        description: "Small thumbnails for galleries Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=100&size=300x300&format=webp",
         useCase: "Image galleries, thumbnails"
       },
@@ -140,7 +140,7 @@ const scenarios = [
         size: "500x300px",
         kb: "150KB",
         format: "PNG/JPG",
-        description: "Logos for business cards",
+        description: "Logos for business cards Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         preset: "/compress?kb=150&size=500x300&format=png",
         useCase: "Business cards, branding materials"
       }

@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Batch Rename Images & Download ZIP (Local) | PixCloak",
-  description:
-    "Rename many images at once with prefix, suffix, and zero-padded numbers; download a single ZIP. Runs locally—no upload. Great for galleries, exports, and docs.",
+  title: "Batch Rename Images & Download ZIP (Local)",
+  description: "Rename many images at once with prefix, suffix, and zero-padded numbers; download a single ZIP. Runs locally—no upload. Great for galleries, exports, and docs.",
   alternates: { canonical: "/tools/batch-rename", languages: { "x-default": "/tools/batch-rename" } },
   openGraph: {
     title: "Batch rename images to ZIP",
-    description: "Pattern-based renaming in the browser. Private, no upload.",
+    description: "Pattern-based renaming in the browser. Private, no upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/batch-rename",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Batch rename images",
-    description: "Numbered filenames and ZIP export, locally.",
+    description: "Numbered filenames and ZIP export, locally. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Reduce Image File Size (Free, 2 Minutes) | PixCloak",
+  title: "How to Reduce Image File Size (Free, 2 Minutes)",
   description: "Reduce image file size in 3 steps: resize to 1920px, compress to target KB, remove EXIF. Free tool, no uploads. Works for JPEG, PNG, WebP.",
   alternates: {
     canonical: '/guides/how-to-reduce-image-file-size',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How to Reduce Image File Size",
-    description: "Resize → Compress → Target KB. Free tool, 2 minutes. For web, email, social.",
+    description: "Resize → Compress → Target KB. Free tool, 2 minutes. For web, email, social. Process images offline, privacy guaranteed.",
   },
 };
 

@@ -3,7 +3,7 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Compress Images to 100KB (Free, No Quality Loss)",
+  title: "How to Compress Images to 100KB (Free, No Quality",
   description: "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download. Supports JPEG, PNG, WebP.",
   alternates: {
     canonical: "/guides/compress-image-to-100kb",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How to Compress Images to 100KB",
-    description: "Reduce image file size to exactly 100KB. Simple 3-step guide, no app download needed.",
+    description: "Reduce image file size to exactly 100KB. Simple 3-step guide, no app download needed. Works locally in your browser, no uploads.",
   },
 };
 

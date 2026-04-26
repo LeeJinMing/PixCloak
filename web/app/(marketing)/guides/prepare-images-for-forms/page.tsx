@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Prepare Images for Forms (200KB/500KB Presets) | PixCloak',
+  title: 'Prepare Images for Forms (200KB/500KB Presets)',
   description: 'Meet form limits fast: 200KB avatars, 500KB attachments. Use ready presets, resize to 1920px for phone photos, and export locally—no uploads needed.',
   alternates: { canonical: '/guides/prepare-images-for-forms' },
 };

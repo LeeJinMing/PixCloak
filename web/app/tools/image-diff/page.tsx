@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Diff Tool—A/B Slider & Pixel Difference Map | PixCloak",
-  description:
-    "Compare two screenshots or renders: drag slider, highlight changed pixels, export a diff PNG. Visual QA and compression tests. Local only—no upload.",
+  title: "Image Diff Tool—A/B Slider & Pixel Difference Map",
+  description: "Compare two screenshots or renders: drag slider, highlight changed pixels, export a diff PNG. Visual QA and compression tests. Local only—no upload.",
   alternates: { canonical: "/tools/image-diff", languages: { "x-default": "/tools/image-diff" } },
   openGraph: {
     title: "Image comparison & diff",
-    description: "Slider and heatmap for before/after images.",
+    description: "Slider and heatmap for before/after images. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/image-diff",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Image diff",
-    description: "Pixel-level compare in the browser.",
+    description: "Pixel-level compare in the browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

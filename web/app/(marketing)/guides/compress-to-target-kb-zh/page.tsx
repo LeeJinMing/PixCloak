@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: '按目标体积压缩到200KB/500KB（本地，无上传） | PixCloak',
+  title: '按目标体积压缩到200KB/500KB（本地处理，无上传，保护隐私）',
   description: '在浏览器中将图片压缩到精确目标体积（200KB/500KB）。先按最长边缩放至1920px，再用目标KB预设快速达到要求。处理全程本地，适合网页、邮件与表单。 Works locally in your browser, no uploads.',
   alternates: {
     canonical: '/guides/compress-to-target-kb-zh',

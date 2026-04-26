@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: '平台常见图片限制（200KB/500KB 规范） | PixCloak',
+  title: '平台常见图片限制（200KB/500KB 规范，本地处理，无上传）',
   description: '平台常见图片限制：头像上限200KB、帖子上限500KB、最长边建议1920px。快速预设本地压缩调整尺寸，自动移除EXIF/GPS元数据，无需上传文件。适合微信公众号、小红书、知乎、简书、豆瓣、V2EX等平台，支持批量处理ZIP打包，隐私优先100%本地处理，完全免费无需注册登录。',
   alternates: {
     canonical: '/guides/platform-image-limits-zh',

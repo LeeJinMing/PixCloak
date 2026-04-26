@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Sprite Sheet Generator + JSON Map (CSS Sprites) | PixCloak",
-  description:
-    "Pack icons into one PNG sprite sheet with a JSON coordinate map for CSS background-position. Batch locally—no upload. Fewer HTTP requests for UI assets.",
+  title: "Sprite Sheet Generator + JSON Map (CSS Sprites)",
+  description: "Pack icons into one PNG sprite sheet with a JSON coordinate map for CSS background-position. Batch locally—no upload. Fewer HTTP requests for UI assets.",
   alternates: {
     canonical: "/tools/sprite-sheet",
     languages: { "x-default": "/tools/sprite-sheet", en: "/tools/sprite-sheet" },
   },
   openGraph: {
     title: "CSS sprite sheet builder",
-    description: "Combine icons into one image + mapping file.",
+    description: "Combine icons into one image + mapping file. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/sprite-sheet",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sprite sheet generator",
-    description: "Local sprite PNG + JSON layout.",
+    description: "Local sprite PNG + JSON layout. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

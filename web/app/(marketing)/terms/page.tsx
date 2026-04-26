@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service: Free Image Tools | PixCloak',
+  title: 'Terms of Service: Free Image Tools',
   description: 'Read the service terms for PixCloak. Lawful use, intellectual property, no uploads by default, disclaimers, limitations, and contact information.',
   alternates: { canonical: '/terms', languages: { 'x-default': '/terms' } },
 };

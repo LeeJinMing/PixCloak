@@ -6,9 +6,8 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "PNG to JPG & JPG to PNG Converter (No Upload) | PixCloak",
-  description:
-    "PNG to JPG and JPG to PNG in your browser—quality slider, background for transparency, batch + ZIP. No upload. Free, unlimited.",
+  title: "PNG to JPG & JPG to PNG Converter (No Upload)",
+  description: "PNG to JPG and JPG to PNG in your browser—quality slider, background for transparency, batch + ZIP. No upload. Free, unlimited.",
   alternates: {
     canonical: "/tools/png-jpg-converter",
     languages: {
@@ -18,14 +17,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free PNG to JPG & JPG to PNG Converter (No Upload)",
-    description: "Convert PNG↔JPG in browser. Batch processing. Quality control. Works locally. Free.",
+    description: "Convert PNG↔JPG in browser. Batch processing. Quality control. Works locally. Free. Works locally in your browser, no uploads.",
     url: "/tools/png-jpg-converter",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "PNG to JPG & JPG to PNG Converter",
-    description: "Convert image formats locally. No uploads. Batch processing. Free.",
+    description: "Convert image formats locally. No uploads. Batch processing. Free. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Data URL Converter & Alt Suggestions | PixCloak",
+  title: "Data URL Converter & Alt Suggestions",
   description: "Convert images to Base64 data URLs and generate helpful alt text suggestions for accessibility. 100% client‑side processing—no uploads, copy and use instantly.",
   alternates: { canonical: "/tools/dataurl-alt", languages: { "x-default": "/tools/dataurl-alt" } },
 };

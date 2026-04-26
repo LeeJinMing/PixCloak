@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import AnswerCard, { CommonAnswerCards } from '@/components/AnswerCard';
 
 export const metadata: Metadata = {
-  title: "Compress Images to 200KB (Free, No Quality Loss) | PixCloak",
+  title: "Compress Images to 200KB (Free, No Quality Loss)",
   description: "Reduce image file size to exactly 200KB for avatars, forms, and uploads. Works for JPEG, PNG, WebP—no app download. Perfect for LinkedIn and job applications.",
   alternates: {
     canonical: '/guides/compress-to-200kb',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Compress Images to 200KB",
-    description: "Free tool. Exact 200KB target. No app download needed.",
+    description: "Free tool. Exact 200KB target. No app download needed. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 export default function GuideCompress200KB() {

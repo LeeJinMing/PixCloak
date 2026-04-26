@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Avoid Compression Artifacts (WebP/JPEG) | PixCloak',
+  title: 'Avoid Compression Artifacts (WebP/JPEG)',
   description: 'Reduce banding and halos: downscale first, pick realistic target KB, switch WebP↔JPEG when needed. Preview and export locally with no uploads.',
   alternates: { canonical: '/guides/avoid-artifacts-webp-jpeg' },
 };

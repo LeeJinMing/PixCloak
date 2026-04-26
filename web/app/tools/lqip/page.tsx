@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "LQIP Generator—Tiny Blur Placeholders (Base64) | PixCloak",
-  description:
-    "Create low-quality image placeholders (LQIP) as small Base64 data URLs for lazy loading and faster perceived load. Runs locally—no upload.",
+  title: "LQIP Generator—Tiny Blur Placeholders (Base64)",
+  description: "Create low-quality image placeholders (LQIP) as small Base64 data URLs for lazy loading and faster perceived load. Runs locally—no upload.",
   alternates: { canonical: "/tools/lqip", languages: { "x-default": "/tools/lqip" } },
   openGraph: {
     title: "LQIP / blur-up placeholder generator",
-    description: "Generate tiny Base64 previews for responsive images.",
+    description: "Generate tiny Base64 previews for responsive images. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/lqip",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "LQIP generator",
-    description: "Base64 blur placeholders in the browser.",
+    description: "Base64 blur placeholders in the browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

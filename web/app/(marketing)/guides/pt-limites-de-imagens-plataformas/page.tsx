@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Limites de imagens por plataforma (KB e dimensões) | PixCloak',
+  title: 'Limites de imagens por plataforma (KB e dimensões)',
   description: 'Avatares 200KB, publicações 500KB, lado mais longo 1920px. Presets rápidos e exportação local sem upload. Útil para redes sociais, blogs e formulários.',
   alternates: { canonical: '/guides/pt-limites-de-imagens-plataformas', languages: { pt: '/guides/pt-limites-de-imagens-plataformas', en: '/guides/platform-image-limits' } },
 };

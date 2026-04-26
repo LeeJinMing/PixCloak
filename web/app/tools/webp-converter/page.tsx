@@ -6,16 +6,15 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Free WebP Converter: JPG/PNG to WebP (No Upload) | PixCloak",
-  description:
-    "Convert JPG/PNG to WebP—25-35% smaller than JPEG. Batch + ZIP, no upload, runs locally. For sites, social, and Core Web Vitals.",
+  title: "Free WebP Converter: JPG/PNG to WebP (No Upload)",
+  description: "Convert JPG/PNG to WebP—25-35% smaller than JPEG. Batch + ZIP, no upload, runs locally. For sites, social, and Core Web Vitals.",
   alternates: {
     canonical: "/tools/webp-converter",
     languages: { "x-default": "/tools/webp-converter", en: "/tools/webp-converter" },
   },
   openGraph: {
     title: "Free WebP Converter: JPG/PNG to WebP",
-    description: "Convert to WebP format—25-35% smaller files. Batch convert, download ZIP. Free, no uploads.",
+    description: "Convert to WebP format—25-35% smaller files. Batch convert, download ZIP. Free, no uploads. Works locally in your browser, no uploads.",
     url: "/tools/webp-converter",
     type: "website",
   },

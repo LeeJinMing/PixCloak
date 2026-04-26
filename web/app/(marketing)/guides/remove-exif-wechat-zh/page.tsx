@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: '微信图片去除 EXIF 元数据（本地处理）| PixCloak',
+  title: '微信图片去除 EXIF 元数据（本地处理，无上传，保护隐私）',
   description: '在浏览器内本地去除微信图片的 EXIF/GPS：打开 /compress，导入并导出为 JPEG/WebP，导出时会自动清除元数据。尽量使用原始文件以避免二压。 Works locally in your browser, no uploads.',
   alternates: { canonical: '/guides/remove-exif-wechat-zh', languages: { zh: '/guides/remove-exif-wechat-zh', en: '/guides/remove-exif-wechat' } },
 };

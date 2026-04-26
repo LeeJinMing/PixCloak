@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Share Photos Anonymously (Remove All... | PixCloak",
+  title: "How to Share Photos Anonymously (Remove All...",
   description: "Complete guide: blur faces, hide license plates, black out addresses, remove EXIF/GPS. Share safely on social media, forums, marketplace.",
   alternates: {
     canonical: '/guides/anonymized-sharing',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "How to Share Photos Anonymously (Remove All Identifying Info)",
-    description: "Blur faces, hide plates, remove EXIF/GPS. Share safely on social media, forums. Prevent doxxing.",
+    description: "Blur faces, hide plates, remove EXIF/GPS. Share safely on social media, forums. Prevent doxxing. Works locally in your browser, no uploads.",
     url: "/guides/anonymized-sharing",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Share Photos Anonymously",
-    description: "Remove all identifying info. Prevent doxxing. Complete guide.",
+    description: "Remove all identifying info. Prevent doxxing. Complete guide. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

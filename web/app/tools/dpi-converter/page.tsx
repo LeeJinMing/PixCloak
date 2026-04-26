@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "DPI Calculator—Pixels to Inches/cm for Print (300 DPI) | PixCloak",
-  description:
-    "Convert image pixels to print size at 150, 300, or custom DPI/PPI. Plan posters, flyers, and photo prints. Local calculator—no upload.",
+  title: "DPI Calculator—Pixels to Inches/cm for Print (300",
+  description: "Convert image pixels to print size at 150, 300, or custom DPI/PPI. Plan posters, flyers, and photo prints. Local calculator—no upload.",
   alternates: { canonical: "/tools/dpi-converter", languages: { "x-default": "/tools/dpi-converter" } },
   openGraph: {
     title: "DPI / print size calculator",
-    description: "Pixels ↔ inches for print workflows.",
+    description: "Pixels ↔ inches for print workflows. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/dpi-converter",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "DPI converter",
-    description: "Print dimensions from pixel size.",
+    description: "Print dimensions from pixel size. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

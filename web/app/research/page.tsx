@@ -3,7 +3,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Algorithm Research & Technical Documentation | Open Source",
+  title: "PixCloak Algorithm Research & Technical",
   description: "Open source algorithm research, compression techniques, and technical documentation. Learn how PixCloak's image processing works with full transparency.",
   alternates: { canonical: "/research", languages: { "x-default": "/research" } },
 };
@@ -44,7 +44,7 @@ const researchPapers = [
 const technicalDocs = [
   {
     title: "Image Compression Algorithm Documentation",
-    description: "Detailed technical documentation of PixCloak's compression algorithms",
+    description: "Detailed technical documentation of PixCloak's compression algorithms Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     version: "v2.1.0",
     lastUpdated: "2024-01-15",
     sections: [
@@ -59,7 +59,7 @@ const technicalDocs = [
   },
   {
     title: "Privacy-First Architecture Guide",
-    description: "Comprehensive guide to PixCloak's privacy-first architecture",
+    description: "Comprehensive guide to PixCloak's privacy-first architecture Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     version: "v1.8.0",
     lastUpdated: "2024-01-12",
     sections: [
@@ -74,7 +74,7 @@ const technicalDocs = [
   },
   {
     title: "Performance Benchmarking Methodology",
-    description: "Methodology for benchmarking image compression performance",
+    description: "Methodology for benchmarking image compression performance Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     version: "v1.5.0",
     lastUpdated: "2024-01-08",
     sections: [
@@ -92,7 +92,7 @@ const technicalDocs = [
 const datasets = [
   {
     name: "Image Compression Quality Dataset",
-    description: "Comprehensive dataset of image compression quality metrics",
+    description: "Comprehensive dataset of image compression quality metrics Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     size: "2.3GB",
     format: "CSV, JSON",
     samples: 10000,
@@ -102,7 +102,7 @@ const datasets = [
   },
   {
     name: "EXIF Metadata Analysis Dataset",
-    description: "Dataset of EXIF metadata patterns and privacy implications",
+    description: "Dataset of EXIF metadata patterns and privacy implications Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     size: "850MB",
     format: "JSON, SQLite",
     samples: 5000,
@@ -112,7 +112,7 @@ const datasets = [
   },
   {
     name: "Browser Performance Benchmark Data",
-    description: "Performance benchmarks across different browsers and devices",
+    description: "Performance benchmarks across different browsers and devices Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     size: "1.2GB",
     format: "CSV, JSON",
     samples: 15000,

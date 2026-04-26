@@ -3,23 +3,22 @@ import { FaqJsonLd, SoftwareAppJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Online Image Tools—Resize, WebP, Crop, EXIF (No Upload) | PixCloak",
-  description:
-    "20+ browser-based tools: compress to KB, PNG/JPG/WebP, resize, crop for Instagram, redact faces/plates, EXIF strip, sprites, favicons. Runs locally—privacy-first.",
+  title: "Free Online Image Tools—Resize, WebP, Crop, EXIF",
+  description: "20+ browser-based tools: compress to KB, PNG/JPG/WebP, resize, crop for Instagram, redact faces/plates, EXIF strip, sprites, favicons.",
   alternates: {
     canonical: "/tools",
     languages: { "x-default": "/tools", en: "/tools" }
   },
   openGraph: {
     title: "Free Image Tools: Resize, Convert, Compress (No Upload)",
-    description: "20+ free image tools. Works offline, no uploads. For web and social media.",
+    description: "20+ free image tools. Works offline, no uploads. For web and social media. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "PixCloak image tools",
-    description: "Resize, convert, compress, redact—locally in your browser.",
+    description: "Resize, convert, compress, redact—locally in your browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

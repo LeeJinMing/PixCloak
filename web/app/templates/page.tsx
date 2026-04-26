@@ -3,7 +3,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Image Size Templates & Platform Guidelines | PixCloak",
+  title: "Free Image Size Templates & Platform Guidelines",
   description: "Download free image size templates for social media, job applications, and web platforms. Get instant presets, cheat sheets, and design guidelines.",
   alternates: { canonical: "/templates", languages: { "x-default": "/templates" } },
 };
@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 const templateCategories = [
   {
     name: "Social Media Templates",
-    description: "Ready-to-use templates for all major social platforms",
+    description: "Ready-to-use templates for all major social platforms Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     items: [
       {
         name: "Instagram Complete Pack",
-        description: "All Instagram formats: feed, stories, reels, IGTV",
+        description: "All Instagram formats: feed, stories, reels, IGTV Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "Instagram Templates (PSD)", size: "2.1MB", format: "PSD" },
           { name: "Instagram Guidelines (PDF)", size: "0.8MB", format: "PDF" },
@@ -25,7 +25,7 @@ const templateCategories = [
       },
       {
         name: "Facebook Business Pack",
-        description: "Facebook pages, ads, and business templates",
+        description: "Facebook pages, ads, and business templates Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "Facebook Templates (AI)", size: "3.2MB", format: "AI" },
           { name: "Facebook Guidelines (PDF)", size: "1.1MB", format: "PDF" },
@@ -35,7 +35,7 @@ const templateCategories = [
       },
       {
         name: "LinkedIn Professional Pack",
-        description: "LinkedIn profiles, posts, and company pages",
+        description: "LinkedIn profiles, posts, and company pages Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "LinkedIn Templates (PSD)", size: "1.8MB", format: "PSD" },
           { name: "LinkedIn Guidelines (PDF)", size: "0.9MB", format: "PDF" },
@@ -47,11 +47,11 @@ const templateCategories = [
   },
   {
     name: "Professional Templates",
-    description: "Templates for job applications and business use",
+    description: "Templates for job applications and business use Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     items: [
       {
         name: "Resume & CV Templates",
-        description: "Professional photo templates for resumes and CVs",
+        description: "Professional photo templates for resumes and CVs Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "Resume Templates (PSD)", size: "1.5MB", format: "PSD" },
           { name: "CV Guidelines (PDF)", size: "0.7MB", format: "PDF" },
@@ -61,7 +61,7 @@ const templateCategories = [
       },
       {
         name: "Government Forms Pack",
-        description: "Templates for official documents and forms",
+        description: "Templates for official documents and forms Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "Government Templates (PDF)", size: "2.3MB", format: "PDF" },
           { name: "ID Photo Guidelines (PDF)", size: "0.6MB", format: "PDF" },
@@ -73,11 +73,11 @@ const templateCategories = [
   },
   {
     name: "Web & Email Templates",
-    description: "Templates for websites and email marketing",
+    description: "Templates for websites and email marketing Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     items: [
       {
         name: "Website Hero Images",
-        description: "Banner and hero image templates for websites",
+        description: "Banner and hero image templates for websites Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "Hero Templates (PSD)", size: "4.1MB", format: "PSD" },
           { name: "Web Guidelines (PDF)", size: "1.2MB", format: "PDF" },
@@ -87,7 +87,7 @@ const templateCategories = [
       },
       {
         name: "Email Marketing Pack",
-        description: "Templates for newsletters and email campaigns",
+        description: "Templates for newsletters and email campaigns Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
         downloads: [
           { name: "Email Templates (PSD)", size: "2.8MB", format: "PSD" },
           { name: "Email Guidelines (PDF)", size: "0.9MB", format: "PDF" },

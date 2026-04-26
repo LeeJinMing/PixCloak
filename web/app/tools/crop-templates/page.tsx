@@ -5,16 +5,15 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Crop to 1080×1080, 1:1, 4:5, 16:9—Instagram & Social | PixCloak",
-  description:
-    "Free aspect-ratio cropper: Instagram square 1080×1080, portrait 4:5, stories 9:16, Facebook/LinkedIn cover ratios. Batch crop, ZIP download. Offline in browser—no upload.",
+  title: "Crop to 1080×1080, 1:1, 4:5, 16:9—Instagram &",
+  description: "Free aspect-ratio cropper: Instagram square 1080×1080, portrait 4:5, stories 9:16, Facebook/LinkedIn cover ratios. Batch crop, ZIP download.",
   alternates: {
     canonical: "/tools/crop-templates",
     languages: { "x-default": "/tools/crop-templates", en: "/tools/crop-templates" },
   },
   openGraph: {
     title: "Free Image Cropper: 1:1, 4:3, 16:9 Templates",
-    description: "Crop to exact aspect ratios for social media. Works offline, no uploads.",
+    description: "Crop to exact aspect ratios for social media. Works offline, no uploads. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/crop-templates",
     type: "website",
   },

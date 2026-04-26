@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Convert JPEG to WebP (Free, 30-50% Smaller) | PixCloak",
+  title: "Convert JPEG to WebP (Free, 30-50% Smaller)",
   description: "Change JPEG to WebP format and reduce file size by 30-50% with same quality. Free online converter works in browser—no upload, no limits.",
   alternates: {
     canonical: '/guides/convert-jpeg-to-webp',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Convert JPEG to WebP (Free, 30-50% Smaller)",
-    description: "Change JPEG to WebP and reduce file size by 30-50% with same quality. Free online converter, no upload needed.",
+    description: "Change JPEG to WebP and reduce file size by 30-50% with same quality. Free online converter, no upload needed. Works locally in your browser, no uploads.",
     url: "/guides/convert-jpeg-to-webp",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Convert JPEG to WebP",
-    description: "30-50% smaller files. Same quality. Free converter, no upload.",
+    description: "30-50% smaller files. Same quality. Free converter, no upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Compress Images to Target KB (200KB/500KB) | PixCloak',
+  title: 'Compress Images to Target KB (200KB/500KB)',
   description: 'Hit strict 200KB/500KB limits. Set exact size, resize to 1920px, choose WebP/JPEG. Batch process and download ZIP. Works offline, no uploads.',
   alternates: {
     canonical: '/guides/compress-to-target-kb',
@@ -52,7 +52,7 @@ export default function GuideTargetKB() {
                 '@context': 'https://schema.org',
                 '@type': 'HowTo',
                 name: 'Compress images to a target size (200KB/500KB)',
-                description: 'Use PixCloak target KB mode to meet common upload limits like 200KB/500KB. All processing is local in your browser.',
+                description: 'Use PixCloak target KB mode to meet common upload limits like 200KB/500KB. All processing is local in your browser. Works locally in your browser, no uploads.',
                 totalTime: 'PT1M',
                 supply: [{ '@type': 'HowToSupply', name: 'Images to compress' }],
                 tool: [{ '@type': 'HowToTool', name: 'PixCloak /compress' }],

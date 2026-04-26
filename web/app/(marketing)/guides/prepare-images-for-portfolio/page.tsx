@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Prepare Portfolio Images (1920px, 800KB–1MB) | PixCloak',
+  title: 'Prepare Portfolio Images (1920px, 800KB–1MB)',
   description: 'Resize longest side to 1920px and compress to 800KB–1MB for high‑quality portfolios. Use WebP/JPEG, preview, and export locally without uploads.',
   alternates: { canonical: '/guides/prepare-images-for-portfolio', languages: { 'x-default': '/guides/prepare-images-for-portfolio', en: '/guides/prepare-images-for-portfolio' } },
 };

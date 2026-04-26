@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Research: 500KB Quality Range (1920px workflow) | PixCloak',
+  title: 'Research: 500KB Quality Range (1920px workflow)',
   description: 'Method and findings for landing near 500KB across varied content: resize to 1920px, binary‑search quality, and compare artifacts.',
   alternates: { canonical: '/guides/research-500kb-quality-range' },
 };

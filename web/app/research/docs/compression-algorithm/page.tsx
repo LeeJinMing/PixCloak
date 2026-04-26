@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "PixCloak Compression Algorithm Implementation | Technical Documentation",
+  title: "PixCloak Compression Algorithm Implementation |",
   description: "Detailed technical documentation of PixCloak's image compression algorithms, including WebP implementation, quality control, and performance metrics.",
   alternates: { canonical: "/research/docs/compression-algorithm" },
 };

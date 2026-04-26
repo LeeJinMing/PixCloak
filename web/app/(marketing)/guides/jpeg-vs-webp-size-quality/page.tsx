@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "JPEG vs WebP: Smaller Files, Same Quality? | PixCloak",
+  title: "JPEG vs WebP: Smaller Files, Same Quality?",
   description: "Compare JPEG and WebP file sizes and quality. WebP is 30-50% smaller at same quality. See when to use each format for websites, social media, and email.",
   alternates: {
     canonical: '/guides/jpeg-vs-webp-size-quality',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "JPEG vs WebP: Which is Smaller and Better Quality?",
-    description: "WebP is 30-50% smaller at same quality. See when to use each format. Free comparison tool.",
+    description: "WebP is 30-50% smaller at same quality. See when to use each format. Free comparison tool. Works locally in your browser, no uploads.",
     url: "/guides/jpeg-vs-webp-size-quality",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "JPEG vs WebP Comparison",
-    description: "Which is smaller? When to use each format? Complete guide.",
+    description: "Which is smaller? When to use each format? Complete guide. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Size Checker—KB & Pixel Limits for Social & Forms | PixCloak",
-  description:
-    "Check width, height, and file size against common limits (LinkedIn, Instagram, job forms, gov uploads). Local-only—no upload. Jump to 200KB/500KB presets.",
+  title: "Image Size Checker—KB & Pixel Limits for Social &",
+  description: "Check width, height, and file size against common limits (LinkedIn, Instagram, job forms, gov uploads). Local-only—no upload. Jump to 200KB/500KB presets.",
   alternates: { canonical: "/tools/platform-checker", languages: { "x-default": "/tools/platform-checker" } },
   openGraph: {
     title: "Platform image limit checker",
-    description: "Validate KB and dimensions before you upload.",
+    description: "Validate KB and dimensions before you upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/platform-checker",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Image compliance checker",
-    description: "KB and dimension checks in browser.",
+    description: "KB and dimension checks in browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

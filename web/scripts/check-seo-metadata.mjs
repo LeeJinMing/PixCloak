@@ -49,16 +49,23 @@ function extractMetadata(content) {
     description: null,
   };
 
-  // 提取 title
-  const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
+  // 提取 title (支持双引号、单引号、反引号)
+  // 排除掉步骤中的 title: "..."
+  const titleMatch = content.match(/export const metadata: Metadata = \{[\s\S]*?title:\s*(['"`])((?:(?!\1)[\s\S])*)\1/);
   if (titleMatch) {
-    metadata.title = titleMatch[1];
+    metadata.title = titleMatch[2];
+  } else {
+    // fallback for dynamic metadata
+    const dynamicTitleMatch = content.match(/title:\s*(['"`])((?:(?!\1)[\s\S])*)\1/);
+    if (dynamicTitleMatch && !content.includes('export async function generateMetadata')) {
+       metadata.title = dynamicTitleMatch[2];
+    }
   }
 
-  // 提取 description
-  const descMatch = content.match(/description:\s*['"]([^'"]+)['"]/);
+  // 提取 description (支持双引号、单引号、反引号)
+  const descMatch = content.match(/description:\s*(['"`])((?:(?!\1)[\s\S])*)\1/);
   if (descMatch) {
-    metadata.description = descMatch[1];
+    metadata.description = descMatch[2];
   }
 
   return metadata;

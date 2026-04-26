@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kompres 200KB/500KB (tanpa unggah) | PixCloak',
+  title: 'Kompres 200KB/500KB (tanpa unggah)',
   description: 'Kompres 200KB/500KB di browser. Konversi WebP/JPEG dan ubah ukuran 1920px. Semua lokal, tanpa unggah. Works locally in your browser, no uploads.',
   alternates: {
     canonical: '/compress-id',

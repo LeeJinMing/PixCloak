@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Google Search Console Operations | PixCloak",
+  title: "Google Search Console Operations",
   description: "Practical checklist: submit sitemaps, inspect URLs, handle duplicates, fix soft 404/redirects, and improve CTR. Keep canonical, content, and internal...",
   alternates: { canonical: "/guides/gsc-operations" },
 };

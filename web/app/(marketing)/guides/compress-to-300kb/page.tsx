@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Compress Images to 300KB (WebP/JPEG) | PixCloak',
+  title: 'Compress Images to 300KB (WebP/JPEG)',
   description: 'Compress to 300KB for posts and forms. Choose WebP or JPEG, resize to 1920px if needed. Balances quality and size. Works offline, no uploads, under 1 minute.',
   alternates: { canonical: '/guides/compress-to-300kb', languages: { 'x-default': '/guides/compress-to-300kb', en: '/guides/compress-to-300kb' } },
 };

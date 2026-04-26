@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "TinyPNG Alternative: Free Image Compressor (No... | PixCloak",
+  title: "TinyPNG Alternative: Free Image Compressor (No...",
   description: "Looking for a TinyPNG alternative that works offline? Compress images to exact KB targets (100KB-1MB) with no uploads. Free unlimited compression, batch...",
   alternates: {
     canonical: '/guides/tinypng-alternative-free-no-upload',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "TinyPNG Alternative: Free Image Compressor (No Upload, Works Offline)",
-    description: "Compress images offline with no uploads. Exact KB targets, unlimited free compression, batch processing.",
+    description: "Compress images offline with no uploads. Exact KB targets, unlimited free compression, batch processing. Works locally in your browser, no uploads.",
     url: "/guides/tinypng-alternative-free-no-upload",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "TinyPNG Alternative: No Upload, Works Offline",
-    description: "Free image compression. No uploads, unlimited use. Privacy-first alternative to TinyPNG.",
+    description: "Free image compression. No uploads, unlimited use. Privacy-first alternative to TinyPNG. Works locally in your browser, no uploads.",
   },
 };
 

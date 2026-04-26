@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Compress Images to 800KB (High‑Quality) | PixCloak',
+  title: 'Compress Images to 800KB (High‑Quality)',
   description: 'Target 800KB for higher‑quality posts and submissions. Use WebP for smaller size or JPEG for compatibility; resize longest side if needed.',
   alternates: { canonical: '/guides/compress-to-800kb', languages: { 'x-default': '/guides/compress-to-800kb', en: '/guides/compress-to-800kb' } },
 };

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Kompres gambar menjadi 1MB (kualitas tinggi) | PixCloak',
+  title: 'Kompres gambar menjadi 1MB (kualitas tinggi)',
   description: 'Kompres ke 1MB untuk portofolio berkualitas. Pilih WebP/JPEG, ubah ukuran ke 1920px. Proses lokal tanpa upload. Hapus EXIF/GPS. Batch ZIP untuk banyak file.',
   alternates: {
     canonical: '/guides/id-kompres-menjadi-1mb',

@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "SVG Optimizer—Minify & Clean Code (No Upload) | PixCloak",
-  description:
-    "Paste SVG markup and minify whitespace, comments, and bloat locally. Smaller files for faster pages. Nothing uploaded—copy the optimized SVG back out.",
+  title: "SVG Optimizer—Minify & Clean Code (No Upload)",
+  description: "Paste SVG markup and minify whitespace, comments, and bloat locally. Smaller files for faster pages. Nothing uploaded—copy the optimized SVG back out.",
   alternates: {
     canonical: "/tools/svg-optimizer",
     languages: { "x-default": "/tools/svg-optimizer", en: "/tools/svg-optimizer" },
   },
   openGraph: {
     title: "SVG minifier in the browser",
-    description: "Reduce SVG size for web. Local processing only.",
+    description: "Reduce SVG size for web. Local processing only. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/svg-optimizer",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "SVG optimizer",
-    description: "Minify SVG locally for production.",
+    description: "Minify SVG locally for production. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

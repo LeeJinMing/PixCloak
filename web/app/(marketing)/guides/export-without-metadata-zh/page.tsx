@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: '无元数据导出：去除 EXIF/GPS（本地处理）| PixCloak',
+  title: '无元数据导出：去除 EXIF/GPS（本地处理，无上传，保护隐私）',
   description: '本地去除iPhone/Android照片EXIF/GPS元数据，保护位置隐私防止泄露家庭住址。导出JPEG/WebP/PNG格式自动清除隐私信息。支持批量处理与ZIP打包下载，100%浏览器本地执行无上传。适合微信朋友圈、微博、小红书、闲鱼等社交平台分享。',
   alternates: {
     canonical: '/guides/export-without-metadata-zh',

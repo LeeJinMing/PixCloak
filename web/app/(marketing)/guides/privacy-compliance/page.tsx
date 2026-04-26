@@ -4,11 +4,11 @@ import RelatedTasks from "@/components/RelatedTasks";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Image Privacy & Compliance (No Upload) | PixCloak",
+  title: "Image Privacy & Compliance (No Upload)",
   description: "Practical checklist to share images safely: redact faces/plates/IDs, black out sensitive text, remove EXIF/GPS. Local processing, no uploads.",
   alternates: { canonical: "/guides/privacy-compliance" },
-  openGraph: { title: "Privacy & Compliance for Images", description: "Redact + remove EXIF/GPS locally. No upload.", url: "/guides/privacy-compliance" },
-  twitter: { title: "Privacy & Compliance for Images", description: "Local processing, no upload." },
+  openGraph: { title: "Privacy & Compliance for Images", description: "Redact + remove EXIF/GPS locally. No upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.", url: "/guides/privacy-compliance" },
+  twitter: { title: "Privacy & Compliance for Images", description: "Local processing, no upload. Process images offline in your browser. 100% free, no uploads, privacy guaranteed." },
 };
 
 export default function Page() {

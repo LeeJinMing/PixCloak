@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sensor foto (blur/EXIF) | PixCloak',
+  title: 'Sensor foto (blur/EXIF) online',
   description: 'Sensor foto: blur wajah, plat nomor, teks. Hapus EXIF/GPS otomatis. 100% lokal, tanpa upload. Gambar kotak untuk menutupi area sensitif. Cepat dan privat.',
   alternates: {
     canonical: '/redact-id',

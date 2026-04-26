@@ -3,15 +3,15 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Resize Images for Instagram: Feed,... | PixCloak",
-  description: "Resize images to Instagram's exact sizes—1080x1080 (feed), 1080x1350 (portrait), 1080x1920 (Stories/Reels). Works offline in your browser, no uploads. Free tool with quality guide and batch processing support.",
+  title: "How to Resize Images for Instagram: Feed,...",
+  description: "Resize images to Instagram's exact sizes—1080x1080 (feed), 1080x1350 (portrait), 1080x1920 (Stories/Reels). Works offline in your browser, no uploads.",
   alternates: {
     canonical: "/guides/how-to-resize-images-for-instagram",
     languages: { "x-default": "/guides/how-to-resize-images-for-instagram", en: "/guides/how-to-resize-images-for-instagram" },
   },
   openGraph: {
     title: "How to Resize Images for Instagram: Feed, Stories, Reels",
-    description: "Resize to Instagram's exact sizes. Free tool, works offline, no uploads.",
+    description: "Resize to Instagram's exact sizes. Free tool, works offline, no uploads. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/guides/how-to-resize-images-for-instagram",
     type: "article",
   },

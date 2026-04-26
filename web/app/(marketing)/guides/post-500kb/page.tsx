@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Prepare Images for Social Posts at 500KB... | PixCloak",
+  title: "Prepare Images for Social Posts at 500KB...",
   description: "Compress photos to 500KB for social media posts, forums, blog uploads. Maintains high quality. Works for Facebook, Reddit, Medium.",
   alternates: {
     canonical: '/guides/post-500kb',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Prepare Images for Social Posts at 500KB",
-    description: "Compress photos to 500KB for social media, forums, blogs. Maintains high quality. Batch process available.",
+    description: "Compress photos to 500KB for social media, forums, blogs. Maintains high quality. Batch process available. Works locally in your browser, no uploads.",
     url: "/guides/post-500kb",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "Prepare 500KB Social Media Images",
-    description: "Perfect for Facebook, forums, blogs. Free batch tool.",
+    description: "Perfect for Facebook, forums, blogs. Free batch tool. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

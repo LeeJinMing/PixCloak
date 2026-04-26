@@ -3,7 +3,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import CopyButton from './CopyButton';
 
 export const metadata: Metadata = {
-  title: "Embed PixCloak Tools - Free Image Compression Widget | PixCloak",
+  title: "Embed PixCloak Tools - Free Image Compression",
   description: "Embed our image compression tools directly in your website or blog. Free iframe widget with customizable presets. No API key required, works offline.",
   alternates: { canonical: "/embed", languages: { "x-default": "/embed" } },
 };
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const embedOptions = [
   {
     name: "Basic Compressor",
-    description: "Simple image compression with quality slider",
+    description: "Simple image compression with quality slider Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     iframe: '<iframe src="https://pixcloak.com/embed/compress" width="100%" height="600" frameborder="0" style="border-radius: 8px;"></iframe>',
     jsSnippet: `<!-- PixCloak Image Compressor Widget -->
 <div id="pixcloak-compress-widget"></div>
@@ -29,7 +29,7 @@ const embedOptions = [
   },
   {
     name: "LinkedIn Profile Preset",
-    description: "Pre-configured for LinkedIn profile pictures (400x400px, 200KB)",
+    description: "Pre-configured for LinkedIn profile pictures (400x400px, 200KB) Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     iframe: '<iframe src="https://pixcloak.com/embed/compress?preset=linkedin" width="100%" height="500" frameborder="0" style="border-radius: 8px;"></iframe>',
     jsSnippet: `<!-- PixCloak LinkedIn Profile Compressor -->
 <div id="pixcloak-linkedin-widget"></div>
@@ -47,7 +47,7 @@ const embedOptions = [
   },
   {
     name: "Instagram Post Preset",
-    description: "Pre-configured for Instagram posts (1080x1080px, 500KB)",
+    description: "Pre-configured for Instagram posts (1080x1080px, 500KB) Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     iframe: '<iframe src="https://pixcloak.com/embed/compress?preset=instagram" width="100%" height="500" frameborder="0" style="border-radius: 8px;"></iframe>',
     jsSnippet: `<!-- PixCloak Instagram Post Compressor -->
 <div id="pixcloak-instagram-widget"></div>
@@ -65,7 +65,7 @@ const embedOptions = [
   },
   {
     name: "Custom Preset Generator",
-    description: "Generate your own preset with custom parameters",
+    description: "Generate your own preset with custom parameters Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     iframe: '<iframe src="https://pixcloak.com/embed/compress?kb=300&size=800x600&format=webp" width="100%" height="500" frameborder="0" style="border-radius: 8px;"></iframe>',
     jsSnippet: `<!-- PixCloak Custom Preset Compressor -->
 <div id="pixcloak-custom-widget"></div>

@@ -3,7 +3,7 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Photo Privacy Checklist Before Sharing Online | PixCloak",
+  title: "Photo Privacy Checklist Before Sharing Online",
   description: "Essential checklist: blur faces, hide license plates, remove EXIF/GPS, black out text. Prevent doxxing and identity theft. Use irreversible redaction...",
   alternates: {
     canonical: '/guides/redaction-checklist',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Photo Privacy Checklist Before Sharing",
-    description: "Protect privacy before posting. Essential redaction checklist.",
+    description: "Protect privacy before posting. Essential redaction checklist. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

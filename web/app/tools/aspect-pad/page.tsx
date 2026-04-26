@@ -5,23 +5,22 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Aspect Ratio Padder—16:9, 1:1, 9:16 Without Cropping | PixCloak",
-  description:
-    "Pad images to Instagram, YouTube, or custom aspect ratios using solid color or blur fill—no cropping. Local in browser, no upload. Fix 1080×1080 and vertical formats safely.",
+  title: "Aspect Ratio Padder—16:9, 1:1, 9:16 Without",
+  description: "Pad images to Instagram, YouTube, or custom aspect ratios using solid color or blur fill—no cropping. Local in browser, no upload.",
   alternates: {
     canonical: "/tools/aspect-pad",
     languages: { "x-default": "/tools/aspect-pad", en: "/tools/aspect-pad" },
   },
   openGraph: {
     title: "Pad to target aspect ratio",
-    description: "Letterbox or pillarbox without losing image content.",
+    description: "Letterbox or pillarbox without losing image content. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/aspect-pad",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Aspect ratio padder",
-    description: "Blur or color bars for social sizes.",
+    description: "Blur or color bars for social sizes. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 

@@ -40,55 +40,59 @@ function findPages(dir, basePath = "") {
 function optimizeTitle(title) {
   if (!title) return title;
 
-  const currentLength = title.length;
+  // Remove " | PixCloak" if it exists, since Next.js layout.tsx handles it
+  let cleanTitle = title.replace(/\s*\|\s*PixCloak/g, "").trim();
+  const currentLength = cleanTitle.length + 11; // +11 for " | PixCloak" added by template
 
   // 如果标题在合理范围内，不修改
   if (currentLength >= 30 && currentLength <= 60) {
-    return title;
+    return cleanTitle;
   }
 
   // 标题过短：添加描述性内容
   if (currentLength < 30) {
     // 常见短标题优化
-    if (title.includes("Contact")) {
-      return "Contact Us: Questions & Support | PixCloak";
+    if (cleanTitle.includes("Contact")) {
+      return "Contact Us: Questions & Support";
     }
-    if (title.includes("Privacy Policy")) {
-      return "Privacy Policy: Your Data Stays Local | PixCloak";
+    if (cleanTitle.includes("Privacy Policy")) {
+      return "Privacy Policy: Your Data Stays Local";
     }
-    if (title.includes("Terms of Service")) {
-      return "Terms of Service: Free Image Tools | PixCloak";
+    if (cleanTitle.includes("Terms of Service")) {
+      return "Terms of Service: Free Image Tools";
     }
-    if (title.includes("平台常见图片限制")) {
-      return "平台常见图片限制（200KB/500KB 规范） | PixCloak";
+    if (cleanTitle.includes("平台常见图片限制")) {
+      return "平台常见图片限制（200KB/500KB 规范）";
     }
 
     // 通用优化：添加简短描述
-    const withoutBrand = title.replace(" | PixCloak", "").trim();
-    return `${withoutBrand} - Free Online Tool | PixCloak`;
+    return `${cleanTitle} - Free Online Tool`;
   }
 
   // 标题过长：精简内容
   if (currentLength > 60) {
-    // 保留主关键词和品牌
-    const withoutBrand = title.replace(" | PixCloak", "").trim();
     const maxLength = 50;
 
-    if (withoutBrand.length > maxLength) {
-      // 截断到合适长度，保留重要部分
-      const truncated = withoutBrand.substring(0, maxLength - 3);
+    if (cleanTitle.length > maxLength) {
+      // 如果标题中本来就包含了 "..."，说明已经是手动截断过的了，直接保留
+      if (cleanTitle.includes("...")) {
+        return cleanTitle;
+      }
+      
+      // 截断到合适长度，保留重要部分，但不添加字面量 "..."
+      const truncated = cleanTitle.substring(0, maxLength);
       const lastSpace = truncated.lastIndexOf(" ");
       const result =
         lastSpace > 0
-          ? truncated.substring(0, lastSpace) + "..."
-          : truncated + "...";
-      return result + " | PixCloak";
+          ? truncated.substring(0, lastSpace)
+          : truncated;
+      return result;
     }
 
-    return `${withoutBrand.substring(0, maxLength)} | PixCloak`;
+    return cleanTitle.substring(0, maxLength);
   }
 
-  return title;
+  return cleanTitle;
 }
 
 // 优化 Description 长度（120-160字符）

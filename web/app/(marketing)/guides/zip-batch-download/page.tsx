@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Batch Image Compressor: ZIP Download (No Upload) | PixCloak',
+  title: 'Batch Image Compressor: ZIP Download (No Upload)',
   description: 'Compress multiple images in your browser, set target KB, format, and 1920px resize, then download all as a single ZIP. Works offline, no uploads.',
   alternates: {
     canonical: '/guides/zip-batch-download',

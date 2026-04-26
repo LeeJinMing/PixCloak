@@ -5,20 +5,19 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Responsive srcset & sizes Generator for <img> | PixCloak",
-  description:
-    "Build img srcset and sizes attributes with width hints and rough KB targets for mobile/tablet/desktop. Paste into HTML—improve LCP. All local, no upload.",
+  title: "Responsive srcset & sizes Generator for <img>",
+  description: "Build img srcset and sizes attributes with width hints and rough KB targets for mobile/tablet/desktop. Paste into HTML—improve LCP. All local, no upload.",
   alternates: { canonical: "/tools/srcset-generator", languages: { "x-default": "/tools/srcset-generator" } },
   openGraph: {
     title: "srcset / sizes markup helper",
-    description: "Responsive image HTML for performance.",
+    description: "Responsive image HTML for performance. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
     url: "/tools/srcset-generator",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "srcset generator",
-    description: "Copy-paste responsive img tags.",
+    description: "Copy-paste responsive img tags. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
   },
 };
 
