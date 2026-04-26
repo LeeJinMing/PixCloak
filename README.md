@@ -2,7 +2,16 @@
 
 Privacy & Performance toolkit: compress and redact images entirely in your browser. No upload. No tracking.
 
-- Repo: https://github.com/LeeJinMing/PixCloak
+This repository is **open source** (AGPL-3.0-only — see [LICENSE](LICENSE)). The live product is **PixCloak**.
+
+## Links
+
+| | URL |
+| --- | --- |
+| **Website** | https://pixcloak.com |
+| **Guides** | https://pixcloak.com/guides |
+| **Tools directory** | https://pixcloak.com/tools |
+| **Source (this repo)** | https://github.com/LeeJinMing/PixCloak |
 
 ## Features
 
@@ -17,7 +26,10 @@ Privacy & Performance toolkit: compress and redact images entirely in your brows
 
 ## Development
 
+App code lives in `web/` (Next.js).
+
 ```bash
+cd web
 npm i
 npm run dev
 ```
