@@ -13,6 +13,7 @@
     "submit-indexnow": "npm run submit:indexnow",
     "submit:indexnow:ps": "pwsh -File ./scripts/submit-indexnow.ps1",
     "submit:indexnow:all": "node ./scripts/submit-indexnow-all.mjs",
+    "submit:indexnow:local": "node ./scripts/run-with-local-env.mjs submit-indexnow-all.mjs",
     "submit:indexnow:incremental": "node ./scripts/submit-indexnow-incremental.mjs",
     "submit:indexnow:engines": "SUBMIT_ALL_ENGINES=true node ./scripts/submit-indexnow-all.mjs",
     "postdeploy": "node ./scripts/post-deploy-indexnow.mjs",
