@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { absoluteUrl } from "@/lib/site";
 
 type JsonLdProps = {
   data: Record<string, unknown>;
@@ -37,11 +38,11 @@ export function SoftwareAppJsonLd({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name,
-    url,
+    url: absoluteUrl(url),
     description,
     applicationCategory,
     operatingSystem,
-    ...(image ? { image } : {}),
+    ...(image ? { image: absoluteUrl(image) } : {}),
     offers: offersFree ? { "@type": "Offer", price: 0, priceCurrency: "USD" } : undefined,
     isAccessibleForFree: offersFree,
   } as Record<string, unknown>;

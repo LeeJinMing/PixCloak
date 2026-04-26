@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SoftwareAppJsonLd } from "@/components/SeoJsonLd";
+import { absoluteUrl } from "@/lib/site";
 import {
   IconBook,
   IconCompress,
@@ -295,14 +296,14 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "ItemList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Image Compressor", url: "/compress" },
-              { "@type": "ListItem", position: 2, name: "Image Redactor", url: "/redact" },
-              { "@type": "ListItem", position: 3, name: "All image tools", url: "/tools" },
-              { "@type": "ListItem", position: 4, name: "Rotate and flip images", url: "/tools/rotate-flip" },
-              { "@type": "ListItem", position: 5, name: "HEIC to JPG or WebP", url: "/tools/heic-converter" },
-              { "@type": "ListItem", position: 6, name: "PDF to image", url: "/tools/pdf-to-image" },
-              { "@type": "ListItem", position: 7, name: "Guides", url: "/guides" },
-              { "@type": "ListItem", position: 8, name: "Research and technical docs", url: "/research" },
+              { "@type": "ListItem", position: 1, name: "Image Compressor", item: absoluteUrl("/compress") },
+              { "@type": "ListItem", position: 2, name: "Image Redactor", item: absoluteUrl("/redact") },
+              { "@type": "ListItem", position: 3, name: "All image tools", item: absoluteUrl("/tools") },
+              { "@type": "ListItem", position: 4, name: "Rotate and flip images", item: absoluteUrl("/tools/rotate-flip") },
+              { "@type": "ListItem", position: 5, name: "HEIC to JPG or WebP", item: absoluteUrl("/tools/heic-converter") },
+              { "@type": "ListItem", position: 6, name: "PDF to image", item: absoluteUrl("/tools/pdf-to-image") },
+              { "@type": "ListItem", position: 7, name: "Guides", item: absoluteUrl("/guides") },
+              { "@type": "ListItem", position: 8, name: "Research and technical docs", item: absoluteUrl("/research") },
             ],
           }),
         }}
@@ -347,8 +348,9 @@ export default function Home() {
 }
 
 export const metadata: Metadata = {
-  title: "PixCloak—Compress & Redact Images Locally (No",
-  description: "Free browser tools: compress JPG/PNG/WebP to exact KB (TinyPNG-style, local-only), redact faces & license plates, strip EXIF. HEIC, PDF, rotate & flip,...",
+  title: "PixCloak—Local Compress & Redact (No Upload)",
+  description:
+    "Free browser tools: compress JPG/PNG/WebP to exact KB (TinyPNG-style, local-only), redact faces & license plates, strip EXIF. HEIC, PDF, rotate & flip.",
   alternates: {
     canonical: "/",
     languages: {

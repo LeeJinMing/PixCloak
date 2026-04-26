@@ -3,6 +3,8 @@
  * 用于 SEO 优化，帮助搜索引擎理解页面层级结构
  */
 
+import { absoluteUrl } from "@/lib/site";
+
 type BreadcrumbItem = {
   name: string;
   url: string;
@@ -13,8 +15,6 @@ type BreadcrumbJsonLdProps = {
 };
 
 export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://pixcloak.com';
-
   const breadcrumbList = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -22,7 +22,7 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${siteUrl}${item.url}`,
+      item: absoluteUrl(item.url),
     })),
   };
 
