@@ -18,6 +18,7 @@
     "postdeploy": "node ./scripts/post-deploy-indexnow.mjs",
     "seo:audit": "node ./scripts/seo-audit.mjs",
     "seo:check": "node ./scripts/check-seo-metadata.mjs",
+    "seo:rich-results": "node ./scripts/print-rich-results-checklist.mjs",
     "seo:fix": "node ./scripts/fix-seo-metadata.mjs",
     "seo:add-breadcrumbs": "node ./scripts/add-breadcrumbs-to-guides.mjs",
     "seo:verify": "node ./scripts/verify-seo-fixes.mjs",

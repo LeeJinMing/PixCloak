@@ -3,11 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SiteGraphJsonLd } from "@/components/SiteGraphJsonLd";
+import { getSiteOrigin } from "@/lib/site";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com";
+const siteUrl = getSiteOrigin();
 const isProd = process.env.NODE_ENV === "production";
 
 export const metadata: Metadata = {
@@ -48,39 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`} crossOrigin="anonymous" />
           </>
         )}
-        <script
-          type="application/ld+json"
-          // Organization schema for brand entity
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'PixCloak',
-              url: siteUrl,
-              logo: `${siteUrl}/favicon.svg`,
-              sameAs: [
-                'https://github.com/LeeJinMing/PixCloak'
-              ]
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          // WebSite schema with site search hint
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              url: siteUrl,
-              name: 'PixCloak',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: `${siteUrl}/guides?q={search_term_string}`,
-                'query-input': 'required name=search_term_string'
-              }
-            })
-          }}
-        />
+        <SiteGraphJsonLd />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`} data-ads={enableAds ? 'on' : 'off'}>
         {isProd && (
