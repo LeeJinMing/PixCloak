@@ -156,6 +156,43 @@ export default function Home() {
       </div>
 
       <div className="card" style={{ marginTop: 24 }}>
+        <h2 style={{ marginBottom: 12, fontSize: 20, color: "#0f172a" }}>Why PixCloak? (Local vs Cloud)</h2>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14, textAlign: "left" }}>
+            <thead>
+              <tr style={{ borderBottom: "2px solid #e2e8f0" }}>
+                <th style={{ padding: "12px 8px", color: "#64748b", fontWeight: 600 }}>Feature</th>
+                <th style={{ padding: "12px 8px", color: "#0f172a", fontWeight: 600 }}>PixCloak (Local)</th>
+                <th style={{ padding: "12px 8px", color: "#64748b", fontWeight: 600 }}>Traditional Cloud Tools</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
+                <td style={{ padding: "12px 8px", fontWeight: 500 }}>Privacy & Security</td>
+                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>100% Private (No Uploads)</td>
+                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Files uploaded to servers</td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
+                <td style={{ padding: "12px 8px", fontWeight: 500 }}>Processing Speed</td>
+                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>Instant (Uses your device)</td>
+                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Depends on internet speed</td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
+                <td style={{ padding: "12px 8px", fontWeight: 500 }}>File Size Limits</td>
+                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>Unlimited</td>
+                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Usually capped (e.g., 5MB)</td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
+                <td style={{ padding: "12px 8px", fontWeight: 500 }}>Cost & Quotas</td>
+                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>Completely Free</td>
+                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Paywalls & daily limits</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="card" style={{ marginTop: 24 }}>
         <h2 style={{ marginBottom: 12, fontSize: 20, color: "#0f172a" }}>Popular quick links</h2>
         <div className="home-quick-group">
           <h3>Compression &amp; size</h3>
