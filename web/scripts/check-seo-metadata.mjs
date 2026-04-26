@@ -77,20 +77,20 @@ function checkPage(file, content) {
 
   if (metadata.title) {
     const title = metadata.title;
-    const titleLength = title.length;
+    // 与 fix-seo-metadata.mjs 一致：layout title.template 会追加 " | PixCloak"（+11）
+    const cleanTitle = title.replace(/\s*\|\s*PixCloak/g, "").trim();
+    const titleLength = cleanTitle.length + 11;
 
-    // 检查标题长度
     if (titleLength > 60) {
-      issues.longTitles.push({ path: file, title, length: titleLength });
+      issues.longTitles.push({ path: file, title: cleanTitle, length: titleLength });
     } else if (titleLength < 30) {
-      issues.shortTitles.push({ path: file, title, length: titleLength });
+      issues.shortTitles.push({ path: file, title: cleanTitle, length: titleLength });
     }
 
-    // 检查标题重复
-    if (!issues.duplicateTitles.has(title)) {
-      issues.duplicateTitles.set(title, []);
+    if (!issues.duplicateTitles.has(cleanTitle)) {
+      issues.duplicateTitles.set(cleanTitle, []);
     }
-    issues.duplicateTitles.get(title).push(file);
+    issues.duplicateTitles.get(cleanTitle).push(file);
   }
 
   if (metadata.description) {

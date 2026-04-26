@@ -23,7 +23,6 @@ export default function Client() {
         <h2 style={{ marginBottom: 8 }}>Code</h2>
         <pre><code>{`<img src="${base}" srcset="${srcset}" sizes="${sizes}" alt="" />`}</code></pre>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'srcset Generator', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/srcset-generator' }) }} />
     </div>
   );
 }

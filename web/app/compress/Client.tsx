@@ -418,25 +418,6 @@ export default function CompressClient() {
           <Link className="pill-ghost" href="/guides/resize-longest-side">1920px</Link>
           <Link className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</Link>
         </div>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'SoftwareApplication',
-              name: 'PixCloak Image Compressor',
-              applicationCategory: 'UtilitiesApplication',
-              operatingSystem: 'Web',
-              url: '/',
-              description: 'Online JPEG & PNG image compressor. Local processing, target size (KB), batch ZIP download.',
-              offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
-              isAccessibleForFree: true,
-              softwareVersion: '1.0.0',
-              brand: { '@type': 'Brand', name: 'PixCloak' },
-              publisher: { '@type': 'Organization', name: 'PixCloak' }
-            })
-          }}
-        />
       </div>
 
       <div className="card">

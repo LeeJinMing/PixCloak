@@ -42,7 +42,6 @@ export default function Client() {
           <button className="button button-success" onClick={download}>Download SVG</button>
         </div>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'SVG Optimizer', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/svg-optimizer' }) }} />
     </div>
   );
 }

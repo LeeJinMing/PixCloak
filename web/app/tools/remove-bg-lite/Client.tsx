@@ -49,7 +49,6 @@ export default function Client() {
           {outUrl && <img src={outUrl} alt="out" style={{ maxWidth: 420, background: 'repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 20px 20px' }} />}
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Remove BG (Lite)', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/remove-bg-lite' }) }} />
     </div>
   );
 }

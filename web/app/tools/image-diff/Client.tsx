@@ -60,7 +60,6 @@ export default function Client() {
         <h2 style={{ marginBottom: 4 }}>Pixel diff</h2>
         <canvas ref={diffCanvasRef} style={{ maxWidth: '100%', background: 'repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 20px 20px' }} />
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Image Diff', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/image-diff' }) }} />
     </div>
   );
 }

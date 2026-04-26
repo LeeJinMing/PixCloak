@@ -39,7 +39,6 @@ export default function Client() {
       <div className="card" style={{ overflow: 'auto' }}>
         <canvas ref={canvasRef} width={1200} height={630} style={{ maxWidth: '100%', background: '#0f172a' }} />
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'OG/Twitter Card Generator', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/og-card' }) }} />
     </div>
   );
 }

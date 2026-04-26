@@ -82,8 +82,6 @@ export default function Client() {
           </div>
         )}
       </div>
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Data URL Converter & Alt Suggestions', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/dataurl-alt' }) }} />
     </div>
   );
 }

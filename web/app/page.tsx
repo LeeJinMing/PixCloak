@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SoftwareAppJsonLd } from "@/components/SeoJsonLd";
 import {
   IconBook,
   IconCompress,
@@ -14,6 +15,12 @@ import {
 export default function Home() {
   return (
     <div>
+      <SoftwareAppJsonLd
+        name="PixCloak"
+        url="/"
+        description="Free browser-based image tools: compress to target KB, redact sensitive areas, convert formats. 100% local processing; no uploads."
+        image="/og.png"
+      />
       <h1 className="home-hero-title">Free Image Tools — Compress &amp; Redact (No Upload)</h1>
       <p className="text-muted" style={{ marginBottom: 12 }}>
         Compress and redact images entirely in your browser. No upload, privacy‑first, fast and simple.

@@ -48,7 +48,6 @@ export default function Client() {
           )}
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Trim Transparent Edges', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/trim-transparent' }) }} />
     </div>
   );
 }

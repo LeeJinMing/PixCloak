@@ -46,7 +46,6 @@ export default function Client() {
           <div className="text-muted">Preview • Ensure the source is square for best quality</div>
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Favicon Pack Generator', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/favicon-pack' }) }} />
     </div>
   );
 }

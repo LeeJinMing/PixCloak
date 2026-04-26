@@ -54,7 +54,6 @@ export default function Client() {
           </ul>
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Batch Rename & ZIP', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/batch-rename' }) }} />
     </div>
   );
 }

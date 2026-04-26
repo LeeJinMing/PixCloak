@@ -44,7 +44,6 @@ export default function Client() {
           <div className="text-muted">{files.length} files</div>
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Batch WebP Converter', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/webp-converter' }) }} />
     </div>
   );
 }

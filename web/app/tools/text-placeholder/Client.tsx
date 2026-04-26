@@ -55,7 +55,6 @@ export default function Client() {
       <div className="card" style={{ overflow: 'auto' }}>
         <canvas ref={canvasRef} style={{ maxWidth: '100%', background: '#0f172a' }} />
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Text Placeholder', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/text-placeholder' }) }} />
     </div>
   );
 }

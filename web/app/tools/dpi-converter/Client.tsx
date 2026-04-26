@@ -39,7 +39,6 @@ export default function Client() {
           Common presets: 72 (web), 150 (draft print), 300 (standard print)
         </div>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'DPI/PPI Converter', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/dpi-converter' }) }} />
     </div>
   );
 }

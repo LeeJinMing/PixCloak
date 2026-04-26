@@ -61,7 +61,6 @@ export default function Client() {
           <Preview url={previewUrl} draw={drawOnCanvas} size={size} text={text} pos={pos} opacity={opacity} font={font} />
         </div>
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Text Watermark', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web', url: '/tools/watermark' }) }} />
     </div>
   );
 }
