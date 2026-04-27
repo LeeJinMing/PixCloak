@@ -6,8 +6,8 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Redact Image Online Free: Blur Face & License",
-  description: "Redact photos in your browser: blur faces, blur license plates, black out text, pixelate sensitive areas. Export without EXIF/GPS.",
+  title: "Redact Image Online—Blur Faces, Plates, Text",
+  description: "Redact images locally: blur faces, hide license plates, black out text, pixelate sensitive areas, and export without EXIF/GPS. No upload.",
   alternates: {
     canonical: "/redact",
     languages: {
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Image redaction online (free, no upload)",
-    description: "Blur faces and plates, censor text, strip EXIF. Runs locally in your browser. Works locally in your browser, no uploads.",
+    title: "Redact image online: faces, plates, text",
+    description: "Blur, pixelate, or black out sensitive image details locally. No upload. EXIF/GPS removed on export.",
     url: "/redact",
     type: "website",
   },
@@ -67,12 +67,18 @@ export default function Page() {
           <AdsenseUnit format="auto" />
         </div>
         <h1 className="page-hero-title">
-          Redact Image Online—Blur Faces, License Plates & Text (No Upload)
+          Redact Image Online—Blur Faces, Plates & Text (No Upload)
         </h1>
         <p className="text-muted page-hero-lede">
-          Use blur or pixelation for faces and number plates, solid blocks for IDs and text. Redaction is stronger than a simple blur for
-          compliance-style masking; everything stays on your device. EXIF/GPS is removed on export—good before sharing or publishing.
+          Hide faces, license plates, IDs, screenshots, and private text before sharing. Use pixelation or solid blocks for stronger privacy
+          than soft blur. Files stay on your device, and EXIF/GPS is removed on export.
         </p>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+          <a href="/guides/blur-face-in-photo" className="pill">Blur faces</a>
+          <a href="/guides/license-plate-redaction" className="pill">Hide license plates</a>
+          <a href="/guides/black-out-text-in-image" className="pill">Black out text</a>
+          <a href="/tools/exif-checker" className="pill">Check EXIF/GPS</a>
+        </div>
         <div className="card" style={{ marginBottom: 16 }}>
           <h2 style={{ marginBottom: 8 }}>Best for</h2>
           <p className="text-muted" style={{ marginTop: 0 }}>

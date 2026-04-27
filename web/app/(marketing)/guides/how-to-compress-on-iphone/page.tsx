@@ -3,8 +3,8 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Compress Images on iPhone (Free, No App)",
-  description: "Compress images on iPhone without app: open Safari, visit compressor, select photos, compress to target KB, download. Works in browser, no installation.",
+  title: "Compress Photos on iPhone in Safari (No App)",
+  description: "Compress iPhone photos to 100KB, 200KB, 500KB, or 1MB in Safari. No app, no account, no upload. Works with Photos files.",
   alternates: {
     canonical: '/guides/how-to-compress-on-iphone',
     languages: {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "How to Compress Images on iPhone (Free, No App)",
-    description: "Compress iPhone photos in Safari browser. No app download. Free, unlimited. Works offline after first load. Works locally in your browser, no uploads.",
+    title: "Compress iPhone photos in Safari",
+    description: "No app download. Choose target KB, compress locally, and save the result.",
     url: "/guides/how-to-compress-on-iphone",
     type: "article",
   },
@@ -35,7 +35,7 @@ export default function HowToCompressOnIPhone() {
       ]} />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>How to Compress Images on iPhone (Free, No App)</h1>
+          <h1>Compress Photos on iPhone in Safari (No App)</h1>
           <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Steps (30 Seconds)</h2>
@@ -47,8 +47,13 @@ export default function HowToCompressOnIPhone() {
             <li><strong>Tap "Compress"</strong> → wait 2-5 seconds</li>
             <li><strong>Tap "Download"</strong> → compressed images save to Photos app</li>
           </ol>
-          <p><strong>No app installation, no account, no limits.</strong> Works entirely in Safari browser.</p>
-          <p><a href="/compress">👉 Compress iPhone photos now →</a></p>
+          <p><strong>No app installation, no account, no upload.</strong> Works in Safari and keeps image processing on your device.</p>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+            <a className="pill" href="/compress?kb=200">Compress to 200KB</a>
+            <a className="pill" href="/compress?kb=500">Compress to 500KB</a>
+            <a className="pill" href="/tools/heic-converter">Convert HEIC first</a>
+          </div>
+          <p><a href="/compress">Compress iPhone photos now</a></p>
 
           <h2>Why Compress iPhone Photos?</h2>
 

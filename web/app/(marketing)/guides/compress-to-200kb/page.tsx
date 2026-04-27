@@ -4,8 +4,8 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import AnswerCard, { CommonAnswerCards } from '@/components/AnswerCard';
 
 export const metadata: Metadata = {
-  title: "Compress Images to 200KB (Free, No Quality Loss)",
-  description: "Reduce image file size to exactly 200KB for avatars, forms, and uploads. Works for JPEG, PNG, WebP—no app download. Perfect for LinkedIn and job applications.",
+  title: "Compress Image to 200KB Online (No Upload)",
+  description: "Compress JPG, PNG, or WebP to 200KB in your browser. No upload, no app. Good for job forms, avatars, LinkedIn, and email.",
   alternates: {
     canonical: '/guides/compress-to-200kb',
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Compress Images to 200KB (Free, No Quality Loss)",
-    description: "Reduce image file size to exactly 200KB for avatars, forms, and uploads. Perfect for LinkedIn, job applications, and social media.",
+    title: "Compress image to 200KB online",
+    description: "Hit a 200KB target in your browser. No upload, no account, no app.",
     url: "/guides/compress-to-200kb",
     type: "article",
   },
@@ -39,16 +39,21 @@ export default function GuideCompress200KB() {
         <AnswerCard {...CommonAnswerCards.compressTo200KB} />
 
       <div className="card">
-          <h1>How to Compress Images to 200KB (Free, 2 Minutes)</h1>
+          <h1>Compress Image to 200KB Online (No Upload)</h1>
           <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Answer</h2>
           <p>
-            Open our <a href="/compress?kb=200">free compressor</a>, set target to 200KB, drag your images in, and download.
-            Works for JPEG, PNG, WebP—no app download, no uploads. Perfect for LinkedIn profile pictures, job applications,
-            forum avatars, and form submissions that have strict 200KB limits.
+            Open the <a href="/compress?kb=200">200KB compressor</a>, upload your image, preview quality, and download the clean file.
+            It works for JPG, PNG, and WebP directly in your browser. Files are not uploaded.
           </p>
-          <p><strong>Pro tip:</strong> Resize to 1920px longest side first to get better quality at 200KB.</p>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+            <a className="pill" href="/compress?kb=200">Start: compress to 200KB</a>
+            <a className="pill" href="/tools/platform-checker">Check upload limits</a>
+            <a className="pill" href="/tools/exif-checker">Check EXIF/GPS</a>
+          </div>
+          <p><strong>Best for:</strong> job application forms, government uploads, LinkedIn photos, forum avatars, email attachments, and small website images.</p>
+          <p><strong>Quality tip:</strong> resize to 1920px longest side first if the original photo is very large.</p>
 
           <h2>Why Compress Images to 200KB?</h2>
           <p>

@@ -3,8 +3,8 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Blur Faces in Photos (Free, No App)",
-  description: "Blur faces before sharing to protect privacy. Works on iPhone, Android and desktop—no app. Choose blur, pixelate or solid block. Exports remove EXIF/GPS.",
+  title: "Blur Faces in Photos Online (No Upload)",
+  description: "Blur or pixelate faces in photos before sharing. Works on iPhone, Android, and desktop with no app. Export also strips EXIF/GPS.",
   alternates: {
     canonical: "/guides/blur-face-in-photo",
     languages: {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "How to Blur Faces in Photos (Free, No App Needed)",
-    description: "Protect privacy by blurring faces in photos before sharing. Works on iPhone, Android, and desktop—no app download. Works locally in your browser, no uploads.",
+    title: "Blur faces in photos online",
+    description: "Hide faces locally before sharing. No upload, no app, EXIF/GPS stripped on export.",
     url: "/guides/blur-face-in-photo",
     type: "article",
   },
@@ -35,11 +35,16 @@ export default function GuideBlurFace() {
       ]} />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>How to Blur Faces in Photos</h1>
+          <h1>Blur Faces in Photos Online (No Upload)</h1>
           <p style={{ marginBottom: 8 }}>
-            <strong>Short answer:</strong> Cover the whole face with strong pixelation, solid block, or heavy blur plus margin so thumbnails can’t leak edges.
+            <strong>Short answer:</strong> open the redaction tool, cover each face with pixelation or a solid block, then export a clean copy with EXIF/GPS removed.
           </p>
           <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+            <a className="pill" href="/redact">Blur faces now</a>
+            <a className="pill" href="/guides/license-plate-redaction">Hide license plates</a>
+            <a className="pill" href="/tools/exif-checker">Check EXIF/GPS</a>
+          </div>
 
           <h2>Why Blur Faces in Photos?</h2>
           <p>

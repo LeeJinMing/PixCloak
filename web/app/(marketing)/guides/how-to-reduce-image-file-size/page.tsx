@@ -3,8 +3,8 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "How to Reduce Image File Size (Free, 2 Minutes)",
-  description: "Reduce image file size in 3 steps: resize to 1920px, compress to target KB, remove EXIF. Free tool, no uploads. Works for JPEG, PNG, WebP.",
+  title: "Reduce Image File Size Without Uploading",
+  description: "Reduce JPG, PNG, or WebP file size by resizing, compressing to target KB, and stripping EXIF. Free browser workflow, no upload.",
   alternates: {
     canonical: '/guides/how-to-reduce-image-file-size',
     languages: {
@@ -35,7 +35,7 @@ export default function HowToReduceImageFileSize() {
       ]} />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>How to Reduce Image File Size (Free, 2 Minutes)</h1>
+          <h1>Reduce Image File Size Without Uploading</h1>
           <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
 
           <h2>Quick Answer</h2>
@@ -45,7 +45,11 @@ export default function HowToReduceImageFileSize() {
             <li><strong>Compress</strong> to JPEG 80% or WebP 75% (removes data humans can't see)</li>
             <li><strong>Remove EXIF</strong> metadata (saves additional 10-50KB, protects privacy)</li>
           </ol>
-          <p><a href="/compress">👉 Try free tool (works in browser, no upload) →</a></p>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+            <a className="pill" href="/compress?kb=500">Compress to 500KB</a>
+            <a className="pill" href="/compress?kb=200">Compress to 200KB</a>
+            <a className="pill" href="/tools/resize-image?width=1920">Resize to 1920px</a>
+          </div>
           <p><strong>Result:</strong> 2-4MB camera photos reduce to 300-500KB, perfect for websites, email, social media.</p>
 
           <h2>Why Reduce Image File Size?</h2>
