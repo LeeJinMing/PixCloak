@@ -67,6 +67,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/scenarios`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
+    {
+      url: `${base}/embed`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${base}/embed/compress`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    },
+    {
       url: `${base}/tools`,
       lastModified: toolsUpdated,
       changeFrequency: "weekly" as const,
@@ -223,6 +241,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${base}/facts`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    },
+    {
+      url: `${base}/gallery`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${base}/case-studies`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    },
+    {
+      url: `${base}/testimonials`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    },
+    {
+      url: `${base}/benchmark`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    },
+    {
+      url: `${base}/changelog`,
+      lastModified: toolsUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    },
+    {
       url: `${base}/research`,
       lastModified: toolsUpdated,
       changeFrequency: "monthly" as const,
@@ -263,6 +317,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: toolsUpdated,
       changeFrequency: "monthly" as const,
       priority: 0.5,
+    },
+    {
+      url: `${base}/contact`,
+      lastModified: toolsUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.45,
     },
   ];
 }

@@ -24,6 +24,13 @@ export function SiteGraphJsonLd() {
           height: 630,
         },
         sameAs: ["https://github.com/LeeJinMing/PixCloak"],
+        knowsAbout: [
+          "local image compression",
+          "image redaction",
+          "EXIF metadata removal",
+          "GPS metadata removal",
+          "browser-based image tools",
+        ],
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "customer support",
@@ -39,6 +46,7 @@ export function SiteGraphJsonLd() {
         description: "Compress and Redact images locally. No upload. No tracking.",
         publisher: { "@id": orgId },
         inLanguage: "en",
+        about: { "@id": orgId },
       },
     ],
   };

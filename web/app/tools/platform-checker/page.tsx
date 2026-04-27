@@ -5,8 +5,8 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: "Image Size Checker—KB & Pixel Limits for Social &",
-  description: "Check width, height, and file size against common limits (LinkedIn, Instagram, job forms, gov uploads). Local-only—no upload. Jump to 200KB/500KB presets.",
+  title: "Upload Readiness Checker—KB, Pixels, EXIF",
+  description: "Check image KB and dimensions before forms, social posts, and web uploads. Jump to compress, resize, or EXIF/GPS cleanup. Local-only, no upload.",
   alternates: { canonical: "/tools/platform-checker", languages: { "x-default": "/tools/platform-checker" } },
   openGraph: {
     title: "Platform image limit checker",
@@ -32,9 +32,9 @@ export default function Page() {
         ]}
       />
       <SoftwareAppJsonLd
-        name="Platform Compliance Checker"
+        name="Upload Readiness Checker"
         url="/tools/platform-checker"
-        description="Validate images against platform requirements for file size and dimensions. Get instant feedback and optimization suggestions."
+        description="Validate images against practical upload requirements for file size and dimensions. Jump to compression, resizing, or EXIF cleanup."
       />
       <Client />
       <div className="container" style={{ display: "grid", gap: 12 }}>
@@ -51,7 +51,7 @@ export default function Page() {
       <FaqJsonLd items={[
         {
           question: "What presets are included?",
-          answer: "WeChat Moments–style 200KB, general job/forms 500KB, web hero with 1920px width and 800KB, and YouTube thumbnail 1280×720 with 200KB. Each preset is a practical target with short notes—not an exhaustive list of every site.",
+            answer: "WeChat-style 200KB, general job/forms 500KB, web hero with 1920px width and 800KB, and YouTube thumbnail 1280×720 with 200KB. Each preset is a practical target with short notes—not an exhaustive list of every site.",
         },
         {
           question: "What does the checker validate?",

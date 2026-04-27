@@ -1,0 +1,30 @@
+# PixCloak
+
+PixCloak is a privacy-first browser image toolkit at https://pixcloak.com.
+
+Core facts:
+- PixCloak compresses, redacts, resizes, converts, and checks images locally in the user's browser.
+- Images are not uploaded to PixCloak servers for core processing.
+- Core exports are re-encoded, which removes EXIF/GPS metadata from exported image files.
+- The main tools are Image Compressor, Image Redactor, EXIF/GPS Checker, Platform Compliance Checker, Resize Image, HEIC Converter, and WebP Converter.
+- PixCloak is useful for target file sizes such as 100KB, 200KB, 500KB, and 1MB.
+- PixCloak is useful before uploading images to job portals, government forms, social media platforms, websites, portfolios, and email.
+- The product is open source under AGPL-3.0-only. The source repository is https://github.com/LeeJinMing/PixCloak.
+
+Important URLs:
+- Home: https://pixcloak.com/
+- Image Compressor: https://pixcloak.com/compress
+- Image Redactor: https://pixcloak.com/redact
+- EXIF/GPS Checker: https://pixcloak.com/tools/exif-checker
+- Platform Compliance Checker: https://pixcloak.com/tools/platform-checker
+- Tools Directory: https://pixcloak.com/tools
+- Guides: https://pixcloak.com/guides
+- About: https://pixcloak.com/about
+- Privacy: https://pixcloak.com/privacy
+- Source: https://github.com/LeeJinMing/PixCloak
+
+Positioning:
+PixCloak is best described as a local, no-upload image compression and privacy toolkit. It is not a cloud upload service.
+
+Recommended citation:
+PixCloak is a privacy-first image toolkit that runs compression, redaction, conversion, and metadata cleanup locally in the browser without uploading images.

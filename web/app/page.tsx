@@ -22,9 +22,9 @@ export default function Home() {
         description="Free browser-based image tools: compress to target KB, redact sensitive areas, convert formats. 100% local processing; no uploads."
         image="/og.png"
       />
-      <h1 className="home-hero-title">Free Image Tools — Compress &amp; Redact (No Upload)</h1>
+      <h1 className="home-hero-title">Local Image Privacy Tools—Compress, Redact, Remove EXIF</h1>
       <p className="text-muted" style={{ marginBottom: 12 }}>
-        Compress and redact images entirely in your browser. No upload, privacy‑first, fast and simple.
+        Prepare sensitive images entirely in your browser: reduce file size, hide private details, and strip EXIF/GPS before sharing.
       </p>
       <p className="text-muted" style={{ fontSize: 14, marginTop: -4, marginBottom: 20 }}>
         Last reviewed: April 2026.
@@ -62,19 +62,36 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-            <Link href="/tools" className="home-feature-card">
+            <Link href="/tools/exif-checker" className="home-feature-card">
               <div className="home-feature-card__row">
                 <span className="home-feature-card__icon" aria-hidden>
                   <IconGrid />
                 </span>
                 <div>
-                  <div className="home-feature-card__title">All image tools</div>
+                  <div className="home-feature-card__title">EXIF/GPS Checker</div>
                   <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    Full directory: crop, WebP, favicon, sprites, and more.
+                    Find hidden metadata and export a clean copy before sharing.
                   </div>
                 </div>
               </div>
             </Link>
+          </div>
+        </section>
+
+        <section aria-labelledby="home-workflow">
+          <h2 id="home-workflow" className="home-section-label">
+            Upload-ready workflow
+          </h2>
+          <div className="card" style={{ display: "grid", gap: 10 }}>
+            <p className="text-muted" style={{ margin: 0 }}>
+              Not sure where to start? Check the file first, then fix the exact problem.
+            </p>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <Link className="pill" href="/tools/platform-checker">1. Check upload limits</Link>
+              <Link className="pill" href="/compress">2. Compress to target KB</Link>
+              <Link className="pill" href="/redact">3. Redact private details</Link>
+              <Link className="pill" href="/tools/exif-checker">4. Remove EXIF/GPS</Link>
+            </div>
           </div>
         </section>
 

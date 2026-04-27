@@ -5,15 +5,15 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Remove Solid Background Free—White/Green Screen,",
+  title: "Remove Solid Background—White or Green Screen",
   description: "Color-based background remover: click the backdrop, tune tolerance, export transparent PNG. Best for product shots and green screen—not AI hair edges.",
   alternates: {
     canonical: "/tools/remove-bg-lite",
     languages: { "x-default": "/tools/remove-bg-lite", en: "/tools/remove-bg-lite" },
   },
   openGraph: {
-    title: "Free Background Remover: Remove BG (No Upload)",
-    description: "Remove background by color. Works locally. No uploads. Free, unlimited. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
+    title: "Remove solid backgrounds locally",
+    description: "Color-based background cleanup for white, green, or uniform backdrops. Works locally. No uploads. Not an AI portrait cutout tool.",
     url: "/tools/remove-bg-lite",
     type: "website",
   },
@@ -25,7 +25,7 @@ export default function Page() {
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: '/' },
         { name: 'Tools', url: '/tools' },
-        { name: 'Remove Background', url: '/tools/remove-bg-lite' }
+        { name: 'Remove Solid Background', url: '/tools/remove-bg-lite' }
       ]} />
 
       <SoftwareAppJsonLd
@@ -36,7 +36,7 @@ export default function Page() {
 
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1 className="page-hero-title">Free Background Remover: Remove BG (No Upload)</h1>
+          <h1 className="page-hero-title">Remove Solid Backgrounds (No Upload)</h1>
 
           <h2>Quick Start</h2>
           <ol>
@@ -45,7 +45,7 @@ export default function Page() {
             <li><strong>Adjust tolerance</strong> slider (0-100) to refine selection</li>
             <li><strong>Download</strong> transparent PNG</li>
           </ol>
-          <p><strong>Works best for solid color backgrounds. 100% local—no uploads. Free, unlimited.</strong></p>
+          <p><strong>Works best for solid color backgrounds. This is color-based cleanup, not AI portrait segmentation.</strong></p>
         </div>
 
         <Client />

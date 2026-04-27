@@ -5,10 +5,10 @@ import { useMemo, useRef, useState } from "react";
 type Rule = { name: string; maxKB?: number; maxW?: number; maxH?: number; notes?: string; ctas?: { label: string; href: string }[] };
 
 const RULES: Rule[] = [
-  { name: "WeChat Moments", maxKB: 200, notes: "200KB 通常体验更佳", ctas: [{ label: "200KB", href: "/?kb=200" }, { label: "Resize 1920", href: "/guides/resize-to-1920" }] },
-  { name: "Job/Forms (General)", maxKB: 500, notes: "常见上限 500KB", ctas: [{ label: "500KB", href: "/?kb=500" }, { label: "Clean EXIF", href: "/guides/exif-gps-removal" }] },
-  { name: "Portfolio/Web Hero", maxKB: 800, maxW: 1920, notes: "建议最长边 1920px", ctas: [{ label: "800KB", href: "/?kb=800" }, { label: "Resize 1920", href: "/guides/resize-to-1920" }] },
-  { name: "YouTube Thumbnail", maxKB: 200, maxW: 1280, maxH: 720, notes: "1280×720 ≤ 200KB", ctas: [{ label: "200KB", href: "/?kb=200" }] },
+  { name: "WeChat Moments", maxKB: 200, notes: "200KB is a practical sharing target", ctas: [{ label: "Compress to 200KB", href: "/compress?kb=200" }, { label: "Resize 1920", href: "/tools/resize-image?width=1920" }] },
+  { name: "Job/Forms (General)", maxKB: 500, notes: "Many uploaders reject files above 500KB", ctas: [{ label: "Compress to 500KB", href: "/compress?kb=500" }, { label: "Check EXIF/GPS", href: "/tools/exif-checker" }] },
+  { name: "Portfolio/Web Hero", maxKB: 800, maxW: 1920, notes: "Use 1920px longest side before compression", ctas: [{ label: "Compress to 800KB", href: "/compress?kb=800" }, { label: "Resize 1920", href: "/tools/resize-image?width=1920" }] },
+  { name: "YouTube Thumbnail", maxKB: 200, maxW: 1280, maxH: 720, notes: "1280×720 and 200KB is a safe upload target", ctas: [{ label: "Compress to 200KB", href: "/compress?kb=200" }] },
 ];
 
 export default function Client() {
@@ -34,8 +34,8 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h1>Platform Compliance Checker</h1>
-        <p className="text-muted">Validate KB/dimensions for common platforms and jump to one‑click presets.</p>
+        <h1>Upload Readiness Checker</h1>
+        <p className="text-muted">Check KB and dimensions first, then jump straight to compress, resize, or EXIF cleanup.</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <label>
             Platform
@@ -60,8 +60,9 @@ export default function Client() {
         </div>
         {!allPass && (
           <div style={{ marginTop: 8, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {rule.maxKB && kb != null && kb > rule.maxKB && <Link className="pill" href={`/?kb=${rule.maxKB}`}>Compress to {rule.maxKB}KB</Link>}
-            {rule.maxW && w != null && w > rule.maxW && <Link className="pill" href="/guides/resize-to-1920">Resize to {rule.maxW}</Link>}
+            {rule.maxKB && kb != null && kb > rule.maxKB && <Link className="pill" href={`/compress?kb=${rule.maxKB}`}>Compress to {rule.maxKB}KB</Link>}
+            {rule.maxW && w != null && w > rule.maxW && <Link className="pill" href={`/tools/resize-image?width=${rule.maxW}`}>Resize to {rule.maxW}</Link>}
+            <Link className="pill" href="/tools/exif-checker">Check EXIF/GPS</Link>
           </div>
         )}
         <div style={{ marginTop: 8, display: 'flex', gap: 8, flexWrap: 'wrap' }}>

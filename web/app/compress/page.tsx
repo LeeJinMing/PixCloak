@@ -73,6 +73,17 @@ export default function Page() {
         <Link href="/tools/heic-converter">HEIC to JPG/WebP</Link> or <Link href="/tools/pdf-to-image">PDF to image</Link>, then shrink
         here; fix orientation with <Link href="/tools/rotate-flip">rotate &amp; flip</Link> before compressing if needed.
       </p>
+      <div className="card" style={{ marginBottom: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>Best for</h2>
+        <p className="text-muted" style={{ marginTop: 0 }}>
+          Job forms, government portals, social posts, email attachments, and website images that must hit a clear KB target.
+        </p>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <Link className="pill" href="/tools/platform-checker">Check limits first</Link>
+          <Link className="pill" href="/tools/exif-checker">Check EXIF/GPS</Link>
+          <Link className="pill" href="/redact">Redact sensitive details</Link>
+        </div>
+      </div>
       <Suspense fallback={null}>
         <div style={{ position: 'relative' }}>
           {/* Side rails - keep away from main controls */}

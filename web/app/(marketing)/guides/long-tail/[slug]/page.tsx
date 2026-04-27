@@ -93,23 +93,54 @@ function getActionTitle(guide: LongTailGuide) {
   }
 }
 
+function compactLabel(value: string, maxLength = 26) {
+  const cleaned = value
+    .replace(/\s+uploads?$/i, "")
+    .replace(/\s+images?$/i, "")
+    .replace(/\s+photos?$/i, "")
+    .replace(/\s+attachments?$/i, "")
+    .trim();
+  if (cleaned.length <= maxLength) return cleaned;
+  return `${cleaned.slice(0, maxLength - 1).trimEnd()}…`;
+}
+
 function toSentenceCase(value: string) {
   if (!value) return value;
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
 function buildTitle(guide: LongTailGuide) {
-  const core = getActionTitle(guide);
-  const usp =
-    guide.action === "compress" || guide.action === "resize"
-      ? "(Free, No Upload)"
-      : "(Offline, No Upload)";
-  return `${core} ${usp} | PixCloak`;
+  const label = compactLabel(guide.platform ?? guide.keyword);
+  const target = getTargetLabel(guide);
+  switch (guide.action) {
+    case "compress":
+      return `${target} ${label} Guide`;
+    case "resize":
+      return `${target} ${label} Resize`;
+    case "convert":
+      return `${label} WebP Converter`;
+    case "redact":
+      return `${label} Redaction Guide`;
+    case "exif":
+      return `${label} EXIF Removal`;
+    case "watermark":
+      return `${label} Watermark Guide`;
+    case "remove-bg":
+      return `${label} Solid BG Removal`;
+    case "sprite":
+      return `${label} Sprite Sheet`;
+    case "lqip":
+      return `${label} LQIP Guide`;
+    case "pad":
+    default:
+      return `${label} Crop and Pad`;
+  }
 }
 
 function buildDescription(guide: LongTailGuide) {
   const target = getTargetLabel(guide);
-  return `Step-by-step guide to ${getActionSentence(guide)}. Hit ${target} with clean quality. Works offline in your browser—no uploads.`;
+  const label = compactLabel(guide.platform ?? guide.keyword, 34);
+  return `Prepare ${label} for ${target} with PixCloak. Follow local, no-upload steps to check quality, strip metadata, and export clean files.`;
 }
 
 function getToolLabel(action: LongTailAction) {
@@ -135,6 +166,42 @@ function getToolLabel(action: LongTailAction) {
     case "pad":
     default:
       return "Aspect Ratio Tool";
+  }
+}
+
+function getNextAction(guide: LongTailGuide) {
+  const target = getTargetLabel(guide);
+  switch (guide.action) {
+    case "compress":
+      return {
+        title: `Compress to ${target}`,
+        body: "Open the compressor with this target prefilled, then preview quality before export.",
+        href: guide.toolPath,
+      };
+    case "resize":
+      return {
+        title: `Resize to ${target}`,
+        body: "Open the resize tool with this dimension target, then compress if the file is still too large.",
+        href: guide.toolPath,
+      };
+    case "redact":
+      return {
+        title: "Redact sensitive areas",
+        body: "Mask faces, plates, IDs, or text locally, then export a clean copy without EXIF/GPS.",
+        href: guide.toolPath,
+      };
+    case "exif":
+      return {
+        title: "Check EXIF/GPS",
+        body: "Verify hidden metadata first, then download a cleaned copy before sharing.",
+        href: "/tools/exif-checker",
+      };
+    default:
+      return {
+        title: `Open ${getToolLabel(guide.action)}`,
+        body: "Use the matching local tool, then download the processed file without uploading it.",
+        href: guide.toolPath,
+      };
   }
 }
 
@@ -628,6 +695,7 @@ export default async function LongTailGuidePage({ params }: PageProps) {
   const useCases = getUseCases(guide);
   const faqItems = getFaqItems(guide);
   const relatedLinks = getRelatedLinks(guide.action);
+  const nextAction = getNextAction(guide);
   const pageUrl = `${SITE_URL}/guides/long-tail/${slug}`;
 
   const articleJsonLd = {
@@ -705,6 +773,22 @@ export default async function LongTailGuidePage({ params }: PageProps) {
             </Link>
             <span className="pill-ghost">Offline processing</span>
             <span className="pill-ghost">No uploads</span>
+          </div>
+        </div>
+
+        <div className="card" style={{ borderColor: "#bfdbfe", background: "#eff6ff" }}>
+          <h2 style={{ marginBottom: 8 }}>Next step: {nextAction.title}</h2>
+          <p style={{ marginTop: 0 }}>{nextAction.body}</p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link className="button" href={nextAction.href}>
+              Start with PixCloak
+            </Link>
+            <Link className="pill" href="/tools/platform-checker">
+              Check upload limits first
+            </Link>
+            <Link className="pill" href="/tools/exif-checker">
+              Check EXIF/GPS
+            </Link>
           </div>
         </div>
 

@@ -33,7 +33,10 @@ export default function Client() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h2>Remove BG (Lite)</h2>
+        <h2>Remove Solid Background</h2>
+        <p className="text-muted" style={{ marginTop: 0 }}>
+          Click a uniform background color, adjust tolerance, and export a transparent PNG. Best for white, gray, or green-screen backdrops.
+        </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <input ref={inputRef} type="file" accept="image/*" onChange={onPick} className="input" />
           <label>Tolerance<input className="input" type="number" min={50} max={4000} step={50} value={tol} onChange={(e) => setTol(parseInt(e.target.value) || 900)} style={{ width: 120, marginLeft: 8 }} /></label>

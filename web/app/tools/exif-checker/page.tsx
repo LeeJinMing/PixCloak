@@ -42,6 +42,17 @@ export default function Page() {
       <Client />
       <div className="container" style={{ display: "grid", gap: 12 }}>
         <div className="card">
+          <h2>Best for</h2>
+          <p className="text-muted" style={{ marginTop: 0 }}>
+            Checking iPhone photos, screenshots, document scans, and client images before public sharing. If metadata is present, export a clean copy or move to redaction.
+          </p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/redact" className="pill">Redact visible details</Link>
+            <Link href="/compress" className="pill">Compress clean copy</Link>
+            <Link href="/tools/platform-checker" className="pill">Check upload limits</Link>
+          </div>
+        </div>
+        <div className="card">
           <h2>Related tools</h2>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <Link href="/redact" className="pill">Photo redaction</Link>

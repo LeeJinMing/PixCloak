@@ -3,8 +3,8 @@ import { FaqJsonLd, SoftwareAppJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Free Online Image Tools—Resize, WebP, Crop, EXIF",
-  description: "20+ browser-based tools: compress to KB, PNG/JPG/WebP, resize, crop for Instagram, redact faces/plates, EXIF strip, sprites, favicons.",
+  title: "Local Image Tools—Compress, Redact, EXIF, Resize",
+  description: "Privacy-first browser tools: compress to target KB, redact faces and plates, check EXIF/GPS, resize, convert HEIC/WebP, and prepare uploads.",
   alternates: {
     canonical: "/tools",
     languages: { "x-default": "/tools", en: "/tools" }
@@ -24,51 +24,50 @@ export const metadata: Metadata = {
 
 export default function ToolsPage() {
   const featuredTools = [
-    { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to 1920px, 1080px, 800px or custom. 3 fit modes. Batch + ZIP.', highlight: 'Batch + ZIP · no upload' },
-    { href: '/tools/png-jpg-converter', title: 'PNG ↔ JPG Converter', desc: 'Convert between PNG and JPG. Adjust quality, choose background color.', highlight: 'Batch convert · no upload' },
-    { href: '/tools/remove-bg-lite', title: 'Remove Background', desc: 'Remove backgrounds by color. 100% local, no uploads. Free unlimited.', highlight: 'Runs locally' },
-    { href: '/compress', title: 'Image Compressor', desc: 'Compress to exact KB (100KB, 200KB, 500KB). Convert to WebP or JPEG.', highlight: 'Exact KB targets' },
-    { href: '/tools/crop-templates', title: 'Crop Image', desc: 'Crop to 1:1, 4:3, 16:9 for Instagram, Facebook, LinkedIn. Batch support.', highlight: 'Social presets' },
-    { href: '/tools/favicon-pack', title: 'Favicon Generator', desc: 'Generate all favicon sizes + manifest.json. For web, iOS, Android, PWA.', highlight: 'Full favicon set' },
+    { href: '/compress', title: 'Image Compressor', desc: 'Compress to exact KB targets like 100KB, 200KB, 500KB, or 1MB.', highlight: 'Core · target KB' },
+    { href: '/redact', title: 'Image Redactor', desc: 'Blur faces, hide plates, black out text, and export without EXIF/GPS.', highlight: 'Core · privacy' },
+    { href: '/tools/exif-checker', title: 'EXIF/GPS Checker', desc: 'Detect hidden camera and location metadata, then download a clean copy.', highlight: 'Core · metadata' },
+    { href: '/tools/platform-checker', title: 'Upload Checker', desc: 'Check KB and dimensions before job forms, social posts, and web uploads.', highlight: 'Growth · upload-ready' },
+    { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to 1920px, 1080px, 800px or custom dimensions. Batch + ZIP.', highlight: 'Upload-ready' },
+    { href: '/tools/heic-converter', title: 'HEIC to JPG / WebP', desc: 'Convert iPhone HEIC/HEIF photos before compressing or uploading.', highlight: 'Upload-ready' },
   ];
 
   const toolsByCategory = {
-    'Format & Conversion': [
-      { href: '/tools/heic-converter', title: 'HEIC to JPG / WebP', desc: 'Convert iPhone HEIC/HEIF to JPEG or WebP. Batch + ZIP.' },
-      { href: '/tools/png-jpg-converter', title: 'PNG ↔ JPG Converter', desc: 'Convert between PNG and JPG with quality control.' },
-      { href: '/tools/webp-converter', title: 'WebP Converter', desc: 'Convert to WebP—25-35% smaller than JPG. Batch + ZIP.' },
-      { href: '/tools/dataurl-alt', title: 'Data URL Converter', desc: 'Convert images to Base64 data URLs with alt suggestions.' },
-    ],
-    'Resize & Crop': [
-      { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to preset or custom dimensions. Contain/Cover/Stretch modes.' },
-      { href: '/tools/rotate-flip', title: 'Rotate & Flip', desc: 'Rotate 90°/180°, mirror horizontally or vertically. Batch + ZIP.' },
-      { href: '/tools/crop-templates', title: 'Crop Image', desc: 'Crop to exact aspect ratios (1:1, 4:3, 16:9, 4:5, 9:16, 2:3).' },
-      { href: '/tools/aspect-pad', title: 'Aspect Ratio Padder', desc: 'Add padding to achieve target aspect ratio without cropping.' },
-      { href: '/tools/trim-transparent', title: 'Trim Transparent', desc: 'Auto-trim transparent edges from PNG images.' },
-    ],
-    'Privacy & Metadata': [
+    'Core privacy tools': [
+      { href: '/compress', title: 'Image Compressor', desc: 'Reduce file size locally and strip metadata on export.' },
       { href: '/redact', title: 'Photo Redaction', desc: 'Blur faces, hide license plates, black out text. Remove EXIF/GPS.' },
       { href: '/tools/exif-checker', title: 'EXIF/GPS Checker', desc: 'Detect and remove EXIF/GPS metadata from photos.' },
-      { href: '/tools/watermark', title: 'Text Watermark', desc: 'Add custom text watermarks. Batch process. Copyright protection.' },
+      { href: '/tools/platform-checker', title: 'Upload Checker', desc: 'Check file size and dimensions before uploading.' },
     ],
-    'Design & Branding': [
-      { href: '/tools/remove-bg-lite', title: 'Remove Background', desc: 'Remove solid color backgrounds. Export transparent PNG.' },
+    'Upload-ready tools': [
+      { href: '/tools/resize-image', title: 'Resize Image', desc: 'Resize to preset or custom dimensions. Contain/Cover/Stretch modes.' },
+      { href: '/tools/heic-converter', title: 'HEIC to JPG / WebP', desc: 'Convert iPhone HEIC/HEIF to JPEG or WebP. Batch + ZIP.' },
+      { href: '/tools/webp-converter', title: 'WebP Converter', desc: 'Convert to WebP—25-35% smaller than JPG. Batch + ZIP.' },
+      { href: '/tools/png-jpg-converter', title: 'PNG ↔ JPG Converter', desc: 'Convert between PNG and JPG with quality control.' },
+      { href: '/tools/crop-templates', title: 'Crop Image', desc: 'Crop to exact aspect ratios for social media and forms.' },
+      { href: '/tools/rotate-flip', title: 'Rotate & Flip', desc: 'Rotate 90°/180°, mirror horizontally or vertically. Batch + ZIP.' },
+    ],
+    'Design and branding': [
+      { href: '/tools/watermark', title: 'Text Watermark', desc: 'Add custom text watermarks. Batch process. Copyright protection.' },
+      { href: '/tools/remove-bg-lite', title: 'Remove Solid Background', desc: 'Remove white, green, or other solid backgrounds. Not AI cutout.' },
       { href: '/tools/favicon-pack', title: 'Favicon Generator', desc: 'Generate all favicon sizes (16x16 to 512x512) + manifest.json.' },
       { href: '/tools/og-card', title: 'OG Card Generator', desc: 'Create 1200×630 social media images + meta tags.' },
       { href: '/tools/svg-optimizer', title: 'SVG Optimizer', desc: 'Minify and clean SVG code locally. Reduce file size.' },
       { href: '/tools/text-placeholder', title: 'Text Placeholder', desc: 'Generate text-based placeholder images for mockups.' },
     ],
-    'Web Development': [
+    'Developer utilities': [
       { href: '/tools/srcset-generator', title: 'srcset Generator', desc: 'Generate responsive <img> srcset and sizes attributes.' },
       { href: '/tools/lqip', title: 'LQIP Placeholder', desc: 'Create tiny Base64 placeholders with blur for lazy loading.' },
       { href: '/tools/sprite-sheet', title: 'Sprite Sheet', desc: 'Combine images into sprite sheet + JSON coordinate mapping.' },
       { href: '/tools/image-diff', title: 'Image Diff', desc: 'A/B slider comparison and pixel difference visualization.' },
     ],
-    'Utilities': [
+    'Extra utilities': [
       { href: '/tools/pdf-to-image', title: 'PDF to Image', desc: 'Rasterize PDF pages to PNG. Max pages cap, ZIP download.' },
-      { href: '/tools/platform-checker', title: 'Platform Compliance', desc: 'Check if images meet platform KB/dimension requirements.' },
       { href: '/tools/dpi-converter', title: 'DPI/PPI Converter', desc: 'Calculate print size from pixels using DPI/PPI.' },
       { href: '/tools/batch-rename', title: 'Batch Rename', desc: 'Rename multiple images with patterns. Download as ZIP.' },
+      { href: '/tools/aspect-pad', title: 'Aspect Ratio Padder', desc: 'Add padding to achieve target aspect ratio without cropping.' },
+      { href: '/tools/trim-transparent', title: 'Trim Transparent', desc: 'Auto-trim transparent edges from PNG images.' },
+      { href: '/tools/dataurl-alt', title: 'Data URL Converter', desc: 'Convert images to Base64 data URLs with alt suggestions.' },
     ],
   };
 
@@ -87,19 +86,18 @@ export default function ToolsPage() {
 
     <div style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-          <h1 className="page-hero-title">Free Image Tools: Resize, Convert, Compress (No Upload)</h1>
+          <h1 className="page-hero-title">Local Image Tools: Compress, Redact, Check EXIF (No Upload)</h1>
           <p style={{ fontSize: '16px', lineHeight: '1.6' }}>
-            <strong>20+ professional image tools, all free and working locally in your browser.</strong> No uploads, no account required,
-            no file size limits. Process images for websites, social media, photography, and design—everything happens on your device.
-            Your images never leave your computer.
+            <strong>Start with the privacy and upload tools most people need first.</strong> Compress to exact KB, redact sensitive
+            details, check EXIF/GPS, then use resize and conversion tools when a platform rejects your file.
           </p>
       </div>
 
         {/* Featured Tools */}
         <div className="card">
-          <h2>Featured Tools (Most Popular)</h2>
+          <h2>Core Tools First</h2>
           <p style={{ fontSize: '14px', marginBottom: '16px' }}>
-            High-intent picks for resize, format change, and size cuts. All run in your browser—no upload, no account.
+            These tools carry the product promise: local processing, no uploads, and cleaner files before sharing.
           </p>
           <div style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
             {featuredTools.map((tool, i) => (
@@ -116,7 +114,7 @@ export default function ToolsPage() {
 
         {/* All Tools by Category */}
         <div className="card">
-          <h2>All Tools by Category</h2>
+          <h2>Tools by Priority</h2>
           {Object.entries(toolsByCategory).map(([category, tools]) => (
             <div key={category} style={{ marginBottom: '24px' }}>
               <h3 style={{ fontSize: '18px', marginBottom: '12px', color: '#1a1a1a' }}>{category}</h3>

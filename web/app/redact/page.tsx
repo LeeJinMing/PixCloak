@@ -73,6 +73,17 @@ export default function Page() {
           Use blur or pixelation for faces and number plates, solid blocks for IDs and text. Redaction is stronger than a simple blur for
           compliance-style masking; everything stays on your device. EXIF/GPS is removed on export—good before sharing or publishing.
         </p>
+        <div className="card" style={{ marginBottom: 16 }}>
+          <h2 style={{ marginBottom: 8 }}>Best for</h2>
+          <p className="text-muted" style={{ marginTop: 0 }}>
+            Screenshots, IDs, invoices, documents, faces, plates, and client images that should not expose private details or hidden metadata.
+          </p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <a href="/tools/exif-checker" className="pill">Check EXIF/GPS first</a>
+            <a href="/compress" className="pill">Compress after redaction</a>
+            <a href="/guides/redaction-checklist" className="pill">Use redaction checklist</a>
+          </div>
+        </div>
         <RedactClient />
         <div className="ad-bottom">
           <AdsenseUnit format="auto" />
