@@ -50,6 +50,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Malformed crawl URL (e.g. broken relative link resolving to /&)
+      { source: "/&", destination: "/", permanent: true },
+      { source: "/%26", destination: "/", permanent: true },
       // Fix crawler 404 at /insights/script.js by pointing to Vercel insights
       {
         source: "/insights/script.js",

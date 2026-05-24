@@ -750,7 +750,7 @@ export default async function LongTailGuidePage({ params }: PageProps) {
       <div className="container" style={{ display: "grid", gap: 16 }}>
         <div className="card">
           <h1>{h1}</h1>
-          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: May 2026.</p>
           <p className="text-muted">
             If you need to {actionSentence}, this guide gives you a repeatable
             workflow with PixCloak. Everything runs locally in your browser, so
