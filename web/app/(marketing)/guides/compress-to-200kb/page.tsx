@@ -5,7 +5,8 @@ import AnswerCard, { CommonAnswerCards } from '@/components/AnswerCard';
 
 export const metadata: Metadata = {
   title: "Compress Image to 200KB Online (No Upload)",
-  description: "Compress JPG, PNG, or WebP to 200KB in your browser. No upload, no app. Good for job forms, avatars, LinkedIn, and email.",
+  description:
+    "Compress JPG, PNG, or WebP to exactly 200KB in your browser. Free, no upload—job portals, LinkedIn, government forms, and email limits.",
   alternates: {
     canonical: '/guides/compress-to-200kb',
     languages: {

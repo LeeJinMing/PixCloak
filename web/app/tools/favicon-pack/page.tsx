@@ -5,15 +5,17 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Free Favicon Generator: All Sizes + Manifest...",
-  description: "Generate favicons in all sizes (16x16 to 512x512) instantly. Includes manifest.json and HTML code. Works locally—no uploads. For websites, PWAs, iOS, Android.",
+  title: "Favicon Generator All Sizes—ICO, PNG & manifest",
+  description:
+    "Free favicon pack generator: 16×16 to 512×512, favicon.ico, apple-touch-icon, PWA icons, manifest.json, and HTML snippet. Runs locally—no upload.",
   alternates: {
     canonical: "/tools/favicon-pack",
     languages: { "x-default": "/tools/favicon-pack", en: "/tools/favicon-pack" },
   },
   openGraph: {
-    title: "Free Favicon Generator: All Sizes + Manifest",
-    description: "Generate favicons for all devices. Download ZIP with manifest.json. Free, no uploads. Works locally in your browser, no uploads.",
+    title: "Favicon generator all sizes + manifest.json",
+    description:
+      "Create a full favicon pack (ICO, PNG, apple-touch-icon, PWA 192/512). Download ZIP with manifest.json and head tags. Local, no upload.",
     url: "/tools/favicon-pack",
     type: "website",
   },
@@ -36,7 +38,12 @@ export default function Page() {
 
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1 className="page-hero-title">Free Favicon Generator: All Sizes + Manifest (No Upload)</h1>
+          <h1 className="page-hero-title">Favicon Generator All Sizes—Free Pack + manifest.json</h1>
+          <p className="text-muted" style={{ marginTop: 0 }}>
+            <strong>Short answer:</strong> Upload a square logo (512×512 or larger). The tool builds a complete{" "}
+            <strong>favicon pack</strong>—favicon.ico, 16×16–512×512 PNGs, apple-touch-icon, Android/PWA icons, manifest.json, and ready-to-paste{" "}
+            <code>&lt;head&gt;</code> links. Everything runs locally; nothing is uploaded.
+          </p>
 
           <h2>Quick Start</h2>
           <ol>
@@ -252,6 +259,7 @@ export default function Page() {
         </div>
 
         <FaqJsonLd items={[
+          { question: "Is there a favicon generator for all sizes?", answer: "Yes. Upload one square logo and this tool outputs 16x16 through 512x512 PNGs, favicon.ico, apple-touch-icon, Android/PWA icons, manifest.json, and HTML link tags in one ZIP. Processing is local—no upload." },
           { question: "How do I create a favicon for my website?", answer: "Upload logo image (512x512 or larger, square), preview generated sizes, download ZIP with all files and manifest.json, upload files to website root directory, add HTML snippet to <head> section. Tool generates all required sizes (16x16 to 512x512) automatically. Works locally—no uploads. Free, unlimited." },
           { question: "What size should my favicon be?", answer: "Provide multiple sizes for different platforms: 16x16 and 32x32 for browser tabs/bookmarks, 180x180 for iOS, 192x192 and 512x512 for Android/PWA. Start with 512x512 source image—tool generates all sizes automatically. Single size looks blurry on some devices." },
           { question: "How do I add favicon to Next.js?", answer: "Place all files in /public folder. Add metadata to app/layout.tsx: export const metadata = { icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' } }. Next.js auto-detects favicon.ico and manifest.json in /public. Restart dev server to see changes." },

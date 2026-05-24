@@ -7,8 +7,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Compress Images to 100KB/200KB/500KB—TinyPNG",
-  description: "Hit exact file sizes (100KB, 200KB, 500KB, 1MB) from JPG/PNG/WebP. Batch ZIP, no upload—TinyPNG-style limits in your browser. Free, unlimited.",
+  title: "Compress Image to 100KB/200KB—TinyPNG Alternative",
+  description:
+    "TinyPNG alternative with exact KB targets (100KB, 200KB, 500KB). Compress JPG/PNG/WebP locally—no upload, no daily limit. Preview quality before export.",
   alternates: {
     canonical: "/compress",
     languages: {
@@ -51,7 +52,7 @@ export default function Page() {
       <SoftwareAppJsonLd
         name="PixCloak Compress"
         url="/compress"
-        description="Compress images locally to exact KB targets; export JPEG, WebP, or PNG without uploads. Strips metadata on export."
+        description="TinyPNG alternative: compress images locally to exact KB targets (100KB, 200KB, 500KB). Export JPEG, WebP, or PNG without uploads."
         image="/og.png"
       />
       <FaqJsonLd
@@ -64,8 +65,21 @@ export default function Page() {
         ]}
       />
       <h1 className="page-hero-title">
-        Image Compressor to Exact KB—100KB, 200KB, 500KB (No Upload)
+        Compress Image to Exact KB—100KB, 200KB, 500KB (No Upload)
       </h1>
+      <div className="card" style={{ marginBottom: 16 }}>
+        <p style={{ marginTop: 0, marginBottom: 8 }}>
+          <strong>Short answer:</strong> Set a target size (for example 200KB), upload JPG/PNG/WebP, preview quality, and download. This{" "}
+          <strong>TinyPNG alternative</strong> compresses pictures in your browser so files never leave your device—useful when portals cap
+          attachment size.
+        </p>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <Link className="pill" href="/compress?kb=200">Compress to 200KB</Link>
+          <Link className="pill" href="/guides/tinypng-alternative-free-no-upload">TinyPNG comparison</Link>
+          <Link className="pill" href="/guides/compress-to-200kb">200KB guide</Link>
+          <Link className="pill" href="/guides/long-tail">Platform size guides</Link>
+        </div>
+      </div>
       <p className="text-muted page-hero-lede">
         Dial in a target size for forms, job portals, and social limits. Processing stays in your browser—useful when you want a{" "}
         <strong>TinyPNG-style</strong> smaller file without sending photos to a third party. WebP and JPEG export; metadata stripped on

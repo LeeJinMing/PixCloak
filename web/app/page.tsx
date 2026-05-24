@@ -234,6 +234,12 @@ export default function Home() {
             <Link className="pill" href="/guides/tinypng-alternative-free-no-upload">
               TinyPNG alternative
             </Link>
+            <Link className="pill" href="/guides/long-tail">
+              Platform size guides
+            </Link>
+            <Link className="pill" href="/tools/favicon-pack">
+              Favicon generator
+            </Link>
             <Link className="pill" href="/guides/complete-image-compression-guide">
               Compression guide
             </Link>

@@ -3,8 +3,9 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "TinyPNG Alternative: Free Image Compressor (No...",
-  description: "Looking for a TinyPNG alternative that works offline? Compress images to exact KB targets (100KB-1MB) with no uploads. Free unlimited compression, batch...",
+  title: "TinyPNG Alternative—Free, No Upload, Exact KB",
+  description:
+    "TinyPNG alternative that runs offline in your browser: exact KB targets (100KB–1MB), batch ZIP, unlimited use. No uploads—privacy-first compression.",
   alternates: {
     canonical: '/guides/tinypng-alternative-free-no-upload',
     languages: {
@@ -50,7 +51,11 @@ export default function TinyPNGAlternative() {
             uploads, no server processing, no file count limits. Compress to exact KB targets (100KB, 200KB, 500KB, 1MB), batch process unlimited images,
             download as ZIP. Privacy-first, GDPR-compliant, works on iPhone, Android, desktop.
           </p>
-          <p><a href="/compress">Try PixCloak compressor now (no account needed) →</a></p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+            <a className="pill" href="/compress">Open compressor</a>
+            <a className="pill" href="/compress?kb=200">Compress to 200KB</a>
+            <a className="pill" href="/guides/compress-to-200kb">200KB step-by-step</a>
+          </div>
 
           <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '16px' }}>
             <thead>

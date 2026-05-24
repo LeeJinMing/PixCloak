@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixcloak.com";
-  const coreUpdated = new Date("2026-04-24");
-  const toolsUpdated = new Date("2026-04-24");
+  const coreUpdated = new Date("2026-05-24");
+  const toolsUpdated = new Date("2026-05-24");
   // All /guides/* URLs live in app/guides/sitemap.ts only (single source of truth).
   return [
     {

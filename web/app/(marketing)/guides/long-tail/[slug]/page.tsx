@@ -12,7 +12,7 @@ import {
 } from "@/lib/longTailGuides";
 
 const PUBLISHED_AT = "2025-10-03";
-const MODIFIED_AT = "2026-01-19";
+const MODIFIED_AT = "2026-05-24";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com";
 
 interface PageProps {
@@ -140,7 +140,8 @@ function buildTitle(guide: LongTailGuide) {
 function buildDescription(guide: LongTailGuide) {
   const target = getTargetLabel(guide);
   const label = compactLabel(guide.platform ?? guide.keyword, 34);
-  return `Prepare ${label} for ${target} with PixCloak. Follow local, no-upload steps to check quality, strip metadata, and export clean files.`;
+  const task = getActionSentence(guide);
+  return `How to ${task}. Free ${label} guide—local browser tool, no upload. Hit ${target}, preview quality, strip metadata, and export.`;
 }
 
 function getToolLabel(action: LongTailAction) {

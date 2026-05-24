@@ -65,7 +65,13 @@ export default function LongTailGuideIndex() {
             Short, actionable pages for common upload limits and platforms. Each guide links to
             the right PixCloak tool preset. Processing stays in your browser.
           </p>
-          <p className="text-muted" style={{ fontSize: 14, marginTop: 8, marginBottom: 0 }}>Last reviewed: April 2026.</p>
+          <p className="text-muted" style={{ fontSize: 14, marginTop: 8, marginBottom: 0 }}>Last reviewed: May 2026.</p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
+            <Link className="pill" href="/compress">Image compressor</Link>
+            <Link className="pill" href="/redact">Redact tool</Link>
+            <Link className="pill" href="/tools/exif-checker">EXIF checker</Link>
+            <Link className="pill" href="/guides/compress-to-200kb">Compress to 200KB</Link>
+          </div>
         </div>
 
         {byLocale.map(({ locale, label, guides }) => (

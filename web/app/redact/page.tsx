@@ -6,8 +6,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Redact Image Online—Blur Faces, Plates, Text",
-  description: "Redact images locally: blur faces, hide license plates, black out text, pixelate sensitive areas, and export without EXIF/GPS. No upload.",
+  title: "Redact Photo Online Free—Blur Face & License Plate",
+  description:
+    "Free image redaction tool: redact photos online in your browser. Blur faces, hide license plates, black out text. No upload—EXIF/GPS stripped on export.",
   alternates: {
     canonical: "/redact",
     languages: {
@@ -22,8 +23,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Redact image online: faces, plates, text",
-    description: "Blur, pixelate, or black out sensitive image details locally. No upload. EXIF/GPS removed on export.",
+    title: "Redact photo online free—blur face & plate",
+    description:
+      "Image redaction tool that runs locally: blur, pixelate, or black out faces, plates, and text. No upload; metadata removed on export.",
     url: "/redact",
     type: "website",
   },
@@ -46,7 +48,7 @@ export default function Page() {
       <SoftwareAppJsonLd
         name="PixCloak Redact"
         url="/redact"
-        description="Redact images locally: blur or pixelate faces and license plates, black out text, strip EXIF/GPS. No server upload."
+        description="Redact photos online free in your browser: blur faces, hide license plates, black out text. Image redaction with no server upload; EXIF/GPS stripped on export."
         image="/og.png"
       />
       <FaqJsonLd
@@ -54,7 +56,9 @@ export default function Page() {
           { question: "Does this upload my images?", answer: "No. Everything runs locally in your browser; files never leave your device." },
           { question: "Can I blur faces and license plates online for free?", answer: "Yes. Draw blur or pixelate regions over faces, plates (number plates), or other sensitive areas, then export. No account and no upload." },
           { question: "Redact vs blur license plate—which should I use?", answer: "Blur or heavy pixelation hides detail for casual viewers; solid black boxes are stronger when you need obvious irreversible masking. This tool supports both styles." },
+          { question: "How do I redact an image online for free?", answer: "Open this page, upload your photo, draw blur or black boxes over sensitive areas, then export. Processing stays in your browser—no account, no upload, and no per-day quota." },
           { question: "Is this an image redaction tool for compliance?", answer: "It helps you mask sensitive regions locally before sharing. You remain responsible for your process and legal requirements; the tool keeps files on-device for privacy." },
+          { question: "Can I redact a photo without uploading it?", answer: "Yes. PixCloak redacts images entirely in your browser. Files are not sent to a server, which is useful for IDs, invoices, and client photos." },
           { question: "How do I remove EXIF/GPS?", answer: "Export from the tool; exports are stripped of metadata including EXIF and GPS coordinates." },
         ]}
       />
@@ -67,8 +71,20 @@ export default function Page() {
           <AdsenseUnit format="auto" />
         </div>
         <h1 className="page-hero-title">
-          Redact Image Online—Blur Faces, Plates & Text (No Upload)
+          Redact Photo Online Free—Blur Faces, License Plates & Text
         </h1>
+        <div className="card" style={{ marginBottom: 16 }}>
+          <p style={{ marginTop: 0, marginBottom: 8 }}>
+            <strong>Short answer:</strong> Upload a photo, draw blur, pixelate, or solid black boxes over faces, license plates (number plates),
+            IDs, or text, then download. This free <strong>image redaction tool</strong> runs in your browser—nothing is uploaded—and exports
+            strip EXIF/GPS.
+          </p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <a href="/guides/license-plate-redaction" className="pill">License plate redaction</a>
+            <a href="/guides/blur-face-in-photo" className="pill">Blur faces guide</a>
+            <a href="/guides/long-tail/id-card-privacy-redaction" className="pill">ID card redaction</a>
+          </div>
+        </div>
         <p className="text-muted page-hero-lede">
           Hide faces, license plates, IDs, screenshots, and private text before sharing. Use pixelation or solid blocks for stronger privacy
           than soft blur. Files stay on your device, and EXIF/GPS is removed on export.

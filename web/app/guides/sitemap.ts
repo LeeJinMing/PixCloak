@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = (
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixcloak.com"
   ).replace(/\/$/, "");
-  const guidesUpdated = new Date("2026-04-24");
+  const guidesUpdated = new Date("2026-05-24");
 
   const urls: MetadataRoute.Sitemap = [];
 
