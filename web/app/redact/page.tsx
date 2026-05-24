@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import RedactClient from "./Client";
 import AdsenseUnit from "@/components/Adsense";
@@ -80,9 +81,9 @@ export default function Page() {
             strip EXIF/GPS.
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <a href="/guides/license-plate-redaction" className="pill">License plate redaction</a>
-            <a href="/guides/blur-face-in-photo" className="pill">Blur faces guide</a>
-            <a href="/guides/long-tail/id-card-privacy-redaction" className="pill">ID card redaction</a>
+            <Link href="/guides/license-plate-redaction" className="pill">License plate redaction</Link>
+            <Link href="/guides/blur-face-in-photo" className="pill">Blur faces guide</Link>
+            <Link href="/guides/long-tail/id-card-privacy-redaction" className="pill">ID card redaction</Link>
           </div>
         </div>
         <p className="text-muted page-hero-lede">
