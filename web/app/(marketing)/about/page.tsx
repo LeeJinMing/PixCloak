@@ -56,7 +56,7 @@ export default function AboutPage() {
         <h2>Our principles</h2>
         <ul>
           <li><strong>Privacy by default</strong>: we avoid collecting personal data and do not upload your images.</li>
-          <li><strong>Performance</strong>: Web Worker/Canvas processing, minimal JavaScript, and responsive UI.</li>
+          <li><strong>Performance</strong>: Canvas-based local processing (with optional Web Worker encoding), minimal JavaScript, and responsive UI.</li>
           <li><strong>Clarity</strong>: clean UX, keyboard shortcuts, and helpful guides for common tasks.</li>
         </ul>
 

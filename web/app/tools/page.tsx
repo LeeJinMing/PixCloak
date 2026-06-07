@@ -199,9 +199,8 @@ export default function ToolsPage() {
 
           <h3>Professional Quality</h3>
           <p>
-            <strong>Same algorithms used by Photoshop and professional tools.</strong> High-quality resampling (Lanczos), smart compression,
-            accurate color space handling. Results match or exceed paid alternatives. Built by developers who understand image processing
-            and web performance.
+            <strong>Browser-native Canvas processing.</strong> EXIF-aware loading, quality-controlled JPEG/WebP encoding, and batch ZIP export.
+            Results are suitable for web, social, and form uploads. Built for privacy and predictable file sizes.
           </p>
         </div>
 

@@ -1,9 +1,19 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import JSZip from "jszip";
+import Link from "next/link";
+import {
+  absToRel,
+  relToAbs,
+  loadOrientedBitmap,
+  getSourceSize,
+  type DrawableSource,
+  type RedactBox,
+  type RelRedactBox,
+} from "@/lib/image";
+import { downloadZipFromBlobs } from "@/lib/image/zip";
 
-type Box = { x: number; y: number; w: number; h: number };
-type RelBox = { x: number; y: number; w: number; h: number };
+type Box = RedactBox;
+type RelBox = RelRedactBox;
 type Preset = { key: string; name: string; boxes: RelBox[] };
 const PRESETS: Preset[] = [
   { key: 'wechat', name: 'Chat Screenshot (avatar + name + time)', boxes: [{ x: 0.02, y: 0.01, w: 0.16, h: 0.09 }, { x: 0.20, y: 0.02, w: 0.35, h: 0.06 }] },
@@ -22,6 +32,9 @@ export default function RedactClient() {
   const [mode, setMode] = useState<"solid" | "pixelate">("solid");
   const [pixelStrength, setPixelStrength] = useState<"strong" | "stronger" | "extreme">("strong");
   const undoStack = useRef<Box[][]>([]);
+  const baseSourceRef = useRef<DrawableSource | null>(null);
+  const relBoxesRef = useRef<RelBox[]>([]);
+  const objectUrlRef = useRef<string | null>(null);
   const [presetKey, setPresetKey] = useState<string>("");
   const [userPresets, setUserPresets] = useState<Preset[]>([]);
   const jsonInputRef = useRef<HTMLInputElement | null>(null);
@@ -35,9 +48,16 @@ export default function RedactClient() {
   }
 
   async function handleFile(file: File) {
+    if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+    if (baseSourceRef.current instanceof ImageBitmap) baseSourceRef.current.close();
     const url = URL.createObjectURL(file);
+    objectUrlRef.current = url;
+    const source = await loadOrientedBitmap(file);
+    baseSourceRef.current = source;
     setImageUrl(url);
     setBoxes([]);
+    relBoxesRef.current = [];
+    setTimeout(() => draw(undefined, []), 0);
   }
   function handleFiles(list: FileList) {
     const arr = Array.from(list).filter(f => f.type.startsWith('image/'))
@@ -94,30 +114,45 @@ export default function RedactClient() {
     setDrawing(false); setStart(null);
   }
 
-  function draw(preview?: Box, sourceBoxes?: Box[]) {
-    const canvas = canvasRef.current; if (!canvas || !imageUrl) return;
-    const ctx = canvas.getContext("2d"); if (!ctx) return;
-    const img = new Image();
-    img.onload = () => {
-      canvas.width = img.width; canvas.height = img.height;
-      ctx.drawImage(img, 0, 0);
-      const base = sourceBoxes ?? boxes;
-      const all = [...base, ...(preview ? [preview] : [])];
-      for (const b of all) {
-        if (mode === "solid") {
-          ctx.fillStyle = "#000"; ctx.fillRect(b.x, b.y, b.w, b.h);
-        } else {
-          const scale = pixelStrength === 'extreme' ? 0.03 : pixelStrength === 'stronger' ? 0.06 : 0.10;
-          const tmpW = Math.max(1, Math.floor(b.w * scale)); const tmpH = Math.max(1, Math.floor(b.h * scale));
-          const tmp = document.createElement("canvas"); tmp.width = tmpW; tmp.height = tmpH;
-          const tctx = tmp.getContext("2d"); if (!tctx) continue;
-          tctx.drawImage(canvas, b.x, b.y, b.w, b.h, 0, 0, tmpW, tmpH);
-          (ctx as CanvasRenderingContext2D).imageSmoothingEnabled = false;
-          ctx.drawImage(tmp, 0, 0, tmpW, tmpH, b.x, b.y, b.w, b.h);
-        }
+  function applyBoxesToCanvas(
+    ctx: CanvasRenderingContext2D,
+    canvas: HTMLCanvasElement,
+    all: Box[]
+  ) {
+    for (const b of all) {
+      if (mode === "solid") {
+        ctx.fillStyle = "#000";
+        ctx.fillRect(b.x, b.y, b.w, b.h);
+      } else {
+        const scale = pixelStrength === "extreme" ? 0.03 : pixelStrength === "stronger" ? 0.06 : 0.10;
+        const tmpW = Math.max(1, Math.floor(b.w * scale));
+        const tmpH = Math.max(1, Math.floor(b.h * scale));
+        const tmp = document.createElement("canvas");
+        tmp.width = tmpW;
+        tmp.height = tmpH;
+        const tctx = tmp.getContext("2d");
+        if (!tctx) continue;
+        tctx.drawImage(canvas, b.x, b.y, b.w, b.h, 0, 0, tmpW, tmpH);
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(tmp, 0, 0, tmpW, tmpH, b.x, b.y, b.w, b.h);
       }
-    };
-    img.src = imageUrl;
+    }
+  }
+
+  function draw(preview?: Box, sourceBoxes?: Box[]) {
+    const canvas = canvasRef.current;
+    const source = baseSourceRef.current;
+    if (!canvas || !source) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const { width, height } = getSourceSize(source);
+    canvas.width = width;
+    canvas.height = height;
+    ctx.drawImage(source, 0, 0);
+    const base = sourceBoxes ?? boxes;
+    const all = [...base, ...(preview ? [preview] : [])];
+    applyBoxesToCanvas(ctx, canvas, all);
+    relBoxesRef.current = absToRel(base, width, height);
   }
 
   function allPresets(): Preset[] { return [...PRESETS, ...userPresets]; }
@@ -171,33 +206,48 @@ export default function RedactClient() {
 
   async function exportZipBatch() {
     if (!fileList.length) return;
-    const zip = new JSZip();
+    const cw = canvasRef.current?.width || 1;
+    const ch = canvasRef.current?.height || 1;
+    const rel =
+      relBoxesRef.current.length > 0
+        ? relBoxesRef.current
+        : absToRel(boxes, cw, ch);
+    const entries: { name: string; blob: Blob }[] = [];
     for (const f of fileList) {
-      const img = await loadImage(URL.createObjectURL(f));
-      const canvas = document.createElement('canvas'); canvas.width = img.width; canvas.height = img.height;
-      const ctx = canvas.getContext('2d'); if (!ctx) continue;
-      ctx.drawImage(img, 0, 0);
-      const rel = boxes.map(b => ({ x: b.x / (canvasRef.current?.width || img.width), y: b.y / (canvasRef.current?.height || img.height), w: b.w / (canvasRef.current?.width || img.width), h: b.h / (canvasRef.current?.height || img.height) }));
-      for (const r of rel) {
-        const bx = r.x * canvas.width, by = r.y * canvas.height, bw = r.w * canvas.width, bh = r.h * canvas.height;
-        if (mode === 'solid') { ctx.fillStyle = '#000'; ctx.fillRect(bx, by, bw, bh); }
-        else {
-          const scale = pixelStrength === 'extreme' ? 0.03 : pixelStrength === 'stronger' ? 0.06 : 0.10;
-          const tmpW = Math.max(1, Math.floor(bw * scale)); const tmpH = Math.max(1, Math.floor(bh * scale));
-          const tmp = document.createElement('canvas'); tmp.width = tmpW; tmp.height = tmpH; const tctx = tmp.getContext('2d'); if (!tctx) continue;
-          tctx.drawImage(canvas, bx, by, bw, bh, 0, 0, tmpW, tmpH); (ctx as CanvasRenderingContext2D).imageSmoothingEnabled = false; ctx.drawImage(tmp, 0, 0, tmpW, tmpH, bx, by, bw, bh);
-        }
+      const source = await loadOrientedBitmap(f);
+      const { width, height } = getSourceSize(source);
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        if (source instanceof ImageBitmap) source.close();
+        continue;
       }
-      const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.92)); if (!blob) continue;
-      zip.file(renameOut(f.name), blob);
+      ctx.drawImage(source, 0, 0);
+      if (source instanceof ImageBitmap) source.close();
+      const abs = relToAbs(rel, width, height);
+      applyBoxesToCanvas(ctx, canvas, abs);
+      const blob: Blob | null = await new Promise((resolve) =>
+        canvas.toBlob(resolve, "image/jpeg", 0.92)
+      );
+      if (blob) entries.push({ name: renameOut(f.name), blob });
     }
-    const content = await zip.generateAsync({ type: 'blob' }); const url = URL.createObjectURL(content);
-    const a = document.createElement('a'); a.href = url; a.download = 'redacted-images.zip'; a.click(); URL.revokeObjectURL(url);
+    if (entries.length) await downloadZipFromBlobs(entries, "redacted-images.zip");
   }
 
-  function renameOut(name: string) { const dot = name.lastIndexOf('.'); const base = dot > 0 ? name.slice(0, dot) : name; return base + '-redacted.jpg'; }
+  function renameOut(name: string) {
+    const dot = name.lastIndexOf(".");
+    const base = dot > 0 ? name.slice(0, dot) : name;
+    return base + "-redacted.jpg";
+  }
 
-  function loadImage(src: string): Promise<HTMLImageElement> { return new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = reject; img.src = src; }); }
+  useEffect(() => {
+    return () => {
+      if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+      if (baseSourceRef.current instanceof ImageBitmap) baseSourceRef.current.close();
+    };
+  }, []);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -242,7 +292,7 @@ export default function RedactClient() {
         <h2>Image Redaction (Local)</h2>
         <p>Draw boxes to mask sensitive regions. Processing is local and irreversible (solid/pixelate). EXIF/GPS will be removed on export.</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 6 }}>
-          <a href="/privacy" className="pill">Privacy‑first</a>
+          <Link href="/privacy" className="pill">Privacy‑first</Link>
           <span className="pill-ghost">No upload</span>
           <span className="pill">Irreversible</span>
           <span className="pill-ghost">Remove EXIF/GPS</span>

@@ -1,6 +1,14 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import JSZip from 'jszip';
+import {
+  loadOrientedBitmap,
+  getSourceSize,
+  runWithConcurrency,
+  getLargeFileNames,
+  LARGE_FILE_WARNING_BYTES,
+} from '@/lib/image';
 
 type PresetSize = '1920' | '1080' | '800' | 'custom';
 type FitMode = 'contain' | 'cover' | 'stretch';
@@ -15,51 +23,83 @@ interface ProcessedImage {
   preview: string;
 }
 
-export default function ResizeImageClient() {
+function ResizeImageInner() {
+  const searchParams = useSearchParams();
   const [images, setImages] = useState<File[]>([]);
   const [processed, setProcessed] = useState<ProcessedImage[]>([]);
   const [preset, setPreset] = useState<PresetSize>('1920');
   const [customWidth, setCustomWidth] = useState(1920);
   const [customHeight, setCustomHeight] = useState(1080);
+  const [longestSide, setLongestSide] = useState<number | null>(null);
   const [fitMode, setFitMode] = useState<FitMode>('contain');
   const [processing, setProcessing] = useState(false);
+  const [largeFileWarning, setLargeFileWarning] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const w = searchParams.get('width');
+    const h = searchParams.get('height');
+    if (w && h) {
+      const nw = Math.max(1, parseInt(w, 10) || 1920);
+      const nh = Math.max(1, parseInt(h, 10) || 1080);
+      setPreset('custom');
+      setCustomWidth(nw);
+      setCustomHeight(nh);
+      setLongestSide(null);
+    } else if (w) {
+      const n = Math.max(1, parseInt(w, 10) || 1920);
+      if (n === 1920) setPreset('1920');
+      else if (n === 1080) setPreset('1080');
+      else if (n === 800) setPreset('800');
+      else {
+        setPreset('custom');
+        setLongestSide(n);
+      }
+    }
+  }, [searchParams]);
 
   const handleFiles = (files: FileList | null) => {
     if (!files) return;
     const imageFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
     setImages(imageFiles);
     setProcessed([]);
+    const large = getLargeFileNames(imageFiles, LARGE_FILE_WARNING_BYTES);
+    setLargeFileWarning(
+      large.length ? `Large file(s): ${large.slice(0, 2).join(', ')}${large.length > 2 ? '…' : ''}` : ''
+    );
   };
 
   const resizeImage = async (file: File): Promise<ProcessedImage> => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        img.src = e.target?.result as string;
-      };
-
-      img.onload = () => {
+    const source = await loadOrientedBitmap(file);
+    const { width: imgW, height: imgH } = getSourceSize(source);
+    try {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         if (!ctx) {
-          reject(new Error('Canvas not supported'));
-          return;
+          throw new Error('Canvas not supported');
         }
 
         let targetWidth: number;
         let targetHeight: number;
 
-        if (preset === 'custom') {
+        if (longestSide) {
+          const maxSize = longestSide;
+          const aspectRatio = imgW / imgH;
+          if (imgW > imgH) {
+            targetWidth = maxSize;
+            targetHeight = Math.round(maxSize / aspectRatio);
+          } else {
+            targetHeight = maxSize;
+            targetWidth = Math.round(maxSize * aspectRatio);
+          }
+        } else if (preset === 'custom') {
           targetWidth = customWidth;
           targetHeight = customHeight;
         } else {
           const maxSize = parseInt(preset);
-          const aspectRatio = img.width / img.height;
+          const aspectRatio = imgW / imgH;
 
-          if (img.width > img.height) {
+          if (imgW > imgH) {
             targetWidth = maxSize;
             targetHeight = Math.round(maxSize / aspectRatio);
           } else {
@@ -69,13 +109,13 @@ export default function ResizeImageClient() {
         }
 
         // Handle fit mode for custom dimensions
-        if (preset === 'custom') {
+        if (preset === 'custom' && !longestSide) {
           if (fitMode === 'stretch') {
             canvas.width = targetWidth;
             canvas.height = targetHeight;
-            ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+            ctx.drawImage(source, 0, 0, targetWidth, targetHeight);
           } else if (fitMode === 'contain') {
-            const aspectRatio = img.width / img.height;
+            const aspectRatio = imgW / imgH;
             const targetAspect = targetWidth / targetHeight;
 
             let drawWidth = targetWidth;
@@ -95,9 +135,9 @@ export default function ResizeImageClient() {
             canvas.height = targetHeight;
             ctx.fillStyle = '#FFFFFF';
             ctx.fillRect(0, 0, targetWidth, targetHeight);
-            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-          } else { // cover
-            const aspectRatio = img.width / img.height;
+            ctx.drawImage(source, offsetX, offsetY, drawWidth, drawHeight);
+          } else {
+            const aspectRatio = imgW / imgH;
             const targetAspect = targetWidth / targetHeight;
 
             let drawWidth = targetWidth;
@@ -115,45 +155,40 @@ export default function ResizeImageClient() {
 
             canvas.width = targetWidth;
             canvas.height = targetHeight;
-            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            ctx.drawImage(source, offsetX, offsetY, drawWidth, drawHeight);
           }
         } else {
           canvas.width = targetWidth;
           canvas.height = targetHeight;
-          ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+          ctx.drawImage(source, 0, 0, targetWidth, targetHeight);
         }
 
-        canvas.toBlob(
-          (blob) => {
-            if (!blob) {
-              reject(new Error('Failed to create blob'));
-              return;
-            }
+        const blob = await new Promise<Blob>((resolve, reject) => {
+          canvas.toBlob(
+            (b) => (b ? resolve(b) : reject(new Error('Failed to create blob'))),
+            file.type === 'image/png' ? 'image/png' : 'image/jpeg',
+            0.9
+          );
+        });
 
-            resolve({
-              name: file.name,
-              originalWidth: img.width,
-              originalHeight: img.height,
-              newWidth: canvas.width,
-              newHeight: canvas.height,
-              blob,
-              preview: canvas.toDataURL('image/jpeg', 0.8),
-            });
-          },
-          file.type === 'image/png' ? 'image/png' : 'image/jpeg',
-          0.9
-        );
-      };
-
-      img.onerror = () => reject(new Error('Failed to load image'));
-      reader.readAsDataURL(file);
-    });
+        return {
+          name: file.name,
+          originalWidth: imgW,
+          originalHeight: imgH,
+          newWidth: canvas.width,
+          newHeight: canvas.height,
+          blob,
+          preview: canvas.toDataURL('image/jpeg', 0.8),
+        };
+    } finally {
+      if (source instanceof ImageBitmap) source.close();
+    }
   };
 
   const handleProcess = async () => {
     setProcessing(true);
     try {
-      const results = await Promise.all(images.map(resizeImage));
+      const results = await runWithConcurrency(images, 3, (file) => resizeImage(file));
       setProcessed(results);
     } catch (error) {
       console.error('Error processing images:', error);
@@ -336,6 +371,9 @@ export default function ResizeImageClient() {
             {images.length} image{images.length > 1 ? 's' : ''} selected
           </span>
         )}
+        {largeFileWarning && (
+          <div style={{ fontSize: 12, color: '#b45309', marginTop: 8 }}>{largeFileWarning}</div>
+        )}
       </div>
 
       {/* Process Button */}
@@ -418,6 +456,14 @@ export default function ResizeImageClient() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ResizeImageClient() {
+  return (
+    <Suspense fallback={<div className="card">Loading…</div>}>
+      <ResizeImageInner />
+    </Suspense>
   );
 }
 

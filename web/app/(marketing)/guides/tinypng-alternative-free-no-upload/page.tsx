@@ -129,7 +129,7 @@ export default function TinyPNGAlternative() {
             10MB of images on 3G takes minutes.
           </p>
           <p>
-            <strong>PixCloak:</strong> Processes everything locally in your browser using JavaScript and WebAssembly. Images never leave your device.
+            <strong>PixCloak:</strong> Processes everything locally in your browser using JavaScript and the Canvas API. Images never leave your device.
             Works instantly even on slow connections (no upload wait). GDPR-compliant by design—your files stay private. Perfect for confidential
             documents, personal photos, proprietary product images.
           </p>
@@ -217,14 +217,12 @@ export default function TinyPNGAlternative() {
           <h2>Common Questions</h2>
           <p><strong>Q: Is PixCloak really 100% local?</strong></p>
           <p>
-            Yes. Open browser DevTools Network tab, compress an image, watch—zero uploads. All processing uses JavaScript/WebAssembly running in browser.
-            Code is open-source (GitHub), auditable. Images never touch servers.
+            Yes. Open browser DevTools Network tab, compress an image, and confirm no upload of your image file. Processing uses JavaScript and the browser Canvas API on your device. Images never touch PixCloak servers.
           </p>
           <p><strong>Q: How does local compression work technically?</strong></p>
           <p>
-            Browser Canvas API handles image decoding/rendering. WebAssembly encoders (MozJPEG, libwebp) compress to JPEG/WebP. JavaScript manages
-            quality adjustment to hit exact KB targets. Modern browsers (Chrome, Safari, Firefox, Edge) have powerful Canvas/WASM support—compression
-            runs at native CPU speed.
+            The browser Canvas API decodes and re-encodes images to JPEG, WebP, or PNG. JavaScript adjusts quality (binary search) to approach exact KB targets.
+            Modern browsers (Chrome, Safari, Firefox, Edge) run this locally on your CPU—no server round-trip.
           </p>
           <p><strong>Q: Can I trust local processing for sensitive images?</strong></p>
           <p>
@@ -234,8 +232,8 @@ export default function TinyPNGAlternative() {
           </p>
           <p><strong>Q: Does quality match TinyPNG?</strong></p>
           <p>
-            Yes. Both use similar algorithms (MozJPEG for JPEG, libwebp for WebP). Visual quality is identical at same settings. TinyPNG might have slight
-            edge in extreme optimization (their paid service uses proprietary tweaks), but for 99% of use cases, PixCloak produces indistinguishable results.
+            For typical web and form uploads, quality at the same file size is comparable. TinyPNG may use proprietary server-side encoders; PixCloak uses
+            browser Canvas encoding with adjustable quality. For most photos and screenshots, results are visually similar at matched KB targets.
           </p>
           <p><strong>Q: Why is PixCloak free with no limits?</strong></p>
           <p>
@@ -266,7 +264,7 @@ export default function TinyPNGAlternative() {
             { question: "How is PixCloak different from TinyPNG?", answer: "Key differences: PixCloak processes locally (no uploads), TinyPNG uploads to servers. PixCloak supports exact KB targeting (200KB, 500KB), TinyPNG doesn't. PixCloak allows unlimited free batch processing, TinyPNG limits to 20 images without paid plan. PixCloak works offline, TinyPNG requires internet. Both produce similar quality." },
             { question: "Can I compress images offline without TinyPNG?", answer: "Yes—PixCloak works offline after first page load (Progressive Web App). Compress images on planes, subways, locations without internet. Install on iPhone/Android home screen for app-like experience. TinyPNG requires internet connection for every compression." },
             { question: "Does PixCloak support batch compression like TinyPNG?", answer: "Yes—unlimited batch compression, always free. TinyPNG free tier limits to 20 images per batch; PixCloak has no limits. Process 50 product photos, 100 blog images, 500 portfolio samples in one batch. Download all as ZIP. No account or payment needed." },
-            { question: "Is local image compression as good as TinyPNG?", answer: "Yes—quality is identical. Both use similar algorithms (MozJPEG for JPEG, libwebp for WebP). Visual results are indistinguishable at same settings. Local processing has advantages: faster (no upload wait), private (images don't leave device), works offline. Server processing only benefits: API integration, plugins." },
+            { question: "Is local image compression as good as TinyPNG?", answer: "For most web and form use cases, quality at similar file sizes is comparable. PixCloak uses browser Canvas encoding with quality control and KB targeting. Local processing advantages: faster (no upload wait), private (images don't leave device), works offline. Server tools may offer API integration or plugins." },
             { question: "How to compress to exact file size (not supported by TinyPNG)?", answer: "Use PixCloak's exact KB targeting. Set target (100KB, 200KB, 500KB, 1MB, or custom), compress, get exactly that file size. Perfect for platforms with strict limits (job applications '200KB max', government forms '500KB limit', forum avatars 'under 100KB'). TinyPNG can't hit exact sizes—may produce 180KB or 220KB when you need exactly 200KB." },
             { question: "Which image compressor works without internet?", answer: "PixCloak works offline after first load (Progressive Web App). TinyPNG requires internet for every compression. Offline compression is useful for: field photography (real estate, travel), mobile professionals, unreliable internet locations, plane/subway travel. Install PixCloak on phone home screen for native app experience." },
           ]}

@@ -33,7 +33,10 @@ export default function PdfToImageClient() {
 
     try {
       const pdfjs = await import('pdfjs-dist');
-      pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.mjs`;
+      pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.mjs',
+        import.meta.url
+      ).toString();
 
       const buf = await file.arrayBuffer();
       const pdf = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise;

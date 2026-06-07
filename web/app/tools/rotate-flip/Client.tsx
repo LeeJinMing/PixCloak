@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import JSZip from 'jszip';
+import { loadOrientedBitmap, getSourceSize, runWithConcurrency } from '@/lib/image';
 
 interface ProcessedImage {
   name: string;
@@ -14,71 +15,56 @@ interface ProcessedImage {
 }
 
 /** Quarter turns clockwise: 0, 1, 2, 3 */
-function transformImage(
+async function transformImage(
   file: File,
   rot90: number,
   flipH: boolean,
   flipV: boolean
 ): Promise<ProcessedImage> {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    const reader = new FileReader();
+  const source = await loadOrientedBitmap(file);
+  const { width: w, height: h } = getSourceSize(source);
+  try {
+    const r = ((rot90 % 4) + 4) % 4;
+    const cw = r % 2 === 0 ? w : h;
+    const ch = r % 2 === 0 ? h : w;
 
-    reader.onload = (e) => {
-      img.src = e.target?.result as string;
-    };
+    const canvas = document.createElement('canvas');
+    canvas.width = cw;
+    canvas.height = ch;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) throw new Error('Canvas not supported');
 
-    img.onload = () => {
-      const r = ((rot90 % 4) + 4) % 4;
-      const w = img.naturalWidth;
-      const h = img.naturalHeight;
-      const cw = r % 2 === 0 ? w : h;
-      const ch = r % 2 === 0 ? h : w;
+    ctx.translate(cw / 2, ch / 2);
+    ctx.rotate((r * Math.PI) / 2);
+    ctx.scale(flipH ? -1 : 1, flipV ? -1 : 1);
+    ctx.drawImage(source, -w / 2, -h / 2);
 
-      const canvas = document.createElement('canvas');
-      canvas.width = cw;
-      canvas.height = ch;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) {
-        reject(new Error('Canvas not supported'));
-        return;
-      }
+    const outType =
+      file.type === 'image/png' || file.name.toLowerCase().endsWith('.png')
+        ? 'image/png'
+        : 'image/jpeg';
+    const quality = outType === 'image/jpeg' ? 0.92 : undefined;
 
-      ctx.translate(cw / 2, ch / 2);
-      ctx.rotate((r * Math.PI) / 2);
-      ctx.scale(flipH ? -1 : 1, flipV ? -1 : 1);
-      ctx.drawImage(img, -w / 2, -h / 2);
-
-      const outType =
-        file.type === 'image/png' || file.name.toLowerCase().endsWith('.png')
-          ? 'image/png'
-          : 'image/jpeg';
-      const quality = outType === 'image/jpeg' ? 0.92 : undefined;
-
+    const blob = await new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(
-        (blob) => {
-          if (!blob) {
-            reject(new Error('Failed to create blob'));
-            return;
-          }
-          resolve({
-            name: file.name,
-            originalWidth: w,
-            originalHeight: h,
-            newWidth: cw,
-            newHeight: ch,
-            blob,
-            preview: canvas.toDataURL(outType === 'image/png' ? 'image/png' : 'image/jpeg', 0.85),
-          });
-        },
+        (b) => (b ? resolve(b) : reject(new Error('Failed to create blob'))),
         outType,
         quality
       );
-    };
+    });
 
-    img.onerror = () => reject(new Error('Failed to load image'));
-    reader.readAsDataURL(file);
-  });
+    return {
+      name: file.name,
+      originalWidth: w,
+      originalHeight: h,
+      newWidth: cw,
+      newHeight: ch,
+      blob,
+      preview: canvas.toDataURL(outType === 'image/png' ? 'image/png' : 'image/jpeg', 0.85),
+    };
+  } finally {
+    if (source instanceof ImageBitmap) source.close();
+  }
 }
 
 export default function RotateFlipClient() {
@@ -104,8 +90,8 @@ export default function RotateFlipClient() {
   const handleProcess = async () => {
     setProcessing(true);
     try {
-      const results = await Promise.all(
-        images.map((f) => transformImage(f, rot90, flipH, flipV))
+      const results = await runWithConcurrency(images, 3, (f) =>
+        transformImage(f, rot90, flipH, flipV)
       );
       setProcessed(results);
     } catch (error) {

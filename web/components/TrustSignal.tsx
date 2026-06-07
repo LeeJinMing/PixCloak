@@ -8,24 +8,12 @@ interface TrustSignalProps {
 }
 
 export default function TrustSignal({ showDetails = true, compact = false }: TrustSignalProps) {
-  const [networkStatus, setNetworkStatus] = useState<'checking' | 'offline' | 'online'>('checking');
-  const [verificationSteps, setVerificationSteps] = useState<string[]>([]);
-
-  useEffect(() => {
-    // 检查网络状态
-    const checkNetworkStatus = () => {
-      // 模拟检查 - 在实际应用中，这里会检查是否有网络请求
-      setNetworkStatus('offline');
-      setVerificationSteps([
-        '✅ No network requests detected',
-        '✅ All processing happens in browser',
-        '✅ Images never leave your device',
-        '✅ No data collection or tracking'
-      ]);
-    };
-
-    checkNetworkStatus();
-  }, []);
+  const verificationSteps = [
+    'Processing runs in your browser (Canvas API)',
+    'Image bytes are not sent to PixCloak servers',
+    'You can verify with DevTools → Network while compressing',
+    'Third-party analytics (if enabled) are separate from image data',
+  ];
 
   if (compact) {
     return (
@@ -41,7 +29,7 @@ export default function TrustSignal({ showDetails = true, compact = false }: Tru
         gap: '6px'
       }}>
         <span>🔒</span>
-        <span>100% Local Processing</span>
+        <span>Local browser processing</span>
       </div>
     );
   }
@@ -71,13 +59,13 @@ export default function TrustSignal({ showDetails = true, compact = false }: Tru
         </h3>
         <div style={{
           padding: '2px 6px',
-          backgroundColor: '#10b981',
+          backgroundColor: '#047857',
           color: 'white',
           borderRadius: '4px',
           fontSize: '10px',
           fontWeight: '500'
         }}>
-          VERIFIED
+          LOCAL ONLY
         </div>
       </div>
 
@@ -89,7 +77,7 @@ export default function TrustSignal({ showDetails = true, compact = false }: Tru
             color: '#065f46',
             lineHeight: '1.5'
           }}>
-            All image processing happens locally in your browser. Your images never leave your device.
+            Image compression and redaction use the browser Canvas API on your device. PixCloak does not receive your files.
           </p>
 
           <div style={{ marginBottom: '12px' }}>
@@ -102,7 +90,7 @@ export default function TrustSignal({ showDetails = true, compact = false }: Tru
                 alignItems: 'center',
                 gap: '6px'
               }}>
-                {step}
+                • {step}
               </div>
             ))}
           </div>
@@ -114,10 +102,10 @@ export default function TrustSignal({ showDetails = true, compact = false }: Tru
             <div style={{ marginTop: '8px', paddingLeft: '16px' }}>
               <ol style={{ margin: '0', paddingLeft: '16px', lineHeight: '1.4' }}>
                 <li>Open browser Developer Tools (F12)</li>
-                <li>Go to Network tab</li>
+                <li>Go to Network tab and filter by Fetch/XHR</li>
                 <li>Upload and process an image</li>
-                <li>Verify no network requests are made</li>
-                <li>Check that processing happens instantly</li>
+                <li>Confirm no requests carry your image file (blob: URLs are local)</li>
+                <li>Optional: go offline and confirm tools still work</li>
               </ol>
             </div>
           </details>
@@ -127,22 +115,25 @@ export default function TrustSignal({ showDetails = true, compact = false }: Tru
   );
 }
 
-// 网络状态监控组件
 export function NetworkMonitor() {
   const [isOnline, setIsOnline] = useState(true);
-  const [requests, setRequests] = useState<number>(0);
+  const [externalRequests, setExternalRequests] = useState(0);
 
   useEffect(() => {
+    setIsOnline(navigator.onLine);
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
 
-    // 监控网络请求
     const originalFetch = window.fetch;
     window.fetch = (...args) => {
-      setRequests(prev => prev + 1);
+      const input = args[0];
+      const url = typeof input === 'string' ? input : input instanceof Request ? input.url : String(input);
+      if (!url.startsWith('blob:') && !url.startsWith('data:')) {
+        setExternalRequests((prev) => prev + 1);
+      }
       return originalFetch(...args);
     };
 
@@ -152,6 +143,8 @@ export function NetworkMonitor() {
       window.fetch = originalFetch;
     };
   }, []);
+
+  if (process.env.NODE_ENV === 'production') return null;
 
   return (
     <div style={{
@@ -171,31 +164,30 @@ export function NetworkMonitor() {
     }}>
       <span>{isOnline ? '🌐' : '🔒'}</span>
       <span>{isOnline ? 'Online' : 'Offline'}</span>
-      {requests > 0 && (
+      {externalRequests > 0 && (
         <span style={{
           padding: '2px 4px',
-          backgroundColor: '#ef4444',
+          backgroundColor: '#64748b',
           color: 'white',
           borderRadius: '3px',
           fontSize: '10px'
-        }}>
-          {requests}
+        }} title="Non-blob fetch calls since load (dev only)">
+          {externalRequests} fetch
         </span>
       )}
     </div>
   );
 }
 
-// 处理验证演示组件
 export function ProcessingDemo() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [step, setStep] = useState(0);
 
   const steps = [
     'Reading image file...',
-    'Processing in browser memory...',
-    'Applying compression algorithm...',
-    'Generating output...',
+    'Decoding in browser memory...',
+    'Encoding with Canvas API...',
+    'Generating output blob...',
     'Ready for download!'
   ];
 
@@ -249,7 +241,7 @@ export function ProcessingDemo() {
       ) : (
         <div>
           <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: '#64748b' }}>
-            Click to see how processing works locally
+            Click to see how local processing works
           </p>
           <button
             onClick={startDemo}

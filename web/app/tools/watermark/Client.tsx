@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { loadOrientedBitmap, getSourceSize } from "@/lib/image";
 
 type Pos = 'tl' | 'tr' | 'bl' | 'br' | 'center';
 
@@ -30,9 +31,25 @@ export default function Client() {
   }
 
   async function onDownload() {
-    const f = inputRef.current?.files?.[0]; if (!f) return; const img = new Image(); img.src = URL.createObjectURL(f); await img.decode();
-    const c = document.createElement('canvas'); drawOnCanvas(c, img, img.width, img.height);
-    c.toBlob((b) => { if (!b) return; const u = URL.createObjectURL(b); const a = document.createElement('a'); a.href = u; a.download = 'watermark.jpg'; a.click(); URL.revokeObjectURL(u); }, 'image/jpeg', 0.92);
+    const f = inputRef.current?.files?.[0];
+    if (!f) return;
+    const source = await loadOrientedBitmap(f);
+    const { width, height } = getSourceSize(source);
+    try {
+      const c = document.createElement('canvas');
+      drawOnCanvas(c, source, width, height);
+      c.toBlob((b) => {
+        if (!b) return;
+        const u = URL.createObjectURL(b);
+        const a = document.createElement('a');
+        a.href = u;
+        a.download = 'watermark.jpg';
+        a.click();
+        URL.revokeObjectURL(u);
+      }, 'image/jpeg', 0.92);
+    } finally {
+      if (source instanceof ImageBitmap) source.close();
+    }
   }
 
   return (

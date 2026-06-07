@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import JSZip from 'jszip';
+import { loadOrientedBitmap, getSourceSize, runWithConcurrency } from '@/lib/image';
 
 type ConversionDirection = 'png-to-jpg' | 'jpg-to-png';
 
@@ -29,68 +30,53 @@ export default function PngJpgConverterClient() {
   };
 
   const convertImage = async (file: File): Promise<ProcessedImage> => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      const reader = new FileReader();
+    const source = await loadOrientedBitmap(file);
+    const { width, height } = getSourceSize(source);
+    try {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) throw new Error('Canvas not supported');
 
-      reader.onload = (e) => {
-        img.src = e.target?.result as string;
-      };
+      canvas.width = width;
+      canvas.height = height;
 
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        if (!ctx) {
-          reject(new Error('Canvas not supported'));
-          return;
-        }
+      if (direction === 'png-to-jpg') {
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
 
-        canvas.width = img.width;
-        canvas.height = img.height;
+      ctx.drawImage(source, 0, 0);
 
-        // Fill background for PNG to JPG (JPG doesn't support transparency)
-        if (direction === 'png-to-jpg') {
-          ctx.fillStyle = bgColor;
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
+      const outputFormat = direction === 'png-to-jpg' ? 'image/jpeg' : 'image/png';
+      const outputQuality = direction === 'png-to-jpg' ? quality / 100 : 1.0;
 
-        ctx.drawImage(img, 0, 0);
-
-        const outputFormat = direction === 'png-to-jpg' ? 'image/jpeg' : 'image/png';
-        const outputQuality = direction === 'png-to-jpg' ? quality / 100 : 1.0;
-
+      const blob = await new Promise<Blob>((resolve, reject) => {
         canvas.toBlob(
-          (blob) => {
-            if (!blob) {
-              reject(new Error('Failed to create blob'));
-              return;
-            }
-
-            const newExtension = direction === 'png-to-jpg' ? '.jpg' : '.png';
-            const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
-
-            resolve({
-              name: `${nameWithoutExt}${newExtension}`,
-              blob,
-              preview: canvas.toDataURL(outputFormat, outputQuality),
-              originalSize: file.size,
-              newSize: blob.size,
-            });
-          },
+          (b) => (b ? resolve(b) : reject(new Error('Failed to create blob'))),
           outputFormat,
           outputQuality
         );
-      };
+      });
 
-      img.onerror = () => reject(new Error('Failed to load image'));
-      reader.readAsDataURL(file);
-    });
+      const newExtension = direction === 'png-to-jpg' ? '.jpg' : '.png';
+      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
+
+      return {
+        name: `${nameWithoutExt}${newExtension}`,
+        blob,
+        preview: canvas.toDataURL(outputFormat, outputQuality),
+        originalSize: file.size,
+        newSize: blob.size,
+      };
+    } finally {
+      if (source instanceof ImageBitmap) source.close();
+    }
   };
 
   const handleConvert = async () => {
     setProcessing(true);
     try {
-      const results = await Promise.all(images.map(convertImage));
+      const results = await runWithConcurrency(images, 3, (file) => convertImage(file));
       setProcessed(results);
     } catch (error) {
       console.error('Error converting images:', error);
