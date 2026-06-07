@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolGuideSection } from '@/components/ToolGuideSection';
 
 export const metadata: Metadata = {
-  title: "Favicon Generator All Sizes—ICO, PNG & manifest",
+  title: "Favicon Generator — All Sizes (16×16, 32×32, 180×180)",
   description:
-    "Free favicon pack generator: 16×16 to 512×512, favicon.ico, apple-touch-icon, PWA icons, manifest.json, and HTML snippet. Runs locally—no upload.",
+    "Generate a complete favicon pack for all browsers and devices: ICO, PNG, Apple Touch Icon, Android/PWA icons in all sizes. Free, instant, no upload required.",
   alternates: {
     canonical: "/tools/favicon-pack",
     languages: { "x-default": "/tools/favicon-pack", en: "/tools/favicon-pack" },
   },
   openGraph: {
-    title: "Favicon generator all sizes + manifest.json",
+    title: "Favicon Generator — All Sizes (16×16, 32×32, 180×180)",
     description:
-      "Create a full favicon pack (ICO, PNG, apple-touch-icon, PWA 192/512). Download ZIP with manifest.json and head tags. Local, no upload.",
+      "Create a full favicon pack (ICO, PNG, apple-touch-icon, PWA 192/512). Download ZIP with manifest.json and head tags. Local, no upload required.",
     url: "/tools/favicon-pack",
     type: "website",
   },
@@ -192,7 +193,7 @@ export default function Page() {
             <h3>2. Use Square Aspect Ratio (1:1)</h3>
             <p>
               <strong>Favicons must be square.</strong> Rectangular logos get cropped. If your logo is wide, add padding to make it
-              square before generating. Use <a href="/tools/aspect-pad">Aspect Ratio Padder</a> to add padding automatically.
+              square before generating. Use <Link href="/tools/aspect-pad">Aspect Ratio Padder</Link> to add padding automatically.
             </p>
 
             <h3>3. Keep Design Simple</h3>
@@ -251,10 +252,10 @@ export default function Page() {
         <div className="card">
           <h2>Related Tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <a href="/tools/resize-image" className="pill">Resize Logo</a>
-            <a href="/tools/crop-templates" className="pill">Crop to Square</a>
-            <a href="/tools/remove-bg-lite" className="pill">Remove Background</a>
-            <a href="/compress" className="pill">Compress Images</a>
+            <Link href="/tools/resize-image" className="pill">Resize Logo</Link>
+            <Link href="/tools/crop-templates" className="pill">Crop to Square</Link>
+            <Link href="/tools/remove-bg-lite" className="pill">Remove Background</Link>
+            <Link href="/compress" className="pill">Compress Images</Link>
           </div>
         </div>
 

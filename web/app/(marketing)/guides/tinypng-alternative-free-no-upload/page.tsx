@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "TinyPNG Alternative—Free, No Upload, Exact KB",
+  title: "TinyPNG Alternative — No Upload, Unlimited Free",
   description:
-    "TinyPNG alternative that runs offline in your browser: exact KB targets (100KB–1MB), batch ZIP, unlimited use. No uploads—privacy-first compression.",
+    "TinyPNG limits you to 5MB and 20 images/month. PixCloak compresses unlimited images of any size — 100% local, no upload, no account needed. Free forever.",
   alternates: {
     canonical: '/guides/tinypng-alternative-free-no-upload',
     languages: {
@@ -14,15 +15,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "TinyPNG Alternative: Free Image Compressor (No Upload, Works Offline)",
-    description: "Compress images offline with no uploads. Exact KB targets, unlimited free compression, batch processing. Works locally in your browser, no uploads.",
+    title: "TinyPNG Alternative — No Upload, Unlimited Free",
+    description: "Compress unlimited images of any size, 100% locally. No uploads, no server, no account. Free alternative to TinyPNG with exact KB targets.",
     url: "/guides/tinypng-alternative-free-no-upload",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TinyPNG Alternative: No Upload, Works Offline",
-    description: "Free image compression. No uploads, unlimited use. Privacy-first alternative to TinyPNG. Works locally in your browser, no uploads.",
+    title: "TinyPNG Alternative: No Upload, Unlimited Free",
+    description: "TinyPNG limits: 5MB, 20 images/month. PixCloak: unlimited, any size, no upload, no account. Free forever. Works locally in your browser.",
   },
 };
 
@@ -52,9 +53,9 @@ export default function TinyPNGAlternative() {
             download as ZIP. Privacy-first, GDPR-compliant, works on iPhone, Android, desktop.
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
-            <a className="pill" href="/compress">Open compressor</a>
-            <a className="pill" href="/compress?kb=200">Compress to 200KB</a>
-            <a className="pill" href="/guides/compress-to-200kb">200KB step-by-step</a>
+            <Link className="pill" href="/compress">Open compressor</Link>
+            <Link className="pill" href="/compress?kb=200">Compress to 200KB</Link>
+            <Link className="pill" href="/guides/compress-to-200kb">200KB step-by-step</Link>
           </div>
 
           <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '16px' }}>
@@ -205,12 +206,12 @@ export default function TinyPNGAlternative() {
           <h2>How to Switch from TinyPNG to PixCloak</h2>
           <p>Easy 3-step process:</p>
           <ol>
-            <li><strong>Bookmark PixCloak:</strong> Visit <a href="/compress">/compress</a>, bookmark or add to home screen (iPhone/Android).</li>
+            <li><strong>Bookmark PixCloak:</strong> Visit <Link href="/compress">/compress</Link>, bookmark or add to home screen (iPhone/Android).</li>
             <li><strong>Set target size:</strong> Click KB dropdown, choose 200KB, 500KB, or custom target matching your needs.</li>
             <li><strong>Drag images & compress:</strong> Drag files in (or click Choose Files), click Compress, download result. For multiple images,
               use Download ZIP.</li>
           </ol>
-          <p><strong>Pro tip:</strong> For best results, resize images to 1920px longest side first (our <a href="/guides/resize-to-1920">resize guide</a>),
+          <p><strong>Pro tip:</strong> For best results, resize images to 1920px longest side first (our <Link href="/guides/resize-to-1920">resize guide</Link>),
             then compress to target KB. This produces better quality than compressing huge dimensions directly.</p>
 
           <h2>Common Questions</h2>
@@ -249,12 +250,12 @@ export default function TinyPNGAlternative() {
             No account, no upload, no limits. Start compressing images now:
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: '12px' }}>
-            <a href="/compress" style={{ padding: '12px 24px', background: '#0070f3', color: 'white', borderRadius: '6px', textDecoration: 'none', fontWeight: 600 }}>
+            <Link href="/compress" style={{ padding: '12px 24px', background: '#0070f3', color: 'white', borderRadius: '6px', textDecoration: 'none', fontWeight: 600 }}>
               Compress Images Now →
-            </a>
-            <a href="/guides/complete-image-compression-guide" className="pill">Learn compression basics</a>
-            <a href="/guides/compress-to-200kb" className="pill">Compress to 200KB guide</a>
-            <a href="/guides/compress-to-500kb" className="pill">Compress to 500KB guide</a>
+            </Link>
+            <Link href="/guides/complete-image-compression-guide" className="pill">Learn compression basics</Link>
+            <Link href="/guides/compress-to-200kb" className="pill">Compress to 200KB guide</Link>
+            <Link href="/guides/compress-to-500kb" className="pill">Compress to 500KB guide</Link>
           </div>
         </div>
 

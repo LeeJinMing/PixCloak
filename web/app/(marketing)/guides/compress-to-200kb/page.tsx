@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import AnswerCard, { CommonAnswerCards } from '@/components/AnswerCard';
 
 export const metadata: Metadata = {
-  title: "Compress Image to 200KB Online (No Upload)",
+  title: "Compress Image to Exactly 200KB — Free, No Upload",
   description:
-    "Compress JPG, PNG, or WebP to exactly 200KB in your browser. Free, no upload—job portals, LinkedIn, government forms, and email limits.",
+    "Hit exactly 200KB every time. Works for resumes, visa photos, job applications & government forms. JPEG, PNG, WebP — compresses in your browser, no upload.",
   alternates: {
     canonical: '/guides/compress-to-200kb',
     languages: {
@@ -16,15 +17,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Compress image to 200KB online",
-    description: "Hit a 200KB target in your browser. No upload, no account, no app.",
+    title: "Compress image to exactly 200KB — Free, No Upload",
+    description: "Hit a 200KB target in your browser. For resumes, visa photos, job applications. No upload, no account, no app.",
     url: "/guides/compress-to-200kb",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Compress Images to 200KB",
-    description: "Free tool. Exact 200KB target. No app download needed. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
+    title: "Compress Images to Exactly 200KB",
+    description: "Free tool. Exact 200KB target. Works for resumes, visa photos, job applications. No app download. Process images offline in your browser. 100% free, no uploads.",
   },
 };
 export default function GuideCompress200KB() {
@@ -45,13 +46,13 @@ export default function GuideCompress200KB() {
 
           <h2>Quick Answer</h2>
           <p>
-            Open the <a href="/compress?kb=200">200KB compressor</a>, upload your image, preview quality, and download the clean file.
+            Open the <Link href="/compress?kb=200">200KB compressor</Link>, upload your image, preview quality, and download the clean file.
             It works for JPG, PNG, and WebP directly in your browser. Files are not uploaded.
           </p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
-            <a className="pill" href="/compress?kb=200">Start: compress to 200KB</a>
-            <a className="pill" href="/tools/platform-checker">Check upload limits</a>
-            <a className="pill" href="/tools/exif-checker">Check EXIF/GPS</a>
+            <Link className="pill" href="/compress?kb=200">Start: compress to 200KB</Link>
+            <Link className="pill" href="/tools/platform-checker">Check upload limits</Link>
+            <Link className="pill" href="/tools/exif-checker">Check EXIF/GPS</Link>
           </div>
           <p><strong>Best for:</strong> job application forms, government uploads, LinkedIn photos, forum avatars, email attachments, and small website images.</p>
           <p><strong>Quality tip:</strong> resize to 1920px longest side first if the original photo is very large.</p>
@@ -84,7 +85,7 @@ export default function GuideCompress200KB() {
           <h2>Step-by-Step: Compress to 200KB</h2>
           <ol>
             <li>
-              <strong>Open the compressor tool:</strong> Visit <a href="/compress?kb=200">/compress?kb=200</a> in any browser.
+              <strong>Open the compressor tool:</strong> Visit <Link href="/compress?kb=200">/compress?kb=200</Link> in any browser.
               Works on iPhone Safari, Android Chrome, Windows, Mac, Linux—no app installation. Everything processes locally in your
               browser; images never upload to any server (privacy-first design).
             </li>
@@ -116,7 +117,7 @@ export default function GuideCompress200KB() {
             <li>
               <strong>Resize before compressing:</strong> The single best trick for better quality at 200KB. If your photo is 4000x3000px,
               resize to 1920x1440px (or 1080x1080px for square avatars) before compressing. This reduces file size by 50-70% with zero
-              visible quality loss, leaving more "room" for quality at 200KB. Use our <a href="/guides/resize-to-1920">resize to 1920px guide</a>.
+              visible quality loss, leaving more "room" for quality at 200KB. Use our <Link href="/guides/resize-to-1920">resize to 1920px guide</Link>.
             </li>
             <li>
               <strong>Choose WebP when possible:</strong> WebP is 25-35% smaller than JPEG at same quality. Use WebP for web uploads
@@ -196,11 +197,11 @@ export default function GuideCompress200KB() {
         <div className="card">
           <h2>Related Guides</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <a href="/guides/compress-to-100kb" className="pill">Compress to 100KB</a>
-            <a href="/guides/compress-to-500kb" className="pill">Compress to 500KB</a>
-            <a href="/guides/resize-to-1920" className="pill">Resize to 1920px first</a>
-            <a href="/guides/compress-to-target-kb" className="pill">Custom KB targets</a>
-            <a href="/compress" className="pill">Try compressor now</a>
+            <Link href="/guides/compress-to-100kb" className="pill">Compress to 100KB</Link>
+            <Link href="/guides/compress-to-500kb" className="pill">Compress to 500KB</Link>
+            <Link href="/guides/resize-to-1920" className="pill">Resize to 1920px first</Link>
+            <Link href="/guides/compress-to-target-kb" className="pill">Custom KB targets</Link>
+            <Link href="/compress" className="pill">Try compressor now</Link>
           </div>
       </div>
 
