@@ -3,6 +3,7 @@ import Link from "next/link";
 import Client from "@/app/tools/pdf-to-image/Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export const metadata: Metadata = {
   title: "PDF转图片—免费在线PDF转PNG/JPG，无需WPS会员",
@@ -65,7 +66,7 @@ export default function ZhPdfToImagePage() {
             },
             {
               question: "和 WPS PDF 转图片有什么区别？",
-              answer: "图隐免费、无需会员，本地处理；WPS 在线版常对 PDF 转图等功能收费或限制。",
+              answer: `${SITE_NAME_ZH}免费、无需会员，本地处理；WPS 在线版常对 PDF 转图等功能收费或限制。`,
             },
             {
               question: "加密 PDF 能转吗？",

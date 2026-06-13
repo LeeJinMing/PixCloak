@@ -4,6 +4,7 @@ import Link from "next/link";
 import CompressClient from "@/app/compress/Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export const metadata: Metadata = {
   title: "在线图片压缩—免费压缩到200KB/500KB，本地不上传",
@@ -32,7 +33,7 @@ export default function ZhCompressPage() {
         ]}
       />
       <SoftwareAppJsonLd
-        name="图隐图片压缩"
+        name={`${SITE_NAME_ZH}图片压缩`}
         url="/zh/compress"
         description="浏览器本地图片压缩，支持精确 KB 目标与批量 ZIP 下载。"
       />

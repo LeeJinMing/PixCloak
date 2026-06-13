@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export const metadata: Metadata = {
   title: "PDF转图片教程—免费本地转换，不用WPS会员",
@@ -25,7 +26,7 @@ export default function ZhPdfGuidePage() {
 
         <h2>为什么不用 WPS 在线转？</h2>
         <p>
-          许多用户在 WPS、金山文档里转 PDF 为图片时会遇到<strong>会员订阅</strong>提示。图隐（PixCloak）在浏览器里本地转换，
+          许多用户在 WPS、金山文档里转 PDF 为图片时会遇到<strong>会员订阅</strong>提示。{SITE_NAME_ZH}（PixCloak）在浏览器里本地转换，
           不经过他们的服务器，<strong>免费、不上传</strong>。
         </p>
 

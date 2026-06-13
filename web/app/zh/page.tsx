@@ -5,7 +5,7 @@ import { SITE_NAME_ZH } from "@/lib/i18n/site";
 export const metadata: Metadata = {
   title: "免费在线图片工具—压缩、PDF转图、本地处理不上传",
   description:
-    "图隐 PixCloak：免费图片压缩到指定KB、PDF转PNG/JPG，全程浏览器本地处理。无需 WPS 会员，不上传，保护隐私。",
+    `${SITE_NAME_ZH} PixCloak：免费图片压缩到指定KB、PDF转PNG/JPG，全程浏览器本地处理。无需 WPS 会员，不上传，保护隐私。`,
   alternates: { canonical: "/zh" },
 };
 
@@ -36,12 +36,12 @@ export default function ZhHomePage() {
       </div>
 
       <div className="card">
-        <h2>为什么用图隐？</h2>
+        <h2>为什么用{SITE_NAME_ZH}？</h2>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
               <th style={{ textAlign: "left", padding: 8 }}>对比</th>
-              <th style={{ textAlign: "left", padding: 8 }}>图隐（本地）</th>
+              <th style={{ textAlign: "left", padding: 8 }}>{SITE_NAME_ZH}（本地）</th>
               <th style={{ textAlign: "left", padding: 8 }}>WPS / 在线工具</th>
             </tr>
           </thead>

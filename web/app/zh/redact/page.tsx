@@ -4,6 +4,7 @@ import Link from "next/link";
 import RedactClient from "@/app/redact/Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export const metadata: Metadata = {
   title: "在线图片打码—模糊人脸车牌、遮挡隐私免费不上传",
@@ -31,7 +32,7 @@ export default function ZhRedactPage() {
         ]}
       />
       <SoftwareAppJsonLd
-        name="图隐图片打码"
+        name={`${SITE_NAME_ZH}图片打码`}
         url="/zh/redact"
         description="浏览器本地图片打码：模糊人脸、遮挡车牌与证件，导出去除 EXIF/GPS。"
       />
