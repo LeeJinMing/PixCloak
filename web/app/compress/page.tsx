@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       es: "/compress-es",
       pt: "/compress-pt",
       id: "/compress-id",
-      zh: "/compress",
+      zh: "/zh/compress",
     },
   },
   openGraph: {

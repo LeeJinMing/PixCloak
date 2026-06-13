@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SiteGraphJsonLd } from "@/components/SiteGraphJsonLd";
+import { SiteChrome } from "@/components/SiteChrome";
 import { getSiteOrigin } from "@/lib/site";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       en: "/",
       "en-US": "/",
       "en-GB": "/",
+      "zh-CN": "/zh",
     },
   },
   openGraph: {
@@ -57,34 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});} ` }} />
         )}
         {enableAnalytics && <Analytics />}
-        <header role="banner" style={{ borderBottom: '1px solid #eee' }}>
-          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px' }}>
-            <Link href="/" style={{ fontWeight: 700 }}>PixCloak</Link>
-            <nav role="navigation" aria-label="Primary" style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'flex-end' }}>
-              <Link href="/compress">Compress</Link>
-              <Link href="/redact">Redact</Link>
-              <Link href="/tools">Tools</Link>
-              <Link href="/guides">Guides</Link>
-              <Link href="/guides/embed-button">Embed</Link>
-              <Link href="/press">Press</Link>
-            </nav>
-          </div>
-        </header>
-        <main role="main" className="container section">{children}</main>
-        <footer role="contentinfo" style={{ borderTop: '1px solid #eee', marginTop: 24 }}>
-          <div className="container" style={{ padding: '16px 16px', display: 'grid', gap: 8, justifyItems: 'center' }}>
-            <small>© {new Date().getFullYear()} PixCloak. All rights reserved.</small>
-            <nav role="navigation" aria-label="Footer" style={{ display: 'flex', gap: 16 }}>
-              <Link href="/about">About</Link>
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/terms">Terms</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/guides/embed-button">Embed</Link>
-              <Link href="/contact" className="pill">Feedback</Link>
-            </nav>
-            <div className="text-muted" style={{ fontSize: 12 }}>Local processing in your browser. Images are not uploaded to any server.</div>
-          </div>
-        </footer>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

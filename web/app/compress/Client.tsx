@@ -13,12 +13,15 @@ import {
   type OutputFormat,
   type ResizeMode,
 } from "@/lib/image";
+import { getCompressStrings } from "@/lib/i18n/compress";
 
 const label: React.CSSProperties = { fontSize: 13, color: "#6b7280" };
 
-type CompressClientProps = { embedded?: boolean };
+type CompressClientProps = { embedded?: boolean; locale?: "en" | "zh" };
 
-export default function CompressClient({ embedded = false }: CompressClientProps) {
+export default function CompressClient({ embedded = false, locale = "en" }: CompressClientProps) {
+  const s = getCompressStrings(locale);
+  const compressBase = locale === "zh" ? "/zh/compress" : "/compress";
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
@@ -80,7 +83,7 @@ export default function CompressClient({ embedded = false }: CompressClientProps
 
     const preset = searchParams.get("preset");
     if (preset) {
-      setSuccessMsg(`Preset "${decodeURIComponent(preset)}" applied successfully!`);
+      setSuccessMsg(s.presetApplied(decodeURIComponent(preset)));
       setTimeout(() => setSuccessMsg(""), 3000);
     }
   }, [searchParams]);
@@ -102,7 +105,7 @@ export default function CompressClient({ embedded = false }: CompressClientProps
     const large = getLargeFileNames(arr, LARGE_FILE_WARNING_BYTES);
     setLargeFileWarning(
       large.length
-        ? `Large file(s) may be slow to process: ${large.slice(0, 3).join(", ")}${large.length > 3 ? "…" : ""}`
+        ? `${s.largeFilePrefix} ${large.slice(0, 3).join(", ")}${large.length > 3 ? "…" : ""}`
         : ""
     );
   }
@@ -171,16 +174,14 @@ export default function CompressClient({ embedded = false }: CompressClientProps
       );
       const okCount = succeeded.length;
       if (okCount > 0) {
-        setSuccessMsg(
-          `${okCount} image${okCount > 1 ? "s" : ""} compressed${failed.length ? ` (${failed.length} failed)` : ""}. Quality: ${quality.toFixed(2)}`
-        );
+        setSuccessMsg(s.successMsg(okCount, failed.length, quality));
       } else {
         setSuccessMsg("");
       }
     } finally {
       setBusy(false);
     }
-  }, [files, format, quality, resizeA, resizeB, resizeMode, targetKb, buildName]);
+  }, [files, format, quality, resizeA, resizeB, resizeMode, targetKb, buildName, s]);
 
   async function downloadZip() {
     if (!results.length) return;
@@ -248,7 +249,7 @@ export default function CompressClient({ embedded = false }: CompressClientProps
   async function copyFirstToClipboard() {
     setCopyMsg("");
     if (!('clipboard' in navigator)) {
-      setCopyMsg('Clipboard not available');
+      setCopyMsg(s.clipboardUnavailable);
       return;
     }
     if (!results.length) return;
@@ -257,43 +258,32 @@ export default function CompressClient({ embedded = false }: CompressClientProps
       const blob = await res.blob();
       // Try original blob first
       if (await copyBlobToClipboard(blob)) {
-        setCopyMsg('Copied to clipboard');
+        setCopyMsg(s.copyOk);
         return;
       }
-      // Fallback: convert to PNG and try again
       const png = await convertUrlToPngBlob(results[0].url);
       if (png && (await copyBlobToClipboard(png))) {
-        setCopyMsg('Copied PNG to clipboard');
+        setCopyMsg(s.copyPngOk);
         return;
       }
-      // Last resort: copy Data URL as text
       const dataUrl = await dataUrlFromBlob(blob);
       const clip = (navigator as unknown as { clipboard?: { writeText?: (s: string) => Promise<void> } }).clipboard;
       if (clip?.writeText) {
         await clip.writeText(dataUrl);
-        setCopyMsg('Copied image as Data URL');
+        setCopyMsg(s.copyDataUrl);
         return;
       }
-      setCopyMsg('Copy failed');
+      setCopyMsg(s.copyFail);
     } catch {
-      setCopyMsg('Copy failed');
+      setCopyMsg(s.copyFail);
     }
   }
 
   function savingPercent(original: number | undefined, compressed: number | undefined) {
     if (typeof original !== 'number' || typeof compressed !== 'number' || original <= 0) return '';
     const saved = Math.max(0, 1 - compressed / original) * 100;
-    return `, Saved: ${saved.toFixed(1)}%`;
+    return s.savedPct(saved);
   }
-
-  const faqItems = [
-    { q: 'Will PixCloak upload my images?', a: 'No. All compression runs locally in your browser and works offline (PWA). Nothing is uploaded to any server.' },
-    { q: 'How to choose quality vs target size (KB)?', a: 'Prefer Target (KB). We search the best quality with binary search. Without a target, use the quality slider manually.' },
-    { q: 'Are EXIF/GPS and metadata removed?', a: 'Yes. Re-encoding via Canvas removes EXIF/GPS metadata by default on export.' },
-    { q: 'When to use JPEG / WebP / PNG?', a: 'WebP is often smaller and supports transparency; PNG fits icons/screenshots (lossless + alpha); JPEG is ideal for photos.' },
-    { q: 'It feels slow or images are huge—what can I do?', a: 'Resize the longest side or set exact width/height before compressing to speed up and reduce size significantly.' },
-    { q: 'How do I batch download?', a: 'After compression click Download ZIP. It works for single or multiple images.' },
-  ];
 
   function FaqItem({ q, a }: { q: string; a: string }) {
     const [open, setOpen] = useState(false);
@@ -335,24 +325,26 @@ export default function CompressClient({ embedded = false }: CompressClientProps
     <div className="container" style={{ display: 'grid', gap: 16 }}>
       {!embedded && (
         <div className="card" style={{ background: "#eff6ff", borderColor: "#bfdbfe" }}>
-          <h2 style={{ fontSize: 28, marginBottom: 8 }}>Online JPEG & PNG Image Compressor</h2>
-          <p className="text-muted" style={{ marginBottom: 10 }}>
-            Compress images in your browser with no upload. Set a target size (KB), choose JPEG/WebP/PNG, and batch download as ZIP.
-          </p>
+          <h2 style={{ fontSize: 28, marginBottom: 8 }}>{s.heroTitle}</h2>
+          <p className="text-muted" style={{ marginBottom: 10 }}>{s.heroDesc}</p>
 
-          <TrustSignal showDetails={true} />
+          {locale === "en" && <TrustSignal showDetails={true} />}
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <Link href="/privacy" className="pill">Privacy‑first</Link>
-            <span className="pill-ghost">No upload</span>
-            <Link href="/guides/compress-to-target-kb" className="pill">Target size guide</Link>
-            <span className="pill-ghost">ZIP batch</span>
+            <Link href="/privacy" className="pill">{s.privacyPill}</Link>
+            <span className="pill-ghost">{s.noUpload}</span>
+            <Link href={locale === "zh" ? "/guides/compress-to-target-kb-zh" : "/guides/compress-to-target-kb"} className="pill">{s.targetGuide}</Link>
+            <span className="pill-ghost">{s.zipBatch}</span>
           </div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
-            <Link className="pill" href="/?kb=200">200KB</Link>
-            <Link className="pill" href="/?kb=500">500KB</Link>
-            <Link className="pill" href="/?kb=1024">1MB</Link>
-            <Link className="pill-ghost" href="/guides/resize-longest-side">1920px</Link>
-            <Link className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</Link>
+            <Link className="pill" href={`${compressBase}?kb=200`}>200KB</Link>
+            <Link className="pill" href={`${compressBase}?kb=500`}>500KB</Link>
+            <Link className="pill" href={`${compressBase}?kb=1024`}>1MB</Link>
+            {locale === "en" && (
+              <>
+                <Link className="pill-ghost" href="/guides/resize-longest-side">1920px</Link>
+                <Link className="pill-ghost" href="/guides/jpeg-vs-webp-size-quality">WebP vs JPEG</Link>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -360,60 +352,60 @@ export default function CompressClient({ embedded = false }: CompressClientProps
       <div className="card">
         <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr 1fr' }}>
           <div>
-            <label htmlFor="file-input" style={label}>1. Upload Your Images (JPEG/PNG)</label>
+            <label htmlFor="file-input" style={label}>{s.uploadLabel}</label>
             <input id="file-input" ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); }} className="input" />
-            <div className="text-muted" style={{ fontSize: 12, marginTop: 6 }}>{files.length ? `${files.length} file(s) selected` : 'No file chosen'}</div>
+            <div className="text-muted" style={{ fontSize: 12, marginTop: 6 }}>{files.length ? s.filesSelected(files.length) : s.noFiles}</div>
             {largeFileWarning && (
               <div style={{ fontSize: 12, color: '#b45309', marginTop: 6 }}>{largeFileWarning}</div>
             )}
           </div>
           <div>
-            <label htmlFor="quality-range" style={label}>2. Adjust Quality</label>
+            <label htmlFor="quality-range" style={label}>{s.qualityLabel}</label>
             <input id="quality-range" aria-valuemin={0.1} aria-valuemax={1} aria-valuenow={quality} type="range" min={0.1} max={1} step={0.01} value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: '100%' }} />
-            <div className="text-muted" style={{ fontSize: 12 }}>Quality: {quality.toFixed(2)}</div>
+            <div className="text-muted" style={{ fontSize: 12 }}>{s.qualityValue(quality)}</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginTop: 12 }}>
-          <label htmlFor="format-select" style={label}>Format</label>
+          <label htmlFor="format-select" style={label}>{s.format}</label>
           <select id="format-select" value={format} onChange={(e) => setFormat(e.target.value as OutputFormat)} className="select" style={{ marginLeft: 8 }}>
             <option value="image/jpeg">JPEG</option>
             <option value="image/webp">WebP</option>
             <option value="image/png">PNG</option>
           </select>
           {showAlphaWarning && (
-            <span className="pill-ghost" title="PNG/WebP transparency will be flattened to white when exporting JPEG.">Transparency → white on JPEG</span>
+            <span className="pill-ghost" title={s.alphaWarning}>{s.alphaWarning}</span>
           )}
-          <label htmlFor="resize-select" style={{ ...label, marginLeft: 12 }}>Resize</label>
+          <label htmlFor="resize-select" style={{ ...label, marginLeft: 12 }}>{s.resize}</label>
           <select id="resize-select" value={resizeMode} onChange={(e) => setResizeMode(e.target.value as ResizeMode)} className="select" style={{ marginLeft: 8 }}>
-            <option value="none">None</option>
-            <option value="longest">Longest side</option>
-            <option value="exact">Exact WxH</option>
+            <option value="none">{s.resizeNone}</option>
+            <option value="longest">{s.resizeLongest}</option>
+            <option value="exact">{s.resizeExact}</option>
           </select>
           {resizeMode === 'longest' && (
             <input type="number" placeholder="1920" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
           )}
           {resizeMode === 'exact' && (
             <>
-              <input type="number" placeholder="Width" value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
-              <input type="number" placeholder="Height" value={resizeB} onChange={(e) => setResizeB(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
+              <input type="number" placeholder={s.widthPh} value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
+              <input type="number" placeholder={s.heightPh} value={resizeB} onChange={(e) => setResizeB(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
             </>
           )}
-          <label style={{ ...label, marginLeft: 12 }}>Target (KB)
+          <label style={{ ...label, marginLeft: 12 }}>{s.targetKb}
             <input type="number" placeholder="200" value={targetKb} onChange={(e) => setTargetKb(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120, marginLeft: 8 }} />
           </label>
-          <button className="button" onClick={compressAll} disabled={!files.length || busy} aria-keyshortcuts="Enter">{busy ? 'Compressing…' : 'Compress'}</button>
+          <button className="button" onClick={compressAll} disabled={!files.length || busy} aria-keyshortcuts="Enter">{busy ? s.compressing : s.compress}</button>
         </div>
         <div className="text-muted" style={{ fontSize: 12, marginTop: 8 }}>
-          Images are auto‑rotated based on EXIF orientation. Metadata (EXIF/GPS) is removed on export.
+          {s.exifNote}
           {busy && files.length > 0 && (
-            <span> &nbsp;Progress: {progressCount}/{files.length}</span>
+            <span> &nbsp;{s.progress(progressCount, files.length)}</span>
           )}
         </div>
       </div>
 
       <div style={{ display: 'grid', gap: 16, gridTemplateColumns: '1fr 1fr' }}>
         <div className="card">
-          <h2 style={{ marginBottom: 8 }}>Originals</h2>
+          <h2 style={{ marginBottom: 8 }}>{s.originals}</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', background: '#f9fafb', border: '1px dashed #e5e7eb', padding: 12, borderRadius: 10 }}>
             {previews.length ? (
               previews.map((src, i) => (
@@ -421,12 +413,12 @@ export default function CompressClient({ embedded = false }: CompressClientProps
                 <img key={i} src={src} alt={`original-${i}`} loading="lazy" style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
               ))
             ) : (
-              <div style={{ color: '#6b7280' }}>Upload an image to see preview</div>
+              <div style={{ color: '#6b7280' }}>{s.uploadPreview}</div>
             )}
           </div>
         </div>
         <div className="card">
-          <h2 style={{ marginBottom: 8 }}>Compressed</h2>
+          <h2 style={{ marginBottom: 8 }}>{s.compressed}</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', background: '#f9fafb', border: '1px dashed #e5e7eb', padding: 12, borderRadius: 10 }}>
             {results.length ? (
               results.map((r, i) => (
@@ -436,12 +428,12 @@ export default function CompressClient({ embedded = false }: CompressClientProps
                     <img src={r.url} alt={`compressed-${i}`} loading="lazy" style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
                   </a>
                   <div style={{ fontSize: 12, color: '#6b7280', marginTop: 6 }}>
-                    Size: {formatBytes(r.size)} (Original: {formatBytes(files[r.fileIndex]?.size)}{savingPercent(files[r.fileIndex]?.size, r.size)})
+                    {s.sizeLine(formatBytes(r.size), formatBytes(files[r.fileIndex]?.size), savingPercent(files[r.fileIndex]?.size, r.size))}
                   </div>
                 </div>
               ))
             ) : (
-              <div style={{ color: '#6b7280' }}>Compressed image will appear here</div>
+              <div style={{ color: '#6b7280' }}>{s.compressedPreview}</div>
             )}
           </div>
         </div>
@@ -449,11 +441,11 @@ export default function CompressClient({ embedded = false }: CompressClientProps
 
       {results.length > 0 && (
         <div className="card">
-          <div style={{ marginBottom: 12, fontWeight: 600 }}>3. Download Your Optimized Image</div>
+          <div style={{ marginBottom: 12, fontWeight: 600 }}>{s.downloadSection}</div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <button className="button button-success" onClick={downloadFirst}>{results.length === 1 ? 'Download Compressed Image' : 'Download First Image'}</button>
-            <button className="button button-dark" onClick={downloadZip}>Download ZIP</button>
-            <button className="button" onClick={copyFirstToClipboard} aria-label="Copy first image to clipboard">Copy to Clipboard</button>
+            <button className="button button-success" onClick={downloadFirst}>{results.length === 1 ? s.downloadOne : s.downloadFirst}</button>
+            <button className="button button-dark" onClick={downloadZip}>{s.downloadZip}</button>
+            <button className="button" onClick={copyFirstToClipboard} aria-label={s.copyClipboard}>{s.copyClipboard}</button>
           </div>
           {successMsg && (
             <div style={{ background: '#d1fae5', color: '#065f46', padding: 12, borderRadius: 'var(--radius)', marginTop: 12 }}>
@@ -467,7 +459,7 @@ export default function CompressClient({ embedded = false }: CompressClientProps
           )}
           {failures.length > 0 && (
             <div style={{ background: '#fef2f2', color: '#991b1b', padding: 12, borderRadius: 'var(--radius)', marginTop: 8 }}>
-              Failed: {failures.join("; ")}
+              {s.failedPrefix} {failures.join("; ")}
             </div>
           )}
         </div>
@@ -475,16 +467,16 @@ export default function CompressClient({ embedded = false }: CompressClientProps
 
       {!embedded && showFaq && (
         <div className="card">
-          <h2 style={{ marginBottom: 8 }}>Frequently Asked Questions (FAQ)</h2>
+          <h2 style={{ marginBottom: 8 }}>{s.faqTitle}</h2>
           <div style={{ display: 'grid', gap: 8 }}>
-            {faqItems.map((item, idx) => (
+            {s.faq.map((item, idx) => (
               <FaqItem key={idx} q={item.q} a={item.a} />
             ))}
           </div>
         </div>
       )}
 
-      {!embedded && (
+      {!embedded && locale === "en" && (
         <>
           <div className="card">
             <ProcessingDemo />

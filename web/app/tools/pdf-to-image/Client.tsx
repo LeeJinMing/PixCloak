@@ -2,10 +2,14 @@
 
 import { useState, useRef } from 'react';
 import JSZip from 'jszip';
+import { getPdfToImageStrings } from '@/lib/i18n/pdfToImage';
 
 const HARD_MAX_PAGES = 50;
 
-export default function PdfToImageClient() {
+type Props = { locale?: 'en' | 'zh' };
+
+export default function PdfToImageClient({ locale = 'en' }: Props) {
+  const s = getPdfToImageStrings(locale);
   const [maxPages, setMaxPages] = useState(20);
   const [scale, setScale] = useState(2);
   const [processing, setProcessing] = useState(false);
@@ -18,11 +22,11 @@ export default function PdfToImageClient() {
   const run = async () => {
     const file = fileRef.current?.files?.[0];
     if (!file) {
-      setError('Choose a PDF first.');
+      setError(s.choosePdfFirst);
       return;
     }
     if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
-      setError('Please select a PDF file.');
+      setError(s.invalidPdf);
       return;
     }
 
@@ -52,14 +56,11 @@ export default function PdfToImageClient() {
         canvas.width = viewport.width;
         canvas.height = viewport.height;
 
-        const task = page.render({
-          canvas,
-          viewport,
-        });
+        const task = page.render({ canvas, viewport });
         await task.promise;
 
         const blob = await new Promise<Blob>((resolve, reject) => {
-          canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Failed to encode PNG'))), 'image/png');
+          canvas.toBlob((b) => (b ? resolve(b) : reject(new Error(s.encodeFail))), 'image/png');
         });
 
         out.push({
@@ -72,10 +73,7 @@ export default function PdfToImageClient() {
       setMeta({ rendered: cap, total });
     } catch (e) {
       console.error(e);
-      const msg =
-        e instanceof Error
-          ? e.message
-          : 'Could not read PDF. It may be encrypted, corrupt, or blocked by the browser.';
+      const msg = e instanceof Error ? e.message : s.errorGeneric;
       setError(msg);
     } finally {
       setProcessing(false);
@@ -95,12 +93,13 @@ export default function PdfToImageClient() {
     URL.revokeObjectURL(url);
   };
 
+  const intro = s.intro.replace('{cap}', String(HARD_MAX_PAGES));
+
   return (
     <div className="card">
-      <h2>PDF → PNG (per page)</h2>
+      <h2>{s.title}</h2>
       <p className="text-muted" style={{ fontSize: 14 }}>
-        Large PDFs use a lot of memory. We render at most <strong>{HARD_MAX_PAGES}</strong> pages per run. The PDF.js worker loads from a CDN on first
-        use.
+        {intro}
       </p>
 
       {error && (
@@ -111,9 +110,7 @@ export default function PdfToImageClient() {
 
       <div style={{ marginTop: 12, display: 'grid', gap: 12 }}>
         <div>
-          <label>
-            <strong>Max pages to export:</strong> {maxPages} (capped at {HARD_MAX_PAGES} and your PDF length)
-          </label>
+          <label>{s.maxPagesLabel(maxPages, HARD_MAX_PAGES)}</label>
           <input
             type="range"
             min={1}
@@ -124,9 +121,7 @@ export default function PdfToImageClient() {
           />
         </div>
         <div>
-          <label>
-            <strong>Resolution scale:</strong> {scale}x (higher = sharper, slower)
-          </label>
+          <label>{s.scaleLabel(scale)}</label>
           <input
             type="range"
             min={1}
@@ -160,7 +155,7 @@ export default function PdfToImageClient() {
             fontWeight: 600,
           }}
         >
-          Choose PDF
+          {s.choosePdf}
         </button>
         {pickedName && (
           <span style={{ marginLeft: 12 }} className="text-muted">
@@ -184,13 +179,12 @@ export default function PdfToImageClient() {
           fontWeight: 600,
         }}
       >
-        {processing ? 'Rendering…' : 'Convert to images'}
+        {processing ? s.rendering : s.convert}
       </button>
 
       {meta && (
         <p className="text-muted" style={{ marginTop: 12 }}>
-          Rendered {meta.rendered} of {meta.total} page{meta.total === 1 ? '' : 's'}.
-          {meta.rendered < meta.total ? ' Increase “max pages” and run again for more (or split the PDF).' : ''}
+          {s.rendered(meta.rendered, meta.total, meta.rendered < meta.total ? s.moreHint : '')}
         </p>
       )}
 
@@ -209,7 +203,7 @@ export default function PdfToImageClient() {
               cursor: 'pointer',
             }}
           >
-            Download ZIP ({done.length} PNG{done.length === 1 ? '' : 's'})
+            {s.downloadZip(done.length)}
           </button>
           <button
             type="button"
@@ -218,7 +212,7 @@ export default function PdfToImageClient() {
               setMeta(null);
               setError(null);
               if (fileRef.current) fileRef.current.value = '';
-            setPickedName(null);
+              setPickedName(null);
             }}
             style={{
               marginLeft: 8,
@@ -229,7 +223,7 @@ export default function PdfToImageClient() {
               cursor: 'pointer',
             }}
           >
-            Start over
+            {s.startOver}
           </button>
         </div>
       )}

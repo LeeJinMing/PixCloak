@@ -37,6 +37,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${base}/zh`,
+      lastModified: new Date("2026-06-13"),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${base}/zh/compress`,
+      lastModified: new Date("2026-06-13"),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${base}/zh/tools/pdf-to-image`,
+      lastModified: new Date("2026-06-13"),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${base}/zh/guides/pdf-to-image-free`,
+      lastModified: new Date("2026-06-13"),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
       url: `${base}/redact`,
       lastModified: coreUpdated,
       changeFrequency: "weekly" as const,

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Turn PDF pages into PNG images in your browser. Set max pages and scale, download a ZIP. Runs locally—nothing uploaded. For slides, scans, and quick previews.',
   alternates: {
     canonical: '/tools/pdf-to-image',
-    languages: { 'x-default': '/tools/pdf-to-image', en: '/tools/pdf-to-image' },
+    languages: { 'x-default': '/tools/pdf-to-image', en: '/tools/pdf-to-image', 'zh-CN': '/zh/tools/pdf-to-image' },
   },
   openGraph: {
     title: 'PDF pages to PNG locally',
