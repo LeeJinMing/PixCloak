@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Sensor foto: blur wajah, plat nomor, teks. Hapus EXIF/GPS otomatis. 100% lokal, tanpa upload. Gambar kotak untuk menutupi area sensitif. Cepat dan privat.',
   alternates: {
     canonical: '/redact-id',
-    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id', zh: '/redact' }
+    languages: { 'x-default': '/redact', en: '/redact', es: '/redact-es', pt: '/redact-pt', id: '/redact-id', zh: '/zh/redact' }
   }
 };
 

@@ -61,6 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${base}/zh/redact`,
+      lastModified: new Date("2026-06-13"),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
       url: `${base}/redact`,
       lastModified: coreUpdated,
       changeFrequency: "weekly" as const,

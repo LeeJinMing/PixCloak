@@ -44,7 +44,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
                 <Link href="/zh/compress">图片压缩</Link>
                 <Link href="/zh/tools/pdf-to-image">PDF转图片</Link>
                 <Link href="/zh/guides/pdf-to-image-free">教程</Link>
-                <Link href="/redact">图片打码</Link>
+                <Link href="/zh/redact">图片打码</Link>
                 <Link href="/" className="text-muted">
                   English
                 </Link>

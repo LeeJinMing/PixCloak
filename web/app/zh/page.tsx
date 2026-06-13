@@ -75,7 +75,7 @@ export default function ZhHomePage() {
             <Link href="/zh/tools/pdf-to-image">PDF 转图片</Link> — 每页导出 PNG，无需会员
           </li>
           <li>
-            <Link href="/redact">图片打码</Link> — 遮挡隐私信息
+            <Link href="/zh/redact">图片打码</Link> — 遮挡隐私信息
           </li>
           <li>
             <Link href="/guides/compress-to-target-kb-zh">压缩到指定 KB 教程</Link>

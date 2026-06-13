@@ -11,17 +11,16 @@ import {
   type RelRedactBox,
 } from "@/lib/image";
 import { downloadZipFromBlobs } from "@/lib/image/zip";
+import { getRedactStrings, type RedactPreset } from "@/lib/i18n/redact";
 
 type Box = RedactBox;
 type RelBox = RelRedactBox;
-type Preset = { key: string; name: string; boxes: RelBox[] };
-const PRESETS: Preset[] = [
-  { key: 'wechat', name: 'Chat Screenshot (avatar + name + time)', boxes: [{ x: 0.02, y: 0.01, w: 0.16, h: 0.09 }, { x: 0.20, y: 0.02, w: 0.35, h: 0.06 }] },
-  { key: 'license-plate', name: 'License Plate (bottom center sample)', boxes: [{ x: 0.35, y: 0.75, w: 0.30, h: 0.12 }] },
-  { key: 'id-card', name: 'ID Number (sample area)', boxes: [{ x: 0.20, y: 0.60, w: 0.60, h: 0.12 }] },
-];
+type Preset = RedactPreset;
 
-export default function RedactClient() {
+type RedactClientProps = { locale?: "en" | "zh" };
+
+export default function RedactClient({ locale = "en" }: RedactClientProps) {
+  const s = getRedactStrings(locale);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -155,7 +154,7 @@ export default function RedactClient() {
     relBoxesRef.current = absToRel(base, width, height);
   }
 
-  function allPresets(): Preset[] { return [...PRESETS, ...userPresets]; }
+  function allPresets(): Preset[] { return [...s.presets, ...userPresets]; }
 
   function applyPreset() {
     if (!canvasRef.current) return;
@@ -257,14 +256,7 @@ export default function RedactClient() {
     window.addEventListener('keydown', onKey); return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const faqItems = [
-    { q: 'Will my images be uploaded?', a: 'No. All redaction runs locally in your browser. Nothing is uploaded to any server.' },
-    { q: 'Solid vs Pixelate – what\'s the difference?', a: 'Solid covers the area with a black block (irreversible). Pixelate creates mosaic blocks to hide details while preserving rough shapes.' },
-    { q: 'How strong is pixelation and how to adjust it?', a: 'Use Strength: Strong, Stronger, or Extreme. Extreme applies the strongest pixelation for best privacy. For critical areas (eyes, ID), apply multiple boxes or switch to Solid.' },
-    { q: 'Are EXIF/GPS and metadata removed?', a: 'Yes. Exporting re-encodes the image and removes EXIF/GPS metadata by default.' },
-    { q: 'How do I import/export redaction presets?', a: 'Use Export JSON to save current boxes as relative coordinates. Use Import JSON to load and apply a preset on any image.' },
-    { q: 'Are there keyboard shortcuts?', a: 'Space toggles Solid/Pixelate. Delete/Backspace undo the last action.' },
-  ];
+  const faqItems = s.faq;
 
   function FaqItem({ q, a }: { q: string; a: string }) {
     const [open, setOpen] = useState(false);
@@ -289,18 +281,18 @@ export default function RedactClient() {
   return (
     <div className="container" style={{ display: 'grid', gap: 12 }}>
       <div className="card">
-        <h2>Image Redaction (Local)</h2>
-        <p>Draw boxes to mask sensitive regions. Processing is local and irreversible (solid/pixelate). EXIF/GPS will be removed on export.</p>
+        <h2>{s.title}</h2>
+        <p>{s.intro}</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 6 }}>
-          <Link href="/privacy" className="pill">Privacy‑first</Link>
-          <span className="pill-ghost">No upload</span>
-          <span className="pill">Irreversible</span>
-          <span className="pill-ghost">Remove EXIF/GPS</span>
+          <Link href="/privacy" className="pill">{s.privacyPill}</Link>
+          <span className="pill-ghost">{s.noUpload}</span>
+          <span className="pill">{s.irreversible}</span>
+          <span className="pill-ghost">{s.removeExif}</span>
         </div>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap', padding: '8px 0' }}>
-          <strong>Shortcuts:</strong>
-          <span>Space = toggle solid/pixelate</span>
-          <span>Delete = undo</span>
+          <strong>{s.shortcutsLabel}</strong>
+          <span>{s.shortcutSpace}</span>
+          <span>{s.shortcutDelete}</span>
         </div>
         <div style={{ display: 'grid', gap: 10 }}>
           {/* Row 1: Upload */}
@@ -311,56 +303,54 @@ export default function RedactClient() {
               accept="image/*"
               multiple
               id="redact-file-input"
-              aria-label="Choose images to redact"
+              aria-label={s.fileInputLabel}
               onChange={(e) => { if (e.target.files) handleFiles(e.target.files); setTimeout(() => draw(), 0); }}
               className="input"
               style={{ display: 'none' }}
             />
             <button className="button-soft" onClick={() => fileInputRef.current?.click()} aria-controls="redact-file-input">
-              Choose images
+              {s.chooseImages}
             </button>
             <span className="text-muted" style={{ fontSize: 12 }} aria-live="polite">
-              {fileList.length ? `${fileList.length} file(s) selected` : 'No file chosen'}
+              {fileList.length ? s.filesSelected(fileList.length) : s.noFiles}
             </span>
           </div>
 
           {/* Row 2: Mode + Strength */}
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-            <label htmlFor="mode-select">Mode</label>
+            <label htmlFor="mode-select">{s.mode}</label>
             <select id="mode-select" value={mode} onChange={(e) => { setMode(e.target.value as ("solid" | "pixelate")); setTimeout(() => draw(), 0); }} className="select">
-              <option value="solid">Solid block</option>
-              <option value="pixelate">Strong pixelation</option>
+              <option value="solid">{s.modeSolid}</option>
+              <option value="pixelate">{s.modePixelate}</option>
             </select>
             {mode === 'pixelate' && (
               <>
-                <label htmlFor="strength-select">Strength</label>
+                <label htmlFor="strength-select">{s.strength}</label>
                 <select id="strength-select" value={pixelStrength} onChange={(e) => { setPixelStrength(e.target.value as "strong" | "stronger" | "extreme"); setTimeout(() => draw(), 0); }} className="select">
-                  <option value="strong">Strong</option>
-                  <option value="stronger">Stronger</option>
-                  <option value="extreme">Extreme</option>
+                  <option value="strong">{s.strengthStrong}</option>
+                  <option value="stronger">{s.strengthStronger}</option>
+                  <option value="extreme">{s.strengthExtreme}</option>
                 </select>
               </>
             )}
           </div>
 
-          {/* Row 3: Preset */}
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-            <label htmlFor="preset-select">Preset</label>
+            <label htmlFor="preset-select">{s.preset}</label>
             <select id="preset-select" value={presetKey} onChange={(e) => setPresetKey(e.target.value)} className="select">
-              <option value="">None</option>
+              <option value="">{s.presetNone}</option>
               {allPresets().map(p => <option key={p.key} value={p.key}>{p.name}</option>)}
             </select>
-            <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">Apply preset</button>
-            <button onClick={exportPresetJson} disabled={!boxes.length} className="button">Export JSON</button>
-            <button onClick={triggerImport} className="button button-dark">Import JSON</button>
-            <input ref={jsonInputRef} id="redact-preset-import" aria-label="Import redaction preset JSON" type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
+            <button onClick={applyPreset} disabled={!presetKey || !imageUrl} className="button">{s.applyPreset}</button>
+            <button onClick={exportPresetJson} disabled={!boxes.length} className="button">{s.exportJson}</button>
+            <button onClick={triggerImport} className="button button-dark">{s.importJson}</button>
+            <input ref={jsonInputRef} id="redact-preset-import" aria-label={s.importJsonLabel} type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
           </div>
 
-          {/* Row 4: Actions */}
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-            <button onClick={clearBoxes} className="button button-dark" disabled={!boxes.length}>Clear</button>
-            <button onClick={exportJpg} disabled={!imageUrl} className="button button-success">Export JPG</button>
-            <button onClick={exportZipBatch} disabled={!fileList.length} className="button button-dark">Export ZIP (batch)</button>
+            <button onClick={clearBoxes} className="button button-dark" disabled={!boxes.length}>{s.clear}</button>
+            <button onClick={exportJpg} disabled={!imageUrl} className="button button-success">{s.exportJpg}</button>
+            <button onClick={exportZipBatch} disabled={!fileList.length} className="button button-dark">{s.exportZip}</button>
           </div>
         </div>
       </div>
@@ -368,7 +358,7 @@ export default function RedactClient() {
         <canvas
           ref={canvasRef}
           role="img"
-          aria-label="Redaction canvas preview"
+          aria-label={s.canvasLabel}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -378,7 +368,7 @@ export default function RedactClient() {
       </div>
 
       <div className="card">
-        <h2 style={{ marginBottom: 8 }}>Frequently Asked Questions (FAQ)</h2>
+        <h2 style={{ marginBottom: 8 }}>{s.faqTitle}</h2>
         <div style={{ display: 'grid', gap: 8 }}>
           {faqItems.map((item, idx) => (
             <FaqItem key={idx} q={item.q} a={item.a} />
