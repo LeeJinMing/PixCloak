@@ -40,7 +40,6 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
   const [successMsg, setSuccessMsg] = useState<string>("");
   const [copyMsg, setCopyMsg] = useState<string>("");
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
-  const [showFaq, setShowFaq] = useState<boolean>(false);
   const [failures, setFailures] = useState<string[]>([]);
   const [largeFileWarning, setLargeFileWarning] = useState<string>("");
   const previewUrlsRef = useRef<string[]>([]);
@@ -87,12 +86,6 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
       setTimeout(() => setSuccessMsg(""), 3000);
     }
   }, [searchParams]);
-
-  // Defer non-critical FAQ to reduce initial JS
-  useEffect(() => {
-    const t = window.setTimeout(() => setShowFaq(true), 800);
-    return () => window.clearTimeout(t);
-  }, []);
 
   function handleFiles(list: FileList) {
     const arr = Array.from(list).filter((f) => f.type.startsWith("image/"));
@@ -285,42 +278,6 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
     return s.savedPct(saved);
   }
 
-  function FaqItem({ q, a }: { q: string; a: string }) {
-    const [open, setOpen] = useState(false);
-    return (
-      <div style={{ marginBottom: 8 }}>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls={`faq-panel-${q}`}
-          style={{
-            width: '100%',
-            textAlign: 'left',
-            background: '#f3f4f6',
-            border: '1px solid #e5e7eb',
-            borderRadius: 8,
-            padding: '12px 16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            cursor: 'pointer',
-            fontWeight: 600,
-          }}
-        >
-          <span>{q}</span>
-          <span style={{ fontSize: 18, lineHeight: 1 }}>{open ? '−' : '+'}</span>
-        </button>
-        <div id={`faq-panel-${q}`} role="region" style={{ maxHeight: open ? 500 : 0, overflow: 'hidden', transition: 'max-height .25s ease' }}>
-          {open && (
-            <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, padding: 12, marginTop: 8, color: '#374151' }}>
-              {a}
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="container" style={{ display: 'grid', gap: 16 }}>
       {!embedded && (
@@ -462,17 +419,6 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
               {s.failedPrefix} {failures.join("; ")}
             </div>
           )}
-        </div>
-      )}
-
-      {!embedded && showFaq && (
-        <div className="card">
-          <h2 style={{ marginBottom: 8 }}>{s.faqTitle}</h2>
-          <div style={{ display: 'grid', gap: 8 }}>
-            {s.faq.map((item, idx) => (
-              <FaqItem key={idx} q={item.q} a={item.a} />
-            ))}
-          </div>
         </div>
       )}
 

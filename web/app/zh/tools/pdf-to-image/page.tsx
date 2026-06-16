@@ -3,6 +3,7 @@ import Link from "next/link";
 import Client from "@/app/tools/pdf-to-image/Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { ToolNextSteps } from "@/components/ToolNextSteps";
 import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export const metadata: Metadata = {
@@ -44,14 +45,18 @@ export default function ZhPdfToImagePage() {
           </p>
         </div>
         <Client locale="zh" />
+        <ToolNextSteps tool="pdf-to-image" locale="zh" />
         <div className="card">
           <h2>相关工具</h2>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <Link href="/zh/compress" className="pill">
               图片压缩
             </Link>
-            <Link href="/tools/resize-image" className="pill">
-              调整尺寸
+            <Link href="/zh/redact" className="pill">
+              图片打码
+            </Link>
+            <Link href="/guides/resize-longest-side-zh" className="pill">
+              按最长边缩放教程
             </Link>
             <Link href="/zh/guides/pdf-to-image-free" className="pill">
               详细教程

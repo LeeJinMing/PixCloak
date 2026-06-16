@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
+import { ToolNextSteps } from '@/components/ToolNextSteps';
 
 export const metadata: Metadata = {
   title: 'PDF to Image Online—Export Pages as PNG (No',
@@ -49,6 +50,7 @@ export default function PdfToImagePage() {
           </p>
         </div>
         <Client />
+        <ToolNextSteps tool="pdf-to-image" locale="en" />
         <div className="card">
           <h2>Related tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>

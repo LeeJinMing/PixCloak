@@ -5,6 +5,11 @@ import RedactClient from "./Client";
 import AdsenseUnit from "@/components/Adsense";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { ServerFaqSection, faqToJsonLd } from "@/components/ServerFaqSection";
+import { ToolNextSteps } from "@/components/ToolNextSteps";
+import { getRedactStrings } from "@/lib/i18n/redact";
+
+const redactFaq = getRedactStrings("en");
 
 export const metadata: Metadata = {
   title: "Redact Photo Online Free—Blur Face & License Plate",
@@ -52,17 +57,7 @@ export default function Page() {
         description="Redact photos online free in your browser: blur faces, hide license plates, black out text. Image redaction with no server upload; EXIF/GPS stripped on export."
         image="/og.png"
       />
-      <FaqJsonLd
-        items={[
-          { question: "Does this upload my images?", answer: "No. Everything runs locally in your browser; files never leave your device." },
-          { question: "Can I blur faces and license plates online for free?", answer: "Yes. Draw blur or pixelate regions over faces, plates (number plates), or other sensitive areas, then export. No account and no upload." },
-          { question: "Redact vs blur license plate—which should I use?", answer: "Blur or heavy pixelation hides detail for casual viewers; solid black boxes are stronger when you need obvious irreversible masking. This tool supports both styles." },
-          { question: "How do I redact an image online for free?", answer: "Open this page, upload your photo, draw blur or black boxes over sensitive areas, then export. Processing stays in your browser—no account, no upload, and no per-day quota." },
-          { question: "Is this an image redaction tool for compliance?", answer: "It helps you mask sensitive regions locally before sharing. You remain responsible for your process and legal requirements; the tool keeps files on-device for privacy." },
-          { question: "Can I redact a photo without uploading it?", answer: "Yes. PixCloak redacts images entirely in your browser. Files are not sent to a server, which is useful for IDs, invoices, and client photos." },
-          { question: "How do I remove EXIF/GPS?", answer: "Export from the tool; exports are stripped of metadata including EXIF and GPS coordinates." },
-        ]}
-      />
+      <FaqJsonLd items={faqToJsonLd(redactFaq.faq)} />
       <Suspense fallback={null}>
       <div style={{ position: 'relative' }}>
         <div className="ad-rail" style={{ left: 0 }}>
@@ -108,6 +103,8 @@ export default function Page() {
           </div>
         </div>
         <RedactClient />
+        <ServerFaqSection title={redactFaq.faqTitle} items={redactFaq.faq} />
+        <ToolNextSteps tool="redact" locale="en" />
         <div className="ad-bottom">
           <AdsenseUnit format="auto" />
         </div>

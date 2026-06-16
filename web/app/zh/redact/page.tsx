@@ -4,7 +4,12 @@ import Link from "next/link";
 import RedactClient from "@/app/redact/Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { ServerFaqSection, faqToJsonLd } from "@/components/ServerFaqSection";
+import { ToolNextSteps } from "@/components/ToolNextSteps";
 import { SITE_NAME_ZH } from "@/lib/i18n/site";
+import { getRedactStrings } from "@/lib/i18n/redact";
+
+const redactFaq = getRedactStrings("zh");
 
 export const metadata: Metadata = {
   title: "在线图片打码—模糊人脸车牌、遮挡隐私免费不上传",
@@ -36,13 +41,7 @@ export default function ZhRedactPage() {
         url="/zh/redact"
         description="浏览器本地图片打码：模糊人脸、遮挡车牌与证件，导出去除 EXIF/GPS。"
       />
-      <FaqJsonLd
-        items={[
-          { question: "打码会上传图片吗？", answer: "不会。所有处理在浏览器本地完成。" },
-          { question: "能模糊人脸和车牌吗？", answer: "可以。在图片上框选区域，选择纯色或马赛克后导出。" },
-          { question: "支持批量打码吗？", answer: "可一次选择多张图片，用同一套相对坐标批量导出 ZIP。" },
-        ]}
-      />
+      <FaqJsonLd items={faqToJsonLd(redactFaq.faq)} />
       <h1 className="page-hero-title">在线图片打码—模糊人脸、车牌与隐私信息（不上传）</h1>
       <div className="card" style={{ marginBottom: 16 }}>
         <p style={{ marginTop: 0 }}>
@@ -61,6 +60,8 @@ export default function ZhRedactPage() {
       <Suspense fallback={null}>
         <RedactClient locale="zh" />
       </Suspense>
+      <ServerFaqSection title={redactFaq.faqTitle} items={redactFaq.faq} />
+      <ToolNextSteps tool="redact" locale="zh" />
     </>
   );
 }
