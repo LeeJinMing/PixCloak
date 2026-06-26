@@ -84,7 +84,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
           <div className="text-muted" style={{ fontSize: 12, textAlign: "center" }}>
             {isZh ? "图片在您的浏览器本地处理，不会上传到服务器。" : "Local processing in your browser. Images are not uploaded to any server."}
           </div>
-          {isZh && <BeianFooter locale="zh" />}
+          <BeianFooter />
           {isZh && GONGAN_BEIAN && (
             <div className="text-muted" style={{ fontSize: 11 }}>
               <a href="https://www.beian.gov.cn/" target="_blank" rel="noopener noreferrer">
