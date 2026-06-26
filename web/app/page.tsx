@@ -78,6 +78,25 @@ export default function Home() {
           </div>
         </section>
 
+        <section aria-labelledby="home-zh">
+          <h2 id="home-zh" className="home-section-label">
+            中文站 / Chinese
+          </h2>
+          <Link href="/zh" className="home-feature-card">
+            <div className="home-feature-card__row">
+              <span className="home-feature-card__icon" aria-hidden>
+                <IconBook />
+              </span>
+              <div>
+                <div className="home-feature-card__title">皮克图 PixCloak 中文</div>
+                <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
+                  本地图片压缩、打码、去 EXIF。免费、不上传服务器。
+                </div>
+              </div>
+            </div>
+          </Link>
+        </section>
+
         <section aria-labelledby="home-workflow">
           <h2 id="home-workflow" className="home-section-label">
             Upload-ready workflow
@@ -274,6 +293,9 @@ export default function Home() {
             <Link className="pill" href="/guides/export-without-metadata">
               Remove EXIF/GPS
             </Link>
+            <Link className="pill" href="/guides/remove-exif-wechat">
+              WeChat EXIF guide
+            </Link>
             <Link className="pill" href="/guides/blur-face-in-photo">
               Blur faces
             </Link>
@@ -381,7 +403,8 @@ export const metadata: Metadata = {
       en: "/",
       "en-US": "/",
       "en-GB": "/",
-      zh: "/",
+      "zh-CN": "/zh",
+      zh: "/zh",
     },
   },
   openGraph: {

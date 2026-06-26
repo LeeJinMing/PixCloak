@@ -12,9 +12,9 @@ import { getRedactStrings } from "@/lib/i18n/redact";
 const redactFaq = getRedactStrings("en");
 
 export const metadata: Metadata = {
-  title: "Redact Photo Online Free—Blur Face & License Plate",
+  title: "Redact Image Online Free—Blur Face, License Plate & Text",
   description:
-    "Free image redaction tool: redact photos online in your browser. Blur faces, hide license plates, black out text. No upload—EXIF/GPS stripped on export.",
+    "Free image redaction online: blur faces, redact license plates, black out text. Runs in your browser—no upload. EXIF/GPS stripped on export.",
   alternates: {
     canonical: "/redact",
     languages: {
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Redact photo online free—blur face & plate",
+    title: "Redact image online free—face, plate, text",
     description:
-      "Image redaction tool that runs locally: blur, pixelate, or black out faces, plates, and text. No upload; metadata removed on export.",
+      "Image redaction in your browser: blur, pixelate, or black out faces, plates, and text. No upload; metadata removed on export.",
     url: "/redact",
     type: "website",
   },
@@ -76,7 +76,7 @@ export default function Page() {
             strip EXIF/GPS.
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link href="/guides/license-plate-redaction" className="pill">License plate redaction</Link>
+            <Link href="/guides/license-plate-redaction" className="pill">Redact vs blur plate</Link>
             <Link href="/guides/blur-face-in-photo" className="pill">Blur faces guide</Link>
             <Link href="/guides/long-tail/id-card-privacy-redaction" className="pill">ID card redaction</Link>
           </div>

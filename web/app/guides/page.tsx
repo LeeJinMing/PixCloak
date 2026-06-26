@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
+import { CORE_GUIDE_HUB_LINKS } from "@/lib/seo/coreUrls";
 
 export const metadata: Metadata = {
-  title: "Image Guides: Compress, Convert, Remove EXIF",
-  description: "Compress to 100KB-1MB, convert JPG/WebP, resize to 1920px, remove EXIF/GPS. Works offline in your browser—no uploads. For web, email, social media, and forms.",
+  title: "Image Guides: Compress, Redact, Remove EXIF",
+  description: "Compress to 100KB–1MB, blur faces, redact license plates, remove WeChat EXIF/GPS. Local browser tools—no uploads.",
   alternates: { canonical: "/guides" },
 };
 
 const guideCategories = [
+  {
+    title: "Priority guides (high traffic)",
+    description: "Start with these—matched to common search queries and form-upload limits.",
+    guides: [
+      { title: "Blur face online free", url: "/guides/blur-face-in-photo", description: "Pixelate or block faces before sharing. No upload; EXIF/GPS stripped." },
+      { title: "Compress to 100KB", url: "/guides/compress-image-to-100kb", description: "Passport, visa, and government form limits. Exact KB target." },
+      { title: "Compress to 200KB", url: "/guides/compress-to-200kb", description: "LinkedIn, resumes, and job applications." },
+      { title: "WeChat EXIF & GPS", url: "/guides/remove-exif-wechat", description: "Does WeChat remove metadata? Safe workflow before sending." },
+      { title: "TinyPNG alternative", url: "/guides/tinypng-alternative-free-no-upload", description: "Unlimited local compression—no upload, no monthly cap." },
+      { title: "Redact vs blur license plate", url: "/guides/license-plate-redaction", description: "Why pixelate beats soft blur for plates." },
+    ],
+  },
   {
     title: "Compression Guides",
     description: "Learn how to compress images to specific file sizes Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
@@ -57,53 +70,16 @@ const guideCategories = [
   }
 ];
 
-/** Hub links for guide URLs that appeared under “Crawled – currently not indexed” in GSC (Apr 2026 export). Improves internal discovery. */
-const gscRecrawlHubLinks: { href: string; label: string }[] = [
+/** Long-tail index only—avoid diluting link equity from the main hub. */
+const secondaryGuideLinks: { href: string; label: string }[] = [
   { href: "/guides/how-to-compress-image-without-losing-quality", label: "Compress without losing quality" },
-  { href: "/guides/pt-redimensionar-lado-mais-longo", label: "PT: redimensionar lado mais longo" },
-  { href: "/guides/compress-to-target-kb-zh", label: "ZH: 按目标 KB 压缩" },
-  { href: "/guides/jpeg-vs-webp-for-linkedin", label: "JPEG vs WebP for LinkedIn" },
-  { href: "/guides/gsc-operations", label: "Google Search Console checklist" },
-  { href: "/guides/convert-jpg-to-webp-online", label: "Convert JPG to WebP online" },
-  { href: "/guides/blur-number-plate-online", label: "Blur number plate online" },
-  { href: "/guides/convert-jpeg-to-webp", label: "Convert JPEG to WebP" },
-  { href: "/guides/complete-image-compression-guide", label: "Complete compression guide" },
-  { href: "/guides/research-quality-size-curves", label: "Research: quality vs size curves" },
-  { href: "/guides/avoid-artifacts-webp-jpeg", label: "Avoid WebP/JPEG artifacts" },
-  { href: "/guides/research-jpeg-vs-webp", label: "Research: JPEG vs WebP" },
-  { href: "/guides/how-to-resize-images-for-instagram", label: "Resize images for Instagram" },
-  { href: "/guides/languages", label: "Guides by language" },
-  { href: "/guides/long-tail/compress-to-100kb-for-email", label: "Long-tail: compress to 100KB for email" },
-  { href: "/guides/compress-to-500kb", label: "Compress to 500KB" },
-  { href: "/guides/remove-exif-iphone", label: "Remove EXIF on iPhone" },
-  { href: "/guides/post-500kb", label: "Social post ~500KB" },
-  { href: "/guides/prepare-images-for-forms", label: "Prepare images for forms" },
-  { href: "/guides/redact-screenshot-mac", label: "Redact screenshots on Mac" },
-  { href: "/guides/anonymized-sharing", label: "Anonymized sharing" },
-  { href: "/guides/long-tail/compress-to-500kb-for-instagram", label: "Long-tail: 500KB for Instagram" },
-  { href: "/guides/es-comprimir-a-kb-objetivo", label: "ES: comprimir a KB objetivo" },
-  { href: "/guides/id-kompres-ke-kb-target", label: "ID: kompres ke KB target" },
-  { href: "/guides/pt-comprimir-para-kb-alvo", label: "PT: comprimir para KB alvo" },
-  { href: "/guides/rename-rules", label: "Rename rules for batches" },
-  { href: "/guides/resize-longest-side", label: "Resize longest side" },
-  { href: "/guides/black-out-text-in-image", label: "Black out text in an image" },
-  { href: "/guides/mobile-upload-limits", label: "Mobile upload limits" },
-  { href: "/guides/image-seo-optimization", label: "Image SEO" },
-  { href: "/guides/remove-gps-data-from-photos", label: "Remove GPS / EXIF from photos" },
-  { href: "/guides/privacy-compliance", label: "Privacy & compliance" },
-  { href: "/guides/research-500kb-quality-range", label: "Research: ~500KB quality range" },
-  { href: "/guides/long-tail/compress-to-200kb-for-linkedin", label: "Long-tail: 200KB for LinkedIn" },
-  { href: "/guides/redaction-checklist", label: "Redaction checklist" },
-  { href: "/guides/compress-to-1mb", label: "Compress to 1MB" },
-  { href: "/guides/jpeg-vs-webp-for-twitter", label: "JPEG vs WebP for Twitter" },
-  { href: "/guides/tinypng-alternative-free-no-upload", label: "TinyPNG alternative (local, no upload)" },
-  { href: "/guides/compress-image-to-100kb", label: "Compress images to 100KB" },
   { href: "/guides/how-to-reduce-image-file-size", label: "Reduce image file size" },
-  { href: "/guides/how-to-compress-on-iphone", label: "Compress images on iPhone" },
-  { href: "/guides/blur-face-in-photo", label: "Blur faces in photos" },
-  { href: "/research", label: "Research hub (algorithms & privacy)" },
-  { href: "/research/docs/compression-algorithm", label: "Docs: compression algorithm" },
-  { href: "/research/docs/privacy-architecture", label: "Docs: privacy architecture" },
+  { href: "/guides/platform-image-limits", label: "Platform image limits" },
+  { href: "/guides/export-without-metadata", label: "Export without metadata" },
+  { href: "/guides/black-out-text-in-image", label: "Black out text in image" },
+  { href: "/guides/blur-number-plate-online", label: "Blur number plate (UK)" },
+  { href: "/guides/long-tail", label: "All long-tail guides" },
+  { href: "/guides/languages", label: "Guides by language" },
 ];
 
 export default function GuidesPage() {
@@ -183,10 +159,19 @@ export default function GuidesPage() {
         </div>
 
         <div className="card">
-          <h2>More guides (full index)</h2>
+          <h2>Core tools</h2>
+          <p className="text-muted">Highest-value entry points—use these before browsing every guide.</p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
+            <Link href="/compress" className="pill">Image compressor</Link>
+            <Link href="/redact" className="pill">Image redactor</Link>
+            <Link href="/zh" className="pill">中文站 /zh</Link>
+          </div>
+        </div>
+
+        <div className="card">
+          <h2>Priority guides</h2>
           <p className="text-muted">
-            Direct links to popular and multilingual guides—including pages you may have seen under
-            “Crawled – currently not indexed” in Search Console. Same URLs, stronger internal links from this hub.
+            Curated for common searches (blur face, 100KB/200KB forms, WeChat EXIF, TinyPNG alternative, plate redaction).
           </p>
           <div
             style={{
@@ -196,17 +181,33 @@ export default function GuidesPage() {
               marginTop: 12,
             }}
           >
-            {gscRecrawlHubLinks.map(({ href, label }) => (
+            {CORE_GUIDE_HUB_LINKS.map(({ href, label }) => (
               <Link key={href} href={href} className="pill" style={{ justifyContent: "flex-start", textAlign: "left" }}>
                 {label}
               </Link>
             ))}
           </div>
-          <p style={{ marginTop: 12 }}>
-            <Link href="/guides/long-tail" className="pill">
-              All long-tail guides (full list)
-            </Link>
+        </div>
+
+        <div className="card">
+          <h2>More guides</h2>
+          <p className="text-muted">
+            Additional topics and multilingual pages. For the full long-tail list, see the dedicated index.
           </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gap: 10,
+              marginTop: 12,
+            }}
+          >
+            {secondaryGuideLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className="pill" style={{ justifyContent: "flex-start", textAlign: "left" }}>
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="card">

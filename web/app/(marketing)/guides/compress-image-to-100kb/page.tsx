@@ -3,25 +3,28 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Compress Images to 100KB (Free, No Quality",
-  description: "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download. Supports JPEG, PNG, WebP.",
+  title: "Compress Image to 100KB Online Free—No Upload",
+  description:
+    "Compress image to 100KB for passport, visa, and government forms. Exact KB target in your browser—no upload, no app. JPEG, PNG, WebP; EXIF stripped.",
   alternates: {
     canonical: "/guides/compress-image-to-100kb",
     languages: {
-      'x-default': "/guides/compress-image-to-100kb",
+      "x-default": "/guides/compress-image-to-100kb",
       en: "/guides/compress-image-to-100kb",
-    }
+    },
   },
   openGraph: {
-    title: "How to Compress Images to 100KB (Free, No Quality Loss)",
-    description: "Reduce image file size to exactly 100KB for forms, applications, and uploads. Simple 3-step guide works on any device—no app download.",
+    title: "Compress image to 100KB online free",
+    description:
+      "Hit exactly 100KB for forms and applications. Local browser tool—no upload. WebP or JPEG; metadata removed.",
     url: "/guides/compress-image-to-100kb",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Compress Images to 100KB",
-    description: "Reduce image file size to exactly 100KB. Simple 3-step guide, no app download needed. Works locally in your browser, no uploads.",
+    title: "Compress Image to 100KB Free",
+    description:
+      "Exact 100KB target for passport and form uploads. Runs locally in your browser—no upload.",
   },
 };
 
@@ -35,11 +38,16 @@ export default function GuideCompress100KB() {
       ]} />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>How to Compress Images to 100KB</h1>
+          <h1>Compress Image to 100KB Online (No Upload)</h1>
           <p style={{ marginBottom: 8 }}>
             <strong>Short answer:</strong> Open <a href="/compress?kb=100">/compress?kb=100</a>, shrink dimensions first (roughly ≤1080px long side for photos), set WebP or JPEG, export—verify size in downloads.
           </p>
-          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: June 2026.</p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+            <a className="pill" href="/compress?kb=100">Compress to 100KB now</a>
+            <a className="pill" href="/guides/compress-to-200kb">Need 200KB instead?</a>
+            <a className="pill" href="/guides/tinypng-alternative-free-no-upload">TinyPNG alternative</a>
+          </div>
 
           <h2>Why Compress Images to 100KB?</h2>
           <p>

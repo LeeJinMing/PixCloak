@@ -3,25 +3,28 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Blur Faces in Photos Online (No Upload)",
-  description: "Blur or pixelate faces in photos before sharing. Works on iPhone, Android, and desktop with no app. Export also strips EXIF/GPS.",
+  title: "Blur Face Online Free—No Upload, Strip EXIF",
+  description:
+    "Blur face in photo online free. Pixelate or block faces before sharing—runs in your browser, no upload. GDPR-safe; EXIF/GPS removed on export.",
   alternates: {
     canonical: "/guides/blur-face-in-photo",
     languages: {
-      'x-default': "/guides/blur-face-in-photo",
+      "x-default": "/guides/blur-face-in-photo",
       en: "/guides/blur-face-in-photo",
-    }
+    },
   },
   openGraph: {
-    title: "Blur faces in photos online",
-    description: "Hide faces locally before sharing. No upload, no app, EXIF/GPS stripped on export.",
+    title: "Blur face online free—no upload",
+    description:
+      "Hide faces locally before sharing. Pixelate, blur, or solid block. No app, no upload; EXIF/GPS stripped on export.",
     url: "/guides/blur-face-in-photo",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Blur Faces in Photos",
-    description: "Protect privacy. Works on iPhone, Android, desktop. No app download needed. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
+    title: "Blur Face Online Free",
+    description:
+      "Blur faces in photos in your browser—no upload. Pixelate for stronger privacy; EXIF/GPS removed on export.",
   },
 };
 
@@ -35,11 +38,11 @@ export default function GuideBlurFace() {
       ]} />
       <div className="container" style={{ display: 'grid', gap: 12 }}>
         <div className="card">
-          <h1>Blur Faces in Photos Online (No Upload)</h1>
+          <h1>Blur Face Online Free (No Upload)</h1>
           <p style={{ marginBottom: 8 }}>
             <strong>Short answer:</strong> open the redaction tool, cover each face with pixelation or a solid block, then export a clean copy with EXIF/GPS removed.
           </p>
-          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: June 2026.</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
             <a className="pill" href="/redact">Blur faces now</a>
             <a className="pill" href="/guides/license-plate-redaction">Hide license plates</a>

@@ -33,7 +33,7 @@ export default function GuideCompress200KB() {
     <>
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: '/' },
-        { name: 'Guides', url: '/guides/complete-image-compression-guide' },
+        { name: 'Guides', url: '/guides' },
         { name: 'Compress to 200KB', url: '/guides/compress-to-200kb' }
       ]} />
     <div className="container" style={{ display: 'grid', gap: 12 }}>
@@ -42,7 +42,12 @@ export default function GuideCompress200KB() {
 
       <div className="card">
           <h1>Compress Image to 200KB Online (No Upload)</h1>
-          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: April 2026.</p>
+          <p className="text-muted" style={{ fontSize: 14, marginBottom: 12 }}>Last reviewed: June 2026.</p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+            <Link className="pill" href="/compress?kb=200">Compress to 200KB now</Link>
+            <Link className="pill" href="/guides/tinypng-alternative-free-no-upload">TinyPNG alternative</Link>
+            <Link className="pill" href="/guides/compress-image-to-100kb">Need 100KB instead?</Link>
+          </div>
 
           <h2>Quick Answer</h2>
           <p>

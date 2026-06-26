@@ -43,7 +43,7 @@ export default function TinyPNGAlternative() {
             PixCloak runs in your browser, supports <strong>exact KB targets</strong> (100KB–1MB), batch ZIP, and works offline after the first load.
           </p>
           <p className="text-muted" style={{ fontSize: 14, marginBottom: 0 }}>
-            Last reviewed: April 2026. Compare features below; trade‑offs (e.g. no cloud CDN preview) are intentional for privacy.
+            Last reviewed: June 2026. Compare features below; trade‑offs (e.g. no cloud CDN preview) are intentional for privacy.
           </p>
 
           <h2>Quick Comparison</h2>
