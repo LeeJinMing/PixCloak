@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 import { BeianFooter } from "@/components/BeianFooter";
 import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
-const GONGAN_BEIAN = process.env.NEXT_PUBLIC_GONGAN_BEIAN;
-
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? "";
   const isZh = pathname === "/zh" || pathname.startsWith("/zh/");
@@ -84,14 +82,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
           <div className="text-muted" style={{ fontSize: 12, textAlign: "center" }}>
             {isZh ? "图片在您的浏览器本地处理，不会上传到服务器。" : "Local processing in your browser. Images are not uploaded to any server."}
           </div>
-          <BeianFooter />
-          {isZh && GONGAN_BEIAN && (
-            <div className="text-muted" style={{ fontSize: 11 }}>
-              <a href="https://www.beian.gov.cn/" target="_blank" rel="noopener noreferrer">
-                {GONGAN_BEIAN}
-              </a>
-            </div>
-          )}
+          <BeianFooter showGongan={isZh} />
         </div>
       </footer>
     </>
