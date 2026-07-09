@@ -20,6 +20,8 @@ const guideCategories = [
       { title: "WeChat EXIF & GPS", url: "/guides/remove-exif-wechat", description: "Does WeChat remove metadata? Safe workflow before sending." },
       { title: "TinyPNG alternative", url: "/guides/tinypng-alternative-free-no-upload", description: "Unlimited local compression—no upload, no monthly cap." },
       { title: "Redact vs blur license plate", url: "/guides/license-plate-redaction", description: "Why pixelate beats soft blur for plates." },
+      { title: "Compress on iPhone", url: "/guides/how-to-compress-on-iphone", description: "Safari workflow—no app, no upload." },
+      { title: "Compress without quality loss", url: "/guides/how-to-compress-image-without-losing-quality", description: "Resize first, then dial JPEG/WebP quality." },
     ],
   },
   {

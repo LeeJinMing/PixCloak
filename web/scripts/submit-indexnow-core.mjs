@@ -19,6 +19,8 @@ const CORE_PATHS = [
   "/guides/remove-exif-wechat",
   "/guides/tinypng-alternative-free-no-upload",
   "/guides/license-plate-redaction",
+  "/guides/how-to-compress-on-iphone",
+  "/guides/how-to-compress-image-without-losing-quality",
   "/zh",
   "/zh/compress",
   "/zh/redact",

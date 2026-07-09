@@ -12,9 +12,9 @@ import { getCompressStrings } from "@/lib/i18n/compress";
 const compressFaq = getCompressStrings("en");
 
 export const metadata: Metadata = {
-  title: "Compress Image to 100KB/200KB—TinyPNG Alternative",
+  title: "Free Image Compressor—100KB, 200KB, 500KB | No Upload",
   description:
-    "TinyPNG alternative with exact KB targets (100KB, 200KB, 500KB). Compress JPG/PNG/WebP locally—no upload, no daily limit. Preview quality before export.",
+    "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. TinyPNG alternative—works offline, no uploads. JPG, PNG, WebP in your browser.",
   alternates: {
     canonical: "/compress",
     languages: {
@@ -124,12 +124,13 @@ export default function Page() {
             </div>
             <h2 style={{ marginBottom: 8 }}>Related guides</h2>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              <a href="/guides/compress-image-to-100kb" className="pill">Compress to 100 KB</a>
-              <a href="/guides/compress-to-200kb" className="pill">Compress to 200 KB</a>
-              <a href="/guides/convert-jpg-to-webp-online" className="pill">Convert JPG to WebP</a>
-              <a href="/guides/resize-longest-side" className="pill">Resize longest side</a>
-              <a href="/guides/tinypng-alternative-free-no-upload" className="pill">TinyPNG alternative (guide)</a>
-              <a href="/guides/complete-image-compression-guide" className="pill">Full compression guide</a>
+              <Link href="/guides/remove-exif-wechat" className="pill">WeChat EXIF guide</Link>
+              <Link href="/guides/compress-image-to-100kb" className="pill">Compress to 100 KB</Link>
+              <Link href="/guides/compress-to-200kb" className="pill">Compress to 200 KB</Link>
+              <Link href="/guides/how-to-compress-on-iphone" className="pill">Compress on iPhone</Link>
+              <Link href="/guides/tinypng-alternative-free-no-upload" className="pill">TinyPNG alternative</Link>
+              <Link href="/guides/how-to-compress-image-without-losing-quality" className="pill">Compress without quality loss</Link>
+              <Link href="/guides/complete-image-compression-guide" className="pill">Full compression guide</Link>
             </div>
           </div>
         </div>

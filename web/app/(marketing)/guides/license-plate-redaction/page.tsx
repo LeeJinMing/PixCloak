@@ -4,9 +4,9 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Redact vs Blur License Plate—Which Is Safer? (Free)",
+  title: "Redact vs Blur License Plate—Which Is Safer?",
   description:
-    "Redact vs blur license plate: soft blur can be reversed—use pixelate or solid blocks. Free online tool, no upload. For car listings, accident photos, social posts.",
+    "Redact vs blur license plate: soft blur can be reversed with AI—use pixelate or solid blocks instead. Free online tool, no upload. For car listings and accident photos.",
   alternates: {
     canonical: "/guides/license-plate-redaction",
     languages: {

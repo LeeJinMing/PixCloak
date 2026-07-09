@@ -4,9 +4,9 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "TinyPNG Alternative — No Upload, Unlimited Free",
+  title: "TinyPNG Alternative Free—No Upload, Unlimited",
   description:
-    "TinyPNG limits you to 5MB and 20 images/month. PixCloak compresses unlimited images of any size — 100% local, no upload, no account needed. Free forever.",
+    "Best free TinyPNG alternative: compress unlimited JPG/PNG/WebP locally with exact KB targets. No 5MB cap, no monthly limit, no account. Works offline in your browser.",
   alternates: {
     canonical: '/guides/tinypng-alternative-free-no-upload',
     languages: {

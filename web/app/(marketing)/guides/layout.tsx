@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import GuideToolCta from "@/components/GuideToolCta";
 import RelatedTasks from "@/components/RelatedTasks";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function MarketingGuidesLayout({ children }: { children: React.Re
           })
         }}
       />
+      <GuideToolCta />
       {children}
       <div className="container" style={{ marginTop: 16 }}>
         <RelatedTasks />

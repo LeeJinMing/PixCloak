@@ -57,6 +57,11 @@ const nextStepsEn: Record<ToolNextStepsId, NextStepsContent> = {
         desc: "Hit email or form size limits without re-uploading to a third party.",
       },
       {
+        href: "/guides/license-plate-redaction",
+        title: "Redact vs blur license plate",
+        desc: "Why pixelate beats soft blur for plates—and when to use solid blocks.",
+      },
+      {
         href: "/guides/blur-face-in-photo",
         title: "Blur faces — full guide",
         desc: "Best practices for portraits, group shots, and social posts.",

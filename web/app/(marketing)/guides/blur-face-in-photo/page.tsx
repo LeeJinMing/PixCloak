@@ -3,9 +3,9 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Blur Face Online Free—No Upload, Strip EXIF",
+  title: "Blur Face Online Free—No Upload, in 3 Steps",
   description:
-    "Blur face in photo online free. Pixelate or block faces before sharing—runs in your browser, no upload. GDPR-safe; EXIF/GPS removed on export.",
+    "Blur or pixelate faces in photos before sharing. Free online tool—no upload, runs in your browser. EXIF/GPS stripped on export. GDPR-safe for social posts.",
   alternates: {
     canonical: "/guides/blur-face-in-photo",
     languages: {

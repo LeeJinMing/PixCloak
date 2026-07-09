@@ -239,6 +239,26 @@ export default function Home() {
       <div className="card" style={{ marginTop: 24 }}>
         <h2 style={{ marginBottom: 12, fontSize: 20, color: "#0f172a" }}>Popular quick links</h2>
         <div className="home-quick-group">
+          <h3>Privacy &amp; redaction (top searches)</h3>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <Link className="pill" href="/redact">
+              Redact image online
+            </Link>
+            <Link className="pill" href="/guides/license-plate-redaction">
+              Redact vs blur license plate
+            </Link>
+            <Link className="pill" href="/guides/blur-face-in-photo">
+              Blur face online
+            </Link>
+            <Link className="pill" href="/guides/remove-exif-wechat">
+              WeChat EXIF guide
+            </Link>
+            <Link className="pill" href="/guides/export-without-metadata">
+              Remove EXIF/GPS
+            </Link>
+          </div>
+        </div>
+        <div className="home-quick-group">
           <h3>Compression &amp; size</h3>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <Link className="pill" href="/guides/compress-image-to-100kb">
@@ -258,6 +278,12 @@ export default function Home() {
             </Link>
             <Link className="pill" href="/tools/favicon-pack">
               Favicon generator
+            </Link>
+            <Link className="pill" href="/guides/how-to-compress-on-iphone">
+              Compress on iPhone
+            </Link>
+            <Link className="pill" href="/guides/how-to-compress-image-without-losing-quality">
+              Compress without quality loss
             </Link>
             <Link className="pill" href="/guides/complete-image-compression-guide">
               Compression guide
@@ -284,23 +310,6 @@ export default function Home() {
             </Link>
             <Link className="pill" href="/tools/pdf-to-image">
               PDF to image
-            </Link>
-          </div>
-        </div>
-        <div className="home-quick-group">
-          <h3>Privacy &amp; metadata</h3>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link className="pill" href="/guides/export-without-metadata">
-              Remove EXIF/GPS
-            </Link>
-            <Link className="pill" href="/guides/remove-exif-wechat">
-              WeChat EXIF guide
-            </Link>
-            <Link className="pill" href="/guides/blur-face-in-photo">
-              Blur faces
-            </Link>
-            <Link className="pill" href="/guides/license-plate-redaction">
-              Hide plates
             </Link>
           </div>
         </div>
@@ -393,9 +402,11 @@ export default function Home() {
 }
 
 export const metadata: Metadata = {
-  title: "PixCloak—Local Compress & Redact (No Upload)",
+  title: {
+    absolute: "Free Image Compress & Redact Online—No Upload | PixCloak",
+  },
   description:
-    "Free browser tools: compress JPG/PNG/WebP to exact KB (TinyPNG-style, local-only), redact faces & license plates, strip EXIF. HEIC, PDF, rotate & flip.",
+    "Free browser tools: compress JPG/PNG/WebP to exact KB, redact faces & license plates online, strip EXIF. No upload—works offline in Safari and Chrome.",
   alternates: {
     canonical: "/",
     languages: {

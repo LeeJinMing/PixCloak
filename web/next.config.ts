@@ -66,6 +66,43 @@ const nextConfig: NextConfig = {
       { source: "/guides/compress-to-100kb", destination: "/guides/compress-image-to-100kb", permanent: true },
       { source: "/guides/jpeg-vs-webp-for-websites", destination: "/guides/jpeg-vs-webp-size-quality", permanent: true },
 
+      // GSC query slug aliases (Jul 2026)
+      {
+        source: "/guides/redact-vs-blur-license-plate",
+        destination: "/guides/license-plate-redaction",
+        permanent: true,
+      },
+      {
+        source: "/guides/tinypng-alternative",
+        destination: "/guides/tinypng-alternative-free-no-upload",
+        permanent: true,
+      },
+      {
+        source: "/guides/blur-license-plate",
+        destination: "/guides/license-plate-redaction",
+        permanent: true,
+      },
+      {
+        source: "/guides/redact-image-online",
+        destination: "/redact",
+        permanent: true,
+      },
+      {
+        source: "/guides/blur-face-online",
+        destination: "/guides/blur-face-in-photo",
+        permanent: true,
+      },
+      {
+        source: "/guides/compress-image-online",
+        destination: "/compress",
+        permanent: true,
+      },
+      {
+        source: "/tools/png-to-jpeg",
+        destination: "/tools/png-jpg-converter",
+        permanent: true,
+      },
+
     ];
   },
   turbopack: {

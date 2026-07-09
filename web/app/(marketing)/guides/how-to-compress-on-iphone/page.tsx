@@ -4,9 +4,9 @@ import { FaqJsonLd } from '@/components/SeoJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: "Compress Photos on iPhone Without Losing Quality (Free, No App)",
+  title: "How to Compress Photos on iPhone—Free, No App (2026)",
   description:
-    "Compress iPhone photos to 200KB, 500KB or any target size — free, no upload, works in Safari. Step-by-step guide for recent iOS versions with Shortcuts workflow.",
+    "Compress iPhone photos to 100KB, 200KB, or 500KB in Safari—free, no app download. Step-by-step for iOS 16+. No upload; files stay on your device.",
   alternates: {
     canonical: '/guides/how-to-compress-on-iphone',
     languages: {

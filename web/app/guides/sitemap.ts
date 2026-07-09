@@ -10,6 +10,9 @@ const PRIORITY_GUIDES = new Set([
   "remove-exif-wechat",
   "tinypng-alternative-free-no-upload",
   "license-plate-redaction",
+  "how-to-compress-on-iphone",
+  "how-to-compress-image-without-losing-quality",
+  "how-to-reduce-image-file-size",
 ]);
 
 /** Sole sitemap for /guides and /guides/* (see robots.ts + root app/sitemap.ts). */
@@ -17,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = (
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixcloak.com"
   ).replace(/\/$/, "");
-  const guidesUpdated = new Date("2026-06-26");
+  const guidesUpdated = new Date("2026-07-09");
   const defaultGuideUpdated = new Date("2026-05-24");
 
   const urls: MetadataRoute.Sitemap = [];

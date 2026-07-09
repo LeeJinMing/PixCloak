@@ -1,21 +1,56 @@
+import Link from "next/link";
+import { CORE_GUIDE_HUB_LINKS } from "@/lib/seo/coreUrls";
+
 export default function RelatedTasks() {
   return (
     <div className="card" style={{ marginTop: 16 }}>
       <h2 style={{ marginBottom: 8 }}>Related tasks</h2>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        <a href="/compress?kb=200" className="pill">Compress to 200KB</a>
-        <a href="/compress?kb=500" className="pill">Compress to 500KB</a>
-        <a href="/compress?kb=1024" className="pill">Compress to 1MB</a>
-        <a href="/guides/resize-to-1920" className="pill">Resize to 1920</a>
-        <a href="/guides/resize-longest-side" className="pill">Resize longest side</a>
-        <a href="/guides/exif-gps-removal" className="pill">Remove EXIF/GPS</a>
-        <a href="/redact" className="pill">Redact sensitive info</a>
-        <a href="/guides/zip-batch-download" className="pill">ZIP batch download</a>
-        <a href="/guides/embed-button" className="pill">Embed a button</a>
-        <a href="/guides/languages" className="pill">Read in other languages</a>
+      <p className="text-muted" style={{ fontSize: 14, marginTop: 0, marginBottom: 12 }}>
+        Popular next steps from PixCloak guides and tools.
+      </p>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+        <Link href="/redact" className="pill">
+          Redact image online
+        </Link>
+        <Link href="/compress?kb=200" className="pill">
+          Compress to 200KB
+        </Link>
+        <Link href="/compress?kb=100" className="pill">
+          Compress to 100KB
+        </Link>
+        <Link href="/tools/exif-checker" className="pill">
+          Check EXIF/GPS
+        </Link>
+        <Link href="/tools/favicon-pack" className="pill">
+          Favicon generator
+        </Link>
+      </div>
+      <h3 style={{ fontSize: 15, marginBottom: 8, color: "#334155" }}>Top guides</h3>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+        {CORE_GUIDE_HUB_LINKS.map((link) => (
+          <Link key={link.href} href={link.href} className="pill">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+      <h3 style={{ fontSize: 15, marginBottom: 8, color: "#334155" }}>More tools</h3>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <Link href="/compress?kb=500" className="pill">
+          Compress to 500KB
+        </Link>
+        <Link href="/guides/zip-batch-download" className="pill">
+          ZIP batch download
+        </Link>
+        <Link href="/tools/heic-converter" className="pill">
+          HEIC to JPG
+        </Link>
+        <Link href="/guides/how-to-compress-on-iphone" className="pill">
+          Compress on iPhone
+        </Link>
+        <Link href="/tools" className="pill">
+          All tools
+        </Link>
       </div>
     </div>
   );
 }
-
-

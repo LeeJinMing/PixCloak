@@ -4,9 +4,9 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { FaqJsonLd } from '@/components/SeoJsonLd';
 
 export const metadata: Metadata = {
-  title: 'WeChat Remove EXIF When Sending Photos? (2026 Answer)',
+  title: 'WeChat Remove EXIF When Sending Photos? (2026 Guide)',
   description:
-    'Does WeChat strip EXIF/GPS when you send photos? Not reliably—原图 and file mode keep location data. Free local checker + compressor; no upload.',
+    'WeChat does NOT reliably strip EXIF/GPS when sending photos—原图 and file mode keep location data. 3-step local fix before sharing. Free checker, no upload.',
   alternates: {
     canonical: '/guides/remove-exif-wechat',
     languages: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'WeChat remove EXIF when sending photos?',
+    title: 'WeChat remove EXIF metadata when sending photos?',
     description:
       'WeChat may strip some EXIF in compressed mode—but GPS can survive. Safe 3-step local workflow before sharing on WeChat.',
     url: '/guides/remove-exif-wechat',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Does WeChat Remove EXIF Metadata?',
+    title: 'Does WeChat Remove EXIF When Sending Photos?',
     description:
       'WeChat may strip some EXIF data — but GPS coordinates can still leak. Full guide with safe cleanup workflow.',
   },

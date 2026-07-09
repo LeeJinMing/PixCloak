@@ -3,9 +3,9 @@ import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Compress Image to 100KB Online Free—No Upload",
+  title: "Compress Image to 100KB Free—No Upload, 3 Steps",
   description:
-    "Compress image to 100KB for passport, visa, and government forms. Exact KB target in your browser—no upload, no app. JPEG, PNG, WebP; EXIF stripped.",
+    "Compress any photo to exactly 100KB for passport, visa, and government forms. Free online tool—no upload, no app. Works in 3 steps; JPEG, PNG, WebP; EXIF stripped.",
   alternates: {
     canonical: "/guides/compress-image-to-100kb",
     languages: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Compress image to 100KB online free",
+    title: "Compress image to 100KB online free—3 steps",
     description:
       "Hit exactly 100KB for forms and applications. Local browser tool—no upload. WebP or JPEG; metadata removed.",
     url: "/guides/compress-image-to-100kb",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Compress Image to 100KB Free",
+    title: "Compress Image to 100KB Free—No Upload",
     description:
       "Exact 100KB target for passport and form uploads. Runs locally in your browser—no upload.",
   },

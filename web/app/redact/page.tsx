@@ -12,9 +12,9 @@ import { getRedactStrings } from "@/lib/i18n/redact";
 const redactFaq = getRedactStrings("en");
 
 export const metadata: Metadata = {
-  title: "Redact Image Online Free—Blur Face, License Plate & Text",
+  title: "Redact Image Online Free—Blur Face & License Plate",
   description:
-    "Free image redaction online: blur faces, redact license plates, black out text. Runs in your browser—no upload. EXIF/GPS stripped on export.",
+    "Redact image online free: blur faces, hide license plates, black out text. No upload—runs in your browser. Export strips EXIF/GPS. Works on JPG, PNG, WebP.",
   alternates: {
     canonical: "/redact",
     languages: {
@@ -118,11 +118,12 @@ export default function Page() {
           </div>
           <h2 style={{ marginBottom: 8 }}>Related guides</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <a href="/guides/blur-face-in-photo" className="pill">Blur faces in photos</a>
-            <a href="/guides/blur-number-plate-online" className="pill">Blur number plates (UK)</a>
-            <a href="/guides/license-plate-redaction" className="pill">License plate redaction (US)</a>
-            <a href="/guides/black-out-text-in-image" className="pill">Black out text</a>
-            <a href="/guides/remove-gps-data-from-photos" className="pill">Remove GPS/EXIF</a>
+            <Link href="/guides/license-plate-redaction" className="pill">Redact vs blur license plate</Link>
+            <Link href="/guides/blur-face-in-photo" className="pill">Blur faces in photos</Link>
+            <Link href="/guides/blur-number-plate-online" className="pill">Blur number plates (UK)</Link>
+            <Link href="/guides/black-out-text-in-image" className="pill">Black out text</Link>
+            <Link href="/guides/remove-gps-data-from-photos" className="pill">Remove GPS/EXIF</Link>
+            <Link href="/guides/remove-exif-wechat" className="pill">WeChat EXIF guide</Link>
           </div>
         </div>
       </div>
