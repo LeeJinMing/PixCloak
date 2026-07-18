@@ -33,6 +33,7 @@
     "legal:sync": "node ./scripts/sync-legal-assets.mjs",
     "fixtures:generate": "node ./scripts/generate-test-fixtures.mjs",
     "guides:evidence": "node ./scripts/generate-guide-evidence.mjs",
+    "pwa:icons": "node ./scripts/generate-pwa-icons.mjs",
     "test:contracts": "tsx --test ./tests/*.test.ts",
     "test:e2e": "node ./tests/e2e-image-workflows.mjs",
     "test:compat": "node ./tests/browser-compat-smoke.mjs",

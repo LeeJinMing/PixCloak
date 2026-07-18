@@ -73,6 +73,10 @@ export function sanitizeProductProperties(properties: SafeProperties): Record<st
 
 export function emitProductEvent(name: ProductEventName, properties: SafeProperties = {}) {
   if (typeof window === "undefined") return;
+  if (name === "download_completed") {
+    window.localStorage.setItem("pixcloak-pwa-ready-v1", "downloaded");
+    window.dispatchEvent(new Event("pixcloak:pwa-ready"));
+  }
   if (!productEventsEnabled(
     window.localStorage.getItem("pixcloak-consent-v1"),
     document.body?.dataset.analytics,

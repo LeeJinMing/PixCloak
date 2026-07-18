@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { BeianFooter } from "@/components/BeianFooter";
 import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
-export function SiteChrome({ children }: { children: React.ReactNode }) {
+export function SiteChrome({ children, installAction }: { children: React.ReactNode; installAction?: React.ReactNode }) {
   const pathname = usePathname() ?? "";
   const isZh = pathname === "/zh" || pathname.startsWith("/zh/");
 
@@ -37,37 +37,40 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
               "PixCloak"
             )}
           </Link>
-          <nav
-            role="navigation"
-            aria-label={isZh ? "中文导航" : "Primary"}
-            style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "flex-end" }}
-          >
-            {isZh ? (
-              <>
-                <Link href="/zh/compress">图片压缩</Link>
-                <Link href="/zh/upload-pack">照片签名</Link>
-                <Link href="/zh/tools/pdf-to-image">PDF转图片</Link>
-                <Link href="/zh/tools/image-to-pdf">图片转PDF</Link>
-                <Link href="/zh/redact">图片打码</Link>
-                <Link href="/" className="text-muted">
-                  English
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link href="/safe-share">Safe Share</Link>
-                <Link href="/upload-ready">Upload Ready</Link>
-                <Link href="/upload-pack">Upload Pack</Link>
-                <Link href="/compress">Compress</Link>
-                <Link href="/redact">Redact</Link>
-                <Link href="/tools">Tools</Link>
-                <Link href="/guides">Guides</Link>
-                <Link href="/zh" className="text-muted">
-                  中文
-                </Link>
-              </>
-            )}
-          </nav>
+          <div className="site-header-actions">
+            <nav
+              role="navigation"
+              aria-label={isZh ? "中文导航" : "Primary"}
+              style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "flex-end" }}
+            >
+              {isZh ? (
+                <>
+                  <Link href="/zh/compress">图片压缩</Link>
+                  <Link href="/zh/upload-pack">照片签名</Link>
+                  <Link href="/zh/tools/pdf-to-image">PDF转图片</Link>
+                  <Link href="/zh/tools/image-to-pdf">图片转PDF</Link>
+                  <Link href="/zh/redact">图片打码</Link>
+                  <Link href="/" className="text-muted">
+                    English
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link href="/safe-share">Safe Share</Link>
+                  <Link href="/upload-ready">Upload Ready</Link>
+                  <Link href="/upload-pack">Upload Pack</Link>
+                  <Link href="/compress">Compress</Link>
+                  <Link href="/redact">Redact</Link>
+                  <Link href="/tools">Tools</Link>
+                  <Link href="/guides">Guides</Link>
+                  <Link href="/zh" className="text-muted">
+                    中文
+                  </Link>
+                </>
+              )}
+            </nav>
+            {installAction}
+          </div>
         </div>
       </header>
       <main role="main" className="container section">

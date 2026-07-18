@@ -38,11 +38,6 @@ export function ConsentServices({
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY);
     if (saved === "all" || saved === "essential") setConsent(saved);
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.getRegistrations().then((registrations) => {
-        registrations.filter((registration) => registration.active?.scriptURL.endsWith("/sw.js")).forEach((registration) => registration.unregister());
-      }).catch(() => {});
-    }
   }, []);
 
   useEffect(() => {

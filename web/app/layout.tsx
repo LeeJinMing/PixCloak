@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteGraphJsonLd } from "@/components/SiteGraphJsonLd";
@@ -6,6 +6,8 @@ import { SiteChrome } from "@/components/SiteChrome";
 import { getSiteOrigin } from "@/lib/site";
 import { ConsentServices } from "@/components/ConsentServices";
 import { isProductionDeployment, resolveServiceConfig } from "@/lib/serviceConfig";
+import { PwaInstall } from "@/components/PwaInstall";
+import { SwRegister } from "@/components/SwRegister";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -13,6 +15,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 const siteUrl = getSiteOrigin();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  manifest: "/manifest.webmanifest",
   title: { default: "PixCloak", template: "%s | PixCloak" },
   alternates: {
     canonical: "/",
@@ -32,6 +35,14 @@ export const metadata: Metadata = {
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "PixCloak – Privacy & Performance toolkit" }],
   },
   twitter: { card: "summary_large_image", title: "PixCloak", description: "Redact, remove metadata, convert, and meet upload limits locally in your browser.", images: ["/og.png"] },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2563eb",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -44,7 +55,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteGraphJsonLd />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`} data-analytics="off" data-ads="off" data-ads-available={services.adsAvailable ? "true" : "false"}>
-        <SiteChrome>{children}</SiteChrome>
+        <SiteChrome installAction={<PwaInstall />}>{children}</SiteChrome>
+        <SwRegister />
         <ConsentServices analyticsAvailable={services.analyticsAvailable} adsAvailable={services.adsAvailable} adsClient={services.adsClient} />
       </body>
     </html>
