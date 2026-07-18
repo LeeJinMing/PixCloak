@@ -1,22 +1,22 @@
 {
   "host": "pixcloak.com",
-  "key": "请在这里填入你的IndexNow Key",
-  "keyLocation": "https://pixcloak.com/1z2x3c4v.txt",
+  "key": "001a496c4107466fbca000201f39aeeb",
+  "keyLocation": "https://pixcloak.com/001a496c4107466fbca000201f39aeeb.txt",
   "urlList": [
     "https://pixcloak.com/",
     "https://pixcloak.com/compress",
     "https://pixcloak.com/redact",
-    "https://pixcloak.com/guides/remove-exif-wechat",
-    "https://pixcloak.com/guides/compress-image-to-100kb",
-    "https://pixcloak.com/guides/compress-to-200kb",
-    "https://pixcloak.com/guides/tinypng-alternative-free-no-upload",
-    "https://pixcloak.com/guides/blur-face-in-photo",
-    "https://pixcloak.com/guides/license-plate-redaction",
-    "https://pixcloak.com/guides/how-to-compress-on-iphone",
-    "https://pixcloak.com/guides/how-to-compress-image-without-losing-quality",
-    "https://pixcloak.com/guides/how-to-reduce-image-file-size",
-    "https://pixcloak.com/guides/complete-image-compression-guide",
-    "https://pixcloak.com/tools/favicon-pack",
-    "https://pixcloak.com/tools/exif-checker"
+    "https://pixcloak.com/safe-share",
+    "https://pixcloak.com/upload-ready",
+    "https://pixcloak.com/tools/exif-checker",
+    "https://pixcloak.com/tools/heic-converter",
+    "https://pixcloak.com/tools/resize-image",
+    "https://pixcloak.com/tools/png-jpg-converter",
+    "https://pixcloak.com/guides/does-wechat-remove-exif-test",
+    "https://pixcloak.com/guides/remove-gps-location-photo",
+    "https://pixcloak.com/guides/compress-image-under-100kb",
+    "https://pixcloak.com/guides/compress-image-under-200kb",
+    "https://pixcloak.com/guides/heic-upload-error-convert-locally",
+    "https://pixcloak.com/guides/webp-vs-jpeg-downloadable-samples"
   ]
 }

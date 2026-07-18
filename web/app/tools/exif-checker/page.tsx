@@ -1,83 +1,21 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Client from "./Client";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
+import { CoreToolLayout } from "@/components/CoreToolLayout";
+import { SoftwareAppJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "EXIF & GPS Checker—Remove Metadata Locally",
-  description: "Check JPEGs for EXIF and GPS location, then download a clean copy with metadata stripped. Runs in your browser—no upload. Useful before sharing (WeChat,...",
-  alternates: {
-    canonical: "/tools/exif-checker",
-    languages: { "x-default": "/tools/exif-checker" },
-  },
-  openGraph: {
-    title: "EXIF/GPS checker—strip metadata locally",
-    description: "See if photos contain camera or location data; export without EXIF in one click. Works locally in your browser, no uploads.",
-    url: "/tools/exif-checker",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "EXIF & GPS checker (no upload)",
-    description: "Detect and remove photo metadata in your browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
-  },
+  title: "Check and Remove EXIF, GPS, XMP, and IPTC",
+  description: "Inspect supported image metadata, remove it locally without re-encoding when safe, and reopen the export to verify the markers are gone.",
+  alternates: { canonical: "/tools/exif-checker", languages: { "x-default": "/tools/exif-checker", en: "/tools/exif-checker" } },
 };
 
+const faq = [
+  { question: "Does this upload the image?", answer: "No. Inspection and cleanup use browser APIs on this device. Optional website analytics and advertising are separate and never receive image bytes from this tool." },
+  { question: "Which metadata is checked?", answer: "V1.0 checks JPEG EXIF/GPS/XMP/IPTC, PNG EXIF and text metadata markers, and WebP EXIF/GPS/XMP chunks. Full HEIC metadata inspection is not supported." },
+  { question: "How is removal verified?", answer: "The tool reopens the exported image, scans its bytes again, and offers the clean download only after supported markers are absent. JPEG, PNG, and WebP stay lossless when orientation safety allows." },
+];
+
 export default function Page() {
-  return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Tools", url: "/tools" },
-          { name: "EXIF checker", url: "/tools/exif-checker" },
-        ]}
-      />
-      <SoftwareAppJsonLd
-        name="EXIF/GPS Metadata Checker"
-        url="/tools/exif-checker"
-        description="Detect EXIF and GPS in JPEG images and export stripped copies using local canvas re-encode—no server upload."
-      />
-      <Client />
-      <div className="container" style={{ display: "grid", gap: 12 }}>
-        <div className="card">
-          <h2>Best for</h2>
-          <p className="text-muted" style={{ marginTop: 0 }}>
-            Checking iPhone photos, screenshots, document scans, and client images before public sharing. If metadata is present, export a clean copy or move to redaction.
-          </p>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link href="/redact" className="pill">Redact visible details</Link>
-            <Link href="/compress" className="pill">Compress clean copy</Link>
-            <Link href="/tools/platform-checker" className="pill">Check upload limits</Link>
-          </div>
-        </div>
-        <div className="card">
-          <h2>Related tools</h2>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link href="/redact" className="pill">Photo redaction</Link>
-            <Link href="/compress" className="pill">Compress</Link>
-            <Link href="/guides/exif-gps-removal" className="pill">EXIF guide</Link>
-            <Link href="/tools/platform-checker" className="pill">Platform checker</Link>
-          </div>
-        </div>
-      </div>
-      <FaqJsonLd
-        items={[
-          {
-            question: "Does this upload my photos?",
-            answer: "No. The file is read only inside your browser to analyze and re-encode.",
-          },
-          {
-            question: "Can I remove GPS from a photo before sharing?",
-            answer: "Yes. After the check, use Remove & Download to save a new JPEG without EXIF/GPS.",
-          },
-          {
-            question: "WeChat or iPhone photos—will EXIF be removed?",
-            answer: "Exported JPEGs from this tool are written without embedded EXIF, which reduces accidental location or camera leakage when you share the new file.",
-          },
-        ]}
-      />
-    </>
-  );
+  return <><BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "Metadata checker", url: "/tools/exif-checker" }]} /><SoftwareAppJsonLd name="Image Metadata Checker" url="/tools/exif-checker" description="Inspect and remove supported image metadata locally, with post-export verification." /><CoreToolLayout eyebrow="METADATA CHECK" title="Check and remove hidden image metadata" description="See supported EXIF, GPS, XMP, and IPTC markers, then create and verify a clean copy without sending the source image to a processing server." tool={<Client />} scenarios={["Checking photos before public sharing", "Removing GPS from an image copy", "Verifying a redacted export before sending"]} limitations={["HEIC can be identified but is not fully inspected in V1.0.", "Removing metadata does not hide visible addresses, faces, plates, or text.", "Damaged or unsupported files return a decode or format error."]} next={[{ href: "/safe-share", label: "Redact visible details" }, { href: "/upload-ready", label: "Meet an upload limit" }]} faq={faq} sample="privacy" /></>;
 }

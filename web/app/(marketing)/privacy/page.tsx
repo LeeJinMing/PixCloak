@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy: Your Data Stays Local',
-  description: 'We design PixCloak with privacy‑first principles. All image processing happens locally in your browser—no uploads, minimal storage, and clear disclosures.',
+  description: 'PixCloak processes image files locally in your browser and separately discloses optional website analytics, advertising, and consent storage.',
   alternates: { canonical: '/privacy', languages: { 'x-default': '/privacy' } },
 };
 
@@ -15,33 +15,44 @@ export default function PrivacyPage() {
 
         <h2>Local processing</h2>
         <p>
-          All image operations (compression/redaction/resizing) are performed locally in your browser via Canvas/Web
-          APIs. Your files are <strong>not</strong> uploaded to our servers.
+          Image operations such as compression, redaction, metadata cleanup, conversion, and resizing are performed
+          locally in your browser via Canvas and related Web APIs. PixCloak does not send the image file to its server.
         </p>
 
         <h2>Personal data</h2>
         <p>
-          We do not require accounts for using core features. We do not store your images or personal identifiers.
+          We do not require accounts for V1.0. We do not store your images, filenames, embedded metadata, or editing selections.
           If you voluntarily contact us via email, we will receive your email address and message content solely to
           respond to your request.
         </p>
 
         <h2>Cookies & storage</h2>
         <p>
-          The app may use minimal local storage for UI preferences (e.g., last used quality). These values stay on your
-          device and are not transmitted.
+          The site stores your privacy choice in local storage under <code>pixcloak-consent-v1</code>. Tool preferences
+          may also be stored locally. You can reopen “Privacy choices” at any time to clear and choose again.
         </p>
 
         <h2>Analytics</h2>
         <p>
-          We may use basic, privacy‑respecting analytics to understand general usage trends (e.g., page views). No
-          personal data or images are collected. If analytics is enabled, we will disclose the provider and scope here.
+          If you choose “Allow analytics &amp; ads” and analytics is enabled for this deployment, the site loads Vercel
+          Analytics to measure page and product usage. PixCloak does not add image bytes, filenames, metadata, detected
+          text, or exact image dimensions to analytics events. Vercel may process technical request information under
+          its own privacy terms.
         </p>
 
-        <h2>Third‑party services</h2>
+        <h2>Advertising</h2>
         <p>
-          We avoid third‑party trackers. If future features integrate external services, they will be documented here
-          with clear opt‑in choices.
+          If you accept optional services, advertising is enabled for the deployment, and the required Google consent
+          configuration is marked ready, the site may load Google AdSense. Google may use cookies or similar technology
+          and process technical information under its own policies. Ads are separate from image processing and do not
+          receive image files from PixCloak. Legal pages and embedded tools do not intentionally contain ad units.
+        </p>
+
+        <h2>Anonymous product events</h2>
+        <p>
+          Product events are limited to the tool name, input/output format, broad file-size or batch-count bucket,
+          processing-duration bucket, and standardized error code. Image content, filenames, metadata, recognized text,
+          and exact dimensions are prohibited event properties.
         </p>
 
         <h2>Contact</h2>

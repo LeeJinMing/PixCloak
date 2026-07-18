@@ -26,4 +26,20 @@ Thumbs.db
 # Coverage / build
 coverage/
 
+# AI image/video generation (local experiments, do not push)
+/assets/
+/scripts/ai-gen/
+*.mp4
+!web/public/**/*.mp4
 
+# GSC / SEO analysis scratch (local only)
+tmp_*/
+tmp_*
+_*.py
+_*.txt
+_*.bat
+*.xlsx
+PHASE2-SEO-STRATEGY-2026.md
+
+
+.vercel

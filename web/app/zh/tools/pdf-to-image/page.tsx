@@ -9,11 +9,10 @@ import { SITE_NAME_ZH } from "@/lib/i18n/site";
 export const metadata: Metadata = {
   title: "PDF转图片—免费在线PDF转PNG/JPG，无需WPS会员",
   description:
-    "免费 PDF 转图片：在浏览器本地将 PDF 每一页导出为 PNG，支持 ZIP 打包下载。不上传、无需 WPS/金山会员，替代收费在线转换。",
+    "免费 PDF 转图片：选择页码范围，在浏览器本地导出 PNG、JPEG 或 WebP，支持单页与 ZIP 下载。不上传、无需会员。",
   keywords: ["pdf转图片", "pdf转jpg", "pdf转png", "在线pdf转图片", "免费pdf转图片", "pdf转图片不用会员"],
   alternates: {
     canonical: "/zh/tools/pdf-to-image",
-    languages: { "x-default": "/tools/pdf-to-image", en: "/tools/pdf-to-image", "zh-CN": "/zh/tools/pdf-to-image" },
   },
   openGraph: {
     locale: "zh_CN",
@@ -40,11 +39,12 @@ export default function ZhPdfToImagePage() {
         <div className="card">
           <h1 className="page-hero-title">PDF 转图片—免费在线转换（不上传、无需会员）</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
-            把 PDF 每一页导出为 PNG 图片。全程在浏览器本地完成，<strong>不需要 WPS 或金山会员</strong>，文件不会上传到服务器。
+            选择 PDF 页码范围并导出为 PNG、JPEG 或 WebP。全程在浏览器本地完成，<strong>不需要 WPS 或金山会员</strong>，文件不会上传到服务器。
             导出后可用 <Link href="/zh/compress">图片压缩</Link> 缩小体积。
           </p>
         </div>
         <Client locale="zh" />
+        <div className="card"><strong>需要反向处理？</strong><p>可以把多张图片排序后合并为一个本地 PDF。</p><Link className="button-outline" href="/zh/tools/image-to-pdf">打开图片合并 PDF</Link></div>
         <ToolNextSteps tool="pdf-to-image" locale="zh" />
         <div className="card">
           <h2>相关工具</h2>

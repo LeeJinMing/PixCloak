@@ -38,13 +38,13 @@ export default function RelatedTasks() {
         <Link href="/compress?kb=500" className="pill">
           Compress to 500KB
         </Link>
-        <Link href="/guides/zip-batch-download" className="pill">
-          ZIP batch download
+        <Link href="/guides/why-upload-portal-rejects-image" className="pill">
+          Fix rejected uploads
         </Link>
         <Link href="/tools/heic-converter" className="pill">
           HEIC to JPG
         </Link>
-        <Link href="/guides/how-to-compress-on-iphone" className="pill">
+        <Link href="/guides/reduce-image-size-iphone" className="pill">
           Compress on iPhone
         </Link>
         <Link href="/tools" className="pill">

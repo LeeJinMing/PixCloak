@@ -1,0 +1,1175 @@
+{
+  "count": 110,
+  "batchGroups": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      64,
+      65,
+      66,
+      67,
+      68
+    ]
+  ],
+  "cases": [
+    {
+      "path": "png/fixture-01-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-02-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-03-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-04-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-05-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-06-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-07-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-08-16x16.png",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 0,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-09-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-10-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-11-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-12-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-13-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-14-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-15-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-16-32x24.png",
+      "format": "png",
+      "width": 32,
+      "height": 24,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 1,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-17-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-18-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-19-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-20-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-21-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-22-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-23-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-24-48x64.png",
+      "format": "png",
+      "width": 48,
+      "height": 64,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 2,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-25-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-26-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-27-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-28-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-29-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-30-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-31-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-32-96x54.png",
+      "format": "png",
+      "width": 96,
+      "height": 54,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 3,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-33-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-34-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-35-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-36-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-37-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-38-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-39-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-40-120x120.png",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 4,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-41-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-42-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-43-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-44-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-45-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-46-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-47-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-48-160x90.png",
+      "format": "png",
+      "width": 160,
+      "height": 90,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 5,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-49-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-50-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-51-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-52-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-53-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-54-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-55-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-56-200x300.png",
+      "format": "png",
+      "width": 200,
+      "height": 300,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 6,
+      "colorIndex": 7
+    },
+    {
+      "path": "png/fixture-57-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 0
+    },
+    {
+      "path": "png/fixture-58-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 1
+    },
+    {
+      "path": "png/fixture-59-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 2
+    },
+    {
+      "path": "png/fixture-60-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 3
+    },
+    {
+      "path": "png/fixture-61-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 4
+    },
+    {
+      "path": "png/fixture-62-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 5
+    },
+    {
+      "path": "png/fixture-63-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "opaque",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 6
+    },
+    {
+      "path": "png/fixture-64-256x256.png",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "tags": [
+        "transparent",
+        "valid"
+      ],
+      "dimensionIndex": 7,
+      "colorIndex": 7
+    },
+    {
+      "path": "coverage/valid-01.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-01.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-02.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-02.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-03.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-03.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-04.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-04.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-05.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-05.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-06.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-06.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-07.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-07.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-08.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-08.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-09.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-09.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-10.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/valid-10.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "batch"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-2.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-3.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-4.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-5.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-6.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-7.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/exif-orientation-8.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "orientation"
+      ]
+    },
+    {
+      "path": "coverage/gps-location.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "exif",
+        "gps"
+      ]
+    },
+    {
+      "path": "coverage/xmp-document.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "xmp"
+      ]
+    },
+    {
+      "path": "coverage/iptc-photoshop.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "iptc"
+      ]
+    },
+    {
+      "path": "coverage/png-exif.png",
+      "format": "png",
+      "tags": [
+        "valid",
+        "exif"
+      ]
+    },
+    {
+      "path": "coverage/png-xmp.png",
+      "format": "png",
+      "tags": [
+        "valid",
+        "xmp"
+      ]
+    },
+    {
+      "path": "coverage/png-iptc.png",
+      "format": "png",
+      "tags": [
+        "valid",
+        "iptc"
+      ]
+    },
+    {
+      "path": "coverage/webp-exif.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "exif"
+      ]
+    },
+    {
+      "path": "coverage/webp-gps.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "exif",
+        "gps"
+      ]
+    },
+    {
+      "path": "coverage/webp-xmp.webp",
+      "format": "webp",
+      "tags": [
+        "valid",
+        "xmp"
+      ]
+    },
+    {
+      "path": "coverage/large-8192x8192.png",
+      "format": "png",
+      "width": 8192,
+      "height": 8192,
+      "tags": [
+        "valid",
+        "large"
+      ]
+    },
+    {
+      "path": "coverage/noisy-1024x768.png",
+      "format": "png",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "valid",
+        "high-entropy",
+        "kb-target"
+      ]
+    },
+    {
+      "path": "coverage/gps-large-1024x768.jpg",
+      "format": "jpeg",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "valid",
+        "high-entropy",
+        "gps",
+        "redaction"
+      ]
+    },
+    {
+      "path": "coverage/corrupt-truncated.jpg",
+      "format": "jpeg",
+      "tags": [
+        "corrupt",
+        "truncated"
+      ]
+    },
+    {
+      "path": "coverage/corrupt-random.png",
+      "format": "unknown",
+      "tags": [
+        "corrupt",
+        "random"
+      ]
+    },
+    {
+      "path": "coverage/spoofed-jpeg.png",
+      "format": "jpeg",
+      "tags": [
+        "valid-bytes",
+        "spoofed-extension"
+      ]
+    },
+    {
+      "path": "coverage/中文 文件名.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "filename-edge-case"
+      ]
+    },
+    {
+      "path": "coverage/special-#%&+ name.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "filename-edge-case"
+      ]
+    },
+    {
+      "path": "coverage/very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-very-long-name-.jpg",
+      "format": "jpeg",
+      "tags": [
+        "valid",
+        "filename-edge-case"
+      ]
+    },
+    {
+      "path": "coverage/sample-iphone.heic",
+      "format": "heic",
+      "tags": [
+        "valid",
+        "heic",
+        "external-fixture"
+      ],
+      "source": "https://github.com/tigranbs/test-heic-images/raw/master/image4.heic"
+    }
+  ]
+}

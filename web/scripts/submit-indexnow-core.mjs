@@ -6,24 +6,24 @@
 const site = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com"
 ).replace(/\/$/, "");
-const key =
-  process.env.INDEXNOW_KEY || process.env.NEXT_PUBLIC_INDEXNOW_KEY || "";
+const key = process.env.INDEXNOW_KEY || "";
 
 const CORE_PATHS = [
   "/",
+  "/safe-share",
+  "/upload-ready",
   "/compress",
   "/redact",
-  "/guides/blur-face-in-photo",
-  "/guides/compress-image-to-100kb",
-  "/guides/compress-to-200kb",
-  "/guides/remove-exif-wechat",
-  "/guides/tinypng-alternative-free-no-upload",
-  "/guides/license-plate-redaction",
-  "/guides/how-to-compress-on-iphone",
-  "/guides/how-to-compress-image-without-losing-quality",
-  "/zh",
-  "/zh/compress",
-  "/zh/redact",
+  "/tools/exif-checker",
+  "/tools/heic-converter",
+  "/tools/resize-image",
+  "/tools/png-jpg-converter",
+  "/guides/does-wechat-remove-exif-test",
+  "/guides/remove-gps-location-photo",
+  "/guides/compress-image-under-100kb",
+  "/guides/compress-image-under-200kb",
+  "/guides/heic-upload-error-convert-locally",
+  "/guides/webp-vs-jpeg-downloadable-samples",
 ];
 
 const ENDPOINTS = [

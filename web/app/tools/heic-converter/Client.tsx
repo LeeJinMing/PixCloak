@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import JSZip from 'jszip';
+import { canvasToBlob, drawSourceToCanvas, getSourceSize, loadOrientedBitmap, verifyImageBlob } from '@/lib/image';
+import { batchCountBucket, durationBucket, emitProductEvent, fileSizeBucket } from '@/lib/productEvents';
 
 interface ProcessedFile {
   name: string;
@@ -41,36 +43,6 @@ async function previewDataUrl(blob: Blob): Promise<string> {
   });
 }
 
-async function blobToWebp(jpegBlob: Blob, quality: number): Promise<Blob> {
-  const img = new Image();
-  const url = URL.createObjectURL(jpegBlob);
-  try {
-    await new Promise<void>((resolve, reject) => {
-      img.onload = () => resolve();
-      img.onerror = () => reject(new Error('Could not decode for WebP export'));
-      img.src = url;
-    });
-    const canvas = document.createElement('canvas');
-    canvas.width = img.naturalWidth;
-    canvas.height = img.naturalHeight;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) throw new Error('Canvas not supported');
-    ctx.drawImage(img, 0, 0);
-    return new Promise((resolve, reject) => {
-      canvas.toBlob(
-        (b) => {
-          if (!b) reject(new Error('WebP export failed'));
-          else resolve(b);
-        },
-        'image/webp',
-        quality
-      );
-    });
-  } finally {
-    URL.revokeObjectURL(url);
-  }
-}
-
 export default function HeicConverterClient() {
   const [files, setFiles] = useState<File[]>([]);
   const [processed, setProcessed] = useState<ProcessedFile[]>([]);
@@ -79,6 +51,10 @@ export default function HeicConverterClient() {
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    emitProductEvent('tool_view', { tool: '/tools/heic-converter' });
+  }, []);
 
   const handleFiles = (list: FileList | null) => {
     if (!list) return;
@@ -98,20 +74,17 @@ export default function HeicConverterClient() {
   };
 
   const convertOne = async (file: File): Promise<ProcessedFile> => {
-    const heic2any = (await import('heic2any')).default;
-    const jpegBlobs = await heic2any({
-      blob: file,
-      toType: 'image/jpeg',
-      quality: quality / 100,
-    });
-    const jpegBlob = Array.isArray(jpegBlobs) ? jpegBlobs[0] : jpegBlobs;
-    if (!jpegBlob) throw new Error('Empty conversion result');
-
-    let outBlob: Blob = jpegBlob;
-    let ext = 'jpg';
-    if (outFormat === 'webp') {
-      outBlob = await blobToWebp(jpegBlob, quality / 100);
-      ext = 'webp';
+    const source = await loadOrientedBitmap(file);
+    const { width, height } = getSourceSize(source);
+    const mime = outFormat === 'webp' ? 'image/webp' : 'image/jpeg';
+    const ext = outFormat === 'webp' ? 'webp' : 'jpg';
+    let outBlob: Blob;
+    try {
+      const canvas = drawSourceToCanvas(source, width, height, mime);
+      outBlob = await canvasToBlob(canvas, mime, quality / 100);
+      await verifyImageBlob(outBlob);
+    } finally {
+      if (source instanceof ImageBitmap) source.close();
     }
 
     const base = file.name.replace(/\.[^/.]+$/, '');
@@ -137,6 +110,14 @@ export default function HeicConverterClient() {
   };
 
   const handleConvert = async () => {
+    const startedAt = performance.now();
+    emitProductEvent(files.length > 1 ? 'batch_started' : 'process_started', {
+      tool: '/tools/heic-converter',
+      input_format: 'heic',
+      output_format: outFormat,
+      file_size_bucket: fileSizeBucket(files.reduce((total, file) => total + file.size, 0)),
+      batch_count_bucket: batchCountBucket(files.length),
+    });
     setProcessing(true);
     setError(null);
     try {
@@ -152,9 +133,19 @@ export default function HeicConverterClient() {
         }
       }
       setProcessed(results);
+      emitProductEvent('process_succeeded', {
+        tool: '/tools/heic-converter', output_format: outFormat,
+        batch_count_bucket: batchCountBucket(results.length),
+        duration_bucket: durationBucket(performance.now() - startedAt),
+      });
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Conversion failed.');
       setProcessed([]);
+      emitProductEvent('process_failed', {
+        tool: '/tools/heic-converter', output_format: outFormat,
+        batch_count_bucket: batchCountBucket(files.length),
+        duration_bucket: durationBucket(performance.now() - startedAt), error_code: 'decode_failed',
+      });
     } finally {
       setProcessing(false);
     }
@@ -167,6 +158,7 @@ export default function HeicConverterClient() {
     a.download = p.name;
     a.click();
     URL.revokeObjectURL(url);
+    emitProductEvent('download_completed', { tool: '/tools/heic-converter', output_format: outFormat, batch_count_bucket: '1' });
   };
 
   const downloadZip = async () => {
@@ -179,6 +171,7 @@ export default function HeicConverterClient() {
     a.download = 'heic-converted.zip';
     a.click();
     URL.revokeObjectURL(url);
+    emitProductEvent('download_completed', { tool: '/tools/heic-converter', output_format: outFormat, batch_count_bucket: batchCountBucket(processed.length) });
   };
 
   return (

@@ -1,142 +1,22 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import CompressClient from "./Client";
-import AdsenseUnit from "@/components/Adsense";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { SoftwareAppJsonLd, FaqJsonLd } from "@/components/SeoJsonLd";
-import { ServerFaqSection, faqToJsonLd } from "@/components/ServerFaqSection";
-import { ToolNextSteps } from "@/components/ToolNextSteps";
-import { getCompressStrings } from "@/lib/i18n/compress";
-
-const compressFaq = getCompressStrings("en");
+import { CoreToolLayout } from "@/components/CoreToolLayout";
+import { SoftwareAppJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
-  title: "Free Image Compressor—100KB, 200KB, 500KB | No Upload",
-  description:
-    "Compress images to exact sizes (100KB, 200KB, 500KB, 1MB) without losing quality. TinyPNG alternative—works offline, no uploads. JPG, PNG, WebP in your browser.",
-  alternates: {
-    canonical: "/compress",
-    languages: {
-      "x-default": "/compress",
-      en: "/compress",
-      "en-US": "/compress",
-      "en-GB": "/compress",
-      es: "/compress-es",
-      pt: "/compress-pt",
-      id: "/compress-id",
-      zh: "/zh/compress",
-    },
-  },
-  openGraph: {
-    title: "Image compressor to target KB (no upload)",
-    description: "Shrink photos for web, forms, and social. Exact KB targets, runs locally. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
-    url: "/compress",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Compress to exact KB locally",
-    description: "TinyPNG-style limits without uploading your files. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
-  },
-  // Disable Google Auto ads on this tool page; we render manual side rails & bottom units only
-  other: {
-    'google-adsense-page-ads': 'disable'
-  }
+  title: "Compress Images to a Verified KB Limit",
+  description: "Compress JPG, PNG, WebP, or HEIC-derived images to a hard KB cap, reduce dimensions when needed, and verify the output before download.",
+  alternates: { canonical: "/compress", languages: { "x-default": "/compress", en: "/compress" } },
 };
 
+const faq = [
+  { question: "Can a successful result exceed the target?", answer: "No. The encoder checks the final Blob size and rejects an output above the selected byte cap." },
+  { question: "What if lowering quality is not enough?", answer: "The shared engine reduces dimensions and retries. If the configured minimum dimension would be crossed, it returns a clear failure instead of an oversized file." },
+  { question: "Is the source image uploaded?", answer: "No. Decode, resize, encode, and verification happen in this browser. Optional consented analytics and advertising are separate and never include the image or filename." },
+];
+
 export default function Page() {
-  return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Compress", url: "/compress" },
-        ]}
-      />
-      <SoftwareAppJsonLd
-        name="PixCloak Compress"
-        url="/compress"
-        description="TinyPNG alternative: compress images locally to exact KB targets (100KB, 200KB, 500KB). Export JPEG, WebP, or PNG without uploads."
-        image="/og.png"
-      />
-      <FaqJsonLd items={faqToJsonLd(compressFaq.faq)} />
-      <h1 className="page-hero-title">
-        Compress Image to Exact KB—100KB, 200KB, 500KB (No Upload)
-      </h1>
-      <div className="card" style={{ marginBottom: 16 }}>
-        <p style={{ marginTop: 0, marginBottom: 8 }}>
-          <strong>Short answer:</strong> Set a target size (for example 200KB), upload JPG/PNG/WebP, preview quality, and download. This{" "}
-          <strong>TinyPNG alternative</strong> compresses pictures in your browser so files never leave your device—useful when portals cap
-          attachment size.
-        </p>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <Link className="pill" href="/compress?kb=200">Compress to 200KB</Link>
-          <Link className="pill" href="/guides/tinypng-alternative-free-no-upload">TinyPNG comparison</Link>
-          <Link className="pill" href="/guides/compress-to-200kb">200KB guide</Link>
-          <Link className="pill" href="/guides/long-tail">Platform size guides</Link>
-        </div>
-      </div>
-      <p className="text-muted page-hero-lede">
-        Dial in a target size for forms, job portals, and social limits. Processing stays in your browser—useful when you want a{" "}
-        <strong>TinyPNG-style</strong> smaller file without sending photos to a third party. WebP and JPEG export; metadata stripped on
-        export. From iPhone HEIC or PDF pages, convert first with{" "}
-        <Link href="/tools/heic-converter">HEIC to JPG/WebP</Link> or <Link href="/tools/pdf-to-image">PDF to image</Link>, then shrink
-        here; fix orientation with <Link href="/tools/rotate-flip">rotate &amp; flip</Link> before compressing if needed.
-      </p>
-      <div className="card" style={{ marginBottom: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>Best for</h2>
-        <p className="text-muted" style={{ marginTop: 0 }}>
-          Job forms, government portals, social posts, email attachments, and website images that must hit a clear KB target.
-        </p>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <Link className="pill" href="/tools/platform-checker">Check limits first</Link>
-          <Link className="pill" href="/tools/exif-checker">Check EXIF/GPS</Link>
-          <Link className="pill" href="/redact">Redact sensitive details</Link>
-        </div>
-      </div>
-      <Suspense fallback={null}>
-        <div style={{ position: 'relative' }}>
-          {/* Side rails - keep away from main controls */}
-          <div className="ad-rail" style={{ left: 0 }}>
-            <AdsenseUnit format="auto" />
-          </div>
-          <div className="ad-rail" style={{ right: 0 }}>
-            <AdsenseUnit format="auto" />
-          </div>
-          <CompressClient />
-          <ServerFaqSection title={compressFaq.faqTitle} items={compressFaq.faq} />
-          <ToolNextSteps tool="compress" locale="en" />
-          {/* Bottom ad below main content */}
-          <div className="ad-bottom">
-            <AdsenseUnit format="auto" />
-          </div>
-          <div className="card" style={{ marginTop: 16 }}>
-            <h2 style={{ marginBottom: 8 }}>Related tools</h2>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
-              <a href="/tools/resize-image" className="pill">Resize image</a>
-              <a href="/tools/rotate-flip" className="pill">Rotate &amp; flip</a>
-              <a href="/tools/png-jpg-converter" className="pill">PNG ↔ JPG</a>
-              <a href="/tools/webp-converter" className="pill">WebP converter</a>
-              <a href="/tools/heic-converter" className="pill">HEIC to JPG / WebP</a>
-              <a href="/tools/pdf-to-image" className="pill">PDF to image</a>
-              <a href="/tools" className="pill">All tools</a>
-            </div>
-            <h2 style={{ marginBottom: 8 }}>Related guides</h2>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              <Link href="/guides/remove-exif-wechat" className="pill">WeChat EXIF guide</Link>
-              <Link href="/guides/compress-image-to-100kb" className="pill">Compress to 100 KB</Link>
-              <Link href="/guides/compress-to-200kb" className="pill">Compress to 200 KB</Link>
-              <Link href="/guides/how-to-compress-on-iphone" className="pill">Compress on iPhone</Link>
-              <Link href="/guides/tinypng-alternative-free-no-upload" className="pill">TinyPNG alternative</Link>
-              <Link href="/guides/how-to-compress-image-without-losing-quality" className="pill">Compress without quality loss</Link>
-              <Link href="/guides/complete-image-compression-guide" className="pill">Full compression guide</Link>
-            </div>
-          </div>
-        </div>
-      </Suspense>
-    </>
-  );
+  return <><BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Compress", url: "/compress" }]} /><SoftwareAppJsonLd name="PixCloak Image Compressor" url="/compress" description="Compress images to a hard KB limit and verify the exported result." image="/og.png" /><CoreToolLayout eyebrow="IMAGE COMPRESSOR" title="Compress to a hard KB limit" description="Choose JPEG, WebP, or PNG and an exact maximum size. PixCloak lowers quality first, then dimensions, and never labels an over-limit result as successful." tool={<Suspense fallback={<div className="card">Loading local compressor…</div>}><CompressClient /></Suspense>} scenarios={["Meeting 100KB, 200KB, 500KB, or 1MB portal limits", "Reducing a batch while keeping per-file failure details", "Comparing JPEG, WebP, and PNG under the same cap"]} limitations={["Complex photographs can require smaller dimensions at very low targets.", "PNG is often inefficient for photographic content.", "A portal may also enforce dimensions, aspect ratio, or filename rules."]} next={[{ href: "/safe-share", label: "Remove private details first" }, { href: "/upload-ready", label: "Use requirement presets" }]} faq={faq} /></>;
 }
-
-

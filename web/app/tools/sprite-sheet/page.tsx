@@ -60,7 +60,7 @@ export default function Page() {
           <h1 className="page-hero-title">Sprite Sheet Generator (PNG + JSON, No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
             Reduce requests for icon sets and game tiles.             Export a ZIP with the atlas and mapping. See also{" "}
-            <Link href="/guides/long-tail/sprite-sheet-generator">sprite sheet guide</Link>.
+            <Link href="/guides/web-images">web image guide</Link>.
           </p>
         </div>
       </div>

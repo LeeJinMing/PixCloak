@@ -7,14 +7,13 @@ import { ToolNextSteps } from '@/components/ToolNextSteps';
 
 export const metadata: Metadata = {
   title: 'PDF to Image Online—Export Pages as PNG (No',
-  description: 'Turn PDF pages into PNG images in your browser. Set max pages and scale, download a ZIP. Runs locally—nothing uploaded. For slides, scans, and quick previews.',
+  description: 'Export a selected PDF page range as PNG, JPEG, or WebP in your browser. Download individual verified pages or one ZIP; nothing is uploaded.',
   alternates: {
     canonical: '/tools/pdf-to-image',
-    languages: { 'x-default': '/tools/pdf-to-image', en: '/tools/pdf-to-image', 'zh-CN': '/zh/tools/pdf-to-image' },
   },
   openGraph: {
-    title: 'PDF pages to PNG locally',
-    description: 'Rasterize up to 50 pages per run. ZIP download. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
+    title: 'Export PDF pages to images locally',
+    description: 'Rasterize up to 50 selected pages per run as PNG, JPEG, or WebP, then download individual files or one ZIP.',
     url: '/tools/pdf-to-image',
     type: 'website',
   },
@@ -44,12 +43,13 @@ export default function PdfToImagePage() {
         <div className="card">
           <h1 className="page-hero-title">PDF to Image—Pages as PNG (No Upload)</h1>
           <p className="text-muted" style={{ marginBottom: 0 }}>
-            Need thumbnails or images from a deck? Each page becomes a PNG. For smaller file sizes afterward, use{' '}
+            Need thumbnails or images from a deck? Export a selected range as PNG, JPEG, or WebP. For smaller file sizes afterward, use{' '}
             <Link href="/compress">image compression</Link> or <Link href="/tools/webp-converter">WebP conversion</Link> on the
             exported images.
           </p>
         </div>
         <Client />
+        <div className="card"><strong>Need the reverse?</strong><p>Order several images and combine them into one local PDF.</p><Link className="button-outline" href="/tools/image-to-pdf">Open Images to PDF</Link></div>
         <ToolNextSteps tool="pdf-to-image" locale="en" />
         <div className="card">
           <h2>Related tools</h2>

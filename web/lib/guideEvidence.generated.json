@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "blur-pixelate-solid-redaction",
+    "result": "The result demonstrates three flattened treatments; solid coverage is the conservative option.",
+    "method": "Both downloadable WebP files are generated from deterministic SVG test inputs; their hashes and dimensions are verified.",
+    "before": {
+      "src": "/guides/evidence/blur-pixelate-solid-redaction-before.webp",
+      "downloadHref": "/guides/evidence/blur-pixelate-solid-redaction-before.webp",
+      "label": "Before: deterministic synthetic review image",
+      "alt": "Before: deterministic synthetic review image",
+      "width": 1200,
+      "height": 800,
+      "bytes": 22482,
+      "sha256": "ad430d8668227bf68d8b4a1f8ddf47b3200a1c92d6fd8b15760e62db2b347d92"
+    },
+    "after": {
+      "src": "/guides/evidence/blur-pixelate-solid-redaction-after.webp",
+      "downloadHref": "/guides/evidence/blur-pixelate-solid-redaction-after.webp",
+      "label": "After: permanent covers baked into the pixels",
+      "alt": "After: permanent covers baked into the pixels",
+      "width": 1200,
+      "height": 800,
+      "bytes": 18408,
+      "sha256": "bfa1ccca77d7dcac41ff6433b015aeeb12c5507f93789e67ad6f6f9afc4be8fd"
+    }
+  },
+  {
+    "slug": "compress-image-under-100kb",
+    "result": "Actual output is 91.66KB at encoder quality 40; it decodes successfully.",
+    "method": "Re-encoded locally and rejected until the file measured at or below 102400 bytes.",
+    "before": {
+      "src": "/guides/evidence/compress-image-under-100kb-before.jpg",
+      "downloadHref": "/guides/evidence/compress-image-under-100kb-before.jpg",
+      "label": "Before: 1200×800 source preview (100KB hard-cap test)",
+      "alt": "Before: 1200×800 source preview (100KB hard-cap test)",
+      "width": 1200,
+      "height": 800,
+      "bytes": 542877,
+      "sha256": "0cc02b20f44ae9c84b75ecf09e16216dfd04da23d88ed391829cf656224727d2"
+    },
+    "after": {
+      "src": "/guides/evidence/compress-image-under-100kb-after.webp",
+      "downloadHref": "/guides/evidence/compress-image-under-100kb-after.webp",
+      "label": "After: verified below 100KB",
+      "alt": "After: verified below 100KB",
+      "width": 819,
+      "height": 546,
+      "bytes": 93862,
+      "sha256": "5bd9547af1e816149fd45e82b716ffbc81dfacec73ed04bdf96253ed5873aeba"
+    }
+  },
+  {
+    "slug": "compress-image-under-200kb",
+    "result": "Actual output is 173.82KB at encoder quality 72; it decodes successfully.",
+    "method": "Re-encoded locally and rejected until the file measured at or below 204800 bytes.",
+    "before": {
+      "src": "/guides/evidence/compress-image-under-200kb-before.jpg",
+      "downloadHref": "/guides/evidence/compress-image-under-200kb-before.jpg",
+      "label": "Before: 1200×800 source preview (200KB hard-cap test)",
+      "alt": "Before: 1200×800 source preview (200KB hard-cap test)",
+      "width": 1200,
+      "height": 800,
+      "bytes": 251103,
+      "sha256": "0320e4d4191be930a478f84e002f41c64a5738d769238c5eb037c546cff716c1"
+    },
+    "after": {
+      "src": "/guides/evidence/compress-image-under-200kb-after.jpg",
+      "downloadHref": "/guides/evidence/compress-image-under-200kb-after.jpg",
+      "label": "After: verified below 200KB",
+      "alt": "After: verified below 200KB",
+      "width": 1600,
+      "height": 1060,
+      "bytes": 177990,
+      "sha256": "93b775b0731e038817cc1ab489d99334cb700b438171ecc8e21ff96042d77865"
+    }
+  },
+  {
+    "slug": "does-wechat-remove-exif-test",
+    "result": "Byte scan changed from metadata found to no supported EXIF/GPS/XMP/IPTC markers found.",
+    "method": "Generated GPS fixture scanned before and after a metadata-stripping re-encode.",
+    "before": {
+      "src": "/guides/evidence/does-wechat-remove-exif-test-before.jpg",
+      "downloadHref": "/guides/evidence/does-wechat-remove-exif-test-before.jpg",
+      "label": "Original fixture: metadata markers present",
+      "alt": "Original fixture: metadata markers present",
+      "width": 1024,
+      "height": 768,
+      "bytes": 1353842,
+      "sha256": "dd07f9c5b074f1d5e9cae029d1c6efc18207ea8aca78406b159be256aa0ea7d1"
+    },
+    "after": {
+      "src": "/guides/evidence/does-wechat-remove-exif-test-after.jpg",
+      "downloadHref": "/guides/evidence/does-wechat-remove-exif-test-after.jpg",
+      "label": "Locally re-encoded copy: supported markers absent",
+      "alt": "Locally re-encoded copy: supported markers absent",
+      "width": 1024,
+      "height": 768,
+      "bytes": 1353775,
+      "sha256": "476e84f8e2d0f07e9c0d720483d4ad6644a185bfe5d8ef742bdab82287bc2947"
+    }
+  },
+  {
+    "slug": "file-size-dimensions-format",
+    "result": "Dimensions stay 1200×800 while bytes change from 1925.7KB to 243.7KB.",
+    "method": "The same decoded pixels are exported as PNG and WebP, then measured and decoded.",
+    "before": {
+      "src": "/guides/evidence/file-size-dimensions-format-before.png",
+      "downloadHref": "/guides/evidence/file-size-dimensions-format-before.png",
+      "label": "Before: 1200×800 PNG",
+      "alt": "Before: 1200×800 PNG",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1971965,
+      "sha256": "4e65576ebddb83178f875020e54290174b135e8acf2f3e9d295ff44a6607f014"
+    },
+    "after": {
+      "src": "/guides/evidence/file-size-dimensions-format-after.webp",
+      "downloadHref": "/guides/evidence/file-size-dimensions-format-after.webp",
+      "label": "After: same dimensions as WebP",
+      "alt": "After: same dimensions as WebP",
+      "width": 1200,
+      "height": 800,
+      "bytes": 249570,
+      "sha256": "8498d0bd7d1ed29fec1bb2470ffb6b2ee151af6dc55c5fad3ec6d5864538c45b"
+    }
+  },
+  {
+    "slug": "generate-complete-favicon-pack",
+    "result": "The smallest downloadable output is 32×32 and remains visually legible.",
+    "method": "A deterministic vector source is rasterized at 512px and 32px; both outputs are decoded and measured.",
+    "before": {
+      "src": "/guides/evidence/generate-complete-favicon-pack-before.png",
+      "downloadHref": "/guides/evidence/generate-complete-favicon-pack-before.png",
+      "label": "Before: 512×512 square source",
+      "alt": "Before: 512×512 square source",
+      "width": 512,
+      "height": 512,
+      "bytes": 6453,
+      "sha256": "0e3e39b2a82a891e28461c2f5530acd5966672f365e634703292f75dc46e2855"
+    },
+    "after": {
+      "src": "/guides/evidence/generate-complete-favicon-pack-after.png",
+      "downloadHref": "/guides/evidence/generate-complete-favicon-pack-after.png",
+      "label": "After: actual 32×32 favicon output",
+      "alt": "After: actual 32×32 favicon output",
+      "width": 32,
+      "height": 32,
+      "bytes": 2584,
+      "sha256": "0ea5ec6835a7f398daf11fe88b5f62717f4ebd0ff3720bdd48508a61ae4eb537"
+    }
+  },
+  {
+    "slug": "heic-upload-error-convert-locally",
+    "result": "The real HEIC compatibility fixture converts to a 700×476 JPEG that decodes successfully.",
+    "method": "Input is the attributed HEIC fixture in tests/fixtures/SOURCES.md; the display preview and JPEG are generated locally.",
+    "before": {
+      "src": "/guides/evidence/heic-upload-error-convert-locally-before.webp",
+      "downloadHref": "/guides/evidence/heic-upload-error-convert-locally-source.heic",
+      "label": "Before: preview decoded from the real HEIC fixture",
+      "alt": "Before: preview decoded from the real HEIC fixture",
+      "width": 700,
+      "height": 476,
+      "bytes": 30746,
+      "sha256": "3cbd9f56a31dce5f4857a4bb604726ef2deeb74f29e3c0a72512ae17a81fa838"
+    },
+    "after": {
+      "src": "/guides/evidence/heic-upload-error-convert-locally-after.jpg",
+      "downloadHref": "/guides/evidence/heic-upload-error-convert-locally-after.jpg",
+      "label": "After: browser-compatible JPEG",
+      "alt": "After: browser-compatible JPEG",
+      "width": 700,
+      "height": 476,
+      "bytes": 38902,
+      "sha256": "467b77978bd270e682b12ac638a0a787ec2171531ce93dd13f70314b5bf00b60"
+    }
+  },
+  {
+    "slug": "hide-faces-plates-private-text",
+    "result": "All three marked regions are replaced with new pixels.",
+    "method": "Both downloadable WebP files are generated from deterministic SVG test inputs; their hashes and dimensions are verified.",
+    "before": {
+      "src": "/guides/evidence/hide-faces-plates-private-text-before.webp",
+      "downloadHref": "/guides/evidence/hide-faces-plates-private-text-before.webp",
+      "label": "Before: deterministic synthetic review image",
+      "alt": "Before: deterministic synthetic review image",
+      "width": 1200,
+      "height": 800,
+      "bytes": 21916,
+      "sha256": "c8a60a3f5f6bfd17c7fd92f22682ba1e61458fab5fbc0d9c08d0c56c213f8489"
+    },
+    "after": {
+      "src": "/guides/evidence/hide-faces-plates-private-text-after.webp",
+      "downloadHref": "/guides/evidence/hide-faces-plates-private-text-after.webp",
+      "label": "After: permanent covers baked into the pixels",
+      "alt": "After: permanent covers baked into the pixels",
+      "width": 1200,
+      "height": 800,
+      "bytes": 16156,
+      "sha256": "c5fe4f37b49a22e7e1daaacaf997c7bb863dd6e052d67f45d0651a7951d64648"
+    }
+  },
+  {
+    "slug": "prepare-images-core-web-vitals",
+    "result": "Bytes change from 1171.3KB to 243.7KB with intrinsic dimensions recorded.",
+    "method": "The large source is resized, re-encoded, decoded, and served with explicit width and height.",
+    "before": {
+      "src": "/guides/evidence/prepare-images-core-web-vitals-before.jpg",
+      "downloadHref": "/guides/evidence/prepare-images-core-web-vitals-before.jpg",
+      "label": "Before: 3000×2000 source",
+      "alt": "Before: 3000×2000 source",
+      "width": 3000,
+      "height": 2000,
+      "bytes": 1199383,
+      "sha256": "3ccb45bfcce7bdb4b03b1896d46f6de8aba065c5170b50eef4d026c539324028"
+    },
+    "after": {
+      "src": "/guides/evidence/prepare-images-core-web-vitals-after.webp",
+      "downloadHref": "/guides/evidence/prepare-images-core-web-vitals-after.webp",
+      "label": "After: explicit 1200×800 WebP",
+      "alt": "After: explicit 1200×800 WebP",
+      "width": 1200,
+      "height": 800,
+      "bytes": 249570,
+      "sha256": "8498d0bd7d1ed29fec1bb2470ffb6b2ee151af6dc55c5fad3ec6d5864538c45b"
+    }
+  },
+  {
+    "slug": "redact-id-card-safely",
+    "result": "Every non-required synthetic field is covered in the exported image.",
+    "method": "Both downloadable WebP files are generated from deterministic SVG test inputs; their hashes and dimensions are verified.",
+    "before": {
+      "src": "/guides/evidence/redact-id-card-safely-before.webp",
+      "downloadHref": "/guides/evidence/redact-id-card-safely-before.webp",
+      "label": "Before: deterministic synthetic review image",
+      "alt": "Before: deterministic synthetic review image",
+      "width": 1200,
+      "height": 800,
+      "bytes": 26992,
+      "sha256": "e2e6ebabaf7502f18c1cec2a352107c9a6a2d58187a4ae87409059949ff0144c"
+    },
+    "after": {
+      "src": "/guides/evidence/redact-id-card-safely-after.webp",
+      "downloadHref": "/guides/evidence/redact-id-card-safely-after.webp",
+      "label": "After: permanent covers baked into the pixels",
+      "alt": "After: permanent covers baked into the pixels",
+      "width": 1200,
+      "height": 800,
+      "bytes": 19172,
+      "sha256": "522e0f13454d4baa233287964c90d27d5aaab305ae9587b564e5ac02f729ad90"
+    }
+  },
+  {
+    "slug": "reduce-image-size-iphone",
+    "result": "Output measures 371.64KB and decodes successfully.",
+    "method": "The source is auto-oriented, resized to a 1920px longest side, encoded, measured, and decoded.",
+    "before": {
+      "src": "/guides/evidence/reduce-image-size-iphone-before.jpg",
+      "downloadHref": "/guides/evidence/reduce-image-size-iphone-before.jpg",
+      "label": "Before: high-resolution mobile-photo test input",
+      "alt": "Before: high-resolution mobile-photo test input",
+      "width": 5024,
+      "height": 3328,
+      "bytes": 1027659,
+      "sha256": "61d60f7d8069a817b9a7ae809b30fc99d210a5e256c538ed1c12a46e762d0eb9"
+    },
+    "after": {
+      "src": "/guides/evidence/reduce-image-size-iphone-after.jpg",
+      "downloadHref": "/guides/evidence/reduce-image-size-iphone-after.jpg",
+      "label": "After: longest side capped at 1920px and below 500KB",
+      "alt": "After: longest side capped at 1920px and below 500KB",
+      "width": 1920,
+      "height": 1272,
+      "bytes": 380561,
+      "sha256": "1638049a542fe9c8521932deda52c866cc817afb5a76857da17458ac8fb3ffd2"
+    }
+  },
+  {
+    "slug": "remove-gps-location-photo",
+    "result": "Supported metadata scan reports GPS before export and clean after export.",
+    "method": "The repository GPS fixture is re-encoded with profiles stripped, then both files are byte-scanned in tests.",
+    "before": {
+      "src": "/guides/evidence/remove-gps-location-photo-before.jpg",
+      "downloadHref": "/guides/evidence/remove-gps-location-photo-before.jpg",
+      "label": "Before: generated JPEG with EXIF GPS pointer",
+      "alt": "Before: generated JPEG with EXIF GPS pointer",
+      "width": 1024,
+      "height": 768,
+      "bytes": 1353842,
+      "sha256": "dd07f9c5b074f1d5e9cae029d1c6efc18207ea8aca78406b159be256aa0ea7d1"
+    },
+    "after": {
+      "src": "/guides/evidence/remove-gps-location-photo-after.jpg",
+      "downloadHref": "/guides/evidence/remove-gps-location-photo-after.jpg",
+      "label": "After: re-encoded JPEG with GPS pointer absent",
+      "alt": "After: re-encoded JPEG with GPS pointer absent",
+      "width": 768,
+      "height": 576,
+      "bytes": 678214,
+      "sha256": "3e3a43a4fac0bede3950a43fadb625f66d27ec2ed252f2717c10c8801ce055e9"
+    }
+  },
+  {
+    "slug": "remove-transparent-padding",
+    "result": "Visible pixels are preserved while dimensions change to 340×340.",
+    "method": "The alpha bounding box is calculated from a deterministic transparent PNG and the output is decoded.",
+    "before": {
+      "src": "/guides/evidence/remove-transparent-padding-before.png",
+      "downloadHref": "/guides/evidence/remove-transparent-padding-before.png",
+      "label": "Before: 800×800 transparent canvas",
+      "alt": "Before: 800×800 transparent canvas",
+      "width": 800,
+      "height": 800,
+      "bytes": 30215,
+      "sha256": "f15f212034ae452f7882829b060aa47bf7196504531db243e434616782cb18c5"
+    },
+    "after": {
+      "src": "/guides/evidence/remove-transparent-padding-after.png",
+      "downloadHref": "/guides/evidence/remove-transparent-padding-after.png",
+      "label": "After: transparent bounds trimmed",
+      "alt": "After: transparent bounds trimmed",
+      "width": 340,
+      "height": 340,
+      "bytes": 23628,
+      "sha256": "83447f566b1db7ca0b65ed1d645966ec6da66253840e12f94673d5013a673eb2"
+    }
+  },
+  {
+    "slug": "screenshot-privacy-checklist-v1",
+    "result": "Names, account reference, and location line are covered in the reviewed export.",
+    "method": "Both downloadable WebP files are generated from deterministic SVG test inputs; their hashes and dimensions are verified.",
+    "before": {
+      "src": "/guides/evidence/screenshot-privacy-checklist-v1-before.webp",
+      "downloadHref": "/guides/evidence/screenshot-privacy-checklist-v1-before.webp",
+      "label": "Before: deterministic synthetic review image",
+      "alt": "Before: deterministic synthetic review image",
+      "width": 1200,
+      "height": 800,
+      "bytes": 25592,
+      "sha256": "1b403fdb2bd3275c450f247fe8354708e9234cb19c7dc9ae6dce9a29d0c81e30"
+    },
+    "after": {
+      "src": "/guides/evidence/screenshot-privacy-checklist-v1-after.webp",
+      "downloadHref": "/guides/evidence/screenshot-privacy-checklist-v1-after.webp",
+      "label": "After: permanent covers baked into the pixels",
+      "alt": "After: permanent covers baked into the pixels",
+      "width": 1200,
+      "height": 800,
+      "bytes": 18962,
+      "sha256": "7ab2941f0f8f14df665c83884411126e1ee6c32e57d05868d7a14f59fe65009f"
+    }
+  },
+  {
+    "slug": "webp-vs-jpeg-downloadable-samples",
+    "result": "JPEG is 300.6KB; WebP is 260.6KB for this source.",
+    "method": "The same 1200×800 decoded source is encoded at the same numeric quality setting; this is a sample, not a universal benchmark.",
+    "before": {
+      "src": "/guides/evidence/webp-vs-jpeg-downloadable-samples-before.jpg",
+      "downloadHref": "/guides/evidence/webp-vs-jpeg-downloadable-samples-before.jpg",
+      "label": "Sample A: JPEG at quality 78",
+      "alt": "Sample A: JPEG at quality 78",
+      "width": 1200,
+      "height": 800,
+      "bytes": 307813,
+      "sha256": "35453f8b20c2be44d92dfdd8160151a4ef75c7561e5b211b91e0323d025f2790"
+    },
+    "after": {
+      "src": "/guides/evidence/webp-vs-jpeg-downloadable-samples-after.webp",
+      "downloadHref": "/guides/evidence/webp-vs-jpeg-downloadable-samples-after.webp",
+      "label": "Sample B: WebP at quality 78",
+      "alt": "Sample B: WebP at quality 78",
+      "width": 1200,
+      "height": 800,
+      "bytes": 266846,
+      "sha256": "2672c1f6072f52cc498b8c5c1e291a3c7836da31730314ff6d53145b53041c98"
+    }
+  },
+  {
+    "slug": "why-upload-portal-rejects-image",
+    "result": "The corrected output matches the example format and square-dimension rule.",
+    "method": "A deterministic wide input is converted to PNG and placed on an exact 800×800 canvas.",
+    "before": {
+      "src": "/guides/evidence/why-upload-portal-rejects-image-before.webp",
+      "downloadHref": "/guides/evidence/why-upload-portal-rejects-image-before.webp",
+      "label": "Before: wrong aspect ratio test input",
+      "alt": "Before: wrong aspect ratio test input",
+      "width": 1200,
+      "height": 800,
+      "bytes": 23472,
+      "sha256": "79ef1cf2df7254972afba6d4609a76ecfea30e2080da1f515033307dc1587c6a"
+    },
+    "after": {
+      "src": "/guides/evidence/why-upload-portal-rejects-image-after.png",
+      "downloadHref": "/guides/evidence/why-upload-portal-rejects-image-after.png",
+      "label": "After: 800×800 decodable PNG",
+      "alt": "After: 800×800 decodable PNG",
+      "width": 800,
+      "height": 800,
+      "bytes": 73667,
+      "sha256": "9a4fd935bbf51c452084398730c201532809a0e0a6597513de18ffeff19537c4"
+    }
+  }
+]

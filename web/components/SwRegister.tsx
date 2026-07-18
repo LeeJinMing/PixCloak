@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export function SwRegister() {
   useEffect(() => {
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => { });
+      navigator.serviceWorker.register("/sw.js", { scope: "/", updateViaCache: "none" }).catch(() => { });
     }
   }, []);
   return null;

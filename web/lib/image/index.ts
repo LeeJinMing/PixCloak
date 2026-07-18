@@ -8,3 +8,5 @@ export * from "./zip";
 export * from "./compress";
 export * from "./compressWorker";
 export * from "./redact";
+export * from "./verify";
+export * from "./metadata";

@@ -1,9 +1,24 @@
 {
-  "name": "PixCloak",
+  "id": "/",
+  "name": "PixCloak — Private Image Tools",
   "short_name": "PixCloak",
+  "description": "Prepare, redact, compress, and convert images privately in your browser.",
+  "lang": "en",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#111111",
-  "icons": []
+  "background_color": "#f8fbff",
+  "theme_color": "#2563eb",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    { "src": "/icons/pixcloak-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/pixcloak-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/pixcloak-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Safe Share", "short_name": "Safe Share", "description": "Remove visible and hidden private information.", "url": "/safe-share", "icons": [{ "src": "/icons/shortcut-safe-share.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Upload Ready", "short_name": "Upload Ready", "description": "Meet a portal's size and format requirements.", "url": "/upload-ready", "icons": [{ "src": "/icons/shortcut-upload-ready.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "PDF to Images", "short_name": "PDF to Images", "description": "Export PDF pages as local image files.", "url": "/tools/pdf-to-image", "icons": [{ "src": "/icons/shortcut-pdf-to-image.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Images to PDF", "short_name": "Images to PDF", "description": "Combine local images into one PDF.", "url": "/tools/image-to-pdf", "icons": [{ "src": "/icons/shortcut-image-to-pdf.png", "sizes": "96x96", "type": "image/png" }] }
+  ]
 }
