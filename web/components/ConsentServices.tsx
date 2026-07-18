@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { emitProductEvent } from "@/lib/productEvents";
 
 type Consent = "pending" | "essential" | "all";
@@ -18,12 +19,20 @@ export function ConsentServices({
   adsAvailable: boolean;
   adsClient?: string;
 }) {
+  const pathname = usePathname() ?? "";
+  const isZh = pathname === "/zh" || pathname.startsWith("/zh/");
   const optionalServicesAvailable = analyticsAvailable || adsAvailable;
-  const optionalServicesLabel = analyticsAvailable && adsAvailable
-    ? "analytics & ads"
-    : analyticsAvailable
-      ? "analytics"
-      : "ads";
+  const optionalServicesLabel = isZh
+    ? analyticsAvailable && adsAvailable
+      ? "分析与广告"
+      : analyticsAvailable
+        ? "网站分析"
+        : "广告"
+    : analyticsAvailable && adsAvailable
+      ? "analytics & ads"
+      : analyticsAvailable
+        ? "analytics"
+        : "ads";
   const [consent, setConsent] = useState<Consent>(optionalServicesAvailable ? "pending" : "essential");
 
   useEffect(() => {
@@ -77,22 +86,28 @@ export function ConsentServices({
         />
       )}
       {consent === "pending" ? (
-        <aside className="consent-banner" aria-label="Privacy choices">
+        <aside className="consent-banner" aria-label={isZh ? "隐私设置" : "Privacy choices"}>
           <div>
-            <strong>Choose website privacy settings</strong>
-            <p>
-              Image processing stays in your browser. Separately, optional {optionalServicesLabel} may load only after you accept.
-              PixCloak does not include image bytes, filenames, or metadata in analytics events.
-            </p>
-            <Link href="/privacy">Privacy details</Link>
+            <strong>{isZh ? "选择网站隐私设置" : "Choose website privacy settings"}</strong>
+            {isZh ? (
+              <p>
+                图片处理始终在浏览器本地完成。可选的{optionalServicesLabel}只会在你同意后加载；分析事件不包含图片字节、文件名或元数据。
+              </p>
+            ) : (
+              <p>
+                Image processing stays in your browser. Separately, optional {optionalServicesLabel} may load only after you accept.
+                PixCloak does not include image bytes, filenames, or metadata in analytics events.
+              </p>
+            )}
+            <Link href="/privacy">{isZh ? "查看隐私详情" : "Privacy details"}</Link>
           </div>
           <div className="consent-actions">
-            <button className="button-outline" onClick={() => choose("essential")}>Essential only</button>
-            <button className="button" onClick={() => choose("all")}>Allow {optionalServicesLabel}</button>
+            <button className="button-outline" onClick={() => choose("essential")}>{isZh ? "仅必要功能" : "Essential only"}</button>
+            <button className="button" onClick={() => choose("all")}>{isZh ? `允许${optionalServicesLabel}` : `Allow ${optionalServicesLabel}`}</button>
           </div>
         </aside>
       ) : (
-        <button className="consent-reset" onClick={reset}>Privacy choices</button>
+        <button className="consent-reset" onClick={reset}>{isZh ? "隐私设置" : "Privacy choices"}</button>
       )}
     </>
   );

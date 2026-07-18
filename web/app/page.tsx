@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { LaunchHero } from "@/components/LaunchHero";
 
 export const metadata: Metadata = {
   title: "Private Image Preparation in Your Browser",
@@ -21,29 +22,23 @@ const quickTools = [
 export default function Home() {
   return (
     <div className="launch-home">
-      <section className="launch-hero">
-        <div className="launch-hero__copy">
-          <span className="eyebrow">PRIVATE IMAGE PREPARATION</span>
-          <h1>Prepare private images for safe sharing and upload</h1>
-          <p>
-            Redact sensitive details, remove metadata, convert formats, and meet file-size limits—locally in your browser.
-          </p>
-          <div className="launch-actions">
-            <Link href="/safe-share" className="button">Prepare for Safe Sharing</Link>
-            <Link href="/upload-ready" className="button-outline">Meet an Upload Limit</Link>
-          </div>
-          <div className="launch-proof">
-            <span>Image bytes stay on this device</span>
-            <span>Results verified before download</span>
-            <span>No account required</span>
-          </div>
-        </div>
-        <div className="launch-hero__panel" aria-label="PixCloak workflow summary">
-          <div><span>01</span><strong>Review</strong><small>See what the image contains.</small></div>
-          <div><span>02</span><strong>Prepare</strong><small>Redact, resize, convert, or compress.</small></div>
-          <div><span>03</span><strong>Verify</strong><small>Reopen and check the exported file.</small></div>
-        </div>
-      </section>
+      <LaunchHero
+        ariaLabel="PixCloak local image workflow"
+        eyebrow="PRIVATE IMAGE PREPARATION"
+        title="Prepare images privately for safer sharing and upload."
+        description="Redact sensitive details, remove hidden metadata, convert formats, and meet file-size limits—without sending the image to a server."
+        primaryAction={{ href: "/safe-share", label: "Prepare for Safe Sharing" }}
+        secondaryAction={{ href: "/upload-ready", label: "Meet an Upload Limit" }}
+        proofs={["Image bytes stay on this device", "Results verified before download", "No account required"]}
+        panelEyebrow="LOCAL BY DEFAULT"
+        panelTitle="One file. Three clear checks."
+        panelStatus="The image stays in this browser"
+        steps={[
+          { number: "01", title: "Review", text: "Check what the original image contains." },
+          { number: "02", title: "Prepare", text: "Redact, resize, convert, or compress." },
+          { number: "03", title: "Verify", text: "Reopen and inspect the exported result." },
+        ]}
+      />
 
       <section className="home-section" aria-labelledby="core-workflows">
         <div className="section-heading">
