@@ -14,8 +14,7 @@ const site = (
   process.env.VERCEL_URL ||
   "https://pixcloak.com"
 ).replace(/\/$/, "");
-const key =
-  process.env.INDEXNOW_KEY || process.env.NEXT_PUBLIC_INDEXNOW_KEY || "";
+const key = process.env.INDEXNOW_KEY || "";
 
 // 在 Vercel 环境中
 const isVercel = process.env.VERCEL === "1";

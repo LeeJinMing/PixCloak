@@ -1,432 +1,130 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { SoftwareAppJsonLd } from "@/components/SeoJsonLd";
-import { absoluteUrl } from "@/lib/site";
-import {
-  IconBook,
-  IconCompress,
-  IconGrid,
-  IconHeic,
-  IconPdf,
-  IconRedact,
-  IconResearch,
-  IconRotate,
-} from "@/components/home-icons";
+
+export const metadata: Metadata = {
+  title: "Private Image Preparation in Your Browser",
+  description:
+    "Redact sensitive details, remove hidden metadata, convert formats, and meet file-size limits locally in your browser.",
+  alternates: { canonical: "/" },
+};
+
+const quickTools = [
+  { href: "/compress", title: "Compress", text: "Fit JPG, PNG, or WebP under a hard KB limit." },
+  { href: "/redact", title: "Redact", text: "Apply solid, pixelated, or blurred redaction." },
+  { href: "/tools/exif-checker", title: "Metadata check", text: "Inspect and remove EXIF, GPS, XMP, and IPTC markers." },
+  { href: "/tools/heic-converter", title: "HEIC converter", text: "Turn iPhone HEIC images into JPG or WebP." },
+  { href: "/tools/resize-image", title: "Resize", text: "Change dimensions or longest side locally." },
+  { href: "/tools/png-jpg-converter", title: "Convert format", text: "Convert between PNG and JPEG with a clear result." },
+];
 
 export default function Home() {
   return (
-    <div>
-      <SoftwareAppJsonLd
-        name="PixCloak"
-        url="/"
-        description="Free browser-based image tools: compress to target KB, redact sensitive areas, convert formats. 100% local processing; no uploads."
-        image="/og.png"
-      />
-      <h1 className="home-hero-title">Local Image Privacy Tools—Compress, Redact, Remove EXIF</h1>
-      <p className="text-muted" style={{ marginBottom: 12 }}>
-        Prepare sensitive images entirely in your browser: reduce file size, hide private details, and strip EXIF/GPS before sharing.
-      </p>
-      <p className="text-muted" style={{ fontSize: 14, marginTop: -4, marginBottom: 20 }}>
-        Last reviewed: April 2026.
-      </p>
-
-      <div style={{ display: "grid", gap: 24 }}>
-        <section aria-labelledby="home-start">
-          <h2 id="home-start" className="home-section-label">
-            Start here
-          </h2>
-          <div className="home-tool-grid">
-            <Link href="/compress" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconCompress />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">Image Compressor</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    Reduce JPG/PNG/WebP to target KB. Batch ZIP. Works offline.
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href="/redact" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconRedact />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">Image Redactor</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    Blur faces, hide plates, black out text. Strip EXIF/GPS.
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href="/tools/exif-checker" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconGrid />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">EXIF/GPS Checker</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    Find hidden metadata and export a clean copy before sharing.
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-
-        <section aria-labelledby="home-zh">
-          <h2 id="home-zh" className="home-section-label">
-            中文站 / Chinese
-          </h2>
-          <Link href="/zh" className="home-feature-card">
-            <div className="home-feature-card__row">
-              <span className="home-feature-card__icon" aria-hidden>
-                <IconBook />
-              </span>
-              <div>
-                <div className="home-feature-card__title">皮克图 PixCloak 中文</div>
-                <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                  本地图片压缩、打码、去 EXIF。免费、不上传服务器。
-                </div>
-              </div>
-            </div>
-          </Link>
-        </section>
-
-        <section aria-labelledby="home-workflow">
-          <h2 id="home-workflow" className="home-section-label">
-            Upload-ready workflow
-          </h2>
-          <div className="card" style={{ display: "grid", gap: 10 }}>
-            <p className="text-muted" style={{ margin: 0 }}>
-              Not sure where to start? Check the file first, then fix the exact problem.
-            </p>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <Link className="pill" href="/tools/platform-checker">1. Check upload limits</Link>
-              <Link className="pill" href="/compress">2. Compress to target KB</Link>
-              <Link className="pill" href="/redact">3. Redact private details</Link>
-              <Link className="pill" href="/tools/exif-checker">4. Remove EXIF/GPS</Link>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="home-convert">
-          <h2 id="home-convert" className="home-section-label">
-            Convert &amp; fix
-          </h2>
-          <p className="text-muted" style={{ fontSize: 14, margin: "-4px 0 12px" }}>
-            New: local utilities for formats that usually need an extra step before compress or upload.
+    <div className="launch-home">
+      <section className="launch-hero">
+        <div className="launch-hero__copy">
+          <span className="eyebrow">PRIVATE IMAGE PREPARATION</span>
+          <h1>Prepare private images for safe sharing and upload</h1>
+          <p>
+            Redact sensitive details, remove metadata, convert formats, and meet file-size limits—locally in your browser.
           </p>
-          <div className="home-tool-grid">
-            <Link href="/tools/rotate-flip" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconRotate />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">Rotate &amp; flip</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    90°/180°, mirror. Batch ZIP. Fixes sideways EXIF ignored by some sites.
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href="/tools/heic-converter" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconHeic />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">HEIC to JPG / WebP</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    iPhone photos to JPEG or WebP. Quality slider, batch ZIP.
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href="/tools/pdf-to-image" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconPdf />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">PDF to image</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    Each page as PNG (capped pages). Then compress or resize as needed.
-                  </div>
-                </div>
-              </div>
-            </Link>
+          <div className="launch-actions">
+            <Link href="/safe-share" className="button">Prepare for Safe Sharing</Link>
+            <Link href="/upload-ready" className="button-outline">Meet an Upload Limit</Link>
           </div>
-        </section>
+          <div className="launch-proof">
+            <span>Image bytes stay on this device</span>
+            <span>Results verified before download</span>
+            <span>No account required</span>
+          </div>
+        </div>
+        <div className="launch-hero__panel" aria-label="PixCloak workflow summary">
+          <div><span>01</span><strong>Review</strong><small>See what the image contains.</small></div>
+          <div><span>02</span><strong>Prepare</strong><small>Redact, resize, convert, or compress.</small></div>
+          <div><span>03</span><strong>Verify</strong><small>Reopen and check the exported file.</small></div>
+        </div>
+      </section>
 
-        <section aria-labelledby="home-learn">
-          <h2 id="home-learn" className="home-section-label">
-            Learn &amp; trust
-          </h2>
-          <div className="home-tool-grid--pair">
-            <Link href="/guides" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconBook />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">Guides &amp; FAQs</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    Step‑by‑step: 100KB/200KB, ZIP batch, TinyPNG-style workflows.
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href="/research" className="home-feature-card">
-              <div className="home-feature-card__row">
-                <span className="home-feature-card__icon" aria-hidden>
-                  <IconResearch />
-                </span>
-                <div>
-                  <div className="home-feature-card__title">Research &amp; docs</div>
-                  <div className="text-muted" style={{ fontSize: 14, lineHeight: 1.45 }}>
-                    How compression and privacy architecture work (EEAT).
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-      </div>
+      <section className="home-section" aria-labelledby="core-workflows">
+        <div className="section-heading">
+          <span className="eyebrow">START WITH THE OUTCOME</span>
+          <h2 id="core-workflows">Two complete workflows</h2>
+        </div>
+        <div className="workflow-card-grid">
+          <Link href="/safe-share" className="workflow-card workflow-card--dark">
+            <span>SAFE SHARE</span>
+            <h3>Remove visible and hidden private information</h3>
+            <p>Draw permanent redactions, export without metadata, and review the verification result.</p>
+            <strong>Open Safe Share →</strong>
+          </Link>
+          <Link href="/upload-ready" className="workflow-card">
+            <span>UPLOAD READY</span>
+            <h3>Meet a portal&apos;s size and format requirements</h3>
+            <p>Choose the limit, process a batch, and download only results that pass the final check.</p>
+            <strong>Open Upload Ready →</strong>
+          </Link>
+        </div>
+      </section>
 
-      <div className="card" style={{ marginTop: 24 }}>
-        <h2 style={{ marginBottom: 12, fontSize: 20, color: "#0f172a" }}>Why PixCloak? (Local vs Cloud)</h2>
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14, textAlign: "left" }}>
-            <thead>
-              <tr style={{ borderBottom: "2px solid #e2e8f0" }}>
-                <th style={{ padding: "12px 8px", color: "#64748b", fontWeight: 600 }}>Feature</th>
-                <th style={{ padding: "12px 8px", color: "#0f172a", fontWeight: 600 }}>PixCloak (Local)</th>
-                <th style={{ padding: "12px 8px", color: "#64748b", fontWeight: 600 }}>Traditional Cloud Tools</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
-                <td style={{ padding: "12px 8px", fontWeight: 500 }}>Privacy & Security</td>
-                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>100% Private (No Uploads)</td>
-                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Files uploaded to servers</td>
-              </tr>
-              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
-                <td style={{ padding: "12px 8px", fontWeight: 500 }}>Processing Speed</td>
-                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>Instant (Uses your device)</td>
-                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Depends on internet speed</td>
-              </tr>
-              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
-                <td style={{ padding: "12px 8px", fontWeight: 500 }}>File Size Limits</td>
-                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>Unlimited</td>
-                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Usually capped (e.g., 5MB)</td>
-              </tr>
-              <tr style={{ borderBottom: "1px solid #f1f5f9" }}>
-                <td style={{ padding: "12px 8px", fontWeight: 500 }}>Cost & Quotas</td>
-                <td style={{ padding: "12px 8px", color: "#16a34a", fontWeight: 500 }}>Completely Free</td>
-                <td style={{ padding: "12px 8px", color: "#ef4444" }}>Paywalls & daily limits</td>
-              </tr>
-            </tbody>
-          </table>
+      <section className="home-section" aria-labelledby="quick-tools">
+        <div className="section-heading">
+          <span className="eyebrow">DIRECT TOOLS</span>
+          <h2 id="quick-tools">Fix one specific problem</h2>
         </div>
-      </div>
+        <div className="quick-tool-grid">
+          {quickTools.map((tool) => (
+            <Link key={tool.href} href={tool.href} className="quick-tool-card">
+              <strong>{tool.title}</strong><span>{tool.text}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <div className="card" style={{ marginTop: 24 }}>
-        <h2 style={{ marginBottom: 12, fontSize: 20, color: "#0f172a" }}>Popular quick links</h2>
-        <div className="home-quick-group">
-          <h3>Privacy &amp; redaction (top searches)</h3>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link className="pill" href="/redact">
-              Redact image online
-            </Link>
-            <Link className="pill" href="/guides/license-plate-redaction">
-              Redact vs blur license plate
-            </Link>
-            <Link className="pill" href="/guides/blur-face-in-photo">
-              Blur face online
-            </Link>
-            <Link className="pill" href="/guides/remove-exif-wechat">
-              WeChat EXIF guide
-            </Link>
-            <Link className="pill" href="/guides/export-without-metadata">
-              Remove EXIF/GPS
-            </Link>
-          </div>
+      <section className="local-explainer">
+        <div>
+          <span className="eyebrow">LOCAL PROCESSING</span>
+          <h2>The image is processed by your browser</h2>
+          <p>
+            The editing and export pipeline runs on this device. The website may load disclosed analytics or advertising only after the applicable consent choice; those services do not receive the image file from PixCloak.
+          </p>
+          <Link href="/privacy">See exactly what the site records →</Link>
         </div>
-        <div className="home-quick-group">
-          <h3>Compression &amp; size</h3>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link className="pill" href="/guides/compress-image-to-100kb">
-              Compress to 100KB
-            </Link>
-            <Link className="pill" href="/guides/compress-to-200kb">
-              Compress to 200KB
-            </Link>
-            <Link className="pill" href="/guides/zip-batch-download">
-              Download ZIP (batch)
-            </Link>
-            <Link className="pill" href="/guides/tinypng-alternative-free-no-upload">
-              TinyPNG alternative
-            </Link>
-            <Link className="pill" href="/guides/long-tail">
-              Platform size guides
-            </Link>
-            <Link className="pill" href="/tools/favicon-pack">
-              Favicon generator
-            </Link>
-            <Link className="pill" href="/guides/how-to-compress-on-iphone">
-              Compress on iPhone
-            </Link>
-            <Link className="pill" href="/guides/how-to-compress-image-without-losing-quality">
-              Compress without quality loss
-            </Link>
-            <Link className="pill" href="/guides/complete-image-compression-guide">
-              Compression guide
-            </Link>
-          </div>
-        </div>
-        <div className="home-quick-group">
-          <h3>Format &amp; dimensions</h3>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link className="pill" href="/tools/resize-image">
-              Resize image
-            </Link>
-            <Link className="pill" href="/tools/rotate-flip">
-              Rotate &amp; flip
-            </Link>
-            <Link className="pill" href="/tools/png-jpg-converter">
-              PNG ↔ JPG
-            </Link>
-            <Link className="pill" href="/tools/webp-converter">
-              WebP converter
-            </Link>
-            <Link className="pill" href="/tools/heic-converter">
-              HEIC to JPG
-            </Link>
-            <Link className="pill" href="/tools/pdf-to-image">
-              PDF to image
-            </Link>
-          </div>
-        </div>
-        <div className="home-quick-group">
-          <h3>About</h3>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <Link className="pill" href="/about">
-              About / trust
-            </Link>
-            <Link className="pill" href="/research">
-              Algorithm &amp; privacy docs
-            </Link>
-          </div>
-        </div>
-      </div>
+        <ol>
+          <li><span>1</span>Select a file from this device.</li>
+          <li><span>2</span>The browser decodes and processes it locally.</li>
+          <li><span>3</span>The exported result is decoded and checked again.</li>
+        </ol>
+      </section>
 
-      <div className="card" style={{ marginTop: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>FAQ</h2>
-        <div style={{ display: "grid", gap: 8 }}>
-          <div>
-            <strong>Will my images be uploaded?</strong>
-            <div className="text-muted">No. All processing runs locally in your browser; files never leave your device.</div>
-          </div>
-          <div>
-            <strong>Which formats do you support?</strong>
-            <div className="text-muted">JPEG, PNG, and WebP for compression and export. Tools vary; see each page for details.</div>
-          </div>
-          <div>
-            <strong>Can I batch download results?</strong>
-            <div className="text-muted">Yes. Use the compressor’s ZIP option or follow the batch download guide.</div>
-          </div>
+      <section className="home-section" aria-labelledby="real-example">
+        <div className="section-heading">
+          <span className="eyebrow">REAL PRODUCT SAMPLE</span>
+          <h2 id="real-example">Redaction is flattened into the exported image</h2>
         </div>
-      </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Image Compressor", item: absoluteUrl("/compress") },
-              { "@type": "ListItem", position: 2, name: "Image Redactor", item: absoluteUrl("/redact") },
-              { "@type": "ListItem", position: 3, name: "All image tools", item: absoluteUrl("/tools") },
-              { "@type": "ListItem", position: 4, name: "Rotate and flip images", item: absoluteUrl("/tools/rotate-flip") },
-              { "@type": "ListItem", position: 5, name: "HEIC to JPG or WebP", item: absoluteUrl("/tools/heic-converter") },
-              { "@type": "ListItem", position: 6, name: "PDF to image", item: absoluteUrl("/tools/pdf-to-image") },
-              { "@type": "ListItem", position: 7, name: "Guides", item: absoluteUrl("/guides") },
-              { "@type": "ListItem", position: 8, name: "Research and technical docs", item: absoluteUrl("/research") },
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Will my images be uploaded?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "No. All processing runs locally in your browser; files never leave your device.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Which formats do you support?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "JPEG, PNG, and WebP for compression and export. Tools vary; see each page for details.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Can I batch download results?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. Use the compressor’s ZIP option or follow the batch download guide.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
+        <div className="example-grid">
+          <figure>
+            <Image src="/press/plate-upload.webp" width={720} height={405} alt="Original sample loaded in the PixCloak redaction tool" />
+            <figcaption>Before: review the original locally.</figcaption>
+          </figure>
+          <figure>
+            <Image src="/press/plate-solid.webp" width={720} height={405} alt="Sample after a permanent solid redaction was applied" />
+            <figcaption>After: the covered pixels are part of the new file.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="card supported-summary">
+        <h2>Supported in V1.0</h2>
+        <p>JPG, PNG, and WebP processing; HEIC conversion; hard KB caps; manual solid, pixelated, and blurred redaction; metadata cleanup and export verification.</p>
+        <p className="text-muted">Automatic face, plate, text, and QR detection is intentionally reserved for V1.1.</p>
+      </section>
+
+      <section className="card compact-faq">
+        <h2>Common questions</h2>
+        <details><summary>Are images uploaded?</summary><p>No. The image editing pipeline runs locally in the browser.</p></details>
+        <details><summary>Can a result exceed the selected KB limit?</summary><p>No successful result is offered above a hard limit. If necessary, dimensions are reduced; otherwise the tool reports a failure.</p></details>
+        <details><summary>Does local processing mean there is no analytics or advertising?</summary><p>No. The privacy page separately discloses website analytics, advertising, and consent behavior. Image bytes are not included in those events.</p></details>
+      </section>
     </div>
   );
 }
-
-export const metadata: Metadata = {
-  title: {
-    absolute: "Free Image Compress & Redact Online—No Upload | PixCloak",
-  },
-  description:
-    "Free browser tools: compress JPG/PNG/WebP to exact KB, redact faces & license plates online, strip EXIF. No upload—works offline in Safari and Chrome.",
-  alternates: {
-    canonical: "/",
-    languages: {
-      "x-default": "/",
-      en: "/",
-      "en-US": "/",
-      "en-GB": "/",
-      "zh-CN": "/zh",
-      zh: "/zh",
-    },
-  },
-  openGraph: {
-    title: "PixCloak—local image compress & redact",
-    description: "Exact-KB compression and privacy redaction in your browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
-    url: "/",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PixCloak—compress & redact locally",
-    description: "No-upload image tools for KB targets and privacy. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.",
-  },
-};

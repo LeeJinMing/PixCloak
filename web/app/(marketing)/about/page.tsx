@@ -4,11 +4,11 @@ import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'About PixCloak: Privacy‑First Image Toolkit',
-  description: 'Who we are: a browser-based image toolkit—compress to exact KB, redact, strip EXIF. AGPL core, no image uploads, links to research and privacy policy.',
+  description: 'PixCloak prepares private images for safe sharing and upload with local redaction, metadata cleanup, conversion, and hard file-size limits.',
   alternates: { canonical: '/about', languages: { 'x-default': '/about' } },
   openGraph: {
     title: 'About PixCloak',
-    description: 'Privacy-first, local image tools and guides. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
+    description: 'Privacy-first local image preparation with explicit website analytics and advertising choices.',
     url: '/about',
     type: 'website',
   },
@@ -23,8 +23,8 @@ export default function AboutPage() {
         <h1>About PixCloak</h1>
         <p>
           PixCloak is a privacy‑first image toolkit. Our goal is to make everyday
-          image tasks fast, trustworthy, and accessible directly in your browser — no uploads,
-          no tracking, and no surprises.
+          image preparation trustworthy and accessible directly in your browser. Image files stay on the device;
+          optional website analytics and advertising are disclosed and consent-gated separately.
         </p>
         <p className="text-muted" style={{ fontSize: 14, marginBottom: 0 }}>
           <strong>Trust &amp; verification:</strong> Image processing uses your device&apos;s CPU/GPU (Canvas, workers). You can use DevTools → Network on tool pages to confirm no image payload is sent to our origin. Marketing pages may load analytics or ads; core tool UIs are designed to stay usable.
@@ -39,18 +39,18 @@ export default function AboutPage() {
 
         <h2>What you can do</h2>
         <ul>
-          <li>Compress photos to a target size (KB) with binary‑search quality tuning</li>
+          <li>Compress photos under a hard target size, reducing dimensions when quality alone is not enough</li>
           <li>Choose output format: JPEG / WebP / PNG; resize by longest side or exact WxH</li>
-          <li>Redact images with solid blocks or strong pixelation; remove EXIF/GPS on export</li>
+          <li>Redact images with solid blocks, strong pixelation, or permanent blur; verify metadata cleanup on export</li>
           <li>Batch processing and ZIP download for productivity</li>
-          <li>Works offline after first load (PWA); all processing happens locally</li>
+          <li>Process images locally in the browser without sending image bytes to PixCloak</li>
         </ul>
 
         <h2>Further reading</h2>
         <ul>
           <li><Link href="/privacy">Privacy policy</Link> — what we collect on the site</li>
-          <li><Link href="/research">Research</Link> — methodology and deeper write‑ups</li>
-          <li><Link href="/guides/gsc-operations">Search &amp; indexing notes</Link> — for teams publishing guides</li>
+          <li><Link href="/safe-share">Safe Share</Link> — remove visible and hidden private information</li>
+          <li><Link href="/upload-ready">Upload Ready</Link> — meet file-size, format, and dimension requirements</li>
         </ul>
 
         <h2>Our principles</h2>
@@ -62,9 +62,9 @@ export default function AboutPage() {
 
         <h2>Roadmap (high level)</h2>
         <ul>
-          <li>Template presets and team‑oriented workflows</li>
-          <li>CLI/API and automation for batch pipelines</li>
-          <li>More programmatic SEO guides for practical use cases</li>
+          <li>V1.1: local face, plate, text, and QR detection with manual review</li>
+          <li>V1.2: browser extension, desktop/CLI workflows, and a reproducible benchmark</li>
+          <li>V2.0: team policies, reports, self-hosting, and enterprise support</li>
         </ul>
 
         <h2>Contact</h2>

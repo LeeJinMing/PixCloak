@@ -9,44 +9,72 @@ import {
   type DrawableSource,
   type RedactBox,
   type RelRedactBox,
+  scanImageMetadata,
+  metadataIsClean,
+  verifyImageBlob,
+  formatBytes,
+  type MetadataScan,
 } from "@/lib/image";
 import { downloadZipFromBlobs } from "@/lib/image/zip";
 import { getRedactStrings, type RedactPreset } from "@/lib/i18n/redact";
+import { batchCountBucket, durationBucket, emitProductEvent, fileSizeBucket } from "@/lib/productEvents";
 
 type Box = RedactBox;
 type RelBox = RelRedactBox;
 type Preset = RedactPreset;
 
-type RedactClientProps = { locale?: "en" | "zh" };
+type RedactClientProps = { locale?: "en" | "zh"; surface?: "redact" | "safe_share" };
 
-export default function RedactClient({ locale = "en" }: RedactClientProps) {
+export default function RedactClient({ locale = "en", surface = "redact" }: RedactClientProps) {
   const s = getRedactStrings(locale);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [fileList, setFileList] = useState<File[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [reviewedIndices, setReviewedIndices] = useState<Set<number>>(new Set());
+  const [currentInfo, setCurrentInfo] = useState<{ width: number; height: number; size: number; type: string; scan: MetadataScan } | null>(null);
   const [boxes, setBoxes] = useState<Box[]>([]);
   const [drawing, setDrawing] = useState<boolean>(false);
   const [start, setStart] = useState<{ x: number; y: number } | null>(null);
-  const [mode, setMode] = useState<"solid" | "pixelate">("solid");
+  const [mode, setMode] = useState<"solid" | "pixelate" | "blur">("solid");
   const [pixelStrength, setPixelStrength] = useState<"strong" | "stronger" | "extreme">("strong");
   const undoStack = useRef<Box[][]>([]);
   const baseSourceRef = useRef<DrawableSource | null>(null);
   const relBoxesRef = useRef<RelBox[]>([]);
+  const boxesByFileRef = useRef<Record<number, RelBox[]>>({});
   const objectUrlRef = useRef<string | null>(null);
   const [presetKey, setPresetKey] = useState<string>("");
   const [userPresets, setUserPresets] = useState<Preset[]>([]);
   const jsonInputRef = useRef<HTMLInputElement | null>(null);
+  const [verification, setVerification] = useState<string>("");
+  const [batchBusy, setBatchBusy] = useState(false);
+  const [batchFailures, setBatchFailures] = useState<string[]>([]);
+  const cancelBatchRef = useRef(false);
+
+  useEffect(() => {
+    emitProductEvent("tool_view", { tool: surface });
+  }, [surface]);
 
   function clearBoxes() {
     undoStack.current = [];
     setDrawing(false);
     setStart(null);
     setBoxes([]);
+    boxesByFileRef.current[currentIndex] = [];
     setTimeout(() => draw(undefined, []), 0);
   }
 
-  async function handleFile(file: File) {
+  function saveCurrentBoxes() {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const rel = absToRel(boxes, canvas.width || 1, canvas.height || 1);
+    relBoxesRef.current = rel;
+    boxesByFileRef.current[currentIndex] = rel;
+  }
+
+  async function handleFile(file: File, index: number, preserveCurrent = true) {
+    if (preserveCurrent) saveCurrentBoxes();
     if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
     if (baseSourceRef.current instanceof ImageBitmap) baseSourceRef.current.close();
     const url = URL.createObjectURL(file);
@@ -54,14 +82,43 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
     const source = await loadOrientedBitmap(file);
     baseSourceRef.current = source;
     setImageUrl(url);
-    setBoxes([]);
-    relBoxesRef.current = [];
-    setTimeout(() => draw(undefined, []), 0);
+    const { width, height } = getSourceSize(source);
+    const scan = await scanImageMetadata(file);
+    const saved = boxesByFileRef.current[index] ?? [];
+    const restored = relToAbs(saved, width, height);
+    setCurrentIndex(index);
+    setReviewedIndices((previous) => new Set(previous).add(index));
+    setBoxes(restored);
+    relBoxesRef.current = saved;
+    setCurrentInfo({ width, height, size: file.size, type: file.type || scan.format, scan });
+    setTimeout(() => draw(undefined, restored), 0);
   }
-  function handleFiles(list: FileList) {
-    const arr = Array.from(list).filter(f => f.type.startsWith('image/'))
+  function handleFiles(list: FileList | File[]) {
+    const arr = Array.from(list).filter(f => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
     setFileList(arr);
-    if (arr[0]) handleFile(arr[0]);
+    boxesByFileRef.current = {};
+    setReviewedIndices(new Set());
+    setCurrentIndex(0);
+    if (arr[0]) handleFile(arr[0], 0, false);
+  }
+
+  async function pasteFromClipboard() {
+    setVerification("");
+    try {
+      const items = await navigator.clipboard.read();
+      const pasted: File[] = [];
+      for (const item of items) {
+        const imageType = item.types.find((type) => type.startsWith("image/"));
+        if (!imageType) continue;
+        const blob = await item.getType(imageType);
+        const extension = imageType.split("/")[1]?.replace("jpeg", "jpg") || "png";
+        pasted.push(new File([blob], `clipboard-${pasted.length + 1}.${extension}`, { type: imageType }));
+      }
+      if (!pasted.length) throw new Error(locale === "zh" ? "剪贴板中没有图片。" : "No image was found in the clipboard.");
+      handleFiles(pasted);
+    } catch (error) {
+      setVerification(error instanceof Error ? error.message : (locale === "zh" ? "无法读取剪贴板。" : "Clipboard access failed."));
+    }
   }
 
   function onPointerDown(e: React.PointerEvent<HTMLCanvasElement>) {
@@ -122,7 +179,7 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
       if (mode === "solid") {
         ctx.fillStyle = "#000";
         ctx.fillRect(b.x, b.y, b.w, b.h);
-      } else {
+      } else if (mode === "pixelate") {
         const scale = pixelStrength === "extreme" ? 0.03 : pixelStrength === "stronger" ? 0.06 : 0.10;
         const tmpW = Math.max(1, Math.floor(b.w * scale));
         const tmpH = Math.max(1, Math.floor(b.h * scale));
@@ -134,6 +191,18 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
         tctx.drawImage(canvas, b.x, b.y, b.w, b.h, 0, 0, tmpW, tmpH);
         ctx.imageSmoothingEnabled = false;
         ctx.drawImage(tmp, 0, 0, tmpW, tmpH, b.x, b.y, b.w, b.h);
+        ctx.imageSmoothingEnabled = true;
+      } else {
+        const tmp = document.createElement("canvas");
+        tmp.width = Math.max(1, Math.ceil(b.w));
+        tmp.height = Math.max(1, Math.ceil(b.h));
+        const tctx = tmp.getContext("2d");
+        if (!tctx) continue;
+        tctx.drawImage(canvas, b.x, b.y, b.w, b.h, 0, 0, tmp.width, tmp.height);
+        ctx.save();
+        ctx.filter = `blur(${Math.max(8, Math.round(Math.min(b.w, b.h) * 0.08))}px)`;
+        ctx.drawImage(tmp, 0, 0, tmp.width, tmp.height, b.x, b.y, b.w, b.h);
+        ctx.restore();
       }
     }
   }
@@ -152,6 +221,7 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
     const all = [...base, ...(preview ? [preview] : [])];
     applyBoxesToCanvas(ctx, canvas, all);
     relBoxesRef.current = absToRel(base, width, height);
+    if (!preview) boxesByFileRef.current[currentIndex] = relBoxesRef.current;
   }
 
   function allPresets(): Preset[] { return [...s.presets, ...userPresets]; }
@@ -198,41 +268,107 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
     }
   }
 
-  function exportJpg() {
+  async function exportJpg() {
     const canvas = canvasRef.current; if (!canvas) return;
-    canvas.toBlob((blob) => { if (!blob) return; const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = "redacted.jpg"; a.click(); URL.revokeObjectURL(url); }, "image/jpeg", 0.92);
+    const startedAt = performance.now();
+    emitProductEvent("process_started", {
+      tool: surface,
+      input_format: fileList[0]?.type || "unknown",
+      output_format: "image/jpeg",
+      file_size_bucket: fileList[0] ? fileSizeBucket(fileList[0].size) : undefined,
+      batch_count_bucket: "1",
+    });
+    setVerification(locale === "zh" ? "正在验证导出文件…" : "Verifying export…");
+    const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.92));
+    if (!blob) {
+      setVerification(locale === "zh" ? "导出失败。" : "Export failed.");
+      return;
+    }
+    try {
+      const decoded = await verifyImageBlob(blob);
+      const scan = await scanImageMetadata(blob);
+      if (!metadataIsClean(scan)) throw new Error("Metadata remained in export");
+      setVerification(
+        locale === "zh"
+          ? `已验证：${decoded.width}×${decoded.height}，EXIF/GPS/XMP/IPTC 均未检出。`
+          : `Verified: ${decoded.width}×${decoded.height}; no EXIF, GPS, XMP, or IPTC detected.`
+      );
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "redacted.jpg";
+      a.click();
+      URL.revokeObjectURL(url);
+      emitProductEvent("process_succeeded", { tool: surface, output_format: "image/jpeg", duration_bucket: durationBucket(performance.now() - startedAt) });
+      emitProductEvent("download_completed", { tool: surface, output_format: "image/jpeg", batch_count_bucket: "1" });
+    } catch (error) {
+      setVerification(error instanceof Error ? error.message : "Export verification failed.");
+      emitProductEvent("process_failed", { tool: surface, output_format: "image/jpeg", duration_bucket: durationBucket(performance.now() - startedAt), error_code: "verification_failed" });
+    }
   }
 
   async function exportZipBatch() {
     if (!fileList.length) return;
-    const cw = canvasRef.current?.width || 1;
-    const ch = canvasRef.current?.height || 1;
-    const rel =
-      relBoxesRef.current.length > 0
-        ? relBoxesRef.current
-        : absToRel(boxes, cw, ch);
+    const startedAt = performance.now();
+    cancelBatchRef.current = false;
+    setBatchBusy(true);
+    setBatchFailures([]);
+    emitProductEvent("batch_started", { tool: surface, input_format: "mixed", output_format: "image/jpeg", batch_count_bucket: batchCountBucket(fileList.length), file_size_bucket: fileSizeBucket(fileList.reduce((total, file) => total + file.size, 0)) });
+    saveCurrentBoxes();
     const entries: { name: string; blob: Blob }[] = [];
-    for (const f of fileList) {
-      const source = await loadOrientedBitmap(f);
-      const { width, height } = getSourceSize(source);
-      const canvas = document.createElement("canvas");
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) {
-        if (source instanceof ImageBitmap) source.close();
-        continue;
+    const failures: string[] = [];
+    try {
+      for (const [fileIndex, f] of fileList.entries()) {
+        if (cancelBatchRef.current) break;
+        if (!reviewedIndices.has(fileIndex)) {
+          failures.push(`${f.name} (not reviewed)`);
+          continue;
+        }
+        try {
+          const source = await loadOrientedBitmap(f);
+          const { width, height } = getSourceSize(source);
+          const canvas = document.createElement("canvas");
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) {
+            if (source instanceof ImageBitmap) source.close();
+            throw new Error("Canvas not supported");
+          }
+          ctx.drawImage(source, 0, 0);
+          if (source instanceof ImageBitmap) source.close();
+          const abs = relToAbs(boxesByFileRef.current[fileIndex] ?? [], width, height);
+          applyBoxesToCanvas(ctx, canvas, abs);
+          const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.92));
+          if (!blob) throw new Error("Export failed");
+          await verifyImageBlob(blob);
+          const scan = await scanImageMetadata(blob);
+          if (!metadataIsClean(scan)) throw new Error("Metadata verification failed");
+          entries.push({ name: renameOut(f.name), blob });
+        } catch {
+          failures.push(f.name);
+        }
       }
-      ctx.drawImage(source, 0, 0);
-      if (source instanceof ImageBitmap) source.close();
-      const abs = relToAbs(rel, width, height);
-      applyBoxesToCanvas(ctx, canvas, abs);
-      const blob: Blob | null = await new Promise((resolve) =>
-        canvas.toBlob(resolve, "image/jpeg", 0.92)
-      );
-      if (blob) entries.push({ name: renameOut(f.name), blob });
+      setBatchFailures(failures);
+      if (cancelBatchRef.current) {
+        setVerification(locale === "zh" ? "批量任务已取消。" : "Batch cancelled.");
+        return;
+      }
+      if (entries.length) {
+        await downloadZipFromBlobs(entries, "redacted-images.zip");
+        setVerification(
+          locale === "zh"
+            ? `已验证 ${entries.length} 个文件；${failures.length} 个失败，可重试。`
+            : `Verified ${entries.length} files; ${failures.length} failed and can be retried.`
+        );
+        emitProductEvent("process_succeeded", { tool: surface, output_format: "image/jpeg", batch_count_bucket: batchCountBucket(entries.length), duration_bucket: durationBucket(performance.now() - startedAt) });
+        emitProductEvent("download_completed", { tool: surface, output_format: "image/jpeg", batch_count_bucket: batchCountBucket(entries.length) });
+      } else {
+        emitProductEvent("process_failed", { tool: surface, output_format: "image/jpeg", batch_count_bucket: batchCountBucket(fileList.length), duration_bucket: durationBucket(performance.now() - startedAt), error_code: "batch_failed" });
+      }
+    } finally {
+      setBatchBusy(false);
     }
-    if (entries.length) await downloadZipFromBlobs(entries, "redacted-images.zip");
   }
 
   function renameOut(name: string) {
@@ -250,7 +386,10 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.code === 'Space') { e.preventDefault(); setMode((m) => (m === 'solid' ? 'pixelate' : 'solid')); }
+      if (e.code === 'Space') {
+        e.preventDefault();
+        setMode((m) => (m === 'solid' ? 'pixelate' : m === 'pixelate' ? 'blur' : 'solid'));
+      }
       if (e.key === 'Delete' || e.key === 'Backspace') { setBoxes((prev) => { const last = undoStack.current.pop(); return last ?? prev.slice(0, -1); }); }
     }
     window.addEventListener('keydown', onKey); return () => window.removeEventListener('keydown', onKey);
@@ -289,17 +428,52 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
             <button className="button-soft" onClick={() => fileInputRef.current?.click()} aria-controls="redact-file-input">
               {s.chooseImages}
             </button>
+            {surface === "safe_share" && (
+              <button className="button-outline" type="button" onClick={pasteFromClipboard}>
+                {locale === "zh" ? "从剪贴板粘贴" : "Paste image"}
+              </button>
+            )}
             <span className="text-muted" style={{ fontSize: 12 }} aria-live="polite">
               {fileList.length ? s.filesSelected(fileList.length) : s.noFiles}
             </span>
           </div>
+          {fileList.length > 1 && (
+            <div className="file-queue" aria-label={locale === "zh" ? "文件队列" : "File review queue"}>
+              {fileList.map((file, index) => (
+                <button
+                  key={`${file.name}-${index}`}
+                  type="button"
+                  data-current={index === currentIndex}
+                  data-reviewed={reviewedIndices.has(index)}
+                  onClick={() => handleFile(file, index)}
+                >
+                  <span>{index + 1}</span>
+                  <span>{file.name}</span>
+                  <small>{reviewedIndices.has(index) ? (locale === "zh" ? "已检查" : "Reviewed") : (locale === "zh" ? "待检查" : "Needs review")}</small>
+                </button>
+              ))}
+            </div>
+          )}
+          {currentInfo && (
+            <div className="privacy-scan" aria-live="polite">
+              <div><strong>{currentInfo.type || "image"}</strong><span>{currentInfo.width}×{currentInfo.height} • {formatBytes(currentInfo.size)}</span></div>
+              <div className="metadata-badges">
+                <span data-found={currentInfo.scan.hasExif}>EXIF: {currentInfo.scan.hasExif ? "found" : "not found"}</span>
+                <span data-found={currentInfo.scan.hasGps}>GPS: {currentInfo.scan.hasGps ? "found" : "not found"}</span>
+                <span data-found={currentInfo.scan.hasXmp}>XMP: {currentInfo.scan.hasXmp ? "found" : "not found"}</span>
+                <span data-found={currentInfo.scan.hasIptc}>IPTC: {currentInfo.scan.hasIptc ? "found" : "not found"}</span>
+              </div>
+              {currentInfo.scan.note && <small>{currentInfo.scan.note}</small>}
+            </div>
+          )}
 
           {/* Row 2: Mode + Strength */}
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <label htmlFor="mode-select">{s.mode}</label>
-            <select id="mode-select" value={mode} onChange={(e) => { setMode(e.target.value as ("solid" | "pixelate")); setTimeout(() => draw(), 0); }} className="select">
+            <select id="mode-select" value={mode} onChange={(e) => { setMode(e.target.value as ("solid" | "pixelate" | "blur")); setTimeout(() => draw(), 0); }} className="select">
               <option value="solid">{s.modeSolid}</option>
               <option value="pixelate">{s.modePixelate}</option>
+              <option value="blur">{locale === "zh" ? "模糊" : "Blur"}</option>
             </select>
             {mode === 'pixelate' && (
               <>
@@ -324,12 +498,18 @@ export default function RedactClient({ locale = "en" }: RedactClientProps) {
             <button onClick={triggerImport} className="button button-dark">{s.importJson}</button>
             <input ref={jsonInputRef} id="redact-preset-import" aria-label={s.importJsonLabel} type="file" accept="application/json" onChange={onImportJson} style={{ display: 'none' }} />
           </div>
+          {verification && (
+            <div className="verification-banner" role="status" aria-live="polite">{verification}</div>
+          )}
 
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <button onClick={clearBoxes} className="button button-dark" disabled={!boxes.length}>{s.clear}</button>
             <button onClick={exportJpg} disabled={!imageUrl} className="button button-success">{s.exportJpg}</button>
-            <button onClick={exportZipBatch} disabled={!fileList.length} className="button button-dark">{s.exportZip}</button>
+            <button onClick={exportZipBatch} disabled={!fileList.length || batchBusy} className="button button-dark">{batchBusy ? (locale === "zh" ? "处理中…" : "Processing…") : s.exportZip}</button>
+            {batchBusy && <button onClick={() => { cancelBatchRef.current = true; }} className="button-outline">{locale === "zh" ? "取消" : "Cancel"}</button>}
+            {!batchBusy && batchFailures.length > 0 && <button onClick={exportZipBatch} className="button-outline">{locale === "zh" ? "重试批量任务" : "Retry batch"}</button>}
           </div>
+          {batchFailures.length > 0 && <div className="text-muted" style={{ fontSize: 12 }}>{locale === "zh" ? "失败：" : "Failed: "}{batchFailures.join(", ")}</div>}
         </div>
       </div>
       <div className="card" style={{ maxWidth: '100%', overflow: 'auto' }}>

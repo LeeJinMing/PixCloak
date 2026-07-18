@@ -13,6 +13,10 @@ export type CompressOptions = {
   resizeMode?: ResizeMode;
   resizeA?: number;
   resizeB?: number;
+  /** Allow the encoder to reduce dimensions when quality alone cannot meet a hard byte cap. */
+  allowDimensionReduction?: boolean;
+  minQuality?: number;
+  minDimension?: number;
 };
 
 export const LARGE_FILE_WARNING_BYTES = 20 * 1024 * 1024;

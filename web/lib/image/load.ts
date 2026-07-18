@@ -1,12 +1,29 @@
 import type { DrawableSource } from "./types";
 
+function isHeicFile(file: File): boolean {
+  return /image\/hei[cf]/i.test(file.type) || /\.(heic|heif)$/i.test(file.name);
+}
+
+async function browserDecodableFile(file: File): Promise<File> {
+  if (!isHeicFile(file)) return file;
+  const heic2any = (await import("heic2any")).default;
+  const converted = await heic2any({ blob: file, toType: "image/jpeg", quality: 0.94 });
+  const blob = Array.isArray(converted) ? converted[0] : converted;
+  if (!blob) throw new Error("This HEIC file could not be converted in this browser");
+  return new File([blob], file.name.replace(/\.(heic|heif)$/i, ".jpg"), {
+    type: "image/jpeg",
+    lastModified: file.lastModified,
+  });
+}
+
 /** Load image with EXIF orientation applied (when supported). */
 export async function loadOrientedBitmap(file: File): Promise<DrawableSource> {
+  const decodable = await browserDecodableFile(file);
   try {
     const opts: ImageBitmapOptions = { imageOrientation: "from-image" };
-    return await createImageBitmap(file, opts);
+    return await createImageBitmap(decodable, opts);
   } catch {
-    return loadImageFromFile(file);
+    return loadImageFromFile(decodable);
   }
 }
 

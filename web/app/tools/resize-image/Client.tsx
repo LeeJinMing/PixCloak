@@ -8,7 +8,10 @@ import {
   runWithConcurrency,
   getLargeFileNames,
   LARGE_FILE_WARNING_BYTES,
+  canvasToBlob,
+  verifyImageBlob,
 } from '@/lib/image';
+import { batchCountBucket, durationBucket, emitProductEvent, fileSizeBucket } from '@/lib/productEvents';
 
 type PresetSize = '1920' | '1080' | '800' | 'custom';
 type FitMode = 'contain' | 'cover' | 'stretch';
@@ -35,6 +38,10 @@ function ResizeImageInner() {
   const [processing, setProcessing] = useState(false);
   const [largeFileWarning, setLargeFileWarning] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    emitProductEvent('tool_view', { tool: '/tools/resize-image' });
+  }, []);
 
   useEffect(() => {
     const w = searchParams.get('width');
@@ -163,13 +170,9 @@ function ResizeImageInner() {
           ctx.drawImage(source, 0, 0, targetWidth, targetHeight);
         }
 
-        const blob = await new Promise<Blob>((resolve, reject) => {
-          canvas.toBlob(
-            (b) => (b ? resolve(b) : reject(new Error('Failed to create blob'))),
-            file.type === 'image/png' ? 'image/png' : 'image/jpeg',
-            0.9
-          );
-        });
+        const outputFormat = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+        const blob = await canvasToBlob(canvas, outputFormat, 0.9);
+        await verifyImageBlob(blob);
 
         return {
           name: file.name,
@@ -186,13 +189,29 @@ function ResizeImageInner() {
   };
 
   const handleProcess = async () => {
+    const startedAt = performance.now();
+    emitProductEvent(images.length > 1 ? 'batch_started' : 'process_started', {
+      tool: '/tools/resize-image',
+      input_format: images.length === 1 ? images[0].type : 'mixed',
+      output_format: images.length === 1 && images[0].type === 'image/png' ? 'png' : images.length === 1 ? 'jpeg' : 'mixed',
+      file_size_bucket: fileSizeBucket(images.reduce((total, file) => total + file.size, 0)),
+      batch_count_bucket: batchCountBucket(images.length),
+    });
     setProcessing(true);
     try {
       const results = await runWithConcurrency(images, 3, (file) => resizeImage(file));
       setProcessed(results);
+      emitProductEvent('process_succeeded', {
+        tool: '/tools/resize-image', output_format: results.length === 1 ? results[0].blob.type : 'mixed',
+        batch_count_bucket: batchCountBucket(results.length), duration_bucket: durationBucket(performance.now() - startedAt),
+      });
     } catch (error) {
       console.error('Error processing images:', error);
       alert('Error processing images. Please try again.');
+      emitProductEvent('process_failed', {
+        tool: '/tools/resize-image', batch_count_bucket: batchCountBucket(images.length),
+        duration_bucket: durationBucket(performance.now() - startedAt), error_code: 'decode_failed',
+      });
     } finally {
       setProcessing(false);
     }
@@ -205,6 +224,7 @@ function ResizeImageInner() {
     a.download = `resized-${img.name}`;
     a.click();
     URL.revokeObjectURL(url);
+    emitProductEvent('download_completed', { tool: '/tools/resize-image', output_format: img.blob.type, batch_count_bucket: '1' });
   };
 
   const downloadAll = async () => {
@@ -225,6 +245,7 @@ function ResizeImageInner() {
     a.download = 'resized-images.zip';
     a.click();
     URL.revokeObjectURL(url);
+    emitProductEvent('download_completed', { tool: '/tools/resize-image', output_format: 'mixed', batch_count_bucket: batchCountBucket(processed.length) });
   };
 
   return (

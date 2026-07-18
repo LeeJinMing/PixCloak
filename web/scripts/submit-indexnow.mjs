@@ -1,8 +1,7 @@
 const site = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com"
 ).replace(/\/$/, "");
-const key =
-  process.env.INDEXNOW_KEY || process.env.NEXT_PUBLIC_INDEXNOW_KEY || "";
+const key = process.env.INDEXNOW_KEY || "";
 if (!key) {
   console.error("Missing INDEXNOW_KEY env var");
   process.exit(1);

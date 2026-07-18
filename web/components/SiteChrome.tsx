@@ -2,12 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { BeianFooter } from "@/components/BeianFooter";
 import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? "";
   const isZh = pathname === "/zh" || pathname.startsWith("/zh/");
+
+  useEffect(() => {
+    document.documentElement.lang = isZh ? "zh-CN" : "en";
+  }, [isZh]);
 
   return (
     <>
@@ -49,12 +54,12 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
               </>
             ) : (
               <>
+                <Link href="/safe-share">Safe Share</Link>
+                <Link href="/upload-ready">Upload Ready</Link>
                 <Link href="/compress">Compress</Link>
                 <Link href="/redact">Redact</Link>
                 <Link href="/tools">Tools</Link>
                 <Link href="/guides">Guides</Link>
-                <Link href="/guides/embed-button">Embed</Link>
-                <Link href="/press">Press</Link>
                 <Link href="/zh" className="text-muted">
                   中文
                 </Link>
@@ -74,7 +79,6 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
             <Link href="/privacy">{isZh ? "隐私政策" : "Privacy"}</Link>
             <Link href="/terms">{isZh ? "服务条款" : "Terms"}</Link>
             <Link href="/contact">{isZh ? "联系反馈" : "Contact"}</Link>
-            {!isZh && <Link href="/guides/embed-button">Embed</Link>}
             <Link href="/contact" className="pill">
               {isZh ? "反馈" : "Feedback"}
             </Link>

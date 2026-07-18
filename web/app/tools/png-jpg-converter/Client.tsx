@@ -1,7 +1,8 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import JSZip from 'jszip';
-import { loadOrientedBitmap, getSourceSize, runWithConcurrency } from '@/lib/image';
+import { canvasToBlob, loadOrientedBitmap, getSourceSize, runWithConcurrency, verifyImageBlob } from '@/lib/image';
+import { batchCountBucket, durationBucket, emitProductEvent, fileSizeBucket } from '@/lib/productEvents';
 
 type ConversionDirection = 'png-to-jpg' | 'jpg-to-png';
 
@@ -21,6 +22,10 @@ export default function PngJpgConverterClient() {
   const [bgColor, setBgColor] = useState('#FFFFFF');
   const [processing, setProcessing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    emitProductEvent('tool_view', { tool: '/tools/png-jpg-converter' });
+  }, []);
 
   const handleFiles = (files: FileList | null) => {
     if (!files) return;
@@ -50,13 +55,8 @@ export default function PngJpgConverterClient() {
       const outputFormat = direction === 'png-to-jpg' ? 'image/jpeg' : 'image/png';
       const outputQuality = direction === 'png-to-jpg' ? quality / 100 : 1.0;
 
-      const blob = await new Promise<Blob>((resolve, reject) => {
-        canvas.toBlob(
-          (b) => (b ? resolve(b) : reject(new Error('Failed to create blob'))),
-          outputFormat,
-          outputQuality
-        );
-      });
+      const blob = await canvasToBlob(canvas, outputFormat, outputQuality);
+      await verifyImageBlob(blob);
 
       const newExtension = direction === 'png-to-jpg' ? '.jpg' : '.png';
       const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
@@ -74,13 +74,30 @@ export default function PngJpgConverterClient() {
   };
 
   const handleConvert = async () => {
+    const startedAt = performance.now();
+    const outputFormat = direction === 'png-to-jpg' ? 'jpeg' : 'png';
+    emitProductEvent(images.length > 1 ? 'batch_started' : 'process_started', {
+      tool: '/tools/png-jpg-converter',
+      input_format: direction === 'png-to-jpg' ? 'png' : 'jpeg', output_format: outputFormat,
+      file_size_bucket: fileSizeBucket(images.reduce((total, file) => total + file.size, 0)),
+      batch_count_bucket: batchCountBucket(images.length),
+    });
     setProcessing(true);
     try {
       const results = await runWithConcurrency(images, 3, (file) => convertImage(file));
       setProcessed(results);
+      emitProductEvent('process_succeeded', {
+        tool: '/tools/png-jpg-converter', output_format: outputFormat,
+        batch_count_bucket: batchCountBucket(results.length), duration_bucket: durationBucket(performance.now() - startedAt),
+      });
     } catch (error) {
       console.error('Error converting images:', error);
       alert('Error converting images. Please try again.');
+      emitProductEvent('process_failed', {
+        tool: '/tools/png-jpg-converter', output_format: outputFormat,
+        batch_count_bucket: batchCountBucket(images.length), duration_bucket: durationBucket(performance.now() - startedAt),
+        error_code: 'decode_failed',
+      });
     } finally {
       setProcessing(false);
     }
@@ -93,6 +110,7 @@ export default function PngJpgConverterClient() {
     a.download = img.name;
     a.click();
     URL.revokeObjectURL(url);
+    emitProductEvent('download_completed', { tool: '/tools/png-jpg-converter', output_format: img.blob.type, batch_count_bucket: '1' });
   };
 
   const downloadAll = async () => {
@@ -113,6 +131,7 @@ export default function PngJpgConverterClient() {
     a.download = `converted-images-${direction}.zip`;
     a.click();
     URL.revokeObjectURL(url);
+    emitProductEvent('download_completed', { tool: '/tools/png-jpg-converter', output_format: direction === 'png-to-jpg' ? 'jpeg' : 'png', batch_count_bucket: batchCountBucket(processed.length) });
   };
 
   return (

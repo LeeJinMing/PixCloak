@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Client from './Client';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
@@ -261,10 +262,10 @@ export default function Page() {
         <div className="card">
           <h2>Related Tools</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <a href="/tools/trim-transparent" className="pill">Trim Transparent Edges</a>
-            <a href="/compress" className="pill">Compress Images</a>
-            <a href="/tools/favicon-pack" className="pill">Create Favicon</a>
-            <a href="/guides/export-without-metadata" className="pill">Remove EXIF</a>
+            <Link href="/tools/trim-transparent" className="pill">Trim Transparent Edges</Link>
+            <Link href="/compress" className="pill">Compress Images</Link>
+            <Link href="/tools/favicon-pack" className="pill">Create Favicon</Link>
+            <Link href="/tools/exif-checker" className="pill">Remove EXIF</Link>
           </div>
         </div>
 

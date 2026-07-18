@@ -43,7 +43,7 @@ export function SiteGraphJsonLd() {
         "@id": websiteId,
         url: origin,
         name: "PixCloak",
-        description: "Compress and Redact images locally. No upload. No tracking.",
+        description: "Prepare private images locally with redaction, metadata cleanup, format conversion, resizing, and verified file-size limits.",
         publisher: { "@id": orgId },
         inLanguage: "en",
         about: { "@id": orgId },

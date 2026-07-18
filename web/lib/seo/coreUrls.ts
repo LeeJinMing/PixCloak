@@ -1,17 +1,27 @@
 /** Priority URLs for IndexNow, internal linking, and sitemap weight (GSC Jul 2026). */
-export const CORE_TOOL_PATHS = ["/", "/compress", "/redact"] as const;
+export const CORE_TOOL_PATHS = [
+  "/",
+  "/safe-share",
+  "/upload-ready",
+  "/compress",
+  "/redact",
+  "/tools/exif-checker",
+  "/tools/heic-converter",
+  "/tools/resize-image",
+  "/tools/png-jpg-converter",
+] as const;
 
 export const CORE_ZH_PATHS = ["/zh", "/zh/compress", "/zh/redact"] as const;
 
 export const CORE_GUIDE_PATHS = [
-  "/guides/blur-face-in-photo",
-  "/guides/compress-image-to-100kb",
-  "/guides/compress-to-200kb",
-  "/guides/remove-exif-wechat",
-  "/guides/tinypng-alternative-free-no-upload",
-  "/guides/license-plate-redaction",
-  "/guides/how-to-compress-on-iphone",
-  "/guides/how-to-compress-image-without-losing-quality",
+  "/guides/does-wechat-remove-exif-test",
+  "/guides/remove-gps-location-photo",
+  "/guides/redact-id-card-safely",
+  "/guides/compress-image-under-100kb",
+  "/guides/compress-image-under-200kb",
+  "/guides/heic-upload-error-convert-locally",
+  "/guides/webp-vs-jpeg-downloadable-samples",
+  "/guides/prepare-images-core-web-vitals",
 ] as const;
 
 export const CORE_SEO_PATHS = [
@@ -21,11 +31,11 @@ export const CORE_SEO_PATHS = [
 ] as const;
 
 export const CORE_GUIDE_HUB_LINKS: { href: string; label: string }[] = [
-  { href: "/guides/remove-exif-wechat", label: "WeChat EXIF & GPS guide" },
-  { href: "/guides/compress-image-to-100kb", label: "Compress image to 100KB" },
-  { href: "/guides/compress-to-200kb", label: "Compress to 200KB" },
-  { href: "/guides/tinypng-alternative-free-no-upload", label: "TinyPNG alternative (local)" },
-  { href: "/guides/blur-face-in-photo", label: "Blur face online (free)" },
-  { href: "/guides/license-plate-redaction", label: "Redact vs blur license plate" },
-  { href: "/guides/how-to-compress-on-iphone", label: "Compress photos on iPhone" },
+  { href: "/guides/does-wechat-remove-exif-test", label: "Does WeChat remove EXIF?" },
+  { href: "/guides/remove-gps-location-photo", label: "Remove photo GPS data" },
+  { href: "/guides/compress-image-under-100kb", label: "Compress under 100KB" },
+  { href: "/guides/compress-image-under-200kb", label: "Compress under 200KB" },
+  { href: "/guides/heic-upload-error-convert-locally", label: "Fix HEIC upload errors" },
+  { href: "/guides/webp-vs-jpeg-downloadable-samples", label: "WebP vs JPEG samples" },
+  { href: "/guides/redact-id-card-safely", label: "Redact an ID card safely" },
 ];

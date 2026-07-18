@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import TrustSignal, { NetworkMonitor, ProcessingDemo } from "@/components/TrustSignal";
 import {
   compressFilesWithWorker,
@@ -14,18 +14,31 @@ import {
   type ResizeMode,
 } from "@/lib/image";
 import { getCompressStrings } from "@/lib/i18n/compress";
+import { batchCountBucket, durationBucket, emitProductEvent, fileSizeBucket } from "@/lib/productEvents";
 
 const label: React.CSSProperties = { fontSize: 13, color: "#6b7280" };
 
-type CompressClientProps = { embedded?: boolean; locale?: "en" | "zh" };
+type CompressClientProps = { embedded?: boolean; locale?: "en" | "zh"; surface?: "compress" | "upload_ready" | "embed" };
 
-export default function CompressClient({ embedded = false, locale = "en" }: CompressClientProps) {
-  const s = getCompressStrings(locale);
+export default function CompressClient({ embedded = false, locale = "en", surface = "compress" }: CompressClientProps) {
+  const s = useMemo(() => getCompressStrings(locale), [locale]);
   const compressBase = locale === "zh" ? "/zh/compress" : "/compress";
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
-  const [results, setResults] = useState<{ name: string; url: string; size: number; fileIndex: number }[]>([]);
+  const [results, setResults] = useState<{
+    name: string;
+    url: string;
+    size: number;
+    fileIndex: number;
+    width: number;
+    height: number;
+    quality?: number;
+    verified: boolean;
+    targetBytes?: number;
+    originalSize: number;
+    format: OutputFormat;
+  }[]>([]);
   const [quality, setQuality] = useState<number>(0.8);
   const [targetKb, setTargetKb] = useState<number | "">("");
   const [resizeMode, setResizeMode] = useState<ResizeMode>("none");
@@ -33,6 +46,7 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
   const [resizeB, setResizeB] = useState<number | "">("");
   const [busy, setBusy] = useState<boolean>(false);
   const [progressCount, setProgressCount] = useState<number>(0);
+  const [processingTotal, setProcessingTotal] = useState<number>(0);
   const [format, setFormat] = useState<OutputFormat>("image/jpeg");
   const [prefix] = useState<string>("");
   const [suffix] = useState<string>("-compressed");
@@ -41,9 +55,15 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
   const [copyMsg, setCopyMsg] = useState<string>("");
   const [showAlphaWarning, setShowAlphaWarning] = useState<boolean>(false);
   const [failures, setFailures] = useState<string[]>([]);
+  const [failedFiles, setFailedFiles] = useState<File[]>([]);
+  const abortRef = useRef<AbortController | null>(null);
   const [largeFileWarning, setLargeFileWarning] = useState<string>("");
   const previewUrlsRef = useRef<string[]>([]);
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    emitProductEvent("tool_view", { tool: surface });
+  }, [surface]);
 
 
   useEffect(() => {
@@ -62,6 +82,13 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
         setResizeA(width);
         setResizeB(height);
       }
+    }
+
+    const longest = searchParams.get("longest");
+    if (longest && !Number.isNaN(Number(longest))) {
+      setResizeMode("longest");
+      setResizeA(Math.max(1, Math.floor(Number(longest))));
+      setResizeB("");
     }
 
     const formatParam = searchParams.get("format");
@@ -85,15 +112,16 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
       setSuccessMsg(s.presetApplied(decodeURIComponent(preset)));
       setTimeout(() => setSuccessMsg(""), 3000);
     }
-  }, [searchParams]);
+  }, [searchParams, s]);
 
   function handleFiles(list: FileList) {
-    const arr = Array.from(list).filter((f) => f.type.startsWith("image/"));
+    const arr = Array.from(list).filter((f) => f.type.startsWith("image/") || /\.(heic|heif)$/i.test(f.name));
     revokePreviewUrls(previewUrlsRef.current);
     previewUrlsRef.current = arr.map((f) => URL.createObjectURL(f));
     setFiles(arr);
     setResults([]);
     setFailures([]);
+    setFailedFiles([]);
     setPreviews([...previewUrlsRef.current]);
     const large = getLargeFileNames(arr, LARGE_FILE_WARNING_BYTES);
     setLargeFileWarning(
@@ -127,17 +155,33 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
     return `${prefix}${b2}${suffix}${e2}`;
   }, [keepExt, prefix, suffix]);
 
-  const compressAll = useCallback(async function compressAll() {
-    if (!files.length) return;
+  const compressAll = useCallback(async function compressAll(selection: File[] = files) {
+    if (!selection.length) return;
+    const startedAt = performance.now();
+    const eventTool = surface;
+    const controller = new AbortController();
+    abortRef.current = controller;
+    emitProductEvent(selection.length > 1 ? "batch_started" : "process_started", {
+      tool: eventTool,
+      input_format: selection.length === 1 ? selection[0].type || "unknown" : "mixed",
+      output_format: format,
+      file_size_bucket: fileSizeBucket(selection.reduce((total, file) => total + file.size, 0)),
+      batch_count_bucket: batchCountBucket(selection.length),
+    });
     setBusy(true);
     setProgressCount(0);
+    setProcessingTotal(selection.length);
     setFailures([]);
+    setResults((previous) => {
+      previous.forEach((result) => URL.revokeObjectURL(result.url));
+      return [];
+    });
     try {
       const resizeAVal = typeof resizeA === "number" ? resizeA : undefined;
       const resizeBVal = typeof resizeB === "number" ? resizeB : undefined;
       const targetKbVal = typeof targetKb === "number" ? targetKb : undefined;
       const outputs = await compressFilesWithWorker(
-        files,
+        selection,
         {
           format,
           quality,
@@ -147,10 +191,12 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
           resizeB: resizeBVal,
         },
         3,
-        (done) => setProgressCount(done)
+        (done) => setProgressCount(done),
+        controller.signal
       );
       const failed = outputs.filter((o) => !o.ok);
       const succeeded = outputs.filter((o) => o.ok);
+      setFailedFiles(outputs.map((output, index) => ({ output, file: selection[index] })).filter(({ output }) => !output.ok).map(({ file }) => file));
       if (failed.length) {
         setFailures(failed.map((f) => `${f.name}: ${"error" in f ? f.error : "failed"}`));
       }
@@ -159,22 +205,43 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
           .map((o, idx) => ({ o, idx }))
           .filter((x): x is { o: Extract<typeof x.o, { ok: true }>; idx: number } => x.o.ok)
           .map(({ o, idx }) => ({
-            name: buildName(files[idx]?.name ?? o.name, o.name),
+            name: buildName(selection[idx]?.name ?? o.name, o.name),
             url: URL.createObjectURL(o.blob),
             size: o.blob.size,
             fileIndex: idx,
+            width: o.width,
+            height: o.height,
+            quality: o.quality,
+            verified: o.verified,
+            targetBytes: o.targetBytes,
+            originalSize: o.originalSize,
+            format,
           }))
       );
       const okCount = succeeded.length;
       if (okCount > 0) {
         setSuccessMsg(s.successMsg(okCount, failed.length, quality));
+        emitProductEvent("process_succeeded", {
+          tool: eventTool,
+          output_format: format,
+          batch_count_bucket: batchCountBucket(selection.length),
+          duration_bucket: durationBucket(performance.now() - startedAt),
+        });
       } else {
         setSuccessMsg("");
+        emitProductEvent("process_failed", {
+          tool: eventTool,
+          output_format: format,
+          batch_count_bucket: batchCountBucket(selection.length),
+          duration_bucket: durationBucket(performance.now() - startedAt),
+          error_code: "all_outputs_failed",
+        });
       }
     } finally {
       setBusy(false);
+      abortRef.current = null;
     }
-  }, [files, format, quality, resizeA, resizeB, resizeMode, targetKb, buildName, s]);
+  }, [files, format, quality, resizeA, resizeB, resizeMode, targetKb, buildName, s, surface]);
 
   async function downloadZip() {
     if (!results.length) return;
@@ -185,6 +252,7 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
       })
     );
     await downloadZipFromBlobs(entries, "compressed-images.zip");
+    emitProductEvent("download_completed", { tool: surface, batch_count_bucket: batchCountBucket(results.length), output_format: format });
   }
 
   function downloadFirst() {
@@ -194,6 +262,7 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
     a.href = r.url;
     a.download = r.name;
     a.click();
+    emitProductEvent("download_completed", { tool: surface, batch_count_bucket: "1", output_format: format });
   }
 
   async function copyBlobToClipboard(blob: Blob): Promise<boolean> {
@@ -310,7 +379,7 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
         <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr 1fr' }}>
           <div>
             <label htmlFor="file-input" style={label}>{s.uploadLabel}</label>
-            <input id="file-input" ref={fileInputRef} type="file" accept="image/*" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); }} className="input" />
+            <input id="file-input" ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" multiple onChange={(e) => { if (e.target.files) handleFiles(e.target.files); }} className="input" />
             <div className="text-muted" style={{ fontSize: 12, marginTop: 6 }}>{files.length ? s.filesSelected(files.length) : s.noFiles}</div>
             {largeFileWarning && (
               <div style={{ fontSize: 12, color: '#b45309', marginTop: 6 }}>{largeFileWarning}</div>
@@ -345,17 +414,26 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
             <>
               <input type="number" placeholder={s.widthPh} value={resizeA} onChange={(e) => setResizeA(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
               <input type="number" placeholder={s.heightPh} value={resizeB} onChange={(e) => setResizeB(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120 }} />
+              {surface === "upload_ready" && (
+                <span className="ratio-presets" aria-label="Aspect ratio presets">
+                  {[["1:1", 1080, 1080], ["4:5", 1080, 1350], ["16:9", 1920, 1080], ["9:16", 1080, 1920]].map(([name, width, height]) => (
+                    <button key={name} type="button" className="pill-ghost" onClick={() => { setResizeA(Number(width)); setResizeB(Number(height)); }}>{name}</button>
+                  ))}
+                </span>
+              )}
             </>
           )}
           <label style={{ ...label, marginLeft: 12 }}>{s.targetKb}
             <input type="number" placeholder="200" value={targetKb} onChange={(e) => setTargetKb(e.target.value === '' ? '' : Math.max(1, Math.floor(Number(e.target.value))))} className="input" style={{ width: 120, marginLeft: 8 }} />
           </label>
-          <button className="button" onClick={compressAll} disabled={!files.length || busy} aria-keyshortcuts="Enter">{busy ? s.compressing : s.compress}</button>
+          <button className="button" onClick={() => compressAll()} disabled={!files.length || busy} aria-keyshortcuts="Enter">{busy ? s.compressing : s.compress}</button>
+          {busy && <button className="button-outline" onClick={() => abortRef.current?.abort()}>{locale === "zh" ? "取消" : "Cancel"}</button>}
+          {!busy && failedFiles.length > 0 && <button className="button-outline" onClick={() => compressAll(failedFiles)}>{locale === "zh" ? "重试失败文件" : `Retry failed (${failedFiles.length})`}</button>}
         </div>
         <div className="text-muted" style={{ fontSize: 12, marginTop: 8 }}>
           {s.exifNote}
-          {busy && files.length > 0 && (
-            <span> &nbsp;{s.progress(progressCount, files.length)}</span>
+          {busy && processingTotal > 0 && (
+            <span> &nbsp;{s.progress(progressCount, processingTotal)}</span>
           )}
         </div>
       </div>
@@ -385,7 +463,14 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
                     <img src={r.url} alt={`compressed-${i}`} loading="lazy" style={{ width: 160, height: 'auto', border: '1px solid #eee', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }} />
                   </a>
                   <div style={{ fontSize: 12, color: '#6b7280', marginTop: 6 }}>
-                    {s.sizeLine(formatBytes(r.size), formatBytes(files[r.fileIndex]?.size), savingPercent(files[r.fileIndex]?.size, r.size))}
+                    {s.sizeLine(formatBytes(r.size), formatBytes(r.originalSize), savingPercent(r.originalSize, r.size))}
+                  </div>
+                  <div style={{ fontSize: 12, color: r.verified ? '#047857' : '#b45309', marginTop: 4, textAlign: 'center' }}>
+                    {r.width}×{r.height}
+                    {` • ${r.format === 'image/jpeg' ? 'JPEG' : r.format === 'image/webp' ? 'WebP' : 'PNG'}`}
+                    {typeof r.quality === 'number' ? ` • quality ${Math.round(r.quality * 100)}%` : ''}
+                    {r.targetBytes ? ` • target ${formatBytes(r.targetBytes)} • ${r.size <= r.targetBytes ? 'under limit' : 'over limit'}` : ''}
+                    {r.verified ? ' • verified' : ''}
                   </div>
                 </div>
               ))
@@ -395,6 +480,12 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
           </div>
         </div>
       </div>
+
+      {failures.length > 0 && (
+        <div className="card" role="alert" style={{ background: '#fef2f2', color: '#991b1b' }}>
+          <strong>{s.failedPrefix}</strong> {failures.join("; ")}
+        </div>
+      )}
 
       {results.length > 0 && (
         <div className="card">
@@ -412,11 +503,6 @@ export default function CompressClient({ embedded = false, locale = "en" }: Comp
           {copyMsg && (
             <div style={{ background: '#eef2ff', color: '#3730a3', padding: 12, borderRadius: 'var(--radius)', marginTop: 8 }}>
               {copyMsg}
-            </div>
-          )}
-          {failures.length > 0 && (
-            <div style={{ background: '#fef2f2', color: '#991b1b', padding: 12, borderRadius: 'var(--radius)', marginTop: 8 }}>
-              {s.failedPrefix} {failures.join("; ")}
             </div>
           )}
         </div>

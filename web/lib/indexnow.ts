@@ -52,8 +52,7 @@ async function submitToEndpoint(
   const host = (process.env.NEXT_PUBLIC_SITE_URL || "https://pixcloak.com")
     .replace(/\/$/, "")
     .replace(/^https?:\/\//, "");
-  const key =
-    process.env.INDEXNOW_KEY || process.env.NEXT_PUBLIC_INDEXNOW_KEY || "";
+  const key = process.env.INDEXNOW_KEY || "";
   if (!key)
     return {
       ok: false,

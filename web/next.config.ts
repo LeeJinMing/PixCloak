@@ -1,11 +1,17 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+import { isProductionDeployment, resolveServiceConfig } from "./lib/serviceConfig";
+
+const workspaceRoot = path.resolve(__dirname, "..");
 
 const nextConfig: NextConfig = {
+  outputFileTracingRoot: workspaceRoot,
   images: {
     formats: ["image/avif", "image/webp"],
   },
   async headers() {
-    const isProd = process.env.NODE_ENV === "production";
+    const isProd = isProductionDeployment(process.env);
+    const services = resolveServiceConfig(process.env, isProd);
     return [
       {
         source: "/:path*",
@@ -21,18 +27,25 @@ const nextConfig: NextConfig = {
           },
           { key: "X-XSS-Protection", value: "0" },
           // CSP: restrict to self + explicitly used hosts
-          {
+          // Google does not support a fixed-domain CSP allowlist for AdSense because
+          // its serving domains change. Keep the resource CSP for the ad-free build;
+          // an ads-qualified production build retains the other security headers but
+          // omits this one so ad serving is not silently broken.
+          ...(!services.adsAvailable ? [{
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://va.vercel-scripts.com https://vercel.live",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live",
+              "worker-src 'self' blob:",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https://pagead2.googlesyndication.com",
+              "img-src 'self' data: blob:",
               "font-src 'self' data:",
               "connect-src 'self' https://va.vercel-scripts.com",
-              "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com",
+              "frame-src 'none'",
+              "object-src 'none'",
+              "base-uri 'self'",
             ].join("; "),
-          },
+          }] : []),
           // Only set HSTS on production and HTTPS
           ...(isProd
             ? [
@@ -63,23 +76,23 @@ const nextConfig: NextConfig = {
       { source: "/tools/png-to-jpg", destination: "/tools/png-jpg-converter", permanent: true },
       { source: "/tools/crop-image", destination: "/tools/crop-templates", permanent: true },
 
-      { source: "/guides/compress-to-100kb", destination: "/guides/compress-image-to-100kb", permanent: true },
-      { source: "/guides/jpeg-vs-webp-for-websites", destination: "/guides/jpeg-vs-webp-size-quality", permanent: true },
+      { source: "/guides/compress-to-100kb", destination: "/guides/compress-image-under-100kb", permanent: true },
+      { source: "/guides/jpeg-vs-webp-for-websites", destination: "/guides/webp-vs-jpeg-downloadable-samples", permanent: true },
 
       // GSC query slug aliases (Jul 2026)
       {
         source: "/guides/redact-vs-blur-license-plate",
-        destination: "/guides/license-plate-redaction",
+        destination: "/guides/hide-faces-plates-private-text",
         permanent: true,
       },
       {
         source: "/guides/tinypng-alternative",
-        destination: "/guides/tinypng-alternative-free-no-upload",
+        destination: "/guides/compress-image-under-200kb",
         permanent: true,
       },
       {
         source: "/guides/blur-license-plate",
-        destination: "/guides/license-plate-redaction",
+        destination: "/guides/hide-faces-plates-private-text",
         permanent: true,
       },
       {
@@ -89,7 +102,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/guides/blur-face-online",
-        destination: "/guides/blur-face-in-photo",
+        destination: "/guides/hide-faces-plates-private-text",
         permanent: true,
       },
       {
@@ -102,11 +115,10 @@ const nextConfig: NextConfig = {
         destination: "/tools/png-jpg-converter",
         permanent: true,
       },
-
     ];
   },
   turbopack: {
-    root: __dirname,
+    root: workspaceRoot,
   },
 };
 

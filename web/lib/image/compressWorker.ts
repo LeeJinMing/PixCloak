@@ -1,10 +1,10 @@
-import { runWithConcurrency } from "./batch";
 import type { CompressOptions } from "./types";
 import { DEFAULT_CONCURRENCY } from "./batch";
 import { drawSourceToCanvas } from "./encode";
 import { loadOrientedBitmap, getSourceSize } from "./load";
 import { computeOutputDimensions } from "./resize";
 import { compressOneFile, type CompressResult } from "./compress";
+import { verifyImageBlob } from "./verify";
 
 let worker: Worker | null = null;
 let nextId = 0;
@@ -55,6 +55,11 @@ export async function compressOneFileWithWorker(
   file: File,
   options: CompressOptions
 ): Promise<Awaited<ReturnType<typeof compressOneFile>>> {
+  // Hard byte caps can require iterative dimension reduction; keep that path in
+  // the shared main-thread encoder until the worker exposes the same contract.
+  if (typeof options.targetKb === "number" && options.targetKb > 0) {
+    return compressOneFile(file, options);
+  }
   const w = getWorker();
   if (!w) return compressOneFile(file, options);
 
@@ -81,8 +86,18 @@ export async function compressOneFileWithWorker(
     }
 
     const blob = await encodeInWorker(bitmap, format, quality, targetKb);
+    const verified = await verifyImageBlob(blob);
     const { renameByFormat } = await import("./format");
-    return { ok: true, name: renameByFormat(file.name, format), blob, originalSize: file.size };
+    return {
+      ok: true,
+      name: renameByFormat(file.name, format),
+      blob,
+      originalSize: file.size,
+      width: verified.width || outW,
+      height: verified.height || outH,
+      quality: format === "image/png" ? undefined : quality,
+      verified: true,
+    };
   } catch {
     return compressOneFile(file, options);
   }
@@ -92,14 +107,27 @@ export async function compressFilesWithWorker(
   files: File[],
   options: CompressOptions,
   concurrency = DEFAULT_CONCURRENCY,
-  onProgress?: (done: number, total: number) => void
+  onProgress?: (done: number, total: number) => void,
+  signal?: AbortSignal
 ): Promise<CompressResult[]> {
   let done = 0;
   const total = files.length;
-  return runWithConcurrency(files, concurrency, async (file) => {
-    const result = await compressOneFileWithWorker(file, options);
-    done++;
-    onProgress?.(done, total);
-    return result;
-  });
+  const outputs: CompressResult[] = new Array(files.length);
+  let nextIndex = 0;
+  async function runner() {
+    while (true) {
+      const index = nextIndex++;
+      if (index >= files.length) return;
+      const file = files[index];
+      if (signal?.aborted) {
+        outputs[index] = { ok: false, name: file.name, error: "Cancelled", originalSize: file.size };
+      } else {
+        outputs[index] = await compressOneFileWithWorker(file, options);
+      }
+      done++;
+      onProgress?.(done, total);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(concurrency, files.length) }, () => runner()));
+  return outputs;
 }
