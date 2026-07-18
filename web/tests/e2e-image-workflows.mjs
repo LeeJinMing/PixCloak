@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { mkdir, readFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import JSZip from "jszip";
+import { PDFDocument } from "pdf-lib";
 import { chromium } from "playwright-core";
 import { fileURLToPath } from "node:url";
 
@@ -14,6 +15,11 @@ const testCookie = process.env.TEST_COOKIE;
 const chrome = process.env.CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const temp = path.join(os.tmpdir(), "pixcloak-e2e");
 await mkdir(temp, { recursive: true });
+const pdfFixturePath = path.join(temp, "two-page-source.pdf");
+const pdfFixture = await PDFDocument.create();
+pdfFixture.addPage([320, 240]).drawText("PixCloak page one", { x: 40, y: 140, size: 20 });
+pdfFixture.addPage([240, 320]).drawText("PixCloak page two", { x: 35, y: 180, size: 18 });
+await writeFile(pdfFixturePath, await pdfFixture.save());
 
 const browser = await chromium.launch({ executablePath: chrome, headless: true, args: ["--no-sandbox", "--disable-gpu"] });
 const context = await browser.newContext({
@@ -289,6 +295,78 @@ try {
   await page.getByRole("button", { name: "Convert Images", exact: true }).click();
   await page.getByText("Converted Images (1)", { exact: true }).waitFor({ state: "visible" });
   checks.push({ name: "standalone PNG/JPEG converter shared engine", result: "passed" });
+
+  await page.goto(`${baseUrl}/upload-pack`, { waitUntil: "networkidle" });
+  const uploadPackInputs = page.locator('.upload-pack-slot input[type="file"]');
+  await uploadPackInputs.nth(0).setInputFiles(path.join(fixtures, "noisy-1024x768.jpg"));
+  await uploadPackInputs.nth(1).setInputFiles(path.join(fixtures, "noisy-1024x768.jpg"));
+  await page.getByRole("button", { name: "Prepare selected files", exact: true }).click();
+  await page.waitForFunction(() => document.body.innerText.match(/Verified for the entered requirements/g)?.length === 2);
+  assert.match(await page.locator("body").innerText(), /600×600[\s\S]*300×100/);
+  const [uploadPackDownload] = await Promise.all([
+    page.waitForEvent("download"),
+    page.getByRole("button", { name: "Download both as ZIP", exact: true }).click(),
+  ]);
+  const uploadPackPath = path.join(temp, "upload-pack.zip");
+  await uploadPackDownload.saveAs(uploadPackPath);
+  const uploadPackArchive = await JSZip.loadAsync(await readFile(uploadPackPath));
+  const uploadPackEntries = Object.values(uploadPackArchive.files).filter((entry) => !entry.dir);
+  assert.equal(uploadPackEntries.length, 2);
+  checks.push({ name: "photo and signature exact-dimension upload pack", result: uploadPackEntries.map((entry) => entry.name) });
+
+  await page.goto(`${baseUrl}/tools/image-to-pdf`, { waitUntil: "networkidle" });
+  await page.locator('.image-pdf-tool input[type="file"]').setInputFiles([
+    path.join(fixtures, "valid-01.jpg"),
+    path.join(fixtures, "valid-02.jpg"),
+  ]);
+  assert.equal(await page.locator(".image-pdf-list li").count(), 2);
+  await page.getByRole("button", { name: "Move up", exact: true }).nth(1).click();
+  assert.match(await page.locator(".image-pdf-list li").first().innerText(), /valid-02\.jpg/);
+  await page.getByRole("button", { name: "Create and verify PDF", exact: true }).click();
+  await page.waitForFunction(() => document.body.innerText.includes("PDF header, page count, and final bytes verified") || Boolean(document.querySelector('[role="alert"]')));
+  const imagesPdfPageText = await page.locator("body").innerText();
+  assert.match(imagesPdfPageText, /PDF header, page count, and final bytes verified/, imagesPdfPageText);
+  const [imagesPdfDownload] = await Promise.all([
+    page.waitForEvent("download"),
+    page.getByRole("button", { name: /Download PDF · 2 pages/ }).click(),
+  ]);
+  const imagesPdfPath = path.join(temp, "pixcloak-images.pdf");
+  await imagesPdfDownload.saveAs(imagesPdfPath);
+  const imagesPdfBytes = await readFile(imagesPdfPath);
+  assert.equal((await PDFDocument.load(imagesPdfBytes)).getPageCount(), 2);
+  assert.doesNotMatch(imagesPdfBytes.toString("latin1"), /valid-0[12]\.jpg/);
+  checks.push({ name: "ordered images to verified two-page PDF", result: `${imagesPdfBytes.length} bytes` });
+
+  await page.goto(`${baseUrl}/tools/pdf-to-image`, { waitUntil: "networkidle" });
+  await page.getByLabel("End page").fill("2");
+  await page.getByLabel("Output format").selectOption("image/jpeg");
+  await page.locator('.pdf-export-tool input[type="file"]').setInputFiles(pdfFixturePath);
+  await page.getByRole("button", { name: "Export page images", exact: true }).click();
+  await page.waitForFunction(() => document.querySelectorAll(".pdf-page-result").length === 2);
+  const pdfImageEntries = await page.evaluate(() => Array.from(document.querySelectorAll(".pdf-page-result")).map((link) => ({
+    name: link.getAttribute("download"),
+    href: link.getAttribute("href"),
+    text: link.textContent,
+  })));
+  assert.deepEqual(pdfImageEntries.map((entry) => entry.name), ["page-001.jpg", "page-002.jpg"]);
+  for (const entry of pdfImageEntries) {
+    assert.match(entry.href || "", /^blob:/);
+    assert.match(entry.text || "", /\d+×\d+/);
+  }
+  checks.push({ name: "selected PDF page range to verified JPEG results", result: pdfImageEntries.map((entry) => entry.name) });
+
+  await page.goto(`${baseUrl}/tools/exif-checker`, { waitUntil: "networkidle" });
+  await page.locator("#metadata-file").setInputFiles([
+    path.join(fixtures, "gps-location.jpg"),
+    path.join(fixtures, "png-xmp.png"),
+    path.join(fixtures, "webp-exif.webp"),
+  ]);
+  await page.waitForFunction(() => document.querySelectorAll(".metadata-result").length === 3);
+  await page.getByRole("button", { name: "Clean and verify 3 images", exact: true }).click();
+  await page.waitForFunction(() => document.body.innerText.match(/Clean export verified/g)?.length === 3);
+  assert.equal(await page.getByRole("button", { name: "Download verified ZIP (3)", exact: true }).isVisible(), true);
+  assert.match(await page.locator("body").innerText(), /pixels preserved without re-encoding/);
+  checks.push({ name: "batch lossless-first metadata cleanup and verified ZIP", result: "3 verified outputs" });
 
   assert.deepEqual(imageUploads, [], `image-related non-GET requests were observed: ${JSON.stringify(imageUploads)}`);
   checks.push({ name: "no image data network upload", result: "passed" });

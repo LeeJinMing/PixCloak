@@ -17,6 +17,8 @@ const quickTools = [
   { href: "/tools/heic-converter", title: "HEIC converter", text: "Turn iPhone HEIC images into JPG or WebP." },
   { href: "/tools/resize-image", title: "Resize", text: "Change dimensions or longest side locally." },
   { href: "/tools/png-jpg-converter", title: "Convert format", text: "Convert between PNG and JPEG with a clear result." },
+  { href: "/tools/pdf-to-image", title: "PDF pages to images", text: "Export a selected page range as PNG, JPEG, or WebP." },
+  { href: "/tools/image-to-pdf", title: "Images to PDF", text: "Order several images and create one local PDF." },
 ];
 
 export default function Home() {

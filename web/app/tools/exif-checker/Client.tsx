@@ -3,19 +3,26 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
+  downloadZipFromBlobs,
   formatBytes,
   metadataIsClean,
+  runWithConcurrency,
   scanImageMetadata,
   stripAndVerifyMetadata,
+  type MetadataCleanupMethod,
   type MetadataScan,
 } from "@/lib/image";
-import { durationBucket, emitProductEvent, fileSizeBucket } from "@/lib/productEvents";
+import { batchCountBucket, durationBucket, emitProductEvent } from "@/lib/productEvents";
 
-type Result = {
+type Entry = {
+  id: string;
   file: File;
   scan: MetadataScan;
   width?: number;
   height?: number;
+  status: "ready" | "cleaning" | "done" | "failed";
+  error?: string;
+  output?: { blob: Blob; url: string; scan: MetadataScan; method: MetadataCleanupMethod };
 };
 
 function ScanBadges({ scan }: { scan: MetadataScan }) {
@@ -25,93 +32,154 @@ function ScanBadges({ scan }: { scan: MetadataScan }) {
   return <div className="metadata-badges">{badges.map(([label, found]) => <span key={label} data-found={found}>{label}: {found ? "found" : "not found"}</span>)}</div>;
 }
 
+function cleanName(file: File) {
+  const dot = file.name.lastIndexOf(".");
+  const base = dot > 0 ? file.name.slice(0, dot) : file.name;
+  const extension = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
+  return `${base}-clean.${extension}`;
+}
+
 export default function Client() {
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const outputUrlRef = useRef<string | null>(null);
-  const [result, setResult] = useState<Result | null>(null);
-  const [cleanScan, setCleanScan] = useState<MetadataScan | null>(null);
-  const [outUrl, setOutUrl] = useState<string | null>(null);
+  const outputUrls = useRef(new Set<string>());
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [entries, setEntries] = useState<Entry[]>([]);
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  const [progress, setProgress] = useState({ done: 0, total: 0 });
 
   useEffect(() => {
     emitProductEvent("tool_view", { tool: "metadata_checker" });
-    return () => { if (outputUrlRef.current) URL.revokeObjectURL(outputUrlRef.current); };
+    const urls = outputUrls.current;
+    return () => { for (const url of urls) URL.revokeObjectURL(url); };
   }, []);
 
   async function onPick(event: React.ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    setError("");
-    setOutUrl(null);
-    setCleanScan(null);
-    const scan = await scanImageMetadata(file);
-    let width: number | undefined;
-    let height: number | undefined;
-    try {
-      const bitmap = await createImageBitmap(file);
-      width = bitmap.width; height = bitmap.height; bitmap.close();
-    } catch { /* metadata can still be reported for an image the browser cannot decode */ }
-    setResult({ file, scan, width, height });
+    const files = Array.from(event.target.files || []).slice(0, 50);
+    for (const url of outputUrls.current) URL.revokeObjectURL(url);
+    outputUrls.current.clear();
+    setProgress({ done: 0, total: 0 });
+    const inspected = await Promise.all(files.map(async (file, index): Promise<Entry> => {
+      const scan = await scanImageMetadata(file);
+      let width: number | undefined;
+      let height: number | undefined;
+      try {
+        const bitmap = await createImageBitmap(file);
+        width = bitmap.width;
+        height = bitmap.height;
+        bitmap.close();
+      } catch { /* byte inspection can still be useful when browser decode fails */ }
+      return { id: `${file.lastModified}-${file.size}-${index}`, file, scan, width, height, status: "ready" };
+    }));
+    setEntries(inspected);
   }
 
-  async function onStrip() {
-    if (!result) return;
+  async function cleanAll() {
+    const cleanable = entries.filter((entry) => entry.scan.supported);
+    if (!cleanable.length) return;
     const startedAt = performance.now();
-    setBusy(true); setError("");
-    emitProductEvent("process_started", { tool: "metadata_checker", input_format: result.file.type || result.scan.format, file_size_bucket: fileSizeBucket(result.file.size) });
-    try {
-      const clean = await stripAndVerifyMetadata(result.file);
-      if (outputUrlRef.current) URL.revokeObjectURL(outputUrlRef.current);
-      const url = URL.createObjectURL(clean.blob);
-      outputUrlRef.current = url;
-      setOutUrl(url);
-      setCleanScan(clean.scan);
-      emitProductEvent("process_succeeded", { tool: "metadata_checker", output_format: clean.blob.type, duration_bucket: durationBucket(performance.now() - startedAt) });
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Metadata cleanup failed.");
-      emitProductEvent("process_failed", { tool: "metadata_checker", duration_bucket: durationBucket(performance.now() - startedAt), error_code: "metadata_cleanup_failed" });
-    } finally { setBusy(false); }
+    setBusy(true);
+    setProgress({ done: 0, total: cleanable.length });
+    setEntries((current) => current.map((entry) => entry.scan.supported ? { ...entry, status: "cleaning", error: undefined } : entry));
+    emitProductEvent(cleanable.length > 1 ? "batch_started" : "process_started", {
+      tool: "metadata_checker",
+      input_format: cleanable.length > 1 ? "mixed" : cleanable[0].scan.format,
+      batch_count_bucket: batchCountBucket(cleanable.length),
+    });
+
+    let completed = 0;
+    const results = await runWithConcurrency(cleanable, 3, async (entry) => {
+      try {
+        const clean = await stripAndVerifyMetadata(entry.file);
+        const url = URL.createObjectURL(clean.blob);
+        outputUrls.current.add(url);
+        return { id: entry.id, output: { blob: clean.blob, url, scan: clean.scan, method: clean.method } };
+      } catch (cause) {
+        return { id: entry.id, error: cause instanceof Error ? cause.message : "Metadata cleanup failed." };
+      } finally {
+        completed += 1;
+        setProgress({ done: completed, total: cleanable.length });
+      }
+    });
+
+    const byId = new Map(results.map((result) => [result.id, result]));
+    setEntries((current) => current.map((entry) => {
+      const result = byId.get(entry.id);
+      if (!result) return entry;
+      return result.output
+        ? { ...entry, status: "done", output: result.output, error: undefined }
+        : { ...entry, status: "failed", error: result.error || "Metadata cleanup failed." };
+    }));
+    const successCount = results.filter((result) => result.output).length;
+    emitProductEvent(successCount ? "process_succeeded" : "process_failed", {
+      tool: "metadata_checker",
+      output_format: cleanable.length > 1 ? "mixed" : cleanable[0].scan.format,
+      batch_count_bucket: batchCountBucket(cleanable.length),
+      duration_bucket: durationBucket(performance.now() - startedAt),
+      ...(successCount ? {} : { error_code: "metadata_cleanup_failed" }),
+    });
+    setBusy(false);
   }
 
-  function downloadClean() {
-    if (!outUrl || !result) return;
-    const dot = result.file.name.lastIndexOf(".");
-    const base = dot > 0 ? result.file.name.slice(0, dot) : result.file.name;
-    const extension = result.file.type === "image/png" ? "png" : result.file.type === "image/webp" ? "webp" : "jpg";
+  function downloadOne(entry: Entry) {
+    if (!entry.output) return;
     const anchor = document.createElement("a");
-    anchor.href = outUrl; anchor.download = `${base}-clean.${extension}`; anchor.click();
-    emitProductEvent("download_completed", { tool: "metadata_checker", output_format: extension, batch_count_bucket: "1" });
+    anchor.href = entry.output.url;
+    anchor.download = cleanName(entry.file);
+    anchor.click();
+    emitProductEvent("download_completed", { tool: "metadata_checker", output_format: entry.scan.format, batch_count_bucket: "1" });
   }
+
+  async function downloadAll() {
+    const outputs = entries.filter((entry) => entry.output).map((entry) => ({ name: cleanName(entry.file), blob: entry.output!.blob }));
+    if (!outputs.length) return;
+    await downloadZipFromBlobs(outputs, "pixcloak-clean-images.zip");
+    emitProductEvent("download_completed", { tool: "metadata_checker", output_format: "mixed", batch_count_bucket: batchCountBucket(outputs.length) });
+  }
+
+  const complete = entries.filter((entry) => entry.output);
 
   return (
     <div className="metadata-tool">
-      <div className="card">
-        <label htmlFor="metadata-file"><strong>Choose a JPG, PNG, or WebP image</strong></label>
-        <input id="metadata-file" ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp,.heic,.heif" onChange={onPick} className="input" />
-        <p className="text-muted">HEIC files can be identified, but full HEIC metadata inspection is not available in V1.0. Convert them before the final privacy review.</p>
+      <div className="card metadata-picker">
+        <strong>Choose up to 50 JPG, PNG, or WebP images</strong>
+        <input ref={fileRef} id="metadata-file" type="file" disabled={busy} multiple accept="image/jpeg,image/png,image/webp,.heic,.heif" onChange={onPick} hidden />
+        <div className="file-action-row">
+          <button type="button" className="button-outline" disabled={busy} onClick={() => fileRef.current?.click()}>Choose images</button>
+          <span>{entries.length ? `${entries.length} image${entries.length === 1 ? "" : "s"} inspected` : "No images selected"}</span>
+        </div>
+        <p className="text-muted">JPEG, PNG, and WebP are cleaned without re-encoding when safe. JPEGs that depend on EXIF orientation are re-encoded so the visible rotation is preserved.</p>
       </div>
 
-      {result && (
-        <div className="card metadata-result">
-          <h2>Inspection result</h2>
-          <p>{result.scan.format.toUpperCase()} • {formatBytes(result.file.size)}{result.width ? ` • ${result.width}×${result.height}` : ""}</p>
-          <ScanBadges scan={result.scan} />
-          {result.scan.note && <p className="text-muted">{result.scan.note}</p>}
-          <button className="button" onClick={onStrip} disabled={busy || !result.scan.supported}>{busy ? "Cleaning and verifying…" : "Remove metadata and verify"}</button>
-          {!result.scan.supported && <Link className="button-outline" href="/tools/heic-converter">Convert HEIC first</Link>}
+      {entries.length > 0 && (
+        <div className="metadata-batch-actions">
+          <button className="button" onClick={cleanAll} disabled={busy || !entries.some((entry) => entry.scan.supported)}>
+            {busy ? `Cleaning and verifying ${progress.done}/${progress.total}…` : `Clean and verify ${entries.filter((entry) => entry.scan.supported).length} image${entries.length === 1 ? "" : "s"}`}
+          </button>
+          {complete.length > 1 && <button className="button button-dark" onClick={downloadAll}>Download verified ZIP ({complete.length})</button>}
         </div>
       )}
 
-      {cleanScan && (
-        <div className="card verification-banner">
-          <h2>Clean export verified</h2>
-          <ScanBadges scan={cleanScan} />
-          <p>{metadataIsClean(cleanScan) ? "The exported file was reopened and no supported metadata markers were detected." : "Metadata remains; do not share this result."}</p>
-          <button className="button button-success" onClick={downloadClean}>Download clean image</button>
-        </div>
-      )}
-      {error && <div className="card" role="alert" style={{ color: "#991b1b" }}>{error}</div>}
+      <div className="metadata-result-list">
+        {entries.map((entry) => (
+          <article className="card metadata-result" key={entry.id}>
+            <div className="metadata-result__head">
+              <div><h2>{entry.file.name}</h2><p>{entry.scan.format.toUpperCase()} • {formatBytes(entry.file.size)}{entry.width ? ` • ${entry.width}×${entry.height}` : ""}</p></div>
+              <span className={`result-status result-status--${entry.status}`}>{entry.status === "done" ? "verified" : entry.status}</span>
+            </div>
+            <ScanBadges scan={entry.scan} />
+            {entry.scan.note && <p className="text-muted">{entry.scan.note}</p>}
+            {!entry.scan.supported && <Link className="button-outline" href="/tools/heic-converter">Convert HEIC first</Link>}
+            {entry.output && (
+              <div className="metadata-clean-result">
+                <strong>Clean export verified · {entry.output.method === "lossless" ? "pixels preserved without re-encoding" : "orientation-safe re-encode"}</strong>
+                <ScanBadges scan={entry.output.scan} />
+                <p>{metadataIsClean(entry.output.scan) ? "The downloaded copy was reopened and no supported metadata markers were detected." : "Metadata remains; do not share this result."}</p>
+                <button className="button button-success" onClick={() => downloadOne(entry)}>Download clean image</button>
+              </div>
+            )}
+            {entry.error && <p role="alert" className="tool-error">{entry.error}</p>}
+          </article>
+        ))}
+      </div>
     </div>
   );
 }

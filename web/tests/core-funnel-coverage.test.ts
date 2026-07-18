@@ -9,6 +9,9 @@ const clients = [
   "app/tools/heic-converter/Client.tsx",
   "app/tools/resize-image/Client.tsx",
   "app/tools/png-jpg-converter/Client.tsx",
+  "app/tools/pdf-to-image/Client.tsx",
+  "app/tools/image-to-pdf/Client.tsx",
+  "app/upload-pack/Client.tsx",
 ] as const;
 
 const requiredEvents = [
@@ -29,7 +32,7 @@ test("every maintained core tool implements the anonymous product funnel", async
 });
 
 test("batch-capable core tools expose the separate batch event", async () => {
-  for (const path of clients.filter((path) => !path.includes("exif-checker"))) {
+  for (const path of clients) {
     const source = await readFile(new URL(`../${path}`, import.meta.url), "utf8");
     assert.match(source, /[\"']batch_started[\"']/, `${path} is missing batch_started`);
   }

@@ -54,6 +54,7 @@ export default function UploadReadyPage() {
           <div><strong>4. Verify</strong><span>Reopen the image and reject any result that exceeds the cap.</span></div>
         </div>
         <div className="next-actions">
+          <Link className="button" href="/upload-pack">Prepare a photo + signature pair</Link>
           <Link className="button" href="/safe-share">Remove private details first</Link>
           <Link className="button-outline" href="/tools/heic-converter">Convert HEIC first</Link>
         </div>

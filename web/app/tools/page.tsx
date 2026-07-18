@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Local Image Tools",
-  description: "Six maintained local image tools plus experimental Labs utilities.",
+  description: "Maintained local image and PDF workflows plus experimental Labs utilities.",
   alternates: { canonical: "/tools" },
 };
 
@@ -14,6 +14,8 @@ const core = [
   ["/tools/heic-converter", "HEIC converter", "Convert iPhone HEIC images to JPG or WebP."],
   ["/tools/resize-image", "Image resizer", "Resize by dimensions or longest side."],
   ["/tools/png-jpg-converter", "PNG / JPG converter", "Convert formats and review the result before download."],
+  ["/tools/pdf-to-image", "PDF pages to images", "Export a selected PDF page range as verified PNG, JPEG, or WebP files."],
+  ["/tools/image-to-pdf", "Images to PDF", "Reorder images and combine them into one A4, Letter, or image-sized PDF."],
 ] as const;
 
 const labs = [
@@ -31,7 +33,7 @@ export default function ToolsPage() {
     <div className="workflow-page">
       <section className="workflow-hero">
         <div><span className="eyebrow">TOOLS</span><h1>Maintained local image tools</h1><p>Choose a complete workflow when the outcome matters, or open one focused tool for a single task.</p></div>
-        <div className="workflow-trust"><strong>Need several steps?</strong><Link href="/safe-share">Safe Share</Link><Link href="/upload-ready">Upload Ready</Link></div>
+        <div className="workflow-trust"><strong>Need several steps?</strong><Link href="/safe-share">Safe Share</Link><Link href="/upload-ready">Upload Ready</Link><Link href="/upload-pack">Photo + signature pack</Link></div>
       </section>
       <section className="quick-tool-grid" aria-label="Core tools">
         {core.map(([href, title, text]) => <Link key={href} href={href} className="quick-tool-card"><strong>{title}</strong><span>{text}</span></Link>)}

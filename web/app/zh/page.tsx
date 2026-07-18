@@ -22,6 +22,8 @@ const quickTools = [
   { href: "/zh/redact", title: "图片打码", text: "手动框选人脸、车牌、证件号或文字，永久写入遮挡效果。" },
   { href: "/zh/compress", title: "压缩到指定 KB", text: "设置 100KB、200KB、500KB 等硬上限，结果不超标才可下载。" },
   { href: "/zh/tools/pdf-to-image", title: "PDF 转图片", text: "把 PDF 每一页在本地导出为 PNG，无需上传或开通会员。" },
+  { href: "/zh/tools/image-to-pdf", title: "图片合并 PDF", text: "多张图片排序后合并为一个 PDF，可设置页面和边距。" },
+  { href: "/zh/upload-pack", title: "照片和签名准备", text: "分别设置像素和 KB 范围，一次生成两份验证结果。" },
 ];
 
 const faq = [

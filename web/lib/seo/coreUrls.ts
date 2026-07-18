@@ -9,6 +9,9 @@ export const CORE_TOOL_PATHS = [
   "/tools/heic-converter",
   "/tools/resize-image",
   "/tools/png-jpg-converter",
+  "/tools/pdf-to-image",
+  "/tools/image-to-pdf",
+  "/upload-pack",
 ] as const;
 
 export const CORE_ZH_PATHS = ["/zh", "/zh/compress", "/zh/redact"] as const;

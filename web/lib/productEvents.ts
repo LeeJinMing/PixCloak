@@ -37,9 +37,10 @@ const allowedKeys = new Set<keyof SafeProperties>([
 ]);
 
 const allowedTools = new Set([
-  "compress", "upload_ready", "redact", "safe_share", "metadata_checker", "content_ad",
+  "compress", "upload_ready", "upload_pack", "redact", "safe_share", "metadata_checker", "content_ad",
   "/safe-share", "/upload-ready", "/compress", "/redact", "/tools/exif-checker",
   "/tools/heic-converter", "/tools/resize-image", "/tools/png-jpg-converter",
+  "/tools/pdf-to-image", "/tools/image-to-pdf",
   "/tools/favicon-pack", "/tools/trim-transparent",
 ]);
 const formatAliases: Record<string, string> = {
@@ -47,6 +48,7 @@ const formatAliases: Record<string, string> = {
   "image/png": "png", png: "png",
   "image/webp": "webp", webp: "webp",
   "image/heic": "heic", "image/heif": "heic", heic: "heic", heif: "heic",
+  "application/pdf": "pdf", pdf: "pdf",
   mixed: "mixed", unknown: "unknown",
 };
 const allowedFileBuckets = new Set(["under_100kb", "100_500kb", "500kb_2mb", "2_10mb", "over_10mb"]);

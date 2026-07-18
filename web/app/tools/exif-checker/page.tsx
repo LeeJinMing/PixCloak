@@ -6,14 +6,14 @@ import { SoftwareAppJsonLd } from "@/components/SeoJsonLd";
 
 export const metadata: Metadata = {
   title: "Check and Remove EXIF, GPS, XMP, and IPTC",
-  description: "Inspect supported image metadata, remove it by local re-encoding, and reopen the export to verify the markers are gone.",
+  description: "Inspect supported image metadata, remove it locally without re-encoding when safe, and reopen the export to verify the markers are gone.",
   alternates: { canonical: "/tools/exif-checker", languages: { "x-default": "/tools/exif-checker", en: "/tools/exif-checker" } },
 };
 
 const faq = [
-  { question: "Does this upload the image?", answer: "No. Inspection and re-encoding use browser APIs on this device. Optional website analytics and advertising are separate and never receive image bytes from this tool." },
+  { question: "Does this upload the image?", answer: "No. Inspection and cleanup use browser APIs on this device. Optional website analytics and advertising are separate and never receive image bytes from this tool." },
   { question: "Which metadata is checked?", answer: "V1.0 checks JPEG EXIF/GPS/XMP/IPTC, PNG EXIF and text metadata markers, and WebP EXIF/GPS/XMP chunks. Full HEIC metadata inspection is not supported." },
-  { question: "How is removal verified?", answer: "The tool reopens the exported image, scans its bytes again, and offers the clean download only after supported markers are absent." },
+  { question: "How is removal verified?", answer: "The tool reopens the exported image, scans its bytes again, and offers the clean download only after supported markers are absent. JPEG, PNG, and WebP stay lossless when orientation safety allows." },
 ];
 
 export default function Page() {

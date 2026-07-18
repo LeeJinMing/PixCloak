@@ -154,6 +154,8 @@ const indexedToolPaths = new Set([
   "/tools/heic-converter",
   "/tools/resize-image",
   "/tools/png-jpg-converter",
+  "/tools/pdf-to-image",
+  "/tools/image-to-pdf",
 ]);
 const toolRouteEntries = await readdir(new URL("../app/tools/", import.meta.url), { withFileTypes: true });
 const toolPaths = toolRouteEntries

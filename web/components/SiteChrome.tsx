@@ -45,8 +45,9 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
             {isZh ? (
               <>
                 <Link href="/zh/compress">图片压缩</Link>
+                <Link href="/zh/upload-pack">照片签名</Link>
                 <Link href="/zh/tools/pdf-to-image">PDF转图片</Link>
-                <Link href="/zh/guides/pdf-to-image-free">教程</Link>
+                <Link href="/zh/tools/image-to-pdf">图片转PDF</Link>
                 <Link href="/zh/redact">图片打码</Link>
                 <Link href="/" className="text-muted">
                   English
@@ -56,6 +57,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
               <>
                 <Link href="/safe-share">Safe Share</Link>
                 <Link href="/upload-ready">Upload Ready</Link>
+                <Link href="/upload-pack">Upload Pack</Link>
                 <Link href="/compress">Compress</Link>
                 <Link href="/redact">Redact</Link>
                 <Link href="/tools">Tools</Link>

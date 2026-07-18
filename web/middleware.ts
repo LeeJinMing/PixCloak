@@ -5,6 +5,8 @@ const INDEXABLE_TOOLS = new Set([
   "/tools/heic-converter",
   "/tools/resize-image",
   "/tools/png-jpg-converter",
+  "/tools/pdf-to-image",
+  "/tools/image-to-pdf",
 ]);
 
 const INDEXABLE_GUIDES = new Set([
