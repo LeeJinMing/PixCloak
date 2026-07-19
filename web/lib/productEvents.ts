@@ -10,6 +10,10 @@ export type ProductEventName =
   | "download_completed"
   | "batch_started"
   | "related_tool_clicked"
+  | "pwa_install_requested"
+  | "pwa_install_accepted"
+  | "pwa_installed"
+  | "pwa_standalone_launch"
   | "ad_viewable";
 
 export type SafeProperties = {
@@ -37,7 +41,7 @@ const allowedKeys = new Set<keyof SafeProperties>([
 ]);
 
 const allowedTools = new Set([
-  "compress", "upload_ready", "upload_pack", "redact", "safe_share", "metadata_checker", "content_ad",
+  "compress", "upload_ready", "upload_pack", "redact", "safe_share", "metadata_checker", "content_ad", "pwa",
   "/safe-share", "/upload-ready", "/compress", "/redact", "/tools/exif-checker",
   "/tools/heic-converter", "/tools/resize-image", "/tools/png-jpg-converter",
   "/tools/pdf-to-image", "/tools/image-to-pdf",

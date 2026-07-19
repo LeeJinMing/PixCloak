@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { emitProductEvent } from "@/lib/productEvents";
 
 type InstallChoice = { outcome: "accepted" | "dismissed"; platform: string };
 type BeforeInstallPromptEvent = Event & {
@@ -35,7 +36,9 @@ export function PwaInstall() {
   const [helpOpen, setHelpOpen] = useState(false);
 
   useEffect(() => {
-    setInstalled(isStandalone());
+    const standalone = isStandalone();
+    setInstalled(standalone);
+    if (standalone) emitProductEvent("pwa_standalone_launch", { tool: "pwa" });
     setAppleMobile(isAppleMobile());
 
     let visits = Number.parseInt(window.localStorage.getItem(VISIT_KEY) || "0", 10) || 0;
@@ -51,6 +54,7 @@ export function PwaInstall() {
       setInstallPrompt(event as BeforeInstallPromptEvent);
     };
     const onInstalled = () => {
+      emitProductEvent("pwa_installed", { tool: "pwa" });
       setInstalled(true);
       setInstallPrompt(null);
       setHelpOpen(false);
@@ -75,6 +79,7 @@ export function PwaInstall() {
   }, [helpOpen]);
 
   async function requestInstall() {
+    emitProductEvent("pwa_install_requested", { tool: "pwa" });
     if (!installPrompt) {
       setHelpOpen(true);
       return;
@@ -82,6 +87,7 @@ export function PwaInstall() {
     await installPrompt.prompt();
     const choice = await installPrompt.userChoice;
     setInstallPrompt(null);
+    if (choice.outcome === "accepted") emitProductEvent("pwa_install_accepted", { tool: "pwa" });
     if (choice.outcome === "dismissed") setHelpOpen(true);
   }
 

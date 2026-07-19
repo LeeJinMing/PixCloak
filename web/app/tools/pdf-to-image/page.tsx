@@ -6,7 +6,7 @@ import { SoftwareAppJsonLd, FaqJsonLd } from '@/components/SeoJsonLd';
 import { ToolNextSteps } from '@/components/ToolNextSteps';
 
 export const metadata: Metadata = {
-  title: 'PDF to Image Online—Export Pages as PNG (No',
+  title: 'PDF to Image—Export Pages as PNG, JPG or WebP',
   description: 'Export a selected PDF page range as PNG, JPEG, or WebP in your browser. Download individual verified pages or one ZIP; nothing is uploaded.',
   alternates: {
     canonical: '/tools/pdf-to-image',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PDF to image',
-    description: 'PNG per page in the browser. Process images offline in your browser. 100% free, no uploads, privacy guaranteed.',
+    description: 'Export selected PDF pages as PNG, JPEG, or WebP locally in your browser. The PDF is not uploaded.',
   },
 };
 
@@ -73,7 +73,7 @@ export default function PdfToImagePage() {
             {
               question: 'Are PDFs uploaded to your server?',
               answer:
-                'No. The file stays in your tab; PDF.js renders pages with a worker loaded from a public CDN.',
+                'No. The PDF stays in your tab. PDF.js and its worker load as application assets, then render the selected pages in this browser.',
             },
             {
               question: 'Why is there a max page limit?',
@@ -86,8 +86,8 @@ export default function PdfToImagePage() {
                 'Encrypted PDFs usually fail until decrypted. Use an unlocked copy in your viewer, then export again.',
             },
             {
-              question: 'Output format?',
-              answer: 'PNG for lossless page captures. Convert to JPEG or WebP separately if you need smaller files.',
+              question: 'Which output formats are supported?',
+              answer: 'Choose PNG for lossless captures, or export JPEG or WebP when you need smaller page images.',
             },
           ]}
         />

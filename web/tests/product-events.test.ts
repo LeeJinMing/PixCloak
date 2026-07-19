@@ -42,3 +42,7 @@ test("product events require both consent and deployment-level analytics", () =>
   assert.equal(productEventsEnabled("essential", "on"), false);
   assert.equal(productEventsEnabled(null, "on"), false);
 });
+
+test("PWA events use only the anonymous PWA tool label", () => {
+  assert.deepEqual(sanitizeProductProperties({ tool: "pwa" }), { tool: "pwa" });
+});
