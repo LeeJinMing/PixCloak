@@ -515,8 +515,8 @@ pre.tool-code-block code {
 .pwa-shortcut-preview a:hover { background: #eff6ff; }
 .pwa-support-note { margin-top: 12px; color: #64748b; font-size: 12px; }
 @media (max-width: 760px) {
-  .site-header-actions { width: 100%; flex-wrap: wrap; }
-  .site-header-actions nav { flex: 1 1 100%; }
+  .site-header-actions { width: 100%; flex: 1 0 100%; flex-wrap: wrap; }
+  .site-header-actions nav { flex: 1 1 100%; justify-content: flex-start !important; gap: 12px !important; }
   .pwa-install-trigger { margin-left: auto; }
   .pwa-install-dialog { padding: 22px; }
   .pwa-shortcut-preview > div { grid-template-columns: 1fr; }
@@ -807,6 +807,14 @@ pre.tool-code-block code {
 .workflow-card--dark p { color: #dbeafe; }
 .workflow-card--dark > span,
 .workflow-card--dark strong { color: #bfdbfe; }
+.workflow-card--special {
+  grid-column: 1 / -1;
+  min-height: 210px;
+  border-color: #cbd5e1;
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 58%, #eff6ff 100%);
+}
+.workflow-card--special h3 { max-width: 720px; }
+.workflow-card--special p { max-width: 800px; }
 
 .quick-tool-grid {
   display: grid;
@@ -825,6 +833,28 @@ pre.tool-code-block code {
 .quick-tool-card:hover { border-color: #93c5fd; box-shadow: var(--shadow-sm); }
 .quick-tool-card strong { color: #0f172a; }
 .quick-tool-card span { color: #475569; font-size: .9rem; line-height: 1.5; }
+
+.pwa-home-benefits {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 28px;
+  padding: 32px;
+  border: 1px solid #bfdbfe;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #f8fbff, #eef2ff);
+  box-shadow: 0 18px 48px rgba(30, 64, 175, .08);
+}
+.pwa-benefits-copy h2 { margin: 7px 0 10px; color: #172554; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.12; }
+.pwa-benefits-copy > p { color: #334155; line-height: 1.65; }
+.pwa-benefit-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pwa-benefit-shortcuts a { padding: 8px 10px; border: 1px solid #bfdbfe; border-radius: 999px; background: #fff; color: #1d4ed8; font-size: .82rem; font-weight: 750; }
+.pwa-benefit-shortcuts a:hover { background: #dbeafe; }
+.pwa-benefits-note { margin-top: 15px; font-size: .82rem; }
+.pwa-benefit-list { display: grid; gap: 10px; list-style: none; }
+.pwa-benefit-list li { display: grid; grid-template-columns: 34px 1fr; gap: 11px; align-items: start; padding: 14px; border: 1px solid rgba(191, 219, 254, .9); border-radius: 14px; background: rgba(255, 255, 255, .82); }
+.pwa-benefit-list li > span { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: #1d4ed8; color: #fff; font-size: .73rem; font-weight: 800; }
+.pwa-benefit-list strong { color: #172554; }
+.pwa-benefit-list p { margin-top: 4px; color: #475569; font-size: .86rem; line-height: 1.5; }
 
 .local-explainer {
   display: grid;
@@ -929,6 +959,7 @@ pre.tool-code-block code {
   .launch-hero,
   .workflow-hero,
   .local-explainer,
+  .pwa-home-benefits,
   .workflow-card-grid,
   .example-grid,
   .support-grid,

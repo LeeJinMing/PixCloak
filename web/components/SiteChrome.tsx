@@ -59,8 +59,6 @@ export function SiteChrome({ children, installAction }: { children: React.ReactN
                   <Link href="/safe-share">Safe Share</Link>
                   <Link href="/upload-ready">Upload Ready</Link>
                   <Link href="/upload-pack">Upload Pack</Link>
-                  <Link href="/compress">Compress</Link>
-                  <Link href="/redact">Redact</Link>
                   <Link href="/tools">Tools</Link>
                   <Link href="/guides">Guides</Link>
                   <Link href="/zh" className="text-muted">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FaqJsonLd } from "@/components/SeoJsonLd";
 import { LaunchHero } from "@/components/LaunchHero";
+import { PwaBenefits } from "@/components/PwaBenefits";
 import { SITE_NAME_ZH } from "@/lib/i18n/site";
 
 export const metadata: Metadata = {
@@ -23,7 +24,6 @@ const quickTools = [
   { href: "/zh/compress", title: "压缩到指定 KB", text: "设置 100KB、200KB、500KB 等硬上限，结果不超标才可下载。" },
   { href: "/zh/tools/pdf-to-image", title: "PDF 转图片", text: "把 PDF 每一页在本地导出为 PNG，无需上传或开通会员。" },
   { href: "/zh/tools/image-to-pdf", title: "图片合并 PDF", text: "多张图片排序后合并为一个 PDF，可设置页面和边距。" },
-  { href: "/zh/upload-pack", title: "照片和签名准备", text: "分别设置像素和 KB 范围，一次生成两份验证结果。" },
 ];
 
 const faq = [
@@ -67,7 +67,7 @@ export default function ZhHomePage() {
         <section className="home-section" aria-labelledby="zh-core-workflows">
           <div className="section-heading">
             <span className="eyebrow">先选目标，再选工具</span>
-            <h2 id="zh-core-workflows">两条最常用的完整流程</h2>
+            <h2 id="zh-core-workflows">分享和上传的核心流程</h2>
           </div>
           <div className="workflow-card-grid">
             <Link href="/zh/redact" className="workflow-card workflow-card--dark">
@@ -81,6 +81,12 @@ export default function ZhHomePage() {
               <h3>把图片压到报名、政务或平台要求的大小</h3>
               <p>设置目标 KB 和格式，批量处理，并且只下载通过最终体积校验的结果。</p>
               <strong>打开指定 KB 压缩 →</strong>
+            </Link>
+            <Link href="/zh/upload-pack" className="workflow-card workflow-card--special">
+              <span>报名与政务专项流程</span>
+              <h3>照片和签名一次准备完成</h3>
+              <p>分别填写两组像素、格式和 KB 要求，只下载全部通过最终校验的照片与签名。</p>
+              <strong>打开照片和签名准备 →</strong>
             </Link>
           </div>
         </section>
@@ -99,6 +105,8 @@ export default function ZhHomePage() {
             ))}
           </div>
         </section>
+
+        <PwaBenefits locale="zh" />
 
         <section className="local-explainer">
           <div>
@@ -142,7 +150,7 @@ export default function ZhHomePage() {
 
         <section className="card supported-summary">
           <h2>当前支持范围</h2>
-          <p>JPG、PNG、WebP 图片处理；PDF 转图片；指定 KB 硬上限；手动纯色、马赛克和模糊打码；元数据清理与导出校验。</p>
+          <p>JPG、PNG、WebP、HEIC 图片处理；指定 KB 硬上限；手动纯色、马赛克和模糊打码；元数据清理；照片与签名准备；PDF 转图片和图片合并 PDF；以及导出结果复检。</p>
           <p className="text-muted">人脸、车牌、文字和二维码自动识别尚未提供，当前请手动框选需要遮挡的区域。</p>
         </section>
 

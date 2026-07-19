@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { LaunchHero } from "@/components/LaunchHero";
+import { PwaBenefits } from "@/components/PwaBenefits";
 
 export const metadata: Metadata = {
   title: "Private Image Preparation in Your Browser",
@@ -45,7 +46,7 @@ export default function Home() {
       <section className="home-section" aria-labelledby="core-workflows">
         <div className="section-heading">
           <span className="eyebrow">START WITH THE OUTCOME</span>
-          <h2 id="core-workflows">Two complete workflows</h2>
+          <h2 id="core-workflows">Core workflows for sharing and upload</h2>
         </div>
         <div className="workflow-card-grid">
           <Link href="/safe-share" className="workflow-card workflow-card--dark">
@@ -59,6 +60,12 @@ export default function Home() {
             <h3>Meet a portal&apos;s size and format requirements</h3>
             <p>Choose the limit, process a batch, and download only results that pass the final check.</p>
             <strong>Open Upload Ready →</strong>
+          </Link>
+          <Link href="/upload-pack" className="workflow-card workflow-card--special">
+            <span>SPECIALIZED FORM WORKFLOW</span>
+            <h3>Prepare a photo and signature together</h3>
+            <p>Enter two sets of pixel, format, and KB requirements, then download only the pair that passes every final check.</p>
+            <strong>Open Photo + Signature Pack →</strong>
           </Link>
         </div>
       </section>
@@ -76,6 +83,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <PwaBenefits locale="en" />
 
       <section className="local-explainer">
         <div>
@@ -112,7 +121,7 @@ export default function Home() {
 
       <section className="card supported-summary">
         <h2>Supported in V1.0</h2>
-        <p>JPG, PNG, and WebP processing; HEIC conversion; hard KB caps; manual solid, pixelated, and blurred redaction; metadata cleanup and export verification.</p>
+        <p>JPG, PNG, WebP, and HEIC workflows; hard KB caps; permanent redaction; metadata cleanup; photo-and-signature preparation; PDF page export; image-to-PDF creation; and post-export verification.</p>
         <p className="text-muted">Automatic face, plate, text, and QR detection is intentionally reserved for V1.1.</p>
       </section>
 

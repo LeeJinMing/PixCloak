@@ -36,10 +36,11 @@ test("all manifest icons exist in the public directory", async () => {
 });
 
 test("layouts link the localized manifests and mount the install experience", async () => {
-  const [rootLayout, zhLayout, installSource, serviceWorker, consentSource] = await Promise.all([
+  const [rootLayout, zhLayout, installSource, benefitSource, serviceWorker, consentSource] = await Promise.all([
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/zh/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/PwaInstall.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/PwaBenefits.tsx", import.meta.url), "utf8"),
     readFile(new URL("../public/sw.js", import.meta.url), "utf8"),
     readFile(new URL("../components/ConsentServices.tsx", import.meta.url), "utf8"),
   ]);
@@ -49,7 +50,29 @@ test("layouts link the localized manifests and mount the install experience", as
   assert.match(zhLayout, /manifest: "\/manifest\.zh\.webmanifest"/);
   assert.match(installSource, /安装应用/);
   assert.match(installSource, /Install app/);
+  assert.match(installSource, /pwa_installed/);
+  assert.match(benefitSource, /常用工具直接从桌面打开/);
+  assert.match(benefitSource, /An internet connection is still required/);
+  assert.doesNotMatch(benefitSource, /offline/i);
   assert.match(serviceWorker, /ASSETS\.includes\(url\.pathname\)/);
   assert.doesNotMatch(serviceWorker, /mode === "navigate"/);
   assert.doesNotMatch(consentSource, /\.unregister\(/);
+});
+
+test("home pages give the specialized upload workflow and PWA benefits a controlled hierarchy", async () => {
+  const [home, zhHome] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/zh/page.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.match(home, /workflow-card--special/);
+  assert.match(home, /<PwaBenefits locale="en" \/>/);
+  assert.match(zhHome, /workflow-card--special/);
+  assert.match(zhHome, /<PwaBenefits locale="zh" \/>/);
+});
+
+test("indexed PDF export copy matches the implemented local formats", async () => {
+  const source = await readFile(new URL("../app/tools/pdf-to-image/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /PDF to Image—Export Pages as PNG, JPG or WebP/);
+  assert.doesNotMatch(source, /public CDN|privacy guaranteed|Process images offline/);
+  assert.match(source, /Choose PNG for lossless captures, or export JPEG or WebP/);
 });
