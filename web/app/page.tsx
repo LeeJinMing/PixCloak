@@ -86,6 +86,15 @@ export default function Home() {
 
       <PwaBenefits locale="en" />
 
+      <section className="card workflow-support">
+        <h2>Need the same image rules every week?</h2>
+        <p>Get a reusable workflow configured for your size limits, filenames and result checks. Try the working sample before requesting a one-time setup quote.</p>
+        <div className="next-actions">
+          <Link className="button" href="/workflow-setup">Explore workflow setup</Link>
+          <a className="button-outline" href="/workflow-sample/index.html">Try the batch sample</a>
+        </div>
+      </section>
+
       <section className="local-explainer">
         <div>
           <span className="eyebrow">LOCAL PROCESSING</span>
