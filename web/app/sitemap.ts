@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
     "/contact",
-    "/workflow-setup",
   ];
-  return paths.map((path) => ({ url: `${base}${path}`, lastModified: path === "/workflow-setup" ? new Date("2026-09-11") : updated }));
+  return paths.map((path) => ({ url: `${base}${path}`, lastModified: updated }));
 }

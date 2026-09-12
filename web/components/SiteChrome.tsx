@@ -82,7 +82,6 @@ export function SiteChrome({ children, installAction }: { children: React.ReactN
             <Link href="/privacy">{isZh ? "隐私政策" : "Privacy"}</Link>
             <Link href="/terms">{isZh ? "服务条款" : "Terms"}</Link>
             <Link href="/contact">{isZh ? "联系反馈" : "Contact"}</Link>
-            <Link href="/workflow-setup">{isZh ? "工作流配置服务" : "Workflow setup"}</Link>
             <Link href="/contact" className="pill">
               {isZh ? "反馈" : "Feedback"}
             </Link>
